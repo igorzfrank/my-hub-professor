@@ -1,0 +1,1562 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estado e Hooks no React</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          &quot;Segoe UI&quot;,
+          Roboto,
+          Arial,
+          sans-serif;
+        background: rgb(11, 18, 32);
+        color: rgb(234, 240, 255);
+        padding: 28px;
+        border-radius: 18px;
+        max-width: 980px;
+        margin: 0px auto;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 18px 50px;
+        line-height: 1.55;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 14px;
+      "
+    >
+      <!-- Cabeçalho -->
+      <div
+        style="
+          display: flex;
+          gap: 14px;
+          align-items: flex-start;
+          justify-content: space-between;
+          padding: 18px;
+          background: linear-gradient(
+            135deg,
+            rgba(34, 197, 94, 0.18),
+            rgba(59, 130, 246, 0.18)
+          );
+          border-radius: 14px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          font-size: 14px;
+        "
+      >
+        <div style="min-width: 0px; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 34px;
+                height: 34px;
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                font-size: 14px;
+              "
+              >⚛️</span
+            >
+            <div
+              style="font-weight: 900; letter-spacing: 0.2px; font-size: 20px"
+            >
+              Aula - Estado e Hooks no React
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 8px;
+              color: rgba(234, 240, 255, 0.82);
+              font-size: 14px;
+            "
+          >
+            Foco em <strong style="font-size: 14px">state</strong>,
+            <strong style="font-size: 14px">useState</strong>,
+            <strong style="font-size: 14px">useEffect</strong>, ciclo de vida
+            moderno e boas práticas com Hooks 🚀
+          </div>
+          <div
+            style="
+              margin-top: 8px;
+              color: rgba(234, 240, 255, 0.82);
+              font-size: 14px;
+            "
+          >
+            Link do repositório com os exemplos:
+            https://github.com/iKeliven/useState-useEffetc-react
+          </div>
+          <div
+            style="
+              margin-top: 8px;
+              color: rgba(234, 240, 255, 0.82);
+              font-size: 14px;
+            "
+          >
+            &nbsp;
+          </div>
+        </div>
+      </div>
+      <!-- Objetivos -->
+      <div
+        style="
+          margin-top: 14px;
+          padding: 16px 18px;
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 14px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="display: flex; align-items: center; gap: 10px; font-size: 14px"
+        >
+          <span
+            style="
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              width: 30px;
+              height: 30px;
+              border-radius: 10px;
+              background: rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.12);
+              font-size: 14px;
+            "
+            >🎯</span
+          >
+          <div style="font-weight: 800; font-size: 16px">Objetivos da Aula</div>
+        </div>
+        <div style="margin-top: 10px; display: grid; gap: 8px; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              padding: 10px 12px;
+              background: rgba(11, 18, 32, 0.55);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            ✔ Compreender o conceito de&nbsp;<strong style="font-size: 14px"
+              >estado</strong
+            >
+            em componentes React
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              padding: 10px 12px;
+              background: rgba(11, 18, 32, 0.55);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            ✔ Utilizar o Hook&nbsp;<strong style="font-size: 14px"
+              >useState</strong
+            >
+            para controlar dados dinâmicos
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              padding: 10px 12px;
+              background: rgba(11, 18, 32, 0.55);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            ✔ Entender como ocorre a&nbsp;<strong style="font-size: 14px"
+              >atualização de estado</strong
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              padding: 10px 12px;
+              background: rgba(11, 18, 32, 0.55);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            ✔ Utilizar o Hook&nbsp;<strong style="font-size: 14px"
+              >useEffect</strong
+            >
+            para lidar com efeitos colaterais
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              padding: 10px 12px;
+              background: rgba(11, 18, 32, 0.55);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            ✔ Compreender o&nbsp;<strong style="font-size: 14px"
+              >ciclo de vida</strong
+            >
+            de componentes no React moderno
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              padding: 10px 12px;
+              background: rgba(11, 18, 32, 0.55);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            ✔ Aplicar&nbsp;<strong style="font-size: 14px"
+              >boas práticas</strong
+            >
+            no uso de Hooks
+          </div>
+        </div>
+      </div>
+      <!-- Conteúdo -->
+      <div style="margin-top: 14px; display: grid; gap: 14px; font-size: 14px">
+        <!-- 1 API -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(59, 130, 246, 0.18);
+                border: 1px solid rgba(59, 130, 246, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >0</span
+            >
+            <div style="font-weight: 800; font-size: 16px">Conceito API</div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: 800; font-size: 14px">
+              📌 O que é uma API?
+            </div>
+            <div style="margin-top: 6px; font-size: 14px">
+              <p dir="ltr" style="font-size: 14px">
+                APIs são como conjuntos de regras que permitem que diferentes
+                programas de computador se comuniquem entre si. Elas definem
+                como os componentes de software devem interagir.
+              </p>
+              Imagine que cada aplicativo ou site é como um clube com suas
+              próprias regras internas. A API é como a porta de entrada que
+              permite que esses clubes compartilhem informações e trabalhem
+              juntos.<strong
+                id="docs-internal-guid-13422eb2-7fff-dc68-f899-8e9dcf3c29d6"
+                style="font-size: 14px"
+              ></strong>
+            </div>
+          </div>
+        </div>
+        <!-- 2 hooks --><!-- 3 estado -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(59, 130, 246, 0.18);
+                border: 1px solid rgba(59, 130, 246, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >1</span
+            >
+            <div style="font-weight: 800; font-size: 16px">
+              Conceito de Estado (State)
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: 800; font-size: 14px">
+              📌 O que é Estado?
+            </div>
+            <div style="margin-top: 6px; font-size: 14px">
+              No React,
+              <strong style="font-size: 14px">estado (state)</strong> representa
+              dados que podem mudar ao longo do tempo dentro de um componente.
+            </div>
+            <div style="margin-top: 6px; font-size: 14px">
+              Sempre que o estado muda, o React
+              <strong style="font-size: 14px">re-renderiza</strong> o componente
+              e atualiza automaticamente a interface.
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              Exemplos de dados que usam estado
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  font-size: 12px;
+                "
+                >🔢 Contadores</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  font-size: 12px;
+                "
+                >📝 Campos de formulário</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  font-size: 12px;
+                "
+                >🛒 Carrinho de compras</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  font-size: 12px;
+                "
+                >✅ Lista de tarefas</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  font-size: 12px;
+                "
+                >🌐 Dados de API</span
+              >
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              Exemplo conceitual
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                color: rgba(234, 240, 255, 0.86);
+                font-size: 14px;
+              "
+            >
+              Estado inicial:
+              <strong style="font-size: 14px">contador = 0</strong
+              ><br style="font-size: 14px" />Usuário clica no botão<br
+                style="font-size: 14px"
+              />Estado atualizado:
+              <strong style="font-size: 14px">contador = 1</strong
+              ><br style="font-size: 14px" />React atualiza a interface
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              Fluxo do Estado
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              Estado muda<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;↓<br style="font-size: 13px" />React
+              detecta mudança<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;↓<br
+                style="font-size: 13px"
+              />Componente re-renderiza<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;↓<br style="font-size: 13px" />Interface
+              atualiza
+            </div>
+          </div>
+        </div>
+        <!-- 4 useState -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(34, 197, 94, 0.18);
+                border: 1px solid rgba(34, 197, 94, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >2</span
+            >
+            <div style="font-weight: 800; font-size: 16px">Hook useState</div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: 800; font-size: 14px">
+              📌 O que é um Hook?
+            </div>
+            <div style="margin-top: 6px; font-size: 14px">
+              Hooks são funções especiais do React que permitem usar recursos
+              como <strong style="font-size: 14px">estado</strong>,
+              <strong style="font-size: 14px">efeitos</strong> e
+              <strong style="font-size: 14px">contexto</strong> em componentes
+              funcionais.
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              📌 O que faz o useState?
+            </div>
+            <div style="margin-top: 6px; font-size: 14px">
+              O <strong style="font-size: 14px">useState</strong> permite criar
+              e controlar estado dentro de um componente funcional.
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              Sintaxe
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              const [estado, setEstado] = useState(valorInicial);
+            </div>
+            <div
+              style="
+                margin-top: 12px;
+                overflow: hidden;
+                border-radius: 12px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  font-weight: 800;
+                  background: rgba(255, 255, 255, 0.08);
+                  font-size: 14px;
+                "
+              >
+                <div style="flex: 1 1 0%; padding: 10px 12px; font-size: 14px">
+                  Elemento
+                </div>
+                <div style="flex: 1 1 0%; padding: 10px 12px; font-size: 14px">
+                  Função
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  border-top: 1px solid rgba(255, 255, 255, 0.1);
+                  font-size: 14px;
+                "
+              >
+                <div style="flex: 1 1 0%; padding: 10px 12px; font-size: 14px">
+                  estado
+                </div>
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    padding: 10px 12px;
+                    color: rgba(234, 240, 255, 0.82);
+                    font-size: 14px;
+                  "
+                >
+                  valor atual
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  border-top: 1px solid rgba(255, 255, 255, 0.1);
+                  font-size: 14px;
+                "
+              >
+                <div style="flex: 1 1 0%; padding: 10px 12px; font-size: 14px">
+                  setEstado
+                </div>
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    padding: 10px 12px;
+                    color: rgba(234, 240, 255, 0.82);
+                    font-size: 14px;
+                  "
+                >
+                  função que atualiza o estado
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  border-top: 1px solid rgba(255, 255, 255, 0.1);
+                  font-size: 14px;
+                "
+              >
+                <div style="flex: 1 1 0%; padding: 10px 12px; font-size: 14px">
+                  valorInicial
+                </div>
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    padding: 10px 12px;
+                    color: rgba(234, 240, 255, 0.82);
+                    font-size: 14px;
+                  "
+                >
+                  valor inicial do estado
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              Exemplo de contador
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              import { useState } from "react";<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />function Contador() {<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;const [contador, setContador] = useState(0);<br
+                style="font-size: 13px"
+              /><br style="font-size: 13px" />&nbsp;&nbsp;return (<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;{contador}&lt;/h2&gt;<br
+                style="font-size: 13px"
+              /><br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button onClick={() =&gt;
+              setContador(contador + 1)}&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Incrementar<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;);<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />}
+            </div>
+          </div>
+        </div>
+        <!-- 5 Atualização -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(245, 158, 11, 0.18);
+                border: 1px solid rgba(245, 158, 11, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >3</span
+            >
+            <div style="font-weight: 800; font-size: 16px">
+              Atualização de Estado
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            Quando usamos a função de atualização (<strong
+              style="font-size: 14px"
+              >setState</strong
+            >), o React:
+            <div
+              style="margin-top: 8px; display: grid; gap: 6px; font-size: 14px"
+            >
+              <div style="font-size: 14px">• Atualiza o valor do estado</div>
+              <div style="font-size: 14px">• Re-renderiza o componente</div>
+              <div style="font-size: 14px">• Atualiza a interface</div>
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              Atualização simples
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              setContador(contador + 1)
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              Atualização baseada no valor anterior
+            </div>
+            <div style="margin-top: 6px; font-size: 14px">
+              ✅ Forma recomendada:
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              setContador(prev =&gt; prev + 1)
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(34, 197, 94, 0.1);
+                border: 1px solid rgba(34, 197, 94, 0.2);
+                font-size: 14px;
+              "
+            >
+              💡 Essa abordagem evita problemas quando várias atualizações
+              acontecem rapidamente.
+            </div>
+          </div>
+        </div>
+        <!-- 6 useEffect -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(168, 85, 247, 0.18);
+                border: 1px solid rgba(168, 85, 247, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >4</span
+            >
+            <div style="font-weight: 800; font-size: 16px">Hook useEffect</div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: 800; font-size: 14px">
+              📌 O que é useEffect?
+            </div>
+            <div style="margin-top: 6px; font-size: 14px">
+              O <strong style="font-size: 14px">useEffect</strong> é usado para
+              executar
+              <strong style="font-size: 14px">efeitos colaterais</strong>.
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              O que são efeitos colaterais?
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  font-size: 12px;
+                "
+                >🌐 Requisição de API</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  font-size: 12px;
+                "
+                >⏱ Timers</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  font-size: 12px;
+                "
+                >🧱 Manipulação do DOM</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  font-size: 12px;
+                "
+                >📝 Logs</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  font-size: 12px;
+                "
+                >💾 Local Storage</span
+              >
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              Sintaxe
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              useEffect(() =&gt; {<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />}, []);
+            </div>
+            <div
+              style="
+                margin-top: 12px;
+                overflow: hidden;
+                border-radius: 12px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  font-weight: 800;
+                  background: rgba(255, 255, 255, 0.08);
+                  font-size: 14px;
+                "
+              >
+                <div style="flex: 1 1 0%; padding: 10px 12px; font-size: 14px">
+                  Parte
+                </div>
+                <div style="flex: 1 1 0%; padding: 10px 12px; font-size: 14px">
+                  Função
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  border-top: 1px solid rgba(255, 255, 255, 0.1);
+                  font-size: 14px;
+                "
+              >
+                <div style="flex: 1 1 0%; padding: 10px 12px; font-size: 14px">
+                  função
+                </div>
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    padding: 10px 12px;
+                    color: rgba(234, 240, 255, 0.82);
+                    font-size: 14px;
+                  "
+                >
+                  código executado
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  border-top: 1px solid rgba(255, 255, 255, 0.1);
+                  font-size: 14px;
+                "
+              >
+                <div style="flex: 1 1 0%; padding: 10px 12px; font-size: 14px">
+                  []
+                </div>
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    padding: 10px 12px;
+                    color: rgba(234, 240, 255, 0.82);
+                    font-size: 14px;
+                  "
+                >
+                  dependências do efeito
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 7 Ciclo de vida -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(59, 130, 246, 0.18);
+                border: 1px solid rgba(59, 130, 246, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >5</span
+            >
+            <div style="font-weight: 800; font-size: 16px">
+              Ciclo de Vida com useEffect
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            Antes dos Hooks, o React usava componentes de classe com métodos de
+            ciclo de vida.
+            <div style="margin-top: 8px; font-size: 14px">
+              Principais fases:
+              <div
+                style="
+                  margin-top: 6px;
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 8px;
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    padding: 7px 10px;
+                    border-radius: 999px;
+                    background: rgba(245, 158, 11, 0.14);
+                    border: 1px solid rgba(245, 158, 11, 0.22);
+                    font-size: 12px;
+                  "
+                  >🟢 montagem</span
+                >
+                <span
+                  style="
+                    padding: 7px 10px;
+                    border-radius: 999px;
+                    background: rgba(245, 158, 11, 0.14);
+                    border: 1px solid rgba(245, 158, 11, 0.22);
+                    font-size: 12px;
+                  "
+                  >🟡 atualização</span
+                >
+                <span
+                  style="
+                    padding: 7px 10px;
+                    border-radius: 999px;
+                    background: rgba(245, 158, 11, 0.14);
+                    border: 1px solid rgba(245, 158, 11, 0.22);
+                    font-size: 12px;
+                  "
+                  >🔴 desmontagem</span
+                >
+              </div>
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              No React moderno
+            </div>
+            <div style="margin-top: 6px; font-size: 14px">
+              O <strong style="font-size: 14px">useEffect</strong> substitui os
+              métodos antigos.
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              Executar ao montar o componente
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              useEffect(() =&gt; {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;console.log("Componente carregado");<br
+                style="font-size: 13px"
+              />}, []);
+            </div>
+            <div
+              style="
+                margin-top: 6px;
+                font-size: 14px;
+                color: rgba(234, 240, 255, 0.82);
+              "
+            >
+              Executa apenas uma vez, quando o componente é montado.
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              Executar quando o estado mudar
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              useEffect(() =&gt; {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;console.log("Estado mudou");<br
+                style="font-size: 13px"
+              />}, [contador]);
+            </div>
+            <div
+              style="
+                margin-top: 6px;
+                font-size: 14px;
+                color: rgba(234, 240, 255, 0.82);
+              "
+            >
+              Executa quando
+              <strong style="font-size: 14px">contador</strong> muda.
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              Executar sempre que renderizar
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              useEffect(() =&gt; {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;console.log("Renderizou");<br
+                style="font-size: 13px"
+              />});
+            </div>
+            <div
+              style="
+                margin-top: 6px;
+                font-size: 14px;
+                color: rgba(234, 240, 255, 0.82);
+              "
+            >
+              Executa em todas as renderizações.
+            </div>
+          </div>
+        </div>
+        <!-- 8 Boas práticas -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(34, 197, 94, 0.18);
+                border: 1px solid rgba(34, 197, 94, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >6</span
+            >
+            <div style="font-weight: 800; font-size: 16px">
+              Boas Práticas com Hooks
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              display: grid;
+              gap: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(245, 158, 11, 0.1);
+                border: 1px solid rgba(245, 158, 11, 0.2);
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 900; font-size: 14px">
+                1️⃣ Usar Hooks somente no topo do componente
+              </div>
+              <div
+                style="
+                  margin-top: 8px;
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 10px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    padding: 10px;
+                    border-radius: 10px;
+                    background: rgba(255, 255, 255, 0.06);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 800;
+                      color: rgb(255, 180, 180);
+                      font-size: 14px;
+                    "
+                  >
+                    ❌ Errado
+                  </div>
+                  <div
+                    style="
+                      margin-top: 6px;
+                      font-family:
+                        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                        &quot;Liberation Mono&quot;, monospace;
+                      font-size: 13px;
+                    "
+                  >
+                    if(condicao){<br
+                      style="font-size: 13px"
+                    />&nbsp;&nbsp;useState()<br style="font-size: 13px" />}
+                  </div>
+                </div>
+                <div
+                  style="
+                    padding: 10px;
+                    border-radius: 10px;
+                    background: rgba(255, 255, 255, 0.06);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 800;
+                      color: rgb(185, 255, 203);
+                      font-size: 14px;
+                    "
+                  >
+                    ✔ Correto
+                  </div>
+                  <div style="margin-top: 6px; font-size: 14px">
+                    Hooks sempre no nível superior do componente.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(59, 130, 246, 0.1);
+                border: 1px solid rgba(59, 130, 246, 0.2);
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 900; font-size: 14px">
+                2️⃣ Não usar Hooks fora de componentes
+              </div>
+              <div style="margin-top: 6px; font-size: 14px">
+                Hooks só funcionam em:
+              </div>
+              <div
+                style="
+                  margin-top: 8px;
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 8px;
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    padding: 7px 10px;
+                    border-radius: 999px;
+                    background: rgba(255, 255, 255, 0.08);
+                    border: 1px solid rgba(255, 255, 255, 0.12);
+                    font-size: 12px;
+                  "
+                  >componentes React</span
+                >
+                <span
+                  style="
+                    padding: 7px 10px;
+                    border-radius: 999px;
+                    background: rgba(255, 255, 255, 0.08);
+                    border: 1px solid rgba(255, 255, 255, 0.12);
+                    font-size: 12px;
+                  "
+                  >custom hooks</span
+                >
+              </div>
+            </div>
+            <div
+              style="
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(168, 85, 247, 0.1);
+                border: 1px solid rgba(168, 85, 247, 0.2);
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 900; font-size: 14px">
+                3️⃣ Evitar múltiplos efeitos desnecessários
+              </div>
+              <div style="margin-top: 6px; font-size: 14px">
+                Organizar os efeitos para evitar execuções repetidas e
+                desnecessárias.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Práticas -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(245, 158, 11, 0.18);
+                border: 1px solid rgba(245, 158, 11, 0.25);
+                font-size: 14px;
+              "
+              >💻</span
+            >
+            <div style="font-weight: 800; font-size: 16px">
+              Práticas da Aula
+            </div>
+          </div>
+          <div
+            style="margin-top: 10px; display: grid; gap: 10px; font-size: 14px"
+          >
+            <div
+              style="
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(59, 130, 246, 0.1);
+                border: 1px solid rgba(59, 130, 246, 0.2);
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 900; font-size: 14px">
+                Prática 1 — Criar Contador
+              </div>
+              <div
+                style="
+                  margin-top: 6px;
+                  color: rgba(234, 240, 255, 0.88);
+                  font-size: 14px;
+                "
+              >
+                Criar um componente que:
+                <div
+                  style="
+                    margin-top: 6px;
+                    display: grid;
+                    gap: 4px;
+                    font-size: 14px;
+                  "
+                >
+                  <div style="font-size: 14px">• mostre um número na tela</div>
+                  <div style="font-size: 14px">• tenha botão de incremento</div>
+                  <div style="font-size: 14px">• tenha botão de decremento</div>
+                  <div style="font-size: 14px">• tenha botão de reset</div>
+                </div>
+                <div style="margin-top: 8px; font-size: 14px">
+                  <strong style="font-size: 14px">Objetivo:</strong> aplicar
+                  <strong style="font-size: 14px">useState</strong>.
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(34, 197, 94, 0.1);
+                border: 1px solid rgba(34, 197, 94, 0.2);
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 900; font-size: 14px">
+                Prática 2 — Simular Requisição de Dados
+              </div>
+              <div
+                style="
+                  margin-top: 6px;
+                  color: rgba(234, 240, 255, 0.88);
+                  font-size: 14px;
+                "
+              >
+                Criar um componente que:
+                <div
+                  style="
+                    margin-top: 6px;
+                    display: grid;
+                    gap: 4px;
+                    font-size: 14px;
+                  "
+                >
+                  <div style="font-size: 14px">
+                    • mostre a mensagem
+                    <strong style="font-size: 14px"
+                      >"Carregando dados..."</strong
+                    >
+                  </div>
+                  <div style="font-size: 14px">
+                    • após alguns segundos, mostre uma lista de usuários
+                  </div>
+                  <div style="font-size: 14px">
+                    • utilize
+                    <strong style="font-size: 14px">useEffect</strong> para
+                    simular a requisição
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(168, 85, 247, 0.1);
+                border: 1px solid rgba(168, 85, 247, 0.2);
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 900; font-size: 14px">
+                Prática 3 — Formulário Controlado
+              </div>
+              <div
+                style="
+                  margin-top: 6px;
+                  color: rgba(234, 240, 255, 0.88);
+                  font-size: 14px;
+                "
+              >
+                Criar um formulário simples com:
+                <div
+                  style="
+                    margin-top: 6px;
+                    display: grid;
+                    gap: 4px;
+                    font-size: 14px;
+                  "
+                >
+                  <div style="font-size: 14px">• campo nome</div>
+                  <div style="font-size: 14px">• campo email</div>
+                  <div style="font-size: 14px">
+                    • exibir os valores digitados em tempo real
+                  </div>
+                </div>
+                <div style="margin-top: 8px; font-size: 14px">
+                  <strong style="font-size: 14px">Objetivo:</strong> controlar
+                  formulário com
+                  <strong style="font-size: 14px">useState</strong>.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Rodapé -->
+    </div>
+  </body>
+</html>

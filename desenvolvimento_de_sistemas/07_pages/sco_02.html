@@ -1,0 +1,3114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NPM — Node Package Manager</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(240, 244, 249);
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- Cabeçalho -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102) 0%,
+            rgb(26, 95, 168) 100%
+          );
+          border-radius: 14px;
+          padding: 36px 40px;
+          margin-bottom: 24px;
+          box-shadow: rgba(13, 59, 102, 0.28) 0px 8px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a8c8f0;
+            margin-bottom: 10px;
+          "
+        >
+          Técnico em Desenvolvimento de Sistemas — Desenvolvimento de Sistemas
+        </div>
+        <div
+          style="
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 12px;
+          "
+        >
+          NPM — Node Package Manager
+        </div>
+        <div style="font-size: 15px; color: #c8dff5; line-height: 1.65">
+          Nesta aula você aprenderá o que é o NPM, de onde ele veio, por que ele
+          existe e como utilizá-lo no dia a dia do desenvolvimento. Com exemplos
+          práticos, você entenderá como instalar, gerenciar e publicar pacotes —
+          uma habilidade essencial para qualquer desenvolvedor JavaScript
+          moderno.
+        </div>
+      </div>
+      <!-- Capacidades -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          border-left: 6px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 14px;
+          "
+        >
+          Capacidades Trabalhadas
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Aplicar metodologia de desenvolvimento de acordo com o escopo do
+              projeto.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Reconhecer e utilizar ferramentas do ecossistema de
+              desenvolvimento de software.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- O problema que o NPM resolve -->
+      <div
+        style="
+          background: rgb(234, 242, 251);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.08) 0px 4px 18px;
+          border: 1px solid rgb(184, 212, 237);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 12px;
+          "
+        >
+          O problema que o NPM resolve
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.75;
+            margin-bottom: 12px;
+          "
+        >
+          Imagine que você precisa validar e-mails, criptografar senhas,
+          formatar datas e se conectar a um banco de dados no seu projeto. Sem o
+          NPM, você teria duas opções: escrever tudo do zero — o que levaria
+          semanas — ou baixar arquivos de sites aleatórios da internet e
+          colá-los manualmente na sua pasta, sem nenhuma garantia de versão,
+          segurança ou atualizações.
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.75;
+            margin-bottom: 16px;
+          "
+        >
+          Ambas as opções são lentas, arriscadas e impossíveis de escalar em
+          equipe. Cada desenvolvedor teria uma versão diferente de cada
+          biblioteca, causando bugs impossíveis de reproduzir.
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 4px solid rgb(26, 95, 168);
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 14px; color: #1a2a3a; line-height: 1.7">
+            <span style="font-weight: bold; font-size: 14px"
+              >Analogia do mundo real:</span
+            >
+            um arquiteto não fabrica tijolos, canos, fiação elétrica nem
+            janelas. Ele especifica o que precisa e a construtora entrega os
+            materiais certos, na versão certa, no momento certo. O NPM faz
+            exatamente isso para o software: você declara o que precisa e ele
+            entrega — de forma padronizada, versionada e compartilhável com toda
+            a equipe.
+          </div>
+        </div>
+      </div>
+      <!-- O que é o NPM -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          O que é o NPM?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          O
+          <span style="font-weight: bold; font-size: 15px"
+            >NPM — Node Package Manager</span
+          >
+          — é o gerenciador de pacotes oficial do Node.js. Ele é, ao mesmo
+          tempo, três coisas distintas que trabalham juntas:
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 16px;
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(13, 59, 102);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 38px;
+                height: 38px;
+                background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 11px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                text-align: center;
+                line-height: 1.3;
+              "
+            >
+              01
+            </div>
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 6px;
+                "
+              >
+                Um repositório online de pacotes
+              </div>
+              <div style="font-size: 14px; color: #4a6a8a; line-height: 1.65">
+                O site
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 14px;
+                  "
+                  >npmjs.com</span
+                >
+                hospeda mais de 2 milhões de pacotes públicos criados por
+                desenvolvedores do mundo inteiro. Qualquer pessoa pode publicar
+                ou baixar código de lá gratuitamente.
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 16px;
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 38px;
+                height: 38px;
+                background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 11px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                text-align: center;
+                line-height: 1.3;
+              "
+            >
+              02
+            </div>
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 6px;
+                "
+              >
+                Uma ferramenta de linha de comando (CLI)
+              </div>
+              <div style="font-size: 14px; color: #4a6a8a; line-height: 1.65">
+                O comando
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 14px;
+                  "
+                  >npm</span
+                >
+                que você digita no terminal — ele instala, atualiza, remove
+                pacotes e executa scripts automaticamente no seu projeto.
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 16px;
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(52, 152, 219);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 38px;
+                height: 38px;
+                background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 11px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                text-align: center;
+                line-height: 1.3;
+              "
+            >
+              03
+            </div>
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 6px;
+                "
+              >
+                Um sistema de gerenciamento de dependências
+              </div>
+              <div style="font-size: 14px; color: #4a6a8a; line-height: 1.65">
+                Através do arquivo
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 14px;
+                  "
+                  >package.json</span
+                >, o NPM registra quais pacotes seu projeto usa e em qual versão
+                — garantindo que todos os membros da equipe trabalhem com o
+                mesmo ambiente.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(248, 251, 255);
+            border-radius: 10px;
+            padding: 18px 20px;
+            border: 1px solid rgb(212, 230, 245);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #1a5fa8;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 8px;
+            "
+          >
+            O que é um pacote?
+          </div>
+          <div style="font-size: 14px; color: #2c3e50; line-height: 1.75">
+            Um
+            <span style="font-weight: bold; font-size: 14px">pacote</span> (ou
+            <span style="font-weight: bold; font-size: 14px">módulo</span>) é um
+            conjunto de arquivos JavaScript que resolve um problema específico e
+            pode ser reutilizado em qualquer projeto. Exemplos:
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(234, 242, 251);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >express</span
+            >
+            (servidor web),
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(234, 242, 251);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >bcrypt</span
+            >
+            (criptografia de senhas),
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(234, 242, 251);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >jest</span
+            >
+            (testes),
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(234, 242, 251);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >nodemon</span
+            >
+            (reinicialização automática do servidor).
+          </div>
+        </div>
+      </div>
+      <!-- Origem -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Origem e contexto histórico
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 18px;
+              border-top: 3px solid rgb(13, 59, 102);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 22px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 4px;
+              "
+            >
+              2009
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 8px;
+              "
+            >
+              Node.js nasce
+            </div>
+            <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+              Ryan Dahl cria o Node.js, permitindo rodar JavaScript fora do
+              navegador, no servidor.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 18px;
+              border-top: 3px solid rgb(26, 95, 168);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 22px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 4px;
+              "
+            >
+              2010
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 8px;
+              "
+            >
+              NPM é lançado
+            </div>
+            <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+              Isaac Z. Schlueter cria o NPM para resolver o problema de
+              compartilhar e reutilizar código Node.js entre projetos.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 18px;
+              border-top: 3px solid rgb(52, 152, 219);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 22px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 4px;
+              "
+            >
+              Hoje
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 8px;
+              "
+            >
+              +2 milhões de pacotes
+            </div>
+            <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+              O maior repositório de código open source do mundo, com bilhões de
+              downloads por semana.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 14px;
+          "
+        >
+          O NPM foi criado para resolver um problema real: à medida que o
+          ecossistema Node.js crescia, os desenvolvedores precisavam de uma
+          forma padronizada de compartilhar código. Antes do NPM, cada equipe
+          reinventava a roda — criando soluções para os mesmos problemas
+          repetidamente, sem nenhuma forma de reutilização organizada.
+        </div>
+        <div
+          style="
+            background: #fff7ee;
+            border-left: 4px solid #f0a500;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #5a3a00;
+            line-height: 1.65;
+          "
+        >
+          Desde 2020, o NPM pertence à
+          <span style="font-weight: bold; font-size: 14px">GitHub</span>, que
+          por sua vez pertence à
+          <span style="font-weight: bold; font-size: 14px">Microsoft</span>. O
+          repositório público continua gratuito. A ferramenta de linha de
+          comando é instalada automaticamente com o Node.js — você já tem o NPM
+          se tem o Node instalado.
+        </div>
+      </div>
+      <!-- Verificando a instalação -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Passo a Passo 01
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Verificando a instalação
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 18px;
+          "
+        >
+          Antes de usar o NPM, confirme que ele está instalado corretamente.
+          Abra o terminal (PowerShell no Windows, Terminal no Mac/Linux) e
+          execute os comandos abaixo. Se os números de versão aparecerem, está
+          tudo pronto.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            terminal
+          </div>
+          <pre
+            style="
+              margin: 0px;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: rgb(224, 240, 255);
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;"># Verifica a versão do Node.js instalado</span>
+node --version
+<span style="color: rgb(93, 245, 168); font-size: 13px;"># Saída esperada: v20.x.x (ou superior)</span>
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Verifica a versão do NPM instalado</span>
+npm --version
+<span style="color: rgb(93, 245, 168); font-size: 13px;"># Saída esperada: 10.x.x (ou superior)</span></pre>
+        </div>
+        <div
+          style="
+            background: #f0f7ff;
+            border-left: 4px solid #5db8f5;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #1a3a5a;
+            line-height: 1.65;
+          "
+        >
+          Se o comando não for reconhecido, acesse
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(221, 238, 255);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >nodejs.org</span
+          >
+          e baixe o instalador LTS (versão estável). O NPM é instalado
+          automaticamente junto com o Node.js.
+        </div>
+      </div>
+      <!-- Iniciando um projeto -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Passo a Passo 02
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Iniciando um projeto com
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 22px;
+            "
+            >npm init</span
+          >
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 18px;
+          "
+        >
+          Todo projeto Node.js começa com o comando
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >npm init</span
+          >. Ele cria o arquivo
+          <span style="font-weight: bold; font-size: 15px">package.json</span> —
+          o coração de qualquer projeto NPM. Esse arquivo registra o nome do
+          projeto, a versão, o autor e, mais importante,
+          <span style="font-weight: bold; font-size: 15px"
+            >todas as dependências que o projeto usa</span
+          >.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            terminal
+          </div>
+          <pre
+            style="
+              margin: 0px;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: rgb(224, 240, 255);
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;"># Cria a pasta do projeto e entra nela</span>
+mkdir meu-projeto
+cd meu-projeto
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Inicia o NPM com perguntas interativas (nome, versão, etc.)</span>
+npm init
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Atalho: responde "sim" para tudo e cria o package.json imediatamente</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Recomendado para iniciantes — você pode editar o arquivo depois</span>
+npm init -y</pre>
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          O arquivo package.json gerado pelo
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              font-weight: 400;
+              font-size: 14px;
+            "
+            >npm init -y</span
+          >:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            package.json
+          </div>
+          <pre
+            style="
+              margin: 0px;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: rgb(224, 240, 255);
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          >{
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"name"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"meu-projeto"</span>,
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"version"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"1.0.0"</span>,
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"description"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">""</span>,
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"main"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"index.js"</span>,       <span style="color: rgb(93, 184, 245); font-size: 13px;">// arquivo de entrada do projeto</span>
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"scripts"</span>: {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"test"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"echo \"Error: no test specified\""</span>
+  },
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"keywords"</span>: [],
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"author"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">""</span>,
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"license"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"ISC"</span>
+}</pre>
+        </div>
+        <div
+          style="
+            background: #fff7ee;
+            border-left: 4px solid #f0a500;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #5a3a00;
+            line-height: 1.65;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px">Importante:</span> o
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(245, 228, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >package.json</span
+          >
+          deve ser sempre versionado no Git. Ele é o contrato do seu projeto —
+          permite que qualquer pessoa recrie o ambiente com um único comando.
+        </div>
+      </div>
+      <!-- Instalando pacotes -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Passo a Passo 03
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Instalando pacotes com
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 22px;
+            "
+            >npm install</span
+          >
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 20px;
+          "
+        >
+          O comando
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >npm install</span
+          >
+          (abreviado como
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >npm i</span
+          >) é o mais usado do dia a dia. Quando você instala um pacote, o NPM
+          faz três coisas automaticamente: baixa o código na pasta
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >node_modules</span
+          >, registra o pacote no
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >package.json</span
+          >
+          e cria ou atualiza o
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >package-lock.json</span
+          >.
+        </div>
+        <!-- Dependências de produção -->
+        <div style="margin-bottom: 24px; font-size: 14px">
+          <div
+            style="
+              font-size: 15px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 10px;
+            "
+          >
+            Dependências de produção — o projeto precisa delas para funcionar
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #4a6a8a;
+              line-height: 1.65;
+              margin-bottom: 12px;
+            "
+          >
+            São os pacotes que seu código usa enquanto está em execução. Eles
+            ficam registrados em
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(234, 242, 251);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >"dependencies"</span
+            >
+            no package.json.
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              margin-bottom: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 10px 18px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #5db8f5;
+                border-bottom: 1px solid #2a3a4a;
+                letter-spacing: 1px;
+              "
+            >
+              terminal
+            </div>
+            <pre
+              style="
+                margin: 0px;
+                padding: 22px 26px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 13px;
+                color: rgb(224, 240, 255);
+                line-height: 1.9;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(93, 184, 245); font-size: 13px;"># Instala o Express (framework web) como dependência de produção</span>
+npm install express
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Instala múltiplos pacotes de uma vez</span>
+npm install express bcrypt dotenv
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Forma abreviada (mesmo resultado)</span>
+npm i express bcrypt dotenv</pre>
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 10px 18px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #5db8f5;
+                border-bottom: 1px solid #2a3a4a;
+                letter-spacing: 1px;
+              "
+            >
+              package.json — após a instalação
+            </div>
+            <pre
+              style="
+                margin: 0px;
+                padding: 22px 26px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 13px;
+                color: rgb(224, 240, 255);
+                line-height: 1.9;
+                overflow-x: auto;
+              "
+            >{
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"dependencies"</span>: {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"bcrypt"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"^5.1.1"</span>,   <span style="color: rgb(93, 184, 245); font-size: 13px;">// criptografia de senhas</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"dotenv"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"^16.4.5"</span>,  <span style="color: rgb(93, 184, 245); font-size: 13px;">// variáveis de ambiente (.env)</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"express"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"^4.19.2"</span>  <span style="color: rgb(93, 184, 245); font-size: 13px;">// framework web</span>
+  }
+}</pre>
+          </div>
+        </div>
+        <!-- Dependências de desenvolvimento -->
+        <div style="margin-bottom: 20px; font-size: 14px">
+          <div
+            style="
+              font-size: 15px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 10px;
+            "
+          >
+            Dependências de desenvolvimento — usadas só durante o
+            desenvolvimento
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #4a6a8a;
+              line-height: 1.65;
+              margin-bottom: 12px;
+            "
+          >
+            São pacotes que ajudam durante o desenvolvimento mas não precisam ir
+            para o servidor de produção. Usam a flag
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(234, 242, 251);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >--save-dev</span
+            >
+            e ficam em
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(234, 242, 251);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >"devDependencies"</span
+            >.
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              margin-bottom: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 10px 18px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #5db8f5;
+                border-bottom: 1px solid #2a3a4a;
+                letter-spacing: 1px;
+              "
+            >
+              terminal
+            </div>
+            <pre
+              style="
+                margin: 0px;
+                padding: 22px 26px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 13px;
+                color: rgb(224, 240, 255);
+                line-height: 1.9;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(93, 184, 245); font-size: 13px;"># --save-dev indica que é dependência apenas de desenvolvimento</span>
+npm install --save-dev jest nodemon
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Forma abreviada</span>
+npm i -D jest nodemon</pre>
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 10px 18px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #5db8f5;
+                border-bottom: 1px solid #2a3a4a;
+                letter-spacing: 1px;
+              "
+            >
+              package.json — com devDependencies
+            </div>
+            <pre
+              style="
+                margin: 0px;
+                padding: 22px 26px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 13px;
+                color: rgb(224, 240, 255);
+                line-height: 1.9;
+                overflow-x: auto;
+              "
+            >{
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"dependencies"</span>: {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"express"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"^4.19.2"</span>
+  },
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"devDependencies"</span>: {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"jest"</span>:    <span style="color: rgb(168, 240, 200); font-size: 13px;">"^29.7.0"</span>,  <span style="color: rgb(93, 184, 245); font-size: 13px;">// framework de testes — só no dev</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"nodemon"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"^3.1.0"</span>   <span style="color: rgb(93, 184, 245); font-size: 13px;">// reinicia o servidor automaticamente — só no dev</span>
+  }
+}</pre>
+          </div>
+        </div>
+        <div
+          style="
+            background: #d4f5e4;
+            border-left: 4px solid #1a7a45;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #1a3a20;
+            line-height: 1.65;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px">Regra prática:</span>
+          se o servidor de produção precisa do pacote para rodar, é
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(184, 232, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >dependencies</span
+          >. Se você usa apenas para programar, testar ou formatar o código, é
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(184, 232, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >devDependencies</span
+          >.
+        </div>
+      </div>
+      <!-- Scripts -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Passo a Passo 04
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Automatizando tarefas com Scripts NPM
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 18px;
+          "
+        >
+          A seção
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >"scripts"</span
+          >
+          do package.json permite criar atalhos para comandos longos e
+          repetitivos. Em vez de digitar o comando completo toda vez, você
+          executa
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >npm run nome-do-script</span
+          >. É uma das funcionalidades mais usadas do NPM no cotidiano
+          profissional.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            package.json — seção scripts configurada
+          </div>
+          <pre
+            style="
+              margin: 0px;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: rgb(224, 240, 255);
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          >{
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"scripts"</span>: {
+
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// Inicia o servidor normalmente</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"start"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"node index.js"</span>,
+
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// Inicia com nodemon: reinicia automaticamente ao salvar arquivos</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"dev"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"nodemon index.js"</span>,
+
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// Executa todos os testes com Jest</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"test"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"jest"</span>,
+
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// Executa testes e exibe o relatório de cobertura de código</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"test:coverage"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"jest --coverage"</span>
+
+  }
+}</pre>
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          Como executar cada script:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            terminal
+          </div>
+          <pre
+            style="
+              margin: 0px;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: rgb(224, 240, 255);
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;"># Inicia o servidor em produção</span>
+npm start
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Inicia em modo desenvolvimento (com nodemon)</span>
+npm run dev
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Executa os testes</span>
+npm test
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Executa os testes com relatório de cobertura</span>
+npm run test:coverage</pre>
+        </div>
+        <div
+          style="
+            background: #f0f7ff;
+            border-left: 4px solid #5db8f5;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #1a3a5a;
+            line-height: 1.65;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px">Atenção:</span>
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(221, 238, 255);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >npm start</span
+          >
+          e
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(221, 238, 255);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >npm test</span
+          >
+          são atalhos especiais do NPM — não precisam da palavra
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(221, 238, 255);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >run</span
+          >. Todos os outros scripts precisam de
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(221, 238, 255);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >npm run nome</span
+          >.
+        </div>
+      </div>
+      <!-- Outros comandos essenciais -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Passo a Passo 05
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Outros comandos essenciais
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 20px;
+          "
+        >
+          Além de instalar pacotes, o NPM oferece comandos para gerenciar,
+          atualizar e investigar dependências do projeto. Esses são os mais
+          usados no dia a dia:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            terminal — comandos de gerenciamento
+          </div>
+          <pre
+            style="
+              margin: 0px;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: rgb(224, 240, 255);
+              line-height: 2;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;"># Instala TODAS as dependências listadas no package.json</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Usado quando você clona um projeto pela primeira vez</span>
+npm install
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Remove um pacote do projeto e do package.json</span>
+npm uninstall express
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Atualiza um pacote para a versão mais recente compatível</span>
+npm update express
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Lista todos os pacotes instalados no projeto</span>
+npm list
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Lista apenas os pacotes de primeiro nível (sem sub-dependências)</span>
+npm list --depth=0
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Verifica quais pacotes têm versões mais novas disponíveis</span>
+npm outdated
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Busca informações sobre um pacote no repositório NPM</span>
+npm info express</pre>
+        </div>
+        <!-- Tabela de referência rápida -->
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 12px;
+          "
+        >
+          Referência rápida — os comandos mais usados:
+        </div>
+        <div style="overflow-x: auto; font-size: 14px">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 13px"
+          >
+            <thead style="font-size: 13px">
+              <tr
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgb(13, 59, 102),
+                    rgb(26, 95, 168)
+                  );
+                  font-size: 13px;
+                "
+              >
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: left;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  Comando
+                </th>
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: left;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  O que faz
+                </th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 13px">
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: rgb(13, 59, 102);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    white-space: nowrap;
+                  "
+                >
+                  npm init -y
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Cria o package.json com valores padrão
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: rgb(13, 59, 102);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    white-space: nowrap;
+                  "
+                >
+                  npm install
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Instala todas as dependências do package.json
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: rgb(13, 59, 102);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    white-space: nowrap;
+                  "
+                >
+                  npm i &lt;pacote&gt;
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Instala um pacote como dependência de produção
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: rgb(13, 59, 102);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    white-space: nowrap;
+                  "
+                >
+                  npm i -D &lt;pacote&gt;
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Instala um pacote como dependência de desenvolvimento
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: rgb(13, 59, 102);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    white-space: nowrap;
+                  "
+                >
+                  npm uninstall &lt;pacote&gt;
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Remove o pacote do projeto e do package.json
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: rgb(13, 59, 102);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    white-space: nowrap;
+                  "
+                >
+                  npm run &lt;script&gt;
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Executa um script definido no package.json
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: rgb(13, 59, 102);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    white-space: nowrap;
+                  "
+                >
+                  npm outdated
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Mostra quais pacotes têm versões mais novas disponíveis
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: rgb(13, 59, 102);
+                    white-space: nowrap;
+                  "
+                >
+                  npm list --depth=0
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  Lista os pacotes instalados no projeto
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Arquivos importantes -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Os três arquivos gerados pelo NPM
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 20px;
+          "
+        >
+          Quando você usa o NPM, três elementos importantes aparecem na raiz do
+          projeto. Entender o papel de cada um evita confusões muito comuns
+          entre iniciantes:
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              border-radius: 12px;
+              overflow: hidden;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgb(13, 59, 102),
+                  rgb(26, 95, 168)
+                );
+                padding: 12px 22px;
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 6px;
+                  padding: 4px 10px;
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #fff;
+                "
+              >
+                package.json
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(248, 251, 255);
+                padding: 16px 22px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 14px;
+                  color: #2c3e50;
+                  line-height: 1.75;
+                  margin-bottom: 8px;
+                "
+              >
+                O
+                <span style="font-weight: bold; font-size: 14px"
+                  >manifesto do projeto</span
+                >. Contém o nome, versão, scripts e a lista de dependências com
+                suas versões permitidas. É o único arquivo que você deve criar e
+                editar manualmente.
+              </div>
+              <div
+                style="
+                  background: #d4f5e4;
+                  border-radius: 6px;
+                  padding: 8px 14px;
+                  font-size: 13px;
+                  color: #1a3a20;
+                "
+              >
+                <span style="font-weight: bold; font-size: 13px"
+                  >Deve ser versionado no Git.</span
+                >
+                É graças a ele que qualquer pessoa pode recriar o projeto.
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              border-radius: 12px;
+              overflow: hidden;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgb(13, 59, 102),
+                  rgb(26, 95, 168)
+                );
+                padding: 12px 22px;
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 6px;
+                  padding: 4px 10px;
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #fff;
+                "
+              >
+                package-lock.json
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(248, 251, 255);
+                padding: 16px 22px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 14px;
+                  color: #2c3e50;
+                  line-height: 1.75;
+                  margin-bottom: 8px;
+                "
+              >
+                O
+                <span style="font-weight: bold; font-size: 14px"
+                  >registro exato</span
+                >
+                de todas as versões instaladas — inclusive as sub-dependências
+                (dependências das dependências). Gerado automaticamente pelo
+                NPM, nunca deve ser editado manualmente.
+              </div>
+              <div
+                style="
+                  background: #d4f5e4;
+                  border-radius: 6px;
+                  padding: 8px 14px;
+                  font-size: 13px;
+                  color: #1a3a20;
+                "
+              >
+                <span style="font-weight: bold; font-size: 13px"
+                  >Deve ser versionado no Git.</span
+                >
+                Garante que todos instalem exatamente as mesmas versões.
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              border-radius: 12px;
+              overflow: hidden;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgb(13, 59, 102),
+                  rgb(26, 95, 168)
+                );
+                padding: 12px 22px;
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 6px;
+                  padding: 4px 10px;
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #fff;
+                "
+              >
+                node_modules/
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(248, 251, 255);
+                padding: 16px 22px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 14px;
+                  color: #2c3e50;
+                  line-height: 1.75;
+                  margin-bottom: 8px;
+                "
+              >
+                A pasta onde o NPM baixa fisicamente o código de todos os
+                pacotes instalados. Pode conter centenas de megabytes. É gerada
+                automaticamente ao rodar
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 14px;
+                  "
+                  >npm install</span
+                >.
+              </div>
+              <div
+                style="
+                  background: #fde8e8;
+                  border-radius: 6px;
+                  padding: 8px 14px;
+                  font-size: 13px;
+                  color: #5a2020;
+                "
+              >
+                <span style="font-weight: bold; font-size: 13px"
+                  >Nunca deve ir para o Git.</span
+                >
+                Adicione
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(245, 204, 204);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 13px;
+                  "
+                  >node_modules</span
+                >
+                ao
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(245, 204, 204);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 13px;
+                  "
+                  >.gitignore</span
+                >. Qualquer pessoa consegue recriá-la com
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(245, 204, 204);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 13px;
+                  "
+                  >npm install</span
+                >.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Exemplo pratico: projeto completo -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 6px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Exemplo Prático — Projeto completo do zero
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #4a6a8a;
+            line-height: 1.6;
+            margin-bottom: 24px;
+          "
+        >
+          Vamos montar um mini projeto Express com variáveis de ambiente e modo
+          de desenvolvimento com nodemon, usando apenas o NPM. Siga os passos em
+          ordem.
+        </div>
+        <!-- Passo 1 -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              font-size: 14px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 10px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            "
+          >
+            <div
+              style="
+                background: #1a5fa8;
+                color: #fff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 3px 10px;
+                border-radius: 10px;
+              "
+            >
+              Passo 1
+            </div>
+            Criar e inicializar o projeto
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 10px 18px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #5db8f5;
+                border-bottom: 1px solid #2a3a4a;
+                letter-spacing: 1px;
+              "
+            >
+              terminal
+            </div>
+            <pre
+              style="
+                margin: 0px;
+                padding: 20px 26px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 13px;
+                color: rgb(224, 240, 255);
+                line-height: 1.85;
+                overflow-x: auto;
+              "
+            >
+mkdir api-npm-exemplo
+cd api-npm-exemplo
+npm init -y</pre
+            >
+          </div>
+        </div>
+        <!-- Passo 2 -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              font-size: 14px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 10px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            "
+          >
+            <div
+              style="
+                background: #1a5fa8;
+                color: #fff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 3px 10px;
+                border-radius: 10px;
+              "
+            >
+              Passo 2
+            </div>
+            Instalar as dependências
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 10px 18px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #5db8f5;
+                border-bottom: 1px solid #2a3a4a;
+                letter-spacing: 1px;
+              "
+            >
+              terminal
+            </div>
+            <pre
+              style="
+                margin: 0px;
+                padding: 20px 26px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 13px;
+                color: rgb(224, 240, 255);
+                line-height: 1.85;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(93, 184, 245); font-size: 13px;"># Dependências de produção: o servidor precisa delas para rodar</span>
+npm install express dotenv
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Dependências de desenvolvimento: só usamos na hora de programar</span>
+npm install -D nodemon</pre>
+          </div>
+        </div>
+        <!-- Passo 3 -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              font-size: 14px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 10px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            "
+          >
+            <div
+              style="
+                background: #1a5fa8;
+                color: #fff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 3px 10px;
+                border-radius: 10px;
+              "
+            >
+              Passo 3
+            </div>
+            Configurar os scripts no package.json
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 10px 18px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #5db8f5;
+                border-bottom: 1px solid #2a3a4a;
+                letter-spacing: 1px;
+              "
+            >
+              package.json
+            </div>
+            <pre
+              style="
+                margin: 0px;
+                padding: 20px 26px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 13px;
+                color: rgb(224, 240, 255);
+                line-height: 1.85;
+                overflow-x: auto;
+              "
+            >{
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"name"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"api-npm-exemplo"</span>,
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"version"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"1.0.0"</span>,
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"scripts"</span>: {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"start"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"node index.js"</span>,
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"dev"</span>:   <span style="color: rgb(168, 240, 200); font-size: 13px;">"nodemon index.js"</span>
+  },
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"dependencies"</span>: {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"dotenv"</span>:  <span style="color: rgb(168, 240, 200); font-size: 13px;">"^16.4.5"</span>,
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"express"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"^4.19.2"</span>
+  },
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"devDependencies"</span>: {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">"nodemon"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"^3.1.0"</span>
+  }
+}</pre>
+          </div>
+        </div>
+        <!-- Passo 4 -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              font-size: 14px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 10px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            "
+          >
+            <div
+              style="
+                background: #1a5fa8;
+                color: #fff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 3px 10px;
+                border-radius: 10px;
+              "
+            >
+              Passo 4
+            </div>
+            Criar o arquivo .env e o index.js
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                border-radius: 10px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 10px 18px;
+                  font-size: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #5db8f5;
+                  border-bottom: 1px solid #2a3a4a;
+                  letter-spacing: 1px;
+                "
+              >
+                .env — variáveis de ambiente (nunca sobe para o Git)
+              </div>
+              <pre
+                style="
+                  margin: 0px;
+                  padding: 20px 26px;
+                  font-family: &quot;Courier New&quot;, Courier, monospace;
+                  font-size: 13px;
+                  color: rgb(224, 240, 255);
+                  line-height: 1.85;
+                  overflow-x: auto;
+                "
+              >
+PORT=3000
+AMBIENTE=desenvolvimento</pre
+              >
+            </div>
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                border-radius: 10px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 10px 18px;
+                  font-size: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #5db8f5;
+                  border-bottom: 1px solid #2a3a4a;
+                  letter-spacing: 1px;
+                "
+              >
+                index.js
+              </div>
+              <pre
+                style="
+                  margin: 0px;
+                  padding: 20px 26px;
+                  font-family: &quot;Courier New&quot;, Courier, monospace;
+                  font-size: 13px;
+                  color: rgb(224, 240, 255);
+                  line-height: 1.85;
+                  overflow-x: auto;
+                "
+              ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Carrega as variáveis do arquivo .env (pacote dotenv)</span>
+require(<span style="color: rgb(168, 240, 200); font-size: 13px;">'dotenv'</span>).config();
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> express = require(<span style="color: rgb(168, 240, 200); font-size: 13px;">'express'</span>);
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> app = <span style="color: rgb(93, 245, 168); font-size: 13px;">express</span>();
+
+app.<span style="color: rgb(93, 245, 168); font-size: 13px;">get</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'/'</span>, (req, res) =&gt; {
+  res.<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>({
+    mensagem: <span style="color: rgb(168, 240, 200); font-size: 13px;">'API funcionando!'</span>,
+    ambiente: process.env.AMBIENTE,
+    porta:    process.env.PORT,
+  });
+});
+
+app.<span style="color: rgb(93, 245, 168); font-size: 13px;">listen</span>(process.env.PORT, () =&gt; {
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Servidor no ar em http://localhost:${process.env.PORT}`</span>);
+});</pre>
+            </div>
+          </div>
+        </div>
+        <!-- Passo 5 -->
+        <div style="margin-bottom: 14px; font-size: 14px">
+          <div
+            style="
+              font-size: 14px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 10px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            "
+          >
+            <div
+              style="
+                background: #1a5fa8;
+                color: #fff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 3px 10px;
+                border-radius: 10px;
+              "
+            >
+              Passo 5
+            </div>
+            Rodar o projeto
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              margin-bottom: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 10px 18px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #5db8f5;
+                border-bottom: 1px solid #2a3a4a;
+                letter-spacing: 1px;
+              "
+            >
+              terminal
+            </div>
+            <pre
+              style="
+                margin: 0px;
+                padding: 20px 26px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 13px;
+                color: rgb(224, 240, 255);
+                line-height: 1.85;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(93, 184, 245); font-size: 13px;"># Modo desenvolvimento: reinicia automaticamente ao salvar qualquer arquivo</span>
+npm run dev
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Saída esperada:</span>
+<span style="color: rgb(93, 245, 168); font-size: 13px;">[nodemon] starting `node index.js`</span>
+<span style="color: rgb(93, 245, 168); font-size: 13px;">Servidor no ar em http://localhost:3000</span></pre>
+          </div>
+        </div>
+        <div
+          style="
+            background: #d4f5e4;
+            border-left: 4px solid #1a7a45;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #1a3a20;
+            line-height: 1.65;
+          "
+        >
+          Com
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(184, 232, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >nodemon</span
+          >
+          ativo, qualquer alteração salva nos arquivos reinicia o servidor
+          automaticamente. Você não precisa parar e reiniciar manualmente a cada
+          mudança — isso acelera muito o desenvolvimento.
+        </div>
+      </div>
+      <!-- Boas Práticas -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(232, 244, 253) 0%,
+            rgb(208, 233, 248) 100%
+          );
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          border: 1px solid rgb(157, 207, 239);
+          box-shadow: rgba(26, 90, 168, 0.1) 0px 4px 16px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #0d3b66;
+            margin-bottom: 16px;
+          "
+        >
+          Boas práticas ao usar o NPM
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              1
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Nunca suba o node_modules para o Git.</span
+              >
+              Crie um arquivo
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >.gitignore</span
+              >
+              na raiz do projeto e adicione
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >node_modules</span
+              >
+              nele. Qualquer pessoa recria a pasta com
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >npm install</span
+              >.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              2
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Separe corretamente as dependências.</span
+              >
+              Ferramentas de desenvolvimento (jest, nodemon, eslint) pertencem
+              às
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >devDependencies</span
+              >. Carregar pacotes desnecessários em produção aumenta o tamanho
+              do servidor e a superfície de ataque.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              3
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Verifique os pacotes antes de instalar.</span
+              >
+              Antes de instalar um pacote desconhecido, visite
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >npmjs.com</span
+              >
+              e verifique: quando foi atualizado pela última vez, quantos
+              downloads semanais tem e se a documentação é clara.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              4
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Mantenha as dependências atualizadas.</span
+              >
+              Use
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >npm outdated</span
+              >
+              regularmente para verificar quais pacotes têm versões mais novas
+              com correções de segurança.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              5
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Use scripts para padronizar o projeto.</span
+              >
+              Todo colaborador deve iniciar o servidor, rodar os testes e
+              construir o build do mesmo jeito. Centralizar isso em scripts NPM
+              evita o problema de "funciona na minha máquina".
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Referencias -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          box-shadow: rgba(26, 90, 168, 0.1) 0px 4px 18px;
+          border-top: 4px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 16px;
+          "
+        >
+          Referências e Fontes
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <span style="font-weight: bold; font-size: 14px"
+              >NPM — Documentação oficial.</span
+            >
+            CLI Commands Reference. Disponível em: docs.npmjs.com. Acesso em:
+            2025.
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <span style="font-weight: bold; font-size: 14px"
+              >Node.js — Documentação oficial.</span
+            >
+            Modules: Packages. Disponível em: nodejs.org/en/docs. Acesso em:
+            2025.
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <span style="font-weight: bold; font-size: 14px"
+              >CANTRILL, Liz; ROBERTS, Quinn.</span
+            >
+            Working with npm: A Node.js Companion. In: NodeConf 2013. Disponível
+            em: nodejs.org/en/blog. Acesso em: 2025.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

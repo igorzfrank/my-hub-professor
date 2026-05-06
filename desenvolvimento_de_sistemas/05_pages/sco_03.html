@@ -1,0 +1,2236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organização e Boas Práticas no React</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 32px 20px;
+        box-sizing: border-box;
+        font-size: 14px;
+      "
+    >
+      <!-- CABEÇALHO -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 27, 75) 0%,
+            rgb(26, 35, 126) 50%,
+            rgb(2, 136, 209) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(13, 27, 75, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 130px;
+            height: 130px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            top: 30px;
+            right: 160px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              color: #ffffff;
+              font-size: 26px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+              letter-spacing: -0.5px;
+            "
+          >
+            Organização e Boas Práticas<br style="font-size: 26px" /><span
+              style="color: rgb(100, 181, 246); font-size: 26px"
+              >no ReactJS</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            🎯 Estrutura de projeto · Separação de componentes&nbsp;<br
+              style="font-size: 14px"
+            /><strong style="font-size: 14px"
+              ><span style="color: rgb(152, 255, 234); font-size: 14px"
+                ><a
+                  style="color: rgb(152, 255, 234); font-size: 14px"
+                  href="https://meet.google.com/jww-yybg-qdy"
+                  target="_blank"
+                  rel="noopener"
+                  >https://meet.google.com/jww-yybg-qdy</a
+                ></span
+              ></strong
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            &nbsp;
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            <strong style="font-size: 14px"
+              ><span style="color: rgb(152, 255, 234); font-size: 14px"
+                >Repositório do projeto painel de recados:
+                https://github.com/iKeliven/painel-recados.git</span
+              ></strong
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            &nbsp;
+          </div>
+        </div>
+      </div>
+      <!-- OBJETIVOS -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 28px 32px;
+          margin-bottom: 22px;
+          box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <span style="font-size: 22px">🎯</span>
+          <span
+            style="
+              color: #1565c0;
+              font-size: 17px;
+              font-weight: 800;
+              letter-spacing: -0.3px;
+            "
+            >Objetivos da Aula</span
+          >
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(227, 242, 253),
+                rgb(187, 222, 251)
+              );
+              border-radius: 12px;
+              padding: 14px 16px;
+              display: flex;
+              align-items: flex-start;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: #1565c0;
+                color: white;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 11px;
+                font-weight: 800;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+              >1</span
+            >
+            <span
+              style="
+                color: #0d47a1;
+                font-size: 13px;
+                font-weight: 600;
+                line-height: 1.5;
+              "
+              >Organizar corretamente a estrutura de um projeto React</span
+            >
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(227, 242, 253),
+                rgb(187, 222, 251)
+              );
+              border-radius: 12px;
+              padding: 14px 16px;
+              display: flex;
+              align-items: flex-start;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: #1565c0;
+                color: white;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 11px;
+                font-weight: 800;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+              >2</span
+            >
+            <span
+              style="
+                color: #0d47a1;
+                font-size: 13px;
+                font-weight: 600;
+                line-height: 1.5;
+              "
+              >Separar responsabilidades entre componentes</span
+            >
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(227, 242, 253),
+                rgb(187, 222, 251)
+              );
+              border-radius: 12px;
+              padding: 14px 16px;
+              display: flex;
+              align-items: flex-start;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: #1565c0;
+                color: white;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 11px;
+                font-weight: 800;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+              >3</span
+            >
+            <span
+              style="
+                color: #0d47a1;
+                font-size: 13px;
+                font-weight: 600;
+                line-height: 1.5;
+              "
+              >Aplicar boas práticas de código</span
+            >
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(227, 242, 253),
+                rgb(187, 222, 251)
+              );
+              border-radius: 12px;
+              padding: 14px 16px;
+              display: flex;
+              align-items: flex-start;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: #1565c0;
+                color: white;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 11px;
+                font-weight: 800;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+              >4</span
+            >
+            <span
+              style="
+                color: #0d47a1;
+                font-size: 13px;
+                font-weight: 600;
+                line-height: 1.5;
+              "
+              >Consolidar props, estado, eventos e hooks</span
+            >
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(227, 242, 253),
+                rgb(187, 222, 251)
+              );
+              border-radius: 12px;
+              padding: 14px 16px;
+              display: flex;
+              align-items: flex-start;
+              gap: 10px;
+              grid-column: span 2;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: #1565c0;
+                color: white;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 11px;
+                font-weight: 800;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+              >5</span
+            >
+            <span
+              style="
+                color: #0d47a1;
+                font-size: 13px;
+                font-weight: 600;
+                line-height: 1.5;
+              "
+              >Desenvolver uma aplicação completa integrando todos os
+              conhecimentos</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- SEÇÃO 1 — ORGANIZAÇÃO DE PROJETOS -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+              flex-shrink: 0;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧠 Organização de Projetos ReactJs</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📌</span>
+            <span style="color: #1a237e; font-size: 15px; font-weight: 800"
+              >Por que organizar?</span
+            >
+          </div>
+          <div
+            style="
+              background: rgb(245, 247, 255);
+              border-radius: 12px;
+              padding: 6px;
+              margin-bottom: 22px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: rgb(252, 228, 236);
+                  border-radius: 8px;
+                  padding: 16px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    color: #b71c1c;
+                    font-size: 12px;
+                    font-weight: 800;
+                    margin-bottom: 10px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                  "
+                >
+                  ❌ Sem organização
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      background: #ffffff;
+                      border-radius: 6px;
+                      padding: 7px 11px;
+                      color: #c62828;
+                      font-size: 12px;
+                      font-weight: 600;
+                    "
+                  >
+                    Código bagunçado → difícil manter
+                  </div>
+                  <div
+                    style="
+                      background: #ffffff;
+                      border-radius: 6px;
+                      padding: 7px 11px;
+                      color: #c62828;
+                      font-size: 12px;
+                      font-weight: 600;
+                    "
+                  >
+                    Componentes misturados → confuso
+                  </div>
+                  <div
+                    style="
+                      background: #ffffff;
+                      border-radius: 6px;
+                      padding: 7px 11px;
+                      color: #c62828;
+                      font-size: 12px;
+                      font-weight: 600;
+                    "
+                  >
+                    Reutilização baixa → retrabalho
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  background: rgb(232, 245, 233);
+                  border-radius: 8px;
+                  padding: 16px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    color: #1b5e20;
+                    font-size: 12px;
+                    font-weight: 800;
+                    margin-bottom: 10px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                  "
+                >
+                  ✔ Com organização
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      background: #ffffff;
+                      border-radius: 6px;
+                      padding: 7px 11px;
+                      color: #2e7d32;
+                      font-size: 12px;
+                      font-weight: 600;
+                    "
+                  >
+                    Organização → escalabilidade
+                  </div>
+                  <div
+                    style="
+                      background: #ffffff;
+                      border-radius: 6px;
+                      padding: 7px 11px;
+                      color: #2e7d32;
+                      font-size: 12px;
+                      font-weight: 600;
+                    "
+                  >
+                    Clareza → produtividade
+                  </div>
+                  <div
+                    style="
+                      background: #ffffff;
+                      border-radius: 6px;
+                      padding: 7px 11px;
+                      color: #2e7d32;
+                      font-size: 12px;
+                      font-weight: 600;
+                    "
+                  >
+                    Padronização → trabalho em equipe
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📁</span>
+            <span style="color: #1a237e; font-size: 15px; font-weight: 800"
+              >Estrutura básica recomendada</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 16px;
+              margin-bottom: 22px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(100, 181, 246); font-size: 13px"
+                >src/</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(144, 164, 174); font-size: 13px"
+              >
+                ├── </span
+              ><span style="color: rgb(206, 147, 216); font-size: 13px"
+                >components/</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(144, 164, 174); font-size: 13px"
+              >
+                ├── </span
+              ><span style="color: rgb(128, 203, 196); font-size: 13px"
+                >pages/</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(144, 164, 174); font-size: 13px"
+              >
+                ├── </span
+              ><span style="color: rgb(255, 204, 2); font-size: 13px"
+                >hooks/</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(144, 164, 174); font-size: 13px"
+              >
+                ├── </span
+              ><span style="color: rgb(239, 154, 154); font-size: 13px"
+                >services/</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(144, 164, 174); font-size: 13px"
+              >
+                ├── </span
+              ><span style="color: rgb(165, 214, 167); font-size: 13px"
+                >assets/</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(144, 164, 174); font-size: 13px"
+              >
+                ├── </span
+              ><span style="color: rgb(100, 181, 246); font-size: 13px"
+                >App.jsx</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(144, 164, 174); font-size: 13px"
+              >
+                └── </span
+              ><span style="color: rgb(100, 181, 246); font-size: 13px"
+                >main.jsx</span
+              >
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: rgb(237, 231, 246);
+                  border-radius: 10px;
+                  padding: 11px 14px;
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 8px;
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    background: #7b1fa2;
+                    color: white;
+                    border-radius: 5px;
+                    padding: 2px 8px;
+                    font-size: 11px;
+                    font-weight: 800;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    flex-shrink: 0;
+                    margin-top: 1px;
+                  "
+                  >components/</span
+                >
+                <span style="color: #4a148c; font-size: 12px; font-weight: 600"
+                  >Componentes reutilizáveis: botões, cards, inputs</span
+                >
+              </div>
+              <div
+                style="
+                  background: rgb(224, 247, 250);
+                  border-radius: 10px;
+                  padding: 11px 14px;
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 8px;
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    background: #00695c;
+                    color: white;
+                    border-radius: 5px;
+                    padding: 2px 8px;
+                    font-size: 11px;
+                    font-weight: 800;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    flex-shrink: 0;
+                    margin-top: 1px;
+                  "
+                  >pages/</span
+                >
+                <span style="color: #004d40; font-size: 12px; font-weight: 600"
+                  >Páginas principais da aplicação</span
+                >
+              </div>
+              <div
+                style="
+                  background: rgb(255, 248, 225);
+                  border-radius: 10px;
+                  padding: 11px 14px;
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 8px;
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    background: #f9a825;
+                    color: white;
+                    border-radius: 5px;
+                    padding: 2px 8px;
+                    font-size: 11px;
+                    font-weight: 800;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    flex-shrink: 0;
+                    margin-top: 1px;
+                  "
+                  >hooks/</span
+                >
+                <span style="color: #f57f17; font-size: 12px; font-weight: 600"
+                  >Funções customizadas (avançado)</span
+                >
+              </div>
+              <div
+                style="
+                  background: rgb(252, 228, 236);
+                  border-radius: 10px;
+                  padding: 11px 14px;
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 8px;
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    background: #c62828;
+                    color: white;
+                    border-radius: 5px;
+                    padding: 2px 8px;
+                    font-size: 11px;
+                    font-weight: 800;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    flex-shrink: 0;
+                    margin-top: 1px;
+                  "
+                  >services/</span
+                >
+                <span style="color: #880e4f; font-size: 12px; font-weight: 600"
+                  >Requisições externas (API)</span
+                >
+              </div>
+              <div
+                style="
+                  background: rgb(232, 245, 233);
+                  border-radius: 10px;
+                  padding: 11px 14px;
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 8px;
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    background: #388e3c;
+                    color: white;
+                    border-radius: 5px;
+                    padding: 2px 8px;
+                    font-size: 11px;
+                    font-weight: 800;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    flex-shrink: 0;
+                    margin-top: 1px;
+                  "
+                  >assets/</span
+                >
+                <span style="color: #1b5e20; font-size: 12px; font-weight: 600"
+                  >Imagens, ícones, arquivos estáticos</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Espaço imagem arquitetura -->
+        </div>
+      </div>
+      <!-- SEÇÃO 2 — SEPARAÇÃO DE COMPONENTES -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(106, 27, 154),
+              rgb(123, 31, 162)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+              flex-shrink: 0;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧩 Separação de Componentes</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(237, 231, 246),
+                rgb(232, 234, 246)
+              );
+              border-radius: 12px;
+              padding: 14px 20px;
+              margin-bottom: 20px;
+              border-left: 5px solid rgb(123, 31, 162);
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 20px">📌</span>
+            <div style="color: #4a148c; font-size: 14px; font-weight: bold">
+              Cada componente deve ter
+              <span style="text-decoration: underline; font-size: 14px"
+                >uma única responsabilidade</span
+              >.
+            </div>
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 16px;
+              margin-bottom: 20px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: rgba(229, 57, 53, 0.1) 0px 3px 14px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #e53935;
+                  padding: 10px 16px;
+                  color: white;
+                  font-size: 13px;
+                  font-weight: 800;
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                "
+              >
+                ❌ Errado — tudo em um componente
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  padding: 16px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                "
+              >
+                <span style="color: rgb(255, 204, 2); font-size: 12px"
+                  >function</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 12px"
+                  >App</span
+                ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                  >() {</span
+                ><br style="font-size: 12px" />&nbsp;&nbsp;<span
+                  style="color: rgb(255, 204, 2); font-size: 12px"
+                  >return</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 12px">(</span
+                ><br style="font-size: 12px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(239, 154, 154); font-size: 12px"
+                  >&lt;div&gt;</span
+                ><br
+                  style="font-size: 12px"
+                />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(239, 154, 154); font-size: 12px"
+                  >&lt;h1&gt;</span
+                ><span style="color: rgb(165, 214, 167); font-size: 12px"
+                  >Lista</span
+                ><span style="color: rgb(239, 154, 154); font-size: 12px"
+                  >&lt;/h1&gt;</span
+                ><br
+                  style="font-size: 12px"
+                />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(239, 154, 154); font-size: 12px"
+                  >&lt;input /&gt;</span
+                ><br
+                  style="font-size: 12px"
+                />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(239, 154, 154); font-size: 12px"
+                  >&lt;button&gt;</span
+                ><span style="color: rgb(165, 214, 167); font-size: 12px"
+                  >Adicionar</span
+                ><span style="color: rgb(239, 154, 154); font-size: 12px"
+                  >&lt;/button&gt;</span
+                ><br
+                  style="font-size: 12px"
+                />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(239, 154, 154); font-size: 12px"
+                  >&lt;ul&gt;&lt;li&gt;</span
+                ><span style="color: rgb(165, 214, 167); font-size: 12px"
+                  >Tarefa 1</span
+                ><span style="color: rgb(239, 154, 154); font-size: 12px"
+                  >&lt;/li&gt;&lt;/ul&gt;</span
+                ><br style="font-size: 12px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(239, 154, 154); font-size: 12px"
+                  >&lt;/div&gt;</span
+                ><br style="font-size: 12px" />&nbsp;&nbsp;<span
+                  style="color: rgb(144, 202, 249); font-size: 12px"
+                  >);</span
+                ><br style="font-size: 12px" /><span
+                  style="color: rgb(144, 202, 249); font-size: 12px"
+                  >}</span
+                >
+              </div>
+            </div>
+            <div
+              style="
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: rgba(56, 142, 60, 0.1) 0px 3px 14px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #388e3c;
+                  padding: 10px 16px;
+                  color: white;
+                  font-size: 13px;
+                  font-weight: 800;
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                "
+              >
+                ✔ Correto — componentes separados
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  padding: 16px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 2;
+                "
+              >
+                <span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >App</span
+                ><br style="font-size: 13px" /><span
+                  style="color: rgb(144, 164, 174); font-size: 13px"
+                >
+                  ├── </span
+                ><span style="color: rgb(206, 147, 216); font-size: 13px"
+                  >Header</span
+                ><br style="font-size: 13px" /><span
+                  style="color: rgb(144, 164, 174); font-size: 13px"
+                >
+                  ├── </span
+                ><span style="color: rgb(128, 203, 196); font-size: 13px"
+                  >Form</span
+                ><br style="font-size: 13px" /><span
+                  style="color: rgb(144, 164, 174); font-size: 13px"
+                >
+                  ├── </span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px"
+                  >Lista</span
+                ><br style="font-size: 13px" /><span
+                  style="color: rgb(144, 164, 174); font-size: 13px"
+                >
+                  └── </span
+                ><span style="color: rgb(165, 214, 167); font-size: 13px"
+                  >Item</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; gap: 10px; flex-wrap: wrap; font-size: 14px"
+          >
+            <div
+              style="
+                background: #e8f5e9;
+                border-radius: 20px;
+                padding: 8px 18px;
+                color: #2e7d32;
+                font-size: 13px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              ♻️ Reutilização
+            </div>
+            <div
+              style="
+                background: #e8f5e9;
+                border-radius: 20px;
+                padding: 8px 18px;
+                color: #2e7d32;
+                font-size: 13px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              🧪 Testabilidade
+            </div>
+            <div
+              style="
+                background: #e8f5e9;
+                border-radius: 20px;
+                padding: 8px 18px;
+                color: #2e7d32;
+                font-size: 13px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              🔧 Manutenção fácil
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SEÇÃO 3 — BOAS PRÁTICAS -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+              flex-shrink: 0;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧼 Boas Práticas no React</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 14px;
+              padding: 18px;
+              border-top: 4px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #00695c;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              🧩 1. Nomeação clara
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 10px 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                margin-bottom: 6px;
+              "
+            >
+              <span style="color: rgb(165, 214, 167); font-size: 12px">✔ </span
+              ><span style="color: rgb(255, 204, 2); font-size: 12px"
+                >function</span
+              >
+              <span style="color: rgb(100, 181, 246); font-size: 12px"
+                >ListaTarefas</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                >() {}</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 10px 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+              "
+            >
+              <span style="color: rgb(239, 154, 154); font-size: 12px">❌ </span
+              ><span style="color: rgb(255, 204, 2); font-size: 12px"
+                >function</span
+              >
+              <span style="color: rgb(239, 154, 154); font-size: 12px">L</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                >() {}</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 14px;
+              padding: 18px;
+              border-top: 4px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #00695c;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              🧩 2. Componentes pequenos
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 10px 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                margin-bottom: 6px;
+              "
+            >
+              <span style="color: rgb(165, 214, 167); font-size: 12px">✔ </span
+              ><span style="color: rgb(255, 204, 2); font-size: 12px"
+                >function</span
+              >
+              <span style="color: rgb(100, 181, 246); font-size: 12px"
+                >Botao</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                >() {}</span
+              >
+            </div>
+            <div
+              style="
+                background: #004d40;
+                border-radius: 6px;
+                padding: 7px 11px;
+                color: #80cbc4;
+                font-size: 11px;
+                font-weight: 600;
+              "
+            >
+              ❌ Evitar componentes gigantes
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 14px;
+              padding: 18px;
+              border-top: 4px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #00695c;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              🧩 3. Separar lógica e interface
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 6px;
+                  padding: 7px 12px;
+                  color: #ffcc02;
+                  font-size: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+              >
+                lógica → estado, funções
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 6px;
+                  padding: 7px 12px;
+                  color: #ce93d8;
+                  font-size: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+              >
+                interface → JSX
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 14px;
+              padding: 18px;
+              border-top: 4px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #00695c;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              🧩 4. Evitar duplicação
+            </div>
+            <div
+              style="
+                background: #004d40;
+                border-radius: 8px;
+                padding: 10px 14px;
+                color: #80cbc4;
+                font-size: 12px;
+                line-height: 1.6;
+              "
+            >
+              Se você escreveu duas vezes, provavelmente deveria ser um
+              componente.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 14px;
+              padding: 18px;
+              border-top: 4px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #00695c;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              🧩 5. Sempre usar key em listas
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 10px 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(144, 202, 249); font-size: 12px">{</span
+              ><span style="color: rgb(100, 181, 246); font-size: 12px"
+                >lista</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">.</span
+              ><span style="color: rgb(255, 204, 2); font-size: 12px">map</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">(</span
+              ><span style="color: rgb(100, 181, 246); font-size: 12px"
+                >item</span
+              >
+              <span style="color: rgb(144, 202, 249); font-size: 12px"
+                >=&gt; (</span
+              ><br style="font-size: 12px" />&nbsp;&nbsp;<span
+                style="color: rgb(239, 154, 154); font-size: 12px"
+                >&lt;Item </span
+              ><span style="color: rgb(206, 147, 216); font-size: 12px"
+                >key</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">={</span
+              ><span style="color: rgb(100, 181, 246); font-size: 12px"
+                >item</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">.</span
+              ><span style="color: rgb(165, 214, 167); font-size: 12px">id</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">}</span
+              ><span style="color: rgb(239, 154, 154); font-size: 12px">
+                /&gt;</span
+              ><br style="font-size: 12px" /><span
+                style="color: rgb(144, 202, 249); font-size: 12px"
+                >))}</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 14px;
+              padding: 18px;
+              border-top: 4px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #00695c;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              🧩 6. Estado mínimo necessário
+            </div>
+            <div
+              style="
+                background: #004d40;
+                border-radius: 8px;
+                padding: 10px 14px;
+                color: #80cbc4;
+                font-size: 12px;
+                line-height: 1.6;
+              "
+            >
+              Não criar estados desnecessários. Crie estado apenas para dados
+              que realmente mudam e afetam a interface.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SEÇÃO 4 — REVISÃO GERAL -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+              flex-shrink: 0;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔄 Revisão Geral dos Conceitos</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 0px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 14px;
+              padding: 18px;
+              border-left: 4px solid rgb(25, 118, 210);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #1565c0;
+                  color: white;
+                  border-radius: 6px;
+                  padding: 4px 10px;
+                  font-size: 13px;
+                  font-weight: 800;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+                >Props</span
+              >
+              <span style="color: #1565c0; font-size: 13px; font-weight: 800"
+                >📦 Comunicação</span
+              >
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #0d47a1;
+                  font-size: 12px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                "
+              >
+                • Comunicação entre componentes
+              </div>
+              <div
+                style="
+                  color: #0d47a1;
+                  font-size: 12px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                "
+              >
+                • Fluxo: pai → filho
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(237, 231, 246);
+              border-radius: 14px;
+              padding: 18px;
+              border-left: 4px solid rgb(123, 31, 162);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #6a1b9a;
+                  color: white;
+                  border-radius: 6px;
+                  padding: 4px 10px;
+                  font-size: 13px;
+                  font-weight: 800;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+                >useState</span
+              >
+              <span style="color: #6a1b9a; font-size: 13px; font-weight: 800"
+                >⚛️ Estado</span
+              >
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #4a148c;
+                  font-size: 12px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                "
+              >
+                • Controla dados dinâmicos
+              </div>
+              <div
+                style="
+                  color: #4a148c;
+                  font-size: 12px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                "
+              >
+                • Re-renderiza a interface
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 14px;
+              padding: 18px;
+              border-left: 4px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #00695c;
+                  color: white;
+                  border-radius: 6px;
+                  padding: 4px 10px;
+                  font-size: 13px;
+                  font-weight: 800;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+                >useEffect</span
+              >
+              <span style="color: #00695c; font-size: 13px; font-weight: 800"
+                >⚙️ Efeitos</span
+              >
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #004d40;
+                  font-size: 12px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                "
+              >
+                • Executa efeitos colaterais
+              </div>
+              <div
+                style="
+                  color: #004d40;
+                  font-size: 12px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                "
+              >
+                • Simula chamadas de API
+              </div>
+              <div
+                style="
+                  color: #004d40;
+                  font-size: 12px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                "
+              >
+                • Reage a mudanças de estado
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 18px;
+              border-left: 4px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 6px;
+                  padding: 4px 10px;
+                  font-size: 13px;
+                  font-weight: 800;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+                >Render + Events</span
+              >
+              <span style="color: #e65100; font-size: 13px; font-weight: 800"
+                >🔁 UI</span
+              >
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #bf360c;
+                  font-size: 12px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                "
+              >
+                • Listas com
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(255, 243, 224);
+                    font-size: 12px;
+                  "
+                  >map()</span
+                >
+              </div>
+              <div
+                style="
+                  color: #bf360c;
+                  font-size: 12px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                "
+              >
+                • Condicional com
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(255, 243, 224);
+                    font-size: 12px;
+                  "
+                  >if</span
+                >
+                ou
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(255, 243, 224);
+                    font-size: 12px;
+                  "
+                  >? :</span
+                >
+              </div>
+              <div
+                style="
+                  color: #bf360c;
+                  font-size: 12px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                "
+              >
+                • Eventos:
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(255, 243, 224);
+                    font-size: 12px;
+                  "
+                  >onClick</span
+                >
+                ·
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(255, 243, 224);
+                    font-size: 12px;
+                  "
+                  >onChange</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Espaço mapa mental -->
+        <div style="padding: 0px 28px 28px; font-size: 14px">
+          <div
+            style="
+              background: rgb(245, 247, 255);
+              border: 2.5px dashed rgb(144, 180, 245);
+              border-radius: 14px;
+              padding: 36px 20px;
+              text-align: center;
+              margin-top: 16px;
+              font-size: 14px;
+            "
+          >
+            <div style="color: #b0c4f5; font-size: 12px; margin-top: 4px">
+              <img
+                style="
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  font-size: 12px;
+                "
+                src="https://ava.sesisenai.org.br/pluginfile.php/1902271/mod_page/content/5/sketch%20%281%29.png"
+                width="821"
+                height="547"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- PRÉ-PROJETO -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(55, 71, 79),
+              rgb(84, 110, 122)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span style="font-size: 20px">🧪</span>
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Prática Aplicada: Pré-Projeto</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: rgb(236, 239, 241);
+              border-radius: 12px;
+              padding: 14px 18px;
+              margin-bottom: 18px;
+              border-left: 4px solid rgb(84, 110, 122);
+              display: flex;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 18px; flex-shrink: 0">📚</span>
+            <div style="font-size: 14px">
+              <span style="color: #37474f; font-size: 13px; font-weight: 800"
+                >Contexto: <br style="font-size: 13px" /></span
+              ><span style="color: #546e7a; font-size: 13px"
+                >Criar um pequeno sistema de controle de mensagens.<br
+                  style="font-size: 13px" /><br style="font-size: 13px" /><img
+                  src="https://ava.sesisenai.org.br/pluginfile.php/1902271/mod_page/content/5/sketch.png"
+                  width="750"
+                  height="368"
+                  style="font-size: 13px" /><br style="font-size: 13px"
+              /></span>
+            </div>
+            <div style="font-size: 14px">&nbsp;</div>
+            <div style="font-size: 14px">&nbsp;</div>
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #eceff1;
+                border-radius: 10px;
+                padding: 11px 16px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: #37474f;
+                font-size: 13px;
+                font-weight: 600;
+              "
+            >
+              ✔ Criar um input controlado
+            </div>
+            <div
+              style="
+                background: #eceff1;
+                border-radius: 10px;
+                padding: 11px 16px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: #37474f;
+                font-size: 13px;
+                font-weight: 600;
+              "
+            >
+              ✔ Criar botão de adicionar
+            </div>
+            <div
+              style="
+                background: #eceff1;
+                border-radius: 10px;
+                padding: 11px 16px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: #37474f;
+                font-size: 13px;
+                font-weight: 600;
+              "
+            >
+              ✔ Exibir mensagens em lista
+            </div>
+            <div
+              style="
+                background: #eceff1;
+                border-radius: 10px;
+                padding: 11px 16px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: #37474f;
+                font-size: 13px;
+                font-weight: 600;
+              "
+            >
+              ✔ Criar botão de remover
+            </div>
+            <div
+              style="
+                background: #eceff1;
+                border-radius: 10px;
+                padding: 11px 16px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: #37474f;
+                font-size: 13px;
+                font-weight: 600;
+                grid-column: span 2;
+              "
+            >
+              ✔ Mostrar mensagem quando a lista estiver vazia
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: #6a1b9a;
+                color: white;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+              "
+              >useState</span
+            >
+            <span
+              style="
+                background: #1565c0;
+                color: white;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+              "
+              >Eventos</span
+            >
+            <span
+              style="
+                background: #00695c;
+                color: white;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+              "
+              >Renderização condicional</span
+            >
+            <span
+              style="
+                background: #e65100;
+                color: white;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+              "
+              >Listas com map()</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- FECHAMENTO -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 27, 75) 0%,
+            rgb(26, 35, 126) 50%,
+            rgb(2, 136, 209) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(13, 27, 75, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 26px">🚀</span>
+            <span style="color: #fff; font-size: 18px; font-weight: 800"
+              >Fechamento da Aula</span
+            >
+          </div>
+          <div style="color: #bbdefb; font-size: 14px; margin-bottom: 18px">
+            Nesta aula o aluno:
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px 16px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 18px">✔</span
+              ><span style="color: #e3f2fd; font-size: 13px; font-weight: 600"
+                >Aprendeu organização de projeto</span
+              >
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px 16px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 18px">✔</span
+              ><span style="color: #e3f2fd; font-size: 13px; font-weight: 600"
+                >Aplicou boas práticas de código</span
+              >
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px 16px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 18px">✔</span
+              ><span style="color: #e3f2fd; font-size: 13px; font-weight: 600"
+                >Consolidou os conceitos do React</span
+              >
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px 16px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 18px">✔</span
+              ><span style="color: #e3f2fd; font-size: 13px; font-weight: 600"
+                >Criou uma aplicação completa</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

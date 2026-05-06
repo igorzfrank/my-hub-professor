@@ -1,0 +1,3328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autenticação com Bcrypt e JWT</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(240, 244, 249);
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102) 0%,
+            rgb(26, 95, 168) 100%
+          );
+          border-radius: 14px;
+          padding: 36px 40px;
+          margin-bottom: 24px;
+          box-shadow: rgba(13, 59, 102, 0.28) 0px 8px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a8c8f0;
+            margin-bottom: 10px;
+          "
+        >
+          Técnico em Desenvolvimento de Sistemas — Desenvolvimento de Sistemas
+        </div>
+        <div
+          style="
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 12px;
+          "
+        >
+          Autenticação com Bcrypt e JWT<br style="font-size: 28px" /><span
+            style="color: rgb(168, 208, 245); font-size: 28px"
+            >Senhas seguras e acesso controlado em APIs</span
+          >
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #c8dff5;
+            line-height: 1.65;
+            max-width: 820px;
+          "
+        >
+          Nesta aula você vai aprender a proteger senhas de usuários com
+          <strong style="color: rgb(255, 255, 255); font-size: 15px"
+            >Bcrypt</strong
+          >
+          e a controlar o acesso à sua API com tokens
+          <strong style="color: rgb(255, 255, 255); font-size: 15px"
+            >JWT</strong
+          >
+          — as duas ferramentas mais usadas no mercado para autenticação em
+          aplicações Node.js.
+        </div>
+        <div
+          style="
+            margin-top: 22px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Node.js</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Express</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >bcryptjs</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >jsonwebtoken</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >PostgreSQL</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >MVC</span
+          >
+        </div>
+      </div>
+      <!-- ══ CAPACIDADES ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          border-left: 6px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 14px;
+          "
+        >
+          Capacidades Trabalhadas
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                height: 6px;
+                width: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 8px;
+                flex-shrink: 0;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Aplicar linguagem de programação por meio de APIs, bibliotecas e
+              frameworks na construção de rotinas de software.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                height: 6px;
+                width: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 8px;
+                flex-shrink: 0;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Selecionar linguagem de programação de acordo com os requisitos.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════ -->
+      <!-- MÓDULO 1 — O PROBLEMA         -->
+      <!-- ══════════════════════════════ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102),
+            rgb(26, 95, 168)
+          );
+          border-radius: 14px 14px 0px 0px;
+          padding: 20px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7ab0e0;
+            margin-bottom: 6px;
+          "
+        >
+          Módulo 1
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #fff">
+          O problema — senhas e acesso sem proteção
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          1.1 — O que acontece em uma API sem autenticação
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          Nas aulas anteriores, qualquer pessoa que soubesse o endereço da API
+          conseguia listar, criar, editar e deletar dados livremente. Isso é
+          aceitável em um projeto de aprendizagem, mas em um sistema real é uma
+          falha grave. Uma API de produção precisa responder a duas perguntas
+          antes de processar qualquer requisição:
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(234, 242, 251);
+              border-radius: 10px;
+              padding: 20px;
+              border-left: 4px solid rgb(26, 95, 168);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 28px; margin-bottom: 8px">🔑</div>
+            <div
+              style="
+                font-size: 15px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 6px;
+              "
+            >
+              Autenticação
+            </div>
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.7">
+              <strong style="font-size: 14px">Quem é você?</strong
+              ><br style="font-size: 14px" />Verificar que o usuário é quem diz
+              ser — geralmente com e-mail e senha.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(234, 242, 251);
+              border-radius: 10px;
+              padding: 20px;
+              border-left: 4px solid rgb(26, 95, 168);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 28px; margin-bottom: 8px">🛡️</div>
+            <div
+              style="
+                font-size: 15px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 6px;
+              "
+            >
+              Autorização
+            </div>
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.7">
+              <strong style="font-size: 14px">O que você pode fazer?</strong
+              ><br style="font-size: 14px" />Verificar se o usuário autenticado
+              tem permissão para acessar aquele recurso.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          <img
+            style="
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 18px;
+            "
+            src="https://substackcdn.com/image/fetch/$s_!p9Mo!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4b1ea553-a5c2-41af-93f6-e2a9db491c77_888x630.png"
+            alt="Lesson 7: API Design and Rate Limiting - by Systems"
+            width="619"
+            height="439"
+          />1.2 — Dois problemas, duas soluções
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(255, 244, 244);
+              border-width: 4px 1px 1px;
+              border-style: solid;
+              border-color: rgb(192, 57, 43) rgb(240, 200, 200)
+                rgb(240, 200, 200);
+              border-image: initial;
+              border-radius: 10px;
+              padding: 18px 20px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #8a1a1a;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+              "
+            >
+              Problema 1 — Armazenar senhas
+            </div>
+            <div
+              style="font-size: 13px; color: rgb(90, 26, 26); line-height: 1.8"
+            >
+              Se o banco de dados vazar e as senhas estiverem em texto puro,
+              todos os usuários ficam comprometidos. Senhas
+              <strong style="font-size: 13px">nunca</strong> podem ser salvas
+              como estão.
+            </div>
+            <div
+              style="
+                margin-top: 12px;
+                background: #fff;
+                border-radius: 6px;
+                padding: 8px 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #c0392b;
+              "
+            >
+              senha: "minhasenha123" ← ERRADO
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 244, 244);
+              border-width: 4px 1px 1px;
+              border-style: solid;
+              border-color: rgb(192, 57, 43) rgb(240, 200, 200)
+                rgb(240, 200, 200);
+              border-image: initial;
+              border-radius: 10px;
+              padding: 18px 20px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #8a1a1a;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+              "
+            >
+              Problema 2 — Controlar acesso
+            </div>
+            <div
+              style="font-size: 13px; color: rgb(90, 26, 26); line-height: 1.8"
+            >
+              Depois de fazer login, como a API sabe que as próximas requisições
+              vêm do mesmo usuário autenticado? HTTP é sem estado — cada
+              requisição é independente.
+            </div>
+            <div
+              style="
+                margin-top: 12px;
+                background: #fff;
+                border-radius: 6px;
+                padding: 8px 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #c0392b;
+              "
+            >
+              GET /meus-dados ← quem está pedindo?
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            margin-top: 20px;
+            background: rgb(234, 242, 251);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 4px solid rgb(26, 95, 168);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="font-size: 14px; color: rgb(26, 42, 58); line-height: 1.85"
+          >
+            <strong style="font-size: 14px">A solução:</strong> usamos o
+            <strong style="font-size: 14px">Bcrypt</strong> para transformar
+            senhas em hashes seguros antes de salvar no banco, e o
+            <strong style="font-size: 14px">JWT</strong> para gerar um token que
+            o cliente envia em cada requisição, provando que está autenticado.
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════ -->
+      <!-- MÓDULO 2 — BCRYPT             -->
+      <!-- ══════════════════════════════ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102),
+            rgb(26, 95, 168)
+          );
+          border-radius: 14px 14px 0px 0px;
+          padding: 20px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7ab0e0;
+            margin-bottom: 6px;
+          "
+        >
+          Módulo 2
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #fff">
+          Bcrypt — protegendo senhas com hash
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          2.1 — O que é um hash?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          Um <strong style="font-size: 15px">hash</strong> é uma transformação
+          de mão única: você transforma a senha em uma sequência de caracteres
+          embaralhada. O importante é que
+          <strong style="font-size: 15px">não existe caminho de volta</strong> —
+          dado o hash, é impossível recuperar a senha original. Para verificar
+          se uma senha está correta, você gera o hash dela novamente e compara
+          com o que está salvo.
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          <img
+            style="
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 15px;
+            "
+            src="https://media.geeksforgeeks.org/wp-content/uploads/20220427143809/Artboard1.jpg"
+            alt="Hashing Passwords in Python with BCrypt - GeeksforGeeks"
+            width="640"
+            height="320"
+          />
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            Exemplo de hash gerado pelo Bcrypt
+          </div>
+          <div
+            style="
+              padding: 18px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2.2;
+            "
+          >
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Senha original (nunca salva no banco)</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(168, 240, 200); font-size: 13px"
+              >"minhasenha123"</span
+            ><br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Hash gerado pelo Bcrypt (o que é salvo no banco)</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >"$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy"</span
+            >
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(234, 242, 251);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 4px solid rgb(26, 95, 168);
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="font-size: 14px; color: rgb(26, 42, 58); line-height: 1.85"
+          >
+            <strong style="font-size: 14px">Analogia:</strong> o hash é como
+            passar carne pelo moedor. Você não consegue pegar o resultado e
+            desmontar para recuperar o pedaço original. Para saber se dois
+            pedaços eram iguais, você passa os dois pelo mesmo moedor e compara
+            o resultado.
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          2.2 — O que é o Salt e o Cost Factor?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          O Bcrypt adiciona dois conceitos que tornam o hash ainda mais seguro:
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          <img
+            style="
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 15px;
+            "
+            src="https://s3.stackabuse.com/media/articles/hashing-passwords-in-python-with-bcrypt-1.png"
+            alt="Hashing Passwords in Python with BCrypt"
+            width="635"
+            height="189"
+          />
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(244, 248, 255);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 14px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 6px;
+              "
+            >
+              Salt — valor aleatório único
+            </div>
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.75">
+              Antes de gerar o hash, o Bcrypt adiciona um trecho aleatório à
+              senha — o <em style="font-size: 14px">salt</em>. Isso garante que
+              dois usuários com a
+              <strong style="font-size: 14px">mesma senha</strong> terão
+              <strong style="font-size: 14px"
+                >hashes completamente diferentes</strong
+              >, tornando impossível detectar usuários com senhas iguais olhando
+              para o banco.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(244, 248, 255);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 14px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 6px;
+              "
+            >
+              Cost Factor (rounds) — dificuldade intencional
+            </div>
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.75">
+              O parâmetro
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >saltRounds</code
+              >
+              define quantas vezes o algoritmo repete a operação. Um valor de
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >10</code
+              >
+              significa 2¹⁰ = 1024 repetições. Isso torna o processo
+              intencionalmente lento — o suficiente para ser imperceptível para
+              um usuário, mas devastador para um ataque de força bruta. O valor
+              padrão recomendado é
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >10</code
+              >.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          2.3 — Instalação e as duas funções principais
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 7px 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            Terminal
+          </div>
+          <div
+            style="
+              padding: 14px 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #a8f0c8;
+              line-height: 2;
+            "
+          >
+            npm install bcryptjs
+          </div>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 8px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              hash() — gerar o hash (cadastro)
+            </div>
+            <div
+              style="
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: rgb(200, 216, 232);
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(93, 184, 245); font-size: 12px"
+                >import</span
+              >
+              bcrypt
+              <span style="color: rgb(93, 184, 245); font-size: 12px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'bcryptjs'</span
+              >;<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              /><span style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              senha =
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'minhasenha123'</span
+              >;<br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              saltRounds =
+              <span style="color: rgb(240, 160, 96); font-size: 12px">10</span
+              >;<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              /><span style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              hash =
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >await</span
+              >
+              bcrypt.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >hash</span
+              >(senha, saltRounds);<br style="font-size: 12px" /><span
+                style="color: rgb(122, 154, 176); font-size: 12px"
+                >// hash → "$2b$10$N9qo8u..."</span
+              ><br style="font-size: 12px" /><span
+                style="color: rgb(122, 154, 176); font-size: 12px"
+                >// Salve o hash no banco,
+                <strong style="font-size: 12px">não a senha!</strong></span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 8px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              compare() — verificar (login)
+            </div>
+            <div
+              style="
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: rgb(200, 216, 232);
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(93, 184, 245); font-size: 12px"
+                >import</span
+              >
+              bcrypt
+              <span style="color: rgb(93, 184, 245); font-size: 12px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'bcryptjs'</span
+              >;<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              /><span style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              senhaDigitada =
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'minhasenha123'</span
+              >;<br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              hashDoBanco =
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'$2b$10$N9qo...'</span
+              >;<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              /><span style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              valida =
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >await</span
+              >
+              bcrypt.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >compare</span
+              >(senhaDigitada, hashDoBanco);<br style="font-size: 12px" /><span
+                style="color: rgb(122, 154, 176); font-size: 12px"
+                >// valida →
+                <strong style="font-size: 12px">true ou false</strong></span
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(255, 248, 230);
+            border-width: 1px 1px 1px 5px;
+            border-style: solid;
+            border-color: rgb(240, 208, 128) rgb(240, 208, 128)
+              rgb(240, 208, 128) rgb(212, 168, 0);
+            border-image: initial;
+            border-radius: 10px;
+            padding: 16px 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #8a5800;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 8px;
+            "
+          >
+            Regra fundamental
+          </div>
+          <div style="font-size: 14px; color: #5a3800; line-height: 1.8">
+            Nunca salve a senha original no banco. Sempre gere o hash com
+            <code
+              style="
+                background: rgb(254, 243, 192);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 12px;
+              "
+              >bcrypt.hash()</code
+            >
+            antes de inserir. No login, use
+            <code
+              style="
+                background: rgb(254, 243, 192);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 12px;
+              "
+              >bcrypt.compare()</code
+            >
+            para validar — jamais compare strings diretamente.
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════ -->
+      <!-- MÓDULO 3 — JWT                -->
+      <!-- ══════════════════════════════ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102),
+            rgb(26, 95, 168)
+          );
+          border-radius: 14px 14px 0px 0px;
+          padding: 20px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7ab0e0;
+            margin-bottom: 6px;
+          "
+        >
+          Módulo 3
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #fff">
+          JWT — controlando o acesso com tokens
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          3.1 — O que é JWT?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          <strong style="font-size: 15px">JWT</strong> significa
+          <em style="font-size: 15px">JSON Web Token</em>. É uma string compacta
+          que o servidor gera após um login bem-sucedido e entrega ao cliente.
+          Em toda requisição seguinte, o cliente envia esse token no cabeçalho
+          HTTP — e o servidor o valida sem precisar consultar o banco de dados.
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          <img
+            style="
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 15px;
+            "
+            src="https://media2.dev.to/dynamic/image/width=1280,height=720,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8wiw2dbjerzq6br66qv8.png"
+            alt="JWT explained in 4 minutes (With Visuals) - DEV Community"
+            width="690"
+            height="388"
+          />
+        </div>
+        <div
+          style="
+            background: rgb(234, 242, 251);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 4px solid rgb(26, 95, 168);
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="font-size: 14px; color: rgb(26, 42, 58); line-height: 1.85"
+          >
+            <strong style="font-size: 14px">Analogia:</strong> o JWT é como o
+            crachá de acesso de uma empresa. Quando você entra, passa na
+            recepção (faz login), apresenta seu documento e recebe um crachá.
+            Nos dias seguintes, não precisa mais passar pela recepção — basta
+            mostrar o crachá nas catracas (rotas protegidas). O crachá tem prazo
+            de validade e é difícil de falsificar.
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          3.2 — Estrutura do token JWT
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 16px;
+          "
+        >
+          Um token JWT é formado por três partes separadas por ponto, cada uma
+          codificada em Base64:
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 16px;
+          "
+        >
+          <img
+            style="
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 15px;
+            "
+            src="https://cdn.sanity.io/images/3jwyzebk/production/c098fa07deca1062e013d92cabba4ba7ec7e7f19-1584x988.png"
+            alt="JWT claims"
+            width="661"
+            height="412"
+          />
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            Exemplo de token JWT
+          </div>
+          <div
+            style="
+              padding: 18px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: rgb(200, 216, 232);
+              line-height: 1.9;
+              word-break: break-all;
+            "
+          >
+            <span style="color: rgb(240, 160, 96); font-size: 12px"
+              >eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span
+            >.<span style="color: rgb(168, 240, 200); font-size: 12px"
+              >eyJpZCI6MSwibm9tZSI6IkNhcmxvcyIsImlhdCI6MTcxNTAwMDAwMH0</span
+            >.<span style="color: rgb(93, 245, 168); font-size: 12px"
+              >dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk</span
+            >
+          </div>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(255, 244, 224);
+              border-radius: 10px;
+              padding: 14px 16px;
+              border-top: 3px solid rgb(240, 160, 96);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #a06000;
+                margin-bottom: 6px;
+                text-transform: uppercase;
+              "
+            >
+              Header
+            </div>
+            <div style="font-size: 13px; color: #5a3a00; line-height: 1.7">
+              Algoritmo usado para assinar o token. Geralmente
+              <code
+                style="
+                  background: rgb(254, 240, 208);
+                  padding: 0px 4px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                "
+                >HS256</code
+              >.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 255, 246);
+              border-radius: 10px;
+              padding: 14px 16px;
+              border-top: 3px solid rgb(26, 138, 80);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #0d5a30;
+                margin-bottom: 6px;
+                text-transform: uppercase;
+              "
+            >
+              Payload
+            </div>
+            <div style="font-size: 13px; color: #0d3a20; line-height: 1.7">
+              Os dados do usuário:
+              <code
+                style="
+                  background: rgb(208, 240, 224);
+                  padding: 0px 4px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                "
+                >id</code
+              >,
+              <code
+                style="
+                  background: rgb(208, 240, 224);
+                  padding: 0px 4px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                "
+                >nome</code
+              >, validade. Não coloque senhas aqui — o payload é legível!
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 246, 255);
+              border-radius: 10px;
+              padding: 14px 16px;
+              border-top: 3px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 6px;
+                text-transform: uppercase;
+              "
+            >
+              Signature
+            </div>
+            <div style="font-size: 13px; color: #1a2a4a; line-height: 1.7">
+              Assinatura digital gerada com uma
+              <strong style="font-size: 13px">chave secreta</strong>. Garante
+              que o token não foi adulterado.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          3.3 — Instalação e as duas funções principais
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 7px 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            Terminal
+          </div>
+          <div
+            style="
+              padding: 14px 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #a8f0c8;
+              line-height: 2;
+            "
+          >
+            npm install jsonwebtoken
+          </div>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 8px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              sign() — gerar o token (login)
+            </div>
+            <div
+              style="
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: rgb(200, 216, 232);
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(93, 184, 245); font-size: 12px"
+                >import</span
+              >
+              jwt
+              <span style="color: rgb(93, 184, 245); font-size: 12px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'jsonwebtoken'</span
+              >;<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              /><span style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              payload = { id:
+              <span style="color: rgb(240, 160, 96); font-size: 12px">1</span>,
+              nome:
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'Carlos'</span
+              >
+              };<br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              segredo = process.env.<span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >JWT_SECRET</span
+              >;<br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              opcoes = { expiresIn:
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'1d'</span
+              >
+              };<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              /><span style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              token = jwt.<span
+                style="color: rgb(93, 245, 168); font-size: 12px"
+                >sign</span
+              >(payload, segredo, opcoes);<br style="font-size: 12px" /><span
+                style="color: rgb(122, 154, 176); font-size: 12px"
+                >// Envie o token para o cliente</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 8px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              verify() — validar o token (rotas protegidas)
+            </div>
+            <div
+              style="
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: rgb(200, 216, 232);
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(93, 184, 245); font-size: 12px"
+                >import</span
+              >
+              jwt
+              <span style="color: rgb(93, 184, 245); font-size: 12px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'jsonwebtoken'</span
+              >;<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              /><span style="color: rgb(240, 200, 122); font-size: 12px"
+                >try</span
+              >
+              {<br style="font-size: 12px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              dados = jwt.<span
+                style="color: rgb(93, 245, 168); font-size: 12px"
+                >verify</span
+              >(token, process.env.<span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >JWT_SECRET</span
+              >);<br style="font-size: 12px" />&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 12px"
+                >// dados → { id: 1, nome: 'Carlos', iat: ..., exp: ... }</span
+              ><br style="font-size: 12px" />&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 12px"
+                >// Token válido — prossiga com a requisição</span
+              ><br style="font-size: 12px" />}
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >catch</span
+              >
+              (erro) {<br style="font-size: 12px" />&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 12px"
+                >// Token inválido ou expirado</span
+              ><br style="font-size: 12px" />}
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          3.4 — A chave secreta no .env
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 14px;
+          "
+        >
+          A chave secreta (<code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >JWT_SECRET</code
+          >) é o que garante a autenticidade da assinatura. Se ela vazar,
+          qualquer pessoa pode fabricar tokens válidos. Ela deve ser uma string
+          longa e aleatória, armazenada exclusivamente no
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >.env</code
+          >.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 7px 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            .env — adicionar a chave secreta
+          </div>
+          <div
+            style="
+              padding: 16px 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2.2;
+            "
+          >
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              ># ... variáveis do banco ...</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >JWT_SECRET</span
+            >=<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >uma_string_muito_longa_e_aleatoria_aqui_2026!</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >JWT_EXPIRES_IN</span
+            >=<span style="color: rgb(168, 240, 200); font-size: 13px">1d</span>
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════ -->
+      <!-- MÓDULO 4 — MIDDLEWARE         -->
+      <!-- ══════════════════════════════ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102),
+            rgb(26, 95, 168)
+          );
+          border-radius: 14px 14px 0px 0px;
+          padding: 20px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7ab0e0;
+            margin-bottom: 6px;
+          "
+        >
+          Módulo 4
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #fff">
+          Middleware de autenticação — protegendo rotas
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          4.1 — O que é um middleware?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          Um <strong style="font-size: 15px">middleware</strong> é uma função
+          que fica no meio do caminho entre a requisição e o handler final da
+          rota. Ele recebe
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >req</code
+          >,
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >res</code
+          >
+          e uma terceira função chamada
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >next</code
+          >. Se tudo estiver certo, chama
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >next()</code
+          >
+          para continuar. Se não, interrompe e responde com erro.
+        </div>
+        <div
+          style="
+            background: #0d1b2a;
+            border-radius: 10px;
+            padding: 16px 20px;
+            font-family: &quot;Courier New&quot;, monospace;
+            font-size: 13px;
+            color: #c8d8e8;
+            line-height: 1.9;
+            margin-bottom: 16px;
+            text-align: center;
+          "
+        >
+          Requisição →
+          <span style="color: rgb(240, 200, 122); font-size: 13px"
+            >[ Middleware JWT ]</span
+          >
+          → Handler da rota → Resposta
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          4.2 — Como o cliente envia o token
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 14px;
+          "
+        >
+          O cliente deve enviar o token no cabeçalho
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >Authorization</code
+          >
+          de cada requisição, no formato
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >Bearer &lt;token&gt;</code
+          >. Esse é o padrão da indústria.
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 14px;
+          "
+        >
+          <img
+            style="
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 15px;
+            "
+            src="https://images.ctfassets.net/nuvymnyf0li0/1Um00kfu29mMaoJG7Figjc/1ff883d8f1e52a2a39830ccea96ea225/Screenshot_2024-01-26_at_13.09.34.png"
+            alt="Authorization Bearer Token Example"
+            width="730"
+            height="358"
+          />
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 7px 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            Cabeçalho HTTP enviado pelo cliente (Postman / Insomnia)
+          </div>
+          <div
+            style="
+              padding: 16px 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2;
+            "
+          >
+            Authorization:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...</span
+            >
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          4.3 — O middleware de autenticação
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            src/middlewares/auth.middleware.js
+          </div>
+          <div
+            style="
+              padding: 20px 22px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2;
+            "
+          >
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            jwt
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'jsonwebtoken'</span
+            >;<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >export</span
+            >
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >function</span
+            >
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >autenticar</span
+            >(req, res, next) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            authHeader = req.headers[<span
+              style="color: rgb(168, 240, 200); font-size: 13px"
+              >'authorization'</span
+            >];<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;<span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Verifica se o cabeçalho existe e começa com "Bearer "</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (!authHeader || !authHeader.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >startsWith</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Bearer '</span
+            >)) {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">401</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Token não fornecido'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;}<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Extrai o token removendo o prefixo "Bearer "</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            token = authHeader.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >split</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px">' '</span
+            >)[<span style="color: rgb(240, 160, 96); font-size: 13px">1</span
+            >];<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >try</span
+            >
+            {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            dados = jwt.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >verify</span
+            >(token, process.env.<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >JWT_SECRET</span
+            >);<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;req.usuario
+            = dados;
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// disponibiliza os dados do token no req</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >next</span
+            >();
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// token válido — passa para o handler da rota</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;}
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >catch</span
+            >
+            {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">401</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Token inválido ou expirado'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;}<br
+              style="font-size: 13px"
+            />}
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          4.4 — Aplicando o middleware nas rotas
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 14px;
+          "
+        >
+          Basta passar o middleware como segundo argumento na rota. Rotas
+          públicas (como cadastro e login) ficam sem o middleware; rotas
+          privadas recebem
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >autenticar</code
+          >
+          como guardião.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            src/routes/usuario.routes.js
+          </div>
+          <div
+            style="
+              padding: 20px 22px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2;
+            "
+          >
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            { Router }
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'express'</span
+            >;<br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            *
+            <span style="color: rgb(93, 184, 245); font-size: 13px">as</span> C
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'../controllers/usuario.controller.js'</span
+            >;<br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            { autenticar }
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'../middlewares/auth.middleware.js'</span
+            >;<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            router =
+            <span style="color: rgb(93, 245, 168); font-size: 13px">Router</span
+            >();<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            /><span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Rotas públicas — sem middleware</span
+            ><br style="font-size: 13px" />router.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >post</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/cadastro'</span
+            >, C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >cadastrar</span
+            >);<br style="font-size: 13px" />router.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >post</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/login'</span
+            >, C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >login</span
+            >);<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Rotas privadas — exigem token válido</span
+            ><br style="font-size: 13px" />router.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >get</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/perfil'</span
+            >, autenticar, C.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >perfil</span
+            >);<br style="font-size: 13px" />router.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >put</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/perfil'</span
+            >, autenticar, C.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >atualizar</span
+            >);<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >export default</span
+            >
+            router;
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════════ -->
+      <!-- MÓDULO 5 — EXEMPLO COMPLETO       -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          border-radius: 14px;
+          overflow: hidden;
+          box-shadow: rgba(13, 59, 102, 0.22) 0px 8px 28px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              135deg,
+              rgb(13, 59, 102),
+              rgb(26, 95, 168)
+            );
+            padding: 26px 32px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 10px;
+              font-weight: bold;
+              letter-spacing: 3px;
+              text-transform: uppercase;
+              color: #7ab0e0;
+              margin-bottom: 10px;
+            "
+          >
+            Exemplo Completo
+          </div>
+          <div
+            style="
+              font-size: 22px;
+              font-weight: bold;
+              color: #ffffff;
+              margin-bottom: 8px;
+            "
+          >
+            API com cadastro, login e rota protegida
+          </div>
+          <div style="font-size: 14px; color: #a8c8e8; line-height: 1.7">
+            Todos os arquivos necessários para uma API com autenticação completa
+            — do banco de dados ao middleware JWT, seguindo a arquitetura MVC.
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(244, 248, 255);
+            padding: 28px 32px;
+            font-size: 14px;
+          "
+        >
+          <!-- SQL -->
+          <div style="margin-bottom: 18px; font-size: 14px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #0d3b66;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >SQL</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >Tabela de usuários no PostgreSQL</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >CREATE TABLE</span
+              >
+              usuarios (<br style="font-size: 13px" />&nbsp;&nbsp;id
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >SERIAL PRIMARY KEY</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;nome
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >TEXT NOT NULL</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;email
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >TEXT UNIQUE NOT NULL</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;senha_hash &nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >TEXT NOT NULL</span
+              >
+              <span style="color: rgb(122, 154, 176); font-size: 13px"
+                >-- NUNCA a senha em texto puro</span
+              ><br style="font-size: 13px" />);
+            </div>
+          </div>
+          <!-- .env -->
+          <div style="margin-bottom: 18px; font-size: 14px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f0a060;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >.env</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >Variáveis de ambiente</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2.2;
+              "
+            >
+              PORT=3000<br style="font-size: 13px" />DB_HOST=localhost<br
+                style="font-size: 13px"
+              />DB_PORT=5432<br style="font-size: 13px" />DB_NAME=minha_api<br
+                style="font-size: 13px"
+              />DB_USER=postgres<br
+                style="font-size: 13px"
+              />DB_PASSWORD=senha123<br style="font-size: 13px" /><span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >JWT_SECRET</span
+              >=<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >uma_chave_secreta_longa_e_segura_aqui!</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >JWT_EXPIRES_IN</span
+              >=<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >1d</span
+              >
+            </div>
+          </div>
+          <!-- Model -->
+          <div style="margin-bottom: 18px; font-size: 14px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #0d3b66;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >1 / 3</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >src/models/usuario.model.js</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              pool
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'../database/db.js'</span
+              >;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(93, 184, 245); font-size: 13px"
+                >export async function</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >criar</span
+              >(nome, email, senhaHash) {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              r =
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >await</span
+              >
+              pool.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >query</span
+              >(<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >'INSERT INTO usuarios (nome, email, senha_hash) VALUES ($1, $2,
+                $3) RETURNING id, nome, email'</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;[nome,
+              email, senhaHash]<br style="font-size: 13px" />&nbsp;&nbsp;);<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >return</span
+              >
+              r.rows[<span style="color: rgb(240, 160, 96); font-size: 13px"
+                >0</span
+              >];<br style="font-size: 13px" />}<br
+                style="font-size: 13px"
+              /><br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >export async function</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >buscarPorEmail</span
+              >(email) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              r =
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >await</span
+              >
+              pool.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >query</span
+              >(<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >'SELECT * FROM usuarios WHERE email = $1'</span
+              >, [email]<br style="font-size: 13px" />&nbsp;&nbsp;);<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >return</span
+              >
+              r.rows[<span style="color: rgb(240, 160, 96); font-size: 13px"
+                >0</span
+              >];<br style="font-size: 13px" />}
+            </div>
+          </div>
+          <!-- Controller -->
+          <div style="margin-bottom: 18px; font-size: 14px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #0d3b66;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >2 / 3</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >src/controllers/usuario.controller.js</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              bcrypt
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'bcryptjs'</span
+              >;<br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              jwt
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'jsonwebtoken'</span
+              >;<br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              *
+              <span style="color: rgb(93, 184, 245); font-size: 13px">as</span>
+              UsuarioModel
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'../models/usuario.model.js'</span
+              >;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(122, 154, 176); font-size: 13px"
+                >// ── Cadastro ──────────────────────────────────────────</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >export async function</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >cadastrar</span
+              >(req, res) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >try</span
+              >
+              {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              { nome, email, senha } = req.body;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >if</span
+              >
+              (!nome || !email || !senha)<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >return</span
+              >
+              res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >status</span
+              >(<span style="color: rgb(240, 160, 96); font-size: 13px"
+                >400</span
+              >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >json</span
+              >({ erro:
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'nome, email e senha são obrigatórios'</span
+              >
+              });<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 13px"
+                >// Gera o hash antes de salvar — NUNCA salve a senha
+                direta</span
+              ><br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              senhaHash =
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >await</span
+              >
+              bcrypt.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >hash</span
+              >(senha,
+              <span style="color: rgb(240, 160, 96); font-size: 13px">10</span
+              >);<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              usuario =
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >await</span
+              >
+              UsuarioModel.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >criar</span
+              >(nome, email, senhaHash);<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;res.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >status</span
+              >(<span style="color: rgb(240, 160, 96); font-size: 13px"
+                >201</span
+              >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >json</span
+              >(usuario);<br style="font-size: 13px" />&nbsp;&nbsp;}
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >catch</span
+              >
+              {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;res.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >status</span
+              >(<span style="color: rgb(240, 160, 96); font-size: 13px"
+                >500</span
+              >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >json</span
+              >({ erro:
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Erro ao cadastrar usuário'</span
+              >
+              });<br style="font-size: 13px" />&nbsp;&nbsp;}<br
+                style="font-size: 13px"
+              />}<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(122, 154, 176); font-size: 13px"
+                >// ── Login ─────────────────────────────────────────────</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >export async function</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >login</span
+              >(req, res) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >try</span
+              >
+              {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              { email, senha } = req.body;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              usuario =
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >await</span
+              >
+              UsuarioModel.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >buscarPorEmail</span
+              >(email);<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >if</span
+              >
+              (!usuario)<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >return</span
+              >
+              res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >status</span
+              >(<span style="color: rgb(240, 160, 96); font-size: 13px"
+                >401</span
+              >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >json</span
+              >({ erro:
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Credenciais inválidas'</span
+              >
+              });<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 13px"
+                >// Compara a senha digitada com o hash do banco</span
+              ><br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              senhaValida =
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >await</span
+              >
+              bcrypt.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >compare</span
+              >(senha, usuario.senha_hash);<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >if</span
+              >
+              (!senhaValida)<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >return</span
+              >
+              res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >status</span
+              >(<span style="color: rgb(240, 160, 96); font-size: 13px"
+                >401</span
+              >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >json</span
+              >({ erro:
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Credenciais inválidas'</span
+              >
+              });<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 13px"
+                >// Gera o token JWT com os dados do usuário no payload</span
+              ><br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              token = jwt.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >sign</span
+              >(<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ id: usuario.id, nome:
+              usuario.nome },<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;process.env.<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >JWT_SECRET</span
+              >,<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ expiresIn:
+              process.env.<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >JWT_EXPIRES_IN</span
+              >
+              }<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;);<br
+                style="font-size: 13px"
+              /><br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;res.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >json</span
+              >({ token });<br style="font-size: 13px" />&nbsp;&nbsp;}
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >catch</span
+              >
+              {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;res.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >status</span
+              >(<span style="color: rgb(240, 160, 96); font-size: 13px"
+                >500</span
+              >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >json</span
+              >({ erro:
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Erro ao fazer login'</span
+              >
+              });<br style="font-size: 13px" />&nbsp;&nbsp;}<br
+                style="font-size: 13px"
+              />}<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(122, 154, 176); font-size: 13px"
+                >// ── Perfil (rota protegida) ───────────────────────────</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >export async function</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >perfil</span
+              >(req, res) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 13px"
+                >// req.usuario foi preenchido pelo middleware com os dados do
+                token</span
+              ><br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >json</span
+              >({ mensagem:
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Acesso autorizado'</span
+              >, usuario: req.usuario });<br style="font-size: 13px" />}
+            </div>
+          </div>
+          <!-- Routes -->
+          <div style="margin-bottom: 18px; font-size: 14px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #0d3b66;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >3 / 3</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >src/routes/usuario.routes.js</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              { Router }
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'express'</span
+              >;<br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              *
+              <span style="color: rgb(93, 184, 245); font-size: 13px">as</span>
+              C
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'../controllers/usuario.controller.js'</span
+              >;<br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              { autenticar }
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'../middlewares/auth.middleware.js'</span
+              >;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              router =
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >Router</span
+              >();<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />router.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >post</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'/cadastro'</span
+              >, C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >cadastrar</span
+              >);<br style="font-size: 13px" />router.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >post</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'/login'</span
+              >, C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >login</span
+              >);<br style="font-size: 13px" />router.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >get</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'/perfil'</span
+              >, autenticar, C.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >perfil</span
+              >);<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(93, 184, 245); font-size: 13px"
+                >export default</span
+              >
+              router;
+            </div>
+          </div>
+          <!-- Fluxo de teste -->
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 12px;
+              padding: 22px 24px;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 16px;
+              "
+            >
+              Testando no Postman ou Insomnia
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 10px;
+                  padding: 12px 14px;
+                  background: rgb(248, 251, 255);
+                  border-radius: 8px;
+                  border: 1px solid rgb(212, 230, 245);
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    background: #1a5fa8;
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    flex-shrink: 0;
+                    margin-top: 2px;
+                  "
+                  >POST</span
+                >
+                <div style="flex: 1 1 0%; font-size: 14px">
+                  <code
+                    style="
+                      font-size: 13px;
+                      color: #0d3b66;
+                      display: block;
+                      margin-bottom: 4px;
+                    "
+                    >/usuarios/cadastro</code
+                  >
+                  <code
+                    style="
+                      font-size: 12px;
+                      background: #0d1b2a;
+                      color: #a8f0c8;
+                      padding: 5px 10px;
+                      border-radius: 4px;
+                      display: block;
+                    "
+                    >{ "nome": "Carlos", "email": "carlos@email.com", "senha":
+                    "123456" }</code
+                  >
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 10px;
+                  padding: 12px 14px;
+                  background: rgb(248, 251, 255);
+                  border-radius: 8px;
+                  border: 1px solid rgb(212, 230, 245);
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    background: #1a5fa8;
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    flex-shrink: 0;
+                    margin-top: 2px;
+                  "
+                  >POST</span
+                >
+                <div style="flex: 1 1 0%; font-size: 14px">
+                  <code
+                    style="
+                      font-size: 13px;
+                      color: #0d3b66;
+                      display: block;
+                      margin-bottom: 4px;
+                    "
+                    >/usuarios/login → copie o token da resposta</code
+                  >
+                  <code
+                    style="
+                      font-size: 12px;
+                      background: #0d1b2a;
+                      color: #a8f0c8;
+                      padding: 5px 10px;
+                      border-radius: 4px;
+                      display: block;
+                    "
+                    >{ "email": "carlos@email.com", "senha": "123456" }</code
+                  >
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 10px;
+                  padding: 12px 14px;
+                  background: rgb(248, 251, 255);
+                  border-radius: 8px;
+                  border: 1px solid rgb(212, 230, 245);
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    background: #1a7a45;
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    flex-shrink: 0;
+                    margin-top: 2px;
+                  "
+                  >GET</span
+                >
+                <div style="flex: 1 1 0%; font-size: 14px">
+                  <code
+                    style="
+                      font-size: 13px;
+                      color: #0d3b66;
+                      display: block;
+                      margin-bottom: 4px;
+                    "
+                    >/usuarios/perfil → adicione o header abaixo</code
+                  >
+                  <code
+                    style="
+                      font-size: 12px;
+                      background: #0d1b2a;
+                      color: #a8f0c8;
+                      padding: 5px 10px;
+                      border-radius: 4px;
+                      display: block;
+                    "
+                    >Authorization: Bearer &lt;token copiado do login&gt;</code
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ RESUMO FINAL ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgb(224, 236, 246);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              width: 6px;
+              height: 24px;
+              background: linear-gradient(rgb(26, 95, 168), rgb(13, 59, 102));
+              border-radius: 3px;
+              font-size: 14px;
+            "
+          >
+            &nbsp;
+          </div>
+          <div style="font-size: 18px; font-weight: bold; color: #0d3b66">
+            Resumo — o papel de cada peça
+          </div>
+        </div>
+        <div style="overflow-x: auto; font-size: 14px">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 14px"
+          >
+            <thead style="font-size: 14px">
+              <tr
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgb(13, 59, 102),
+                    rgb(26, 95, 168)
+                  );
+                  font-size: 14px;
+                "
+              >
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  Ferramenta
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  Quando usar
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  Função
+                </th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 14px">
+              <tr style="background: rgb(234, 242, 251); font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    font-weight: bold;
+                    font-size: 14px;
+                  "
+                >
+                  <code style="font-size: 13px">bcrypt.hash()</code>
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Cadastro de usuário
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Transforma a senha em hash antes de salvar no banco
+                </td>
+              </tr>
+              <tr style="font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    font-weight: bold;
+                    font-size: 14px;
+                  "
+                >
+                  <code style="font-size: 13px">bcrypt.compare()</code>
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Login
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Verifica se a senha digitada corresponde ao hash do banco
+                </td>
+              </tr>
+              <tr style="background: rgb(234, 242, 251); font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    font-weight: bold;
+                    font-size: 14px;
+                  "
+                >
+                  <code style="font-size: 13px">jwt.sign()</code>
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Login bem-sucedido
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Gera o token com os dados do usuário e o entrega ao cliente
+                </td>
+              </tr>
+              <tr style="font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    font-weight: bold;
+                    font-size: 14px;
+                  "
+                >
+                  <code style="font-size: 13px">jwt.verify()</code>
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Middleware — toda rota protegida
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Valida o token enviado no cabeçalho e libera ou bloqueia o
+                  acesso
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Referências -->
+      <div
+        style="
+          padding-top: 4px;
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+          font-size: 14px;
+        "
+      >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://www.npmjs.com/package/bcryptjs"
+          >Documentação — bcryptjs</a
+        >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://www.npmjs.com/package/jsonwebtoken"
+          >Documentação — jsonwebtoken</a
+        >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://jwt.io/"
+          >jwt.io — decodificar tokens</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

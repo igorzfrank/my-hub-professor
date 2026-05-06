@@ -1,0 +1,1421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revisão de Fundamentos JavaScript</title>
+  </head>
+  <body>
+    <div
+      style="
+        max-width: 1200px;
+        margin: 0px auto;
+        padding: 36px;
+        background-color: rgb(243, 247, 251);
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(31, 45, 61);
+        font-size: 14px;
+      "
+    >
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(139, 92, 246),
+            rgb(124, 58, 237)
+          );
+          color: rgb(255, 255, 255);
+          padding: 28px 32px;
+          border-radius: 16px;
+          box-shadow: rgba(139, 92, 246, 0.4) 0px 10px 28px;
+          margin-bottom: 32px;
+          font-size: 14px;
+        "
+      >
+        <div style="font-size: 28px; font-weight: bold; margin-bottom: 8px">
+          Revisão de Fundamentos JavaScript
+        </div>
+        <div style="font-size: 15px; opacity: 0.95; max-width: 760px">
+          Conceitos essenciais de JavaScript: funções, métodos, orientação a
+          objetos e classes antes de avançar para desenvolvimento de APIs.
+        </div>
+      </div>
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 20px;
+            font-weight: bold;
+            color: #8b5cf6;
+            margin-bottom: 16px;
+          "
+        >
+          Capacidades Trabalhadas
+        </div>
+        <div
+          style="
+            background-color: rgb(245, 243, 255);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid rgb(139, 92, 246);
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 15px; line-height: 1.8">
+            •
+            <strong style="font-size: 15px"
+              >Aplicar linguagem de programação por meio de APIs, bibliotecas,
+              frameworks na construção de rotinas de software</strong
+            ><br style="font-size: 15px" />•
+            <strong style="font-size: 15px"
+              >Selecionar linguagem de programação de acordo com os
+              requisitos</strong
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 20px;
+            font-weight: bold;
+            color: #8b5cf6;
+            margin-bottom: 12px;
+          "
+        >
+          Por que Revisar os Fundamentos?
+        </div>
+        <p style="font-size: 15px; line-height: 1.8; margin: 0 0 16px 0">
+          Antes de criar APIs complexas com Express.js e Node.js, é fundamental
+          dominar os
+          <strong style="font-size: 15px"
+            >conceitos básicos do JavaScript</strong
+          >. Esses fundamentos são a base para entender padrões de arquitetura,
+          manipular dados e estruturar aplicações de forma profissional.
+        </p>
+        <p style="font-size: 15px; line-height: 1.8; margin: 0">
+          Esta revisão aborda:
+          <strong style="font-size: 15px"
+            >funções, métodos, objetos, classes e princípios de orientação a
+            objetos</strong
+          >
+          — elementos essenciais para o desenvolvimento back-end moderno.
+        </p>
+      </div>
+      <!-- Funções -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background-color: #dbeafe;
+              width: 56px;
+              height: 56px;
+              border-radius: 12px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 28px;
+              font-weight: bold;
+              color: #3b82f6;
+            "
+          >
+            f(x)
+          </div>
+          <div style="font-size: 14px">
+            <div style="font-size: 22px; font-weight: bold; color: #3b82f6">
+              Funções em JavaScript
+            </div>
+            <div style="font-size: 13px; color: #6b7280">
+              Blocos de código reutilizáveis
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; line-height: 1.8; margin-bottom: 20px">
+          Funções são
+          <strong style="font-size: 15px"
+            >blocos de código que executam uma tarefa específica</strong
+          >. Elas podem receber parâmetros, processar dados e retornar
+          resultados. São fundamentais para organizar e reutilizar código.
+        </p>
+        <div style="margin-bottom: 24px; font-size: 14px">
+          <div
+            style="
+              font-size: 16px;
+              font-weight: bold;
+              color: #1e40af;
+              margin-bottom: 12px;
+            "
+          >
+            Declaração de Função Tradicional
+          </div>
+          <div
+            style="
+              background-color: rgb(30, 41, 59);
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background-color: #334155;
+                color: #94a3b8;
+                padding: 10px 16px;
+                font-size: 13px;
+                font-family: &quot;Courier New&quot;, monospace;
+                border-bottom: 1px solid #475569;
+              "
+            >
+              Função Tradicional
+            </div>
+            <pre
+              style="
+                margin: 0;
+                padding: 20px;
+                font-size: 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #e2e8f0;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(148, 163, 184); font-size: 14px;">// Declaração de função</span>
+<span style="color: rgb(56, 189, 248); font-size: 14px;">function</span> <span style="color: rgb(251, 191, 36); font-size: 14px;">saudar</span>(nome) {
+  <span style="color: rgb(56, 189, 248); font-size: 14px;">return</span> <span style="color: rgb(134, 239, 172); font-size: 14px;">`Olá, </span><span style="color: rgb(252, 211, 77); font-size: 14px;">${nome}</span><span style="color: rgb(134, 239, 172); font-size: 14px;">!`</span>;
+}
+
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Chamando a função</span>
+<span style="color: rgb(56, 189, 248); font-size: 14px;">const</span> mensagem = <span style="color: rgb(251, 191, 36); font-size: 14px;">saudar</span>(<span style="color: rgb(134, 239, 172); font-size: 14px;">'Maria'</span>);
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(mensagem); <span style="color: rgb(148, 163, 184); font-size: 14px;">// Olá, Maria!</span></pre>
+          </div>
+        </div>
+        <div style="margin-bottom: 24px; font-size: 14px">
+          <div
+            style="
+              font-size: 16px;
+              font-weight: bold;
+              color: #1e40af;
+              margin-bottom: 12px;
+            "
+          >
+            Arrow Function (Função Seta)
+          </div>
+          <div
+            style="
+              background-color: rgb(30, 41, 59);
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background-color: #334155;
+                color: #94a3b8;
+                padding: 10px 16px;
+                font-size: 13px;
+                font-family: &quot;Courier New&quot;, monospace;
+                border-bottom: 1px solid #475569;
+              "
+            >
+              Arrow Function
+            </div>
+            <pre
+              style="
+                margin: 0;
+                padding: 20px;
+                font-size: 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #e2e8f0;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(148, 163, 184); font-size: 14px;">// Sintaxe moderna e mais concisa</span>
+<span style="color: rgb(56, 189, 248); font-size: 14px;">const</span> <span style="color: rgb(251, 191, 36); font-size: 14px;">calcularArea</span> = (largura, altura) =&gt; {
+  <span style="color: rgb(56, 189, 248); font-size: 14px;">return</span> largura * altura;
+};
+
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Arrow function de uma linha (return implícito)</span>
+<span style="color: rgb(56, 189, 248); font-size: 14px;">const</span> <span style="color: rgb(251, 191, 36); font-size: 14px;">dobrar</span> = (numero) =&gt; numero * <span style="color: rgb(252, 211, 77); font-size: 14px;">2</span>;
+
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(<span style="color: rgb(251, 191, 36); font-size: 14px;">calcularArea</span>(<span style="color: rgb(252, 211, 77); font-size: 14px;">5</span>, <span style="color: rgb(252, 211, 77); font-size: 14px;">10</span>)); <span style="color: rgb(148, 163, 184); font-size: 14px;">// 50</span>
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(<span style="color: rgb(251, 191, 36); font-size: 14px;">dobrar</span>(<span style="color: rgb(252, 211, 77); font-size: 14px;">7</span>)); <span style="color: rgb(148, 163, 184); font-size: 14px;">// 14</span></pre>
+          </div>
+        </div>
+        <div
+          style="
+            background-color: rgb(239, 246, 255);
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 4px solid rgb(59, 130, 246);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-weight: bold;
+              margin-bottom: 8px;
+              color: rgb(30, 64, 175);
+              font-size: 14px;
+            "
+          >
+            Pontos-Chave sobre Funções
+          </div>
+          <ul
+            style="
+              margin: 0;
+              padding-left: 20px;
+              font-size: 14px;
+              line-height: 1.8;
+              color: #4a5568;
+            "
+          >
+            <li style="font-size: 14px">
+              Funções podem receber
+              <strong style="font-size: 14px">parâmetros</strong> e retornar
+              valores
+            </li>
+            <li style="font-size: 14px">
+              Arrow functions são mais concisas e não alteram o contexto
+              <code
+                style="
+                  background: rgb(219, 234, 254);
+                  padding: 2px 6px;
+                  border-radius: 4px;
+                  font-size: 12px;
+                "
+                >this</code
+              >
+            </li>
+            <li style="font-size: 14px">
+              Funções são
+              <strong style="font-size: 14px">first-class citizens</strong>:
+              podem ser atribuídas a variáveis, passadas como argumentos
+            </li>
+            <li style="font-size: 14px">
+              Use
+              <code
+                style="
+                  background: rgb(219, 234, 254);
+                  padding: 2px 6px;
+                  border-radius: 4px;
+                  font-size: 12px;
+                "
+                >const</code
+              >
+              para declarar funções que não serão reatribuídas
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Métodos -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background-color: #dcfce7;
+              width: 56px;
+              height: 56px;
+              border-radius: 12px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 28px;
+              font-weight: bold;
+              color: #10b981;
+            "
+          >
+            {}
+          </div>
+          <div style="font-size: 14px">
+            <div style="font-size: 22px; font-weight: bold; color: #10b981">
+              Métodos
+            </div>
+            <div style="font-size: 13px; color: #6b7280">
+              Funções dentro de objetos
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; line-height: 1.8; margin-bottom: 20px">
+          Um <strong style="font-size: 15px">método</strong> é uma função que
+          pertence a um objeto. Métodos definem o
+          <strong style="font-size: 15px">comportamento</strong> de um objeto e
+          podem acessar suas propriedades através da palavra-chave
+          <code
+            style="
+              background: rgb(220, 252, 231);
+              padding: 2px 6px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >this</code
+          >.
+        </p>
+        <div style="margin-bottom: 24px; font-size: 14px">
+          <div
+            style="
+              font-size: 16px;
+              font-weight: bold;
+              color: #065f46;
+              margin-bottom: 12px;
+            "
+          >
+            Objeto com Métodos
+          </div>
+          <div
+            style="
+              background-color: rgb(30, 41, 59);
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background-color: #334155;
+                color: #94a3b8;
+                padding: 10px 16px;
+                font-size: 13px;
+                font-family: &quot;Courier New&quot;, monospace;
+                border-bottom: 1px solid #475569;
+              "
+            >
+              Exemplo de Métodos
+            </div>
+            <pre
+              style="
+                margin: 0;
+                padding: 20px;
+                font-size: 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #e2e8f0;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(56, 189, 248); font-size: 14px;">const</span> usuario = {
+  nome: <span style="color: rgb(134, 239, 172); font-size: 14px;">'João'</span>,
+  idade: <span style="color: rgb(252, 211, 77); font-size: 14px;">25</span>,
+  
+  <span style="color: rgb(148, 163, 184); font-size: 14px;">// Método tradicional</span>
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">apresentar</span>: <span style="color: rgb(56, 189, 248); font-size: 14px;">function</span>() {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">return</span> <span style="color: rgb(134, 239, 172); font-size: 14px;">`Meu nome é </span><span style="color: rgb(252, 211, 77); font-size: 14px;">${this.nome}</span><span style="color: rgb(134, 239, 172); font-size: 14px;"> e tenho </span><span style="color: rgb(252, 211, 77); font-size: 14px;">${this.idade}</span><span style="color: rgb(134, 239, 172); font-size: 14px;"> anos.`</span>;
+  },
+  
+  <span style="color: rgb(148, 163, 184); font-size: 14px;">// Sintaxe simplificada (ES6)</span>
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">fazerAniversario</span>() {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.idade++;
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">return</span> <span style="color: rgb(134, 239, 172); font-size: 14px;">`Agora tenho </span><span style="color: rgb(252, 211, 77); font-size: 14px;">${this.idade}</span><span style="color: rgb(134, 239, 172); font-size: 14px;"> anos!`</span>;
+  }
+};
+
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(usuario.<span style="color: rgb(251, 191, 36); font-size: 14px;">apresentar</span>()); 
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Meu nome é João e tenho 25 anos.</span>
+
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(usuario.<span style="color: rgb(251, 191, 36); font-size: 14px;">fazerAniversario</span>()); 
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Agora tenho 26 anos!</span></pre>
+          </div>
+        </div>
+        <div
+          style="
+            background-color: rgb(240, 253, 244);
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 4px solid rgb(16, 185, 129);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-weight: bold;
+              margin-bottom: 8px;
+              color: rgb(6, 95, 70);
+              font-size: 14px;
+            "
+          >
+            Diferença entre Função e Método
+          </div>
+          <div style="font-size: 14px; line-height: 1.8; color: #4a5568">
+            <strong style="font-size: 14px">Função:</strong> Bloco de código
+            independente<br style="font-size: 14px" /><strong
+              style="font-size: 14px"
+              >Método:</strong
+            >
+            Função associada a um objeto que pode acessar suas propriedades via
+            <code
+              style="
+                background: rgb(220, 252, 231);
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+              "
+              >this</code
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Objetos -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background-color: #fef3c7;
+              width: 56px;
+              height: 56px;
+              border-radius: 12px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 28px;
+              font-weight: bold;
+              color: #f59e0b;
+            "
+          >
+            [ ]
+          </div>
+          <div style="font-size: 14px">
+            <div style="font-size: 22px; font-weight: bold; color: #f59e0b">
+              Objetos Literais
+            </div>
+            <div style="font-size: 13px; color: #6b7280">
+              Estruturas de dados chave-valor
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; line-height: 1.8; margin-bottom: 20px">
+          Objetos são
+          <strong style="font-size: 15px">coleções de propriedades</strong>
+          (dados) e métodos (comportamentos). São a base da programação
+          orientada a objetos em JavaScript e permitem agrupar informações
+          relacionadas.
+        </p>
+        <div style="margin-bottom: 24px; font-size: 14px">
+          <div
+            style="
+              font-size: 16px;
+              font-weight: bold;
+              color: #92400e;
+              margin-bottom: 12px;
+            "
+          >
+            Criando e Manipulando Objetos
+          </div>
+          <div
+            style="
+              background-color: rgb(30, 41, 59);
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background-color: #334155;
+                color: #94a3b8;
+                padding: 10px 16px;
+                font-size: 13px;
+                font-family: &quot;Courier New&quot;, monospace;
+                border-bottom: 1px solid #475569;
+              "
+            >
+              Objetos Literais
+            </div>
+            <pre
+              style="
+                margin: 0;
+                padding: 20px;
+                font-size: 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #e2e8f0;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(148, 163, 184); font-size: 14px;">// Criando um objeto literal</span>
+<span style="color: rgb(56, 189, 248); font-size: 14px;">const</span> produto = {
+  id: <span style="color: rgb(252, 211, 77); font-size: 14px;">1</span>,
+  nome: <span style="color: rgb(134, 239, 172); font-size: 14px;">'Notebook'</span>,
+  preco: <span style="color: rgb(252, 211, 77); font-size: 14px;">3500</span>,
+  emEstoque: <span style="color: rgb(167, 139, 250); font-size: 14px;">true</span>,
+  
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">calcularDesconto</span>(percentual) {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">return</span> <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.preco * (<span style="color: rgb(252, 211, 77); font-size: 14px;">1</span> - percentual / <span style="color: rgb(252, 211, 77); font-size: 14px;">100</span>);
+  }
+};
+
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Acessando propriedades</span>
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(produto.nome); <span style="color: rgb(148, 163, 184); font-size: 14px;">// Notebook</span>
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(produto[<span style="color: rgb(134, 239, 172); font-size: 14px;">'preco'</span>]); <span style="color: rgb(148, 163, 184); font-size: 14px;">// 3500</span>
+
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Modificando propriedades</span>
+produto.preco = <span style="color: rgb(252, 211, 77); font-size: 14px;">3200</span>;
+
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Adicionando novas propriedades</span>
+produto.categoria = <span style="color: rgb(134, 239, 172); font-size: 14px;">'Eletrônicos'</span>;
+
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Chamando método</span>
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(produto.<span style="color: rgb(251, 191, 36); font-size: 14px;">calcularDesconto</span>(<span style="color: rgb(252, 211, 77); font-size: 14px;">10</span>)); <span style="color: rgb(148, 163, 184); font-size: 14px;">// 2880</span></pre>
+          </div>
+        </div>
+        <div style="margin-bottom: 24px; font-size: 14px">
+          <div
+            style="
+              font-size: 16px;
+              font-weight: bold;
+              color: #92400e;
+              margin-bottom: 12px;
+            "
+          >
+            Destructuring (Desestruturação)
+          </div>
+          <div
+            style="
+              background-color: rgb(30, 41, 59);
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background-color: #334155;
+                color: #94a3b8;
+                padding: 10px 16px;
+                font-size: 13px;
+                font-family: &quot;Courier New&quot;, monospace;
+                border-bottom: 1px solid #475569;
+              "
+            >
+              Desestruturação de Objetos
+            </div>
+            <pre
+              style="
+                margin: 0;
+                padding: 20px;
+                font-size: 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #e2e8f0;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(56, 189, 248); font-size: 14px;">const</span> pessoa = {
+  nome: <span style="color: rgb(134, 239, 172); font-size: 14px;">'Ana'</span>,
+  idade: <span style="color: rgb(252, 211, 77); font-size: 14px;">30</span>,
+  cidade: <span style="color: rgb(134, 239, 172); font-size: 14px;">'São Paulo'</span>
+};
+
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Extraindo propriedades</span>
+<span style="color: rgb(56, 189, 248); font-size: 14px;">const</span> { nome, idade } = pessoa;
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(nome); <span style="color: rgb(148, 163, 184); font-size: 14px;">// Ana</span>
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(idade); <span style="color: rgb(148, 163, 184); font-size: 14px;">// 30</span>
+
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Renomeando variáveis</span>
+<span style="color: rgb(56, 189, 248); font-size: 14px;">const</span> { nome: nomePessoa, cidade: cidadePessoa } = pessoa;
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(nomePessoa); <span style="color: rgb(148, 163, 184); font-size: 14px;">// Ana</span></pre>
+          </div>
+        </div>
+        <div
+          style="
+            background-color: rgb(254, 252, 232);
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 4px solid rgb(245, 158, 11);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-weight: bold;
+              margin-bottom: 8px;
+              color: rgb(146, 64, 14);
+              font-size: 14px;
+            "
+          >
+            Métodos Úteis para Objetos
+          </div>
+          <div style="font-size: 14px; line-height: 1.8; color: #4a5568">
+            <code
+              style="
+                background: rgb(254, 243, 199);
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+              "
+              >Object.keys(obj)</code
+            >
+            → Retorna array com as chaves<br style="font-size: 14px" /><code
+              style="
+                background: rgb(254, 243, 199);
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+              "
+              >Object.values(obj)</code
+            >
+            → Retorna array com os valores<br style="font-size: 14px" /><code
+              style="
+                background: rgb(254, 243, 199);
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+              "
+              >Object.entries(obj)</code
+            >
+            → Retorna array de pares [chave, valor]<br
+              style="font-size: 14px"
+            /><code
+              style="
+                background: rgb(254, 243, 199);
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+              "
+              >Object.assign()</code
+            >
+            → Copia propriedades de um objeto para outro
+          </div>
+        </div>
+      </div>
+      <!-- Classes e OOP -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background-color: #fdf2f8;
+              width: 56px;
+              height: 56px;
+              border-radius: 12px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 28px;
+              font-weight: bold;
+              color: #ec4899;
+            "
+          >
+            C
+          </div>
+          <div style="font-size: 14px">
+            <div style="font-size: 22px; font-weight: bold; color: #ec4899">
+              Classes e Orientação a Objetos
+            </div>
+            <div style="font-size: 13px; color: #6b7280">
+              Criando moldes para objetos
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; line-height: 1.8; margin-bottom: 20px">
+          Classes são
+          <strong style="font-size: 15px">"moldes" para criar objetos</strong>
+          com propriedades e métodos predefinidos. Introduzidas no ES6, tornam a
+          programação orientada a objetos mais clara e organizada em JavaScript.
+        </p>
+        <div style="margin-bottom: 24px; font-size: 14px">
+          <div
+            style="
+              font-size: 16px;
+              font-weight: bold;
+              color: #be185d;
+              margin-bottom: 12px;
+            "
+          >
+            Criando uma Classe
+          </div>
+          <div
+            style="
+              background-color: rgb(30, 41, 59);
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background-color: #334155;
+                color: #94a3b8;
+                padding: 10px 16px;
+                font-size: 13px;
+                font-family: &quot;Courier New&quot;, monospace;
+                border-bottom: 1px solid #475569;
+              "
+            >
+              Definição de Classe
+            </div>
+            <pre
+              style="
+                margin: 0;
+                padding: 20px;
+                font-size: 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #e2e8f0;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(56, 189, 248); font-size: 14px;">class</span> <span style="color: rgb(251, 191, 36); font-size: 14px;">Pessoa</span> {
+  <span style="color: rgb(148, 163, 184); font-size: 14px;">// Construtor: executado ao criar nova instância</span>
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">constructor</span>(nome, idade) {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.nome = nome;
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.idade = idade;
+  }
+  
+  <span style="color: rgb(148, 163, 184); font-size: 14px;">// Métodos da classe</span>
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">apresentar</span>() {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">return</span> <span style="color: rgb(134, 239, 172); font-size: 14px;">`Olá, meu nome é </span><span style="color: rgb(252, 211, 77); font-size: 14px;">${this.nome}</span><span style="color: rgb(134, 239, 172); font-size: 14px;"> e tenho </span><span style="color: rgb(252, 211, 77); font-size: 14px;">${this.idade}</span><span style="color: rgb(134, 239, 172); font-size: 14px;"> anos.`</span>;
+  }
+  
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">fazerAniversario</span>() {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.idade++;
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">return</span> <span style="color: rgb(134, 239, 172); font-size: 14px;">`Feliz aniversário! Agora tenho </span><span style="color: rgb(252, 211, 77); font-size: 14px;">${this.idade}</span><span style="color: rgb(134, 239, 172); font-size: 14px;"> anos.`</span>;
+  }
+}
+
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Criando instâncias (objetos) da classe</span>
+<span style="color: rgb(56, 189, 248); font-size: 14px;">const</span> pessoa1 = <span style="color: rgb(56, 189, 248); font-size: 14px;">new</span> <span style="color: rgb(251, 191, 36); font-size: 14px;">Pessoa</span>(<span style="color: rgb(134, 239, 172); font-size: 14px;">'Carlos'</span>, <span style="color: rgb(252, 211, 77); font-size: 14px;">28</span>);
+<span style="color: rgb(56, 189, 248); font-size: 14px;">const</span> pessoa2 = <span style="color: rgb(56, 189, 248); font-size: 14px;">new</span> <span style="color: rgb(251, 191, 36); font-size: 14px;">Pessoa</span>(<span style="color: rgb(134, 239, 172); font-size: 14px;">'Marina'</span>, <span style="color: rgb(252, 211, 77); font-size: 14px;">32</span>);
+
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(pessoa1.<span style="color: rgb(251, 191, 36); font-size: 14px;">apresentar</span>()); 
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Olá, meu nome é Carlos e tenho 28 anos.</span>
+
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(pessoa2.<span style="color: rgb(251, 191, 36); font-size: 14px;">fazerAniversario</span>()); 
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Feliz aniversário! Agora tenho 33 anos.</span></pre>
+          </div>
+        </div>
+        <div style="margin-bottom: 24px; font-size: 14px">
+          <div
+            style="
+              font-size: 16px;
+              font-weight: bold;
+              color: #be185d;
+              margin-bottom: 12px;
+            "
+          >
+            Herança de Classes
+          </div>
+          <div
+            style="
+              background-color: rgb(30, 41, 59);
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background-color: #334155;
+                color: #94a3b8;
+                padding: 10px 16px;
+                font-size: 13px;
+                font-family: &quot;Courier New&quot;, monospace;
+                border-bottom: 1px solid #475569;
+              "
+            >
+              Exemplo de Herança
+            </div>
+            <pre
+              style="
+                margin: 0;
+                padding: 20px;
+                font-size: 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #e2e8f0;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(148, 163, 184); font-size: 14px;">// Classe pai (base)</span>
+<span style="color: rgb(56, 189, 248); font-size: 14px;">class</span> <span style="color: rgb(251, 191, 36); font-size: 14px;">Animal</span> {
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">constructor</span>(nome) {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.nome = nome;
+  }
+  
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">fazerSom</span>() {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">return</span> <span style="color: rgb(134, 239, 172); font-size: 14px;">`</span><span style="color: rgb(252, 211, 77); font-size: 14px;">${this.nome}</span><span style="color: rgb(134, 239, 172); font-size: 14px;"> faz algum som`</span>;
+  }
+}
+
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Classe filha (herda de Animal)</span>
+<span style="color: rgb(56, 189, 248); font-size: 14px;">class</span> <span style="color: rgb(251, 191, 36); font-size: 14px;">Cachorro</span> <span style="color: rgb(56, 189, 248); font-size: 14px;">extends</span> <span style="color: rgb(251, 191, 36); font-size: 14px;">Animal</span> {
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">constructor</span>(nome, raca) {
+    <span style="color: rgb(167, 139, 250); font-size: 14px;">super</span>(nome); <span style="color: rgb(148, 163, 184); font-size: 14px;">// Chama o construtor da classe pai</span>
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.raca = raca;
+  }
+  
+  <span style="color: rgb(148, 163, 184); font-size: 14px;">// Sobrescrevendo método</span>
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">fazerSom</span>() {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">return</span> <span style="color: rgb(134, 239, 172); font-size: 14px;">`</span><span style="color: rgb(252, 211, 77); font-size: 14px;">${this.nome}</span><span style="color: rgb(134, 239, 172); font-size: 14px;"> late: Au au!`</span>;
+  }
+  
+  <span style="color: rgb(148, 163, 184); font-size: 14px;">// Método específico da classe Cachorro</span>
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">abanarRabo</span>() {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">return</span> <span style="color: rgb(134, 239, 172); font-size: 14px;">`</span><span style="color: rgb(252, 211, 77); font-size: 14px;">${this.nome}</span><span style="color: rgb(134, 239, 172); font-size: 14px;"> está abanando o rabo!`</span>;
+  }
+}
+
+<span style="color: rgb(56, 189, 248); font-size: 14px;">const</span> meuCachorro = <span style="color: rgb(56, 189, 248); font-size: 14px;">new</span> <span style="color: rgb(251, 191, 36); font-size: 14px;">Cachorro</span>(<span style="color: rgb(134, 239, 172); font-size: 14px;">'Rex'</span>, <span style="color: rgb(134, 239, 172); font-size: 14px;">'Labrador'</span>);
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(meuCachorro.<span style="color: rgb(251, 191, 36); font-size: 14px;">fazerSom</span>()); <span style="color: rgb(148, 163, 184); font-size: 14px;">// Rex late: Au au!</span>
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(meuCachorro.<span style="color: rgb(251, 191, 36); font-size: 14px;">abanarRabo</span>()); <span style="color: rgb(148, 163, 184); font-size: 14px;">// Rex está abanando o rabo!</span></pre>
+          </div>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background-color: rgb(253, 242, 248);
+              padding: 18px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(236, 72, 153);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                margin-bottom: 8px;
+                color: rgb(190, 24, 93);
+                font-size: 14px;
+              "
+            >
+              Constructor
+            </div>
+            <div style="font-size: 14px; line-height: 1.7; color: #4a5568">
+              Método especial executado automaticamente ao criar uma nova
+              instância. Inicializa as propriedades do objeto.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(253, 242, 248);
+              padding: 18px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(236, 72, 153);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                margin-bottom: 8px;
+                color: rgb(190, 24, 93);
+                font-size: 14px;
+              "
+            >
+              Palavra-chave 'this'
+            </div>
+            <div style="font-size: 14px; line-height: 1.7; color: #4a5568">
+              Refere-se à instância atual do objeto. Permite acessar
+              propriedades e métodos dentro da classe.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(253, 242, 248);
+              padding: 18px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(236, 72, 153);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                margin-bottom: 8px;
+                color: rgb(190, 24, 93);
+                font-size: 14px;
+              "
+            >
+              Herança (extends)
+            </div>
+            <div style="font-size: 14px; line-height: 1.7; color: #4a5568">
+              Permite que uma classe herde propriedades e métodos de outra,
+              promovendo reutilização de código.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(253, 242, 248);
+              padding: 18px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(236, 72, 153);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                margin-bottom: 8px;
+                color: rgb(190, 24, 93);
+                font-size: 14px;
+              "
+            >
+              Super
+            </div>
+            <div style="font-size: 14px; line-height: 1.7; color: #4a5568">
+              Chama o construtor ou métodos da classe pai. Obrigatório usar
+              antes de acessar 'this' em classes filhas.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Exemplo Prático Completo -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 20px;
+            font-weight: bold;
+            color: #8b5cf6;
+            margin-bottom: 16px;
+          "
+        >
+          Exemplo Prático: Sistema de Produtos
+        </div>
+        <p style="font-size: 15px; line-height: 1.8; margin-bottom: 20px">
+          Vamos criar um sistema simples de gerenciamento de produtos que
+          demonstra todos os conceitos revisados:
+        </p>
+        <div
+          style="
+            background-color: rgb(30, 41, 59);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background-color: #334155;
+              color: #94a3b8;
+              padding: 10px 16px;
+              font-size: 13px;
+              font-family: &quot;Courier New&quot;, monospace;
+              border-bottom: 1px solid #475569;
+            "
+          >
+            Sistema Completo
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 20px;
+              font-size: 14px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #e2e8f0;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(148, 163, 184); font-size: 14px;">// Classe base Produto</span>
+<span style="color: rgb(56, 189, 248); font-size: 14px;">class</span> <span style="color: rgb(251, 191, 36); font-size: 14px;">Produto</span> {
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">constructor</span>(id, nome, preco) {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.id = id;
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.nome = nome;
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.preco = preco;
+  }
+  
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">calcularDesconto</span>(percentual) {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">return</span> <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.preco * (<span style="color: rgb(252, 211, 77); font-size: 14px;">1</span> - percentual / <span style="color: rgb(252, 211, 77); font-size: 14px;">100</span>);
+  }
+  
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">exibirInfo</span>() {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">return</span> {
+      id: <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.id,
+      nome: <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.nome,
+      preco: <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.preco
+    };
+  }
+}
+
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Classe especializada que herda de Produto</span>
+<span style="color: rgb(56, 189, 248); font-size: 14px;">class</span> <span style="color: rgb(251, 191, 36); font-size: 14px;">ProdutoDigital</span> <span style="color: rgb(56, 189, 248); font-size: 14px;">extends</span> <span style="color: rgb(251, 191, 36); font-size: 14px;">Produto</span> {
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">constructor</span>(id, nome, preco, tamanhoMB) {
+    <span style="color: rgb(167, 139, 250); font-size: 14px;">super</span>(id, nome, preco);
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.tamanhoMB = tamanhoMB;
+  }
+  
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">exibirInfo</span>() {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">const</span> infoBase = <span style="color: rgb(167, 139, 250); font-size: 14px;">super</span>.<span style="color: rgb(251, 191, 36); font-size: 14px;">exibirInfo</span>();
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">return</span> { ...infoBase, tamanho: <span style="color: rgb(134, 239, 172); font-size: 14px;">`</span><span style="color: rgb(252, 211, 77); font-size: 14px;">${this.tamanhoMB}</span><span style="color: rgb(134, 239, 172); font-size: 14px;">MB`</span> };
+  }
+}
+
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Gerenciador de produtos</span>
+<span style="color: rgb(56, 189, 248); font-size: 14px;">const</span> gerenciador = {
+  produtos: [],
+  
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">adicionar</span>(produto) {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.produtos.<span style="color: rgb(251, 191, 36); font-size: 14px;">push</span>(produto);
+  },
+  
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">listar</span>() {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">return</span> <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.produtos.<span style="color: rgb(251, 191, 36); font-size: 14px;">map</span>(p =&gt; p.<span style="color: rgb(251, 191, 36); font-size: 14px;">exibirInfo</span>());
+  },
+  
+  <span style="color: rgb(251, 191, 36); font-size: 14px;">buscarPorId</span>(id) {
+    <span style="color: rgb(56, 189, 248); font-size: 14px;">return</span> <span style="color: rgb(56, 189, 248); font-size: 14px;">this</span>.produtos.<span style="color: rgb(251, 191, 36); font-size: 14px;">find</span>(p =&gt; p.id === id);
+  }
+};
+
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// Usando o sistema</span>
+<span style="color: rgb(56, 189, 248); font-size: 14px;">const</span> produto1 = <span style="color: rgb(56, 189, 248); font-size: 14px;">new</span> <span style="color: rgb(251, 191, 36); font-size: 14px;">Produto</span>(<span style="color: rgb(252, 211, 77); font-size: 14px;">1</span>, <span style="color: rgb(134, 239, 172); font-size: 14px;">'Livro'</span>, <span style="color: rgb(252, 211, 77); font-size: 14px;">45</span>);
+<span style="color: rgb(56, 189, 248); font-size: 14px;">const</span> produto2 = <span style="color: rgb(56, 189, 248); font-size: 14px;">new</span> <span style="color: rgb(251, 191, 36); font-size: 14px;">ProdutoDigital</span>(<span style="color: rgb(252, 211, 77); font-size: 14px;">2</span>, <span style="color: rgb(134, 239, 172); font-size: 14px;">'E-book'</span>, <span style="color: rgb(252, 211, 77); font-size: 14px;">25</span>, <span style="color: rgb(252, 211, 77); font-size: 14px;">5.2</span>);
+
+gerenciador.<span style="color: rgb(251, 191, 36); font-size: 14px;">adicionar</span>(produto1);
+gerenciador.<span style="color: rgb(251, 191, 36); font-size: 14px;">adicionar</span>(produto2);
+
+console.<span style="color: rgb(251, 191, 36); font-size: 14px;">log</span>(gerenciador.<span style="color: rgb(251, 191, 36); font-size: 14px;">listar</span>());
+<span style="color: rgb(148, 163, 184); font-size: 14px;">// [
+//   { id: 1, nome: 'Livro', preco: 45 },
+//   { id: 2, nome: 'E-book', preco: 25, tamanho: '5.2MB' }
+// ]</span></pre>
+        </div>
+      </div>
+      <!-- Princípios da OOP -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 20px;
+            font-weight: bold;
+            color: #8b5cf6;
+            margin-bottom: 20px;
+          "
+        >
+          Princípios da Orientação a Objetos
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background-color: rgb(239, 246, 255);
+              padding: 20px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(59, 130, 246);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                margin-bottom: 10px;
+                color: #1e40af;
+                font-size: 16px;
+              "
+            >
+              Encapsulamento
+            </div>
+            <div style="font-size: 14px; line-height: 1.7; color: #4a5568">
+              Agrupar dados (propriedades) e comportamentos (métodos)
+              relacionados em uma única unidade (classe/objeto). Protege dados
+              internos.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(240, 253, 244);
+              padding: 20px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(16, 185, 129);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                margin-bottom: 10px;
+                color: #065f46;
+                font-size: 16px;
+              "
+            >
+              Herança
+            </div>
+            <div style="font-size: 14px; line-height: 1.7; color: #4a5568">
+              Permite que classes filhas herdem propriedades e métodos de
+              classes pai, promovendo reutilização e hierarquia de código.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(254, 243, 199);
+              padding: 20px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(245, 158, 11);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                margin-bottom: 10px;
+                color: #92400e;
+                font-size: 16px;
+              "
+            >
+              Polimorfismo
+            </div>
+            <div style="font-size: 14px; line-height: 1.7; color: #4a5568">
+              Permite que objetos de diferentes classes sejam tratados de forma
+              uniforme. Métodos podem ser sobrescritos em classes filhas.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(253, 242, 248);
+              padding: 20px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(236, 72, 153);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                margin-bottom: 10px;
+                color: #be185d;
+                font-size: 16px;
+              "
+            >
+              Abstração
+            </div>
+            <div style="font-size: 14px; line-height: 1.7; color: #4a5568">
+              Esconder complexidade interna e expor apenas funcionalidades
+              essenciais. O usuário não precisa saber "como" funciona, apenas "o
+              que" faz.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Resumo e Próximos Passos -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.14) 0px 10px 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 20px;
+            font-weight: bold;
+            color: #8b5cf6;
+            margin-bottom: 16px;
+          "
+        >
+          Resumo e Próximos Passos
+        </div>
+        <div
+          style="
+            background-color: rgb(245, 243, 255);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-weight: bold;
+              margin-bottom: 10px;
+              color: #6b21a8;
+              font-size: 16px;
+            "
+          >
+            Conceitos Revisados
+          </div>
+          <ul
+            style="
+              margin: 0;
+              padding-left: 20px;
+              font-size: 15px;
+              line-height: 1.9;
+              color: #4a5568;
+            "
+          >
+            <li style="font-size: 15px">
+              <strong style="font-size: 15px">Funções:</strong> Blocos de código
+              reutilizáveis com parâmetros e retornos
+            </li>
+            <li style="font-size: 15px">
+              <strong style="font-size: 15px">Métodos:</strong> Funções
+              associadas a objetos que acessam suas propriedades
+            </li>
+            <li style="font-size: 15px">
+              <strong style="font-size: 15px">Objetos:</strong> Estruturas que
+              agrupam dados e comportamentos relacionados
+            </li>
+            <li style="font-size: 15px">
+              <strong style="font-size: 15px">Classes:</strong> Moldes para
+              criar objetos com propriedades e métodos predefinidos
+            </li>
+            <li style="font-size: 15px">
+              <strong style="font-size: 15px">Herança:</strong> Reutilização de
+              código através de hierarquia de classes
+            </li>
+            <li style="font-size: 15px">
+              <strong style="font-size: 15px">OOP:</strong> Paradigma que
+              organiza código em objetos com responsabilidades claras
+            </li>
+          </ul>
+        </div>
+        <div
+          style="
+            background-color: rgb(219, 234, 254);
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-weight: bold;
+              margin-bottom: 10px;
+              color: #1e40af;
+              font-size: 16px;
+            "
+          >
+            Aplicação no Desenvolvimento Back-end
+          </div>
+          <div style="font-size: 15px; line-height: 1.8; color: #334155">
+            Esses conceitos são fundamentais para:
+            <ul
+              style="margin: 10px 0px 0px; padding-left: 20px; font-size: 15px"
+            >
+              <li style="font-size: 15px">
+                Estruturar
+                <strong style="font-size: 15px">controllers</strong> e
+                <strong style="font-size: 15px">models</strong> no padrão MVC
+              </li>
+              <li style="font-size: 15px">
+                Criar
+                <strong style="font-size: 15px">classes de serviço</strong> para
+                lógica de negócio
+              </li>
+              <li style="font-size: 15px">
+                Implementar
+                <strong style="font-size: 15px">middleware</strong>
+                personalizados no Express
+              </li>
+              <li style="font-size: 15px">
+                Organizar código de forma
+                <strong style="font-size: 15px">modular e escalável</strong>
+              </li>
+              <li style="font-size: 15px">
+                Trabalhar com <strong style="font-size: 15px">ORMs</strong> como
+                Sequelize (baseados em classes)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

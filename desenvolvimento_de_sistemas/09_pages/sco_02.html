@@ -1,0 +1,3262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express.js — Parâmetros de Rota, Query String e Body</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(240, 244, 249);
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102) 0%,
+            rgb(26, 95, 168) 100%
+          );
+          border-radius: 14px;
+          padding: 36px 40px;
+          margin-bottom: 24px;
+          box-shadow: rgba(13, 59, 102, 0.28) 0px 8px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a8c8f0;
+            margin-bottom: 10px;
+          "
+        >
+          Técnico em Desenvolvimento de Sistemas — Programação para Web
+        </div>
+        <div
+          style="
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 12px;
+          "
+        >
+          Express.js — Parâmetros de Rota, Query String e Body
+        </div>
+        <div style="font-size: 15px; color: #c8dff5; line-height: 1.65">
+          Nesta aula você vai entender as três formas de enviar dados para uma
+          API Express: parâmetros de rota, query string e corpo da requisição.
+          Cada uma tem um propósito específico — e usar a forma certa faz toda a
+          diferença na qualidade da sua API.
+        </div>
+      </div>
+      <!-- ══ CAPACIDADES ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          border-left: 6px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 14px;
+          "
+        >
+          Capacidades Trabalhadas
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Aplicar linguagem de programação por meio de apis, bibliotecas,
+              frameworks na construção de rotinas de software.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Selecionar ferramentas de gerenciamento na aplicação da
+              metodologia.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ VISÃO GERAL ══ -->
+      <div
+        style="
+          background: rgb(234, 242, 251);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.08) 0px 4px 18px;
+          border: 1px solid rgb(184, 212, 237);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 14px;
+          "
+        >
+          Por que existem três formas de enviar dados?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.8;
+            margin-bottom: 18px;
+          "
+        >
+          Quando um cliente faz uma requisição para uma API, ele frequentemente
+          precisa informar <em style="font-size: 15px">o que quer</em> ou
+          <em style="font-size: 15px">com quais dados</em>. O Express oferece
+          três maneiras de receber essas informações — cada uma adequada para um
+          tipo de situação diferente.
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 18px 22px;
+            border-left: 4px solid rgb(26, 95, 168);
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="font-size: 14px; color: rgb(26, 42, 58); line-height: 1.8"
+          >
+            <strong style="font-size: 14px">Analogia:</strong> pense em uma
+            pizzaria. Você pode pedir uma pizza
+            <strong style="font-size: 14px">específica pelo número</strong> da
+            mesa (<em style="font-size: 14px">params</em>), pode
+            <strong style="font-size: 14px">filtrar o cardápio</strong> pedindo
+            "só as sem glúten" (<em style="font-size: 14px">query</em>), ou pode
+            <strong style="font-size: 14px">preencher um formulário</strong>
+            inteiro com seu pedido personalizado (<em style="font-size: 14px"
+              >body</em
+            >).
+          </div>
+        </div>
+        <!-- Tabela resumo das 3 formas -->
+        <div style="overflow-x: auto; font-size: 14px">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 14px"
+          >
+            <thead style="font-size: 14px">
+              <tr
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgb(13, 59, 102),
+                    rgb(26, 95, 168)
+                  );
+                  font-size: 14px;
+                "
+              >
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  Tipo
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  Onde fica na URL / requisição
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  Usado para
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  Acessado via
+                </th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 14px">
+              <tr style="background: rgb(232, 241, 252); font-size: 14px">
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    font-weight: bold;
+                    color: rgb(13, 59, 102);
+                    white-space: nowrap;
+                    font-size: 14px;
+                  "
+                >
+                  Route Params
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 13px;
+                    color: #2c3e50;
+                  "
+                >
+                  /produtos<span
+                    style="
+                      background: rgb(253, 232, 160);
+                      padding: 0px 3px;
+                      border-radius: 3px;
+                      font-size: 13px;
+                    "
+                    >/42</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Identificar um recurso específico
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #1a5fa8;
+                    font-weight: bold;
+                  "
+                >
+                  req.params
+                </td>
+              </tr>
+              <tr style="font-size: 14px">
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    font-weight: bold;
+                    color: rgb(13, 59, 102);
+                    white-space: nowrap;
+                    font-size: 14px;
+                  "
+                >
+                  Query String
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 13px;
+                    color: #2c3e50;
+                  "
+                >
+                  /produtos<span
+                    style="
+                      background: rgb(253, 232, 160);
+                      padding: 0px 3px;
+                      border-radius: 3px;
+                      font-size: 13px;
+                    "
+                    >?cat=eletronico</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Filtrar, buscar, paginar
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #1a5fa8;
+                    font-weight: bold;
+                  "
+                >
+                  req.query
+                </td>
+              </tr>
+              <tr style="background: rgb(232, 241, 252); font-size: 14px">
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    font-weight: bold;
+                    color: rgb(13, 59, 102);
+                    white-space: nowrap;
+                    font-size: 14px;
+                  "
+                >
+                  Body
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 13px;
+                    color: #2c3e50;
+                  "
+                >
+                  <span
+                    style="
+                      background: rgb(253, 232, 160);
+                      padding: 0px 3px;
+                      border-radius: 3px;
+                      font-size: 13px;
+                    "
+                    >{ "nome": "Teclado" }</span
+                  >
+                  no corpo
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Criar ou atualizar dados
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #1a5fa8;
+                    font-weight: bold;
+                  "
+                >
+                  req.body
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- ══ ROUTE PARAMS ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgb(224, 236, 246);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+              color: #fff;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 5px 16px;
+              border-radius: 20px;
+              letter-spacing: 1px;
+              white-space: nowrap;
+            "
+          >
+            Tipo 1
+          </div>
+          <div style="font-size: 20px; font-weight: bold; color: #0d3b66">
+            Parâmetros de Rota —
+            <code
+              style="
+                background: #eaf2fb;
+                font-size: 18px;
+                padding: 2px 10px;
+                border-radius: 6px;
+              "
+              >req.params</code
+            >
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          Os <strong style="font-size: 15px">parâmetros de rota</strong> são
+          partes
+          <strong style="font-size: 15px">variáveis da própria URL</strong>.
+          Eles são declarados com o símbolo
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >:</code
+          >
+          seguido do nome na definição da rota. Quando a requisição chega, o
+          Express preenche automaticamente o objeto
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >req.params</code
+          >
+          com os valores reais.
+        </div>
+        <!-- Diagrama visual da URL -->
+        <div
+          style="
+            background: rgb(240, 246, 255);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 22px;
+            border: 1px solid rgb(184, 212, 237);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 12px;
+              font-weight: bold;
+              color: #1a5fa8;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 14px;
+            "
+          >
+            Anatomia da URL com parâmetro de rota
+          </div>
+          <div
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 17px;
+              color: #1a2a3a;
+              margin-bottom: 14px;
+              letter-spacing: 0.5px;
+              word-break: break-all;
+            "
+          >
+            <span style="color: rgb(74, 106, 138); font-size: 17px"
+              >http://localhost:3000</span
+            ><span
+              style="
+                color: rgb(13, 59, 102);
+                font-weight: bold;
+                font-size: 17px;
+              "
+              >/produtos/</span
+            ><span
+              style="
+                background: rgb(253, 232, 160);
+                color: rgb(122, 80, 0);
+                font-weight: bold;
+                padding: 1px 6px;
+                border-radius: 4px;
+                font-size: 17px;
+              "
+              >42</span
+            >
+          </div>
+          <div
+            style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px"
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  width: 14px;
+                  height: 14px;
+                  background: rgb(13, 59, 102);
+                  border-radius: 3px;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div style="font-size: 13px; color: #2c3e50">
+                <strong style="font-size: 13px">/produtos/</strong> — parte fixa
+                da rota
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  width: 14px;
+                  height: 14px;
+                  background: rgb(240, 184, 0);
+                  border-radius: 3px;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div style="font-size: 13px; color: #2c3e50">
+                <strong style="font-size: 13px">42</strong> — valor do parâmetro
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 11px;
+                  "
+                  >:id</code
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Exemplo básico -->
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 7px 18px;
+              font-size: 11px;
+              font-weight: bold;
+              color: #a8f0c8;
+              letter-spacing: 1px;
+            "
+          >
+            Exemplo básico — buscando um produto pelo id
+          </div>
+          <div
+            style="
+              padding: 20px 24px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              color: rgb(200, 216, 232);
+            "
+          >
+            app.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >get</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/produtos/:id'</span
+            >, (req, res) =&gt; {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            { id } = req.params;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// id = "42" (sempre string)</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            idNumero =
+            <span style="color: rgb(93, 245, 168); font-size: 13px">Number</span
+            >(id); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// converte para número</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ mensagem:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >`Produto de id ${idNumero}`</span
+            >
+            });<br style="font-size: 13px" />});
+          </div>
+        </div>
+        <!-- Aviso: params são sempre string -->
+        <div
+          style="
+            background: rgb(255, 251, 235);
+            border-width: 1px 1px 1px 4px;
+            border-style: solid;
+            border-color: rgb(240, 208, 128) rgb(240, 208, 128)
+              rgb(240, 208, 128) rgb(240, 184, 0);
+            border-image: initial;
+            border-radius: 10px;
+            padding: 14px 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #8a6000;
+              margin-bottom: 6px;
+            "
+          >
+            ⚠️ Atenção — params sempre chegam como string
+          </div>
+          <div style="font-size: 14px; color: #5a4a10; line-height: 1.75">
+            O valor de
+            <code
+              style="
+                background: rgb(254, 243, 192);
+                padding: 1px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+              "
+              >req.params.id</code
+            >
+            é sempre do tipo
+            <code
+              style="
+                background: rgb(254, 243, 192);
+                padding: 1px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+              "
+              >string</code
+            >, mesmo que o cliente tenha enviado um número. Ao comparar com
+            dados que são números, converta com
+            <code
+              style="
+                background: rgb(254, 243, 192);
+                padding: 1px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+              "
+              >Number()</code
+            >
+            ou
+            <code
+              style="
+                background: rgb(254, 243, 192);
+                padding: 1px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+              "
+              >parseInt()</code
+            >.
+          </div>
+        </div>
+        <!-- Múltiplos params -->
+        <div
+          style="
+            border: 1px solid rgb(212, 230, 245);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(13, 59, 102),
+                rgb(26, 95, 168)
+              );
+              padding: 10px 20px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 13px; font-weight: bold; color: #fff">
+              Múltiplos parâmetros na mesma rota
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              padding: 16px 20px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 14px;
+                color: rgb(44, 62, 80);
+                line-height: 1.8;
+                margin-bottom: 14px;
+              "
+            >
+              Você pode ter mais de um parâmetro na mesma rota. Cada um será uma
+              chave separada dentro de
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 6px;
+                  border-radius: 4px;
+                  font-size: 12px;
+                "
+                >req.params</code
+              >.
+            </div>
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                border-radius: 8px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 6px 16px;
+                  font-size: 11px;
+                  font-weight: bold;
+                  color: #5db8f5;
+                  letter-spacing: 1px;
+                "
+              >
+                Requisição: GET /categorias/eletronicos/produtos/5
+              </div>
+              <div
+                style="
+                  padding: 14px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 1.9;
+                  color: #c8d8e8;
+                "
+              >
+                app.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                  >get</span
+                >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                  >'/categorias/:categoria/produtos/:id'</span
+                >, (req, res) =&gt; {<br
+                  style="font-size: 13px"
+                />&nbsp;&nbsp;<span
+                  style="color: rgb(240, 200, 122); font-size: 13px"
+                  >const</span
+                >
+                { categoria, id } = req.params;<br
+                  style="font-size: 13px"
+                />&nbsp;&nbsp;<span
+                  style="color: rgb(93, 184, 245); font-size: 13px"
+                  >// categoria = "eletronicos" | id = "5"</span
+                ><br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+                  style="color: rgb(93, 245, 168); font-size: 13px"
+                  >json</span
+                >({ categoria, id });<br style="font-size: 13px" />});
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Quando usar -->
+        <div
+          style="
+            background: rgb(232, 248, 238);
+            border-width: 1px 1px 1px 4px;
+            border-style: solid;
+            border-color: rgb(184, 223, 200) rgb(184, 223, 200)
+              rgb(184, 223, 200) rgb(26, 122, 69);
+            border-image: initial;
+            border-radius: 10px;
+            padding: 14px 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #1a5a30;
+              margin-bottom: 8px;
+            "
+          >
+            ✅ Quando usar Route Params
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 14px;
+                color: #1a4a2a;
+                line-height: 1.7;
+                display: flex;
+                gap: 10px;
+              "
+            >
+              <span
+                style="
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+                >→</span
+              >
+              Para identificar um recurso
+              <strong style="font-size: 14px">único e específico</strong>:
+              <code
+                style="
+                  background: rgb(208, 240, 224);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >/usuarios/7</code
+              >,
+              <code
+                style="
+                  background: rgb(208, 240, 224);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >/posts/meu-titulo</code
+              >
+            </div>
+            <div
+              style="
+                font-size: 14px;
+                color: #1a4a2a;
+                line-height: 1.7;
+                display: flex;
+                gap: 10px;
+              "
+            >
+              <span
+                style="
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+                >→</span
+              >
+              Quando o dado
+              <strong style="font-size: 14px"
+                >faz parte da estrutura da URL</strong
+              >, não é opcional
+            </div>
+            <div
+              style="
+                font-size: 14px;
+                color: #1a4a2a;
+                line-height: 1.7;
+                display: flex;
+                gap: 10px;
+              "
+            >
+              <span
+                style="
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+                >→</span
+              >
+              Nos métodos <strong style="font-size: 14px">GET por id</strong>,
+              <strong style="font-size: 14px">PUT</strong> e
+              <strong style="font-size: 14px">DELETE</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ QUERY STRING ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgb(224, 236, 246);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #0d4a8a, #1a70c8);
+              color: #fff;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 5px 16px;
+              border-radius: 20px;
+              letter-spacing: 1px;
+              white-space: nowrap;
+            "
+          >
+            Tipo 2
+          </div>
+          <div style="font-size: 20px; font-weight: bold; color: #0d3b66">
+            Query String —
+            <code
+              style="
+                background: #eaf2fb;
+                font-size: 18px;
+                padding: 2px 10px;
+                border-radius: 6px;
+              "
+              >req.query</code
+            >
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          A <strong style="font-size: 15px">query string</strong> é um conjunto
+          de pares
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >chave=valor</code
+          >
+          adicionados ao final da URL após o símbolo
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >?</code
+          >. Para múltiplos parâmetros, separe-os com
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >&amp;</code
+          >. Diferente dos route params, a query string é
+          <strong style="font-size: 15px">opcional</strong> — a rota funciona
+          mesmo sem ela.
+        </div>
+        <!-- Diagrama visual da URL -->
+        <div
+          style="
+            background: rgb(240, 246, 255);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 22px;
+            border: 1px solid rgb(184, 212, 237);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 12px;
+              font-weight: bold;
+              color: #1a5fa8;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 14px;
+            "
+          >
+            Anatomia da URL com query string
+          </div>
+          <div
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 15px;
+              color: #1a2a3a;
+              margin-bottom: 14px;
+              letter-spacing: 0.5px;
+              word-break: break-all;
+              line-height: 1.8;
+            "
+          >
+            <span style="color: rgb(74, 106, 138); font-size: 15px"
+              >http://localhost:3000</span
+            ><span
+              style="
+                color: rgb(13, 59, 102);
+                font-weight: bold;
+                font-size: 15px;
+              "
+              >/produtos</span
+            ><span
+              style="
+                color: rgb(192, 57, 43);
+                font-weight: bold;
+                font-size: 15px;
+              "
+              >?</span
+            ><span
+              style="
+                background: rgb(253, 232, 160);
+                color: rgb(122, 80, 0);
+                font-weight: bold;
+                padding: 1px 6px;
+                border-radius: 4px;
+                font-size: 15px;
+              "
+              >categoria=eletronico</span
+            ><span
+              style="
+                color: rgb(192, 57, 43);
+                font-weight: bold;
+                font-size: 15px;
+              "
+              >&amp;</span
+            ><span
+              style="
+                background: rgb(212, 238, 255);
+                color: rgb(13, 59, 102);
+                font-weight: bold;
+                padding: 1px 6px;
+                border-radius: 4px;
+                font-size: 15px;
+              "
+              >pagina=2</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px 20px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  width: 14px;
+                  height: 14px;
+                  background: rgb(13, 59, 102);
+                  border-radius: 3px;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div style="font-size: 13px; color: #2c3e50">
+                <strong style="font-size: 13px">/produtos</strong> — rota base
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  width: 14px;
+                  height: 14px;
+                  background: rgb(192, 57, 43);
+                  border-radius: 3px;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div style="font-size: 13px; color: #2c3e50">
+                <strong style="font-size: 13px">?</strong> e
+                <strong style="font-size: 13px">&amp;</strong> — separadores da
+                query string
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  width: 14px;
+                  height: 14px;
+                  background: rgb(240, 184, 0);
+                  border-radius: 3px;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div style="font-size: 13px; color: #2c3e50">
+                <strong style="font-size: 13px">categoria=eletronico</strong> —
+                par chave/valor
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  width: 14px;
+                  height: 14px;
+                  background: rgb(58, 138, 223);
+                  border-radius: 3px;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div style="font-size: 13px; color: #2c3e50">
+                <strong style="font-size: 13px">pagina=2</strong> — segundo
+                parâmetro
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Exemplo básico -->
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 7px 18px;
+              font-size: 11px;
+              font-weight: bold;
+              color: #a8f0c8;
+              letter-spacing: 1px;
+            "
+          >
+            Exemplo — filtrando produtos por categoria e página
+          </div>
+          <div
+            style="
+              padding: 20px 24px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              color: rgb(200, 216, 232);
+            "
+          >
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >// GET /produtos?categoria=eletronico&amp;pagina=2</span
+            ><br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >get</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/produtos'</span
+            >, (req, res) =&gt; {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            { categoria, pagina } = req.query;<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// categoria = "eletronico" | pagina = "2"</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// se não enviado, o valor é undefined</span
+            ><br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;filtro:
+            categoria ??
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'todos'</span
+            >,<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;pagina:
+            <span style="color: rgb(93, 245, 168); font-size: 13px">Number</span
+            >(pagina) ||
+            <span style="color: rgb(240, 160, 96); font-size: 13px">1</span>,<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;});<br style="font-size: 13px" />});
+          </div>
+        </div>
+        <!-- Parâmetro com valor padrão -->
+        <div
+          style="
+            border: 1px solid rgb(212, 230, 245);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(13, 74, 138),
+                rgb(26, 112, 200)
+              );
+              padding: 10px 20px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 13px; font-weight: bold; color: #fff">
+              Boa prática — sempre defina um valor padrão
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              padding: 16px 20px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 14px;
+                color: rgb(44, 62, 80);
+                line-height: 1.8;
+                margin-bottom: 14px;
+              "
+            >
+              Como a query string é opcional, o valor pode chegar como
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 6px;
+                  border-radius: 4px;
+                  font-size: 12px;
+                "
+                >undefined</code
+              >. Use o operador
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 6px;
+                  border-radius: 4px;
+                  font-size: 12px;
+                "
+                >??</code
+              >
+              (nullish coalescing) ou desestruturação com valor padrão para
+              evitar bugs.
+            </div>
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                border-radius: 8px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  padding: 14px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 1.9;
+                  color: #c8d8e8;
+                "
+              >
+                <span style="color: rgb(93, 184, 245); font-size: 13px"
+                  >// opção 1 — desestruturação com padrão</span
+                ><br style="font-size: 13px" /><span
+                  style="color: rgb(240, 200, 122); font-size: 13px"
+                  >const</span
+                >
+                { categoria =
+                <span style="color: rgb(168, 240, 200); font-size: 13px"
+                  >'todos'</span
+                >, pagina =
+                <span style="color: rgb(168, 240, 200); font-size: 13px"
+                  >'1'</span
+                >
+                } = req.query;<br style="font-size: 13px" /><br
+                  style="font-size: 13px"
+                /><span style="color: rgb(93, 184, 245); font-size: 13px"
+                  >// opção 2 — operador ??</span
+                ><br style="font-size: 13px" /><span
+                  style="color: rgb(240, 200, 122); font-size: 13px"
+                  >const</span
+                >
+                categoria = req.query.categoria ??
+                <span style="color: rgb(168, 240, 200); font-size: 13px"
+                  >'todos'</span
+                >;<br style="font-size: 13px" /><span
+                  style="color: rgb(240, 200, 122); font-size: 13px"
+                  >const</span
+                >
+                pagina = req.query.pagina ??
+                <span style="color: rgb(168, 240, 200); font-size: 13px"
+                  >'1'</span
+                >;
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Quando usar -->
+        <div
+          style="
+            background: rgb(232, 248, 238);
+            border-width: 1px 1px 1px 4px;
+            border-style: solid;
+            border-color: rgb(184, 223, 200) rgb(184, 223, 200)
+              rgb(184, 223, 200) rgb(26, 122, 69);
+            border-image: initial;
+            border-radius: 10px;
+            padding: 14px 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #1a5a30;
+              margin-bottom: 8px;
+            "
+          >
+            ✅ Quando usar Query String
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 14px;
+                color: #1a4a2a;
+                line-height: 1.7;
+                display: flex;
+                gap: 10px;
+              "
+            >
+              <span
+                style="
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+                >→</span
+              >
+              Para <strong style="font-size: 14px">filtrar</strong> uma
+              listagem:
+              <code
+                style="
+                  background: rgb(208, 240, 224);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >/produtos?categoria=eletronico</code
+              >
+            </div>
+            <div
+              style="
+                font-size: 14px;
+                color: #1a4a2a;
+                line-height: 1.7;
+                display: flex;
+                gap: 10px;
+              "
+            >
+              <span
+                style="
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+                >→</span
+              >
+              Para <strong style="font-size: 14px">paginar</strong> resultados:
+              <code
+                style="
+                  background: rgb(208, 240, 224);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >/produtos?pagina=2&amp;limite=10</code
+              >
+            </div>
+            <div
+              style="
+                font-size: 14px;
+                color: #1a4a2a;
+                line-height: 1.7;
+                display: flex;
+                gap: 10px;
+              "
+            >
+              <span
+                style="
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+                >→</span
+              >
+              Para <strong style="font-size: 14px">buscar</strong> por texto:
+              <code
+                style="
+                  background: rgb(208, 240, 224);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >/produtos?busca=teclado</code
+              >
+            </div>
+            <div
+              style="
+                font-size: 14px;
+                color: #1a4a2a;
+                line-height: 1.7;
+                display: flex;
+                gap: 10px;
+              "
+            >
+              <span
+                style="
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+                >→</span
+              >
+              Sempre em requisições
+              <strong style="font-size: 14px">GET</strong> — nunca para enviar
+              dados sensíveis (a query fica visível na URL)
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ BODY ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgb(224, 236, 246);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #06204a, #0e4080);
+              color: #fff;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 5px 16px;
+              border-radius: 20px;
+              letter-spacing: 1px;
+              white-space: nowrap;
+            "
+          >
+            Tipo 3
+          </div>
+          <div style="font-size: 20px; font-weight: bold; color: #0d3b66">
+            Corpo da Requisição —
+            <code
+              style="
+                background: #eaf2fb;
+                font-size: 18px;
+                padding: 2px 10px;
+                border-radius: 6px;
+              "
+              >req.body</code
+            >
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          O <strong style="font-size: 15px">body</strong> é o corpo da
+          requisição HTTP — é onde ficam os dados estruturados enviados pelo
+          cliente para criar ou atualizar um recurso. O body
+          <strong style="font-size: 15px">não aparece na URL</strong>; ele é
+          transmitido de forma separada, o que o torna adequado para dados
+          maiores e sensíveis.
+        </div>
+        <!-- Configuração obrigatória -->
+        <div
+          style="
+            background: rgb(255, 243, 243);
+            border-width: 1px 1px 1px 4px;
+            border-style: solid;
+            border-color: rgb(240, 176, 176) rgb(240, 176, 176)
+              rgb(240, 176, 176) rgb(192, 57, 43);
+            border-image: initial;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #8a0000;
+              margin-bottom: 8px;
+            "
+          >
+            🔧 Pré-requisito obrigatório — ativar o parser de JSON
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #5a1a1a;
+              line-height: 1.75;
+              margin-bottom: 12px;
+            "
+          >
+            O Express
+            <strong style="font-size: 14px"
+              >não lê o body automaticamente</strong
+            >. Você precisa ativar o middleware
+            <code
+              style="
+                background: rgb(253, 232, 232);
+                padding: 1px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+              "
+              >express.json()</code
+            >
+            — sem ele,
+            <code
+              style="
+                background: rgb(253, 232, 232);
+                padding: 1px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+              "
+              >req.body</code
+            >
+            sempre será
+            <code
+              style="
+                background: rgb(253, 232, 232);
+                padding: 1px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+              "
+              >undefined</code
+            >.
+          </div>
+          <div
+            style="
+              background: #1a2a3a;
+              border-radius: 8px;
+              padding: 12px 16px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 1.6;
+            "
+          >
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            app =
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >express</span
+            >();<br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >use</span
+            >(express.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >()); &nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// ← necessário para req.body funcionar</span
+            >
+          </div>
+        </div>
+        <!-- Exemplo POST -->
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 7px 18px;
+              font-size: 11px;
+              font-weight: bold;
+              color: #a8f0c8;
+              letter-spacing: 1px;
+            "
+          >
+            Exemplo — criando um novo usuário com POST
+          </div>
+          <div
+            style="
+              padding: 20px 24px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              color: rgb(200, 216, 232);
+            "
+          >
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >// Body enviado pelo cliente: { "nome": "Ana", "email":
+              "ana@email.com" }</span
+            ><br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            />app.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >post</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/usuarios'</span
+            >, (req, res) =&gt; {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            { nome, email } = req.body;<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// validação básica</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (!nome || !email) {<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">400</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'nome e email são obrigatórios'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;}<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            novoUsuario = { id:
+            <span style="color: rgb(240, 160, 96); font-size: 13px">1</span>,
+            nome, email };<br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">201</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >(novoUsuario);<br style="font-size: 13px" />});
+          </div>
+        </div>
+        <!-- Exemplo PUT -->
+        <div
+          style="
+            border: 1px solid rgb(212, 230, 245);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(6, 32, 74),
+                rgb(14, 64, 128)
+              );
+              padding: 10px 20px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 13px; font-weight: bold; color: #fff">
+              Combinando body + params — atualizando um recurso
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              padding: 16px 20px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 14px;
+                color: rgb(44, 62, 80);
+                line-height: 1.8;
+                margin-bottom: 14px;
+              "
+            >
+              O método PUT usa o
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 6px;
+                  border-radius: 4px;
+                  font-size: 12px;
+                "
+                >:id</code
+              >
+              do params para saber <em style="font-size: 14px">qual</em> recurso
+              atualizar, e o
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 6px;
+                  border-radius: 4px;
+                  font-size: 12px;
+                "
+                >req.body</code
+              >
+              para receber os novos dados.
+            </div>
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                border-radius: 8px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 6px 16px;
+                  font-size: 11px;
+                  font-weight: bold;
+                  color: #5db8f5;
+                  letter-spacing: 1px;
+                "
+              >
+                PUT /usuarios/7 — body: { "nome": "Ana Souza" }
+              </div>
+              <div
+                style="
+                  padding: 14px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 1.9;
+                  color: #c8d8e8;
+                "
+              >
+                app.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                  >put</span
+                >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                  >'/usuarios/:id'</span
+                >, (req, res) =&gt; {<br
+                  style="font-size: 13px"
+                />&nbsp;&nbsp;<span
+                  style="color: rgb(240, 200, 122); font-size: 13px"
+                  >const</span
+                >
+                { id } = req.params; &nbsp;&nbsp;<span
+                  style="color: rgb(93, 184, 245); font-size: 13px"
+                  >// id = "7" — quem atualizar</span
+                ><br style="font-size: 13px" />&nbsp;&nbsp;<span
+                  style="color: rgb(240, 200, 122); font-size: 13px"
+                  >const</span
+                >
+                { nome } = req.body; &nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(93, 184, 245); font-size: 13px"
+                  >// nome = "Ana Souza" — o que atualizar</span
+                ><br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+                  style="color: rgb(93, 245, 168); font-size: 13px"
+                  >json</span
+                >({ id:
+                <span style="color: rgb(93, 245, 168); font-size: 13px"
+                  >Number</span
+                >(id), nome });<br style="font-size: 13px" />});
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Quando usar -->
+        <div
+          style="
+            background: rgb(232, 248, 238);
+            border-width: 1px 1px 1px 4px;
+            border-style: solid;
+            border-color: rgb(184, 223, 200) rgb(184, 223, 200)
+              rgb(184, 223, 200) rgb(26, 122, 69);
+            border-image: initial;
+            border-radius: 10px;
+            padding: 14px 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #1a5a30;
+              margin-bottom: 8px;
+            "
+          >
+            ✅ Quando usar Body
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 14px;
+                color: #1a4a2a;
+                line-height: 1.7;
+                display: flex;
+                gap: 10px;
+              "
+            >
+              <span
+                style="
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+                >→</span
+              >
+              Para <strong style="font-size: 14px">criar</strong> recursos novos
+              — método
+              <code
+                style="
+                  background: rgb(208, 240, 224);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >POST</code
+              >
+            </div>
+            <div
+              style="
+                font-size: 14px;
+                color: #1a4a2a;
+                line-height: 1.7;
+                display: flex;
+                gap: 10px;
+              "
+            >
+              <span
+                style="
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+                >→</span
+              >
+              Para <strong style="font-size: 14px">atualizar</strong> recursos
+              existentes — método
+              <code
+                style="
+                  background: rgb(208, 240, 224);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >PUT</code
+              >
+              ou
+              <code
+                style="
+                  background: rgb(208, 240, 224);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >PATCH</code
+              >
+            </div>
+            <div
+              style="
+                font-size: 14px;
+                color: #1a4a2a;
+                line-height: 1.7;
+                display: flex;
+                gap: 10px;
+              "
+            >
+              <span
+                style="
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+                >→</span
+              >
+              Quando os dados são
+              <strong style="font-size: 14px">estruturados e complexos</strong>
+              (objetos com muitos campos)
+            </div>
+            <div
+              style="
+                font-size: 14px;
+                color: #1a4a2a;
+                line-height: 1.7;
+                display: flex;
+                gap: 10px;
+              "
+            >
+              <span
+                style="
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+                >→</span
+              >
+              Quando os dados
+              <strong style="font-size: 14px">não devem aparecer na URL</strong>
+              (senhas, informações pessoais)
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ COMPARAÇÃO ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Comparação — qual usar em cada situação?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 22px;
+          "
+        >
+          Essa é uma das dúvidas mais comuns de quem está aprendendo APIs. A
+          regra geral é simples:
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(234, 242, 251);
+              border-radius: 12px;
+              padding: 20px;
+              border-top: 4px solid rgb(13, 59, 102);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #0d3b66;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+              "
+            >
+              req.params
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #2c3e50;
+                line-height: 1.7;
+                margin-bottom: 12px;
+              "
+            >
+              Quando você quer acessar
+              <strong style="font-size: 13px">um item específico</strong> pelo
+              seu identificador.
+            </div>
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #0d3b66;
+                background: #d8eaf8;
+                padding: 8px 12px;
+                border-radius: 6px;
+                line-height: 1.7;
+              "
+            >
+              GET /produtos/5<br style="font-size: 12px" />DELETE /usuarios/3<br
+                style="font-size: 12px"
+              />PUT /posts/12
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(234, 242, 251);
+              border-radius: 12px;
+              padding: 20px;
+              border-top: 4px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #0d3b66;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+              "
+            >
+              req.query
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #2c3e50;
+                line-height: 1.7;
+                margin-bottom: 12px;
+              "
+            >
+              Quando você quer
+              <strong style="font-size: 13px">filtrar ou refinar</strong> uma
+              listagem de forma opcional.
+            </div>
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #0d3b66;
+                background: #d8eaf8;
+                padding: 8px 12px;
+                border-radius: 6px;
+                line-height: 1.7;
+              "
+            >
+              GET /produtos?cat=tec<br style="font-size: 12px" />GET
+              /posts?pagina=2<br style="font-size: 12px" />GET
+              /usuarios?busca=ana
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(234, 242, 251);
+              border-radius: 12px;
+              padding: 20px;
+              border-top: 4px solid rgb(58, 122, 191);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #0d3b66;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+              "
+            >
+              req.body
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #2c3e50;
+                line-height: 1.7;
+                margin-bottom: 12px;
+              "
+            >
+              Quando você vai
+              <strong style="font-size: 13px">criar ou atualizar</strong> um
+              recurso com dados estruturados.
+            </div>
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #0d3b66;
+                background: #d8eaf8;
+                padding: 8px 12px;
+                border-radius: 6px;
+                line-height: 1.7;
+              "
+            >
+              POST /produtos<br style="font-size: 12px" />PUT /usuarios/3<br
+                style="font-size: 12px"
+              />PATCH /posts/12
+            </div>
+          </div>
+        </div>
+        <!-- Tabela de diferenças -->
+        <div style="overflow-x: auto; font-size: 14px">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 13px"
+          >
+            <thead style="font-size: 13px">
+              <tr
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgb(13, 59, 102),
+                    rgb(26, 95, 168)
+                  );
+                  font-size: 13px;
+                "
+              >
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 13px;
+                  "
+                >
+                  Característica
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: center;
+                    font-size: 13px;
+                  "
+                >
+                  params
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: center;
+                    font-size: 13px;
+                  "
+                >
+                  query
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: center;
+                    font-size: 13px;
+                  "
+                >
+                  body
+                </th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 13px">
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    font-weight: 600;
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  Visível na URL?
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    text-align: center;
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  ✓ Sim
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    text-align: center;
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  ✓ Sim
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    text-align: center;
+                    color: rgb(192, 57, 43);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  ✗ Não
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    font-weight: 600;
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  Obrigatório?
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    text-align: center;
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  ✓ Sim
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    text-align: center;
+                    color: rgb(192, 57, 43);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  ✗ Opcional
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    text-align: center;
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  ✓ Sim
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    font-weight: 600;
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  Usado em qual método?
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    text-align: center;
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  GET, PUT, DELETE
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    text-align: center;
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  GET
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    text-align: center;
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  POST, PUT, PATCH
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    font-weight: 600;
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  Tipo do valor recebido
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    text-align: center;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #1a5fa8;
+                  "
+                >
+                  string
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    text-align: center;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #1a5fa8;
+                  "
+                >
+                  string
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    text-align: center;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #1a5fa8;
+                  "
+                >
+                  qualquer (JSON)
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    font-weight: 600;
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  Adequado para dados sensíveis?
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    text-align: center;
+                    color: rgb(192, 57, 43);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  ✗ Não
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    text-align: center;
+                    color: rgb(192, 57, 43);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  ✗ Não
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    text-align: center;
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  ✓ Sim
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- ══ EXEMPLO COMPLETO INTEGRADO ══ -->
+      <div
+        style="
+          border-radius: 14px;
+          overflow: hidden;
+          box-shadow: rgba(13, 59, 102, 0.22) 0px 8px 28px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              135deg,
+              rgb(13, 59, 102),
+              rgb(26, 95, 168)
+            );
+            padding: 26px 32px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 11px;
+              font-weight: bold;
+              letter-spacing: 3px;
+              text-transform: uppercase;
+              color: #7ab0e0;
+              margin-bottom: 10px;
+            "
+          >
+            ⭐ Exemplo Completo
+          </div>
+          <div
+            style="
+              font-size: 22px;
+              font-weight: bold;
+              color: #ffffff;
+              margin-bottom: 8px;
+            "
+          >
+            API de Livros — usando os três tipos de parâmetro
+          </div>
+          <div style="font-size: 14px; color: #a8c8e8; line-height: 1.7">
+            Um CRUD completo onde cada rota demonstra qual tipo de parâmetro
+            usar e por quê.
+          </div>
+        </div>
+        <div style="background: rgb(13, 27, 42); font-size: 14px">
+          <div
+            style="
+              background: rgb(26, 42, 58);
+              padding: 8px 20px;
+              display: flex;
+              gap: 6px;
+              align-items: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: rgb(240, 128, 128);
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div
+              style="
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: rgb(240, 192, 96);
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div
+              style="
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: rgb(96, 192, 96);
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <span
+              style="
+                font-size: 11px;
+                font-weight: bold;
+                color: #5db8f5;
+                letter-spacing: 1px;
+                margin-left: 8px;
+              "
+              >app.js</span
+            >
+          </div>
+          <div
+            style="
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              color: #c8d8e8;
+            "
+          >
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >import</span
+            >
+            express
+            <span style="color: rgb(240, 200, 122); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'express'</span
+            >;<br style="font-size: 13px" /><span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            app =
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >express</span
+            >();<br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >use</span
+            >(express.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >());<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            /><span style="color: rgb(240, 200, 122); font-size: 13px"
+              >let</span
+            >
+            livros = [<br style="font-size: 13px" />&nbsp;&nbsp;{ id:
+            <span style="color: rgb(240, 160, 96); font-size: 13px">1</span>,
+            titulo:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'O Alquimista'</span
+            >, genero:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'romance'</span
+            >, preco:
+            <span style="color: rgb(240, 160, 96); font-size: 13px">39.9</span>
+            },<br style="font-size: 13px" />&nbsp;&nbsp;{ id:
+            <span style="color: rgb(240, 160, 96); font-size: 13px">2</span>,
+            titulo:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Duna'</span
+            >, genero:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'ficcao'</span
+            >, preco:
+            <span style="color: rgb(240, 160, 96); font-size: 13px">59.9</span>
+            },<br style="font-size: 13px" />&nbsp;&nbsp;{ id:
+            <span style="color: rgb(240, 160, 96); font-size: 13px">3</span>,
+            titulo:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Dom Casmurro'</span
+            >, genero:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'romance'</span
+            >, preco:
+            <span style="color: rgb(240, 160, 96); font-size: 13px">29.9</span>
+            },<br style="font-size: 13px" />];<br
+              style="font-size: 13px"
+            /><span style="color: rgb(240, 200, 122); font-size: 13px"
+              >let</span
+            >
+            proximoId =
+            <span style="color: rgb(240, 160, 96); font-size: 13px">4</span>;<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// ── req.query
+              ─────────────────────────────────────────────────────</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// GET /livros?genero=romance&amp;precoMax=50</span
+            ><br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >get</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/livros'</span
+            >, (req, res) =&gt; {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            { genero, precoMax } = req.query; &nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// filtros opcionais</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >let</span
+            >
+            resultado = livros;<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (genero) resultado = resultado.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >filter</span
+            >(l =&gt; l.genero === genero);<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (precoMax) resultado = resultado.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >filter</span
+            >(l =&gt; l.preco &lt;=
+            <span style="color: rgb(93, 245, 168); font-size: 13px">Number</span
+            >(precoMax));<br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >(resultado);<br style="font-size: 13px" />});<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// ── req.params
+              ────────────────────────────────────────────────────</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// GET /livros/2</span
+            ><br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >get</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/livros/:id'</span
+            >, (req, res) =&gt; {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            livro = livros.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >find</span
+            >(l =&gt; l.id ===
+            <span style="color: rgb(93, 245, 168); font-size: 13px">Number</span
+            >(req.params.id));<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (!livro)
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">404</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Livro não encontrado'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >(livro);<br style="font-size: 13px" />});<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// ── req.body
+              ──────────────────────────────────────────────────────</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// POST /livros — body: { "titulo": "...", "genero": "...",
+              "preco": ... }</span
+            ><br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >post</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/livros'</span
+            >, (req, res) =&gt; {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            { titulo, genero, preco } = req.body;<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (!titulo || !genero || !preco) {<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">400</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'titulo, genero e preco obrigatórios'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;}<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            novo = { id: proximoId++, titulo, genero, preco };<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;livros.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >push</span
+            >(novo);<br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">201</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >(novo);<br style="font-size: 13px" />});<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// ── params + body
+              ─────────────────────────────────────────────────</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// PUT /livros/2 — body: { "preco": 49.9 }</span
+            ><br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >put</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/livros/:id'</span
+            >, (req, res) =&gt; {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            idx = livros.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >findIndex</span
+            >(l =&gt; l.id ===
+            <span style="color: rgb(93, 245, 168); font-size: 13px">Number</span
+            >(req.params.id));<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (idx === -<span style="color: rgb(240, 160, 96); font-size: 13px"
+              >1</span
+            >)
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">404</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Livro não encontrado'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;livros[idx] = {
+            ...livros[idx], ...req.body }; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// merge dos dados</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >(livros[idx]);<br style="font-size: 13px" />});<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// ── params
+              ────────────────────────────────────────────────────────</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// DELETE /livros/1</span
+            ><br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >delete</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/livros/:id'</span
+            >, (req, res) =&gt; {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            antes = livros.length;<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;livros = livros.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >filter</span
+            >(l =&gt; l.id !==
+            <span style="color: rgb(93, 245, 168); font-size: 13px">Number</span
+            >(req.params.id));<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (livros.length === antes)
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">404</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Livro não encontrado'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">204</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >send</span
+            >();<br style="font-size: 13px" />});<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >listen</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">3000</span
+            >, () =&gt; console.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >log</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'API rodando em http://localhost:3000'</span
+            >));
+          </div>
+        </div>
+      </div>
+      <!-- ══ RESUMO ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Resumo — O que você aprendeu nesta aula
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              background: rgb(240, 246, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 20px; flex-shrink: 0">🔵</span>
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 4px;
+                "
+              >
+                req.params
+              </div>
+              <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+                Parte variável da URL. Obrigatório. Usado para identificar um
+                recurso específico.
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              background: rgb(240, 246, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 20px; flex-shrink: 0">🟡</span>
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 4px;
+                "
+              >
+                req.query
+              </div>
+              <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+                Pares chave=valor após o ? na URL. Opcional. Usado para filtros
+                e buscas.
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              background: rgb(240, 246, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 20px; flex-shrink: 0">🟢</span>
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 4px;
+                "
+              >
+                req.body
+              </div>
+              <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+                Corpo JSON da requisição. Invisível na URL. Usado para criar e
+                atualizar dados.
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              background: rgb(240, 246, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 20px; flex-shrink: 0">⚠️</span>
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 4px;
+                "
+              >
+                params e query são sempre string
+              </div>
+              <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+                Sempre converta para número com
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 4px;
+                    border-radius: 3px;
+                    font-size: 11px;
+                  "
+                  >Number()</code
+                >
+                quando comparar com dados numéricos.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Referências -->
+      <div
+        style="
+          padding-top: 4px;
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+          font-size: 14px;
+        "
+      >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://expressjs.com/pt-br/api.html#req.params"
+          >📖 Express — req.params</a
+        >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://expressjs.com/pt-br/api.html#req.query"
+          >📖 Express — req.query</a
+        >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://expressjs.com/pt-br/api.html#req.body"
+          >📖 Express — req.body</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="../../style.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, rgb(240, 244, 255) 0%, rgb(232, 240, 254) 100%); padding: 40px 24px; max-width: 980px; margin: 0px auto; color: rgb(26, 42, 58); font-size: 14px;">
+
+    <!-- ══ CABEÇALHO ══ -->
+    <div style="background: linear-gradient(135deg, rgb(26, 35, 126) 0%, rgb(69, 39, 160) 50%, rgb(106, 27, 154) 100%); border-radius: 20px; padding: 40px 36px 32px; margin-bottom: 28px; box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px; position: relative; overflow: hidden; font-size: 14px;">
+        <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; font-size: 14px;">&nbsp;</div>
+        <div style="position: absolute; bottom: -30px; left: 40px; width: 140px; height: 140px; background: rgba(255, 255, 255, 0.04); border-radius: 50%; font-size: 14px;">&nbsp;</div>
+        <div style="position: relative; z-index: 1; font-size: 14px;">
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; font-size: 14px;">
+                <div style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 30px; padding: 6px 18px; font-size: 14px;"><span style="color: #e1bee7; font-size: 12px; font-weight: 600;">🧠 Lógica de Programação</span></div>
+            </div>
+            <div style="color: #fff; font-size: 26px; font-weight: 900; line-height: 1.2; margin-bottom: 10px;">Gabarito Comentado<br style="font-size: 26px;"><span style="color: rgb(206, 147, 216); font-size: 26px;">Operadores Lógicos e Estrutura CASE</span></div>
+            <div style="color: rgba(255,255,255,.75); font-size: 14px; margin-top: 10px;">Respostas detalhadas · Explicação do raciocínio · Sintaxe correta</div>
+            <div style="display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; font-size: 14px;">
+                <span style="background: rgba(255,255,255,.15); color: #90caf9; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid rgba(255,255,255,.2);">E</span>
+                <span style="background: rgba(255,255,255,.15); color: #a5d6a7; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid rgba(255,255,255,.2);">OU</span>
+                <span style="background: rgba(255,255,255,.15); color: #ffcc80; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid rgba(255,255,255,.2);">NÃO</span>
+                <span style="background: rgba(255,255,255,.15); color: #ce93d8; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid rgba(255,255,255,.2);">ESCOLHA</span>
+                <span style="background: rgba(255,255,255,.15); color: #80cbc4; padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid rgba(255,255,255,.2);">CASO</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════ -->
+    <!-- NÍVEL 1 — GABARITO               -->
+    <!-- ══════════════════════════════════ -->
+    <div style="background: rgb(255, 255, 255); border-radius: 16px; padding: 0px; margin-bottom: 22px; box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px; overflow: hidden; font-size: 14px;">
+        <div style="background: linear-gradient(90deg, rgb(26, 35, 126), rgb(40, 53, 147)); padding: 18px 28px; display: flex; align-items: center; gap: 12px; font-size: 14px;">
+            <span style="background: rgba(255,255,255,.2); border-radius: 10px; padding: 6px 12px; color: white; font-weight: 900; font-size: 15px;">1</span>
+            <span style="color: #fff; font-size: 17px; font-weight: 800;">Nível 1 — Operadores Lógicos Básicos</span>
+        </div>
+        <div style="padding: 28px 32px; display: flex; flex-direction: column; gap: 20px; font-size: 14px;">
+
+            <!-- GABARITO 01 -->
+            <div style="background: rgb(232, 234, 246); border-radius: 14px; padding: 22px; border: 2px solid rgb(197, 202, 233); font-size: 14px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 14px;">
+                    <span style="background: #1a237e; color: white; border-radius: 8px; padding: 5px 14px; font-size: 12px; font-weight: 900;">Ex 01</span>
+                    <span style="color: #1a237e; font-size: 14px; font-weight: 800;">Cadastro de doador de sangue</span>
+                    <span style="margin-left: auto; background: #c5cae9; color: #1a237e; font-size: 11px; font-weight: bold; padding: 3px 12px; border-radius: 6px;">Operador E</span>
+                </div>
+                <div style="background: #0d1b4b; border-radius: 12px; padding: 18px; font-family: 'Courier New',monospace; font-size: 13px; line-height: 2.1; box-shadow: 0 4px 16px rgba(13,27,75,.3); margin-bottom: 12px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">INÍCIO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">LER</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">idade</span><span style="color: rgb(255, 204, 2); font-size: 13px;">,</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">peso</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SE</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(100, 181, 246); font-size: 13px;">idade</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">&gt;=</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">18</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">E</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(100, 181, 246); font-size: 13px;">idade</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">&lt;=</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">65</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">E</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(100, 181, 246); font-size: 13px;">peso</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">&gt;=</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">50</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">ENTÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Pode doar sangue"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SENÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Não pode doar sangue"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">FIM_SE</span><br style="font-size: 13px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">FIM</span>
+                </div>
+                <div style="background: #fff; border-radius: 8px; padding: 12px 16px; border-left: 4px solid #3949ab; font-size: 12px; color: #1a237e; line-height: 1.7;"><strong style="font-size: 12px;">Explicação:</strong> O intervalo de idade usa duas comparações unidas por E: (idade >= 18) E (idade <= 65). Isso é combinado com a verificação do peso também via E. Os parênteses isolam cada parte da condição composta.</div>
+            </div>
+
+            <!-- GABARITO 02 -->
+            <div style="background: rgb(255, 243, 224); border-radius: 14px; padding: 22px; border: 2px solid rgb(255, 224, 178); font-size: 14px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 14px;">
+                    <span style="background: #e65100; color: white; border-radius: 8px; padding: 5px 14px; font-size: 12px; font-weight: 900;">Ex 02</span>
+                    <span style="color: #e65100; font-size: 14px; font-weight: 800;">Desconto no cinema</span>
+                    <span style="margin-left: auto; background: #ffe0b2; color: #e65100; font-size: 11px; font-weight: bold; padding: 3px 12px; border-radius: 6px;">Operador OU</span>
+                </div>
+                <div style="background: #0d1b4b; border-radius: 12px; padding: 18px; font-family: 'Courier New',monospace; font-size: 13px; line-height: 2.1; box-shadow: 0 4px 16px rgba(13,27,75,.3); margin-bottom: 12px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">INÍCIO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">LER</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">categoria</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SE</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(100, 181, 246); font-size: 13px;">categoria</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">=</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"estudante"</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">OU</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(100, 181, 246); font-size: 13px;">categoria</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">=</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"idoso"</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">ENTÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Meia-entrada — R$ 15,00"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SENÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Inteira — R$ 30,00"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">FIM_SE</span><br style="font-size: 13px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">FIM</span>
+                </div>
+                <div style="background: #fff; border-radius: 8px; padding: 12px 16px; border-left: 4px solid #f57c00; font-size: 12px; color: #e65100; line-height: 1.7;"><strong style="font-size: 12px;">Explicação:</strong> Apenas duas comparações unidas por OU. Se categoria for "estudante" OU "idoso", entra no primeiro bloco. O SENÃO captura qualquer outro valor. Se trocasse OU por E, ninguém receberia desconto (ninguém é "estudante" E "idoso" ao mesmo tempo).</div>
+            </div>
+
+            <!-- GABARITO 03 -->
+            <div style="background: rgb(232, 245, 233); border-radius: 14px; padding: 22px; border: 2px solid rgb(200, 230, 201); font-size: 14px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 14px;">
+                    <span style="background: #2e7d32; color: white; border-radius: 8px; padding: 5px 14px; font-size: 12px; font-weight: 900;">Ex 03</span>
+                    <span style="color: #2e7d32; font-size: 14px; font-weight: 800;">Painel de acesso restrito</span>
+                    <span style="margin-left: auto; background: #c8e6c9; color: #2e7d32; font-size: 11px; font-weight: bold; padding: 3px 12px; border-radius: 6px;">Operador NÃO</span>
+                </div>
+                <div style="background: #0d1b4b; border-radius: 12px; padding: 18px; font-family: 'Courier New',monospace; font-size: 13px; line-height: 2.1; box-shadow: 0 4px 16px rgba(13,27,75,.3); margin-bottom: 12px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">INÍCIO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">LER</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">administrador</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SE</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(144, 202, 249); font-size: 13px;">NÃO</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">administrador</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">ENTÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Painel disponível"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SENÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Painel bloqueado para administradores"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">FIM_SE</span><br style="font-size: 13px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">FIM</span>
+                </div>
+                <div style="background: #fff; border-radius: 8px; padding: 12px 16px; border-left: 4px solid #388e3c; font-size: 12px; color: #1b5e20; line-height: 1.7;"><strong style="font-size: 12px;">Explicação:</strong> Administrador é uma variável lógica (VERDADEIRO/FALSO). O operador NÃO inverte o valor: se for FALSO, a condição vira VERDADEIRO e o painel é liberado. Sem NÃO, seria: SE administrador = FALSO ENTÃO.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════ -->
+    <!-- NÍVEL 2 — GABARITO               -->
+    <!-- ══════════════════════════════════ -->
+    <div style="background: rgb(255, 255, 255); border-radius: 16px; padding: 0px; margin-bottom: 22px; box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px; overflow: hidden; font-size: 14px;">
+        <div style="background: linear-gradient(90deg, rgb(230, 81, 0), rgb(245, 124, 0)); padding: 18px 28px; display: flex; align-items: center; gap: 12px; font-size: 14px;">
+            <span style="background: rgba(255,255,255,.2); border-radius: 10px; padding: 6px 12px; color: white; font-weight: 900; font-size: 15px;">2</span>
+            <span style="color: #fff; font-size: 17px; font-weight: 800;">Nível 2 — Combinações de Operadores</span>
+        </div>
+        <div style="padding: 28px 32px; display: flex; flex-direction: column; gap: 20px; font-size: 14px;">
+
+            <!-- GABARITO 04 -->
+            <div style="background: rgb(255, 243, 224); border-radius: 14px; padding: 22px; border: 2px solid rgb(255, 224, 178); font-size: 14px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 14px;">
+                    <span style="background: #e65100; color: white; border-radius: 8px; padding: 5px 14px; font-size: 12px; font-weight: 900;">Ex 04</span>
+                    <span style="color: #bf360c; font-size: 14px; font-weight: 800;">Classificação de IMC</span>
+                    <span style="margin-left: auto; background: #ffe0b2; color: #bf360c; font-size: 11px; font-weight: bold; padding: 3px 12px; border-radius: 6px;">E + OU aninhados</span>
+                </div>
+                <div style="background: #0d1b4b; border-radius: 12px; padding: 18px; font-family: 'Courier New',monospace; font-size: 13px; line-height: 2.1; box-shadow: 0 4px 16px rgba(13,27,75,.3); margin-bottom: 12px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">INÍCIO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">LER</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">peso</span><span style="color: rgb(255, 204, 2); font-size: 13px;">,</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">altura</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(100, 181, 246); font-size: 13px;">imc</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">←</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">peso</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">/</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(100, 181, 246); font-size: 13px;">altura</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">*</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">altura</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SE</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(100, 181, 246); font-size: 13px;">imc</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">&lt;</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">18.5</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">OU</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(100, 181, 246); font-size: 13px;">imc</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">&gt;</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">30.0</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">ENTÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Risco — encaminhar ao médico"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SENÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Peso normal"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">FIM_SE</span><br style="font-size: 13px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">FIM</span>
+                </div>
+                <div style="background: #fff; border-radius: 8px; padding: 12px 16px; border-left: 4px solid #f57c00; font-size: 12px; color: #bf360c; line-height: 1.7;"><strong style="font-size: 12px;">Explicação:</strong> IMC = peso / (altura × altura). A condição de risco captura os extremos: abaixo de 18,5 OU acima de 30,0. O SENÃO captura a faixa intermediária (normal). Parênteses em cada comparação mantêm a clareza.</div>
+            </div>
+
+            <!-- GABARITO 05 -->
+            <div style="background: rgb(232, 234, 246); border-radius: 14px; padding: 22px; border: 2px solid rgb(197, 202, 233); font-size: 14px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 14px;">
+                    <span style="background: #283593; color: white; border-radius: 8px; padding: 5px 14px; font-size: 12px; font-weight: 900;">Ex 05</span>
+                    <span style="color: #1a237e; font-size: 14px; font-weight: 800;">Validação de senha com limite</span>
+                    <span style="margin-left: auto; background: #c5cae9; color: #1a237e; font-size: 11px; font-weight: bold; padding: 3px 12px; border-radius: 6px;">REPITA + SE + OU</span>
+                </div>
+                <div style="background: #0d1b4b; border-radius: 12px; padding: 18px; font-family: 'Courier New',monospace; font-size: 13px; line-height: 2.1; box-shadow: 0 4px 16px rgba(13,27,75,.3); margin-bottom: 12px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">INÍCIO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(100, 181, 246); font-size: 13px;">tentativas</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">←</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">0</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(100, 181, 246); font-size: 13px;">senhaCorreta</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">←</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"1234"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">REPITA</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">LER</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">senha</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SE</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(100, 181, 246); font-size: 13px;">senha</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">=</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">senhaCorreta</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">ENTÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Acesso liberado"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">INTERROMPER</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SENÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Senha incorreta"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(100, 181, 246); font-size: 13px;">tentativas</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">←</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">tentativas</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">+</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">1</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">FIM_SE</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">ATÉ</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">que</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">tentativas</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">=</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">3</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SE</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(100, 181, 246); font-size: 13px;">tentativas</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">=</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">3</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">ENTÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Conta bloqueada"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">FIM_SE</span><br style="font-size: 13px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">FIM</span>
+                </div>
+                <div style="background: #fff; border-radius: 8px; padding: 12px 16px; border-left: 4px solid #3949ab; font-size: 12px; color: #1a237e; line-height: 1.7;"><strong style="font-size: 12px;">Explicação:</strong> O laço REPITA ATÉ executa enquanto tentativas for menor que 3. INTERROMPER encerra o laço imediatamente se a senha for correta. O SE após o laço só exibe "bloqueada" se tentativas = 3. O contador incrementa apenas no SENÃO (senha errada).</div>
+            </div>
+
+            <!-- GABARITO 06 -->
+            <div style="background: rgb(255, 243, 224); border-radius: 14px; padding: 22px; border: 2px solid rgb(255, 224, 178); font-size: 14px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 14px;">
+                    <span style="background: #bf360c; color: white; border-radius: 8px; padding: 5px 14px; font-size: 12px; font-weight: 900;">Ex 06</span>
+                    <span style="color: #bf360c; font-size: 14px; font-weight: 800;">Evento ao ar livre</span>
+                    <span style="margin-left: auto; background: #ffe0b2; color: #bf360c; font-size: 11px; font-weight: bold; padding: 3px 12px; border-radius: 6px;">E + NÃO combinados</span>
+                </div>
+                <div style="background: #0d1b4b; border-radius: 12px; padding: 18px; font-family: 'Courier New',monospace; font-size: 13px; line-height: 2.1; box-shadow: 0 4px 16px rgba(13,27,75,.3); margin-bottom: 12px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">INÍCIO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">LER</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">chovendo</span><span style="color: rgb(255, 204, 2); font-size: 13px;">,</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">temperatura</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SE</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(144, 202, 249); font-size: 13px;">NÃO</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">chovendo</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">E</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(100, 181, 246); font-size: 13px;">temperatura</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">&gt;</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">20</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">ENTÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Evento confirmado!"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SENÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Evento cancelado"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">FIM_SE</span><br style="font-size: 13px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">FIM</span>
+                </div>
+                <div style="background: #fff; border-radius: 8px; padding: 12px 16px; border-left: 4px solid #f57c00; font-size: 12px; color: #bf360c; line-height: 1.7;"><strong style="font-size: 12px;">Explicação:</strong> NÃO chovendo inverte o valor da variável lógica (se for FALSO, fica VERDADEIRO). O E une isso à condição da temperatura. Ambas precisam ser verdadeiras para o evento ocorrer. Os parênteses agrupam cada parte.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════ -->
+    <!-- NÍVEL 3 — GABARITO               -->
+    <!-- ══════════════════════════════════ -->
+    <div style="background: rgb(255, 255, 255); border-radius: 16px; padding: 0px; margin-bottom: 22px; box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px; overflow: hidden; font-size: 14px;">
+        <div style="background: linear-gradient(90deg, rgb(69, 39, 160), rgb(106, 27, 154)); padding: 18px 28px; display: flex; align-items: center; gap: 12px; font-size: 14px;">
+            <span style="background: rgba(255,255,255,.2); border-radius: 10px; padding: 6px 12px; color: white; font-weight: 900; font-size: 15px;">3</span>
+            <span style="color: #fff; font-size: 17px; font-weight: 800;">Nível 3 — Estrutura CASE (ESCOLHA...CASO)</span>
+        </div>
+        <div style="padding: 28px 32px; display: flex; flex-direction: column; gap: 20px; font-size: 14px;">
+
+            <!-- GABARITO 07 -->
+            <div style="background: rgb(248, 240, 255); border-radius: 14px; padding: 22px; border: 2px solid rgb(225, 190, 231); font-size: 14px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 14px;">
+                    <span style="background: #6a1b9a; color: white; border-radius: 8px; padding: 5px 14px; font-size: 12px; font-weight: 900;">Ex 07</span>
+                    <span style="color: #4a148c; font-size: 14px; font-weight: 800;">Cardápio de restaurante</span>
+                    <span style="margin-left: auto; background: #e1bee7; color: #6a1b9a; font-size: 11px; font-weight: bold; padding: 3px 12px; border-radius: 6px;">ESCOLHA...CASO · menu</span>
+                </div>
+                <div style="background: #0d1b4b; border-radius: 12px; padding: 18px; font-family: 'Courier New',monospace; font-size: 13px; line-height: 2.1; box-shadow: 0 4px 16px rgba(13,27,75,.3); margin-bottom: 12px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">INÍCIO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">LER</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">opcao</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">ESCOLHA</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">opcao</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">CASO</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">1</span><span style="color: rgb(255, 204, 2); font-size: 13px;">:</span> <span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Hambúrguer — R$ 25,00"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">CASO</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">2</span><span style="color: rgb(255, 204, 2); font-size: 13px;">:</span> <span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Pizza — R$ 35,00"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">CASO</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">3</span><span style="color: rgb(255, 204, 2); font-size: 13px;">:</span> <span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Salada — R$ 18,00"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">CASO</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">4</span><span style="color: rgb(255, 204, 2); font-size: 13px;">:</span> <span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Lasanha — R$ 28,00"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">CASO</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">5</span><span style="color: rgb(255, 204, 2); font-size: 13px;">:</span> <span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Sopa — R$ 15,00"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SENÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Opção inválida"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">FIM_ESCOLHA</span><br style="font-size: 13px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">FIM</span>
+                </div>
+                <div style="background: #fff; border-radius: 8px; padding: 12px 16px; border-left: 4px solid #8e24aa; font-size: 12px; color: #4a148c; line-height: 1.7;"><strong style="font-size: 12px;">Explicação:</strong> 5 CASOS, um para cada prato. O SENÃO captura qualquer valor diferente de 1 a 5. Compare mentalmente com um SE...SENÃO SE para ver a economia de código.</div>
+            </div>
+
+            <!-- GABARITO 08 -->
+            <div style="background: rgb(248, 240, 255); border-radius: 14px; padding: 22px; border: 2px solid rgb(225, 190, 231); font-size: 14px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 14px;">
+                    <span style="background: #8e24aa; color: white; border-radius: 8px; padding: 5px 14px; font-size: 12px; font-weight: 900;">Ex 08</span>
+                    <span style="color: #4a148c; font-size: 14px; font-weight: 800;">Categoria de habilitação</span>
+                    <span style="margin-left: auto; background: #e1bee7; color: #6a1b9a; font-size: 11px; font-weight: bold; padding: 3px 12px; border-radius: 6px;">ESCOLHA...CASO · letras</span>
+                </div>
+                <div style="background: #0d1b4b; border-radius: 12px; padding: 18px; font-family: 'Courier New',monospace; font-size: 13px; line-height: 2.1; box-shadow: 0 4px 16px rgba(13,27,75,.3); margin-bottom: 12px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">INÍCIO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">LER</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">categoria</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">ESCOLHA</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">categoria</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">CASO</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">"A"</span><span style="color: rgb(255, 204, 2); font-size: 13px;">:</span> <span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Moto"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">CASO</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">"B"</span><span style="color: rgb(255, 204, 2); font-size: 13px;">:</span> <span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Carro"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">CASO</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">"C"</span><span style="color: rgb(255, 204, 2); font-size: 13px;">:</span> <span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Caminhão"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">CASO</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">"D"</span><span style="color: rgb(255, 204, 2); font-size: 13px;">:</span> <span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Ônibus"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">CASO</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">"E"</span><span style="color: rgb(255, 204, 2); font-size: 13px;">:</span> <span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Carreta"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SENÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Categoria inexistente"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">FIM_ESCOLHA</span><br style="font-size: 13px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">FIM</span>
+                </div>
+                <div style="background: #fff; border-radius: 8px; padding: 12px 16px; border-left: 4px solid #8e24aa; font-size: 12px; color: #4a148c; line-height: 1.7;"><strong style="font-size: 12px;">Explicação:</strong> CASE com strings — cada CASO usa aspas nos valores. O SENÃO captura qualquer caractere diferente de A, B, C, D, E. Com SE...SENÃO SE também funcionaria, mas o CASE é mais enxuto.</div>
+            </div>
+
+            <!-- GABARITO 09 -->
+            <div style="background: rgb(248, 240, 255); border-radius: 14px; padding: 22px; border: 2px solid rgb(225, 190, 231); font-size: 14px;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 14px;">
+                    <span style="background: #4a148c; color: white; border-radius: 8px; padding: 5px 14px; font-size: 12px; font-weight: 900;">Ex 09</span>
+                    <span style="color: #4a148c; font-size: 14px; font-weight: 800;">Classificação de conceito escolar</span>
+                    <span style="margin-left: auto; background: #e1bee7; color: #6a1b9a; font-size: 11px; font-weight: bold; padding: 3px 12px; border-radius: 6px;">CASE + operador lógico</span>
+                </div>
+                <div style="background: #0d1b4b; border-radius: 12px; padding: 18px; font-family: 'Courier New',monospace; font-size: 13px; line-height: 2.1; box-shadow: 0 4px 16px rgba(13,27,75,.3); margin-bottom: 12px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">INÍCIO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">LER</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">conceito</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SE</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(100, 181, 246); font-size: 13px;">conceito</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">=</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"A"</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">OU</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(100, 181, 246); font-size: 13px;">conceito</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">=</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"B"</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">OU</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(100, 181, 246); font-size: 13px;">conceito</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">=</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"C"</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">OU</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">(</span><span style="color: rgb(100, 181, 246); font-size: 13px;">conceito</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">=</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"D"</span><span style="color: rgb(144, 202, 249); font-size: 13px;">)</span> <span style="color: rgb(255, 204, 2); font-size: 13px;">ENTÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">ESCOLHA</span> <span style="color: rgb(100, 181, 246); font-size: 13px;">conceito</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">CASO</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">"A"</span><span style="color: rgb(255, 204, 2); font-size: 13px;">:</span> <span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Excelente"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">CASO</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">"B"</span><span style="color: rgb(255, 204, 2); font-size: 13px;">:</span> <span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Bom"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">CASO</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">"C"</span><span style="color: rgb(255, 204, 2); font-size: 13px;">:</span> <span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Regular"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">CASO</span> <span style="color: rgb(144, 202, 249); font-size: 13px;">"D"</span><span style="color: rgb(255, 204, 2); font-size: 13px;">:</span> <span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Insuficiente"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">FIM_ESCOLHA</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">SENÃO</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234); font-size: 13px;">ESCREVER</span> <span style="color: rgb(165, 214, 167); font-size: 13px;">"Conceito inválido"</span><br style="font-size: 13px;">
+                    &nbsp;&nbsp;<span style="color: rgb(255, 204, 2); font-size: 13px;">FIM_SE</span><br style="font-size: 13px;">
+                    <span style="color: rgb(255, 204, 2); font-size: 13px;">FIM</span>
+                </div>
+                <div style="background: #fff; border-radius: 8px; padding: 12px 16px; border-left: 4px solid #8e24aa; font-size: 12px; color: #4a148c; line-height: 1.7;"><strong style="font-size: 12px;">Explicação:</strong> O SE externo usa OU para validar se o conceito está entre A e D. Se estiver, o CASE mapeia para a descrição. Se não estiver, o SENÃO do SE exibe "Conceito inválido". A validação ocorre antes do CASE — se falhar, o CASE nem é executado.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ FECHAMENTO ══ -->
+    <div style="background: linear-gradient(135deg, rgb(26, 35, 126) 0%, rgb(69, 39, 160) 50%, rgb(106, 27, 154) 100%); border-radius: 20px; padding: 32px; box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px; position: relative; overflow: hidden; font-size: 14px;">
+        <div style="position: absolute; top: -20px; right: -20px; width: 150px; height: 150px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; font-size: 14px;">&nbsp;</div>
+        <div style="position: relative; z-index: 1; font-size: 14px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 14px;">
+                <span style="font-size: 22px;">🎯</span><span style="color: #fff; font-size: 17px; font-weight: 800;">Resumo do Gabarito</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 18px; font-size: 14px;">
+                <div style="background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; padding: 13px; text-align: center; font-size: 14px;">
+                    <div style="font-size: 20px; margin-bottom: 5px;">📐</div>
+                    <div style="color: #e3f2fd; font-size: 11px; font-weight: bold;">9 gabaritos comentados passo a passo</div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; padding: 13px; text-align: center; font-size: 14px;">
+                    <div style="font-size: 20px; margin-bottom: 5px;">🔀</div>
+                    <div style="color: #e3f2fd; font-size: 11px; font-weight: bold;">E, OU, NÃO na prática</div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; padding: 13px; text-align: center; font-size: 14px;">
+                    <div style="font-size: 20px; margin-bottom: 5px;">🧩</div>
+                    <div style="color: #e3f2fd; font-size: 11px; font-weight: bold;">ESCOLHA...CASO com e sem validação</div>
+                </div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px;">
+                <span style="background: rgba(255,255,255,.15); color: #90caf9; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid rgba(255,255,255,.2);">INÍCIO / FIM</span>
+                <span style="background: rgba(255,255,255,.15); color: #a5d6a7; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid rgba(255,255,255,.2);">SE...ENTÃO</span>
+                <span style="background: rgba(255,255,255,.15); color: #ffcc80; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid rgba(255,255,255,.2);">E / OU / NÃO</span>
+                <span style="background: rgba(255,255,255,.15); color: #ce93d8; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid rgba(255,255,255,.2);">ESCOLHA</span>
+                <span style="background: rgba(255,255,255,.15); color: #80cbc4; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid rgba(255,255,255,.2);">CASO</span>
+                <span style="background: rgba(255,255,255,.15); color: #c5cae9; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; border: 1px solid rgba(255,255,255,.2);">Identação</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

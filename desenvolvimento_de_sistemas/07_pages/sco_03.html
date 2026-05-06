@@ -1,0 +1,4216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Requisições HTTP</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(240, 244, 249);
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- Cabeçalho -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102) 0%,
+            rgb(26, 95, 168) 100%
+          );
+          border-radius: 14px;
+          padding: 36px 40px;
+          margin-bottom: 24px;
+          box-shadow: rgba(13, 59, 102, 0.28) 0px 8px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a8c8f0;
+            margin-bottom: 10px;
+          "
+        >
+          Técnico em Desenvolvimento de Sistemas — Desenvolvimento de Sistemas
+        </div>
+        <div
+          style="
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 12px;
+          "
+        >
+          Requisições HTTP — Como os sistemas se comunicam
+        </div>
+        <div style="font-size: 15px; color: #c8dff5; line-height: 1.65">
+          Nesta aula você aprenderá o que é o protocolo HTTP, como funciona o
+          ciclo de requisição e resposta, quais são os métodos e status codes
+          mais usados, e como fazer requisições a APIs externas com JavaScript —
+          integrando sistemas de plataformas diferentes com código real.
+        </div>
+      </div>
+      <!-- Capacidade -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          border-left: 6px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 14px;
+          "
+        >
+          Capacidade Trabalhada
+        </div>
+        <div
+          style="
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              min-width: 6px;
+              min-height: 6px;
+              width: 6px;
+              height: 6px;
+              background: rgb(26, 95, 168);
+              border-radius: 50%;
+              margin-top: 7px;
+              font-size: 14px;
+            "
+          >
+            &nbsp;
+          </div>
+          <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+            Integrar sistemas multiplataformas por meio da linguagem de
+            programação.
+          </div>
+        </div>
+      </div>
+      <!-- O problema que o HTTP resolve -->
+      <div
+        style="
+          background: rgb(234, 242, 251);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.08) 0px 4px 18px;
+          border: 1px solid rgb(184, 212, 237);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 12px;
+          "
+        >
+          O problema que o HTTP resolve
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.8;
+            margin-bottom: 14px;
+          "
+        >
+          Imagine que seu sistema precisa exibir a previsão do tempo. Você não
+          vai construir satélites meteorológicos — vai
+          <span style="font-weight: bold; font-size: 15px"
+            >pedir essa informação para um sistema que já existe</span
+          >, como a API do OpenWeather. Mas como seu código JavaScript conversa
+          com um servidor que está em outro continente, rodando em outra
+          linguagem, num sistema operacional diferente?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.8;
+            margin-bottom: 16px;
+          "
+        >
+          É exatamente isso que o
+          <span style="font-weight: bold; font-size: 15px">HTTP resolve</span>:
+          ele é o idioma comum que qualquer sistema, em qualquer plataforma,
+          consegue falar e entender. É o protocolo que torna possível a internet
+          funcionar — e é através dele que os sistemas modernos se integram.
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 4px solid rgb(26, 95, 168);
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 14px; color: #1a2a3a; line-height: 1.75">
+            <span style="font-weight: bold; font-size: 14px"
+              >Analogia do mundo real:</span
+            >
+            quando você vai ao correio enviar uma encomenda para outro país,
+            existe um protocolo internacional de envio — formulários
+            padronizados, endereçamento num formato universal, rastreamento com
+            status específicos. O HTTP faz exatamente isso para dados digitais:
+            define o formato das mensagens, como endereçar pedidos e como
+            informar o resultado — para que dois sistemas jamais vistos se
+            entendam perfeitamente.
+          </div>
+        </div>
+      </div>
+      <!-- O que é HTTP -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          O que é HTTP?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          O
+          <span style="font-weight: bold; font-size: 15px"
+            >HTTP — HyperText Transfer Protocol</span
+          >
+          — é o protocolo de comunicação que define como mensagens são
+          formatadas e transmitidas entre um cliente e um servidor na web. Foi
+          criado por Tim Berners-Lee em 1989 no CERN e, desde então, tornou-se a
+          base de toda a comunicação na internet.
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 18px 20px;
+              border-left: 4px solid rgb(13, 59, 102);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 8px;
+              "
+            >
+              HTTP
+            </div>
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.7">
+              HyperText Transfer Protocol. Comunicação em texto puro, sem
+              criptografia. Usado em redes internas ou ambientes de
+              desenvolvimento.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 18px 20px;
+              border-left: 4px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 8px;
+              "
+            >
+              HTTPS
+            </div>
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.7">
+              HTTP
+              <span style="font-weight: bold; font-size: 14px">Secure</span>.
+              Todo o tráfego é criptografado com TLS. Obrigatório em sistemas em
+              produção que lidam com dados sensíveis.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(248, 251, 255);
+            border-radius: 10px;
+            padding: 18px 20px;
+            border: 1px solid rgb(212, 230, 245);
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #1a5fa8;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 10px;
+            "
+          >
+            Características fundamentais do HTTP
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  min-width: 6px;
+                  height: 6px;
+                  width: 6px;
+                  background: rgb(26, 95, 168);
+                  border-radius: 50%;
+                  margin-top: 7px;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div style="font-size: 14px; color: #2c3e50; line-height: 1.65">
+                <span style="font-weight: bold; font-size: 14px"
+                  >Sem estado (Stateless):</span
+                >
+                cada requisição é independente. O servidor não guarda memória de
+                interações anteriores. Se você precisa de contexto (como um
+                usuário logado), usa tokens ou cookies.
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  min-width: 6px;
+                  height: 6px;
+                  width: 6px;
+                  background: rgb(26, 95, 168);
+                  border-radius: 50%;
+                  margin-top: 7px;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div style="font-size: 14px; color: #2c3e50; line-height: 1.65">
+                <span style="font-weight: bold; font-size: 14px"
+                  >Cliente-Servidor:</span
+                >
+                sempre há um lado que pede (cliente) e um que responde
+                (servidor). Um sistema pode ser cliente de outro servidor ao
+                mesmo tempo que serve outros clientes.
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  min-width: 6px;
+                  height: 6px;
+                  width: 6px;
+                  background: rgb(26, 95, 168);
+                  border-radius: 50%;
+                  margin-top: 7px;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div style="font-size: 14px; color: #2c3e50; line-height: 1.65">
+                <span style="font-weight: bold; font-size: 14px"
+                  >Baseado em texto:</span
+                >
+                as mensagens HTTP são legíveis por humanos — você consegue ler
+                um cabeçalho HTTP e entender o que está sendo comunicado.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- O ciclo Requisição e Resposta -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          O Ciclo: Requisição e Resposta
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 22px;
+          "
+        >
+          Toda comunicação HTTP segue um ciclo obrigatório: o cliente envia uma
+          <span style="font-weight: bold; font-size: 15px"
+            >requisição (request)</span
+          >
+          e o servidor devolve uma
+          <span style="font-weight: bold; font-size: 15px"
+            >resposta (response)</span
+          >. Nunca é o contrário. O servidor jamais envia dados sem que o
+          cliente tenha pedido primeiro.
+        </div>
+        <!-- Diagrama do fluxo -->
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            padding: 28px 24px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 8px;
+              flex-wrap: nowrap;
+              font-size: 14px;
+            "
+          >
+            <!-- Cliente -->
+            <div
+              style="
+                background: rgb(26, 46, 68);
+                border-radius: 10px;
+                padding: 16px 18px;
+                text-align: center;
+                min-width: 110px;
+                border: 1px solid rgb(42, 74, 106);
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 22px; margin-bottom: 6px">💻</div>
+              <div
+                style="
+                  font-size: 12px;
+                  font-weight: bold;
+                  color: #5db8f5;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                "
+              >
+                Cliente
+              </div>
+              <div style="font-size: 11px; color: #8aaccc; margin-top: 3px">
+                Browser / App / Node.js
+              </div>
+            </div>
+            <!-- Seta direita (REQUEST) -->
+            <div
+              style="
+                flex: 1 1 0%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+                min-width: 80px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 10px;
+                  font-weight: bold;
+                  color: #a8f0c8;
+                  letter-spacing: 1px;
+                  text-transform: uppercase;
+                "
+              >
+                REQUEST
+              </div>
+              <div
+                style="
+                  width: 100%;
+                  height: 2px;
+                  background: linear-gradient(
+                    90deg,
+                    rgb(93, 184, 245),
+                    rgb(168, 240, 200)
+                  );
+                  border-radius: 2px;
+                  position: relative;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    position: absolute;
+                    right: -1px;
+                    top: -4px;
+                    width: 0px;
+                    height: 0px;
+                    border-left: 8px solid rgb(168, 240, 200);
+                    border-top: 5px solid transparent;
+                    border-bottom: 5px solid transparent;
+                    font-size: 14px;
+                  "
+                >
+                  &nbsp;
+                </div>
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #5db8f5;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+              >
+                GET /usuarios
+              </div>
+            </div>
+            <!-- Servidor -->
+            <div
+              style="
+                background: rgb(26, 46, 68);
+                border-radius: 10px;
+                padding: 16px 18px;
+                text-align: center;
+                min-width: 110px;
+                border: 1px solid rgb(42, 74, 106);
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 22px; margin-bottom: 6px">🖥️</div>
+              <div
+                style="
+                  font-size: 12px;
+                  font-weight: bold;
+                  color: #5db8f5;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                "
+              >
+                Servidor
+              </div>
+              <div style="font-size: 11px; color: #8aaccc; margin-top: 3px">
+                Express / API / Backend
+              </div>
+            </div>
+            <!-- Seta esquerda (RESPONSE) -->
+            <div
+              style="
+                flex: 1 1 0%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+                min-width: 80px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 10px;
+                  font-weight: bold;
+                  color: #f0c87a;
+                  letter-spacing: 1px;
+                  text-transform: uppercase;
+                "
+              >
+                RESPONSE
+              </div>
+              <div
+                style="
+                  width: 100%;
+                  height: 2px;
+                  background: linear-gradient(
+                    270deg,
+                    rgb(240, 200, 122),
+                    rgb(245, 154, 93)
+                  );
+                  border-radius: 2px;
+                  position: relative;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    position: absolute;
+                    left: -1px;
+                    top: -4px;
+                    width: 0px;
+                    height: 0px;
+                    border-right: 8px solid rgb(240, 200, 122);
+                    border-top: 5px solid transparent;
+                    border-bottom: 5px solid transparent;
+                    font-size: 14px;
+                  "
+                >
+                  &nbsp;
+                </div>
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #f0c87a;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+              >
+                200 OK + JSON
+              </div>
+            </div>
+            <!-- Banco -->
+            <div
+              style="
+                background: rgb(26, 46, 68);
+                border-radius: 10px;
+                padding: 16px 18px;
+                text-align: center;
+                min-width: 110px;
+                border: 1px solid rgb(42, 74, 106);
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 22px; margin-bottom: 6px">🗄️</div>
+              <div
+                style="
+                  font-size: 12px;
+                  font-weight: bold;
+                  color: #5db8f5;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                "
+              >
+                Banco de Dados
+              </div>
+              <div style="font-size: 11px; color: #8aaccc; margin-top: 3px">
+                PostgreSQL / MongoDB
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Anatomia da Requisição -->
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 12px;
+          "
+        >
+          <img
+            style="
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 15px;
+            "
+            src="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fegumkc3q2onsa62glq8t.png"
+            width="644"
+            height="493"
+          />
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 12px;
+          "
+        >
+          Anatomia de uma Requisição HTTP
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #4a6a8a;
+            line-height: 1.65;
+            margin-bottom: 14px;
+          "
+        >
+          Uma requisição tem três partes: a
+          <span style="font-weight: bold; font-size: 14px"
+            >linha de início</span
+          >
+          (método + URL + versão do protocolo), os
+          <span style="font-weight: bold; font-size: 14px"
+            >cabeçalhos (headers)</span
+          >
+          com metadados, e o
+          <span style="font-weight: bold; font-size: 14px">corpo (body)</span>
+          com dados opcionais (usado em POST e PUT).
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            requisição HTTP — texto puro que trafega pela rede
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 2;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// ── LINHA DE INÍCIO ──────────────────────────────────</span>
+<span style="color: rgb(168, 240, 200); font-size: 13px;">POST</span> <span style="color: rgb(240, 200, 122); font-size: 13px;">/usuarios</span> HTTP/1.1
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// ── CABEÇALHOS (headers) ─────────────────────────────</span>
+<span style="color: rgb(93, 245, 168); font-size: 13px;">Host:</span>         api.exemplo.com
+<span style="color: rgb(93, 245, 168); font-size: 13px;">Content-Type:</span> application/json    <span style="color: rgb(93, 184, 245); font-size: 13px;">// formato do corpo</span>
+<span style="color: rgb(93, 245, 168); font-size: 13px;">Authorization:</span> Bearer eyJhbGci...  <span style="color: rgb(93, 184, 245); font-size: 13px;">// token de autenticação</span>
+<span style="color: rgb(93, 245, 168); font-size: 13px;">Accept:</span>        application/json    <span style="color: rgb(93, 184, 245); font-size: 13px;">// formato esperado na resposta</span>
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// ── CORPO (body) ─────────────────────────────────────</span>
+{
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"nome"</span>:  <span style="color: rgb(168, 240, 200); font-size: 13px;">"Ana Souza"</span>,
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"email"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"ana@email.com"</span>
+}</pre>
+        </div>
+        <!-- Anatomia da Resposta -->
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 12px;
+          "
+        >
+          <img
+            style="
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 15px;
+            "
+            src="https://www.webdevdrops.com/http-desenvolvedores-frontend/images/http-br-2-1024x461.png"
+            width="598"
+            height="269"
+          />
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 12px;
+          "
+        >
+          Anatomia de uma Resposta HTTP
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #4a6a8a;
+            line-height: 1.65;
+            margin-bottom: 14px;
+          "
+        >
+          A resposta segue estrutura similar:
+          <span style="font-weight: bold; font-size: 14px"
+            >linha de status</span
+          >
+          (versão + código + descrição),
+          <span style="font-weight: bold; font-size: 14px">cabeçalhos</span>
+          descrevendo o conteúdo, e o
+          <span style="font-weight: bold; font-size: 14px">corpo</span> com os
+          dados retornados.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #a8f0c8;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            resposta HTTP — enviada pelo servidor
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 2;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// ── LINHA DE STATUS ──────────────────────────────────</span>
+HTTP/1.1 <span style="color: rgb(168, 240, 200); font-size: 13px;">201 Created</span>
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// ── CABEÇALHOS ───────────────────────────────────────</span>
+<span style="color: rgb(93, 245, 168); font-size: 13px;">Content-Type:</span>  application/json
+<span style="color: rgb(93, 245, 168); font-size: 13px;">Location:</span>      /usuarios/42      <span style="color: rgb(93, 184, 245); font-size: 13px;">// onde o novo recurso foi criado</span>
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// ── CORPO ────────────────────────────────────────────</span>
+{
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"id"</span>:    <span style="color: rgb(168, 240, 200); font-size: 13px;">42</span>,
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"nome"</span>:  <span style="color: rgb(168, 240, 200); font-size: 13px;">"Ana Souza"</span>,
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">"email"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"ana@email.com"</span>
+}</pre>
+        </div>
+      </div>
+      <!-- Métodos HTTP -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Métodos HTTP — O "verbo" da requisição
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #4a6a8a;
+            line-height: 1.65;
+            margin-bottom: 20px;
+          "
+        >
+          O método diz ao servidor
+          <span style="font-weight: bold; font-size: 14px"
+            >o que você quer fazer</span
+          >
+          com o recurso indicado na URL. É a intenção da requisição. Cada método
+          tem uma semântica precisa — usá-los corretamente é o que torna uma API
+          REST bem projetada.
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              border-radius: 10px;
+              overflow: hidden;
+              border: 1px solid rgb(212, 230, 245);
+              display: flex;
+              align-items: stretch;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(26, 122, 69);
+                padding: 14px 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 72px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #ffffff;
+                "
+              >
+                GET
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(248, 251, 255);
+                padding: 14px 20px;
+                flex: 1 1 0%;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 4px;
+                "
+              >
+                Buscar dados
+              </div>
+              <div style="font-size: 13px; color: #4a6a8a; line-height: 1.65">
+                Solicita a leitura de um recurso. Não modifica nada no servidor.
+                Não tem corpo (body). É a operação mais usada — toda vez que
+                você abre uma página ou consulta uma lista, é um GET. Equivale
+                ao
+                <span style="font-weight: bold; font-size: 13px"
+                  >R do CRUD (Read)</span
+                >.
+              </div>
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  background: #eaf2fb;
+                  display: inline-block;
+                  padding: 3px 10px;
+                  border-radius: 4px;
+                  margin-top: 6px;
+                  color: #0d3b66;
+                "
+              >
+                GET /produtos &nbsp; &nbsp;|&nbsp; &nbsp; GET /produtos/15
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              border-radius: 10px;
+              overflow: hidden;
+              border: 1px solid rgb(212, 230, 245);
+              display: flex;
+              align-items: stretch;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(26, 95, 168);
+                padding: 14px 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 72px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #ffffff;
+                "
+              >
+                POST
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(248, 251, 255);
+                padding: 14px 20px;
+                flex: 1 1 0%;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 4px;
+                "
+              >
+                Criar um novo recurso
+              </div>
+              <div style="font-size: 13px; color: #4a6a8a; line-height: 1.65">
+                Envia dados no corpo da requisição para criar algo novo no
+                servidor. O servidor define o ID do novo recurso criado.
+                Equivale ao
+                <span style="font-weight: bold; font-size: 13px"
+                  >C do CRUD (Create)</span
+                >.
+              </div>
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  background: #eaf2fb;
+                  display: inline-block;
+                  padding: 3px 10px;
+                  border-radius: 4px;
+                  margin-top: 6px;
+                  color: #0d3b66;
+                "
+              >
+                POST /produtos &nbsp; &nbsp;com body: { "nome": "Caderno" }
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              border-radius: 10px;
+              overflow: hidden;
+              border: 1px solid rgb(212, 230, 245);
+              display: flex;
+              align-items: stretch;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(176, 122, 0);
+                padding: 14px 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 72px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #ffffff;
+                "
+              >
+                PUT
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(248, 251, 255);
+                padding: 14px 20px;
+                flex: 1 1 0%;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 4px;
+                "
+              >
+                Substituir um recurso inteiro
+              </div>
+              <div style="font-size: 13px; color: #4a6a8a; line-height: 1.65">
+                Atualiza um recurso existente substituindo
+                <span style="font-weight: bold; font-size: 13px"
+                  >todos os seus campos</span
+                >
+                com os dados enviados. Se um campo não for enviado, é
+                sobrescrito como vazio. Equivale ao
+                <span style="font-weight: bold; font-size: 13px"
+                  >U do CRUD (Update completo)</span
+                >.
+              </div>
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  background: #eaf2fb;
+                  display: inline-block;
+                  padding: 3px 10px;
+                  border-radius: 4px;
+                  margin-top: 6px;
+                  color: #0d3b66;
+                "
+              >
+                PUT /produtos/15 &nbsp; com body: { campos completos }
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              border-radius: 10px;
+              overflow: hidden;
+              border: 1px solid rgb(212, 230, 245);
+              display: flex;
+              align-items: stretch;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(90, 122, 0);
+                padding: 14px 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 72px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  font-weight: bold;
+                  color: #ffffff;
+                "
+              >
+                PATCH
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(248, 251, 255);
+                padding: 14px 20px;
+                flex: 1 1 0%;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 4px;
+                "
+              >
+                Atualizar parcialmente um recurso
+              </div>
+              <div style="font-size: 13px; color: #4a6a8a; line-height: 1.65">
+                Atualiza apenas os campos enviados no corpo, sem tocar nos
+                demais. É mais seguro que o PUT quando se quer alterar só um
+                campo específico. Equivale ao
+                <span style="font-weight: bold; font-size: 13px"
+                  >U do CRUD (Update parcial)</span
+                >.
+              </div>
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  background: #eaf2fb;
+                  display: inline-block;
+                  padding: 3px 10px;
+                  border-radius: 4px;
+                  margin-top: 6px;
+                  color: #0d3b66;
+                "
+              >
+                PATCH /produtos/15 &nbsp; com body: { "preco": 29.90 }
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              border-radius: 10px;
+              overflow: hidden;
+              border: 1px solid rgb(212, 230, 245);
+              display: flex;
+              align-items: stretch;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(160, 0, 0);
+                padding: 14px 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 72px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #ffffff;
+                "
+              >
+                DELETE
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(248, 251, 255);
+                padding: 14px 20px;
+                flex: 1 1 0%;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 4px;
+                "
+              >
+                Remover um recurso
+              </div>
+              <div style="font-size: 13px; color: #4a6a8a; line-height: 1.65">
+                Remove o recurso identificado na URL. Em geral, não tem corpo.
+                Equivale ao
+                <span style="font-weight: bold; font-size: 13px"
+                  >D do CRUD (Delete)</span
+                >. Pode retornar 200, 204 (sem conteúdo) ou 404 se não
+                encontrado.
+              </div>
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  background: #eaf2fb;
+                  display: inline-block;
+                  padding: 3px 10px;
+                  border-radius: 4px;
+                  margin-top: 6px;
+                  color: #0d3b66;
+                "
+              >
+                DELETE /produtos/15
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Tabela CRUD -->
+        <div
+          style="
+            background: rgb(240, 247, 255);
+            border-radius: 10px;
+            padding: 18px 20px;
+            border: 1px solid rgb(200, 223, 245);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #0d3b66;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 12px;
+            "
+          >
+            Relação entre HTTP e CRUD
+          </div>
+          <div style="overflow-x: auto; font-size: 14px">
+            <table
+              style="width: 100%; border-collapse: collapse; font-size: 13px"
+            >
+              <thead style="font-size: 13px">
+                <tr
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgb(13, 59, 102),
+                      rgb(26, 95, 168)
+                    );
+                    font-size: 13px;
+                  "
+                >
+                  <th
+                    style="
+                      padding: 10px 14px;
+                      text-align: left;
+                      color: rgb(232, 242, 255);
+                      font-weight: bold;
+                      font-size: 13px;
+                    "
+                  >
+                    Operação CRUD
+                  </th>
+                  <th
+                    style="
+                      padding: 10px 14px;
+                      text-align: left;
+                      color: rgb(232, 242, 255);
+                      font-weight: bold;
+                      font-size: 13px;
+                    "
+                  >
+                    Método HTTP
+                  </th>
+                  <th
+                    style="
+                      padding: 10px 14px;
+                      text-align: left;
+                      color: rgb(232, 242, 255);
+                      font-weight: bold;
+                      font-size: 13px;
+                    "
+                  >
+                    Exemplo de URL
+                  </th>
+                  <th
+                    style="
+                      padding: 10px 14px;
+                      text-align: left;
+                      color: rgb(232, 242, 255);
+                      font-weight: bold;
+                      font-size: 13px;
+                    "
+                  >
+                    Status típico
+                  </th>
+                </tr>
+              </thead>
+              <tbody style="font-size: 13px">
+                <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-weight: bold;
+                      color: rgb(26, 122, 69);
+                      border-bottom: 1px solid rgb(212, 230, 245);
+                      font-size: 13px;
+                    "
+                  >
+                    Create (Criar)
+                  </td>
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      font-weight: bold;
+                      color: rgb(26, 95, 168);
+                      border-bottom: 1px solid rgb(212, 230, 245);
+                      font-size: 13px;
+                    "
+                  >
+                    POST
+                  </td>
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      border-bottom: 1px solid rgb(212, 230, 245);
+                      color: rgb(44, 62, 80);
+                      font-size: 13px;
+                    "
+                  >
+                    POST /produtos
+                  </td>
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      border-bottom: 1px solid rgb(212, 230, 245);
+                      color: rgb(44, 62, 80);
+                      font-size: 13px;
+                    "
+                  >
+                    201 Created
+                  </td>
+                </tr>
+                <tr style="font-size: 13px">
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-weight: bold;
+                      color: rgb(13, 59, 102);
+                      border-bottom: 1px solid rgb(212, 230, 245);
+                      font-size: 13px;
+                    "
+                  >
+                    Read (Ler)
+                  </td>
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      font-weight: bold;
+                      color: rgb(26, 95, 168);
+                      border-bottom: 1px solid rgb(212, 230, 245);
+                      font-size: 13px;
+                    "
+                  >
+                    GET
+                  </td>
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      border-bottom: 1px solid rgb(212, 230, 245);
+                      color: rgb(44, 62, 80);
+                      font-size: 13px;
+                    "
+                  >
+                    GET /produtos/15
+                  </td>
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      border-bottom: 1px solid rgb(212, 230, 245);
+                      color: rgb(44, 62, 80);
+                      font-size: 13px;
+                    "
+                  >
+                    200 OK
+                  </td>
+                </tr>
+                <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-weight: bold;
+                      color: rgb(176, 122, 0);
+                      border-bottom: 1px solid rgb(212, 230, 245);
+                      font-size: 13px;
+                    "
+                  >
+                    Update (Atualizar)
+                  </td>
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      font-weight: bold;
+                      color: rgb(26, 95, 168);
+                      border-bottom: 1px solid rgb(212, 230, 245);
+                      font-size: 13px;
+                    "
+                  >
+                    PUT / PATCH
+                  </td>
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      border-bottom: 1px solid rgb(212, 230, 245);
+                      color: rgb(44, 62, 80);
+                      font-size: 13px;
+                    "
+                  >
+                    PATCH /produtos/15
+                  </td>
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      border-bottom: 1px solid rgb(212, 230, 245);
+                      color: rgb(44, 62, 80);
+                      font-size: 13px;
+                    "
+                  >
+                    200 OK
+                  </td>
+                </tr>
+                <tr style="font-size: 13px">
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-weight: bold;
+                      color: rgb(160, 0, 0);
+                      font-size: 13px;
+                    "
+                  >
+                    Delete (Remover)
+                  </td>
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      font-weight: bold;
+                      color: rgb(26, 95, 168);
+                      font-size: 13px;
+                    "
+                  >
+                    DELETE
+                  </td>
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      color: rgb(44, 62, 80);
+                      font-size: 13px;
+                    "
+                  >
+                    DELETE /produtos/15
+                  </td>
+                  <td
+                    style="
+                      padding: 10px 14px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      color: rgb(44, 62, 80);
+                      font-size: 13px;
+                    "
+                  >
+                    200 OK / 204
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- Status Codes -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Status Codes — A resposta do servidor em um número
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #4a6a8a;
+            line-height: 1.65;
+            margin-bottom: 20px;
+          "
+        >
+          O status code é um número de 3 dígitos que indica o resultado da
+          requisição. Ele é a primeira coisa que seu código deve verificar ao
+          receber uma resposta. Os status codes são agrupados em 5 famílias,
+          cada uma com um significado distinto.
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <!-- 1xx -->
+          <div
+            style="
+              border-radius: 10px;
+              overflow: hidden;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(74, 106, 138);
+                padding: 11px 20px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 16px;
+                  font-weight: bold;
+                  color: #fff;
+                "
+              >
+                1xx
+              </div>
+              <div style="font-size: 14px; font-weight: bold; color: #e0f0ff">
+                Informacional
+              </div>
+              <div style="font-size: 13px; color: #a8c8e8; margin-left: auto">
+                Processamento em andamento
+              </div>
+            </div>
+            <div
+              style="
+                background: #f8fbff;
+                padding: 12px 20px;
+                font-size: 13px;
+                color: #4a6a8a;
+                line-height: 1.65;
+              "
+            >
+              Raramente usados na prática do dia a dia. Indicam que a requisição
+              foi recebida e o processamento continua. O mais conhecido é o
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(234, 242, 251);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 13px;
+                "
+                >100 Continue</span
+              >.
+            </div>
+          </div>
+          <!-- 2xx -->
+          <div
+            style="
+              border-radius: 10px;
+              overflow: hidden;
+              border: 1px solid rgb(184, 232, 204);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(26, 122, 69);
+                padding: 11px 20px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 16px;
+                  font-weight: bold;
+                  color: #fff;
+                "
+              >
+                2xx
+              </div>
+              <div style="font-size: 14px; font-weight: bold; color: #e0ffe8">
+                Sucesso
+              </div>
+              <div style="font-size: 13px; color: #a8e8c0; margin-left: auto">
+                A operação foi bem-sucedida
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(245, 255, 248);
+                padding: 14px 20px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                  font-size: 13px;
+                  color: #2c3e50;
+                  line-height: 1.65;
+                "
+              >
+                <div style="font-size: 13px">
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(212, 245, 228);
+                      padding: 1px 8px;
+                      border-radius: 4px;
+                      font-weight: bold;
+                      color: rgb(26, 122, 69);
+                      font-size: 13px;
+                    "
+                    >200 OK</span
+                  >
+                  &nbsp;— Sucesso genérico. Usado em GET, PUT, PATCH e DELETE
+                  com retorno de dados.
+                </div>
+                <div style="font-size: 13px">
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(212, 245, 228);
+                      padding: 1px 8px;
+                      border-radius: 4px;
+                      font-weight: bold;
+                      color: rgb(26, 122, 69);
+                      font-size: 13px;
+                    "
+                    >201 Created</span
+                  >
+                  &nbsp;— Recurso criado com sucesso. Usado após um POST
+                  bem-sucedido.
+                </div>
+                <div style="font-size: 13px">
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(212, 245, 228);
+                      padding: 1px 8px;
+                      border-radius: 4px;
+                      font-weight: bold;
+                      color: rgb(26, 122, 69);
+                      font-size: 13px;
+                    "
+                    >204 No Content</span
+                  >
+                  &nbsp;— Sucesso, mas sem corpo na resposta. Comum no DELETE.
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 3xx -->
+          <div
+            style="
+              border-radius: 10px;
+              overflow: hidden;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(90, 122, 0);
+                padding: 11px 20px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 16px;
+                  font-weight: bold;
+                  color: #fff;
+                "
+              >
+                3xx
+              </div>
+              <div style="font-size: 14px; font-weight: bold; color: #f0ffe0">
+                Redirecionamento
+              </div>
+              <div style="font-size: 13px; color: #c8e890; margin-left: auto">
+                O recurso está em outro lugar
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(248, 251, 255);
+                padding: 14px 20px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                  font-size: 13px;
+                  color: #2c3e50;
+                  line-height: 1.65;
+                "
+              >
+                <div style="font-size: 13px">
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(234, 242, 251);
+                      padding: 1px 8px;
+                      border-radius: 4px;
+                      font-weight: bold;
+                      color: rgb(90, 122, 0);
+                      font-size: 13px;
+                    "
+                    >301 Moved Permanently</span
+                  >
+                  &nbsp;— O recurso foi movido definitivamente para outra URL.
+                </div>
+                <div style="font-size: 13px">
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(234, 242, 251);
+                      padding: 1px 8px;
+                      border-radius: 4px;
+                      font-weight: bold;
+                      color: rgb(90, 122, 0);
+                      font-size: 13px;
+                    "
+                    >302 Found</span
+                  >
+                  &nbsp;— Redirecionamento temporário.
+                </div>
+                <div style="font-size: 13px">
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(234, 242, 251);
+                      padding: 1px 8px;
+                      border-radius: 4px;
+                      font-weight: bold;
+                      color: rgb(90, 122, 0);
+                      font-size: 13px;
+                    "
+                    >304 Not Modified</span
+                  >
+                  &nbsp;— O recurso não mudou; o cliente pode usar o cache.
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 4xx -->
+          <div
+            style="
+              border-radius: 10px;
+              overflow: hidden;
+              border: 1px solid rgb(240, 204, 170);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(176, 122, 0);
+                padding: 11px 20px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 16px;
+                  font-weight: bold;
+                  color: #fff;
+                "
+              >
+                4xx
+              </div>
+              <div style="font-size: 14px; font-weight: bold; color: #fff8e0">
+                Erro do Cliente
+              </div>
+              <div style="font-size: 13px; color: #e8d080; margin-left: auto">
+                O problema está na requisição enviada
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 253, 245);
+                padding: 14px 20px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                  font-size: 13px;
+                  color: #2c3e50;
+                  line-height: 1.65;
+                "
+              >
+                <div style="font-size: 13px">
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(255, 244, 204);
+                      padding: 1px 8px;
+                      border-radius: 4px;
+                      font-weight: bold;
+                      color: rgb(176, 122, 0);
+                      font-size: 13px;
+                    "
+                    >400 Bad Request</span
+                  >
+                  &nbsp;— Requisição mal formada (ex: JSON inválido ou campo
+                  obrigatório faltando).
+                </div>
+                <div style="font-size: 13px">
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(255, 244, 204);
+                      padding: 1px 8px;
+                      border-radius: 4px;
+                      font-weight: bold;
+                      color: rgb(176, 122, 0);
+                      font-size: 13px;
+                    "
+                    >401 Unauthorized</span
+                  >
+                  &nbsp;— Não autenticado. O cliente precisa se identificar
+                  (enviar token).
+                </div>
+                <div style="font-size: 13px">
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(255, 244, 204);
+                      padding: 1px 8px;
+                      border-radius: 4px;
+                      font-weight: bold;
+                      color: rgb(176, 122, 0);
+                      font-size: 13px;
+                    "
+                    >403 Forbidden</span
+                  >
+                  &nbsp;— Autenticado, mas sem permissão para aquele recurso.
+                </div>
+                <div style="font-size: 13px">
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(255, 244, 204);
+                      padding: 1px 8px;
+                      border-radius: 4px;
+                      font-weight: bold;
+                      color: rgb(176, 122, 0);
+                      font-size: 13px;
+                    "
+                    >404 Not Found</span
+                  >
+                  &nbsp;— O recurso não existe naquela URL.
+                </div>
+                <div style="font-size: 13px">
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(255, 244, 204);
+                      padding: 1px 8px;
+                      border-radius: 4px;
+                      font-weight: bold;
+                      color: rgb(176, 122, 0);
+                      font-size: 13px;
+                    "
+                    >409 Conflict</span
+                  >
+                  &nbsp;— Conflito com o estado atual (ex: e-mail já
+                  cadastrado).
+                </div>
+                <div style="font-size: 13px">
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(255, 244, 204);
+                      padding: 1px 8px;
+                      border-radius: 4px;
+                      font-weight: bold;
+                      color: rgb(176, 122, 0);
+                      font-size: 13px;
+                    "
+                    >422 Unprocessable</span
+                  >
+                  &nbsp;— Dados entendidos, mas que não passaram na validação de
+                  negócio.
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 5xx -->
+          <div
+            style="
+              border-radius: 10px;
+              overflow: hidden;
+              border: 1px solid rgb(245, 170, 170);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(160, 0, 0);
+                padding: 11px 20px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 16px;
+                  font-weight: bold;
+                  color: #fff;
+                "
+              >
+                5xx
+              </div>
+              <div style="font-size: 14px; font-weight: bold; color: #ffe0e0">
+                Erro do Servidor
+              </div>
+              <div style="font-size: 13px; color: #e8a0a0; margin-left: auto">
+                O problema está no servidor
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 248, 248);
+                padding: 14px 20px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                  font-size: 13px;
+                  color: #2c3e50;
+                  line-height: 1.65;
+                "
+              >
+                <div style="font-size: 13px">
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(253, 232, 232);
+                      padding: 1px 8px;
+                      border-radius: 4px;
+                      font-weight: bold;
+                      color: rgb(160, 0, 0);
+                      font-size: 13px;
+                    "
+                    >500 Internal Server Error</span
+                  >
+                  &nbsp;— Erro genérico no servidor. Geralmente indica um bug no
+                  código backend.
+                </div>
+                <div style="font-size: 13px">
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(253, 232, 232);
+                      padding: 1px 8px;
+                      border-radius: 4px;
+                      font-weight: bold;
+                      color: rgb(160, 0, 0);
+                      font-size: 13px;
+                    "
+                    >502 Bad Gateway</span
+                  >
+                  &nbsp;— O servidor recebeu uma resposta inválida de outro
+                  servidor.
+                </div>
+                <div style="font-size: 13px">
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(253, 232, 232);
+                      padding: 1px 8px;
+                      border-radius: 4px;
+                      font-weight: bold;
+                      color: rgb(160, 0, 0);
+                      font-size: 13px;
+                    "
+                    >503 Service Unavailable</span
+                  >
+                  &nbsp;— O servidor está fora do ar ou sobrecarregado.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: #fff7ee;
+            border-left: 4px solid #f0a500;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #5a3a00;
+            line-height: 1.65;
+            margin-top: 18px;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px">Regra de ouro:</span>
+          erros
+          <span style="font-weight: bold; font-size: 14px"
+            >4xx são culpa do cliente</span
+          >
+          (quem fez a requisição enviou algo errado). Erros
+          <span style="font-weight: bold; font-size: 14px"
+            >5xx são culpa do servidor</span
+          >
+          (o backend tem um problema). Nunca use 500 para esconder um erro de
+          validação que deveria ser um 400.
+        </div>
+      </div>
+      <!-- Fetch API -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Prática 01
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Fazendo requisições com
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 22px;
+            "
+            >fetch()</span
+          >
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          A <span style="font-weight: bold; font-size: 15px">Fetch API</span> é
+          a forma nativa do JavaScript moderno para fazer requisições HTTP. Ela
+          está disponível no navegador e no Node.js (a partir da versão 18).
+          Retorna uma
+          <span style="font-weight: bold; font-size: 15px">Promise</span> — o
+          que significa que a resposta chega de forma assíncrona e precisamos
+          usar
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >async/await</span
+          >
+          para trabalhar com ela.
+        </div>
+        <!-- GET -->
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          "
+        >
+          <span
+            style="
+              background: #1a7a45;
+              color: #fff;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              padding: 3px 10px;
+              border-radius: 6px;
+            "
+            >GET</span
+          >
+          Buscando dados de uma API pública
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            buscar-usuario.js — GET com fetch
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// async indica que essa função é assíncrona (pode "esperar" respostas)</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">buscarUsuario</span>(id) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">try</span> {
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// fetch() inicia a requisição e retorna uma Promise</span>
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// await pausa a função até a resposta chegar</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> resposta = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">fetch</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`https://jsonplaceholder.typicode.com/users/${id}`</span>);
+
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// SEMPRE verificar o status antes de processar os dados</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (!resposta.ok) {
+      <span style="color: rgb(240, 200, 122); font-size: 13px;">throw new</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">Error</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Erro ${resposta.status}: ${resposta.statusText}`</span>);
+    }
+
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// .json() converte o corpo da resposta (texto) em objeto JavaScript</span>
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// também retorna uma Promise, por isso precisamos de await</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> usuario = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> resposta.<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>();
+
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Usuário encontrado:'</span>, usuario.name);
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'E-mail:'</span>, usuario.email);
+
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> usuario;
+
+  } <span style="color: rgb(240, 200, 122); font-size: 13px;">catch</span> (erro) {
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// Captura tanto erros de rede quanto erros lançados manualmente</span>
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">error</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Falha na requisição:'</span>, erro.message);
+  }
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Chamando a função</span>
+<span style="color: rgb(93, 245, 168); font-size: 13px;">buscarUsuario</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">1</span>);</pre>
+        </div>
+        <!-- POST -->
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          "
+        >
+          <span
+            style="
+              background: #1a5fa8;
+              color: #fff;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              padding: 3px 10px;
+              border-radius: 6px;
+            "
+            >POST</span
+          >
+          Enviando dados para criar um recurso
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            criar-post.js — POST com fetch
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">criarPost</span>(titulo, conteudo, autorId) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">try</span> {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> resposta = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">fetch</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'https://jsonplaceholder.typicode.com/posts'</span>, {
+
+      method: <span style="color: rgb(168, 240, 200); font-size: 13px;">'POST'</span>, <span style="color: rgb(93, 184, 245); font-size: 13px;">// define o método HTTP</span>
+
+      headers: {
+        <span style="color: rgb(168, 240, 200); font-size: 13px;">'Content-Type'</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">'application/json'</span>, <span style="color: rgb(93, 184, 245); font-size: 13px;">// avisa ao servidor o formato do corpo</span>
+      },
+
+      <span style="color: rgb(93, 184, 245); font-size: 13px;">// body: corpo da requisição — deve ser string JSON</span>
+      body: JSON.<span style="color: rgb(93, 245, 168); font-size: 13px;">stringify</span>({
+        title:  titulo,
+        body:   conteudo,
+        userId: autorId,
+      }),
+    });
+
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (!resposta.ok) {
+      <span style="color: rgb(240, 200, 122); font-size: 13px;">throw new</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">Error</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Erro ${resposta.status}`</span>);
+    }
+
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> novoPost = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> resposta.<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>();
+
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// Status 201 = recurso criado com sucesso</span>
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Post criado com ID: ${novoPost.id}`</span>);
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> novoPost;
+
+  } <span style="color: rgb(240, 200, 122); font-size: 13px;">catch</span> (erro) {
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">error</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Erro ao criar post:'</span>, erro.message);
+  }
+}
+
+<span style="color: rgb(93, 245, 168); font-size: 13px;">criarPost</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Aprendendo HTTP'</span>, <span style="color: rgb(168, 240, 200); font-size: 13px;">'HTTP é o protocolo da web...'</span>, <span style="color: rgb(240, 200, 122); font-size: 13px;">1</span>);</pre>
+        </div>
+        <!-- DELETE -->
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          "
+        >
+          <span
+            style="
+              background: #a00000;
+              color: #fff;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              padding: 3px 10px;
+              border-radius: 6px;
+            "
+            >DELETE</span
+          >
+          Removendo um recurso
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            remover-post.js — DELETE com fetch
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">removerPost</span>(id) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">try</span> {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> resposta = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">fetch</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`https://jsonplaceholder.typicode.com/posts/${id}`</span>, {
+      method: <span style="color: rgb(168, 240, 200); font-size: 13px;">'DELETE'</span>,
+    });
+
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// DELETE bem-sucedido geralmente retorna 200 ou 204 (sem conteúdo)</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (resposta.ok) {
+      console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Post ${id} removido. Status: ${resposta.status}`</span>);
+    } <span style="color: rgb(240, 200, 122); font-size: 13px;">else</span> {
+      console.<span style="color: rgb(93, 245, 168); font-size: 13px;">error</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Não foi possível remover. Status: ${resposta.status}`</span>);
+    }
+
+  } <span style="color: rgb(240, 200, 122); font-size: 13px;">catch</span> (erro) {
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">error</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Erro de rede:'</span>, erro.message);
+  }
+}
+
+<span style="color: rgb(93, 245, 168); font-size: 13px;">removerPost</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">5</span>);</pre>
+        </div>
+        <div
+          style="
+            background: #f0f7ff;
+            border-left: 4px solid #5db8f5;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #1a3a5a;
+            line-height: 1.65;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px">Importante:</span>
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(221, 238, 255);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >resposta.ok</span
+          >
+          é
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(221, 238, 255);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >true</span
+          >
+          quando o status code está entre 200 e 299. O
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(221, 238, 255);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >fetch()</span
+          >
+          <span style="font-weight: bold; font-size: 14px"
+            >não lança erro automaticamente para status 4xx e 5xx</span
+          >
+          — ele só falha se houver um erro de rede. Por isso sempre verifique
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(221, 238, 255);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >resposta.ok</span
+          >
+          antes de processar o resultado.
+        </div>
+      </div>
+      <!-- Exemplo completo integrado -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Prática 02
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Exemplo completo — Consumindo uma API real
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 18px;
+          "
+        >
+          Vamos construir um módulo que consome a API pública
+          <span style="font-weight: bold; font-size: 15px"
+            >JSONPlaceholder</span
+          >
+          (<span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >jsonplaceholder.typicode.com</span
+          >) — uma API de testes que simula um sistema real com usuários, posts
+          e comentários. Não precisa de cadastro nem token.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            api-posts.js — módulo completo de consumo de API
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// ── CONFIGURAÇÃO ────────────────────────────────────────────</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> BASE_URL = <span style="color: rgb(168, 240, 200); font-size: 13px;">'https://jsonplaceholder.typicode.com'</span>;
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Função auxiliar: faz o fetch e trata erros de forma padronizada</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">requisicao</span>(endpoint, opcoes = {}) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> resposta = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">fetch</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`${BASE_URL}${endpoint}`</span>, opcoes);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (!resposta.ok) {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">throw new</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">Error</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`[${resposta.status}] ${resposta.statusText} — ${endpoint}`</span>);
+  }
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// 204 No Content não tem corpo — evita erro ao chamar .json()</span>
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (resposta.status === <span style="color: rgb(240, 200, 122); font-size: 13px;">204</span>) <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> <span style="color: rgb(240, 200, 122); font-size: 13px;">null</span>;
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> resposta.<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>();
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// ── OPERAÇÕES CRUD ──────────────────────────────────────────</span>
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// READ — busca todos os posts</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">listarPosts</span>() {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">requisicao</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'/posts'</span>);
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// READ — busca um post específico pelo ID</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">buscarPost</span>(id) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">requisicao</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`/posts/${id}`</span>);
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// CREATE — cria um novo post</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">criarPost</span>(dados) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">requisicao</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'/posts'</span>, {
+    method:  <span style="color: rgb(168, 240, 200); font-size: 13px;">'POST'</span>,
+    headers: { <span style="color: rgb(168, 240, 200); font-size: 13px;">'Content-Type'</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">'application/json'</span> },
+    body:    JSON.<span style="color: rgb(93, 245, 168); font-size: 13px;">stringify</span>(dados),
+  });
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// UPDATE — atualiza um campo do post (PATCH)</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">atualizarPost</span>(id, dados) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">requisicao</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`/posts/${id}`</span>, {
+    method:  <span style="color: rgb(168, 240, 200); font-size: 13px;">'PATCH'</span>,
+    headers: { <span style="color: rgb(168, 240, 200); font-size: 13px;">'Content-Type'</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">'application/json'</span> },
+    body:    JSON.<span style="color: rgb(93, 245, 168); font-size: 13px;">stringify</span>(dados),
+  });
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// DELETE — remove um post</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">removerPost</span>(id) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">requisicao</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`/posts/${id}`</span>, { method: <span style="color: rgb(168, 240, 200); font-size: 13px;">'DELETE'</span> });
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// ── EXECUÇÃO E DEMONSTRAÇÃO ─────────────────────────────────</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">demonstracao</span>() {
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'=== 1. Listando os 3 primeiros posts ==='</span>);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> posts = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">listarPosts</span>();
+  posts.<span style="color: rgb(93, 245, 168); font-size: 13px;">slice</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">0</span>, <span style="color: rgb(240, 200, 122); font-size: 13px;">3</span>).<span style="color: rgb(93, 245, 168); font-size: 13px;">forEach</span>(p =&gt; console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`  [${p.id}] ${p.title}`</span>));
+
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'\n=== 2. Criando um novo post ==='</span>);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> novo = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">criarPost</span>({ title: <span style="color: rgb(168, 240, 200); font-size: 13px;">'Aprendendo HTTP'</span>, body: <span style="color: rgb(168, 240, 200); font-size: 13px;">'...'</span>, userId: <span style="color: rgb(240, 200, 122); font-size: 13px;">1</span> });
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`  Post criado com ID: ${novo.id}`</span>);
+
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'\n=== 3. Atualizando o título do post 1 ==='</span>);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> atualizado = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">atualizarPost</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">1</span>, { title: <span style="color: rgb(168, 240, 200); font-size: 13px;">'Título atualizado'</span> });
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`  Novo título: ${atualizado.title}`</span>);
+
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'\n=== 4. Removendo o post 1 ==='</span>);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">removerPost</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">1</span>);
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'  Post removido com sucesso.'</span>);
+}
+
+<span style="color: rgb(93, 245, 168); font-size: 13px;">demonstracao</span>();</pre>
+        </div>
+        <div
+          style="
+            background: #d4f5e4;
+            border-left: 4px solid #1a7a45;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #1a3a20;
+            line-height: 1.65;
+          "
+        >
+          Para rodar este exemplo: crie o arquivo
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(184, 232, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >api-posts.js</span
+          >, cole o código e execute
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(184, 232, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >node api-posts.js</span
+          >
+          no terminal. O Node.js 18+ já suporta
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(184, 232, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >fetch()</span
+          >
+          nativamente, sem precisar instalar nada.
+        </div>
+      </div>
+      <!-- Headers importantes -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Headers HTTP — Os metadados da requisição
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #4a6a8a;
+            line-height: 1.65;
+            margin-bottom: 18px;
+          "
+        >
+          Os
+          <span style="font-weight: bold; font-size: 14px"
+            >headers (cabeçalhos)</span
+          >
+          carregam informações sobre a requisição ou a resposta — como o formato
+          dos dados, quem está fazendo o pedido e como o conteúdo deve ser
+          interpretado. São pares de chave-valor enviados antes do corpo da
+          mensagem.
+        </div>
+        <div style="overflow-x: auto; margin-bottom: 18px; font-size: 14px">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 13px"
+          >
+            <thead style="font-size: 13px">
+              <tr
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgb(13, 59, 102),
+                    rgb(26, 95, 168)
+                  );
+                  font-size: 13px;
+                "
+              >
+                <th
+                  style="
+                    padding: 12px 16px;
+                    text-align: left;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  Header
+                </th>
+                <th
+                  style="
+                    padding: 12px 16px;
+                    text-align: left;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  Usado em
+                </th>
+                <th
+                  style="
+                    padding: 12px 16px;
+                    text-align: left;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  Significado
+                </th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 13px">
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 11px 16px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #0d3b66;
+                    border-bottom: 1px solid #d4e6f5;
+                    white-space: nowrap;
+                  "
+                >
+                  Content-Type
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(74, 106, 138);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    white-space: nowrap;
+                    font-size: 13px;
+                  "
+                >
+                  Req. e Resp.
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    line-height: 1.5;
+                    font-size: 13px;
+                  "
+                >
+                  Formato do corpo.
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(234, 242, 251);
+                      padding: 1px 5px;
+                      border-radius: 3px;
+                      font-size: 13px;
+                    "
+                    >application/json</span
+                  >
+                  para APIs REST.
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 11px 16px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #0d3b66;
+                    border-bottom: 1px solid #d4e6f5;
+                    white-space: nowrap;
+                  "
+                >
+                  Authorization
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(74, 106, 138);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Requisição
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    line-height: 1.5;
+                    font-size: 13px;
+                  "
+                >
+                  Credenciais do cliente. Geralmente
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(234, 242, 251);
+                      padding: 1px 5px;
+                      border-radius: 3px;
+                      font-size: 13px;
+                    "
+                    >Bearer &lt;token&gt;</span
+                  >
+                  para autenticação por JWT.
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 11px 16px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #0d3b66;
+                    border-bottom: 1px solid #d4e6f5;
+                    white-space: nowrap;
+                  "
+                >
+                  Accept
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(74, 106, 138);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Requisição
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    line-height: 1.5;
+                    font-size: 13px;
+                  "
+                >
+                  Formato que o cliente aceita na resposta. Informa ao servidor
+                  qual tipo de dado retornar.
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 11px 16px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #0d3b66;
+                    border-bottom: 1px solid #d4e6f5;
+                    white-space: nowrap;
+                  "
+                >
+                  Cache-Control
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(74, 106, 138);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Resp. e Req.
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    line-height: 1.5;
+                    font-size: 13px;
+                  "
+                >
+                  Controla o comportamento de cache.
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(234, 242, 251);
+                      padding: 1px 5px;
+                      border-radius: 3px;
+                      font-size: 13px;
+                    "
+                    >no-cache</span
+                  >
+                  força buscar sempre do servidor.
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 11px 16px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #0d3b66;
+                    white-space: nowrap;
+                  "
+                >
+                  CORS Headers
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(74, 106, 138);
+                    font-size: 13px;
+                  "
+                >
+                  Resposta
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(44, 62, 80);
+                    line-height: 1.5;
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(234, 242, 251);
+                      padding: 1px 5px;
+                      border-radius: 3px;
+                      font-size: 13px;
+                    "
+                    >Access-Control-Allow-Origin</span
+                  >
+                  — controla quais domínios podem acessar a API (segurança do
+                  navegador).
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            requisição autenticada — com header Authorization
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">buscarPerfil</span>(token) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> resposta = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">fetch</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'https://api.exemplo.com/perfil'</span>, {
+    method: <span style="color: rgb(168, 240, 200); font-size: 13px;">'GET'</span>,
+    headers: {
+      <span style="color: rgb(168, 240, 200); font-size: 13px;">'Authorization'</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">`Bearer ${token}`</span>, <span style="color: rgb(93, 184, 245); font-size: 13px;">// token JWT do usuário logado</span>
+      <span style="color: rgb(168, 240, 200); font-size: 13px;">'Accept'</span>:        <span style="color: rgb(168, 240, 200); font-size: 13px;">'application/json'</span>,
+    },
+  });
+
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// 401 = não autenticado  |  403 = sem permissão</span>
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (resposta.status === <span style="color: rgb(240, 200, 122); font-size: 13px;">401</span>) {
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">error</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Token inválido ou expirado. Faça login novamente.'</span>);
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span>;
+  }
+
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> perfil = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> resposta.<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>();
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Perfil:'</span>, perfil);
+}</pre>
+        </div>
+      </div>
+      <!-- O que é uma Promise -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          O que é uma Promise?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 16px;
+          "
+        >
+          Quando seu código JavaScript faz uma requisição HTTP, ele envia a
+          mensagem para a rede e
+          <span style="font-weight: bold; font-size: 15px"
+            >não pode simplesmente parar e esperar</span
+          >
+          — o navegador ou o Node.js precisa continuar executando outras tarefas
+          enquanto a resposta não chega. É aqui que entra a
+          <span style="font-weight: bold; font-size: 15px">Promise</span>.
+        </div>
+        <div
+          style="
+            background: rgb(234, 242, 251);
+            border-radius: 10px;
+            padding: 18px 20px;
+            border-left: 4px solid rgb(26, 95, 168);
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 14px; color: #1a2a3a; line-height: 1.8">
+            <span style="font-weight: bold; font-size: 14px"
+              >Analogia do mundo real:</span
+            >
+            quando você pede uma pizza por aplicativo, o atendente não para tudo
+            para te esperar na porta. Ele te dá um
+            <span style="font-weight: bold; font-size: 14px"
+              >número de pedido</span
+            >
+            — uma <em style="font-size: 14px">promessa</em> de que sua pizza vai
+            chegar. Enquanto isso, ele atende outros clientes. Quando a pizza
+            fica pronta, ele avisa. Uma Promise em JavaScript funciona
+            exatamente assim: é um objeto que representa
+            <span style="font-weight: bold; font-size: 14px"
+              >o resultado futuro de uma operação assíncrona</span
+            >
+            — que ainda não terminou, mas vai terminar.
+          </div>
+        </div>
+        <!-- Os 3 estados -->
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 12px;
+          "
+        >
+          Os três estados de uma Promise
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #4a6a8a;
+            line-height: 1.65;
+            margin-bottom: 16px;
+          "
+        >
+          Uma Promise sempre está em um desses três estados — e só pode
+          transitar de <em style="font-size: 14px">pending</em> para um dos
+          outros dois, nunca voltando atrás.
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(248, 251, 255);
+              border-radius: 10px;
+              padding: 18px 16px;
+              border-top: 4px solid rgb(74, 106, 138);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 26px; margin-bottom: 8px">⏳</div>
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                font-weight: bold;
+                color: #4a6a8a;
+                margin-bottom: 8px;
+              "
+            >
+              pending
+            </div>
+            <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+              <span style="font-weight: bold; font-size: 13px">Pendente</span> —
+              A operação ainda está em andamento. A requisição foi enviada, mas
+              a resposta ainda não chegou.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(245, 255, 248);
+              border-radius: 10px;
+              padding: 18px 16px;
+              border-top: 4px solid rgb(26, 122, 69);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 26px; margin-bottom: 8px">✅</div>
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                font-weight: bold;
+                color: #1a7a45;
+                margin-bottom: 8px;
+              "
+            >
+              fulfilled
+            </div>
+            <div style="font-size: 13px; color: #2c5a38; line-height: 1.6">
+              <span style="font-weight: bold; font-size: 13px">Resolvida</span>
+              — A operação concluiu com sucesso. O valor resultante está
+              disponível para uso.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 248, 248);
+              border-radius: 10px;
+              padding: 18px 16px;
+              border-top: 4px solid rgb(160, 0, 0);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 26px; margin-bottom: 8px">❌</div>
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                font-weight: bold;
+                color: #a00000;
+                margin-bottom: 8px;
+              "
+            >
+              rejected
+            </div>
+            <div style="font-size: 13px; color: #5a2020; line-height: 1.6">
+              <span style="font-weight: bold; font-size: 13px">Rejeitada</span>
+              — A operação falhou. Um erro foi gerado e precisa ser tratado.
+            </div>
+          </div>
+        </div>
+        <!-- Como Promise funciona internamente -->
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 12px;
+          "
+        >
+          Como uma Promise é criada e consumida
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #4a6a8a;
+            line-height: 1.65;
+            margin-bottom: 14px;
+          "
+        >
+          Uma Promise recebe uma função com dois parâmetros:
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >resolve</span
+          >
+          (chamado quando tudo deu certo) e
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >reject</span
+          >
+          (chamado quando algo falhou). Quem usa a Promise encadeia
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >.then()</span
+          >
+          para o sucesso e
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >.catch()</span
+          >
+          para o erro.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            promise-basica.js — entendendo a estrutura
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// ── CRIANDO uma Promise ──────────────────────────────────────</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Simula uma operação que demora 2 segundos (como uma requisição HTTP)</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> minhaPromise = <span style="color: rgb(240, 200, 122); font-size: 13px;">new</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">Promise</span>((resolve, reject) =&gt; {
+
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Iniciando operação...'</span>); <span style="color: rgb(93, 184, 245); font-size: 13px;">// executa imediatamente</span>
+
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">setTimeout</span>(() =&gt; {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> deuCerto = <span style="color: rgb(240, 200, 122); font-size: 13px;">true</span>; <span style="color: rgb(93, 184, 245); font-size: 13px;">// mude para false para ver o reject</span>
+
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (deuCerto) {
+      <span style="color: rgb(93, 245, 168); font-size: 13px;">resolve</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Dados recebidos com sucesso!'</span>); <span style="color: rgb(93, 184, 245); font-size: 13px;">// → estado: fulfilled</span>
+    } <span style="color: rgb(240, 200, 122); font-size: 13px;">else</span> {
+      <span style="color: rgb(93, 245, 168); font-size: 13px;">reject</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">new</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">Error</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Falha na operação'</span>));     <span style="color: rgb(93, 184, 245); font-size: 13px;">// → estado: rejected</span>
+    }
+  }, <span style="color: rgb(240, 200, 122); font-size: 13px;">2000</span>); <span style="color: rgb(93, 184, 245); font-size: 13px;">// 2 segundos de espera</span>
+});
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// ── CONSUMINDO com .then() e .catch() ───────────────────────</span>
+minhaPromise
+  .<span style="color: rgb(93, 245, 168); font-size: 13px;">then</span>((resultado) =&gt; {
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// executado quando resolve() foi chamado</span>
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Sucesso:'</span>, resultado);
+  })
+  .<span style="color: rgb(93, 245, 168); font-size: 13px;">catch</span>((erro) =&gt; {
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// executado quando reject() foi chamado</span>
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">error</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Erro:'</span>, erro.message);
+  })
+  .<span style="color: rgb(93, 245, 168); font-size: 13px;">finally</span>(() =&gt; {
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// executado SEMPRE, independente do resultado</span>
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Operação encerrada.'</span>);
+  });
+
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Esta linha executa ANTES da Promise terminar!'</span>);
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// JavaScript não trava — continua executando enquanto espera</span></pre>
+        </div>
+        <!-- async/await -->
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 12px;
+          "
+        >
+          async/await — a forma moderna de trabalhar com Promises
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 14px;
+          "
+        >
+          Escrever
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >.then().catch()</span
+          >
+          em cadeia funciona, mas pode ficar confuso em operações mais
+          complexas. O
+          <span style="font-weight: bold; font-size: 15px">async/await</span> é
+          uma sintaxe mais limpa e legível para lidar com Promises — por baixo
+          dos panos, é exatamente a mesma coisa.
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #3a1a1a;
+                padding: 10px 18px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #e05555;
+                border-bottom: 1px solid #2a3a4a;
+                letter-spacing: 1px;
+              "
+            >
+              sem async/await — difícil de ler
+            </div>
+            <pre
+              style="
+                margin: 0px;
+                padding: 20px 22px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 12px;
+                color: rgb(224, 240, 255);
+                line-height: 1.85;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(93, 245, 168); font-size: 12px;">fetch</span>(<span style="color: rgb(168, 240, 200); font-size: 12px;">'/usuarios/1'</span>)
+  .<span style="color: rgb(93, 245, 168); font-size: 12px;">then</span>(res =&gt; res.<span style="color: rgb(93, 245, 168); font-size: 12px;">json</span>())
+  .<span style="color: rgb(93, 245, 168); font-size: 12px;">then</span>(usuario =&gt; {
+    <span style="color: rgb(240, 200, 122); font-size: 12px;">return</span> <span style="color: rgb(93, 245, 168); font-size: 12px;">fetch</span>(<span style="color: rgb(168, 240, 200); font-size: 12px;">`/posts?userId=${usuario.id}`</span>);
+  })
+  .<span style="color: rgb(93, 245, 168); font-size: 12px;">then</span>(res =&gt; res.<span style="color: rgb(93, 245, 168); font-size: 12px;">json</span>())
+  .<span style="color: rgb(93, 245, 168); font-size: 12px;">then</span>(posts =&gt; {
+    console.<span style="color: rgb(93, 245, 168); font-size: 12px;">log</span>(posts);
+  })
+  .<span style="color: rgb(93, 245, 168); font-size: 12px;">catch</span>(err =&gt; console.<span style="color: rgb(93, 245, 168); font-size: 12px;">error</span>(err));</pre>
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a3a1a;
+                padding: 10px 18px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #a8f0c8;
+                border-bottom: 1px solid #2a3a4a;
+                letter-spacing: 1px;
+              "
+            >
+              com async/await — limpo e legível
+            </div>
+            <pre
+              style="
+                margin: 0px;
+                padding: 20px 22px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 12px;
+                color: rgb(224, 240, 255);
+                line-height: 1.85;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(240, 200, 122); font-size: 12px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 12px;">buscarPostsDoUsuario</span>() {
+  <span style="color: rgb(240, 200, 122); font-size: 12px;">try</span> {
+    <span style="color: rgb(240, 200, 122); font-size: 12px;">const</span> res1    = <span style="color: rgb(240, 200, 122); font-size: 12px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 12px;">fetch</span>(<span style="color: rgb(168, 240, 200); font-size: 12px;">'/usuarios/1'</span>);
+    <span style="color: rgb(240, 200, 122); font-size: 12px;">const</span> usuario = <span style="color: rgb(240, 200, 122); font-size: 12px;">await</span> res1.<span style="color: rgb(93, 245, 168); font-size: 12px;">json</span>();
+
+    <span style="color: rgb(240, 200, 122); font-size: 12px;">const</span> res2  = <span style="color: rgb(240, 200, 122); font-size: 12px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 12px;">fetch</span>(<span style="color: rgb(168, 240, 200); font-size: 12px;">`/posts?userId=${usuario.id}`</span>);
+    <span style="color: rgb(240, 200, 122); font-size: 12px;">const</span> posts = <span style="color: rgb(240, 200, 122); font-size: 12px;">await</span> res2.<span style="color: rgb(93, 245, 168); font-size: 12px;">json</span>();
+
+    console.<span style="color: rgb(93, 245, 168); font-size: 12px;">log</span>(posts);
+  } <span style="color: rgb(240, 200, 122); font-size: 12px;">catch</span> (err) {
+    console.<span style="color: rgb(93, 245, 168); font-size: 12px;">error</span>(err);
+  }
+}</pre>
+          </div>
+        </div>
+        <!-- Regras do async/await -->
+        <div
+          style="
+            background: rgb(248, 251, 255);
+            border-radius: 10px;
+            padding: 18px 20px;
+            border: 1px solid rgb(212, 230, 245);
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #1a5fa8;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 12px;
+            "
+          >
+            Regras essenciais do async/await
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 9px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  min-width: 6px;
+                  height: 6px;
+                  width: 6px;
+                  background: rgb(26, 95, 168);
+                  border-radius: 50%;
+                  margin-top: 7px;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div style="font-size: 14px; color: #2c3e50; line-height: 1.65">
+                <span style="font-weight: bold; font-size: 14px"
+                  ><span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(234, 242, 251);
+                      padding: 1px 5px;
+                      border-radius: 3px;
+                      font-size: 14px;
+                    "
+                    >await</span
+                  >
+                  só pode ser usado dentro de uma função marcada com
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(234, 242, 251);
+                      padding: 1px 5px;
+                      border-radius: 3px;
+                      font-size: 14px;
+                    "
+                    >async</span
+                  >.</span
+                >
+                Usar await fora de uma função async é um erro de sintaxe.
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  min-width: 6px;
+                  height: 6px;
+                  width: 6px;
+                  background: rgb(26, 95, 168);
+                  border-radius: 50%;
+                  margin-top: 7px;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div style="font-size: 14px; color: #2c3e50; line-height: 1.65">
+                <span style="font-weight: bold; font-size: 14px"
+                  >Uma função
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(234, 242, 251);
+                      padding: 1px 5px;
+                      border-radius: 3px;
+                      font-size: 14px;
+                    "
+                    >async</span
+                  >
+                  sempre retorna uma Promise</span
+                >, mesmo que você não escreva
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 14px;
+                  "
+                  >return new Promise()</span
+                >
+                explicitamente.
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  min-width: 6px;
+                  height: 6px;
+                  width: 6px;
+                  background: rgb(26, 95, 168);
+                  border-radius: 50%;
+                  margin-top: 7px;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div style="font-size: 14px; color: #2c3e50; line-height: 1.65">
+                <span style="font-weight: bold; font-size: 14px"
+                  ><span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(234, 242, 251);
+                      padding: 1px 5px;
+                      border-radius: 3px;
+                      font-size: 14px;
+                    "
+                    >await</span
+                  >
+                  "pausa" apenas a função em que está</span
+                >, não o programa inteiro. O restante do código continua
+                executando normalmente.
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  min-width: 6px;
+                  height: 6px;
+                  width: 6px;
+                  background: rgb(26, 95, 168);
+                  border-radius: 50%;
+                  margin-top: 7px;
+                  flex-shrink: 0;
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div style="font-size: 14px; color: #2c3e50; line-height: 1.65">
+                <span style="font-weight: bold; font-size: 14px"
+                  >Sempre use
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: rgb(234, 242, 251);
+                      padding: 1px 5px;
+                      border-radius: 3px;
+                      font-size: 14px;
+                    "
+                    >try/catch</span
+                  >
+                  com async/await.</span
+                >
+                É o equivalente ao
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 14px;
+                  "
+                  >.catch()</span
+                >
+                das Promises encadeadas — sem ele, erros rejeitados passam
+                silenciosos.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Promise.all -->
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          Promise.all — executando múltiplas requisições ao mesmo tempo
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #4a6a8a;
+            line-height: 1.65;
+            margin-bottom: 14px;
+          "
+        >
+          Quando você precisa de resultados de
+          <span style="font-weight: bold; font-size: 14px"
+            >várias requisições independentes</span
+          >, fazer uma de cada vez (em sequência) é lento. O
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >Promise.all()</span
+          >
+          dispara todas ao mesmo tempo e espera todas terminarem — o tempo total
+          é o da mais lenta, não a soma de todas.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            promise-all.js — requisições paralelas
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">carregarDashboard</span>() {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">try</span> {
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// As três requisições são disparadas AO MESMO TEMPO</span>
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// Sem Promise.all, cada await esperaria a anterior terminar</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> [usuarios, posts, comentarios] = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> Promise.<span style="color: rgb(93, 245, 168); font-size: 13px;">all</span>([
+      <span style="color: rgb(93, 245, 168); font-size: 13px;">fetch</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'https://jsonplaceholder.typicode.com/users'</span>)    .<span style="color: rgb(93, 245, 168); font-size: 13px;">then</span>(r =&gt; r.<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>()),
+      <span style="color: rgb(93, 245, 168); font-size: 13px;">fetch</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'https://jsonplaceholder.typicode.com/posts'</span>)    .<span style="color: rgb(93, 245, 168); font-size: 13px;">then</span>(r =&gt; r.<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>()),
+      <span style="color: rgb(93, 245, 168); font-size: 13px;">fetch</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'https://jsonplaceholder.typicode.com/comments'</span>)  .<span style="color: rgb(93, 245, 168); font-size: 13px;">then</span>(r =&gt; r.<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>()),
+    ]);
+
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// Promise.all aguarda TODAS terminarem — só então continua</span>
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// Se UMA falhar, todas falham (o catch é chamado)</span>
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Usuários: ${usuarios.length}`</span>);
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Posts: ${posts.length}`</span>);
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Comentários: ${comentarios.length}`</span>);
+
+  } <span style="color: rgb(240, 200, 122); font-size: 13px;">catch</span> (erro) {
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">error</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Uma das requisições falhou:'</span>, erro.message);
+  }
+}
+
+<span style="color: rgb(93, 245, 168); font-size: 13px;">carregarDashboard</span>();</pre>
+        </div>
+        <div
+          style="
+            background: #fff7ee;
+            border-left: 4px solid #f0a500;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #5a3a00;
+            line-height: 1.65;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px">Síntese:</span> toda
+          operação assíncrona em JavaScript — incluindo o
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(245, 228, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >fetch()</span
+          >
+          — retorna uma Promise. O
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(245, 228, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >async/await</span
+          >
+          é apenas uma forma mais legível de consumir Promises. Entender
+          Promises é a base para trabalhar com qualquer operação de rede em
+          JavaScript.
+        </div>
+      </div>
+      <!-- Boas práticas -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(232, 244, 253) 0%,
+            rgb(208, 233, 248) 100%
+          );
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          border: 1px solid rgb(157, 207, 239);
+          box-shadow: rgba(26, 90, 168, 0.1) 0px 4px 16px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #0d3b66;
+            margin-bottom: 16px;
+          "
+        >
+          Boas práticas ao trabalhar com HTTP
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              1
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Use o método HTTP correto para cada operação.</span
+              >
+              GET para leitura, POST para criação, PUT/PATCH para atualização e
+              DELETE para remoção. Usar POST para tudo é um anti-padrão que
+              quebra a semântica da API.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              2
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Sempre verifique o status code antes de processar a
+                resposta.</span
+              >
+              Nunca assuma que uma requisição funcionou. Trate os erros 4xx e
+              5xx de forma explícita no código.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              3
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Use try/catch em todas as chamadas assíncronas.</span
+              >
+              Erros de rede (sem conexão, timeout) não geram um status code —
+              eles lançam uma exceção que precisa ser capturada.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              4
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Nunca exponha informações sensíveis em erros.</span
+              >
+              Não retorne stack traces, queries SQL ou dados internos do sistema
+              em respostas de erro. Retorne mensagens genéricas e registre os
+              detalhes internamente.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              5
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Sempre use HTTPS em produção.</span
+              >
+              Nunca transmita tokens, senhas ou dados pessoais por HTTP puro. O
+              custo de um certificado SSL é zero (Let's Encrypt) e a exposição
+              de dados sensíveis é inaceitável.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Referências -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          box-shadow: rgba(26, 90, 168, 0.1) 0px 4px 18px;
+          border-top: 4px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 16px;
+          "
+        >
+          Referências e Fontes
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <span style="font-weight: bold; font-size: 14px"
+              >MDN Web Docs — HTTP.</span
+            >
+            Documentação completa do protocolo HTTP, métodos, status codes e
+            headers. Disponível em: developer.mozilla.org/pt-BR/docs/Web/HTTP.
+            Acesso em: 2025.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

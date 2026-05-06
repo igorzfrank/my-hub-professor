@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciando um Projeto com Vite + React</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(244, 248, 255);
+        padding: 24px;
+        border-radius: 18px;
+        box-shadow: rgba(10, 50, 120, 0.22) 0px 14px 34px;
+        border: 1px solid rgba(30, 90, 200, 0.14);
+        max-width: 1100px;
+        margin: 0px auto;
+        color: rgb(11, 27, 58);
+        line-height: 1.6;
+        font-size: 14px;
+      "
+    >
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(11, 58, 130) 0%,
+            rgb(27, 120, 214) 55%,
+            rgb(42, 166, 255) 100%
+          );
+          padding: 18px;
+          border-radius: 16px;
+          box-shadow: rgba(7, 42, 100, 0.35) 0px 14px 26px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              width: 50px;
+              height: 50px;
+              border-radius: 14px;
+              background: rgba(255, 255, 255, 0.16);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 22px;
+            "
+          >
+            🚀
+          </div>
+          <div style="font-size: 14px">
+            <p
+              style="
+                margin: 0;
+                font-size: 16px;
+                font-weight: 800;
+                color: #ffffff;
+              "
+            >
+              Iniciando um Projeto com Vite + React
+            </p>
+            <p
+              style="
+                margin: 4px 0 0 0;
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.9);
+              "
+            >
+              ⚛️ Setup inicial · 🧩 Componentes · 🧠 Conceitos fundamentais
+            </p>
+          </div>
+        </div>
+      </div>
+      <div style="height: 16px; font-size: 14px">&nbsp;</div>
+      <div style="display: grid; gap: 14px; font-size: 14px">
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            padding: 18px;
+            border: 1px solid rgba(30, 90, 200, 0.12);
+            box-shadow: rgba(10, 50, 120, 0.18) 0px 12px 26px;
+            font-size: 14px;
+          "
+        >
+          <p
+            style="margin: 0; font-size: 14px; font-weight: 800; color: #0b3a82"
+          >
+            📂 1 — Criando o Projeto
+          </p>
+          <div style="height: 10px; font-size: 14px">&nbsp;</div>
+          <div
+            style="
+              background: rgb(238, 246, 255);
+              border-radius: 14px;
+              padding: 14px;
+              border: 1px solid rgba(30, 120, 220, 0.18);
+              font-size: 14px;
+            "
+          >
+            <p style="margin: 0; font-size: 12px; color: #24406e">
+              1️⃣ Criar uma pasta para o projeto
+            </p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #24406e">
+              2️⃣ Abrir a pasta no
+              <span style="font-weight: 800; font-size: 12px"
+                >Visual Studio Code</span
+              >
+            </p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #24406e">
+              3️⃣ Abrir o terminal (CTRL + J ou CTRL + ')
+            </p>
+          </div>
+          <div style="height: 12px; font-size: 14px">&nbsp;</div>
+          <p
+            style="margin: 0; font-size: 13px; font-weight: 800; color: #0b3a82"
+          >
+            💻 Comando inicial:
+          </p>
+          <div style="height: 8px; font-size: 14px">&nbsp;</div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 12px;
+              padding: 12px;
+              border: 1px solid rgba(30, 120, 220, 0.18);
+              box-shadow: rgba(255, 255, 255, 0.7) 0px 0px 0px 1px inset;
+              font-size: 14px;
+            "
+          >
+            <p
+              style="
+                margin: 0;
+                font-size: 13px;
+                font-family: ui-monospace, monospace;
+                color: #1b2d55;
+              "
+            >
+              npm create vite@latest
+            </p>
+          </div>
+          <div style="height: 12px; font-size: 14px">&nbsp;</div>
+          <div
+            style="
+              background: rgb(246, 251, 255);
+              border-radius: 14px;
+              padding: 14px;
+              border: 1px solid rgba(30, 120, 220, 0.16);
+              font-size: 14px;
+            "
+          >
+            <p style="margin: 0; font-size: 12px; color: #24406e">
+              <strong
+                id="docs-internal-guid-ab5effe0-7fff-610c-7903-78cfc3dbf398"
+                style="font-size: 12px"
+                ><img
+                  src="https://ava.sesisenai.org.br/pluginfile.php/1820471/mod_page/content/1/sketch%20%281%29.png"
+                  width="602"
+                  height="51"
+                  style="font-size: 12px"
+              /></strong>
+            </p>
+            <p style="margin: 0; font-size: 12px; color: #24406e">
+              ➡ Digite o nome do projeto e pressione Enter
+            </p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #24406e">
+              ➡ Escolha
+              <span style="font-weight: 800; font-size: 12px">React</span> com
+              as setas e pressione Enter
+            </p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #24406e">
+              <strong
+                id="docs-internal-guid-70171ef5-7fff-4281-5379-bf306be0154c"
+                style="font-size: 12px"
+                ><img
+                  src="https://ava.sesisenai.org.br/pluginfile.php/1820471/mod_page/content/1/sketch%20%282%29.png"
+                  width="602"
+                  height="233"
+                  style="font-size: 12px"
+              /></strong>
+            </p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #24406e">
+              ➡ Escolha
+              <span style="font-weight: 800; font-size: 12px">JavaScript</span>
+              e pressione Enter
+            </p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #24406e">
+              <strong
+                id="docs-internal-guid-1e10fb21-7fff-92a8-4073-89f364d98be9"
+                style="font-size: 12px"
+                ><img
+                  src="https://ava.sesisenai.org.br/pluginfile.php/1820471/mod_page/content/1/sketch%20%283%29.png"
+                  width="602"
+                  height="189"
+                  style="font-size: 12px"
+              /></strong>
+            </p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #24406e">
+              ➡ Confirme (y) pressionando Enter
+            </p>
+          </div>
+          <div style="height: 14px; font-size: 14px">&nbsp;</div>
+          <p
+            style="margin: 0; font-size: 13px; font-weight: 800; color: #0b3a82"
+          >
+            📦 Rodando o projeto
+          </p>
+          <div style="height: 8px; font-size: 14px">&nbsp;</div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 12px;
+              padding: 12px;
+              border: 1px solid rgba(30, 120, 220, 0.18);
+              font-size: 14px;
+            "
+          >
+            <p
+              style="
+                margin: 0;
+                font-size: 12px;
+                font-family: ui-monospace, monospace;
+                color: #1b2d55;
+              "
+            >
+              cd nome-do-projeto<br style="font-size: 12px" />npm install<br
+                style="font-size: 12px"
+              />npm run dev
+            </p>
+            <p
+              style="
+                margin: 0;
+                font-size: 12px;
+                font-family: ui-monospace, monospace;
+                color: #1b2d55;
+              "
+            >
+              <strong
+                id="docs-internal-guid-78e807e3-7fff-bd51-7d1b-70a7932fd3ae"
+                style="font-size: 12px"
+                ><img
+                  src="https://ava.sesisenai.org.br/pluginfile.php/1820471/mod_page/content/1/sketch%20%284%29.png"
+                  width="297"
+                  height="241"
+                  style="font-size: 12px"
+              /></strong>
+            </p>
+          </div>
+          <div style="height: 10px; font-size: 14px">&nbsp;</div>
+          <div
+            style="
+              background: rgba(26, 115, 232, 0.1);
+              border: 1px solid rgba(26, 115, 232, 0.22);
+              border-radius: 14px;
+              padding: 12px;
+              font-size: 14px;
+            "
+          >
+            <p style="margin: 0; font-size: 12px; color: #24406e">
+              🔗 Após rodar, segure CTRL e clique no link exibido no terminal
+              para abrir no navegador.
+            </p>
+            <p style="margin: 0; font-size: 12px; color: #24406e">
+              <strong
+                id="docs-internal-guid-f30932d4-7fff-f392-ef67-9a98b3e3dff8"
+                style="font-size: 12px"
+                ><img
+                  src="https://ava.sesisenai.org.br/pluginfile.php/1820471/mod_page/content/1/sketch%20%285%29.png"
+                  width="479"
+                  height="179"
+                  style="font-size: 12px"
+              /></strong>
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            padding: 18px;
+            border: 1px solid rgba(30, 90, 200, 0.12);
+            box-shadow: rgba(10, 50, 120, 0.18) 0px 12px 26px;
+            font-size: 14px;
+          "
+        >
+          <p
+            style="margin: 0; font-size: 14px; font-weight: 800; color: #0b3a82"
+          >
+            🧠 Entendendo o vite@latest
+          </p>
+          <div style="height: 10px; font-size: 14px">&nbsp;</div>
+          <div
+            style="
+              background: rgb(238, 246, 255);
+              border-radius: 14px;
+              padding: 14px;
+              border: 1px solid rgba(30, 120, 220, 0.18);
+              font-size: 14px;
+            "
+          >
+            <p style="margin: 0; font-size: 12px; color: #24406e">
+              <span style="font-weight: 800; font-size: 12px">vite</span> → nome
+              do pacote
+            </p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #24406e">
+              <span style="font-weight: 800; font-size: 12px">@latest</span> →
+              versão mais recente disponível
+            </p>
+            <div style="height: 8px; font-size: 14px">&nbsp;</div>
+            <p style="margin: 0; font-size: 12px; color: #24406e">
+              Ou seja: você está criando o projeto usando a versão mais atual do
+              Vite 🚀
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            padding: 18px;
+            border: 1px solid rgba(30, 90, 200, 0.12);
+            box-shadow: rgba(10, 50, 120, 0.18) 0px 12px 26px;
+            font-size: 14px;
+          "
+        >
+          <p
+            style="margin: 0; font-size: 14px; font-weight: 800; color: #0b3a82"
+          >
+            🧩 Componentes React
+          </p>
+          <div style="height: 10px; font-size: 14px">&nbsp;</div>
+          <div
+            style="
+              background: rgb(246, 251, 255);
+              border-radius: 14px;
+              padding: 14px;
+              border: 1px solid rgba(30, 120, 220, 0.16);
+              font-size: 14px;
+            "
+          >
+            <p style="margin: 0; font-size: 13px; color: #16325f">
+              Componentes são funções ou classes que retornam elementos React.
+            </p>
+            <div style="height: 8px; font-size: 14px">&nbsp;</div>
+            <p style="margin: 0; font-size: 12px; color: #24406e">
+              Permitem combinar HTML + CSS + JavaScript em blocos reutilizáveis
+              🧱
+            </p>
+          </div>
+          <div style="height: 12px; font-size: 14px">&nbsp;</div>
+          <div
+            style="
+              background: rgb(238, 246, 255);
+              border-radius: 14px;
+              padding: 14px;
+              border: 1px solid rgba(30, 120, 220, 0.18);
+              font-size: 14px;
+            "
+          >
+            <p style="margin: 0; font-size: 12px; color: #24406e">
+              Um botão, formulário, tela ou navbar: tudo pode ser um componente.
+            </p>
+            <p style="margin: 0; font-size: 12px; color: #24406e">
+              <strong
+                id="docs-internal-guid-419af196-7fff-22f5-aa93-a6de8685eaa9"
+                style="font-size: 12px"
+                ><img
+                  src="https://ava.sesisenai.org.br/pluginfile.php/1820471/mod_page/content/1/sketch%20%286%29.png"
+                  width="602"
+                  height="275"
+                  style="font-size: 12px"
+              /></strong>
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            padding: 18px;
+            border: 1px solid rgba(30, 90, 200, 0.12);
+            box-shadow: rgba(10, 50, 120, 0.18) 0px 12px 26px;
+            font-size: 14px;
+          "
+        >
+          <p
+            style="margin: 0; font-size: 14px; font-weight: 800; color: #0b3a82"
+          >
+            🏗️ Componentes de Classe
+          </p>
+          <div style="height: 10px; font-size: 14px">&nbsp;</div>
+          <div
+            style="
+              background: rgb(238, 246, 255);
+              border-radius: 14px;
+              padding: 14px;
+              border: 1px solid rgba(30, 120, 220, 0.18);
+              font-size: 14px;
+            "
+          >
+            <p style="margin: 0; font-size: 12px; color: #24406e">
+              São classes que estendem
+              <span style="font-weight: 800; font-size: 12px"
+                >React.Component</span
+              >
+              e possuem método render().
+            </p>
+            <div style="height: 8px; font-size: 14px">&nbsp;</div>
+            <p style="margin: 0; font-size: 12px; color: #24406e">
+              ✔ Possuem estado interno (state)
+            </p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #24406e">
+              ✔ Usam ciclo de vida (componentDidMount etc.)
+            </p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #24406e">
+              ✔ Indicados para lógica mais complexa
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            padding: 18px;
+            border: 1px solid rgba(30, 90, 200, 0.12);
+            box-shadow: rgba(10, 50, 120, 0.18) 0px 12px 26px;
+            font-size: 14px;
+          "
+        >
+          <p
+            style="margin: 0; font-size: 14px; font-weight: 800; color: #0b3a82"
+          >
+            ⚡ Componentes Funcionais
+          </p>
+          <div style="height: 10px; font-size: 14px">&nbsp;</div>
+          <div
+            style="
+              background: rgb(246, 251, 255);
+              border-radius: 14px;
+              padding: 14px;
+              border: 1px solid rgba(30, 120, 220, 0.16);
+              font-size: 14px;
+            "
+          >
+            <p style="margin: 0; font-size: 12px; color: #24406e">
+              São funções JavaScript que retornam JSX.
+            </p>
+            <div style="height: 8px; font-size: 14px">&nbsp;</div>
+            <p style="margin: 0; font-size: 12px; color: #24406e">
+              ✔ Sintaxe mais simples
+            </p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #24406e">
+              ✔ Podem usar Hooks (useState, useEffect)
+            </p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #24406e">
+              ✔ Recomendados atualmente
+            </p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #24406e">
+              <strong
+                id="docs-internal-guid-2ae053b8-7fff-50e8-a2a2-2014fb6a07ce"
+                style="font-size: 12px"
+                ><img
+                  src="https://ava.sesisenai.org.br/pluginfile.php/1820471/mod_page/content/1/sketch%20%287%29.png"
+                  width="602"
+                  height="179"
+                  style="font-size: 12px"
+              /></strong>
+            </p>
+          </div>
+          <div style="height: 12px; font-size: 14px">&nbsp;</div>
+          <div
+            style="
+              background: rgba(26, 115, 232, 0.1);
+              border: 1px solid rgba(26, 115, 232, 0.22);
+              border-radius: 14px;
+              padding: 14px;
+              font-size: 14px;
+            "
+          >
+            <p style="margin: 0; font-size: 12px; color: #24406e">
+              💡 Hoje, a preferência é usar componentes funcionais sempre que
+              possível, pois oferecem código mais limpo e melhor reutilização de
+              lógica.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

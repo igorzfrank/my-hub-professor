@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planejamento Estratégico e Cronograma</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(
+          rgb(244, 248, 255) 0%,
+          rgb(234, 242, 255) 100%
+        );
+        padding: 28px;
+        border-radius: 20px;
+        box-shadow: rgba(15, 40, 90, 0.2) 0px 20px 50px;
+        max-width: 1100px;
+        margin: 0px auto;
+        color: rgb(15, 23, 42);
+        line-height: 1.6;
+        font-size: 14px;
+      "
+    >
+      <!-- CABEÇALHO PADRÃO -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(11, 58, 138) 0%,
+            rgb(14, 165, 233) 65%,
+            rgb(56, 189, 248) 100%
+          );
+          color: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 22px;
+          box-shadow: rgba(2, 48, 120, 0.28) 0px 16px 34px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            right: -60px;
+            top: -60px;
+            width: 180px;
+            height: 180px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.14);
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            right: 40px;
+            top: 60px;
+            width: 120px;
+            height: 120px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            font-size: 14px;
+          "
+        >
+          <div style="flex: 1 1 0%; min-width: 260px; font-size: 14px">
+            <div
+              style="
+                font-size: 13px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                opacity: 0.9;
+              "
+            >
+              Técnico em Desenvolvimento de Sistemas • DEsenvolvimento de
+              Sistemas
+            </div>
+            <div style="font-size: 26px; font-weight: bold; margin-top: 6px">
+              Aula 3: Planejamento Estratégico e Cronograma
+            </div>
+            <div style="margin-top: 10px; font-size: 14px; opacity: 0.95">
+              <span
+                style="
+                  display: inline-block;
+                  padding: 6px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.16);
+                  border: 1px solid rgba(255, 255, 255, 0.22);
+                  font-size: 14px;
+                "
+              >
+                Estruturação técnica de projetos de software
+              </span>
+            </div>
+          </div>
+          <div
+            style="
+              flex: 0 0 auto;
+              min-width: 240px;
+              text-align: right;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 14px; opacity: 0.95">Docente</div>
+            <div style="font-size: 16px; font-weight: bold; margin-top: 2px">
+              Keliven Demarchi
+            </div>
+            <div style="font-size: 13px; opacity: 0.9; margin-top: 4px">
+              keliven.demarchi@edu.sc.senai.br
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SLIDE 2 -->
+      <div
+        style="
+          margin-top: 28px;
+          display: flex;
+          gap: 24px;
+          flex-wrap: wrap;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 14px;
+        "
+      >
+        <!-- COLUNA 1 -->
+        <div
+          style="
+            flex: 1 1 0%;
+            min-width: 360px;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: rgba(15, 40, 90, 0.15) 0px 18px 45px;
+            border: 1px solid rgba(30, 70, 140, 0.1);
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 18px; font-weight: 900; color: #1e3a8a">
+            🎯 Objetivo da Aula
+          </div>
+          <div
+            style="
+              margin-top: 16px;
+              font-size: 15px;
+              line-height: 1.8;
+              color: #0f172a;
+            "
+          >
+            • 🧩 Definir escopo técnico de projeto<br
+              style="font-size: 15px"
+            />• 📊 Diferenciar requisitos funcionais e não funcionais com
+            precisão<br style="font-size: 15px" />• ⏳ Aplicar técnicas de
+            estimativa de prazo<br style="font-size: 15px" />• 📅 Estruturar
+            cronograma alinhado à metodologia
+          </div>
+        </div>
+        <!-- COLUNA 2 -->
+        <div
+          style="
+            flex: 1 1 0%;
+            min-width: 360px;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: rgba(15, 40, 90, 0.15) 0px 18px 45px;
+            border: 1px solid rgba(30, 70, 140, 0.1);
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 18px; font-weight: 900; color: #0b3a8a">
+            🧠 Capacidades Trabalhadas
+          </div>
+          <div
+            style="
+              margin-top: 16px;
+              font-size: 15px;
+              line-height: 1.8;
+              color: #0f172a;
+            "
+          >
+            • 🗂️ Definir cronograma de atividades de acordo com a metodologia<br
+              style="font-size: 15px"
+            />• 🛠️ Selecionar ferramentas de gerenciamento na aplicação da
+            metodologia
+          </div>
+        </div>
+      </div>
+      <!-- SLIDE 3 -->
+      <div
+        style="
+          margin-top: 28px;
+          display: flex;
+          gap: 24px;
+          flex-wrap: wrap;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 14px;
+        "
+      >
+        <!-- COLUNA 1 -->
+        <div
+          style="
+            flex: 1 1 0%;
+            min-width: 360px;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: rgba(15, 40, 90, 0.15) 0px 18px 45px;
+            border: 1px solid rgba(30, 70, 140, 0.1);
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 18px; font-weight: 900; color: #1e3a8a">
+            🧠 O que é Planejamento Estratégico?
+          </div>
+          <div
+            style="
+              margin-top: 14px;
+              font-size: 15px;
+              line-height: 1.8;
+              color: #0f172a;
+            "
+          >
+            Fase onde transformamos uma
+            <strong style="font-size: 15px">ideia</strong> em estrutura
+            executável. <br style="font-size: 15px" /><img
+              src="https://scoreplan.com.br/wp-content/uploads/2023/12/Piramide-de-planejamento.jpg.webp"
+              alt="Níveis de planejamento: conheça os 3 níveis da estratégia"
+              width="377"
+              height="200"
+              style="font-size: 15px"
+            /><br style="font-size: 15px" /><strong style="font-size: 15px"
+              >Ele responde:</strong
+            >
+            <br style="font-size: 15px" />• ❓ Qual problema estamos
+            resolvendo?<br style="font-size: 15px" />• 🛠️ Qual solução será
+            construída?<br style="font-size: 15px" />• 🚧 Quais limites
+            existem?<br style="font-size: 15px" />• ⏳ Qual o tempo
+            disponível?<br style="font-size: 15px" />• 👥 Quais recursos temos?
+          </div>
+          <div
+            style="
+              margin-top: 14px;
+              font-size: 15px;
+              line-height: 1.8;
+              color: #0f172a;
+            "
+          >
+            <strong style="font-size: 15px"
+              ><img
+                src="https://www.thinkerest.com.br/wp-content/uploads/2022/10/Modelos-de-planejamento-estrategico-estrategia-e-planejamento-empresarial.jpg.webp"
+                alt="Modelos de Planejamento Estratégico | Thinkerest Consultoria"
+                width="340"
+                height="192"
+                style="font-size: 15px"
+            /></strong>
+          </div>
+        </div>
+        <!-- COLUNA 2 -->
+        <div
+          style="
+            flex: 1 1 0%;
+            min-width: 360px;
+            background: rgb(255, 255, 255);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: rgba(15, 40, 90, 0.15) 0px 18px 45px;
+            border: 1px solid rgba(30, 70, 140, 0.1);
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 18px; font-weight: 900; color: #0b3a8a">
+            🧭 Conceito Profissional
+          </div>
+          <div
+            style="
+              margin-top: 14px;
+              font-size: 15px;
+              line-height: 1.8;
+              color: #0f172a;
+            "
+          >
+            Planejamento estratégico é o processo de definir
+            <strong style="font-size: 15px">direção</strong> e tomar decisões
+            antecipadas para transformar um objetivo em resultado.
+          </div>
+          <div
+            style="
+              margin-top: 14px;
+              font-size: 15px;
+              line-height: 1.8;
+              color: #0f172a;
+            "
+          >
+            <br style="font-size: 15px" />✔️ Define prioridades<br
+              style="font-size: 15px"
+            />✔️ Escolhe caminhos<br style="font-size: 15px" />✔️ Organiza
+            recursos e métricas<br style="font-size: 15px" />✔️ Determina o que
+            entra e o que fica fora <br style="font-size: 15px" /><br
+              style="font-size: 15px"
+            />💻 No software, ele cria a ponte entre:
+            <br style="font-size: 15px" /><strong style="font-size: 15px"
+              >Problema → Solução → Entrega</strong
+            >
+            <br style="font-size: 15px" /><br style="font-size: 15px" /><strong
+              style="font-size: 15px"
+              >🎯 Garantindo viabilidade técnica, tempo e qualidade.<br
+                style="font-size: 15px" /><img
+                style="
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  font-size: 15px;
+                "
+                src="https://sebrae.com.br/Sebrae/Portal%20Sebrae/Imagens%20SebraeNA/Ilustrac%CC%A7a%CC%83o-semfundo.png"
+                alt="Planejamento estratégico: um roteiro para o sucesso - Sebrae"
+                width="353"
+                height="259" /><br style="font-size: 15px"
+            /></strong>
+          </div>
+        </div>
+      </div>
+      <!-- SLIDE 4 -->
+      <div
+        style="
+          margin-top: 28px;
+          font-family: Arial, Helvetica, sans-serif;
+          color: rgb(15, 23, 42);
+          line-height: 1.7;
+          font-size: 14px;
+        "
+      >
+        <!-- VISÃO PROFISSIONAL -->
+        <div
+          style="
+            margin-top: 22px;
+            background: rgb(255, 255, 255);
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: rgba(15, 23, 42, 0.12) 0px 18px 44px;
+            font-size: 14px;
+          "
+        >
+          <div style="margin-top: 14px; font-size: 14px">
+            <img
+              class="img-fluid align-bottom"
+              role="presentation"
+              src="https://ava.sesisenai.org.br/pluginfile.php/1793367/mod_page/content/6/sketch.png?1770900663154"
+              alt=""
+              width="1080"
+              height="492"
+              style="font-size: 14px"
+            />
+          </div>
+        </div>
+        <!-- DEFINIÇÃO NOTA 10 -->
+        <div
+          style="
+            margin-top: 28px;
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+          "
+        >
+          <!-- COLUNA 1 -->
+          <div
+            style="
+              flex: 1 1 0%;
+              min-width: 360px;
+              background: rgb(255, 255, 255);
+              border-radius: 20px;
+              padding: 24px;
+              box-shadow: rgba(15, 40, 90, 0.15) 0px 20px 50px;
+              border: 1px solid rgba(30, 70, 140, 0.1);
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 18px; font-weight: 900; color: #1e3a8a">
+              ✅ Definição
+            </div>
+            <div
+              style="
+                margin-top: 14px;
+                font-size: 15px;
+                line-height: 1.7;
+                color: #0f172a;
+              "
+            >
+              Planejamento estratégico é a etapa em que definimos
+              <strong style="font-size: 15px"
+                >objetivos, prioridades, limites, recursos, riscos e
+                métricas</strong
+              >
+              para guiar decisões e organizar a execução de um projeto,
+              garantindo que a solução seja viável e entregue com qualidade
+              dentro do tempo e das restrições disponíveis.
+            </div>
+            <div
+              style="
+                margin-top: 22px;
+                font-size: 18px;
+                font-weight: 900;
+                color: #1e3a8a;
+              "
+            >
+              📌 Exemplo Aplicado
+            </div>
+            <div style="margin-top: 12px; font-size: 15px; line-height: 1.7">
+              <strong style="font-size: 15px">Projeto:</strong> Plataforma de
+              mentoria + avaliação <br style="font-size: 15px" /><br
+                style="font-size: 15px"
+              />• 🎯 <strong style="font-size: 15px">Escopo:</strong> login,
+              trilhas, avaliação diagnóstica (MVP)<br
+                style="font-size: 15px"
+              />• 🚫
+              <strong style="font-size: 15px">Fora do escopo:</strong> app
+              mobile, pagamentos<br style="font-size: 15px" />• ⚠️
+              <strong style="font-size: 15px">Riscos:</strong> integração com
+              IA, dados sensíveis<br style="font-size: 15px" />• 📊
+              <strong style="font-size: 15px">Métrica:</strong> plano entregue
+              em X minutos<br style="font-size: 15px" />• 📅
+              <strong style="font-size: 15px">Cronograma:</strong> 4 semanas com
+              marcos
+            </div>
+          </div>
+          <!-- COLUNA 2 -->
+          <div
+            style="
+              flex: 1 1 0%;
+              min-width: 360px;
+              background: rgb(255, 255, 255);
+              border-radius: 20px;
+              padding: 24px;
+              box-shadow: rgba(15, 40, 90, 0.15) 0px 20px 50px;
+              border: 1px solid rgba(30, 70, 140, 0.1);
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 18px; font-weight: 900; color: #b91c1c">
+              ⚠️ Erros Comuns
+            </div>
+            <div style="margin-top: 16px; font-size: 15px; line-height: 1.7">
+              <div style="margin-bottom: 12px; font-size: 15px">
+                1️⃣
+                <strong style="font-size: 15px"
+                  >Confundir planejamento com lista de tarefas</strong
+                ><br style="font-size: 15px" />📌 Planejamento é decisão +
+                justificativa.
+              </div>
+              <div style="margin-bottom: 12px; font-size: 15px">
+                2️⃣
+                <strong style="font-size: 15px"
+                  >Escopo mal definido (scope creep)</strong
+                ><br style="font-size: 15px" />📌 Mudanças constantes geram
+                atraso e retrabalho.
+              </div>
+              <div style="margin-bottom: 12px; font-size: 15px">
+                3️⃣
+                <strong style="font-size: 15px"
+                  >Ignorar requisitos não funcionais</strong
+                ><br style="font-size: 15px" />📌 Sistema funciona, mas é lento
+                ou inseguro.
+              </div>
+              <div style="margin-bottom: 12px; font-size: 15px">
+                4️⃣ <strong style="font-size: 15px">Subestimar tempo</strong
+                ><br style="font-size: 15px" />📌 Não considerar testes, bugs e
+                integração.
+              </div>
+              <div style="margin-bottom: 12px; font-size: 15px">
+                5️⃣ <strong style="font-size: 15px">Não considerar riscos</strong
+                ><br style="font-size: 15px" />📌 Ignorar incertezas gera
+                surpresas negativas.
+              </div>
+              <div style="margin-bottom: 12px; font-size: 15px">
+                6️⃣
+                <strong style="font-size: 15px">Não definir prioridades</strong
+                ><br style="font-size: 15px" />📌 Quando tudo é urgente, nada é
+                prioridade.
+              </div>
+              <div style="font-size: 15px">
+                7️⃣
+                <strong style="font-size: 15px">Não revisar planejamento</strong
+                ><br style="font-size: 15px" />📌 Planejamento é iterativo e
+                ajustável.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 10px; font-size: 14px">
+          <img
+            src="https://ava.sesisenai.org.br/pluginfile.php/1793367/mod_page/content/6/sketch%20%281%29.png"
+            width="803"
+            height="1001"
+            style="font-size: 14px"
+          />
+        </div>
+      </div>
+      <!-- COMPARAÇÃO PROJETO -->
+      <div
+        style="
+          margin-top: 28px;
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            flex: 1 1 0%;
+            min-width: 320px;
+            background: rgb(254, 226, 226);
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: rgba(185, 28, 28, 0.15) 0px 14px 34px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="font-weight: 900; color: rgb(153, 27, 27); font-size: 14px"
+          >
+            Projeto Sem Planejamento
+          </div>
+          <div style="margin-top: 10px; font-size: 14px">
+            <p data-start="1778" data-end="1804" style="font-size: 14px">
+              Quanto mais o tempo passa,&nbsp;maior o retrabalho,&nbsp;maior o
+              custo,&nbsp;maior o estresse.
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            flex: 1 1 0%;
+            min-width: 320px;
+            background: rgb(220, 252, 231);
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: rgba(22, 163, 74, 0.15) 0px 14px 34px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="font-weight: 900; color: rgb(22, 101, 52); font-size: 14px"
+          >
+            Projeto Bem Planejado
+          </div>
+          <div style="margin-top: 10px; font-size: 14px">
+            <p data-start="2097" data-end="2132" style="font-size: 14px">
+              Planejamento exige esforço inicial, masreduz risco ao longo do
+              projeto.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- GRÁFICO CONCEITUAL -->
+      <div
+        style="
+          margin-top: 28px;
+          background: #0f172a;
+          color: #e5e7eb;
+          border-radius: 18px;
+          padding: 20px;
+          font-family: Consolas, monospace;
+          font-size: 14px;
+        "
+      >
+        <img
+          src="https://ava.sesisenai.org.br/pluginfile.php/1793367/mod_page/content/6/sketch%20%282%29.png"
+          width="705"
+          height="470"
+          style="font-size: 14px"
+        />
+      </div>
+    </div>
+  </body>
+</html>

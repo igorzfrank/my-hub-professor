@@ -1,0 +1,2222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metodologia scrum e Kanban</title>
+  </head>
+  <body>
+    <div role="main" style="font-size: 14px">
+      <div
+        class="box py-3 generalbox center clearfix"
+        style="max-width: 1200px; margin: 0px auto; font-size: 14px"
+      >
+        <div class="no-overflow" style="font-size: 14px">
+          <!-- ✅ CABEÇALHO PADRÃO (com espaço para imagem) -->
+          <div
+            style="
+              margin-top: 16px;
+              padding: 18px;
+              border-radius: 18px;
+              background: linear-gradient(
+                135deg,
+                rgb(15, 23, 42) 0%,
+                rgb(30, 58, 138) 60%,
+                rgb(37, 99, 235) 100%
+              );
+              color: rgb(255, 255, 255);
+              box-shadow: rgba(2, 48, 120, 0.28) 0px 22px 50px;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                gap: 16px;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                font-size: 14px;
+              "
+            >
+              <div style="min-width: 240px; font-size: 14px">
+                <div style="font-size: 18px; font-weight: 900">
+                  Aula 03 - Introdução ao Scrum
+                </div>
+                <div
+                  style="
+                    margin-top: 6px;
+                    font-size: 15px;
+                    font-weight: bold;
+                    opacity: 0.95;
+                  "
+                >
+                  A Metodologia Ágil Mais Popular 🧑‍💻🚀
+                </div>
+                <div
+                  style="
+                    margin-top: 10px;
+                    font-size: 13px;
+                    line-height: 1.7;
+                    opacity: 0.95;
+                  "
+                >
+                  <div style="font-size: 13px">
+                    <strong style="font-size: 13px"
+                      >Profª Keliven Demarchi</strong
+                    >
+                  </div>
+                  <div style="font-size: 13px">
+                    📧 keliven.demarchi@edu.sc.senai.br
+                  </div>
+                </div>
+              </div>
+              <!-- Espaço para imagem (logo/ilustração) -->
+            </div>
+          </div>
+          <!-- 🔹 PARTE I — INTRODUÇÃO (pode ficar lado a lado com um “card” leve) -->
+          <div
+            style="
+              margin-top: 16px;
+              display: flex;
+              gap: 16px;
+              flex-wrap: wrap;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                flex: 1 1 0%;
+                min-width: 280px;
+                padding: 16px;
+                border-radius: 16px;
+                background: rgb(255, 255, 255);
+                border: 1px solid rgba(30, 70, 140, 0.1);
+                box-shadow: rgba(15, 40, 90, 0.1) 0px 14px 35px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-weight: 900;
+                  color: rgb(30, 58, 138);
+                  font-size: 14px;
+                "
+              >
+                🔹 PARTE I — Introdução
+              </div>
+              <div
+                style="
+                  margin-top: 10px;
+                  font-weight: 800;
+                  color: rgb(15, 23, 42);
+                  font-size: 14px;
+                "
+              >
+                🎯 Conteúdos da Aula
+              </div>
+              <div
+                style="
+                  margin-top: 10px;
+                  font-size: 15px;
+                  line-height: 1.9;
+                  color: #0f172a;
+                "
+              >
+                <strong
+                  id="docs-internal-guid-92169912-7fff-f07b-2555-9f930e03dc95"
+                  style="font-size: 15px"
+                  >✅</strong
+                >
+                Definir metodologias ágeis
+              </div>
+              <div
+                style="
+                  margin-top: 10px;
+                  font-size: 15px;
+                  line-height: 1.9;
+                  color: #0f172a;
+                "
+              >
+                ✅ Compreender o framework Scrum e sua estrutura<br
+                  style="font-size: 15px"
+                />✅ Aprender sobre papéis, cerimônias e artefatos no Scrum
+              </div>
+              <div
+                style="
+                  margin-top: 10px;
+                  font-size: 15px;
+                  line-height: 1.9;
+                  color: #0f172a;
+                "
+              >
+                ✅ Entender o método Kanban e como ele se diferencia do Scrum
+                🔄<br style="font-size: 15px" />✅ Aplicar fluxo contínuo e
+                limitar trabalho em progresso (WIP) ⚙️
+              </div>
+            </div>
+            <!-- Espaço opcional para imagem (conteúdo curto pode ficar ao lado) -->
+            <div
+              style="
+                flex: 1 1 0%;
+                min-width: 280px;
+                padding: 16px;
+                border-radius: 16px;
+                background: rgb(238, 242, 255);
+                border-left: 6px solid rgb(37, 99, 235);
+                box-shadow: rgba(15, 40, 90, 0.1) 0px 14px 35px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-weight: 900;
+                  color: rgb(15, 23, 42);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    margin-top: 10px;
+                    font-weight: 800;
+                    color: rgb(15, 23, 42);
+                    font-size: 14px;
+                  "
+                >
+                  🎯&nbsp;CAPACIDADES:
+                </div>
+                <div
+                  style="
+                    margin-top: 10px;
+                    font-size: 15px;
+                    line-height: 1.9;
+                    color: #0f172a;
+                  "
+                >
+                  <ul style="font-size: 15px">
+                    <li dir="ltr" aria-level="1" style="font-size: 15px">
+                      <p dir="ltr" role="presentation" style="font-size: 15px">
+                        Identificar metodologia de desenvolvimento de sistemas.
+                      </p>
+                    </li>
+                    <li dir="ltr" aria-level="1" style="font-size: 15px">
+                      <p dir="ltr" role="presentation" style="font-size: 15px">
+                        Aplicar metodologia de desenvolvimento de acordo com o
+                        escopo do projeto.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              padding: 16px;
+              border-radius: 18px;
+              background: rgb(248, 250, 252);
+              border-left: 6px solid rgb(124, 58, 237);
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: 900; font-size: 16px; color: #0f172a">
+              ⚡ Metodologias Ágeis — Visão Profissional (com prática)
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                display: flex;
+                gap: 14px;
+                flex-wrap: wrap;
+                font-size: 14px;
+              "
+            >
+              <!-- COLUNA 1 -->
+              <div
+                style="
+                  flex: 1 1 0%;
+                  min-width: 280px;
+                  padding: 14px;
+                  border-radius: 16px;
+                  background: rgb(255, 255, 255);
+                  border: 1px solid rgb(229, 231, 235);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: 800;
+                    color: rgb(15, 23, 42);
+                    font-size: 14px;
+                  "
+                >
+                  🧠 Definição (o que é)
+                </div>
+                <div
+                  style="
+                    margin-top: 8px;
+                    line-height: 1.75;
+                    color: rgb(51, 65, 85);
+                    font-size: 14px;
+                  "
+                >
+                  <strong style="font-size: 14px">Metodologias Ágeis</strong>
+                  são abordagens adaptativas de gestão e desenvolvimento que
+                  priorizam
+                  <strong style="font-size: 14px">valor incremental</strong>,
+                  <strong style="font-size: 14px">feedback contínuo</strong> e
+                  <strong style="font-size: 14px">resposta a mudanças</strong>
+                  em ambientes de alta incerteza.
+                </div>
+                <div
+                  style="
+                    margin-top: 12px;
+                    font-weight: 800;
+                    color: rgb(15, 23, 42);
+                    font-size: 14px;
+                  "
+                >
+                  🧩 Fundamento conceitual (por que funciona)
+                </div>
+                <ul
+                  style="
+                    margin: 8px 0px 0px 18px;
+                    line-height: 1.8;
+                    color: rgb(51, 65, 85);
+                    font-size: 14px;
+                  "
+                >
+                  <li style="font-size: 14px">
+                    📌 Requisitos mudam ao longo do projeto.
+                  </li>
+                  <li style="font-size: 14px">
+                    🛡️ Reduz risco com entregas frequentes.
+                  </li>
+                  <li style="font-size: 14px">
+                    🔁 Valorizam
+                    <strong style="font-size: 14px">inspeção</strong> e
+                    <strong style="font-size: 14px">adaptação</strong>
+                    constante.
+                  </li>
+                </ul>
+                <div
+                  style="
+                    margin-top: 12px;
+                    font-weight: 800;
+                    color: rgb(15, 23, 42);
+                    font-size: 14px;
+                  "
+                >
+                  🎯 Princípio central (o “ciclo” ágil)
+                </div>
+                <ul
+                  style="
+                    margin: 8px 0px 0px 18px;
+                    line-height: 1.8;
+                    color: rgb(51, 65, 85);
+                    font-size: 14px;
+                  "
+                >
+                  <li style="font-size: 14px">
+                    🧱 Entregar pequenas partes funcionais (<strong
+                      style="font-size: 14px"
+                      >incrementos</strong
+                    >).
+                  </li>
+                  <li style="font-size: 14px">
+                    ✅ Validar rápido com o usuário.
+                  </li>
+                  <li style="font-size: 14px">
+                    📣 Aprender com feedback e ajustar o caminho.
+                  </li>
+                </ul>
+              </div>
+              <!-- COLUNA 2 -->
+              <div
+                style="
+                  flex: 1 1 0%;
+                  min-width: 280px;
+                  padding: 14px;
+                  border-radius: 16px;
+                  background: rgb(255, 255, 255);
+                  border: 1px solid rgb(229, 231, 235);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: 800;
+                    color: rgb(15, 23, 42);
+                    font-size: 14px;
+                  "
+                >
+                  📜 Manifesto Ágil (2001) — mudança de paradigma
+                </div>
+                <ul
+                  style="
+                    margin: 8px 0px 0px 18px;
+                    line-height: 1.8;
+                    color: rgb(51, 65, 85);
+                    font-size: 14px;
+                  "
+                >
+                  <li style="font-size: 14px">
+                    🧾 Menos burocracia e documentação excessiva.
+                  </li>
+                  <li style="font-size: 14px">
+                    🟢 Mais foco em
+                    <strong style="font-size: 14px">software funcionando</strong
+                    >.
+                  </li>
+                  <li style="font-size: 14px">
+                    🤝 Colaboração ativa com o cliente.
+                  </li>
+                  <li style="font-size: 14px">
+                    🧭 Planejamento
+                    <strong style="font-size: 14px">adaptativo</strong> (em vez
+                    de rígido).
+                  </li>
+                </ul>
+                <div
+                  style="
+                    margin-top: 12px;
+                    font-weight: 800;
+                    color: rgb(15, 23, 42);
+                    font-size: 14px;
+                  "
+                >
+                  🧪 Conexão com Engenharia de Software
+                </div>
+                <ul
+                  style="
+                    margin: 8px 0px 0px 18px;
+                    line-height: 1.8;
+                    color: rgb(51, 65, 85);
+                    font-size: 14px;
+                  "
+                >
+                  <li style="font-size: 14px">
+                    🛠️ Reduz risco técnico com entregas frequentes.
+                  </li>
+                  <li style="font-size: 14px">
+                    🔎 Melhora qualidade com feedback contínuo.
+                  </li>
+                  <li style="font-size: 14px">
+                    🧩 Aumenta previsibilidade ao dividir problemas grandes em
+                    partes.
+                  </li>
+                </ul>
+                <div
+                  style="
+                    margin-top: 12px;
+                    font-weight: 800;
+                    color: rgb(15, 23, 42);
+                    font-size: 14px;
+                  "
+                >
+                  🏁 Objetivo estratégico do Ágil
+                </div>
+                <ul
+                  style="
+                    margin: 8px 0px 0px 18px;
+                    line-height: 1.8;
+                    color: rgb(51, 65, 85);
+                    font-size: 14px;
+                  "
+                >
+                  <li style="font-size: 14px">💎 Maximizar valor entregue.</li>
+                  <li style="font-size: 14px">🧹 Minimizar desperdício.</li>
+                  <li style="font-size: 14px">🔧 Reduzir retrabalho.</li>
+                  <li style="font-size: 14px">
+                    ⚙️ Aumentar capacidade de adaptação.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- ESSÊNCIA -->
+            <div
+              style="
+                margin-top: 14px;
+                padding: 14px;
+                border-radius: 16px;
+                background: linear-gradient(
+                  90deg,
+                  rgb(37, 99, 235),
+                  rgb(124, 58, 237)
+                );
+                color: rgb(255, 255, 255);
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 900; font-size: 15px">
+                ✨ Essência conceitual do Ágil
+              </div>
+              <div
+                style="
+                  margin-top: 8px;
+                  line-height: 1.8;
+                  font-weight: 600;
+                  font-size: 14px;
+                "
+              >
+                🧭 Planejamento não é eliminado: ele é
+                <strong style="font-size: 14px">adaptativo</strong>.<br
+                  style="font-size: 14px"
+                />🧠 Controle não é perdido: ele é
+                <strong style="font-size: 14px">distribuído</strong>.<br
+                  style="font-size: 14px"
+                />🧪 Qualidade não é posterior: ela é
+                <strong style="font-size: 14px">contínua</strong>.
+              </div>
+              <div
+                style="
+                  margin-top: 8px;
+                  line-height: 1.8;
+                  font-weight: 600;
+                  font-size: 14px;
+                "
+              >
+                <strong
+                  id="docs-internal-guid-40067376-7fff-736c-833b-fae08e34bc95"
+                  style="font-size: 14px"
+                  ><img
+                    src="https://ava.sesisenai.org.br/pluginfile.php/1804153/mod_page/content/2/sketch%20%2819%29.png"
+                    width="546"
+                    height="461"
+                    style="font-size: 14px"
+                /></strong>
+              </div>
+            </div>
+          </div>
+          <!-- 🔹 PARTE II — O QUE É SCRUM (ideal: texto + bullets; pode ter imagem ao lado) -->
+          <div
+            style="
+              margin-top: 16px;
+              display: flex;
+              gap: 16px;
+              flex-wrap: wrap;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                flex: 1.3 1 0%;
+                min-width: 320px;
+                padding: 18px;
+                border-radius: 16px;
+                background: rgb(255, 255, 255);
+                border: 1px solid rgba(30, 70, 140, 0.1);
+                box-shadow: rgba(15, 40, 90, 0.1) 0px 14px 35px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-weight: 900;
+                  color: rgb(30, 58, 138);
+                  font-size: 14px;
+                "
+              >
+                🔹 PARTE II — Introdução ao Scrum
+              </div>
+              <div
+                style="
+                  margin-top: 12px;
+                  font-weight: 900;
+                  color: rgb(15, 23, 42);
+                  font-size: 14px;
+                "
+              >
+                📌 O que é Scrum?
+              </div>
+              <div
+                style="
+                  margin-top: 10px;
+                  font-size: 15px;
+                  line-height: 1.9;
+                  color: #0f172a;
+                "
+              >
+                O Scrum é um
+                <strong style="font-size: 15px">framework ágil</strong> que
+                promove o desenvolvimento
+                <strong style="font-size: 15px">incremental</strong> e
+                <strong style="font-size: 15px">iterativo</strong> de produtos.
+                <br style="font-size: 15px" /><br style="font-size: 15px" />🔹
+                Muito utilizado em software, mas aplicável a outros projetos.<br
+                  style="font-size: 15px"
+                />🔹 Baseado em:
+                <strong style="font-size: 15px">entregas rápidas</strong>,
+                <strong style="font-size: 15px">colaboração constante</strong> e
+                <strong style="font-size: 15px">adaptação contínua</strong>.<br
+                  style="font-size: 15px"
+                />🔄 Flexível e adaptável — ideal para requisitos em constante
+                mudança. <br style="font-size: 15px" /><br
+                  style="font-size: 15px"
+                />📌 Principal característica: organização em
+                <strong style="font-size: 15px">Sprints</strong> (1 a 4
+                semanas).
+              </div>
+              <div
+                style="
+                  margin-top: 14px;
+                  padding: 14px;
+                  border-radius: 14px;
+                  background: rgb(238, 242, 255);
+                  border-left: 6px solid rgb(37, 99, 235);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: 900;
+                    color: rgb(15, 23, 42);
+                    font-size: 14px;
+                  "
+                >
+                  📊 Elementos do Scrum
+                </div>
+                <div style="margin-top: 8px; font-size: 15px; line-height: 1.9">
+                  ✅ Papéis<br style="font-size: 15px" />✅ Cerimônias<br
+                    style="font-size: 15px"
+                  />✅ Artefatos<br style="font-size: 15px" /><span
+                    style="opacity: 0.9; font-size: 15px"
+                    >Cada elemento garante o funcionamento eficiente do time
+                    ágil.</span
+                  ><strong
+                    id="docs-internal-guid-5471beae-7fff-10dc-abac-56a2d0195f03"
+                    style="font-size: 15px"
+                  ></strong>
+                </div>
+                <div style="margin-top: 8px; font-size: 15px; line-height: 1.9">
+                  <span style="opacity: 0.9; font-size: 15px"
+                    ><strong
+                      id="docs-internal-guid-5471beae-7fff-10dc-abac-56a2d0195f03"
+                      style="font-size: 15px"
+                      ><img
+                        style="
+                          display: block;
+                          margin-left: auto;
+                          margin-right: auto;
+                          font-size: 15px;
+                        "
+                        src="https://ava.sesisenai.org.br/pluginfile.php/1804153/mod_page/content/2/sketch%20%281%29.png"
+                        width="595"
+                        height="246" /></strong
+                  ></span>
+                </div>
+              </div>
+            </div>
+            <!-- Espaço para imagem (Scrum framework / sprint cycle) -->
+          </div>
+          <!-- 👥 PAPÉIS (NÃO recomendo 3 colunas em tela pequena; melhor 2 colunas + 1 embaixo) -->
+          <div
+            style="
+              margin-top: 16px;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                padding: 18px;
+                border-radius: 16px;
+                background: rgb(255, 255, 255);
+                border: 1px solid rgba(30, 70, 140, 0.1);
+                box-shadow: rgba(15, 40, 90, 0.1) 0px 14px 35px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-weight: 900;
+                  color: rgb(30, 58, 138);
+                  font-size: 14px;
+                "
+              >
+                👥 Papéis no Scrum
+              </div>
+              <div
+                style="
+                  font-weight: 900;
+                  color: rgb(30, 58, 138);
+                  font-size: 14px;
+                "
+              >
+                <strong
+                  id="docs-internal-guid-45678ede-7fff-ab1b-344e-5915dff599d2"
+                  style="font-size: 14px"
+                  ><img
+                    style="
+                      display: block;
+                      margin-left: auto;
+                      margin-right: auto;
+                      font-size: 14px;
+                    "
+                    src="https://ava.sesisenai.org.br/pluginfile.php/1804153/mod_page/content/2/sketch%20%283%29.png"
+                    width="718"
+                    height="465"
+                /></strong>
+              </div>
+              <div
+                style="
+                  margin-top: 14px;
+                  display: flex;
+                  gap: 14px;
+                  flex-wrap: wrap;
+                  font-size: 14px;
+                "
+              >
+                <!-- Scrum Master -->
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 280px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(238, 242, 255);
+                    border-left: 6px solid rgb(37, 99, 235);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    🧑‍🏫 Scrum Master
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    Responsável por garantir que o Scrum seja seguido
+                    corretamente. <br style="font-size: 15px" /><br
+                      style="font-size: 15px"
+                    /><strong style="font-size: 15px">Funções:</strong
+                    ><br style="font-size: 15px" />• Atuar como facilitador<br
+                      style="font-size: 15px"
+                    />• Remover impedimentos (bloqueios)<br
+                      style="font-size: 15px"
+                    />• Facilitar cerimônias<br style="font-size: 15px" />•
+                    Promover melhoria contínua
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <strong
+                      id="docs-internal-guid-f5587ce9-7fff-2b96-3c81-8ae0e5896d1a"
+                      style="font-size: 15px"
+                      ><img
+                        style="
+                          display: block;
+                          margin-left: auto;
+                          margin-right: auto;
+                          font-size: 15px;
+                        "
+                        src="https://ava.sesisenai.org.br/pluginfile.php/1804153/mod_page/content/2/sketch%20%284%29.png"
+                        width="273"
+                        height="219"
+                    /></strong>
+                  </div>
+                </div>
+                <!-- Product Owner -->
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 280px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(236, 254, 255);
+                    border-left: 6px solid rgb(6, 182, 212);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    👥 Product Owner (PO)
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    Dono do produto.
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    Responsável por:&nbsp;<br style="font-size: 15px" /><br
+                      style="font-size: 15px"
+                    />• Definir e priorizar funcionalidades<br
+                      style="font-size: 15px"
+                    />• Gerenciar o Product Backlog<br
+                      style="font-size: 15px"
+                    />• Decidir o que entra na Sprint<br
+                      style="font-size: 15px"
+                    />• Alinhar com cliente e stakeholders
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <strong
+                      id="docs-internal-guid-08dad0a7-7fff-6aca-3f2b-c1df1f8c3712"
+                      style="font-size: 15px"
+                      ><img
+                        style="
+                          display: block;
+                          margin-left: auto;
+                          margin-right: auto;
+                          font-size: 15px;
+                        "
+                        src="https://ava.sesisenai.org.br/pluginfile.php/1804153/mod_page/content/2/sketch%20%285%29.png"
+                        width="333"
+                        height="218"
+                    /></strong>
+                  </div>
+                </div>
+                <div
+                  style="
+                    font-weight: 900;
+                    color: rgb(15, 23, 42);
+                    font-size: 14px;
+                  "
+                >
+                  <strong
+                    id="docs-internal-guid-1022771a-7fff-05b7-2053-2f42520f7206"
+                    style="font-size: 14px"
+                    ><img
+                      src="https://ava.sesisenai.org.br/pluginfile.php/1804153/mod_page/content/2/sketch%20%286%29.png"
+                      width="679"
+                      height="302"
+                      style="font-size: 14px"
+                  /></strong>
+                </div>
+              </div>
+              <!-- Equipe de Dev embaixo (mais texto) -->
+              <div
+                style="
+                  margin-top: 14px;
+                  padding: 14px;
+                  border-radius: 14px;
+                  background: rgb(240, 253, 244);
+                  border-left: 6px solid rgb(34, 197, 94);
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  font-size: 14px;
+                "
+              >
+                <!-- Container da Imagem -->
+                <div style="flex-shrink: 0; font-size: 14px">
+                  <img
+                    style="display: block; font-size: 14px"
+                    src="https://ava.sesisenai.org.br/pluginfile.php/1804153/mod_page/content/2/sketch%20%288%29.png"
+                    width="227"
+                    height="165"
+                  />
+                </div>
+                <!-- Container do Conteúdo -->
+                <div style="font-size: 14px">
+                  <div
+                    style="font-weight: 900; color: #0f172a; font-size: 18px"
+                  >
+                    👩‍💻👨‍💻 Equipe de Desenvolvimento
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.6"
+                  >
+                    • Profissionais multifuncionais<br
+                      style="font-size: 15px"
+                    />• Entregam um incremento funcional<br
+                      style="font-size: 15px"
+                    />• Time auto-organizado<br style="font-size: 15px" />•
+                    Decide como executar o trabalho dentro da Sprint
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ⏰ CERIMÔNIAS (ideal em 2 colunas: Planning+Daily / Review+Retro) -->
+          <div
+            style="
+              margin-top: 16px;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                padding: 18px;
+                border-radius: 16px;
+                background: rgb(255, 255, 255);
+                border: 1px solid rgba(30, 70, 140, 0.1);
+                box-shadow: rgba(15, 40, 90, 0.1) 0px 14px 35px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-weight: 900;
+                  color: rgb(30, 58, 138);
+                  font-size: 14px;
+                "
+              >
+                🔹 PARTE III — Cerimônias do Scrum ⏰
+              </div>
+              <div
+                style="
+                  margin-top: 14px;
+                  display: flex;
+                  gap: 14px;
+                  flex-wrap: wrap;
+                  font-size: 14px;
+                "
+              >
+                <!-- Planning -->
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 280px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(238, 242, 255);
+                    border-left: 6px solid rgb(37, 99, 235);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    📝 Sprint Planning
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    Realizado no início da Sprint.
+                    <br style="font-size: 15px" /><br
+                      style="font-size: 15px"
+                    /><strong style="font-size: 15px">Objetivo:</strong
+                    ><br style="font-size: 15px" />• Selecionar itens do Product
+                    Backlog<br style="font-size: 15px" />• Criar Sprint
+                    Backlog<br style="font-size: 15px" />• Definir Objetivo da
+                    Sprint
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <strong
+                      id="docs-internal-guid-bf611a6a-7fff-38eb-e1b6-454430ad870d"
+                      style="font-size: 15px"
+                      ><img
+                        src="https://ava.sesisenai.org.br/pluginfile.php/1804153/mod_page/content/2/sketch%20%2810%29.png"
+                        width="329"
+                        height="186"
+                        style="font-size: 15px"
+                    /></strong>
+                  </div>
+                </div>
+                <!-- Daily -->
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 280px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(236, 254, 255);
+                    border-left: 6px solid rgb(6, 182, 212);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    🗣️ Daily Standup
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    Reunião rápida (15 min).<br
+                      style="font-size: 15px"
+                    /><strong style="font-size: 15px">Responde:</strong
+                    ><br style="font-size: 15px" />• O que fiz ontem?<br
+                      style="font-size: 15px"
+                    />• O que farei hoje?<br style="font-size: 15px" />• Existe
+                    impedimento?
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <strong style="font-size: 15px">Objetivo:</strong>
+                    alinhamento + bloqueios rápidos.
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <strong
+                      id="docs-internal-guid-b169ccfc-7fff-b8b6-bb0c-b47c3dd28924"
+                      style="font-size: 15px"
+                      ><img
+                        src="https://ava.sesisenai.org.br/pluginfile.php/1804153/mod_page/content/2/sketch%20%2811%29.png"
+                        width="327"
+                        height="172"
+                        style="font-size: 15px"
+                    /></strong>
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  margin-top: 14px;
+                  display: flex;
+                  gap: 14px;
+                  flex-wrap: wrap;
+                  font-size: 14px;
+                "
+              >
+                <!-- Review -->
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 280px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(255, 247, 237);
+                    border-left: 6px solid rgb(249, 115, 22);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    🔍 Sprint Review <br style="font-size: 14px" />(Revisão da
+                    sprint)
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    Ao final de cada Sprint, a equipe realiza a Revisão do
+                    Sprint para apresentar o trabalho concluído ao Product Owner
+                    e outras partes interessadas.&nbsp;<br
+                      style="font-size: 15px"
+                    />📌Durante essa reunião, a equipe demonstra o Incremento de
+                    produto (o que foi feito) e discute o que foi realizado,
+                    comparando com o objetivo do Sprint.
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <strong style="font-size: 15px">Objetivo:</strong
+                    ><br style="font-size: 15px" />• Apresentar o Incremento<br
+                      style="font-size: 15px"
+                    />• Validar entregas<br style="font-size: 15px" />• Comparar
+                    com objetivo da Sprint
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <strong
+                      id="docs-internal-guid-c2983e5b-7fff-656d-d78f-f33cdd28a524"
+                      style="font-size: 15px"
+                      ><img
+                        src="https://ava.sesisenai.org.br/pluginfile.php/1804153/mod_page/content/2/sketch%20%2812%29.png"
+                        width="332"
+                        height="206"
+                        style="font-size: 15px"
+                    /></strong>
+                  </div>
+                </div>
+                <!-- Retro -->
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 280px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(254, 242, 242);
+                    border-left: 6px solid rgb(239, 68, 68);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    🔄 Sprint Retrospective<br
+                      style="font-size: 14px"
+                    />(Retrospectiva da sprint)
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    Após a Review.📌 É uma cerimônia onde a equipe reflete sobre
+                    o que funcionou bem durante o Sprint, o que poderia ser
+                    melhorado e o que precisa ser ajustado para os próximos
+                    Sprints.&nbsp;<br style="font-size: 15px" /><br
+                      style="font-size: 15px"
+                    /><strong style="font-size: 15px">Objetivo:</strong
+                    ><br style="font-size: 15px" />• Refletir sobre processo<br
+                      style="font-size: 15px"
+                    />• Identificar melhorias<br style="font-size: 15px" />•
+                    Ajustar práticas
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <strong style="font-size: 15px">Foco:</strong> melhoria
+                    contínua
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    &nbsp;
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <strong
+                      id="docs-internal-guid-0b744e24-7fff-937d-5a80-17ea9ed471c6"
+                      style="font-size: 15px"
+                      ><img
+                        src="https://ava.sesisenai.org.br/pluginfile.php/1804153/mod_page/content/2/sketch%20%2814%29.png"
+                        width="331"
+                        height="174"
+                        style="font-size: 15px"
+                    /></strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 📦 ARTEFATOS (pode ficar 3 cards lado a lado em telas grandes; aqui uso wrap) -->
+          <div
+            style="
+              margin-top: 16px;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                padding: 18px;
+                border-radius: 16px;
+                background: rgb(255, 255, 255);
+                border: 1px solid rgba(30, 70, 140, 0.1);
+                box-shadow: rgba(15, 40, 90, 0.1) 0px 14px 35px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-weight: 900;
+                  color: rgb(30, 58, 138);
+                  font-size: 14px;
+                "
+              >
+                🔹 PARTE IV — Artefatos no Scrum 📦
+              </div>
+              <div
+                style="
+                  margin-top: 14px;
+                  display: flex;
+                  gap: 14px;
+                  flex-wrap: wrap;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 260px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(238, 242, 255);
+                    border-left: 6px solid rgb(37, 99, 235);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    📋 Product Backlog
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <p dir="ltr" style="font-size: 15px">
+                      Lista priorizada de todas as funcionalidades, melhorias e
+                      requisitos desejados para o produto.&nbsp;
+                    </p>
+                    <strong
+                      id="docs-internal-guid-339db77f-7fff-960a-3e98-d6b4e1ae0e44"
+                      style="font-size: 15px"
+                    ></strong
+                    ><strong
+                      id="docs-internal-guid-6f52679e-7fff-5d8f-a565-888a89c64092"
+                      style="font-size: 15px"
+                      >📌O Product Owner é responsável por manter e priorizar
+                      esse backlog, garantindo que os itens mais importantes
+                      sejam trabalhados primeiro.&nbsp;</strong
+                    >
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <strong
+                      id="docs-internal-guid-38384d5c-7fff-5805-26fc-5e9d27f6b189"
+                      style="font-size: 15px"
+                      ><img
+                        src="https://ava.sesisenai.org.br/pluginfile.php/1804153/mod_page/content/2/sketch%20%2813%29.png"
+                        width="324"
+                        height="293"
+                        style="font-size: 15px" /></strong
+                    ><strong
+                      id="docs-internal-guid-c15d600c-7fff-af97-d010-bf9013a89272"
+                      style="font-size: 15px"
+                    ></strong>
+                  </div>
+                </div>
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 260px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(236, 254, 255);
+                    border-left: 6px solid rgb(6, 182, 212);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    📋 Sprint Backlog
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <p dir="ltr" style="font-size: 15px">
+                      O Sprint Backlog é uma lista dos itens selecionados do
+                      Product Backlog que a equipe se compromete a entregar
+                      durante o Sprint. Ele também inclui as tarefas que a
+                      equipe precisa realizar para completar os itens do
+                      backlog.&nbsp;
+                    </p>
+                    <strong
+                      id="docs-internal-guid-62d7d0af-7fff-d3fc-102a-d4f6ec452feb"
+                      style="font-size: 15px"
+                    ></strong
+                    ><strong style="font-size: 15px"
+                      ><strong
+                        id="docs-internal-guid-6f52679e-7fff-5d8f-a565-888a89c64092"
+                        style="font-size: 15px"
+                        >📌</strong
+                      >Gerenciado:</strong
+                    >
+                    Equipe de Desenvolvimento<br
+                      style="font-size: 15px"
+                    /><strong
+                      id="docs-internal-guid-c8445778-7fff-4b61-2f53-96b67ac2c051"
+                      style="font-size: 15px"
+                      ><img
+                        style="
+                          display: block;
+                          margin-left: auto;
+                          margin-right: auto;
+                          font-size: 15px;
+                        "
+                        src="https://ava.sesisenai.org.br/pluginfile.php/1804153/mod_page/content/2/sketch%20%2815%29.png"
+                        width="273"
+                        height="291"
+                    /></strong>
+                  </div>
+                </div>
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 260px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(240, 253, 244);
+                    border-left: 6px solid rgb(34, 197, 94);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    🚀 Incremento (increment)
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    O Incremento é a soma de todos os itens do Product Backlog
+                    que foram completados durante um Sprint. O Incremento é um
+                    produto funcional (uma parte funcional - feature) e
+                    potencialmente pronto para ser lançado. Ao final de cada
+                    Sprint, a equipe deve ter um incremento que adicione valor
+                    ao produto.
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    &nbsp;<strong
+                      id="docs-internal-guid-cea676c7-7fff-864e-8538-5c293667eff8"
+                      style="font-size: 15px"
+                      >Ele deve estar potencialmente pronto para produção, ou
+                      seja, em condições de ser lançado.</strong
+                    >
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <strong
+                      id="docs-internal-guid-0b86f9b7-7fff-38dd-8a9a-a65c904c32d3"
+                      style="font-size: 15px"
+                      ><img
+                        style="
+                          display: block;
+                          margin-left: auto;
+                          margin-right: auto;
+                          font-size: 15px;
+                        "
+                        src="https://ava.sesisenai.org.br/pluginfile.php/1804153/mod_page/content/2/sketch%20%2816%29.png"
+                        width="486px;"
+                        height="264px;"
+                    /></strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ✅ CABEÇALHO PADRÃO (AULA 04 — KANBAN) -->
+          <div
+            style="
+              margin-top: 26px;
+              padding: 18px;
+              border-radius: 18px;
+              background: linear-gradient(
+                135deg,
+                rgb(15, 23, 42) 0%,
+                rgb(30, 58, 138) 60%,
+                rgb(37, 99, 235) 100%
+              );
+              color: rgb(255, 255, 255);
+              box-shadow: rgba(2, 48, 120, 0.28) 0px 22px 50px;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                gap: 16px;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                font-size: 14px;
+              "
+            >
+              <div style="min-width: 240px; font-size: 14px">
+                <div style="font-size: 18px; font-weight: 900">Kanban</div>
+                <div
+                  style="
+                    margin-top: 6px;
+                    font-size: 15px;
+                    font-weight: bold;
+                    opacity: 0.95;
+                  "
+                >
+                  Fluxo Contínuo de Trabalho 📊🚀
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- KANBAN — INTRO (pode ficar lado a lado com card de “diferença do Scrum”) --><!-- O QUE É KANBAN + PRINCÍPIOS (melhor em blocos; muito texto para ficar lado a lado em 3 colunas) -->
+          <div
+            style="
+              margin-top: 16px;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                padding: 18px;
+                border-radius: 16px;
+                background: rgb(255, 255, 255);
+                border: 1px solid rgba(30, 70, 140, 0.1);
+                box-shadow: rgba(15, 40, 90, 0.1) 0px 14px 35px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-weight: 900;
+                  color: rgb(30, 58, 138);
+                  font-size: 14px;
+                "
+              >
+                🔹 PARTE I — Introdução ao Kanban
+              </div>
+              <div
+                style="
+                  font-weight: 900;
+                  color: rgb(30, 58, 138);
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div
+                style="
+                  margin-top: 12px;
+                  font-weight: 900;
+                  color: rgb(15, 23, 42);
+                  font-size: 14px;
+                "
+              >
+                📋 O que é Kanban?
+              </div>
+              <div
+                style="
+                  margin-top: 10px;
+                  font-size: 15px;
+                  line-height: 1.9;
+                  color: #0f172a;
+                "
+              >
+                O Kanban é um método visual de gerenciamento de fluxo de
+                trabalho, que busca otimizar produção e eficiência.
+                <br style="font-size: 15px" />
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 30px;
+                    font-size: 15px;
+                  "
+                >
+                  <!-- Imagem -->
+                  <div style="font-size: 15px">
+                    <img
+                      src="https://ava.sesisenai.org.br/pluginfile.php/1804153/mod_page/content/2/sketch%20%2818%29.png"
+                      width="379"
+                      height="218"
+                      style="font-size: 15px"
+                    />
+                  </div>
+                  <!-- Texto -->
+                  <div style="font-size: 15px">
+                    <strong style="font-size: 15px"
+                      >Principais características:</strong
+                    ><br style="font-size: 15px" /><br
+                      style="font-size: 15px"
+                    />🔹 Visualização do fluxo de trabalho<br
+                      style="font-size: 15px"
+                    />🔹 Limitação do trabalho em progresso (WIP)<br
+                      style="font-size: 15px"
+                    />🔹 Otimização do fluxo até a finalização
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  margin-top: 10px;
+                  font-size: 15px;
+                  line-height: 1.9;
+                  color: #0f172a;
+                "
+              >
+                📌 Diferente do Scrum, o Kanban não possui papéis ou cerimônias
+                rígidas.<br style="font-size: 15px" />Ele se baseia em:
+                <strong style="font-size: 15px">Visualizar</strong> •
+                <strong style="font-size: 15px">Limitar</strong> •
+                <strong style="font-size: 15px">Otimizar</strong>
+              </div>
+              <div
+                style="
+                  margin-top: 10px;
+                  font-size: 15px;
+                  line-height: 1.9;
+                  color: #0f172a;
+                "
+              >
+                &nbsp;<img
+                  style="
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    font-size: 15px;
+                  "
+                  src="https://arkhademia.com.br/wp-content/uploads/2023/01/15-1024x603.png"
+                  alt="O Método Kanban: o Guia Definitivo para Iniciantes! - Arkhademia"
+                  width="735"
+                  height="433"
+                />
+              </div>
+              <div
+                style="
+                  margin-top: 14px;
+                  display: flex;
+                  gap: 14px;
+                  flex-wrap: wrap;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 280px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(238, 242, 255);
+                    border-left: 6px solid rgb(37, 99, 235);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    💡 Princípio 1 — Visualizar
+                  </div>
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    &nbsp;
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <p dir="ltr" style="font-size: 15px">
+                      O Kanban começa com a criação de um quadro Kanban, onde
+                      todas as tarefas ou atividades são visualizadas de forma
+                      clara. O objetivo é que qualquer membro da equipe possa
+                      rapidamente verificar o status do trabalho.
+                    </p>
+                    <p dir="ltr" style="font-size: 15px">
+                      <strong style="font-size: 15px">📌 Exemplo:</strong>
+                      Imagine que você tem um quadro Kanban com colunas como A
+                      Fazer, Em Progresso e Concluído.&nbsp;
+                    </p>
+                    <p dir="ltr" style="font-size: 15px">
+                      <strong style="font-size: 15px"
+                        ><strong
+                          id="docs-internal-guid-f9789982-7fff-681a-a9c4-4c028926c7ab"
+                          style="font-size: 15px"
+                          >Cada tarefa é representada por um cartão Kanban que
+                          move da esquerda para a direita conforme avança no
+                          processo.</strong
+                        ></strong
+                      >
+                    </p>
+                    <strong
+                      id="docs-internal-guid-ac967196-7fff-e776-9da3-1c9deef7c689"
+                      style="font-size: 15px"
+                    ></strong>
+                  </div>
+                </div>
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 280px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(236, 254, 255);
+                    border-left: 6px solid rgb(6, 182, 212);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    ⚙️ Princípio 2 — Limitar WIP
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <p dir="ltr" style="font-size: 15px">
+                      Limitar o número de tarefas que estão sendo trabalhadas ao
+                      mesmo tempo em cada etapa do processo ajuda a evitar
+                      sobrecarga de trabalho e a melhorar a eficiência.
+                    </p>
+                    <strong
+                      id="docs-internal-guid-0735b2eb-7fff-d274-3884-d83f42a6a416"
+                      style="font-size: 15px"
+                    ></strong
+                    >📌<strong style="font-size: 15px"> Exemplo:</strong> Se a
+                    coluna Em Progresso tem um limite de 3 tarefas, só poderão
+                    estar em andamento 3 tarefas simultaneamente. Se uma tarefa
+                    for concluída, uma nova pode ser iniciada.<strong
+                      id="docs-internal-guid-0dd2f58d-7fff-fa77-6cf5-33f62e4fc975"
+                      style="font-size: 15px"
+                    ></strong
+                    ><img
+                      src="https://artia.com/wp-content/uploads/2023/12/4.png"
+                      alt="Kanban: entenda o que é e como implementar no seu trabalho em 4 passos"
+                      width="329"
+                      height="178"
+                      style="font-size: 15px"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  margin-top: 14px;
+                  display: flex;
+                  gap: 14px;
+                  flex-wrap: wrap;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 280px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(255, 247, 237);
+                    border-left: 6px solid rgb(249, 115, 22);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    🔎 Princípio 3 — Gerenciar Fluxo
+                  </div>
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    &nbsp;
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    <p dir="ltr" style="font-size: 15px">
+                      Uma das principais tarefas do Kanban é monitorar o fluxo
+                      de trabalho. Identificar gargalos ou bloqueios no processo
+                      permite que ajustes sejam feitos para garantir que o
+                      trabalho flua de forma constante e sem interrupções.
+                    </p>
+                    <strong
+                      id="docs-internal-guid-84efd03f-7fff-525b-9c34-e638f457980e"
+                      style="font-size: 15px"
+                    ></strong
+                    ><br style="font-size: 15px" />📌 Ex: muitas tarefas em
+                    “Validação” → gargalo.
+                  </div>
+                </div>
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 280px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(240, 253, 244);
+                    border-left: 6px solid rgb(34, 197, 94);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    ✅ Princípios 4 e 5
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    🧾 Tornar regras explícitas (critério de “feito”, como mover
+                    cartões).<br style="font-size: 15px" />🔁 Melhoria contínua
+                    (Kaizen): ajustes constantes no processo.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ELEMENTOS DO KANBAN (pode ficar lado a lado) -->
+          <div
+            style="
+              margin-top: 16px;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                padding: 18px;
+                border-radius: 16px;
+                background: rgb(255, 255, 255);
+                border: 1px solid rgba(30, 70, 140, 0.1);
+                box-shadow: rgba(15, 40, 90, 0.1) 0px 14px 35px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-weight: 900;
+                  color: rgb(30, 58, 138);
+                  font-size: 14px;
+                "
+              >
+                🔹 PARTE II — Elementos do Kanban 🏷️
+              </div>
+              <div
+                style="
+                  margin-top: 14px;
+                  display: flex;
+                  gap: 14px;
+                  flex-wrap: wrap;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 260px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(238, 242, 255);
+                    border-left: 6px solid rgb(37, 99, 235);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    🗂️ Quadro Kanban
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    Pode ser físico (post-its) ou digital (Trello, Jira,
+                    etc.).<br style="font-size: 15px" />Elementos: colunas +
+                    cartões + limite de WIP.
+                  </div>
+                </div>
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 260px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(236, 254, 255);
+                    border-left: 6px solid rgb(6, 182, 212);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    🏷️ Cartões
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    Devem conter:<br style="font-size: 15px" />✅ Descrição<br
+                      style="font-size: 15px"
+                    />✅ Responsável<br style="font-size: 15px" />✅ Prazo<br
+                      style="font-size: 15px"
+                    />✅ Prioridade
+                  </div>
+                </div>
+                <div
+                  style="
+                    flex: 1 1 0%;
+                    min-width: 260px;
+                    padding: 14px;
+                    border-radius: 14px;
+                    background: rgb(240, 253, 244);
+                    border-left: 6px solid rgb(34, 197, 94);
+                    font-size: 14px;
+                  "
+                >
+                  <div
+                    style="
+                      font-weight: 900;
+                      color: rgb(15, 23, 42);
+                      font-size: 14px;
+                    "
+                  >
+                    ⚠️ WIP
+                  </div>
+                  <div
+                    style="margin-top: 8px; font-size: 15px; line-height: 1.9"
+                  >
+                    Define o número máximo de tarefas por coluna.<br
+                      style="font-size: 15px"
+                    />📌 Evita sobrecarga e aumenta foco.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <table
+            style="
+              width: 100%;
+              border-collapse: collapse;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 14px;
+            "
+            border="1"
+            cellspacing="0"
+            cellpadding="10"
+          >
+            <tbody style="font-size: 14px">
+              <tr
+                style="
+                  background: rgb(15, 23, 42);
+                  color: rgb(255, 255, 255);
+                  font-size: 14px;
+                "
+              >
+                <th style="text-align: left; font-size: 14px">🔎 Aspecto</th>
+                <th style="text-align: left; font-size: 14px">🟦 Scrum</th>
+                <th style="text-align: left; font-size: 14px">🟩 Kanban</th>
+              </tr>
+              <tr style="background: rgb(255, 255, 255); font-size: 14px">
+                <td style="font-size: 14px">
+                  <strong style="font-size: 14px">Natureza</strong>
+                </td>
+                <td style="font-size: 14px">Framework ágil estruturado</td>
+                <td style="font-size: 14px">
+                  Método de gestão de fluxo contínuo
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 250, 252); font-size: 14px">
+                <td style="font-size: 14px">
+                  <strong style="font-size: 14px">Modelo de trabalho</strong>
+                </td>
+                <td style="font-size: 14px">
+                  Iterativo e incremental (Sprints)
+                </td>
+                <td style="font-size: 14px">Fluxo contínuo</td>
+              </tr>
+              <tr style="background: rgb(255, 255, 255); font-size: 14px">
+                <td style="font-size: 14px">
+                  <strong style="font-size: 14px">Tempo (Timebox)</strong>
+                </td>
+                <td style="font-size: 14px">
+                  Sprints com duração fixa (1–4 semanas)
+                </td>
+                <td style="font-size: 14px">Não possui ciclos fixos</td>
+              </tr>
+              <tr style="background: rgb(248, 250, 252); font-size: 14px">
+                <td style="font-size: 14px">
+                  <strong style="font-size: 14px">Planejamento</strong>
+                </td>
+                <td style="font-size: 14px">
+                  Planejamento formal a cada Sprint
+                </td>
+                <td style="font-size: 14px">Planejamento sob demanda</td>
+              </tr>
+              <tr style="background: rgb(255, 255, 255); font-size: 14px">
+                <td style="font-size: 14px">
+                  <strong style="font-size: 14px">Papéis definidos</strong>
+                </td>
+                <td style="font-size: 14px">
+                  Product Owner, Scrum Master, Dev Team
+                </td>
+                <td style="font-size: 14px">Não possui papéis obrigatórios</td>
+              </tr>
+              <tr style="background: rgb(248, 250, 252); font-size: 14px">
+                <td style="font-size: 14px">
+                  <strong style="font-size: 14px">Reuniões formais</strong>
+                </td>
+                <td style="font-size: 14px">
+                  Planning, Daily, Review, Retrospective
+                </td>
+                <td style="font-size: 14px">Reuniões não são obrigatórias</td>
+              </tr>
+              <tr style="background: rgb(255, 255, 255); font-size: 14px">
+                <td style="font-size: 14px">
+                  <strong style="font-size: 14px">Entrega</strong>
+                </td>
+                <td style="font-size: 14px">
+                  Incremento ao final de cada Sprint
+                </td>
+                <td style="font-size: 14px">Entrega contínua</td>
+              </tr>
+              <tr style="background: rgb(248, 250, 252); font-size: 14px">
+                <td style="font-size: 14px">
+                  <strong style="font-size: 14px"
+                    >Flexibilidade de mudanças</strong
+                  >
+                </td>
+                <td style="font-size: 14px">
+                  Mudanças geralmente entre Sprints
+                </td>
+                <td style="font-size: 14px">
+                  Mudanças podem ocorrer a qualquer momento
+                </td>
+              </tr>
+              <tr style="background: rgb(255, 255, 255); font-size: 14px">
+                <td style="font-size: 14px">
+                  <strong style="font-size: 14px">Controle de trabalho</strong>
+                </td>
+                <td style="font-size: 14px">
+                  Compromisso com backlog do Sprint
+                </td>
+                <td style="font-size: 14px">
+                  Limitação de WIP (Work in Progress)
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 250, 252); font-size: 14px">
+                <td style="font-size: 14px">
+                  <strong style="font-size: 14px">Foco principal</strong>
+                </td>
+                <td style="font-size: 14px">
+                  Entrega estruturada e previsível
+                </td>
+                <td style="font-size: 14px">
+                  Otimização de fluxo e redução de gargalos
+                </td>
+              </tr>
+              <tr style="background: rgb(255, 255, 255); font-size: 14px">
+                <td style="font-size: 14px">
+                  <strong style="font-size: 14px">Melhoria contínua</strong>
+                </td>
+                <td style="font-size: 14px">Formalizada na Retrospective</td>
+                <td style="font-size: 14px">
+                  Baseada em análise constante do fluxo
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 250, 252); font-size: 14px">
+                <td style="font-size: 14px">
+                  <strong style="font-size: 14px">Indicado para</strong>
+                </td>
+                <td style="font-size: 14px">
+                  Projetos com necessidade de organização formal e cadência
+                </td>
+                <td style="font-size: 14px">
+                  Equipes que precisam de flexibilidade e fluxo constante
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- BLOCO SCRUM x KANBAN -->
+          <div
+            style="
+              margin-top: 14px;
+              display: flex;
+              gap: 14px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <!-- SCRUM -->
+            <div
+              style="
+                flex: 1 1 0%;
+                min-width: 280px;
+                padding: 14px;
+                border-radius: 16px;
+                background: rgb(238, 242, 255);
+                border-left: 6px solid rgb(37, 99, 235);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-weight: 900;
+                  color: rgb(15, 23, 42);
+                  font-size: 14px;
+                "
+              >
+                🟦 Scrum — Framework Iterativo
+              </div>
+              <ul
+                style="
+                  margin: 8px 0px 0px 18px;
+                  line-height: 1.85;
+                  color: rgb(51, 65, 85);
+                  font-size: 14px;
+                "
+              >
+                <li style="font-size: 14px">
+                  ⏱️ Trabalho em ciclos (<strong style="font-size: 14px"
+                    >Sprints</strong
+                  >).
+                </li>
+                <li style="font-size: 14px">
+                  🚀 Cada Sprint gera um
+                  <strong style="font-size: 14px">incremento</strong>
+                  potencialmente utilizável.
+                </li>
+                <li style="font-size: 14px">
+                  👥 Papéis definidos:
+                  <strong style="font-size: 14px">PO</strong>,
+                  <strong style="font-size: 14px">Scrum Master</strong>,
+                  <strong style="font-size: 14px">Dev Team</strong>.
+                </li>
+                <li style="font-size: 14px">
+                  🗓️ Eventos: Planning, Daily, Review, Retrospective.
+                </li>
+                <li style="font-size: 14px">
+                  🔁 Inspeção e melhoria contínua.
+                </li>
+              </ul>
+              <div style="margin-top: 10px; font-size: 13px; color: #1e293b">
+                📌 Ideal quando você precisa de
+                <strong style="font-size: 13px">cadência</strong> e
+                <strong style="font-size: 13px">organização formal</strong>.
+              </div>
+            </div>
+            <!-- KANBAN -->
+            <div
+              style="
+                flex: 1 1 0%;
+                min-width: 280px;
+                padding: 14px;
+                border-radius: 16px;
+                background: rgb(236, 253, 245);
+                border-left: 6px solid rgb(22, 163, 74);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-weight: 900;
+                  color: rgb(15, 23, 42);
+                  font-size: 14px;
+                "
+              >
+                🟩 Kanban — Sistema de Fluxo Contínuo
+              </div>
+              <ul
+                style="
+                  margin: 8px 0px 0px 18px;
+                  line-height: 1.85;
+                  color: rgb(51, 65, 85);
+                  font-size: 14px;
+                "
+              >
+                <li style="font-size: 14px">
+                  👀 Visualiza o fluxo de trabalho (quadro).
+                </li>
+                <li style="font-size: 14px">
+                  🚦 Limita
+                  <strong style="font-size: 14px">WIP</strong> (trabalho em
+                  progresso).
+                </li>
+                <li style="font-size: 14px">
+                  🧯 Foco em eficiência e redução de gargalos.
+                </li>
+                <li style="font-size: 14px">
+                  🔄 Mudanças podem ocorrer a qualquer momento.
+                </li>
+                <li style="font-size: 14px">
+                  🧩 Não impõe papéis fixos ou ciclos obrigatórios.
+                </li>
+              </ul>
+              <div style="margin-top: 10px; font-size: 13px; color: #1e293b">
+                📌 Ideal quando você precisa de
+                <strong style="font-size: 13px">flexibilidade</strong> e
+                <strong style="font-size: 13px">fluxo constante</strong>.
+              </div>
+            </div>
+          </div>
+          <!-- DIFERENÇAS -->
+          <div
+            style="
+              margin-top: 14px;
+              padding: 14px;
+              border-radius: 16px;
+              background: rgb(15, 23, 42);
+              color: rgb(255, 255, 255);
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: 900; font-size: 14px">
+              🔎 Diferença estrutural (Scrum x Kanban)
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                display: flex;
+                gap: 14px;
+                flex-wrap: wrap;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  flex: 1 1 0%;
+                  min-width: 260px;
+                  background: rgba(255, 255, 255, 0.08);
+                  padding: 12px;
+                  border-radius: 14px;
+                  font-size: 14px;
+                "
+              >
+                <div style="font-weight: 800; font-size: 14px">🟦 Scrum</div>
+                <ul
+                  style="
+                    margin: 8px 0px 0px 18px;
+                    line-height: 1.85;
+                    font-size: 14px;
+                  "
+                >
+                  <li style="font-size: 14px">
+                    ⏱️ Iterações com prazo fixo (Sprint).
+                  </li>
+                  <li style="font-size: 14px">
+                    📌 Compromisso com backlog da Sprint.
+                  </li>
+                  <li style="font-size: 14px">
+                    🧱 Entrega estruturada e previsível.
+                  </li>
+                </ul>
+              </div>
+              <div
+                style="
+                  flex: 1 1 0%;
+                  min-width: 260px;
+                  background: rgba(255, 255, 255, 0.08);
+                  padding: 12px;
+                  border-radius: 14px;
+                  font-size: 14px;
+                "
+              >
+                <div style="font-weight: 800; font-size: 14px">🟩 Kanban</div>
+                <ul
+                  style="
+                    margin: 8px 0px 0px 18px;
+                    line-height: 1.85;
+                    font-size: 14px;
+                  "
+                >
+                  <li style="font-size: 14px">
+                    🔄 Fluxo contínuo (sem timebox obrigatório).
+                  </li>
+                  <li style="font-size: 14px">
+                    🚦 Controle por WIP e gargalos.
+                  </li>
+                  <li style="font-size: 14px">
+                    ⚙️ Otimização contínua do fluxo.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- IMPLEMENTAÇÃO + ENCERRAMENTO  -->
+          <div
+            style="
+              margin-top: 16px;
+              display: flex;
+              gap: 16px;
+              flex-wrap: wrap;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                flex: 1.2 1 0%;
+                min-width: 320px;
+                padding: 18px;
+                border-radius: 16px;
+                background: rgb(255, 255, 255);
+                border: 1px solid rgba(30, 70, 140, 0.1);
+                box-shadow: rgba(15, 40, 90, 0.1) 0px 14px 35px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  margin-top: 14px;
+                  padding: 14px;
+                  border-radius: 14px;
+                  background: linear-gradient(
+                    135deg,
+                    rgb(15, 23, 42) 0%,
+                    rgb(30, 58, 138) 60%,
+                    rgb(37, 99, 235) 100%
+                  );
+                  color: rgb(255, 255, 255);
+                  font-size: 14px;
+                "
+              >
+                <div style="margin-top: 8px; line-height: 1.9; font-size: 14px">
+                  Obrigada! 🎓✨
+                </div>
+              </div>
+            </div>
+            <!-- Espaço para imagem (Kanban example board) -->
+          </div>
+        </div>
+      </div>
+      <div class="modified" style="font-size: 14px">
+        Última atualização: quinta-feira, 19 fev. 2026, 14:05
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,3915 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autorização — Roles e Permissões</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(240, 244, 249);
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102) 0%,
+            rgb(26, 95, 168) 100%
+          );
+          border-radius: 14px;
+          padding: 36px 40px;
+          margin-bottom: 24px;
+          box-shadow: rgba(13, 59, 102, 0.28) 0px 8px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a8c8f0;
+            margin-bottom: 10px;
+          "
+        >
+          Técnico em Desenvolvimento de Sistemas — Desenvolvimento de Sistemas
+        </div>
+        <div
+          style="
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 12px;
+          "
+        >
+          Autorização — Roles e Permissões<br style="font-size: 28px" /><span
+            style="color: rgb(168, 208, 245); font-size: 28px"
+            >Controlando o que cada usuário pode fazer</span
+          >
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #c8dff5;
+            line-height: 1.65;
+            max-width: 820px;
+          "
+        >
+          Nesta aula você vai aprender a diferenciar
+          <strong style="color: rgb(255, 255, 255); font-size: 15px"
+            >autenticação</strong
+          >
+          de
+          <strong style="color: rgb(255, 255, 255); font-size: 15px"
+            >autorização</strong
+          >, criar um sistema de roles (papéis de usuário) com JWT e proteger
+          rotas de acordo com o nível de acesso de cada perfil.
+        </div>
+        <div
+          style="
+            margin-top: 22px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Node.js</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Express</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >JWT</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Roles</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Middleware</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >PostgreSQL</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >MVC</span
+          >
+        </div>
+      </div>
+      <!-- ══ CAPACIDADES ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          border-left: 6px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 14px;
+          "
+        >
+          Capacidades Trabalhadas
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                height: 6px;
+                width: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 8px;
+                flex-shrink: 0;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Aplicar linguagem de programação por meio de APIs, bibliotecas e
+              frameworks na construção de rotinas de software.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                height: 6px;
+                width: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 8px;
+                flex-shrink: 0;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Selecionar ferramentas de gerenciamento na aplicação da
+              metodologia.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════════ -->
+      <!-- MÓDULO 1 — AUTENTICAÇÃO vs AUTORIZAÇÃO -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102),
+            rgb(26, 95, 168)
+          );
+          border-radius: 14px 14px 0px 0px;
+          padding: 20px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7ab0e0;
+            margin-bottom: 6px;
+          "
+        >
+          Módulo 1
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #fff">
+          Autenticação vs. Autorização — qual é a diferença?
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          1.1 — Dois conceitos distintos e complementares
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 20px;
+          "
+        >
+          Na aula de JWT aprendemos a verificar
+          <em style="font-size: 15px">quem é</em> o usuário que faz a
+          requisição. Mas saber a identidade não é suficiente — um sistema real
+          precisa saber também
+          <em style="font-size: 15px"
+            >o que aquele usuário tem permissão de fazer</em
+          >. Esses são dois problemas diferentes que precisam de soluções
+          diferentes.
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(234, 242, 251);
+              border-radius: 12px;
+              padding: 22px 20px;
+              border-top: 4px solid rgb(26, 95, 168);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 34px; margin-bottom: 10px">🪪</div>
+            <div
+              style="
+                font-size: 16px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 8px;
+              "
+            >
+              Autenticação
+            </div>
+            <div
+              style="
+                font-size: 14px;
+                color: #2c3e50;
+                line-height: 1.75;
+                margin-bottom: 12px;
+              "
+            >
+              <strong style="font-size: 14px">Quem é você?</strong
+              ><br style="font-size: 14px" />Verificar que o usuário é quem diz
+              ser. Feita no login com e-mail e senha, gerando um token JWT.
+            </div>
+            <div
+              style="
+                background: rgb(221, 238, 255);
+                border-radius: 8px;
+                padding: 8px 12px;
+                font-size: 12px;
+                color: rgb(13, 59, 102);
+                font-style: italic;
+              "
+            >
+              "Você é o Carlos. Token válido."
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 255, 246);
+              border-radius: 12px;
+              padding: 22px 20px;
+              border-top: 4px solid rgb(26, 138, 80);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 34px; margin-bottom: 10px">🛡️</div>
+            <div
+              style="
+                font-size: 16px;
+                font-weight: bold;
+                color: #0d5a30;
+                margin-bottom: 8px;
+              "
+            >
+              Autorização
+            </div>
+            <div
+              style="
+                font-size: 14px;
+                color: #2c3e50;
+                line-height: 1.75;
+                margin-bottom: 12px;
+              "
+            >
+              <strong style="font-size: 14px">O que você pode fazer?</strong
+              ><br style="font-size: 14px" />Verificar se o usuário autenticado
+              tem permissão para acessar aquele recurso ou executar aquela ação.
+            </div>
+            <div
+              style="
+                background: rgb(208, 240, 224);
+                border-radius: 8px;
+                padding: 8px 12px;
+                font-size: 12px;
+                color: rgb(13, 90, 48);
+                font-style: italic;
+              "
+            >
+              "Carlos é leitor. Não pode criar posts."
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(234, 242, 251);
+            border-radius: 10px;
+            padding: 16px 22px;
+            border-left: 4px solid rgb(26, 95, 168);
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="font-size: 14px; color: rgb(26, 42, 58); line-height: 1.85"
+          >
+            <strong style="font-size: 14px">Analogia:</strong> em um hospital, o
+            crachá de funcionário é a
+            <strong style="font-size: 14px">autenticação</strong> — prova que
+            você trabalha ali. Mas um enfermeiro e um médico têm crachás
+            diferentes com
+            <strong style="font-size: 14px">permissões diferentes</strong>: o
+            enfermeiro pode fazer curativos, mas não pode prescrever
+            medicamentos. Isso é
+            <strong style="font-size: 14px">autorização</strong>.
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          1.2 — O que são Roles (papéis)?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 16px;
+          "
+        >
+          Uma <strong style="font-size: 15px">role</strong> (ou papel) é uma
+          etiqueta que classifica o tipo de usuário e define o conjunto de ações
+          que ele pode realizar. Em vez de dar permissões individuais a cada
+          usuário, atribui-se uma role — e a role carrega as permissões
+          automaticamente.
+        </div>
+        <div style="overflow-x: auto; font-size: 14px">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 14px"
+          >
+            <thead style="font-size: 14px">
+              <tr
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgb(13, 59, 102),
+                    rgb(26, 95, 168)
+                  );
+                  font-size: 14px;
+                "
+              >
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  Role
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: center;
+                    font-size: 14px;
+                  "
+                >
+                  Ler dados
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: center;
+                    font-size: 14px;
+                  "
+                >
+                  Criar registros
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: center;
+                    font-size: 14px;
+                  "
+                >
+                  Editar qualquer registro
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: center;
+                    font-size: 14px;
+                  "
+                >
+                  Excluir usuários
+                </th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 14px">
+              <tr style="background: rgb(234, 242, 251); font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    font-weight: bold;
+                    color: rgb(26, 95, 168);
+                    font-size: 14px;
+                  "
+                >
+                  leitor
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    text-align: center;
+                    color: #1a8a50;
+                    font-size: 16px;
+                  "
+                >
+                  ✓
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    text-align: center;
+                    color: #c0392b;
+                    font-size: 16px;
+                  "
+                >
+                  ✗
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    text-align: center;
+                    color: #c0392b;
+                    font-size: 16px;
+                  "
+                >
+                  ✗
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    text-align: center;
+                    color: #c0392b;
+                    font-size: 16px;
+                  "
+                >
+                  ✗
+                </td>
+              </tr>
+              <tr style="font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    font-weight: bold;
+                    color: rgb(212, 168, 0);
+                    font-size: 14px;
+                  "
+                >
+                  editor
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    text-align: center;
+                    color: #1a8a50;
+                    font-size: 16px;
+                  "
+                >
+                  ✓
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    text-align: center;
+                    color: #1a8a50;
+                    font-size: 16px;
+                  "
+                >
+                  ✓
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    text-align: center;
+                    color: #1a8a50;
+                    font-size: 16px;
+                  "
+                >
+                  ✓
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    text-align: center;
+                    color: #c0392b;
+                    font-size: 16px;
+                  "
+                >
+                  ✗
+                </td>
+              </tr>
+              <tr style="background: rgb(234, 242, 251); font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    font-weight: bold;
+                    color: rgb(192, 57, 43);
+                    font-size: 14px;
+                  "
+                >
+                  admin
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    text-align: center;
+                    color: #1a8a50;
+                    font-size: 16px;
+                  "
+                >
+                  ✓
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    text-align: center;
+                    color: #1a8a50;
+                    font-size: 16px;
+                  "
+                >
+                  ✓
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    text-align: center;
+                    color: #1a8a50;
+                    font-size: 16px;
+                  "
+                >
+                  ✓
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    text-align: center;
+                    color: #1a8a50;
+                    font-size: 16px;
+                  "
+                >
+                  ✓
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- ══════════════════════════════════ -->
+      <!-- MÓDULO 2 — ROLE NO BANCO E TOKEN  -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102),
+            rgb(26, 95, 168)
+          );
+          border-radius: 14px 14px 0px 0px;
+          padding: 20px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7ab0e0;
+            margin-bottom: 6px;
+          "
+        >
+          Módulo 2
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #fff">
+          Armazenando e transportando a Role
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          2.1 — A role no banco de dados
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 16px;
+          "
+        >
+          A role é uma coluna como qualquer outra na tabela de usuários.
+          Definimos um valor padrão (<code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >DEFAULT 'leitor'</code
+          >) para que qualquer usuário cadastrado comece com o perfil mais
+          restrito automaticamente.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            SQL — tabela de usuários com role
+          </div>
+          <div
+            style="
+              padding: 20px 22px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2;
+            "
+          >
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >CREATE TABLE</span
+            >
+            usuarios (<br style="font-size: 13px" />&nbsp;&nbsp;id
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >SERIAL PRIMARY KEY</span
+            >,<br style="font-size: 13px" />&nbsp;&nbsp;nome
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >TEXT NOT NULL</span
+            >,<br style="font-size: 13px" />&nbsp;&nbsp;email
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >TEXT UNIQUE NOT NULL</span
+            >,<br style="font-size: 13px" />&nbsp;&nbsp;senha_hash &nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >TEXT NOT NULL</span
+            >,<br style="font-size: 13px" />&nbsp;&nbsp;role
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >TEXT NOT NULL DEFAULT 'leitor'</span
+            >
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >-- 'leitor' | 'editor' | 'admin'</span
+            ><br style="font-size: 13px" />);
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          2.2 — Incluindo a role no payload do JWT
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 16px;
+          "
+        >
+          Ao fazer login com sucesso, a role do usuário é incluída no payload do
+          token. Isso é fundamental: o middleware de autorização vai ler a role
+          direto do token, sem precisar consultar o banco a cada requisição.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            usuario.controller.js — handler de login
+          </div>
+          <div
+            style="
+              padding: 20px 22px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2;
+            "
+          >
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >export async function</span
+            >
+            <span style="color: rgb(93, 245, 168); font-size: 13px">login</span
+            >(req, res) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >try</span
+            >
+            {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            { email, senha } = req.body;<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            usuario =
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >await</span
+            >
+            UsuarioModel.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >buscarPorEmail</span
+            >(email);<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (!usuario)
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">401</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Credenciais inválidas'</span
+            >
+            });<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            senhaValida =
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >await</span
+            >
+            bcrypt.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >compare</span
+            >(senha, usuario.senha_hash);<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (!senhaValida)
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">401</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Credenciais inválidas'</span
+            >
+            });<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// ✅ role incluída no payload — disponível em
+              req.usuario.role</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            token = jwt.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >sign</span
+            >(<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ id: usuario.id, nome:
+            usuario.nome,
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >role: usuario.role</span
+            >
+            },<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;process.env.<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >JWT_SECRET</span
+            >,<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ expiresIn: process.env.<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >JWT_EXPIRES_IN</span
+            >
+            }<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;);<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ token });<br style="font-size: 13px" />&nbsp;&nbsp;}
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >catch</span
+            >
+            { res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">500</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Erro interno'</span
+            >
+            }); }<br style="font-size: 13px" />}
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          2.3 — O que fica dentro do token
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 14px;
+          "
+        >
+          Após o login, o payload decodificado do token contém a role junto com
+          os outros dados. O middleware de autorização vai ler esse campo
+          diretamente de
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >req.usuario.role</code
+          >:
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 8px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              Payload de um leitor
+            </div>
+            <div
+              style="
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 1.9;
+              "
+            >
+              {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >"id"</span
+              >:
+              <span style="color: rgb(240, 160, 96); font-size: 13px">3</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >"nome"</span
+              >:
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >"Carla"</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >"role"</span
+              >:
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >"leitor"</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 13px"
+                >"iat"</span
+              >:
+              <span style="color: rgb(122, 154, 176); font-size: 13px"
+                >1715000000</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 13px"
+                >"exp"</span
+              >:
+              <span style="color: rgb(122, 154, 176); font-size: 13px"
+                >1715086400</span
+              ><br style="font-size: 13px" />}
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 8px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              Payload de um admin
+            </div>
+            <div
+              style="
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 1.9;
+              "
+            >
+              {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >"id"</span
+              >:
+              <span style="color: rgb(240, 160, 96); font-size: 13px">1</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >"nome"</span
+              >:
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >"Rafael"</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >"role"</span
+              >:
+              <span style="color: rgb(240, 160, 96); font-size: 13px"
+                >"admin"</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 13px"
+                >"iat"</span
+              >:
+              <span style="color: rgb(122, 154, 176); font-size: 13px"
+                >1715000000</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 13px"
+                >"exp"</span
+              >:
+              <span style="color: rgb(122, 154, 176); font-size: 13px"
+                >1715086400</span
+              ><br style="font-size: 13px" />}
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            margin-top: 18px;
+            background: rgb(255, 248, 230);
+            border-width: 1px 1px 1px 5px;
+            border-style: solid;
+            border-color: rgb(240, 208, 128) rgb(240, 208, 128)
+              rgb(240, 208, 128) rgb(212, 168, 0);
+            border-image: initial;
+            border-radius: 10px;
+            padding: 16px 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #8a5800;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 8px;
+            "
+          >
+            Segurança — payload não é segredo
+          </div>
+          <div style="font-size: 14px; color: #5a3800; line-height: 1.8">
+            O payload do JWT é
+            <strong style="font-size: 14px"
+              >codificado em Base64, não criptografado</strong
+            >
+            — qualquer pessoa que tiver o token pode ler o payload em
+            <a
+              style="color: rgb(138, 88, 0); font-size: 14px"
+              href="https://jwt.io"
+              >jwt.io</a
+            >. Por isso, jamais inclua senhas, dados bancários ou informações
+            sensíveis no payload. A
+            <strong style="font-size: 14px">assinatura</strong> garante que o
+            conteúdo não foi adulterado, mas não que está oculto.
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════════ -->
+      <!-- MÓDULO 3 — MIDDLEWARES            -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102),
+            rgb(26, 95, 168)
+          );
+          border-radius: 14px 14px 0px 0px;
+          padding: 20px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7ab0e0;
+            margin-bottom: 6px;
+          "
+        >
+          Módulo 3
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #fff">
+          Middlewares de Autorização
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          3.1 — A cadeia de middlewares
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          A autorização sempre vem
+          <strong style="font-size: 15px">depois</strong> da autenticação. O
+          middleware de autenticação verifica o token e preenche
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >req.usuario</code
+          >. Só então o middleware de autorização pode ler
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >req.usuario.role</code
+          >.
+        </div>
+        <div
+          style="
+            background: #0d1b2a;
+            border-radius: 10px;
+            padding: 16px 20px;
+            font-family: &quot;Courier New&quot;, monospace;
+            font-size: 13px;
+            color: #c8d8e8;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            text-align: center;
+          "
+        >
+          Requisição →
+          <span style="color: rgb(240, 200, 122); font-size: 13px"
+            >[ autenticar ]</span
+          >
+          →
+          <span style="color: rgb(93, 245, 168); font-size: 13px"
+            >[ exigirRole(...) ]</span
+          >
+          → Handler da rota → Resposta
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          3.2 — Middleware de autenticação (revisão)
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            src/middlewares/auth.middleware.js
+          </div>
+          <div
+            style="
+              padding: 20px 22px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2;
+            "
+          >
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            jwt
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'jsonwebtoken'</span
+            >;<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// ── Verifica se o token é válido ────────────────────</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >export</span
+            >
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >function</span
+            >
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >autenticar</span
+            >(req, res, next) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            authHeader = req.headers[<span
+              style="color: rgb(168, 240, 200); font-size: 13px"
+              >'authorization'</span
+            >];<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (!authHeader?.startsWith(<span
+              style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Bearer '</span
+            >))<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">401</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Token não fornecido'</span
+            >
+            });<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            token = authHeader.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >split</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px">' '</span
+            >)[<span style="color: rgb(240, 160, 96); font-size: 13px">1</span
+            >];<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >try</span
+            >
+            {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;req.usuario =
+            jwt.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >verify</span
+            >(token, process.env.<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >JWT_SECRET</span
+            >);<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >next</span
+            >();<br style="font-size: 13px" />&nbsp;&nbsp;}
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >catch</span
+            >
+            {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">401</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Token inválido ou expirado'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;}<br
+              style="font-size: 13px"
+            />}
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          3.3 — Middleware de autorização por role
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 16px;
+          "
+        >
+          O middleware de autorização é uma
+          <strong style="font-size: 15px">factory function</strong> — uma função
+          que <em style="font-size: 15px">retorna</em> outra função. Isso
+          permite passar quais roles são aceitas diretamente na definição da
+          rota, tornando o código flexível e reutilizável.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            src/middlewares/auth.middleware.js — adicionar abaixo do autenticar
+          </div>
+          <div
+            style="
+              padding: 20px 22px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2;
+            "
+          >
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// ── Verifica se o usuário tem uma das roles permitidas ──</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Uso: exigirRole('admin') ou exigirRole('admin',
+              'editor')</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >export</span
+            >
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >function</span
+            >
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >exigirRole</span
+            >(...rolesPermitidas) {<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >function</span
+            >(req, res, next) {<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            roleDoUsuario = req.usuario?.role;<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (!rolesPermitidas.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >includes</span
+            >(roleDoUsuario)) {<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">403</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Acesso negado. Permissão insuficiente.'</span
+            ><br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;}<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >next</span
+            >();<br style="font-size: 13px" />&nbsp;&nbsp;};<br
+              style="font-size: 13px"
+            />}
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(255, 248, 230);
+            border-width: 1px 1px 1px 5px;
+            border-style: solid;
+            border-color: rgb(240, 208, 128) rgb(240, 208, 128)
+              rgb(240, 208, 128) rgb(212, 168, 0);
+            border-image: initial;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #8a5800;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 8px;
+            "
+          >
+            401 vs. 403 — qual a diferença?
+          </div>
+          <div style="font-size: 14px; color: #5a3800; line-height: 1.8">
+            <strong style="font-size: 14px">401 Unauthorized</strong> — o
+            usuário não está autenticado (não tem token ou o token é inválido).
+            É como tentar entrar em um clube sem apresentar o crachá.<br
+              style="font-size: 14px"
+            /><br style="font-size: 14px" /><strong style="font-size: 14px"
+              >403 Forbidden</strong
+            >
+            — o usuário está autenticado mas não tem permissão para aquela ação.
+            É como ter o crachá de visitante e tentar entrar na sala restrita de
+            funcionários.
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          3.4 — Aplicando os middlewares nas rotas
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 16px;
+          "
+        >
+          Com a factory function
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >exigirRole()</code
+          >, a definição das rotas fica expressiva e fácil de entender: qualquer
+          desenvolvedor que leia o router sabe imediatamente quem pode acessar
+          cada rota.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            src/routes/post.routes.js
+          </div>
+          <div
+            style="
+              padding: 20px 22px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2;
+            "
+          >
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            { Router }
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'express'</span
+            >;<br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            *
+            <span style="color: rgb(93, 184, 245); font-size: 13px">as</span> C
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'../controllers/post.controller.js'</span
+            >;<br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            { autenticar, exigirRole }
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'../middlewares/auth.middleware.js'</span
+            >;<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            router =
+            <span style="color: rgb(93, 245, 168); font-size: 13px">Router</span
+            >();<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            /><span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Pública — qualquer pessoa pode ler</span
+            ><br style="font-size: 13px" />router.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >get</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px">'/'</span
+            >, C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >listar</span
+            >);<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Privada — qualquer usuário logado pode ler um post</span
+            ><br style="font-size: 13px" />router.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >get</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/:id'</span
+            >, autenticar, C.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >buscarPorId</span
+            >);<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Restrita — apenas editor ou admin podem criar</span
+            ><br style="font-size: 13px" />router.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >post</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px">'/'</span
+            >, autenticar,
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >exigirRole</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'editor'</span
+            >,
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'admin'</span
+            >), C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >criar</span
+            >);<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Restrita — apenas editor ou admin podem editar</span
+            ><br style="font-size: 13px" />router.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >put</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/:id'</span
+            >, autenticar,
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >exigirRole</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'editor'</span
+            >,
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'admin'</span
+            >), C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >atualizar</span
+            >);<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Restrita — apenas admin pode excluir</span
+            ><br style="font-size: 13px" />router.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >delete</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/:id'</span
+            >, autenticar,
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >exigirRole</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'admin'</span
+            >), C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >remover</span
+            >);<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >export default</span
+            >
+            router;
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════════ -->
+      <!-- MÓDULO 4 — BOAS PRÁTICAS          -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102),
+            rgb(26, 95, 168)
+          );
+          border-radius: 14px 14px 0px 0px;
+          padding: 20px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7ab0e0;
+            margin-bottom: 6px;
+          "
+        >
+          Módulo 4
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #fff">
+          Boas práticas de autorização
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          4.1 — Princípio do menor privilégio
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          Todo usuário deve começar com a role mais restrita possível e receber
+          mais permissões apenas quando necessário. Isso minimiza o impacto de
+          um eventual comprometimento de conta.
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(255, 244, 244);
+              border-width: 1px 1px 1px 4px;
+              border-style: solid;
+              border-color: rgb(240, 200, 200) rgb(240, 200, 200)
+                rgb(240, 200, 200) rgb(192, 57, 43);
+              border-image: initial;
+              border-radius: 10px;
+              padding: 16px 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #8a1a1a;
+                margin-bottom: 6px;
+              "
+            >
+              ❌ Errado
+            </div>
+            <div
+              style="font-size: 13px; color: rgb(90, 26, 26); line-height: 1.7"
+            >
+              Dar role
+              <code
+                style="
+                  background: rgb(255, 224, 224);
+                  padding: 0px 4px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                "
+                >admin</code
+              >
+              para todo novo usuário e remover permissões depois.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 255, 246);
+              border-width: 1px 1px 1px 4px;
+              border-style: solid;
+              border-color: rgb(128, 216, 168) rgb(128, 216, 168)
+                rgb(128, 216, 168) rgb(26, 138, 80);
+              border-image: initial;
+              border-radius: 10px;
+              padding: 16px 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d5a30;
+                margin-bottom: 6px;
+              "
+            >
+              ✅ Correto
+            </div>
+            <div
+              style="font-size: 13px; color: rgb(13, 58, 32); line-height: 1.7"
+            >
+              Todo novo usuário começa como
+              <code
+                style="
+                  background: rgb(208, 240, 224);
+                  padding: 0px 4px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                "
+                >leitor</code
+              >
+              por padrão (<code
+                style="
+                  background: rgb(208, 240, 224);
+                  padding: 0px 4px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                "
+                >DEFAULT 'leitor'</code
+              >
+              no banco). O admin promove manualmente quando necessário.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          4.2 — Nunca confie apenas no frontend
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          Esconder um botão de "Excluir" no frontend para usuários sem permissão
+          é uma boa experiência de uso — mas não é segurança. Alguém pode fazer
+          a requisição diretamente pelo Postman. A autorização
+          <strong style="font-size: 15px"
+            >deve sempre ser verificada no backend</strong
+          >, a cada requisição.
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(255, 244, 244);
+              border-width: 1px 1px 1px 4px;
+              border-style: solid;
+              border-color: rgb(240, 200, 200) rgb(240, 200, 200)
+                rgb(240, 200, 200) rgb(192, 57, 43);
+              border-image: initial;
+              border-radius: 10px;
+              padding: 16px 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #8a1a1a;
+                margin-bottom: 6px;
+              "
+            >
+              ❌ Inseguro
+            </div>
+            <div
+              style="font-size: 13px; color: rgb(90, 26, 26); line-height: 1.7"
+            >
+              Só ocultar o botão de exclusão no HTML. A rota
+              <code
+                style="
+                  background: rgb(255, 224, 224);
+                  padding: 0px 4px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                "
+                >DELETE /posts/1</code
+              >
+              ainda pode ser chamada diretamente.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 255, 246);
+              border-width: 1px 1px 1px 4px;
+              border-style: solid;
+              border-color: rgb(128, 216, 168) rgb(128, 216, 168)
+                rgb(128, 216, 168) rgb(26, 138, 80);
+              border-image: initial;
+              border-radius: 10px;
+              padding: 16px 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d5a30;
+                margin-bottom: 6px;
+              "
+            >
+              ✅ Seguro
+            </div>
+            <div
+              style="font-size: 13px; color: rgb(13, 58, 32); line-height: 1.7"
+            >
+              Ocultar no frontend
+              <strong style="font-size: 13px">e</strong> proteger a rota com
+              <code
+                style="
+                  background: rgb(208, 240, 224);
+                  padding: 0px 4px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                "
+                >autenticar + exigirRole('admin')</code
+              >
+              no backend.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          4.3 — Rota para promoção de role (exclusiva do admin)
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 16px;
+          "
+        >
+          Uma API bem construída deve ter uma rota específica para que um admin
+          possa alterar a role de outro usuário. Essa rota deve ser protegida
+          com
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >exigirRole('admin')</code
+          >.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            Exemplo — rota para promover usuário
+          </div>
+          <div
+            style="
+              padding: 20px 22px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2;
+            "
+          >
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Na rota: PATCH /usuarios/:id/role — apenas admin</span
+            ><br style="font-size: 13px" />router.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >patch</span
+            >(<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/:id/role'</span
+            >,<br style="font-size: 13px" />&nbsp;&nbsp;autenticar,<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >exigirRole</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'admin'</span
+            >),<br style="font-size: 13px" />&nbsp;&nbsp;C.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >atualizarRole</span
+            ><br style="font-size: 13px" />);<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            /><span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// No controller:</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >export async function</span
+            >
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >atualizarRole</span
+            >(req, res) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >try</span
+            >
+            {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            { role } = req.body;
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// 'leitor' | 'editor' | 'admin'</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            rolesValidas = [<span
+              style="color: rgb(168, 240, 200); font-size: 13px"
+              >'leitor'</span
+            >,
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'editor'</span
+            >,
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'admin'</span
+            >];<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (!rolesValidas.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >includes</span
+            >(role))<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">400</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Role inválida'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            usuario =
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >await</span
+            >
+            UsuarioModel.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >atualizarRole</span
+            >(req.params.id, role);<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (!usuario)
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">404</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Usuário não encontrado'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ mensagem:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Role atualizada com sucesso'</span
+            >, usuario });<br style="font-size: 13px" />&nbsp;&nbsp;}
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >catch</span
+            >
+            { res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">500</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Erro interno'</span
+            >
+            }); }<br style="font-size: 13px" />}
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════════════ -->
+      <!-- MÓDULO 5 — EXEMPLO COMPLETO           -->
+      <!-- ══════════════════════════════════════ -->
+      <div
+        style="
+          border-radius: 14px;
+          overflow: hidden;
+          box-shadow: rgba(13, 59, 102, 0.22) 0px 8px 28px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              135deg,
+              rgb(13, 59, 102),
+              rgb(26, 95, 168)
+            );
+            padding: 26px 32px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 10px;
+              font-weight: bold;
+              letter-spacing: 3px;
+              text-transform: uppercase;
+              color: #7ab0e0;
+              margin-bottom: 10px;
+            "
+          >
+            Exemplo Completo
+          </div>
+          <div
+            style="
+              font-size: 22px;
+              font-weight: bold;
+              color: #ffffff;
+              margin-bottom: 8px;
+            "
+          >
+            Blog com três níveis de acesso — leitor, editor e admin
+          </div>
+          <div style="font-size: 14px; color: #a8c8e8; line-height: 1.7">
+            Todos os arquivos relevantes de uma API com sistema de roles
+            completo. O banco, o middleware, as rotas e a tabela de permissões
+            por endpoint.
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(244, 248, 255);
+            padding: 28px 32px;
+            font-size: 14px;
+          "
+        >
+          <!-- SQL -->
+          <div style="margin-bottom: 18px; font-size: 14px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #0d3b66;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >SQL</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >Tabelas no PostgreSQL</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >CREATE DATABASE</span
+              >
+              blog;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(93, 245, 168); font-size: 13px"
+                >CREATE TABLE</span
+              >
+              usuarios (<br style="font-size: 13px" />&nbsp;&nbsp;id
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >SERIAL PRIMARY KEY</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;nome
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >TEXT NOT NULL</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;email
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >TEXT UNIQUE NOT NULL</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;senha_hash &nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >TEXT NOT NULL</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;role
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >TEXT NOT NULL DEFAULT 'leitor'</span
+              ><br style="font-size: 13px" />);<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(93, 245, 168); font-size: 13px"
+                >CREATE TABLE</span
+              >
+              posts (<br style="font-size: 13px" />&nbsp;&nbsp;id
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >SERIAL PRIMARY KEY</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;titulo
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >TEXT NOT NULL</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;conteudo
+              &nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >TEXT NOT NULL</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;criado_em
+              &nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >TIMESTAMP DEFAULT NOW()</span
+              ><br style="font-size: 13px" />);
+            </div>
+          </div>
+          <!-- .env -->
+          <div style="margin-bottom: 18px; font-size: 14px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f0a060;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >.env</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >Variáveis de ambiente</span
+              >
+              <span
+                style="
+                  background: #fff3e0;
+                  color: #a05000;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 10px;
+                  border-radius: 5px;
+                  border: 1px solid #f0c080;
+                  margin-left: auto;
+                "
+                >Não vai para o Git</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 16px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2.2;
+              "
+            >
+              PORT=3000 &nbsp;&nbsp; DB_HOST=localhost &nbsp;&nbsp;
+              DB_PORT=5432<br style="font-size: 13px" />DB_NAME=blog
+              &nbsp;&nbsp; DB_USER=postgres &nbsp;&nbsp; DB_PASSWORD=senha123<br
+                style="font-size: 13px"
+              /><span style="color: rgb(240, 200, 122); font-size: 13px"
+                >JWT_SECRET</span
+              >=<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >chave_super_secreta_blog!</span
+              >
+              &nbsp;&nbsp;
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >JWT_EXPIRES_IN</span
+              >=<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >1d</span
+              >
+            </div>
+          </div>
+          <!-- Middleware -->
+          <div style="margin-bottom: 18px; font-size: 14px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #0d3b66;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >1 / 3</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >src/middlewares/auth.middleware.js</span
+              >
+              <span
+                style="
+                  background: #eaf2fb;
+                  color: #1a5fa8;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 10px;
+                  border-radius: 5px;
+                  border: 1px solid #b8d4ed;
+                  margin-left: auto;
+                "
+                >autenticar + exigirRole</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              jwt
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'jsonwebtoken'</span
+              >;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(93, 184, 245); font-size: 13px"
+                >export</span
+              >
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >function</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >autenticar</span
+              >(req, res, next) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              authHeader = req.headers[<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >'authorization'</span
+              >];<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >if</span
+              >
+              (!authHeader?.startsWith(<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Bearer '</span
+              >))<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >return</span
+              >
+              res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >status</span
+              >(<span style="color: rgb(240, 160, 96); font-size: 13px"
+                >401</span
+              >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >json</span
+              >({ erro:
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Token não fornecido'</span
+              >
+              });<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >try</span
+              >
+              {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;req.usuario
+              = jwt.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >verify</span
+              >(authHeader.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >split</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >' '</span
+              >)[<span style="color: rgb(240, 160, 96); font-size: 13px">1</span
+              >], process.env.<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >JWT_SECRET</span
+              >);<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >next</span
+              >();<br style="font-size: 13px" />&nbsp;&nbsp;}
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >catch</span
+              >
+              { res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >status</span
+              >(<span style="color: rgb(240, 160, 96); font-size: 13px"
+                >401</span
+              >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >json</span
+              >({ erro:
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Token inválido ou expirado'</span
+              >
+              }); }<br style="font-size: 13px" />}<br
+                style="font-size: 13px"
+              /><br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >export</span
+              >
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >function</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >exigirRole</span
+              >(...rolesPermitidas) {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >return</span
+              >
+              (req, res, next) =&gt; {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >if</span
+              >
+              (!rolesPermitidas.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >includes</span
+              >(req.usuario?.role))<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >return</span
+              >
+              res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >status</span
+              >(<span style="color: rgb(240, 160, 96); font-size: 13px"
+                >403</span
+              >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >json</span
+              >({ erro:
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Acesso negado. Permissão insuficiente.'</span
+              >
+              });<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >next</span
+              >();<br style="font-size: 13px" />&nbsp;&nbsp;};<br
+                style="font-size: 13px"
+              />}
+            </div>
+          </div>
+          <!-- Routes -->
+          <div style="margin-bottom: 18px; font-size: 14px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #0d3b66;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >2 / 3</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >src/routes/post.routes.js</span
+              >
+              <span
+                style="
+                  background: #eaf2fb;
+                  color: #1a5fa8;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 10px;
+                  border-radius: 5px;
+                  border: 1px solid #b8d4ed;
+                  margin-left: auto;
+                "
+                >Cadeia de middlewares</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              { Router }
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'express'</span
+              >;<br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              *
+              <span style="color: rgb(93, 184, 245); font-size: 13px">as</span>
+              C
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'../controllers/post.controller.js'</span
+              >;<br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              { autenticar, exigirRole }
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'../middlewares/auth.middleware.js'</span
+              >;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              router =
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >Router</span
+              >();<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(122, 154, 176); font-size: 13px"
+                >// ── Públicas ──────────────────────────────────────</span
+              ><br style="font-size: 13px" />router.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >get</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'/'</span
+              >, C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >listar</span
+              >);
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 13px"
+                >// todos</span
+              ><br style="font-size: 13px" /><br style="font-size: 13px" /><span
+                style="color: rgb(122, 154, 176); font-size: 13px"
+                >// ── Exige login (qualquer role) ────────────────────</span
+              ><br style="font-size: 13px" />router.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >get</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'/:id'</span
+              >, autenticar, C.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >buscarPorId</span
+              >);
+              <span style="color: rgb(122, 154, 176); font-size: 13px"
+                >// logado</span
+              ><br style="font-size: 13px" /><br style="font-size: 13px" /><span
+                style="color: rgb(122, 154, 176); font-size: 13px"
+                >// ── Exige editor ou admin ──────────────────────────</span
+              ><br style="font-size: 13px" />router.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >post</span
+              >
+              (<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'/'</span
+              >, autenticar,
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >exigirRole</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'editor'</span
+              >,<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'admin'</span
+              >), C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >criar</span
+              >);<br style="font-size: 13px" />router.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >put</span
+              >
+              (<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'/:id'</span
+              >, autenticar,
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >exigirRole</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'editor'</span
+              >,<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'admin'</span
+              >), C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >atualizar</span
+              >);<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(122, 154, 176); font-size: 13px"
+                >// ── Exige admin ────────────────────────────────────</span
+              ><br style="font-size: 13px" />router.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >delete</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'/:id'</span
+              >, autenticar,
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >exigirRole</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'admin'</span
+              >), C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >remover</span
+              >);<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(93, 184, 245); font-size: 13px"
+                >export default</span
+              >
+              router;
+            </div>
+          </div>
+          <!-- Tabela de endpoints -->
+          <div style="margin-bottom: 22px; font-size: 14px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #0d3b66;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >3 / 3</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >Mapa de permissões por endpoint</span
+              >
+            </div>
+            <div style="overflow-x: auto; font-size: 14px">
+              <table
+                style="width: 100%; border-collapse: collapse; font-size: 13px"
+              >
+                <thead style="font-size: 13px">
+                  <tr
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgb(13, 59, 102),
+                        rgb(26, 95, 168)
+                      );
+                      font-size: 13px;
+                    "
+                  >
+                    <th
+                      style="
+                        padding: 10px 14px;
+                        color: rgb(232, 242, 255);
+                        font-weight: bold;
+                        border: 1px solid rgb(42, 106, 184);
+                        text-align: left;
+                        font-size: 13px;
+                      "
+                    >
+                      Método
+                    </th>
+                    <th
+                      style="
+                        padding: 10px 14px;
+                        color: rgb(232, 242, 255);
+                        font-weight: bold;
+                        border: 1px solid rgb(42, 106, 184);
+                        text-align: left;
+                        font-size: 13px;
+                      "
+                    >
+                      Rota
+                    </th>
+                    <th
+                      style="
+                        padding: 10px 14px;
+                        color: rgb(232, 242, 255);
+                        font-weight: bold;
+                        border: 1px solid rgb(42, 106, 184);
+                        text-align: center;
+                        font-size: 13px;
+                      "
+                    >
+                      Sem login
+                    </th>
+                    <th
+                      style="
+                        padding: 10px 14px;
+                        color: rgb(232, 242, 255);
+                        font-weight: bold;
+                        border: 1px solid rgb(42, 106, 184);
+                        text-align: center;
+                        font-size: 13px;
+                      "
+                    >
+                      leitor
+                    </th>
+                    <th
+                      style="
+                        padding: 10px 14px;
+                        color: rgb(232, 242, 255);
+                        font-weight: bold;
+                        border: 1px solid rgb(42, 106, 184);
+                        text-align: center;
+                        font-size: 13px;
+                      "
+                    >
+                      editor
+                    </th>
+                    <th
+                      style="
+                        padding: 10px 14px;
+                        color: rgb(232, 242, 255);
+                        font-weight: bold;
+                        border: 1px solid rgb(42, 106, 184);
+                        text-align: center;
+                        font-size: 13px;
+                      "
+                    >
+                      admin
+                    </th>
+                  </tr>
+                </thead>
+                <tbody style="font-size: 13px">
+                  <tr style="background: rgb(234, 242, 251); font-size: 13px">
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(200, 218, 240);
+                        font-size: 13px;
+                      "
+                    >
+                      <span
+                        style="
+                          background: #e8f8ee;
+                          color: #1a7a45;
+                          font-weight: bold;
+                          padding: 1px 7px;
+                          border-radius: 4px;
+                          font-size: 11px;
+                        "
+                        >GET</span
+                      >
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid #c8daf0;
+                        font-family: &quot;Courier New&quot;, monospace;
+                        font-size: 12px;
+                      "
+                    >
+                      /posts
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(200, 218, 240);
+                        text-align: center;
+                        color: rgb(26, 138, 80);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      200 ✓
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(200, 218, 240);
+                        text-align: center;
+                        color: rgb(26, 138, 80);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      200 ✓
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(200, 218, 240);
+                        text-align: center;
+                        color: rgb(26, 138, 80);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      200 ✓
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(200, 218, 240);
+                        text-align: center;
+                        color: rgb(26, 138, 80);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      200 ✓
+                    </td>
+                  </tr>
+                  <tr style="font-size: 13px">
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(212, 230, 245);
+                        font-size: 13px;
+                      "
+                    >
+                      <span
+                        style="
+                          background: #e8f8ee;
+                          color: #1a7a45;
+                          font-weight: bold;
+                          padding: 1px 7px;
+                          border-radius: 4px;
+                          font-size: 11px;
+                        "
+                        >GET</span
+                      >
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid #d4e6f5;
+                        font-family: &quot;Courier New&quot;, monospace;
+                        font-size: 12px;
+                      "
+                    >
+                      /posts/:id
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(212, 230, 245);
+                        text-align: center;
+                        color: rgb(192, 57, 43);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      401 ✗
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(212, 230, 245);
+                        text-align: center;
+                        color: rgb(26, 138, 80);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      200 ✓
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(212, 230, 245);
+                        text-align: center;
+                        color: rgb(26, 138, 80);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      200 ✓
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(212, 230, 245);
+                        text-align: center;
+                        color: rgb(26, 138, 80);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      200 ✓
+                    </td>
+                  </tr>
+                  <tr style="background: rgb(234, 242, 251); font-size: 13px">
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(200, 218, 240);
+                        font-size: 13px;
+                      "
+                    >
+                      <span
+                        style="
+                          background: #ddeeff;
+                          color: #1a5fa8;
+                          font-weight: bold;
+                          padding: 1px 7px;
+                          border-radius: 4px;
+                          font-size: 11px;
+                        "
+                        >POST</span
+                      >
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid #c8daf0;
+                        font-family: &quot;Courier New&quot;, monospace;
+                        font-size: 12px;
+                      "
+                    >
+                      /posts
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(200, 218, 240);
+                        text-align: center;
+                        color: rgb(192, 57, 43);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      401 ✗
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(200, 218, 240);
+                        text-align: center;
+                        color: rgb(192, 57, 43);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      403 ✗
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(200, 218, 240);
+                        text-align: center;
+                        color: rgb(26, 138, 80);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      201 ✓
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(200, 218, 240);
+                        text-align: center;
+                        color: rgb(26, 138, 80);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      201 ✓
+                    </td>
+                  </tr>
+                  <tr style="font-size: 13px">
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(212, 230, 245);
+                        font-size: 13px;
+                      "
+                    >
+                      <span
+                        style="
+                          background: #fff4d0;
+                          color: #a07000;
+                          font-weight: bold;
+                          padding: 1px 7px;
+                          border-radius: 4px;
+                          font-size: 11px;
+                        "
+                        >PUT</span
+                      >
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid #d4e6f5;
+                        font-family: &quot;Courier New&quot;, monospace;
+                        font-size: 12px;
+                      "
+                    >
+                      /posts/:id
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(212, 230, 245);
+                        text-align: center;
+                        color: rgb(192, 57, 43);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      401 ✗
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(212, 230, 245);
+                        text-align: center;
+                        color: rgb(192, 57, 43);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      403 ✗
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(212, 230, 245);
+                        text-align: center;
+                        color: rgb(26, 138, 80);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      200 ✓
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(212, 230, 245);
+                        text-align: center;
+                        color: rgb(26, 138, 80);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      200 ✓
+                    </td>
+                  </tr>
+                  <tr style="background: rgb(234, 242, 251); font-size: 13px">
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(200, 218, 240);
+                        font-size: 13px;
+                      "
+                    >
+                      <span
+                        style="
+                          background: #ffe8e8;
+                          color: #c0392b;
+                          font-weight: bold;
+                          padding: 1px 7px;
+                          border-radius: 4px;
+                          font-size: 11px;
+                        "
+                        >DELETE</span
+                      >
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid #c8daf0;
+                        font-family: &quot;Courier New&quot;, monospace;
+                        font-size: 12px;
+                      "
+                    >
+                      /posts/:id
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(200, 218, 240);
+                        text-align: center;
+                        color: rgb(192, 57, 43);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      401 ✗
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(200, 218, 240);
+                        text-align: center;
+                        color: rgb(192, 57, 43);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      403 ✗
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(200, 218, 240);
+                        text-align: center;
+                        color: rgb(192, 57, 43);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      403 ✗
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(200, 218, 240);
+                        text-align: center;
+                        color: rgb(26, 138, 80);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      204 ✓
+                    </td>
+                  </tr>
+                  <tr style="font-size: 13px">
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(212, 230, 245);
+                        font-size: 13px;
+                      "
+                    >
+                      <span
+                        style="
+                          background: #ead8ff;
+                          color: #5a0d8a;
+                          font-weight: bold;
+                          padding: 1px 7px;
+                          border-radius: 4px;
+                          font-size: 11px;
+                        "
+                        >PATCH</span
+                      >
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid #d4e6f5;
+                        font-family: &quot;Courier New&quot;, monospace;
+                        font-size: 12px;
+                      "
+                    >
+                      /usuarios/:id/role
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(212, 230, 245);
+                        text-align: center;
+                        color: rgb(192, 57, 43);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      401 ✗
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(212, 230, 245);
+                        text-align: center;
+                        color: rgb(192, 57, 43);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      403 ✗
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(212, 230, 245);
+                        text-align: center;
+                        color: rgb(192, 57, 43);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      403 ✗
+                    </td>
+                    <td
+                      style="
+                        padding: 9px 14px;
+                        border: 1px solid rgb(212, 230, 245);
+                        text-align: center;
+                        color: rgb(26, 138, 80);
+                        font-weight: bold;
+                        font-size: 13px;
+                      "
+                    >
+                      200 ✓
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Sequência de testes -->
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 12px;
+              padding: 20px 24px;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 14px;
+              "
+            >
+              Sequência de testes no Postman ou Insomnia
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                font-size: 13px;
+                color: rgb(44, 62, 80);
+                line-height: 1.75;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  padding: 9px 14px;
+                  background: rgb(248, 251, 255);
+                  border-radius: 7px;
+                  border: 1px solid rgb(212, 230, 245);
+                  font-size: 13px;
+                "
+              >
+                <span
+                  style="
+                    font-weight: bold;
+                    color: rgb(26, 95, 168);
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >1.</span
+                >
+                POST
+                <code
+                  style="
+                    background: rgb(221, 238, 255);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 11px;
+                  "
+                  >/usuarios/cadastro</code
+                >
+                — crie um usuário leitor e um admin (<code
+                  style="
+                    background: rgb(221, 238, 255);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 11px;
+                  "
+                  >"role": "admin"</code
+                >
+                no body).
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  padding: 9px 14px;
+                  background: rgb(248, 251, 255);
+                  border-radius: 7px;
+                  border: 1px solid rgb(212, 230, 245);
+                  font-size: 13px;
+                "
+              >
+                <span
+                  style="
+                    font-weight: bold;
+                    color: rgb(26, 95, 168);
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >2.</span
+                >
+                Faça login com o admin. Copie o token e cole em
+                <a
+                  style="color: rgb(26, 95, 168); font-size: 13px"
+                  href="https://jwt.io"
+                  >jwt.io</a
+                >
+                — verifique que
+                <code
+                  style="
+                    background: rgb(221, 238, 255);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 11px;
+                  "
+                  >"role": "admin"</code
+                >
+                aparece no payload.
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  padding: 9px 14px;
+                  background: rgb(248, 251, 255);
+                  border-radius: 7px;
+                  border: 1px solid rgb(212, 230, 245);
+                  font-size: 13px;
+                "
+              >
+                <span
+                  style="
+                    font-weight: bold;
+                    color: rgb(26, 95, 168);
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >3.</span
+                >
+                Com o token do admin, POST
+                <code
+                  style="
+                    background: rgb(221, 238, 255);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 11px;
+                  "
+                  >/posts</code
+                >
+                — deve retornar 201.
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  padding: 9px 14px;
+                  background: rgb(248, 251, 255);
+                  border-radius: 7px;
+                  border: 1px solid rgb(212, 230, 245);
+                  font-size: 13px;
+                "
+              >
+                <span
+                  style="
+                    font-weight: bold;
+                    color: rgb(26, 95, 168);
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >4.</span
+                >
+                Faça login com o leitor. Com o token do leitor, POST
+                <code
+                  style="
+                    background: rgb(221, 238, 255);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 11px;
+                  "
+                  >/posts</code
+                >
+                — deve retornar <strong style="font-size: 13px">403</strong>.
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  padding: 9px 14px;
+                  background: rgb(248, 251, 255);
+                  border-radius: 7px;
+                  border: 1px solid rgb(212, 230, 245);
+                  font-size: 13px;
+                "
+              >
+                <span
+                  style="
+                    font-weight: bold;
+                    color: rgb(26, 95, 168);
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >5.</span
+                >
+                Com o token do admin, PATCH
+                <code
+                  style="
+                    background: rgb(221, 238, 255);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 11px;
+                  "
+                  >/usuarios/:id/role</code
+                >
+                com
+                <code
+                  style="
+                    background: rgb(221, 238, 255);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 11px;
+                  "
+                  >{ "role": "editor" }</code
+                >
+                — promova o leitor a editor.
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  padding: 9px 14px;
+                  background: rgb(248, 251, 255);
+                  border-radius: 7px;
+                  border: 1px solid rgb(212, 230, 245);
+                  font-size: 13px;
+                "
+              >
+                <span
+                  style="
+                    font-weight: bold;
+                    color: rgb(26, 95, 168);
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >6.</span
+                >
+                Faça login novamente com o usuário promovido. Com o novo token,
+                POST
+                <code
+                  style="
+                    background: rgb(221, 238, 255);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 11px;
+                  "
+                  >/posts</code
+                >
+                — agora deve retornar
+                <strong style="font-size: 13px">201</strong>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ RESUMO FINAL ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgb(224, 236, 246);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              width: 6px;
+              height: 24px;
+              background: linear-gradient(rgb(26, 95, 168), rgb(13, 59, 102));
+              border-radius: 3px;
+              font-size: 14px;
+            "
+          >
+            &nbsp;
+          </div>
+          <div style="font-size: 18px; font-weight: bold; color: #0d3b66">
+            Resumo — os três conceitos fundamentais desta aula
+          </div>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(234, 242, 251);
+              border-radius: 12px;
+              padding: 20px 18px;
+              border-top: 4px solid rgb(26, 95, 168);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 26px; margin-bottom: 8px">🪪</div>
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 6px;
+              "
+            >
+              Role no banco e no token
+            </div>
+            <div
+              style="font-size: 12px; color: rgb(44, 62, 80); line-height: 1.7"
+            >
+              Coluna
+              <code
+                style="
+                  background: rgb(221, 238, 255);
+                  padding: 0px 4px;
+                  border-radius: 3px;
+                  font-size: 10px;
+                "
+                >role</code
+              >
+              na tabela com
+              <code
+                style="
+                  background: rgb(221, 238, 255);
+                  padding: 0px 4px;
+                  border-radius: 3px;
+                  font-size: 10px;
+                "
+                >DEFAULT 'leitor'</code
+              >. Incluída no payload do JWT no login.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(234, 242, 251);
+              border-radius: 12px;
+              padding: 20px 18px;
+              border-top: 4px solid rgb(26, 95, 168);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 26px; margin-bottom: 8px">⚙️</div>
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 6px;
+              "
+            >
+              Factory function exigirRole
+            </div>
+            <div
+              style="font-size: 12px; color: rgb(44, 62, 80); line-height: 1.7"
+            >
+              Função que retorna um middleware, permitindo declarar as roles
+              aceitas diretamente na definição da rota.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(234, 242, 251);
+              border-radius: 12px;
+              padding: 20px 18px;
+              border-top: 4px solid rgb(26, 95, 168);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 26px; margin-bottom: 8px">🔗</div>
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 6px;
+              "
+            >
+              Cadeia de middlewares
+            </div>
+            <div
+              style="font-size: 12px; color: rgb(44, 62, 80); line-height: 1.7"
+            >
+              <code
+                style="
+                  background: rgb(221, 238, 255);
+                  padding: 0px 4px;
+                  border-radius: 3px;
+                  font-size: 10px;
+                "
+                >autenticar</code
+              >
+              sempre antes de
+              <code
+                style="
+                  background: rgb(221, 238, 255);
+                  padding: 0px 4px;
+                  border-radius: 3px;
+                  font-size: 10px;
+                "
+                >exigirRole</code
+              >. O 401 nega sem token; o 403 nega por permissão insuficiente.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Referências -->
+      <div
+        style="
+          padding-top: 4px;
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+          font-size: 14px;
+        "
+      >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://www.npmjs.com/package/jsonwebtoken"
+          >Documentação — jsonwebtoken</a
+        >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://jwt.io/"
+          >jwt.io — inspecionar tokens</a
+        >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://expressjs.com/pt-br/guide/using-middleware.html"
+          >Express — Using Middleware</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

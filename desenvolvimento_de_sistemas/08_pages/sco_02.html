@@ -1,0 +1,2825 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Core Modules do Node.js — fs, os e path</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(240, 244, 249);
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- Cabecalho -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102) 0%,
+            rgb(26, 95, 168) 100%
+          );
+          border-radius: 14px;
+          padding: 36px 40px;
+          margin-bottom: 24px;
+          box-shadow: rgba(13, 59, 102, 0.28) 0px 8px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a8c8f0;
+            margin-bottom: 10px;
+          "
+        >
+          Tecnico em Desenvolvimento de Sistemas — Desenvolvimento de Sistemas
+        </div>
+        <div
+          style="
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 12px;
+          "
+        >
+          Core Modules do Node.js — fs, os e path
+        </div>
+        <div style="font-size: 15px; color: #c8dff5; line-height: 1.65">
+          Nesta aula voce aprenderá a usar os tres principais modulos nativos do
+          Node.js:
+          <strong style="color: rgb(255, 255, 255); font-size: 15px">fs</strong>
+          para manipular arquivos,
+          <strong style="color: rgb(255, 255, 255); font-size: 15px">os</strong>
+          para consultar o sistema operacional e
+          <strong style="color: rgb(255, 255, 255); font-size: 15px"
+            >path</strong
+          >
+          para montar caminhos de forma segura — tudo com a sintaxe moderna de
+          ES Modules.
+        </div>
+      </div>
+      <!-- Capacidades -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          border-left: 6px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 14px;
+          "
+        >
+          Capacidades Trabalhadas
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Aplicar os modulos nativos do Node.js para interagir com o sistema
+              operacional e o sistema de arquivos.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Utilizar a sintaxe ES Modules (import/export) em scripts Node.js.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Integrar multiplos modulos nativos para resolver problemas
+              compostos do mundo real.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Por que usar modulos nativos -->
+      <div
+        style="
+          background: rgb(234, 242, 251);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.08) 0px 4px 18px;
+          border: 1px solid rgb(184, 212, 237);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 12px;
+          "
+        >
+          Por que usar os modulos nativos?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.8;
+            margin-bottom: 14px;
+          "
+        >
+          Quando voce instala o Node.js, junto com ele vem uma biblioteca padrao
+          chamada <strong style="font-size: 15px">Core Modules</strong> — um
+          conjunto de modulos prontos para uso que cobrem as necessidades mais
+          comuns de qualquer aplicacao backend: ler arquivos, verificar a
+          memoria do servidor, montar caminhos de pasta...
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.8;
+            margin-bottom: 16px;
+          "
+        >
+          A grande vantagem e que voce
+          <strong style="font-size: 15px">nao precisa instalar nada</strong>.
+          Nao ha
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(255, 255, 255);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >npm install</span
+          >, nao ha dependencias externas, nao ha risco de versao incompativel.
+          Os modulos ja estao disponiveis assim que o Node esta instalado na
+          maquina.
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 4px solid rgb(26, 95, 168);
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 14px; color: #1a2a3a; line-height: 1.75">
+            <strong style="font-size: 14px">Analogia do mundo real:</strong> os
+            modulos nativos sao como as ferramentas que ja vem na caixa de
+            ferramentas basica — martelo, chave de fenda, alicate. Voce nao
+            precisa comprar nada para comecar a trabalhar. So depois, em casos
+            especificos, voce vai buscar ferramentas especializadas em lojas
+            externas (o npm).
+          </div>
+        </div>
+      </div>
+      <!-- Configurando ES Modules -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Configurando o projeto para ES Modules
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          O Node.js suporta dois sistemas de modulos: o antigo
+          <strong style="font-size: 15px">CommonJS</strong> (com
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >require</span
+          >) e o moderno
+          <strong style="font-size: 15px">ES Modules</strong> (com
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >import</span
+          >). Nesta aula usaremos ES Modules, que e o padrao atual do
+          JavaScript. Ha duas formas de habilitar:
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              border-radius: 12px;
+              overflow: hidden;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgb(13, 59, 102),
+                  rgb(26, 95, 168)
+                );
+                padding: 12px 20px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 12px;
+                  font-weight: bold;
+                  color: #a8c8f0;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  margin-bottom: 2px;
+                "
+              >
+                Forma 1 — Recomendada
+              </div>
+              <div style="font-size: 14px; font-weight: bold; color: #fff">
+                Adicionar "type" no package.json
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 8px 16px;
+                  font-size: 11px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #5db8f5;
+                  border-bottom: 1px solid #2a3a4a;
+                  letter-spacing: 1px;
+                "
+              >
+                package.json
+              </div>
+              <pre
+                style="
+                  margin: 0;
+                  padding: 16px 20px;
+                  font-family: &quot;Courier New&quot;, Courier, monospace;
+                  font-size: 13px;
+                  color: #e0f0ff;
+                  line-height: 1.9;
+                  overflow-x: auto;
+                "
+              >{
+  <span style="color: rgb(168, 240, 200); font-size: 13px;">"name"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"meu-projeto"</span>,
+  <span style="color: rgb(168, 240, 200); font-size: 13px;">"version"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"1.0.0"</span>,
+  <span style="color: rgb(168, 240, 200); font-size: 13px;">"type"</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">"module"</span>
+}</pre>
+            </div>
+            <div
+              style="
+                background: #f8fbff;
+                padding: 12px 16px;
+                font-size: 13px;
+                color: #4a6a8a;
+                line-height: 1.6;
+              "
+            >
+              Com isso, todos os arquivos
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(234, 242, 251);
+                  padding: 1px 4px;
+                  border-radius: 3px;
+                  font-size: 13px;
+                "
+                >.js</span
+              >
+              do projeto passam a usar ES Modules automaticamente.
+            </div>
+          </div>
+          <div
+            style="
+              border-radius: 12px;
+              overflow: hidden;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgb(26, 95, 168),
+                  rgb(52, 152, 219)
+                );
+                padding: 12px 20px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 12px;
+                  font-weight: bold;
+                  color: #c8e8ff;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  margin-bottom: 2px;
+                "
+              >
+                Forma 2 — Por arquivo
+              </div>
+              <div style="font-size: 14px; font-weight: bold; color: #fff">
+                Usar a extensao .mjs
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 8px 16px;
+                  font-size: 11px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #5db8f5;
+                  border-bottom: 1px solid #2a3a4a;
+                  letter-spacing: 1px;
+                "
+              >
+                terminal
+              </div>
+              <pre
+                style="
+                  margin: 0;
+                  padding: 16px 20px;
+                  font-family: &quot;Courier New&quot;, Courier, monospace;
+                  font-size: 13px;
+                  color: #e0f0ff;
+                  line-height: 1.9;
+                  overflow-x: auto;
+                "
+              ><span style="color: rgb(93, 184, 245); font-size: 13px;"># Salve o arquivo como .mjs</span>
+script.mjs
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Execute normalmente</span>
+node script.mjs</pre>
+            </div>
+            <div
+              style="
+                background: #f8fbff;
+                padding: 12px 16px;
+                font-size: 13px;
+                color: #4a6a8a;
+                line-height: 1.6;
+              "
+            >
+              Util quando voce quer misturar arquivos CommonJS e ES Modules no
+              mesmo projeto.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(255, 244, 204);
+            border-left: 4px solid rgb(176, 122, 0);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #7a5000;
+              margin-bottom: 6px;
+            "
+          >
+            Atencao: __dirname e __filename nao existem em ES Modules
+          </div>
+          <div style="font-size: 14px; color: #5a3a00; line-height: 1.75">
+            No sistema CommonJS existiam duas variaveis magicas:
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(255, 232, 160);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >__dirname</span
+            >
+            (pasta do arquivo) e
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(255, 232, 160);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >__filename</span
+            >
+            (caminho completo do arquivo). Em ES Modules elas nao estao
+            disponiveis. Use o padrao abaixo sempre que precisar do diretorio
+            atual:
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            substituto de __dirname em ES Modules — copie sempre que precisar
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> { fileURLToPath } <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'url'</span>;
+<span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> { dirname } <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'path'</span>;
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> __filename = <span style="color: rgb(93, 245, 168); font-size: 13px;">fileURLToPath</span>(import.meta.url);
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> __dirname  = <span style="color: rgb(93, 245, 168); font-size: 13px;">dirname</span>(__filename);
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Agora __dirname funciona igual ao CommonJS</span>
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(__dirname);  <span style="color: rgb(93, 184, 245); font-size: 13px;">// /home/usuario/meu-projeto</span>
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(__filename); <span style="color: rgb(93, 184, 245); font-size: 13px;">// /home/usuario/meu-projeto/script.js</span></pre>
+        </div>
+      </div>
+      <!-- =====================================================================
+       MODULO FS
+       ===================================================================== -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-top: 8px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="display: flex; align-items: center; gap: 14px; font-size: 14px"
+        >
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 18px;
+              font-weight: bold;
+              color: #ffffff;
+              background: rgba(255, 255, 255, 0.13);
+              padding: 4px 18px;
+              border-radius: 8px;
+              letter-spacing: 1px;
+            "
+            >fs</span
+          >
+          <div style="font-size: 14px">
+            <div
+              style="
+                font-size: 11px;
+                font-weight: bold;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: #5db8f5;
+                margin-bottom: 2px;
+              "
+            >
+              Modulo 01
+            </div>
+            <div style="font-size: 20px; font-weight: bold; color: #ffffff">
+              File System — Sistema de Arquivos
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          O modulo
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >fs</span
+          >
+          (File System) e o modulo responsavel por toda interacao com o sistema
+          de arquivos: criar, ler, alterar, listar e remover arquivos e pastas.
+          E um dos modulos mais usados no desenvolvimento Node.js.
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          Ele possui tres "sabores": a versao com
+          <strong style="font-size: 15px">callbacks</strong> (mais antiga), a
+          versao <strong style="font-size: 15px">sincrona</strong> (bloqueia a
+          execucao) e a versao com
+          <strong style="font-size: 15px">Promises</strong> — que e a
+          recomendada hoje. Nesta aula usamos sempre a versao com Promises:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            importando o modulo fs
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Importa funcoes especificas da versao com Promises</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> { writeFile, readFile, appendFile, readdir, unlink } <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'fs/promises'</span>;
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Todas as funcoes retornam Promises — use sempre async/await</span></pre>
+        </div>
+        <!-- Escrevendo arquivos -->
+        <div
+          style="
+            font-size: 16px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          "
+        >
+          <span
+            style="
+              width: 28px;
+              height: 28px;
+              background: #1a5fa8;
+              border-radius: 50%;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 13px;
+              font-weight: bold;
+              color: #fff;
+              flex-shrink: 0;
+            "
+            >1</span
+          >
+          Criando e escrevendo arquivos — writeFile
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 14px;
+          "
+        >
+          A funcao
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >writeFile</span
+          >
+          cria um arquivo com o conteudo fornecido. Se o arquivo ja existir,
+          <strong style="font-size: 14px"
+            >ele e sobrescrito completamente</strong
+          >. Recebe tres argumentos: caminho do arquivo, conteudo e encoding
+          (<span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >'utf8'</span
+          >
+          para texto).
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            escrever-arquivo.js
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> { writeFile } <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'fs/promises'</span>;
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">criarArquivo</span>() {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">try</span> {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> conteudo = <span style="color: rgb(168, 240, 200); font-size: 13px;">'Linha 1: Ola, Node.js!\nLinha 2: Arquivo criado com sucesso.'</span>;
+
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// Cria (ou sobrescreve) o arquivo com o conteudo</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">writeFile</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'meu-arquivo.txt'</span>, conteudo, <span style="color: rgb(168, 240, 200); font-size: 13px;">'utf8'</span>);
+
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Arquivo criado com sucesso!'</span>);
+  } <span style="color: rgb(240, 200, 122); font-size: 13px;">catch</span> (erro) {
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">error</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Erro ao criar arquivo:'</span>, erro.message);
+  }
+}
+
+<span style="color: rgb(93, 245, 168); font-size: 13px;">criarArquivo</span>();</pre>
+        </div>
+        <!-- Lendo arquivos -->
+        <div
+          style="
+            font-size: 16px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          "
+        >
+          <span
+            style="
+              width: 28px;
+              height: 28px;
+              background: #1a5fa8;
+              border-radius: 50%;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 13px;
+              font-weight: bold;
+              color: #fff;
+              flex-shrink: 0;
+            "
+            >2</span
+          >
+          Lendo arquivos — readFile
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 14px;
+          "
+        >
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >readFile</span
+          >
+          le o conteudo de um arquivo e retorna uma Promise com o texto. Sempre
+          informe o encoding
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >'utf8'</span
+          >
+          — sem ele, o Node retorna um Buffer de bytes em vez de texto legivel.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            ler-arquivo.js
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> { readFile } <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'fs/promises'</span>;
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">lerArquivo</span>() {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">try</span> {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> conteudo = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">readFile</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'meu-arquivo.txt'</span>, <span style="color: rgb(168, 240, 200); font-size: 13px;">'utf8'</span>);
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Conteudo do arquivo:'</span>);
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(conteudo);
+  } <span style="color: rgb(240, 200, 122); font-size: 13px;">catch</span> (erro) {
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// error.code === 'ENOENT' significa que o arquivo nao existe</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (erro.code === <span style="color: rgb(168, 240, 200); font-size: 13px;">'ENOENT'</span>) {
+      console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Arquivo nao encontrado.'</span>);
+    } <span style="color: rgb(240, 200, 122); font-size: 13px;">else</span> {
+      console.<span style="color: rgb(93, 245, 168); font-size: 13px;">error</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Erro ao ler arquivo:'</span>, erro.message);
+    }
+  }
+}
+
+<span style="color: rgb(93, 245, 168); font-size: 13px;">lerArquivo</span>();</pre>
+        </div>
+        <!-- appendFile -->
+        <div
+          style="
+            font-size: 16px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          "
+        >
+          <span
+            style="
+              width: 28px;
+              height: 28px;
+              background: #1a5fa8;
+              border-radius: 50%;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 13px;
+              font-weight: bold;
+              color: #fff;
+              flex-shrink: 0;
+            "
+            >3</span
+          >
+          Acrescentando conteudo — appendFile
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 14px;
+          "
+        >
+          Diferente do
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >writeFile</span
+          >, o
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >appendFile</span
+          >
+          <strong style="font-size: 14px"
+            >nao apaga o conteudo existente</strong
+          >
+          — ele acrescenta o novo conteudo ao final do arquivo. Muito usado para
+          logs e diarios de execucao.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            log-execucao.js — execute multiplas vezes e observe o arquivo
+            crescer
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> { appendFile } <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'fs/promises'</span>;
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">registrarLog</span>() {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> agora = <span style="color: rgb(240, 200, 122); font-size: 13px;">new</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">Date</span>().<span style="color: rgb(93, 245, 168); font-size: 13px;">toLocaleString</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'pt-BR'</span>);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> linha = <span style="color: rgb(168, 240, 200); font-size: 13px;">`[${agora}] Script executado com sucesso.\n`</span>;
+
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">appendFile</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'log.txt'</span>, linha, <span style="color: rgb(168, 240, 200); font-size: 13px;">'utf8'</span>);
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Log registrado!'</span>);
+}
+
+<span style="color: rgb(93, 245, 168); font-size: 13px;">registrarLog</span>();
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Conteudo de log.txt apos 3 execucoes:</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// [10/06/2025, 09:10:01] Script executado com sucesso.</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// [10/06/2025, 09:12:34] Script executado com sucesso.</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// [10/06/2025, 09:15:00] Script executado com sucesso.</span></pre>
+        </div>
+        <!-- readdir -->
+        <div
+          style="
+            font-size: 16px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          "
+        >
+          <span
+            style="
+              width: 28px;
+              height: 28px;
+              background: #1a5fa8;
+              border-radius: 50%;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 13px;
+              font-weight: bold;
+              color: #fff;
+              flex-shrink: 0;
+            "
+            >4</span
+          >
+          Listando pastas — readdir
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 14px;
+          "
+        >
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >readdir</span
+          >
+          lista o conteudo de uma pasta. Com a opcao
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >{ withFileTypes: true }</span
+          >, em vez de retornar apenas os nomes, ela retorna objetos
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >Dirent</span
+          >
+          que possuem metodos para identificar o tipo de cada item.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            listar-pasta.js
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> { readdir } <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'fs/promises'</span>;
+<span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> { fileURLToPath } <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'url'</span>;
+<span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> { dirname } <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'path'</span>;
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> __dirname = <span style="color: rgb(93, 245, 168); font-size: 13px;">dirname</span>(<span style="color: rgb(93, 245, 168); font-size: 13px;">fileURLToPath</span>(import.meta.url));
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">listarPasta</span>() {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> itens = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">readdir</span>(__dirname, { withFileTypes: <span style="color: rgb(240, 200, 122); font-size: 13px;">true</span> });
+
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">for</span> (<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> item <span style="color: rgb(240, 200, 122); font-size: 13px;">of</span> itens) {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> tipo = item.<span style="color: rgb(93, 245, 168); font-size: 13px;">isDirectory</span>() ? <span style="color: rgb(168, 240, 200); font-size: 13px;">'[pasta]  '</span> : <span style="color: rgb(168, 240, 200); font-size: 13px;">'[arquivo]'</span>;
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`${tipo} ${item.name}`</span>);
+  }
+}
+
+<span style="color: rgb(93, 245, 168); font-size: 13px;">listarPasta</span>();
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Saida esperada:</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// [pasta]   node_modules</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// [arquivo] listar-pasta.js</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// [arquivo] package.json</span></pre>
+        </div>
+        <div
+          style="
+            background: rgb(248, 251, 255);
+            border-radius: 10px;
+            padding: 14px 18px;
+            border: 1px solid rgb(212, 230, 245);
+            margin-bottom: 8px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #1a5fa8;
+              margin-bottom: 8px;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            "
+          >
+            Principais metodos do objeto Dirent
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 8px;
+              font-size: 13px;
+              color: #2c3e50;
+            "
+          >
+            <div style="font-size: 13px">
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 13px;
+                "
+                >item.name</span
+              >
+              — nome do item
+            </div>
+            <div style="font-size: 13px">
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 13px;
+                "
+                >item.isDirectory()</span
+              >
+              — e uma pasta?
+            </div>
+            <div style="font-size: 13px">
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 13px;
+                "
+                >item.isFile()</span
+              >
+              — e um arquivo?
+            </div>
+            <div style="font-size: 13px">
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 13px;
+                "
+                >item.isSymbolicLink()</span
+              >
+              — e um link?
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- =====================================================================
+       MODULO OS
+       ===================================================================== -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102),
+            rgb(30, 106, 186)
+          );
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="display: flex; align-items: center; gap: 14px; font-size: 14px"
+        >
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 18px;
+              font-weight: bold;
+              color: #ffffff;
+              background: rgba(255, 255, 255, 0.13);
+              padding: 4px 18px;
+              border-radius: 8px;
+              letter-spacing: 1px;
+            "
+            >os</span
+          >
+          <div style="font-size: 14px">
+            <div
+              style="
+                font-size: 11px;
+                font-weight: bold;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: #5db8f5;
+                margin-bottom: 2px;
+              "
+            >
+              Modulo 02
+            </div>
+            <div style="font-size: 20px; font-weight: bold; color: #ffffff">
+              Operating System — Sistema Operacional
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          O modulo
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >os</span
+          >
+          expoe informacoes sobre o sistema operacional onde o Node.js esta
+          rodando: nome da maquina, plataforma, quantidade de CPUs, memoria RAM
+          disponivel, diretorio home do usuario e muito mais. E extremamente
+          util para scripts de monitoramento e automacao.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            importando o modulo os
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// O modulo os e exportado como default — import direto, sem chaves</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> os <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'os'</span>;</pre>
+        </div>
+        <!-- Principais metodos -->
+        <div
+          style="
+            font-size: 16px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          "
+        >
+          <span
+            style="
+              width: 28px;
+              height: 28px;
+              background: #1a5fa8;
+              border-radius: 50%;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 13px;
+              font-weight: bold;
+              color: #fff;
+              flex-shrink: 0;
+            "
+            >1</span
+          >
+          Principais metodos do modulo os
+        </div>
+        <div style="overflow-x: auto; margin-bottom: 22px; font-size: 14px">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 13px"
+          >
+            <thead style="font-size: 13px">
+              <tr
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgb(13, 59, 102),
+                    rgb(26, 95, 168)
+                  );
+                  font-size: 13px;
+                "
+              >
+                <th
+                  style="
+                    padding: 11px 16px;
+                    text-align: left;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  Metodo
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    text-align: left;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  O que retorna
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    text-align: left;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  Exemplo de saida
+                </th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 13px">
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(26, 95, 168);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  os.hostname()
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  Nome do computador na rede
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(74, 106, 138);
+                    font-size: 13px;
+                  "
+                >
+                  NOTEBOOK-JOAO
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(26, 95, 168);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  os.platform()
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  Sistema operacional
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(74, 106, 138);
+                    font-size: 13px;
+                  "
+                >
+                  linux / win32 / darwin
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(26, 95, 168);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  os.release()
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  Versao do kernel do SO
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(74, 106, 138);
+                    font-size: 13px;
+                  "
+                >
+                  5.15.0-91-generic
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(26, 95, 168);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  os.arch()
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  Arquitetura do processador
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(74, 106, 138);
+                    font-size: 13px;
+                  "
+                >
+                  x64 / arm64
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(26, 95, 168);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  os.totalmem()
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  Total de RAM (em bytes)
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(74, 106, 138);
+                    font-size: 13px;
+                  "
+                >
+                  16641695744
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(26, 95, 168);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  os.freemem()
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  RAM livre agora (em bytes)
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(74, 106, 138);
+                    font-size: 13px;
+                  "
+                >
+                  9876543210
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(26, 95, 168);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  os.homedir()
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  Diretorio home do usuario
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(74, 106, 138);
+                    font-size: 13px;
+                  "
+                >
+                  /home/joao
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(26, 95, 168);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  os.cpus()
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  Array com info de cada nucleo
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    color: rgb(74, 106, 138);
+                    font-size: 13px;
+                  "
+                >
+                  [ { model, speed, times }, ... ]
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Exemplo completo os -->
+        <div
+          style="
+            font-size: 16px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          "
+        >
+          <span
+            style="
+              width: 28px;
+              height: 28px;
+              background: #1a5fa8;
+              border-radius: 50%;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 13px;
+              font-weight: bold;
+              color: #fff;
+              flex-shrink: 0;
+            "
+            >2</span
+          >
+          Exemplo completo — ficha tecnica da maquina
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 14px;
+          "
+        >
+          Os metodos
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >totalmem()</span
+          >
+          e
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >freemem()</span
+          >
+          retornam valores em <strong style="font-size: 14px">bytes</strong>.
+          Para exibir em GB, divida por
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >1024 ** 3</span
+          >
+          (que equivale a 1.073.741.824 bytes).
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            ficha-tecnica.js
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> os <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'os'</span>;
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> totalGB = (os.<span style="color: rgb(93, 245, 168); font-size: 13px;">totalmem</span>() / <span style="color: rgb(240, 200, 122); font-size: 13px;">1024</span> ** <span style="color: rgb(240, 200, 122); font-size: 13px;">3</span>).<span style="color: rgb(93, 245, 168); font-size: 13px;">toFixed</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">1</span>);
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> livreGB = (os.<span style="color: rgb(93, 245, 168); font-size: 13px;">freemem</span>()  / <span style="color: rgb(240, 200, 122); font-size: 13px;">1024</span> ** <span style="color: rgb(240, 200, 122); font-size: 13px;">3</span>).<span style="color: rgb(93, 245, 168); font-size: 13px;">toFixed</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">1</span>);
+
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'====================================='</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'      FICHA TECNICA DA MAQUINA'</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'====================================='</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Computador : ${os.<span style="color: rgb(93, 245, 168); font-size: 13px;">hostname</span>()}`</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Sistema    : ${os.<span style="color: rgb(93, 245, 168); font-size: 13px;">platform</span>()}`</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Versao     : ${os.<span style="color: rgb(93, 245, 168); font-size: 13px;">release</span>()}`</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Arquitetura: ${os.<span style="color: rgb(93, 245, 168); font-size: 13px;">arch</span>()}`</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`RAM Total  : ${totalGB} GB`</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`RAM Livre  : ${livreGB} GB`</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Home       : ${os.<span style="color: rgb(93, 245, 168); font-size: 13px;">homedir</span>()}`</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`CPUs       : ${os.<span style="color: rgb(93, 245, 168); font-size: 13px;">cpus</span>().length} nucleos`</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'====================================='</span>);</pre>
+        </div>
+        <div
+          style="
+            background: rgb(248, 251, 255);
+            border-radius: 10px;
+            padding: 14px 18px;
+            border-left: 4px solid rgb(26, 95, 168);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 11px;
+              font-weight: bold;
+              color: #4a6a8a;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              margin-bottom: 8px;
+            "
+          >
+            Saida esperada
+          </div>
+          <pre
+            style="
+              margin: 0px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 12px;
+              color: rgb(13, 59, 102);
+              line-height: 1.9;
+            "
+          >
+=====================================
+      FICHA TECNICA DA MAQUINA
+=====================================
+Computador : NOTEBOOK-JOAO
+Sistema    : linux
+Versao     : 5.15.0-91-generic
+Arquitetura: x64
+RAM Total  : 15.5 GB
+RAM Livre  : 9.2 GB
+Home       : /home/joao
+CPUs       : 8 nucleos
+=====================================</pre
+          >
+        </div>
+      </div>
+      <!-- =====================================================================
+       MODULO PATH
+       ===================================================================== -->
+      <div
+        style="
+          background: linear-gradient(135deg, rgb(26, 72, 0), rgb(46, 122, 0));
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="display: flex; align-items: center; gap: 14px; font-size: 14px"
+        >
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 18px;
+              font-weight: bold;
+              color: #ffffff;
+              background: rgba(255, 255, 255, 0.13);
+              padding: 4px 18px;
+              border-radius: 8px;
+              letter-spacing: 1px;
+            "
+            >path</span
+          >
+          <div style="font-size: 14px">
+            <div
+              style="
+                font-size: 11px;
+                font-weight: bold;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: #a8f080;
+                margin-bottom: 2px;
+              "
+            >
+              Modulo 03
+            </div>
+            <div style="font-size: 20px; font-weight: bold; color: #ffffff">
+              Path — Caminhos de Arquivo
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 16px;
+          "
+        >
+          O modulo
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >path</span
+          >
+          resolve um problema classico:
+          <strong style="font-size: 15px"
+            >caminhos de arquivo sao escritos de forma diferente em cada sistema
+            operacional</strong
+          >. No Windows usa-se barra invertida (<span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >\</span
+          >); no Linux e macOS usa-se barra normal (<span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >/</span
+          >).
+        </div>
+        <div
+          style="
+            background: rgb(234, 242, 251);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 4px solid rgb(46, 122, 0);
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #1a4800;
+              margin-bottom: 8px;
+            "
+          >
+            Regra de ouro — nunca concatene caminhos com strings
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 12px;
+              font-size: 13px;
+            "
+          >
+            <div style="font-size: 13px">
+              <div
+                style="
+                  color: rgb(160, 0, 0);
+                  font-weight: bold;
+                  margin-bottom: 4px;
+                  font-size: 13px;
+                "
+              >
+                ✗ Errado (quebra no Windows)
+              </div>
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(255, 224, 224);
+                  padding: 2px 8px;
+                  border-radius: 4px;
+                  color: rgb(128, 0, 0);
+                  font-size: 13px;
+                "
+                >'pasta' + '/' + 'arquivo.txt'</span
+              >
+            </div>
+            <div style="font-size: 13px">
+              <div
+                style="
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  margin-bottom: 4px;
+                  font-size: 13px;
+                "
+              >
+                ✓ Correto (multiplataforma)
+              </div>
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(212, 245, 228);
+                  padding: 2px 8px;
+                  border-radius: 4px;
+                  color: rgb(26, 72, 0);
+                  font-size: 13px;
+                "
+                >path.join('pasta', 'arquivo.txt')</span
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            importando o modulo path
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> path <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'path'</span>;</pre>
+        </div>
+        <!-- path.join -->
+        <div
+          style="
+            font-size: 16px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          "
+        >
+          <span
+            style="
+              width: 28px;
+              height: 28px;
+              background: #2e7a00;
+              border-radius: 50%;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 13px;
+              font-weight: bold;
+              color: #fff;
+              flex-shrink: 0;
+            "
+            >1</span
+          >
+          Montando caminhos — path.join()
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 14px;
+          "
+        >
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >path.join()</span
+          >
+          recebe varios segmentos de caminho e os une usando o separador correto
+          do SO atual. E a funcao mais usada do modulo.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            path-join.js
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> path <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'path'</span>;
+<span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> { fileURLToPath } <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'url'</span>;
+<span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> { dirname } <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'path'</span>;
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> __dirname = <span style="color: rgb(93, 245, 168); font-size: 13px;">dirname</span>(<span style="color: rgb(93, 245, 168); font-size: 13px;">fileURLToPath</span>(import.meta.url));
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Monta caminhos a partir do diretorio atual do script</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> config = path.<span style="color: rgb(93, 245, 168); font-size: 13px;">join</span>(__dirname, <span style="color: rgb(168, 240, 200); font-size: 13px;">'config'</span>, <span style="color: rgb(168, 240, 200); font-size: 13px;">'settings.json'</span>);
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> dados  = path.<span style="color: rgb(93, 245, 168); font-size: 13px;">join</span>(__dirname, <span style="color: rgb(168, 240, 200); font-size: 13px;">'dados'</span>);
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> log    = path.<span style="color: rgb(93, 245, 168); font-size: 13px;">join</span>(__dirname, <span style="color: rgb(168, 240, 200); font-size: 13px;">'logs'</span>, <span style="color: rgb(168, 240, 200); font-size: 13px;">'app.log'</span>);
+
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Separador do SO:'</span>, path.sep); <span style="color: rgb(93, 184, 245); font-size: 13px;">// / no Linux, \ no Windows</span>
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Config:'</span>, config);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Dados: '</span>, dados);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Log:   '</span>, log);
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Saida no Linux/Mac:</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// /home/joao/projeto/config/settings.json</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// /home/joao/projeto/dados</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// /home/joao/projeto/logs/app.log</span></pre>
+        </div>
+        <!-- path.parse -->
+        <div
+          style="
+            font-size: 16px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          "
+        >
+          <span
+            style="
+              width: 28px;
+              height: 28px;
+              background: #2e7a00;
+              border-radius: 50%;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 13px;
+              font-weight: bold;
+              color: #fff;
+              flex-shrink: 0;
+            "
+            >2</span
+          >
+          Decompondo caminhos — path.parse() e metodos auxiliares
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 14px;
+          "
+        >
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >path.parse()</span
+          >
+          decompoe um caminho em suas partes. Ha tambem metodos menores para
+          extrair partes especificas sem precisar do objeto completo.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            path-parse.js
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> path <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'path'</span>;
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> caminho = <span style="color: rgb(168, 240, 200); font-size: 13px;">'/projetos/clinica/src/relatorio.json'</span>;
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// path.parse — retorna todas as partes de uma vez</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> partes = path.<span style="color: rgb(93, 245, 168); font-size: 13px;">parse</span>(caminho);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(partes);
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// { root: '/', dir: '/projetos/clinica/src',</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">//   base: 'relatorio.json', ext: '.json', name: 'relatorio' }</span>
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Metodos individuais — mais diretos</span>
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(path.<span style="color: rgb(93, 245, 168); font-size: 13px;">basename</span>(caminho));         <span style="color: rgb(93, 184, 245); font-size: 13px;">// relatorio.json</span>
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(path.<span style="color: rgb(93, 245, 168); font-size: 13px;">basename</span>(caminho, <span style="color: rgb(168, 240, 200); font-size: 13px;">'.json'</span>)); <span style="color: rgb(93, 184, 245); font-size: 13px;">// relatorio (sem extensao)</span>
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(path.<span style="color: rgb(93, 245, 168); font-size: 13px;">extname</span>(caminho));          <span style="color: rgb(93, 184, 245); font-size: 13px;">// .json</span>
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(path.<span style="color: rgb(93, 245, 168); font-size: 13px;">dirname</span>(caminho));          <span style="color: rgb(93, 184, 245); font-size: 13px;">// /projetos/clinica/src</span></pre>
+        </div>
+        <div
+          style="
+            background: rgb(248, 251, 255);
+            border-radius: 10px;
+            padding: 14px 18px;
+            border: 1px solid rgb(212, 230, 245);
+            margin-bottom: 8px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #1a4800;
+              margin-bottom: 12px;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            "
+          >
+            Resumo dos metodos do modulo path
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 8px;
+              font-size: 13px;
+              color: #2c3e50;
+            "
+          >
+            <div
+              style="
+                padding: 8px 12px;
+                background: rgb(234, 242, 251);
+                border-radius: 6px;
+                font-size: 13px;
+              "
+            >
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: rgb(26, 95, 168);
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >path.join(...partes)</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(74, 106, 138); font-size: 13px"
+                >Une segmentos com o sep correto</span
+              >
+            </div>
+            <div
+              style="
+                padding: 8px 12px;
+                background: rgb(234, 242, 251);
+                border-radius: 6px;
+                font-size: 13px;
+              "
+            >
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: rgb(26, 95, 168);
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >path.parse(caminho)</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(74, 106, 138); font-size: 13px"
+                >Decompoe em root, dir, base, name, ext</span
+              >
+            </div>
+            <div
+              style="
+                padding: 8px 12px;
+                background: rgb(234, 242, 251);
+                border-radius: 6px;
+                font-size: 13px;
+              "
+            >
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: rgb(26, 95, 168);
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >path.basename(caminho)</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(74, 106, 138); font-size: 13px"
+                >Nome do arquivo com extensao</span
+              >
+            </div>
+            <div
+              style="
+                padding: 8px 12px;
+                background: rgb(234, 242, 251);
+                border-radius: 6px;
+                font-size: 13px;
+              "
+            >
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: rgb(26, 95, 168);
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >path.extname(caminho)</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(74, 106, 138); font-size: 13px"
+                >Extensao do arquivo (.json, .txt...)</span
+              >
+            </div>
+            <div
+              style="
+                padding: 8px 12px;
+                background: rgb(234, 242, 251);
+                border-radius: 6px;
+                font-size: 13px;
+              "
+            >
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: rgb(26, 95, 168);
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >path.dirname(caminho)</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(74, 106, 138); font-size: 13px"
+                >Pasta que contem o arquivo</span
+              >
+            </div>
+            <div
+              style="
+                padding: 8px 12px;
+                background: rgb(234, 242, 251);
+                border-radius: 6px;
+                font-size: 13px;
+              "
+            >
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: rgb(26, 95, 168);
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >path.sep</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(74, 106, 138); font-size: 13px"
+                >Separador do SO (/ ou \)</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Exemplo integrando os 3 modulos -->
+      <div style="text-align: center; margin-bottom: 20px; font-size: 14px">
+        <div
+          style="
+            display: inline-block;
+            background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+            color: #fff;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 10px 28px;
+            border-radius: 20px;
+          "
+        >
+          Exemplo Final — Integrando os tres modulos
+        </div>
+      </div>
+      <div
+        style="
+          border-radius: 14px;
+          overflow: hidden;
+          margin-bottom: 28px;
+          box-shadow: rgba(13, 59, 102, 0.18) 0px 8px 28px;
+          border: 2px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              135deg,
+              rgb(13, 59, 102) 0%,
+              rgb(26, 95, 168) 100%
+            );
+            padding: 26px 32px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 11px;
+              font-weight: bold;
+              letter-spacing: 3px;
+              text-transform: uppercase;
+              color: #a8c8f0;
+              margin-bottom: 8px;
+            "
+          >
+            fs + os + path juntos
+          </div>
+          <div style="font-size: 18px; font-weight: bold; color: #ffffff">
+            Gerador automatico de relatorio de ambiente
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            padding: 28px 32px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.8;
+              margin-bottom: 22px;
+            "
+          >
+            Este exemplo combina os tres modulos em um unico script: usa
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(234, 242, 251);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >os</span
+            >
+            para coletar dados da maquina,
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(234, 242, 251);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >fs</span
+            >
+            para listar arquivos e salvar o resultado, e
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(234, 242, 251);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >path</span
+            >
+            para montar os caminhos de forma segura.
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              margin-bottom: 22px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 10px 18px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #5db8f5;
+                border-bottom: 1px solid #2a3a4a;
+                letter-spacing: 1px;
+              "
+            >
+              relatorio-ambiente.js
+            </div>
+            <pre
+              style="
+                margin: 0;
+                padding: 22px 26px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 13px;
+                color: #e0f0ff;
+                line-height: 1.9;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> os                   <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'os'</span>;
+<span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> path                 <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'path'</span>;
+<span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> { readdir, writeFile } <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'fs/promises'</span>;
+<span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> { fileURLToPath }    <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'url'</span>;
+<span style="color: rgb(240, 200, 122); font-size: 13px;">import</span> { dirname }          <span style="color: rgb(240, 200, 122); font-size: 13px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">'path'</span>;
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> __dirname = <span style="color: rgb(93, 245, 168); font-size: 13px;">dirname</span>(<span style="color: rgb(93, 245, 168); font-size: 13px;">fileURLToPath</span>(import.meta.url));
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">gerarRelatorio</span>() {
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// 1. Coleta dados do sistema (modulo os)</span>
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> totalGB = (os.<span style="color: rgb(93, 245, 168); font-size: 13px;">totalmem</span>() / <span style="color: rgb(240, 200, 122); font-size: 13px;">1024</span> ** <span style="color: rgb(240, 200, 122); font-size: 13px;">3</span>).<span style="color: rgb(93, 245, 168); font-size: 13px;">toFixed</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">1</span>);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> livreGB = (os.<span style="color: rgb(93, 245, 168); font-size: 13px;">freemem</span>()  / <span style="color: rgb(240, 200, 122); font-size: 13px;">1024</span> ** <span style="color: rgb(240, 200, 122); font-size: 13px;">3</span>).<span style="color: rgb(93, 245, 168); font-size: 13px;">toFixed</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">1</span>);
+
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// 2. Lista arquivos do projeto (modulo fs)</span>
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> itens = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">readdir</span>(__dirname);
+
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// 3. Monta caminhos absolutos (modulo path)</span>
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> caminhos = itens.<span style="color: rgb(93, 245, 168); font-size: 13px;">map</span>(item =&gt; path.<span style="color: rgb(93, 245, 168); font-size: 13px;">join</span>(__dirname, item));
+
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// 4. Monta o conteudo do relatorio</span>
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> agora    = <span style="color: rgb(240, 200, 122); font-size: 13px;">new</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">Date</span>().<span style="color: rgb(93, 245, 168); font-size: 13px;">toLocaleString</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'pt-BR'</span>);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> conteudo = [
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">'============================================='</span>,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">`  RELATORIO DO PROJETO`</span>,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">`  Gerado em: ${agora}`</span>,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">'============================================='</span>,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">''</span>,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">'AMBIENTE'</span>,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">'--------'</span>,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">`Computador  : ${os.<span style="color: rgb(93, 245, 168); font-size: 13px;">hostname</span>()}`</span>,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">`Sistema     : ${os.<span style="color: rgb(93, 245, 168); font-size: 13px;">platform</span>()}`</span>,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">`Arquitetura : ${os.<span style="color: rgb(93, 245, 168); font-size: 13px;">arch</span>()}`</span>,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">`RAM Total   : ${totalGB} GB`</span>,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">`RAM Livre   : ${livreGB} GB`</span>,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">''</span>,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">'ARQUIVOS DO PROJETO'</span>,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">'-------------------'</span>,
+    ...caminhos,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">''</span>,
+    <span style="color: rgb(168, 240, 200); font-size: 13px;">'============================================='</span>,
+  ].<span style="color: rgb(93, 245, 168); font-size: 13px;">join</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'\n'</span>);
+
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// 5. Salva o arquivo (modulo fs + path)</span>
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> saida = path.<span style="color: rgb(93, 245, 168); font-size: 13px;">join</span>(__dirname, <span style="color: rgb(168, 240, 200); font-size: 13px;">'relatorio-projeto.txt'</span>);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">writeFile</span>(saida, conteudo, <span style="color: rgb(168, 240, 200); font-size: 13px;">'utf8'</span>);
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Relatorio gerado em: ${saida}`</span>);
+}
+
+<span style="color: rgb(93, 245, 168); font-size: 13px;">gerarRelatorio</span>();</pre>
+          </div>
+          <div
+            style="
+              background: rgb(248, 251, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 11px;
+                font-weight: bold;
+                color: #4a6a8a;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin-bottom: 8px;
+              "
+            >
+              Conteudo gerado em relatorio-projeto.txt
+            </div>
+            <pre
+              style="
+                margin: 0px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 12px;
+                color: rgb(13, 59, 102);
+                line-height: 1.9;
+              "
+            >
+=============================================
+  RELATORIO DO PROJETO
+  Gerado em: 10/06/2025, 09:45:00
+=============================================
+
+AMBIENTE
+--------
+Computador  : NOTEBOOK-JOAO
+Sistema     : linux
+Arquitetura : x64
+RAM Total   : 15.5 GB
+RAM Livre   : 9.2 GB
+
+ARQUIVOS DO PROJETO
+-------------------
+/home/joao/projeto/package.json
+/home/joao/projeto/relatorio-ambiente.js
+/home/joao/projeto/relatorio-projeto.txt
+
+=============================================</pre
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Referencias -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          box-shadow: rgba(26, 90, 168, 0.1) 0px 4px 18px;
+          border-top: 4px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 16px;
+          "
+        >
+          Referencias e Documentacao
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <strong style="font-size: 14px"
+              >Node.js — Documentacao oficial do modulo fs.</strong
+            >
+            File system. Disponivel em: nodejs.org/api/fs.html. Acesso em: 2025.
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <strong style="font-size: 14px"
+              >Node.js — Documentacao oficial do modulo os.</strong
+            >
+            OS. Disponivel em: nodejs.org/api/os.html. Acesso em: 2025.
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <strong style="font-size: 14px"
+              >Node.js — Documentacao oficial do modulo path.</strong
+            >
+            Path. Disponivel em: nodejs.org/api/path.html. Acesso em: 2025.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

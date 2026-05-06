@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipos de dados - Simples</title>
+  </head>
+  <body>
+    <div
+      style="
+        max-width: 1000px;
+        margin: 0px auto;
+        padding: 40px 24px;
+        background-color: rgb(238, 242, 246);
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(30, 41, 59);
+        line-height: 1.6;
+        font-size: 14px;
+      "
+    >
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(15, 23, 42) 0%,
+            rgb(30, 58, 138) 100%
+          );
+          border-radius: 16px;
+          padding: 40px;
+          margin-bottom: 30px;
+          box-shadow: rgba(30, 58, 138, 0.3) 0px 15px 35px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #93c5fd;
+            margin-bottom: 12px;
+          "
+        >
+          Curso Técnico em Desenvolvimento de Sistemas
+        </div>
+        <div
+          style="
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 16px;
+          "
+        >
+          Tipos de Dados: Listas, Dicionários e JSON em JavaScript
+        </div>
+        <div style="font-size: 16px; color: #bfdbfe; line-height: 1.5">
+          Compreenda como armazenar, organizar e transmitir dados de forma
+          eficiente utilizando os principais tipos de dados da linguagem
+          JavaScript.
+        </div>
+      </div>
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          border-radius: 12px;
+          padding: 30px;
+          margin-bottom: 30px;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 25px;
+          border-left: 6px solid rgb(37, 99, 235);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #2563eb;
+            margin-bottom: 16px;
+          "
+        >
+          Capacidades Trabalhadas
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 8px;
+                min-height: 8px;
+                width: 8px;
+                height: 8px;
+                background-color: rgb(37, 99, 235);
+                border-radius: 50%;
+                margin-top: 8px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 16px; color: #334155">
+              Definir tecnologias de acordo com os requisitos não funcionais.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 8px;
+                min-height: 8px;
+                width: 8px;
+                height: 8px;
+                background-color: rgb(37, 99, 235);
+                border-radius: 50%;
+                margin-top: 8px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 16px; color: #334155">
+              Definir tecnologias de acordo com os requisitos não funcionais.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 36px;
+          margin-bottom: 30px;
+          box-shadow: rgba(0, 0, 0, 0.08) 0px 12px 30px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+          "
+        >
+          1. Listas (Arrays)
+        </div>
+        <div style="font-size: 16px; color: #475569; margin-bottom: 20px">
+          Em JavaScript, as listas são representadas pelos
+          <strong style="font-size: 16px">Arrays</strong>. Trata-se de um tipo
+          de dado ordenado, que permite armazenar múltiplos valores em uma única
+          variável. Os arrays em JavaScript são dinâmicos, podendo crescer ou
+          diminuir de tamanho automaticamente, e podem armazenar diferentes
+          tipos de dados simultaneamente.
+        </div>
+        <div
+          style="
+            background-color: rgb(30, 30, 30);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 24px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-bottom: 16px;
+              border-bottom: 1px solid rgb(51, 51, 51);
+              padding-bottom: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: rgb(255, 95, 86);
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div
+              style="
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: rgb(255, 189, 46);
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div
+              style="
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: rgb(39, 201, 63);
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+          </div>
+          <div
+            style="
+              font-family: Consolas, &quot;Courier New&quot;, monospace;
+              font-size: 15px;
+              line-height: 1.6;
+              color: #d4d4d4;
+            "
+          >
+            <div style="font-size: 15px">
+              <span style="color: rgb(106, 153, 85); font-size: 15px"
+                >// Criando uma lista de alunos</span
+              >
+            </div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(86, 156, 214); font-size: 15px"
+                >const</span
+              >
+              alunos = [<span style="color: rgb(206, 145, 120); font-size: 15px"
+                >"Ana"</span
+              >,
+              <span style="color: rgb(206, 145, 120); font-size: 15px"
+                >"Carlos"</span
+              >,
+              <span style="color: rgb(206, 145, 120); font-size: 15px"
+                >"Beatriz"</span
+              >];
+            </div>
+            <div style="min-height: 24px; font-size: 15px">&nbsp;</div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(106, 153, 85); font-size: 15px"
+                >// Adicionando um novo elemento ao final da lista</span
+              >
+            </div>
+            <div style="font-size: 15px">
+              alunos.<span style="color: rgb(220, 220, 170); font-size: 15px"
+                >push</span
+              >(<span style="color: rgb(206, 145, 120); font-size: 15px"
+                >"Daniel"</span
+              >);
+            </div>
+            <div style="min-height: 24px; font-size: 15px">&nbsp;</div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(106, 153, 85); font-size: 15px"
+                >// Acessando elementos pelo índice (começa em 0)</span
+              >
+            </div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(78, 201, 176); font-size: 15px"
+                >console</span
+              >.<span style="color: rgb(220, 220, 170); font-size: 15px"
+                >log</span
+              >(alunos[<span style="color: rgb(181, 206, 168); font-size: 15px"
+                >0</span
+              >]);
+              <span style="color: rgb(106, 153, 85); font-size: 15px"
+                >// Saída: Ana</span
+              >
+            </div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(78, 201, 176); font-size: 15px"
+                >console</span
+              >.<span style="color: rgb(220, 220, 170); font-size: 15px"
+                >log</span
+              >(alunos.<span style="color: rgb(156, 220, 254); font-size: 15px"
+                >length</span
+              >);
+              <span style="color: rgb(106, 153, 85); font-size: 15px"
+                >// Saída: 4</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 36px;
+          margin-bottom: 30px;
+          box-shadow: rgba(0, 0, 0, 0.08) 0px 12px 30px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+          "
+        >
+          2. Dicionários (Objetos)
+        </div>
+        <div style="font-size: 16px; color: #475569; margin-bottom: 20px">
+          Dicionários são tipos de dados que armazenam informações no formato de
+          <strong style="font-size: 16px">chave-valor</strong>. Em JavaScript, a
+          forma mais comum e idiomática de criar um dicionário é utilizando
+          <strong style="font-size: 16px">Objetos Literais</strong>. Cada
+          informação é mapeada através de uma chave (nome da propriedade) única.
+        </div>
+        <div
+          style="
+            background-color: rgb(30, 30, 30);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 24px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-bottom: 16px;
+              border-bottom: 1px solid rgb(51, 51, 51);
+              padding-bottom: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: rgb(255, 95, 86);
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div
+              style="
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: rgb(255, 189, 46);
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div
+              style="
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: rgb(39, 201, 63);
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+          </div>
+          <div
+            style="
+              font-family: Consolas, &quot;Courier New&quot;, monospace;
+              font-size: 15px;
+              line-height: 1.6;
+              color: #d4d4d4;
+            "
+          >
+            <div style="font-size: 15px">
+              <span style="color: rgb(106, 153, 85); font-size: 15px"
+                >// Criando um dicionário de configuração de sistema</span
+              >
+            </div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(86, 156, 214); font-size: 15px"
+                >const</span
+              >
+              configBancoDeDados = {
+            </div>
+            <div style="font-size: 15px">
+              &nbsp;&nbsp;<span
+                style="color: rgb(156, 220, 254); font-size: 15px"
+                >host</span
+              >:
+              <span style="color: rgb(206, 145, 120); font-size: 15px"
+                >"localhost"</span
+              >,
+            </div>
+            <div style="font-size: 15px">
+              &nbsp;&nbsp;<span
+                style="color: rgb(156, 220, 254); font-size: 15px"
+                >porta</span
+              >:
+              <span style="color: rgb(181, 206, 168); font-size: 15px"
+                >5432</span
+              >,
+            </div>
+            <div style="font-size: 15px">
+              &nbsp;&nbsp;<span
+                style="color: rgb(156, 220, 254); font-size: 15px"
+                >usuario</span
+              >:
+              <span style="color: rgb(206, 145, 120); font-size: 15px"
+                >"admin"</span
+              >,
+            </div>
+            <div style="font-size: 15px">
+              &nbsp;&nbsp;<span
+                style="color: rgb(156, 220, 254); font-size: 15px"
+                >ativo</span
+              >:
+              <span style="color: rgb(86, 156, 214); font-size: 15px"
+                >true</span
+              >
+            </div>
+            <div style="font-size: 15px">};</div>
+            <div style="min-height: 24px; font-size: 15px">&nbsp;</div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(106, 153, 85); font-size: 15px"
+                >// Acessando propriedades</span
+              >
+            </div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(78, 201, 176); font-size: 15px"
+                >console</span
+              >.<span style="color: rgb(220, 220, 170); font-size: 15px"
+                >log</span
+              >(configBancoDeDados.<span
+                style="color: rgb(156, 220, 254); font-size: 15px"
+                >host</span
+              >);
+              <span style="color: rgb(106, 153, 85); font-size: 15px"
+                >// Saída: localhost</span
+              >
+            </div>
+            <div style="min-height: 24px; font-size: 15px">&nbsp;</div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(106, 153, 85); font-size: 15px"
+                >// Adicionando uma nova chave-valor dinamicamente</span
+              >
+            </div>
+            <div style="font-size: 15px">
+              configBancoDeDados.<span
+                style="color: rgb(156, 220, 254); font-size: 15px"
+                >senha</span
+              >
+              =
+              <span style="color: rgb(206, 145, 120); font-size: 15px"
+                >"123456"</span
+              >;
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 36px;
+          margin-bottom: 30px;
+          box-shadow: rgba(0, 0, 0, 0.08) 0px 12px 30px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+          "
+        >
+          3. JSON (JavaScript Object Notation)
+        </div>
+        <div style="font-size: 16px; color: #475569; margin-bottom: 20px">
+          O JSON não é exatamente um tipo de dado de memória, mas sim um
+          <strong style="font-size: 16px">formato de texto</strong> utilizado
+          para serializar e transmitir dados estruturados entre sistemas (como
+          entre o Front-end e o Back-end em uma API). O JavaScript possui
+          métodos nativos para converter Objetos em texto JSON e vice-versa.
+        </div>
+        <div
+          style="
+            background-color: rgb(30, 30, 30);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 24px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-bottom: 16px;
+              border-bottom: 1px solid rgb(51, 51, 51);
+              padding-bottom: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: rgb(255, 95, 86);
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div
+              style="
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: rgb(255, 189, 46);
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div
+              style="
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: rgb(39, 201, 63);
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+          </div>
+          <div
+            style="
+              font-family: Consolas, &quot;Courier New&quot;, monospace;
+              font-size: 15px;
+              line-height: 1.6;
+              color: #d4d4d4;
+            "
+          >
+            <div style="font-size: 15px">
+              <span style="color: rgb(86, 156, 214); font-size: 15px"
+                >const</span
+              >
+              produto = {
+              <span style="color: rgb(156, 220, 254); font-size: 15px">id</span
+              >:
+              <span style="color: rgb(181, 206, 168); font-size: 15px">101</span
+              >,
+              <span style="color: rgb(156, 220, 254); font-size: 15px"
+                >nome</span
+              >:
+              <span style="color: rgb(206, 145, 120); font-size: 15px"
+                >"Teclado"</span
+              >,
+              <span style="color: rgb(156, 220, 254); font-size: 15px"
+                >preco</span
+              >:
+              <span style="color: rgb(181, 206, 168); font-size: 15px"
+                >150.00</span
+              >
+              };
+            </div>
+            <div style="min-height: 24px; font-size: 15px">&nbsp;</div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(106, 153, 85); font-size: 15px"
+                >// 1. Convertendo um Objeto JavaScript em String JSON
+                (Serialização)</span
+              >
+            </div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(86, 156, 214); font-size: 15px"
+                >const</span
+              >
+              jsonTexto =
+              <span style="color: rgb(78, 201, 176); font-size: 15px">JSON</span
+              >.<span style="color: rgb(220, 220, 170); font-size: 15px"
+                >stringify</span
+              >(produto);
+            </div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(78, 201, 176); font-size: 15px"
+                >console</span
+              >.<span style="color: rgb(220, 220, 170); font-size: 15px"
+                >log</span
+              >(jsonTexto);
+            </div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(106, 153, 85); font-size: 15px"
+                >// Saída em formato texto:
+                {"id":101,"nome":"Teclado","preco":150}</span
+              >
+            </div>
+            <div style="min-height: 24px; font-size: 15px">&nbsp;</div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(106, 153, 85); font-size: 15px"
+                >// 2. Convertendo uma String JSON de volta para Objeto
+                (Desserialização)</span
+              >
+            </div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(86, 156, 214); font-size: 15px"
+                >const</span
+              >
+              respostaApi =
+              <span style="color: rgb(206, 145, 120); font-size: 15px"
+                >'{"status": "sucesso", "codigo": 200}'</span
+              >;
+            </div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(86, 156, 214); font-size: 15px"
+                >const</span
+              >
+              objetoRecuperado =
+              <span style="color: rgb(78, 201, 176); font-size: 15px">JSON</span
+              >.<span style="color: rgb(220, 220, 170); font-size: 15px"
+                >parse</span
+              >(respostaApi);
+            </div>
+            <div style="min-height: 24px; font-size: 15px">&nbsp;</div>
+            <div style="font-size: 15px">
+              <span style="color: rgb(78, 201, 176); font-size: 15px"
+                >console</span
+              >.<span style="color: rgb(220, 220, 170); font-size: 15px"
+                >log</span
+              >(objetoRecuperado.<span
+                style="color: rgb(156, 220, 254); font-size: 15px"
+                >status</span
+              >);
+              <span style="color: rgb(106, 153, 85); font-size: 15px"
+                >// Saída: sucesso</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background-color: rgb(239, 246, 255);
+          border: 1px solid rgb(191, 219, 254);
+          border-radius: 12px;
+          padding: 24px;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 16px;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 8px;
+          "
+        >
+          Dica Prática de Desempenho
+        </div>
+        <div style="font-size: 15px; color: #1e3a8a; line-height: 1.6">
+          Ao definir tecnologias baseadas em requisitos não funcionais (como
+          performance e uso de memória), lembre-se:
+          <strong style="font-size: 15px">Listas (Arrays)</strong> são
+          excelentes para iteração e ordem sequencial, enquanto
+          <strong style="font-size: 15px">Dicionários (Objetos)</strong> são
+          muito mais rápidos para buscas diretas através de uma chave
+          específica.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

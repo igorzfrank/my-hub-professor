@@ -1,0 +1,3785 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metodologias Ágeis de Desenvolvimento de Software</title>
+  </head>
+  <body>
+    <div
+      style="
+        max-width: 1100px;
+        margin: 0px auto;
+        padding: 36px;
+        background-color: rgb(243, 247, 251);
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(31, 45, 61);
+        font-size: 14px;
+      "
+    >
+      <!-- HEADER -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(30, 58, 95),
+            rgb(11, 94, 215)
+          );
+          color: rgb(255, 255, 255);
+          padding: 28px 32px;
+          border-radius: 16px;
+          box-shadow: rgba(11, 94, 215, 0.4) 0px 10px 28px;
+          margin-bottom: 32px;
+          font-size: 14px;
+        "
+      >
+        <div style="font-size: 28px; font-weight: bold; margin-bottom: 8px">
+          Metodologias Ágeis de Desenvolvimento de Software
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            opacity: 0.95;
+            max-width: 820px;
+            margin-bottom: 16px;
+          "
+        >
+          Scrum, Kanban, Lean, XP, Crystal, SAFe e LeSS — guia completo sobre
+          frameworks ágeis modernos, suas cerimônias, papéis e aplicações
+          práticas.
+        </div>
+        <div
+          style="
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-size: 14px;
+          "
+        >
+          <strong style="font-size: 14px">Capacidade Trabalhada:</strong>
+          Aplicar metodologia de desenvolvimento de acordo com o escopo do
+          projeto e selecionar ferramentas de gerenciamento na aplicação da
+          metodologia.
+        </div>
+      </div>
+      <!-- INTRODUÇÃO -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e3a5f;
+            margin-bottom: 14px;
+          "
+        >
+          Por que Metodologias Ágeis?
+        </div>
+        <p style="font-size: 15px; line-height: 1.8; margin: 0 0 14px 0">
+          Imagine desenvolver um aplicativo semelhante ao TikTok. Se todo o
+          planejamento e desenvolvimento forem feitos sem validações
+          intermediárias, quando o produto for lançado a tendência pode já ter
+          passado. Em cenários de alta incerteza e mudança rápida, as
+          <strong style="font-size: 15px"
+            >metodologias tradicionais (Cascata)</strong
+          >
+          falham por tentar prever todo o futuro.
+        </p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background-color: rgb(254, 242, 242);
+              padding: 18px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(239, 68, 68);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(220, 38, 38);
+                margin-bottom: 8px;
+                font-size: 14px;
+              "
+            >
+              Modelo Cascata (Preditivo)
+            </div>
+            <div style="font-size: 14px; line-height: 1.7; color: #4a5568">
+              Tenta prever todo o futuro do projeto. Mudanças geram alto custo e
+              retrabalho. Funciona bem apenas quando os requisitos são
+              completamente estáveis.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(240, 253, 244);
+              padding: 18px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(16, 185, 129);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(6, 95, 70);
+                margin-bottom: 8px;
+                font-size: 14px;
+              "
+            >
+              Metodologias Ágeis (Adaptativas)
+            </div>
+            <div style="font-size: 14px; line-height: 1.7; color: #4a5568">
+              Assumem a incerteza, entregam pequenas partes funcionais, coletam
+              feedback e ajustam continuamente o plano. Foco em valor real e
+              rápido.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            margin-top: 16px;
+            background-color: rgb(231, 241, 255);
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid rgb(11, 94, 215);
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 14px; line-height: 1.8; color: #1e40af">
+            <strong style="font-size: 14px">O Manifesto Ágil (2001)</strong>
+            resume quatro valores essenciais: indivíduos e interações acima de
+            processos e ferramentas; software funcionando acima de documentação
+            abrangente; colaboração com o cliente acima de negociação
+            contratual; responder a mudanças acima de seguir um plano.
+          </div>
+        </div>
+      </div>
+      <!-- ÍNDICE VISUAL -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e3a5f;
+            margin-bottom: 18px;
+            text-align: center;
+          "
+        >
+          Frameworks Abordados Nesta Aula
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(11, 94, 215),
+                rgb(8, 66, 152)
+              );
+              color: white;
+              padding: 16px;
+              border-radius: 12px;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 18px; font-weight: bold; margin-bottom: 4px">
+              Scrum
+            </div>
+            <div style="font-size: 12px; opacity: 0.9">
+              Sprints e papéis definidos
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(16, 185, 129),
+                rgb(6, 95, 70)
+              );
+              color: white;
+              padding: 16px;
+              border-radius: 12px;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 18px; font-weight: bold; margin-bottom: 4px">
+              Kanban
+            </div>
+            <div style="font-size: 12px; opacity: 0.9">
+              Fluxo contínuo visual
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(245, 158, 11),
+                rgb(180, 83, 9)
+              );
+              color: white;
+              padding: 16px;
+              border-radius: 12px;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 18px; font-weight: bold; margin-bottom: 4px">
+              Lean
+            </div>
+            <div style="font-size: 12px; opacity: 0.9">
+              Eliminar desperdício
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(236, 72, 153),
+                rgb(157, 23, 77)
+              );
+              color: white;
+              padding: 16px;
+              border-radius: 12px;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 18px; font-weight: bold; margin-bottom: 4px">
+              XP
+            </div>
+            <div style="font-size: 12px; opacity: 0.9">Excelência técnica</div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(139, 92, 246),
+                rgb(109, 40, 217)
+              );
+              color: white;
+              padding: 16px;
+              border-radius: 12px;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 18px; font-weight: bold; margin-bottom: 4px">
+              Crystal
+            </div>
+            <div style="font-size: 12px; opacity: 0.9">Adaptação ao time</div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(6, 182, 212),
+                rgb(14, 116, 144)
+              );
+              color: white;
+              padding: 16px;
+              border-radius: 12px;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 18px; font-weight: bold; margin-bottom: 4px">
+              SAFe
+            </div>
+            <div style="font-size: 12px; opacity: 0.9">Ágil em escala</div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(239, 68, 68),
+                rgb(185, 28, 28)
+              );
+              color: white;
+              padding: 16px;
+              border-radius: 12px;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 18px; font-weight: bold; margin-bottom: 4px">
+              LeSS
+            </div>
+            <div style="font-size: 12px; opacity: 0.9">Scrum escalado</div>
+          </div>
+        </div>
+      </div>
+      <!-- ─────────────────────── SCRUM ─────────────────────── -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #0b5ed7, #084298);
+              color: white;
+              width: 60px;
+              height: 60px;
+              border-radius: 14px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 26px;
+              font-weight: bold;
+              flex-shrink: 0;
+            "
+          >
+            S
+          </div>
+          <div style="font-size: 14px">
+            <div style="font-size: 24px; font-weight: bold; color: #0b5ed7">
+              Scrum
+            </div>
+            <div style="font-size: 13px; color: #6b7280">
+              Framework ágil iterativo e incremental para gestão de projetos
+              complexos
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; line-height: 1.8; margin-bottom: 20px">
+          O <strong style="font-size: 15px">Scrum</strong> é o framework ágil
+          mais utilizado no mundo. Criado por Ken Schwaber e Jeff Sutherland em
+          1995, organiza o trabalho em ciclos curtos e fixos chamados
+          <strong style="font-size: 15px">Sprints</strong>, geralmente de 1 a 4
+          semanas. Ao final de cada Sprint, o time entrega um incremento
+          funcional do produto, permitindo feedback rápido e ajustes contínuos.
+        </p>
+        <div
+          style="
+            background-color: rgb(231, 241, 255);
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid rgb(11, 94, 215);
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <strong style="color: rgb(8, 66, 152); font-size: 14px"
+            >Regra de ouro do Scrum:</strong
+          >
+          durante a Sprint, o objetivo não pode ser alterado. Isso garante foco
+          e produtividade para o time.
+        </div>
+        <div style="margin-bottom: 20px; font-size: 14px">
+          <img
+            style="
+              display: block;
+              margin: 0px auto;
+              max-width: 100%;
+              border-radius: 10px;
+              font-size: 14px;
+            "
+            src="https://ava.sesisenai.org.br/pluginfile.php/1765657/mod_page/content/6/Scrum_process.svg"
+            alt="Processo SCRUM"
+          />
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 14px">
+            <div
+              style="
+                font-size: 17px;
+                font-weight: bold;
+                color: #0b5ed7;
+                margin-bottom: 14px;
+              "
+            >
+              Papéis (Scrum Team)
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background-color: rgb(246, 249, 254);
+                  padding: 16px;
+                  border-radius: 12px;
+                  border-left: 4px solid rgb(11, 94, 215);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    margin-bottom: 6px;
+                    color: rgb(30, 64, 175);
+                    font-size: 14px;
+                  "
+                >
+                  Product Owner (PO)
+                </div>
+                <div style="font-size: 14px; line-height: 1.7; color: #4a5568">
+                  Representa o cliente. Define e prioriza o Product Backlog,
+                  garante que o time entregue o maior valor possível de negócio.
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(246, 249, 254);
+                  padding: 16px;
+                  border-radius: 12px;
+                  border-left: 4px solid rgb(11, 94, 215);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    margin-bottom: 6px;
+                    color: rgb(30, 64, 175);
+                    font-size: 14px;
+                  "
+                >
+                  Scrum Master (SM)
+                </div>
+                <div style="font-size: 14px; line-height: 1.7; color: #4a5568">
+                  Facilitador e líder servidor. Remove impedimentos, garante a
+                  correta aplicação do Scrum e protege o time de interferências
+                  externas.
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(246, 249, 254);
+                  padding: 16px;
+                  border-radius: 12px;
+                  border-left: 4px solid rgb(11, 94, 215);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    margin-bottom: 6px;
+                    color: rgb(30, 64, 175);
+                    font-size: 14px;
+                  "
+                >
+                  Developers
+                </div>
+                <div style="font-size: 14px; line-height: 1.7; color: #4a5568">
+                  Time multifuncional e auto-organizado. Decide como o trabalho
+                  será feito e transforma itens do backlog em software
+                  funcionando.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="font-size: 14px">
+            <div
+              style="
+                font-size: 17px;
+                font-weight: bold;
+                color: #0b5ed7;
+                margin-bottom: 14px;
+              "
+            >
+              Cerimônias
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background-color: rgb(246, 249, 254);
+                  padding: 14px;
+                  border-radius: 10px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: #1e40af;
+                    margin-bottom: 4px;
+                  "
+                >
+                  Sprint Planning
+                </div>
+                <div style="font-size: 13px; color: #4a5568">
+                  Define o objetivo e seleciona os itens do backlog para a
+                  Sprint. Time planeja como executará o trabalho.
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(246, 249, 254);
+                  padding: 14px;
+                  border-radius: 10px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: #1e40af;
+                    margin-bottom: 4px;
+                  "
+                >
+                  Daily Scrum (15 min)
+                </div>
+                <div style="font-size: 13px; color: #4a5568">
+                  Reunião diária rápida: o que fiz ontem, o que farei hoje, há
+                  impedimentos?
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(246, 249, 254);
+                  padding: 14px;
+                  border-radius: 10px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: #1e40af;
+                    margin-bottom: 4px;
+                  "
+                >
+                  Sprint Review
+                </div>
+                <div style="font-size: 13px; color: #4a5568">
+                  Apresentação do incremento ao cliente e stakeholders. Coleta
+                  de feedback.
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(246, 249, 254);
+                  padding: 14px;
+                  border-radius: 10px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: #1e40af;
+                    margin-bottom: 4px;
+                  "
+                >
+                  Sprint Retrospective
+                </div>
+                <div style="font-size: 13px; color: #4a5568">
+                  Análise do processo: o que funcionou, o que melhorar e ações
+                  para a próxima Sprint.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 17px;
+            font-weight: bold;
+            color: #0b5ed7;
+            margin-bottom: 14px;
+          "
+        >
+          Artefatos
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background-color: rgb(219, 234, 254);
+              padding: 16px;
+              border-radius: 12px;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(30, 64, 175);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              Product Backlog
+            </div>
+            <div style="font-size: 13px; color: #4a5568">
+              Lista priorizada de tudo que o produto pode ter. Gerenciado pelo
+              PO.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(219, 234, 254);
+              padding: 16px;
+              border-radius: 12px;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(30, 64, 175);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              Sprint Backlog
+            </div>
+            <div style="font-size: 13px; color: #4a5568">
+              Itens selecionados do Product Backlog para execução na Sprint
+              atual.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(219, 234, 254);
+              padding: 16px;
+              border-radius: 12px;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(30, 64, 175);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              Incremento
+            </div>
+            <div style="font-size: 13px; color: #4a5568">
+              Versão do software pronta, testada e potencialmente entregável ao
+              final da Sprint.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background-color: rgb(240, 253, 244);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(16, 185, 129);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(6, 95, 70);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              Quando usar o Scrum?
+            </div>
+            <div style="font-size: 13px; line-height: 1.7; color: #4a5568">
+              Projetos com escopo variável, produtos digitais, startups,
+              sistemas web, apps. Times de 3 a 9 pessoas.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(254, 242, 242);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(239, 68, 68);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(220, 38, 38);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              Quando evitar?
+            </div>
+            <div style="font-size: 13px; line-height: 1.7; color: #4a5568">
+              Projetos com requisitos totalmente fixos, work individual,
+              manutenção de sistemas legados estáveis.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ─────────────────────── KANBAN ─────────────────────── -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #10b981, #065f46);
+              color: white;
+              width: 60px;
+              height: 60px;
+              border-radius: 14px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 26px;
+              font-weight: bold;
+              flex-shrink: 0;
+            "
+          >
+            K
+          </div>
+          <div style="font-size: 14px">
+            <div style="font-size: 24px; font-weight: bold; color: #10b981">
+              Kanban
+            </div>
+            <div style="font-size: 13px; color: #6b7280">
+              Gestão de fluxo de trabalho visual e contínuo, sem iterações fixas
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; line-height: 1.8; margin-bottom: 20px">
+          Originado na Toyota nos anos 1940 para gestão de produção, o
+          <strong style="font-size: 15px">Kanban</strong> foi adaptado para o
+          desenvolvimento de software por David Anderson em 2007. Diferente do
+          Scrum, o Kanban não usa Sprints — o trabalho flui continuamente, e o
+          foco está em
+          <strong style="font-size: 15px"
+            >limitar o trabalho em andamento (WIP)</strong
+          >
+          para identificar e eliminar gargalos.
+        </p>
+        <div style="margin-bottom: 20px; font-size: 14px">
+          <div
+            style="
+              font-size: 17px;
+              font-weight: bold;
+              color: #10b981;
+              margin-bottom: 14px;
+            "
+          >
+            <img
+              style="
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 17px;
+              "
+              src="https://artia.com/wp-content/uploads/2023/12/3-1.png"
+              alt="Kanban: entenda o que é e como implementar no seu trabalho em 4 passos"
+              width="587"
+              height="196"
+            />
+          </div>
+          <div
+            style="
+              font-size: 17px;
+              font-weight: bold;
+              color: #10b981;
+              margin-bottom: 14px;
+            "
+          >
+            O Quadro Kanban
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(5, 1fr);
+              gap: 8px;
+              background-color: rgb(30, 41, 59);
+              padding: 16px;
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background-color: rgb(51, 65, 85);
+                border-radius: 8px;
+                padding: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #94a3b8;
+                  font-size: 11px;
+                  font-weight: bold;
+                  text-align: center;
+                  margin-bottom: 8px;
+                  text-transform: uppercase;
+                "
+              >
+                Backlog
+              </div>
+              <div
+                style="
+                  background: #475569;
+                  border-radius: 6px;
+                  padding: 8px;
+                  margin-bottom: 6px;
+                  color: #e2e8f0;
+                  font-size: 11px;
+                "
+              >
+                Login social
+              </div>
+              <div
+                style="
+                  background: #475569;
+                  border-radius: 6px;
+                  padding: 8px;
+                  color: #e2e8f0;
+                  font-size: 11px;
+                "
+              >
+                Relatório PDF
+              </div>
+            </div>
+            <div
+              style="
+                background-color: rgb(51, 65, 85);
+                border-radius: 8px;
+                padding: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #38bdf8;
+                  font-size: 11px;
+                  font-weight: bold;
+                  text-align: center;
+                  margin-bottom: 8px;
+                  text-transform: uppercase;
+                "
+              >
+                A Fazer
+              </div>
+              <div
+                style="
+                  background: #1e40af;
+                  border-radius: 6px;
+                  padding: 8px;
+                  color: #e2e8f0;
+                  font-size: 11px;
+                "
+              >
+                Auth JWT
+              </div>
+            </div>
+            <div
+              style="
+                background-color: rgb(51, 65, 85);
+                border-radius: 8px;
+                padding: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #fbbf24;
+                  font-size: 11px;
+                  font-weight: bold;
+                  text-align: center;
+                  margin-bottom: 8px;
+                  text-transform: uppercase;
+                "
+              >
+                Em Prog.
+              </div>
+              <div
+                style="
+                  background: #854d0e;
+                  border-radius: 6px;
+                  padding: 8px;
+                  margin-bottom: 6px;
+                  color: #e2e8f0;
+                  font-size: 11px;
+                "
+              >
+                API REST
+              </div>
+              <div
+                style="
+                  background: #7c2d12;
+                  border-radius: 4px;
+                  padding: 3px 6px;
+                  color: #fca5a5;
+                  font-size: 10px;
+                  text-align: center;
+                "
+              >
+                WIP: 2/2
+              </div>
+            </div>
+            <div
+              style="
+                background-color: rgb(51, 65, 85);
+                border-radius: 8px;
+                padding: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #a78bfa;
+                  font-size: 11px;
+                  font-weight: bold;
+                  text-align: center;
+                  margin-bottom: 8px;
+                  text-transform: uppercase;
+                "
+              >
+                Revisão
+              </div>
+              <div
+                style="
+                  background: #5b21b6;
+                  border-radius: 6px;
+                  padding: 8px;
+                  color: #e2e8f0;
+                  font-size: 11px;
+                "
+              >
+                Home page
+              </div>
+            </div>
+            <div
+              style="
+                background-color: rgb(51, 65, 85);
+                border-radius: 8px;
+                padding: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #4ade80;
+                  font-size: 11px;
+                  font-weight: bold;
+                  text-align: center;
+                  margin-bottom: 8px;
+                  text-transform: uppercase;
+                "
+              >
+                Concluído
+              </div>
+              <div
+                style="
+                  background: #14532d;
+                  border-radius: 6px;
+                  padding: 8px;
+                  margin-bottom: 6px;
+                  color: #e2e8f0;
+                  font-size: 11px;
+                "
+              >
+                Setup DB
+              </div>
+              <div
+                style="
+                  background: #14532d;
+                  border-radius: 6px;
+                  padding: 8px;
+                  color: #e2e8f0;
+                  font-size: 11px;
+                "
+              >
+                CI/CD
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 14px">
+            <div
+              style="
+                font-size: 17px;
+                font-weight: bold;
+                color: #10b981;
+                margin-bottom: 12px;
+              "
+            >
+              4 Princípios Fundamentais
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background-color: rgb(240, 253, 244);
+                  padding: 14px;
+                  border-radius: 10px;
+                  border-left: 4px solid rgb(16, 185, 129);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: #065f46;
+                    margin-bottom: 4px;
+                  "
+                >
+                  1. Visualizar o Fluxo
+                </div>
+                <div style="font-size: 13px; color: #4a5568">
+                  Todo trabalho fica visível no quadro. Facilita identificar o
+                  que está parado ou acumulado.
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(240, 253, 244);
+                  padding: 14px;
+                  border-radius: 10px;
+                  border-left: 4px solid rgb(16, 185, 129);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: #065f46;
+                    margin-bottom: 4px;
+                  "
+                >
+                  2. Limitar o WIP
+                </div>
+                <div style="font-size: 13px; color: #4a5568">
+                  Limite de itens em andamento por coluna. Evita sobrecarga e
+                  força finalizar antes de começar novos.
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(240, 253, 244);
+                  padding: 14px;
+                  border-radius: 10px;
+                  border-left: 4px solid rgb(16, 185, 129);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: #065f46;
+                    margin-bottom: 4px;
+                  "
+                >
+                  3. Gerenciar o Fluxo
+                </div>
+                <div style="font-size: 13px; color: #4a5568">
+                  Monitorar métricas como Lead Time (tempo do pedido à entrega)
+                  e Cycle Time (tempo de execução).
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(240, 253, 244);
+                  padding: 14px;
+                  border-radius: 10px;
+                  border-left: 4px solid rgb(16, 185, 129);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: #065f46;
+                    margin-bottom: 4px;
+                  "
+                >
+                  4. Melhoria Contínua
+                </div>
+                <div style="font-size: 13px; color: #4a5568">
+                  Retrospectivas e análise de gargalos para otimizar
+                  progressivamente o processo.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="font-size: 14px">
+            <div
+              style="
+                font-size: 17px;
+                font-weight: bold;
+                color: #10b981;
+                margin-bottom: 12px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div
+              style="
+                font-size: 17px;
+                font-weight: bold;
+                color: #10b981;
+                margin-bottom: 12px;
+              "
+            >
+              Scrum vs Kanban
+            </div>
+            <div style="overflow-x: auto; font-size: 14px">
+              <table
+                style="width: 100%; border-collapse: collapse; font-size: 13px"
+              >
+                <thead style="font-size: 13px">
+                  <tr
+                    style="
+                      background-color: rgb(16, 185, 129);
+                      color: white;
+                      font-size: 13px;
+                    "
+                  >
+                    <th
+                      style="
+                        padding: 10px;
+                        text-align: left;
+                        border: 1px solid rgb(209, 250, 229);
+                        font-size: 13px;
+                      "
+                    >
+                      Aspecto
+                    </th>
+                    <th
+                      style="
+                        padding: 10px;
+                        text-align: center;
+                        border: 1px solid rgb(209, 250, 229);
+                        font-size: 13px;
+                      "
+                    >
+                      Scrum
+                    </th>
+                    <th
+                      style="
+                        padding: 10px;
+                        text-align: center;
+                        border: 1px solid rgb(209, 250, 229);
+                        font-size: 13px;
+                      "
+                    >
+                      Kanban
+                    </th>
+                  </tr>
+                </thead>
+                <tbody style="font-size: 13px">
+                  <tr
+                    style="
+                      background-color: rgb(240, 253, 244);
+                      font-size: 13px;
+                    "
+                  >
+                    <td
+                      style="
+                        padding: 9px;
+                        border: 1px solid rgb(209, 250, 229);
+                        font-size: 13px;
+                      "
+                    >
+                      Iterações
+                    </td>
+                    <td
+                      style="
+                        padding: 9px;
+                        text-align: center;
+                        border: 1px solid rgb(209, 250, 229);
+                        font-size: 13px;
+                      "
+                    >
+                      Sprints fixas
+                    </td>
+                    <td
+                      style="
+                        padding: 9px;
+                        text-align: center;
+                        border: 1px solid rgb(209, 250, 229);
+                        font-size: 13px;
+                      "
+                    >
+                      Fluxo contínuo
+                    </td>
+                  </tr>
+                  <tr style="font-size: 13px">
+                    <td
+                      style="
+                        padding: 9px;
+                        border: 1px solid rgb(209, 250, 229);
+                        font-size: 13px;
+                      "
+                    >
+                      Papéis
+                    </td>
+                    <td
+                      style="
+                        padding: 9px;
+                        text-align: center;
+                        border: 1px solid rgb(209, 250, 229);
+                        font-size: 13px;
+                      "
+                    >
+                      PO, SM, Dev
+                    </td>
+                    <td
+                      style="
+                        padding: 9px;
+                        text-align: center;
+                        border: 1px solid rgb(209, 250, 229);
+                        font-size: 13px;
+                      "
+                    >
+                      Sem papéis fixos
+                    </td>
+                  </tr>
+                  <tr
+                    style="
+                      background-color: rgb(240, 253, 244);
+                      font-size: 13px;
+                    "
+                  >
+                    <td
+                      style="
+                        padding: 9px;
+                        border: 1px solid rgb(209, 250, 229);
+                        font-size: 13px;
+                      "
+                    >
+                      Entregas
+                    </td>
+                    <td
+                      style="
+                        padding: 9px;
+                        text-align: center;
+                        border: 1px solid rgb(209, 250, 229);
+                        font-size: 13px;
+                      "
+                    >
+                      Por Sprint
+                    </td>
+                    <td
+                      style="
+                        padding: 9px;
+                        text-align: center;
+                        border: 1px solid rgb(209, 250, 229);
+                        font-size: 13px;
+                      "
+                    >
+                      Quando prontas
+                    </td>
+                  </tr>
+                  <tr style="font-size: 13px">
+                    <td
+                      style="
+                        padding: 9px;
+                        border: 1px solid rgb(209, 250, 229);
+                        font-size: 13px;
+                      "
+                    >
+                      Mudanças
+                    </td>
+                    <td
+                      style="
+                        padding: 9px;
+                        text-align: center;
+                        border: 1px solid rgb(209, 250, 229);
+                        font-size: 13px;
+                      "
+                    >
+                      Próxima Sprint
+                    </td>
+                    <td
+                      style="
+                        padding: 9px;
+                        text-align: center;
+                        border: 1px solid rgb(209, 250, 229);
+                        font-size: 13px;
+                      "
+                    >
+                      A qualquer hora
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div
+              style="
+                margin-top: 14px;
+                background-color: rgb(240, 253, 244);
+                padding: 14px;
+                border-radius: 10px;
+                border-left: 4px solid rgb(16, 185, 129);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-weight: bold;
+                  color: #065f46;
+                  margin-bottom: 4px;
+                  font-size: 14px;
+                "
+              >
+                Quando usar Kanban?
+              </div>
+              <div style="font-size: 13px; color: #4a5568">
+                Times de suporte, manutenção, operações de TI, equipes com
+                demanda imprevisível e fluxo contínuo de tarefas sem prazos
+                fixos.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ─────────────────────── LEAN ─────────────────────── -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #f59e0b, #b45309);
+              color: white;
+              width: 60px;
+              height: 60px;
+              border-radius: 14px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 26px;
+              font-weight: bold;
+              flex-shrink: 0;
+            "
+          >
+            L
+          </div>
+          <div style="font-size: 14px">
+            <div style="font-size: 24px; font-weight: bold; color: #f59e0b">
+              Lean Software Development
+            </div>
+            <div style="font-size: 13px; color: #6b7280">
+              Eliminar desperdício e maximizar valor para o cliente
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; line-height: 1.8; margin-bottom: 20px">
+          Originado no Sistema Toyota de Produção e adaptado para software por
+          Mary e Tom Poppendieck, o
+          <strong style="font-size: 15px">Lean</strong> é mais uma filosofia do
+          que um framework. Seu princípio central é
+          <strong style="font-size: 15px"
+            >eliminar tudo que não agrega valor</strong
+          >
+          ao cliente, otimizando o fluxo de ponta a ponta e capacitando pessoas
+          para tomar decisões.
+        </p>
+        <p style="font-size: 15px; line-height: 1.8; margin-bottom: 20px">
+          &nbsp;<img
+            style="
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 15px;
+            "
+            src="https://media.licdn.com/dms/image/v2/D4D12AQG36H-76gOblQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1678221517382?e=2147483647&amp;v=beta&amp;t=Jhc4yhHDkkh-6pEdNeiBvUhTs19xSWheBHh32I5X9KI"
+            alt="LD - LEAN SOFTWARE DEVELOPMENT"
+            width="593"
+            height="445"
+          />
+        </p>
+        <div
+          style="
+            font-size: 17px;
+            font-weight: bold;
+            color: #f59e0b;
+            margin-bottom: 14px;
+          "
+        >
+          Os 7 Princípios do Lean
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 14px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background-color: rgb(254, 252, 232);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(245, 158, 11);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(146, 64, 14);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              1. Eliminar Desperdício
+            </div>
+            <div style="font-size: 13px; line-height: 1.7; color: #4a5568">
+              Remover tudo que não agrega valor: código não utilizado,
+              documentação excessiva, esperas e retrabalho.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(254, 252, 232);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(245, 158, 11);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(146, 64, 14);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              2. Amplificar o Aprendizado
+            </div>
+            <div style="font-size: 13px; line-height: 1.7; color: #4a5568">
+              Encurtar ciclos de feedback, fazer experimentos e aprender com os
+              erros rapidamente.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(254, 252, 232);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(245, 158, 11);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(146, 64, 14);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              3. Decidir Tarde
+            </div>
+            <div style="font-size: 13px; line-height: 1.7; color: #4a5568">
+              Preservar opções, adiar decisões irreversíveis até ter mais
+              informações disponíveis.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(254, 252, 232);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(245, 158, 11);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(146, 64, 14);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              4. Entregar Rápido
+            </div>
+            <div style="font-size: 13px; line-height: 1.7; color: #4a5568">
+              Ciclos curtos de entrega geram feedback mais rápido e permitem
+              atender o cliente antes da concorrência.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(254, 252, 232);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(245, 158, 11);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(146, 64, 14);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              5. Respeitar as Pessoas
+            </div>
+            <div style="font-size: 13px; line-height: 1.7; color: #4a5568">
+              Empoderar o time, dar autonomia e valorizar o conhecimento de quem
+              está mais próximo do trabalho.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(254, 252, 232);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(245, 158, 11);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(146, 64, 14);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              6. Ver o Todo
+            </div>
+            <div style="font-size: 13px; line-height: 1.7; color: #4a5568">
+              Otimizar o sistema como um todo, não partes isoladas. Evitar
+              subotimizações locais que prejudicam o fluxo global.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(254, 252, 232);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(245, 158, 11);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(146, 64, 14);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              7. Construir com Qualidade
+            </div>
+            <div style="font-size: 13px; line-height: 1.7; color: #4a5568">
+              Qualidade embutida no processo desde o início, não como uma fase
+              final de verificação.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background-color: rgb(254, 243, 199);
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid rgb(245, 158, 11);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-weight: bold;
+              color: rgb(146, 64, 14);
+              margin-bottom: 6px;
+              font-size: 14px;
+            "
+          >
+            Lean e os 7 Desperdícios no Software
+          </div>
+          <div style="font-size: 14px; line-height: 1.8; color: #78350f">
+            Trabalho parcialmente feito, funcionalidades extras desnecessárias,
+            reaprendizado, transferências de tarefas, atrasos, defeitos e gestão
+            de tarefas — todos são desperdícios a serem eliminados.
+          </div>
+        </div>
+      </div>
+      <!-- ─────────────────────── XP ─────────────────────── -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #ec4899, #9d174d);
+              color: white;
+              width: 60px;
+              height: 60px;
+              border-radius: 14px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 26px;
+              font-weight: bold;
+              flex-shrink: 0;
+            "
+          >
+            XP
+          </div>
+          <div style="font-size: 14px">
+            <div style="font-size: 24px; font-weight: bold; color: #ec4899">
+              Extreme Programming (XP)
+            </div>
+            <div style="font-size: 13px; color: #6b7280">
+              Excelência técnica e práticas de engenharia para software de alta
+              qualidade
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; line-height: 1.8; margin-bottom: 20px">
+          Criado por Kent Beck em 1996, o
+          <strong style="font-size: 15px">XP (Extreme Programming)</strong> é um
+          framework ágil focado em
+          <strong style="font-size: 15px">excelência técnica</strong>. A ideia
+          central é "levar boas práticas ao extremo" — se testar é bom, teste o
+          tempo todo; se revisar código é bom, que dois programadores trabalhem
+          juntos. O XP é especialmente valorizado por suas práticas de
+          engenharia de software.
+        </p>
+        <p style="font-size: 15px; line-height: 1.8; margin-bottom: 20px">
+          <img
+            style="
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 15px;
+            "
+            src="https://artia.com/wp-content/uploads/2024/09/Imagens_Prancheta-1-02-780x780.png"
+            width="566"
+            height="566"
+          />
+        </p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 14px">
+            <div
+              style="
+                font-size: 17px;
+                font-weight: bold;
+                color: #ec4899;
+                margin-bottom: 12px;
+              "
+            >
+              5 Valores do XP
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background-color: rgb(253, 242, 248);
+                  padding: 14px;
+                  border-radius: 10px;
+                  border-left: 4px solid rgb(236, 72, 153);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: #be185d;
+                    margin-bottom: 3px;
+                  "
+                >
+                  Comunicação
+                </div>
+                <div style="font-size: 13px; color: #4a5568">
+                  Toda informação importante deve ser compartilhada com o time
+                  em tempo real.
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(253, 242, 248);
+                  padding: 14px;
+                  border-radius: 10px;
+                  border-left: 4px solid rgb(236, 72, 153);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: #be185d;
+                    margin-bottom: 3px;
+                  "
+                >
+                  Simplicidade
+                </div>
+                <div style="font-size: 13px; color: #4a5568">
+                  Fazer apenas o necessário hoje. Não antecipar funcionalidades
+                  que podem não ser usadas.
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(253, 242, 248);
+                  padding: 14px;
+                  border-radius: 10px;
+                  border-left: 4px solid rgb(236, 72, 153);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: #be185d;
+                    margin-bottom: 3px;
+                  "
+                >
+                  Feedback
+                </div>
+                <div style="font-size: 13px; color: #4a5568">
+                  Ciclos curtos de feedback com cliente e testes automatizados
+                  frequentes.
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(253, 242, 248);
+                  padding: 14px;
+                  border-radius: 10px;
+                  border-left: 4px solid rgb(236, 72, 153);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: #be185d;
+                    margin-bottom: 3px;
+                  "
+                >
+                  Coragem
+                </div>
+                <div style="font-size: 13px; color: #4a5568">
+                  Refatorar código sem medo, dizer não quando necessário, expor
+                  problemas cedo.
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(253, 242, 248);
+                  padding: 14px;
+                  border-radius: 10px;
+                  border-left: 4px solid rgb(236, 72, 153);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: #be185d;
+                    margin-bottom: 3px;
+                  "
+                >
+                  Respeito
+                </div>
+                <div style="font-size: 13px; color: #4a5568">
+                  Respeitar o trabalho do time, o conhecimento de cada um e as
+                  necessidades do cliente.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="font-size: 14px">
+            <div
+              style="
+                font-size: 17px;
+                font-weight: bold;
+                color: #ec4899;
+                margin-bottom: 12px;
+              "
+            >
+              Práticas Técnicas
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background-color: rgb(253, 242, 248);
+                  padding: 14px;
+                  border-radius: 10px;
+                  text-align: center;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 13px;
+                    color: #be185d;
+                    margin-bottom: 4px;
+                  "
+                >
+                  TDD
+                </div>
+                <div style="font-size: 12px; color: #4a5568">
+                  Test Driven Development — escrever teste antes do código
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(253, 242, 248);
+                  padding: 14px;
+                  border-radius: 10px;
+                  text-align: center;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 13px;
+                    color: #be185d;
+                    margin-bottom: 4px;
+                  "
+                >
+                  Pair Programming
+                </div>
+                <div style="font-size: 12px; color: #4a5568">
+                  Dois devs no mesmo código simultaneamente
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(253, 242, 248);
+                  padding: 14px;
+                  border-radius: 10px;
+                  text-align: center;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 13px;
+                    color: #be185d;
+                    margin-bottom: 4px;
+                  "
+                >
+                  Refactoring
+                </div>
+                <div style="font-size: 12px; color: #4a5568">
+                  Melhora contínua do código sem alterar comportamento
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(253, 242, 248);
+                  padding: 14px;
+                  border-radius: 10px;
+                  text-align: center;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 13px;
+                    color: #be185d;
+                    margin-bottom: 4px;
+                  "
+                >
+                  Integração Contínua
+                </div>
+                <div style="font-size: 12px; color: #4a5568">
+                  Integrar e testar código várias vezes ao dia
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(253, 242, 248);
+                  padding: 14px;
+                  border-radius: 10px;
+                  text-align: center;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 13px;
+                    color: #be185d;
+                    margin-bottom: 4px;
+                  "
+                >
+                  Releases Curtas
+                </div>
+                <div style="font-size: 12px; color: #4a5568">
+                  Entregas frequentes em ciclos curtos
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(253, 242, 248);
+                  padding: 14px;
+                  border-radius: 10px;
+                  text-align: center;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    font-size: 13px;
+                    color: #be185d;
+                    margin-bottom: 4px;
+                  "
+                >
+                  Propriedade Coletiva
+                </div>
+                <div style="font-size: 12px; color: #4a5568">
+                  Qualquer dev pode alterar qualquer parte do código
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background-color: rgb(253, 242, 248);
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid rgb(236, 72, 153);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-weight: bold;
+              color: rgb(190, 24, 93);
+              margin-bottom: 6px;
+              font-size: 14px;
+            "
+          >
+            Quando usar XP?
+          </div>
+          <div style="font-size: 14px; color: #4a5568; line-height: 1.7">
+            Projetos com requisitos que mudam frequentemente, times pequenos
+            (2–12 pessoas), alta necessidade de qualidade técnica e projetos
+            onde o cliente pode participar ativamente do desenvolvimento.
+          </div>
+        </div>
+      </div>
+      <!-- ─────────────────────── CRYSTAL ─────────────────────── -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+              color: white;
+              width: 60px;
+              height: 60px;
+              border-radius: 14px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 26px;
+              font-weight: bold;
+              flex-shrink: 0;
+            "
+          >
+            C
+          </div>
+          <div style="font-size: 14px">
+            <div style="font-size: 24px; font-weight: bold; color: #8b5cf6">
+              Crystal
+            </div>
+            <div style="font-size: 13px; color: #6b7280">
+              Família de metodologias que se adaptam ao tamanho e criticidade do
+              projeto
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; line-height: 1.8; margin-bottom: 20px">
+          Criado por Alistair Cockburn nos anos 1990, o
+          <strong style="font-size: 15px">Crystal</strong> é uma família de
+          metodologias ágeis que reconhece que
+          <strong style="font-size: 15px"
+            >não existe um processo único ideal</strong
+          >
+          para todos os projetos. O processo deve ser ajustado de acordo com o
+          <strong style="font-size: 15px">tamanho do time</strong> e a
+          <strong style="font-size: 15px">criticidade do sistema</strong> (o
+          quanto uma falha pode causar dano).
+        </p>
+        <div
+          style="
+            font-size: 17px;
+            font-weight: bold;
+            color: #8b5cf6;
+            margin-bottom: 14px;
+          "
+        >
+          <img
+            style="
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 17px;
+            "
+            src="https://blog.runrun.it/wp-content/uploads/2024/11/infografico_3.png"
+            width="542"
+            height="348"
+          />
+        </div>
+        <div
+          style="
+            font-size: 17px;
+            font-weight: bold;
+            color: #8b5cf6;
+            margin-bottom: 14px;
+          "
+        >
+          A Família Crystal — Por Cor e Tamanho
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(236, 253, 245),
+                rgb(209, 250, 229)
+              );
+              padding: 18px;
+              border-radius: 12px;
+              border: 2px solid rgb(16, 185, 129);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: #065f46;
+                font-size: 18px;
+                margin-bottom: 6px;
+              "
+            >
+              Crystal Clear
+            </div>
+            <div style="font-size: 13px; color: #4a5568; margin-bottom: 8px">
+              Times de 1 a 6 pessoas
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                background: #10b981;
+                color: white;
+                padding: 4px 8px;
+                border-radius: 20px;
+              "
+            >
+              Baixa criticidade
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 251, 235),
+                rgb(254, 243, 199)
+              );
+              padding: 18px;
+              border-radius: 12px;
+              border: 2px solid rgb(245, 158, 11);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: #92400e;
+                font-size: 18px;
+                margin-bottom: 6px;
+              "
+            >
+              Crystal Yellow
+            </div>
+            <div style="font-size: 13px; color: #4a5568; margin-bottom: 8px">
+              Times de 7 a 20 pessoas
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                background: #f59e0b;
+                color: white;
+                padding: 4px 8px;
+                border-radius: 20px;
+              "
+            >
+              Criticidade moderada
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 247, 237),
+                rgb(254, 215, 170)
+              );
+              padding: 18px;
+              border-radius: 12px;
+              border: 2px solid rgb(249, 115, 22);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: #9a3412;
+                font-size: 18px;
+                margin-bottom: 6px;
+              "
+            >
+              Crystal Orange
+            </div>
+            <div style="font-size: 13px; color: #4a5568; margin-bottom: 8px">
+              Times de 21 a 40 pessoas
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                background: #f97316;
+                color: white;
+                padding: 4px 8px;
+                border-radius: 20px;
+              "
+            >
+              Criticidade alta
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(254, 242, 242),
+                rgb(254, 202, 202)
+              );
+              padding: 18px;
+              border-radius: 12px;
+              border: 2px solid rgb(239, 68, 68);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: #991b1b;
+                font-size: 18px;
+                margin-bottom: 6px;
+              "
+            >
+              Crystal Red
+            </div>
+            <div style="font-size: 13px; color: #4a5568; margin-bottom: 8px">
+              Times de 41 a 80 pessoas
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                background: #ef4444;
+                color: white;
+                padding: 4px 8px;
+                border-radius: 20px;
+              "
+            >
+              Muito alta
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 17px;
+            font-weight: bold;
+            color: #8b5cf6;
+            margin-bottom: 12px;
+          "
+        >
+          Propriedades Fundamentais do Crystal
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background-color: rgb(245, 243, 255);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(139, 92, 246);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(109, 40, 217);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              Entrega Frequente
+            </div>
+            <div style="font-size: 13px; color: #4a5568">
+              Software funcional entregue a usuários reais com frequência — de
+              poucas semanas a poucos meses.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(245, 243, 255);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(139, 92, 246);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(109, 40, 217);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              Comunicação Osmótica
+            </div>
+            <div style="font-size: 13px; color: #4a5568">
+              O time fica próximo fisicamente (ou virtualmente) para que
+              informações fluam naturalmente, sem reuniões formais excessivas.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(245, 243, 255);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(139, 92, 246);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(109, 40, 217);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              Segurança Pessoal
+            </div>
+            <div style="font-size: 13px; color: #4a5568">
+              Membros podem falar sobre problemas sem medo de retaliação.
+              Ambiente psicologicamente seguro.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(245, 243, 255);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(139, 92, 246);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(109, 40, 217);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              Foco
+            </div>
+            <div style="font-size: 13px; color: #4a5568">
+              Cada membro do time sabe o que está fazendo e tem tempo
+              ininterrupto para trabalhar nisso.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background-color: rgb(245, 243, 255);
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid rgb(139, 92, 246);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-weight: bold;
+              color: rgb(109, 40, 217);
+              margin-bottom: 6px;
+              font-size: 14px;
+            "
+          >
+            Diferencial do Crystal
+          </div>
+          <div style="font-size: 14px; color: #4a5568; line-height: 1.7">
+            O Crystal não prescreve práticas técnicas obrigatórias como o XP.
+            Ele se preocupa com pessoas e interações, adaptando o processo ao
+            contexto. É especialmente eficaz em times pequenos que precisam de
+            agilidade sem burocracia excessiva.
+          </div>
+        </div>
+      </div>
+      <!-- ─────────────────────── SAFe ─────────────────────── -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #06b6d4, #0e7490);
+              color: white;
+              width: 60px;
+              height: 60px;
+              border-radius: 14px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 22px;
+              font-weight: bold;
+              flex-shrink: 0;
+            "
+          >
+            SAFe
+          </div>
+          <div style="font-size: 14px">
+            <div style="font-size: 24px; font-weight: bold; color: #06b6d4">
+              SAFe — Scaled Agile Framework
+            </div>
+            <div style="font-size: 13px; color: #6b7280">
+              Framework ágil escalado para grandes organizações com múltiplos
+              times
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; line-height: 1.8; margin-bottom: 20px">
+          Criado por Dean Leffingwell, o
+          <strong style="font-size: 15px">SAFe</strong> é o framework mais
+          adotado para escalar agilidade em grandes empresas. Ele estende os
+          princípios ágeis para coordenar
+          <strong style="font-size: 15px">dezenas ou centenas de times</strong>
+          trabalhando em um produto ou portfólio. Combina Scrum, Kanban, XP e
+          Lean em uma estrutura em camadas.
+        </p>
+        <div
+          style="
+            font-size: 17px;
+            font-weight: bold;
+            color: #06b6d4;
+            margin-bottom: 14px;
+          "
+        >
+          As 4 Camadas do SAFe
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(14, 116, 144),
+                rgb(21, 94, 117)
+              );
+              color: white;
+              padding: 18px;
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: bold; font-size: 16px; margin-bottom: 6px">
+              Nível de Portfólio (Portfolio Level)
+            </div>
+            <div style="font-size: 14px; opacity: 0.95; line-height: 1.7">
+              Define a estratégia, o orçamento e os investimentos em grandes
+              iniciativas (Épicos). Conecta estratégia de negócio à execução
+              ágil.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(8, 145, 178),
+                rgb(14, 116, 144)
+              );
+              color: white;
+              padding: 18px;
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: bold; font-size: 16px; margin-bottom: 6px">
+              Nível de Solução Grande (Large Solution Level)
+            </div>
+            <div style="font-size: 14px; opacity: 0.95; line-height: 1.7">
+              Coordena múltiplos Trens Ágeis (ARTs) em soluções complexas que
+              exigem mais de um ART para ser desenvolvida. Utilizado em defesa,
+              aviação, sistemas críticos.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(14, 165, 233),
+                rgb(8, 145, 178)
+              );
+              color: white;
+              padding: 18px;
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: bold; font-size: 16px; margin-bottom: 6px">
+              Nível de Programa (Program Level — ART)
+            </div>
+            <div style="font-size: 14px; opacity: 0.95; line-height: 1.7">
+              O Agile Release Train (ART) reúne 5 a 12 times Scrum sincronizados
+              em Incrementos de Programa (PI) de 8 a 12 semanas, com
+              planejamento conjunto (PI Planning).
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(56, 189, 248),
+                rgb(14, 165, 233)
+              );
+              color: rgb(12, 74, 110);
+              padding: 18px;
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: bold; font-size: 16px; margin-bottom: 6px">
+              Nível de Time (Team Level)
+            </div>
+            <div style="font-size: 14px; line-height: 1.7">
+              Times individuais que executam em Sprints usando Scrum ou Kanban.
+              A base da execução ágil no SAFe.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background-color: rgb(236, 254, 255);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(6, 182, 212);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(14, 116, 144);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              PI Planning
+            </div>
+            <div style="font-size: 13px; color: #4a5568; line-height: 1.7">
+              Program Increment Planning — todos os times planejam juntos por 2
+              dias a cada 8–12 semanas. Alinha objetivos, dependências e
+              compromissos.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(236, 254, 255);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(6, 182, 212);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(14, 116, 144);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              Agile Release Train (ART)
+            </div>
+            <div style="font-size: 13px; color: #4a5568; line-height: 1.7">
+              O principal mecanismo de entrega do SAFe. Um grupo de times Scrum
+              que planejam, comprometem e executam juntos em cadência.
+            </div>
+          </div>
+          <div
+            style="
+              background-color: rgb(236, 254, 255);
+              padding: 16px;
+              border-radius: 12px;
+              border-left: 4px solid rgb(6, 182, 212);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: rgb(14, 116, 144);
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              Quando usar SAFe?
+            </div>
+            <div style="font-size: 13px; color: #4a5568; line-height: 1.7">
+              Grandes empresas com 100+ pessoas, múltiplos produtos
+              interconectados, necessidade de coordenação entre departamentos e
+              conformidade regulatória.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background-color: rgb(254, 243, 199);
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid rgb(245, 158, 11);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-weight: bold;
+              color: rgb(146, 64, 14);
+              margin-bottom: 6px;
+              font-size: 14px;
+            "
+          >
+            Crítica ao SAFe
+          </div>
+          <div style="font-size: 14px; color: #78350f; line-height: 1.7">
+            O SAFe é criticado por alguns agilistas por ser complexo e
+            burocrático. Mas em grandes organizações com muitas dependências,
+            ele oferece estrutura e visibilidade que frameworks simples não
+            conseguem fornecer.
+          </div>
+        </div>
+      </div>
+      <!-- ─────────────────────── LeSS ─────────────────────── -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #ef4444, #b91c1c);
+              color: white;
+              width: 60px;
+              height: 60px;
+              border-radius: 14px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 22px;
+              font-weight: bold;
+              flex-shrink: 0;
+            "
+          >
+            LeSS
+          </div>
+          <div style="font-size: 14px">
+            <div style="font-size: 24px; font-weight: bold; color: #ef4444">
+              LeSS — Large-Scale Scrum
+            </div>
+            <div style="font-size: 13px; color: #6b7280">
+              Scrum escalado com minimalismo e foco em simplicidade
+              organizacional
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; line-height: 1.8; margin-bottom: 20px">
+          Criado por Craig Larman e Bas Vodde, o
+          <strong style="font-size: 15px">LeSS</strong> é a resposta minimalista
+          ao problema de escalar Scrum. Enquanto o SAFe adiciona camadas e
+          papéis, o LeSS tenta fazer o contrário:
+          <strong style="font-size: 15px"
+            >manter o Scrum simples e escalar removendo burocracia</strong
+          >. A pergunta central do LeSS é: "Como fazer Scrum com múltiplos times
+          sem adicionar complexidade desnecessária?"
+        </p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 14px">
+            <div
+              style="
+                font-size: 17px;
+                font-weight: bold;
+                color: #ef4444;
+                margin-bottom: 12px;
+              "
+            >
+              LeSS vs LeSS Huge
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background-color: rgb(254, 242, 242);
+                  padding: 16px;
+                  border-radius: 12px;
+                  border-left: 4px solid rgb(239, 68, 68);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    color: rgb(220, 38, 38);
+                    margin-bottom: 6px;
+                    font-size: 14px;
+                  "
+                >
+                  LeSS (básico)
+                </div>
+                <div style="font-size: 13px; color: #4a5568; line-height: 1.7">
+                  Para 2 a 8 times Scrum. Um único Product Owner, um único
+                  Product Backlog compartilhado. Todos os times trabalham no
+                  mesmo produto simultaneamente.
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(254, 242, 242);
+                  padding: 16px;
+                  border-radius: 12px;
+                  border-left: 4px solid rgb(239, 68, 68);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    font-weight: bold;
+                    color: rgb(220, 38, 38);
+                    margin-bottom: 6px;
+                    font-size: 14px;
+                  "
+                >
+                  LeSS Huge
+                </div>
+                <div style="font-size: 13px; color: #4a5568; line-height: 1.7">
+                  Para 8 ou mais times. Adiciona a figura do Área de Requisitos
+                  (Requirement Area) e um Area Product Owner para gerenciar
+                  grandes porções do backlog.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="font-size: 14px">
+            <div
+              style="
+                font-size: 17px;
+                font-weight: bold;
+                color: #ef4444;
+                margin-bottom: 12px;
+              "
+            >
+              Princípios do LeSS
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background-color: rgb(254, 242, 242);
+                  padding: 12px;
+                  border-radius: 10px;
+                  font-size: 14px;
+                "
+              >
+                <div style="font-size: 14px; color: #4a5568">
+                  <strong style="color: rgb(220, 38, 38); font-size: 14px"
+                    >Scrum verdadeiro:</strong
+                  >
+                  Não Scrum modificado. O LeSS pressupõe que o Scrum básico seja
+                  bem compreendido antes de escalar.
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(254, 242, 242);
+                  padding: 12px;
+                  border-radius: 10px;
+                  font-size: 14px;
+                "
+              >
+                <div style="font-size: 14px; color: #4a5568">
+                  <strong style="color: rgb(220, 38, 38); font-size: 14px"
+                    >Pensamento empírico:</strong
+                  >
+                  Inspecionar e adaptar continuamente com base em dados reais.
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(254, 242, 242);
+                  padding: 12px;
+                  border-radius: 10px;
+                  font-size: 14px;
+                "
+              >
+                <div style="font-size: 14px; color: #4a5568">
+                  <strong style="color: rgb(220, 38, 38); font-size: 14px"
+                    >Transparência total:</strong
+                  >
+                  Tudo visível — backlog, código, impedimentos, progresso.
+                </div>
+              </div>
+              <div
+                style="
+                  background-color: rgb(254, 242, 242);
+                  padding: 12px;
+                  border-radius: 10px;
+                  font-size: 14px;
+                "
+              >
+                <div style="font-size: 14px; color: #4a5568">
+                  <strong style="color: rgb(220, 38, 38); font-size: 14px"
+                    >Mais com menos:</strong
+                  >
+                  Menos papéis, menos artefatos, menos processos. Mas mais
+                  responsabilidade, mais colaboração, mais aprendizado.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background-color: rgb(254, 242, 242);
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid rgb(239, 68, 68);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-weight: bold;
+              color: rgb(220, 38, 38);
+              margin-bottom: 6px;
+              font-size: 14px;
+            "
+          >
+            SAFe vs LeSS — Quando escolher cada um?
+          </div>
+          <div style="font-size: 14px; color: #4a5568; line-height: 1.8">
+            <strong style="font-size: 14px">SAFe:</strong> Grandes corporações,
+            alta necessidade de governança, múltiplos produtos, conformidade
+            regulatória, muitas dependências entre times.<br
+              style="font-size: 14px"
+            /><strong style="font-size: 14px">LeSS:</strong> Organizações que já
+            dominam Scrum e querem escalar sem burocracia, produto único com
+            múltiplos times, cultura de simplicidade e autonomia.
+          </div>
+        </div>
+      </div>
+      <!-- TABELA COMPARATIVA FINAL -->
+      <div
+        style="
+          background-color: rgb(255, 255, 255);
+          padding: 28px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.14) 0px 10px 28px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e3a5f;
+            margin-bottom: 20px;
+            text-align: center;
+          "
+        >
+          Tabela Comparativa — Escolhendo o Framework Certo
+        </div>
+        <div style="overflow-x: auto; font-size: 14px">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 13px"
+          >
+            <thead style="font-size: 13px">
+              <tr
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgb(30, 58, 95),
+                    rgb(11, 94, 215)
+                  );
+                  color: white;
+                  font-size: 13px;
+                "
+              >
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: left;
+                    border: 1px solid rgb(229, 231, 235);
+                    font-size: 13px;
+                  "
+                >
+                  Framework
+                </th>
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: left;
+                    border: 1px solid rgb(229, 231, 235);
+                    font-size: 13px;
+                  "
+                >
+                  Tamanho do Time
+                </th>
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: left;
+                    border: 1px solid rgb(229, 231, 235);
+                    font-size: 13px;
+                  "
+                >
+                  Foco Principal
+                </th>
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: left;
+                    border: 1px solid rgb(229, 231, 235);
+                    font-size: 13px;
+                  "
+                >
+                  Iterações
+                </th>
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: left;
+                    border: 1px solid rgb(229, 231, 235);
+                    font-size: 13px;
+                  "
+                >
+                  Complexidade
+                </th>
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: left;
+                    border: 1px solid rgb(229, 231, 235);
+                    font-size: 13px;
+                  "
+                >
+                  Indicado para
+                </th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 13px">
+              <tr style="background-color: rgb(239, 246, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    font-weight: bold;
+                    color: rgb(11, 94, 215);
+                    font-size: 13px;
+                  "
+                >
+                  Scrum
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  3 – 9
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Entrega iterativa
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Sprints fixas
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Baixa
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Produtos digitais, startups
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    font-weight: bold;
+                    color: rgb(16, 185, 129);
+                    font-size: 13px;
+                  "
+                >
+                  Kanban
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Qualquer
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Fluxo contínuo
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Fluxo contínuo
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Muito baixa
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Suporte, manutenção, ops
+                </td>
+              </tr>
+              <tr style="background-color: rgb(254, 252, 232); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    font-weight: bold;
+                    color: rgb(245, 158, 11);
+                    font-size: 13px;
+                  "
+                >
+                  Lean
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Qualquer
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Eliminação de desperdício
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Ciclos curtos
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Baixa (filosofia)
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Qualquer contexto produtivo
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    font-weight: bold;
+                    color: rgb(236, 72, 153);
+                    font-size: 13px;
+                  "
+                >
+                  XP
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  2 – 12
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Excelência técnica
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  1 – 2 semanas
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Média
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Projetos técnicos complexos
+                </td>
+              </tr>
+              <tr style="background-color: rgb(245, 243, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    font-weight: bold;
+                    color: rgb(139, 92, 246);
+                    font-size: 13px;
+                  "
+                >
+                  Crystal
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  1 – 80
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Adaptação ao contexto
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Variável
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Variável
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Times pequenos e médios
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    font-weight: bold;
+                    color: rgb(6, 182, 212);
+                    font-size: 13px;
+                  "
+                >
+                  SAFe
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  100+
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Escala corporativa
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  PI (8–12 sem)
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Muito alta
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Grandes corporações
+                </td>
+              </tr>
+              <tr style="background-color: rgb(254, 242, 242); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    font-weight: bold;
+                    color: rgb(239, 68, 68);
+                    font-size: 13px;
+                  "
+                >
+                  LeSS
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  50 – 500+
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Scrum simples escalado
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Sprints Scrum
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Média
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    border: 1px solid rgb(229, 231, 235);
+                    color: rgb(74, 85, 104);
+                    font-size: 13px;
+                  "
+                >
+                  Produto único com múlt. times
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- CONCLUSÃO -->
+      <div
+        style="
+          background-color: rgb(231, 241, 255);
+          padding: 26px;
+          border-radius: 16px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 22px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e3a5f;
+            margin-bottom: 14px;
+            text-align: center;
+          "
+        >
+          Conclusão: Não Existe o Melhor Framework
+        </div>
+        <p
+          style="
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #334155;
+          "
+        >
+          A escolha da metodologia deve ser baseada no
+          <strong style="font-size: 15px">contexto do projeto</strong>: tamanho
+          do time, natureza do produto, volatilidade dos requisitos e cultura
+          organizacional.
+        </p>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: white;
+              padding: 16px;
+              border-radius: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: #0b5ed7;
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              Time pequeno, produto novo?
+            </div>
+            <div style="font-size: 13px; color: #4a5568">
+              Scrum ou XP são a escolha natural. Rápidos de implementar e com
+              foco em entrega de valor.
+            </div>
+          </div>
+          <div
+            style="
+              background: white;
+              padding: 16px;
+              border-radius: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: #10b981;
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              Demanda imprevisível?
+            </div>
+            <div style="font-size: 13px; color: #4a5568">
+              Kanban é ideal para suporte, manutenção e operações com volume
+              variável.
+            </div>
+          </div>
+          <div
+            style="
+              background: white;
+              padding: 16px;
+              border-radius: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: #06b6d4;
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              Grande empresa?
+            </div>
+            <div style="font-size: 13px; color: #4a5568">
+              SAFe para máxima coordenação. LeSS para manter simplicidade e
+              autonomia com escala.
+            </div>
+          </div>
+          <div
+            style="
+              background: white;
+              padding: 16px;
+              border-radius: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-weight: bold;
+                color: #f59e0b;
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              Processo ineficiente?
+            </div>
+            <div style="font-size: 13px; color: #4a5568">
+              Lean como filosofia base para identificar e eliminar desperdícios
+              em qualquer framework.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            text-align: center;
+            background: white;
+            padding: 16px;
+            border-radius: 10px;
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 15px; font-style: italic; color: #1e3a5f">
+            "Scrum é fácil de entender, mas difícil de dominar."
+          </div>
+          <div style="font-size: 13px; color: #6b7280; margin-top: 6px">
+            — Ken Schwaber, co-criador do Scrum
+          </div>
+        </div>
+        <div
+          style="
+            margin-top: 16px;
+            text-align: center;
+            font-size: 14px;
+            color: #334155;
+          "
+        >
+          <strong style="font-size: 14px">Fontes:</strong> The Scrum Guide
+          (2020) — Ken Schwaber e Jeff Sutherland &nbsp;|&nbsp; Lean Software
+          Development — Mary e Tom Poppendieck &nbsp;|&nbsp; Extreme Programming
+          Explained — Kent Beck &nbsp;|&nbsp; Crystal Clear — Alistair Cockburn
+          &nbsp;|&nbsp; SAFe 6.0 — Scaled Agile Inc. &nbsp;|&nbsp; LeSS — Craig
+          Larman e Bas Vodde
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

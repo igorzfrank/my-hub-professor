@@ -1,0 +1,2981 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conexão com API - Pokédex com React</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 32px 20px;
+        box-sizing: border-box;
+        font-size: 14px;
+      "
+    >
+      <!-- CABEÇALHO -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(198, 40, 40) 55%,
+            rgb(245, 127, 23) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            &nbsp;
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 26px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Conexão com API<br style="font-size: 26px" /><span
+              style="color: rgb(255, 204, 2); font-size: 26px"
+              >Pokédex</span
+            >
+            <span style="color: rgba(255, 255, 255, 0.6); font-size: 26px"
+              >com React</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            fetch · useEffect · useState · Loading · Erro · Componentes
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            GIT DA APLICACAO: https://github.com/iKeliven/pokedex-v1
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            https://meet.google.com/abg-emaq-crg
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >useState</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >useEffect</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >fetch()</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >PokéAPI</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- OBJETIVOS -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 24px 28px;
+          margin-bottom: 22px;
+          box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <span style="font-size: 20px">🎯</span
+          ><span style="color: #1a237e; font-size: 16px; font-weight: 800"
+            >Objetivos da Aula</span
+          >
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 10px 13px;
+              color: #283593;
+              font-size: 12px;
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              gap: 7px;
+            "
+          >
+            ✔Entender o que é uma API
+          </div>
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 10px 13px;
+              color: #283593;
+              font-size: 12px;
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              gap: 7px;
+            "
+          >
+            ✔Fazer requisições HTTP no React
+          </div>
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 10px 13px;
+              color: #283593;
+              font-size: 12px;
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              gap: 7px;
+            "
+          >
+            ✔Usar useEffect para buscar dados
+          </div>
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 10px 13px;
+              color: #283593;
+              font-size: 12px;
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              gap: 7px;
+            "
+          >
+            ✔Armazenar dados com useState
+          </div>
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 10px 13px;
+              color: #283593;
+              font-size: 12px;
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              gap: 7px;
+            "
+          >
+            ✔Renderizar dados dinâmicos
+          </div>
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 10px 13px;
+              color: #283593;
+              font-size: 12px;
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              gap: 7px;
+            "
+          >
+            ✔Tratar loading e erros
+          </div>
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 10px 13px;
+              color: #283593;
+              font-size: 12px;
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              gap: 7px;
+            "
+          >
+            <strong
+              id="docs-internal-guid-a29ca864-7fff-3ae2-ae85-8d7739948204"
+              style="font-size: 12px"
+              ><img
+                src="https://ava.sesisenai.org.br/pluginfile.php/1938578/mod_page/content/3/sketch.png"
+                width="435px;"
+                height="464px;"
+                style="font-size: 12px"
+            /></strong>
+          </div>
+        </div>
+      </div>
+      <!-- SEÇÃO 1 — O QUE É API -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🌐 O Que é uma API?</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 16px;
+              margin-bottom: 20px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 14px">
+              <div
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgb(232, 234, 246),
+                    rgb(237, 231, 246)
+                  );
+                  border-radius: 14px;
+                  padding: 18px;
+                  border-left: 5px solid rgb(92, 107, 192);
+                  margin-bottom: 14px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    color: #1a237e;
+                    font-size: 14px;
+                    font-weight: 800;
+                    margin-bottom: 8px;
+                  "
+                >
+                  📌 Conceito
+                </div>
+                <div
+                  style="
+                    color: #283593;
+                    font-size: 16px;
+                    font-weight: 900;
+                    margin-bottom: 6px;
+                  "
+                >
+                  API = Application Programming Interface
+                </div>
+                <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+                  É uma forma de um sistema
+                  <strong style="font-size: 13px">conversar com outro</strong> —
+                  trocar dados de forma padronizada pela internet.
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 6px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    background: #e3f2fd;
+                    border-radius: 8px;
+                    padding: 10px 13px;
+                    color: #0d47a1;
+                    font-size: 12px;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                  "
+                >
+                  <span style="font-size: 16px">📸</span>Instagram busca posts
+                  da API
+                </div>
+                <div
+                  style="
+                    background: #e3f2fd;
+                    border-radius: 8px;
+                    padding: 10px 13px;
+                    color: #0d47a1;
+                    font-size: 12px;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                  "
+                >
+                  <span style="font-size: 16px">🛵</span>iFood busca
+                  restaurantes da API
+                </div>
+                <div
+                  style="
+                    background: #e3f2fd;
+                    border-radius: 8px;
+                    padding: 10px 13px;
+                    color: #0d47a1;
+                    font-size: 12px;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                  "
+                >
+                  <span style="font-size: 16px">🎵</span>Spotify busca músicas
+                  da API
+                </div>
+              </div>
+            </div>
+            <!-- Analogia Garçom -->
+            <div
+              style="
+                background: rgb(13, 27, 75);
+                border-radius: 14px;
+                padding: 22px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                box-shadow: rgba(13, 27, 75, 0.3) 0px 4px 16px;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 48px; margin-bottom: 12px">🍽️</div>
+              <div
+                style="
+                  color: #90caf9;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 16px;
+                "
+              >
+                Analogia: API = Garçom
+              </div>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+                  width: 100%;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    background: rgba(255, 255, 255, 0.08);
+                    border-radius: 8px;
+                    padding: 10px 14px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 14px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #1565c0;
+                      color: white;
+                      border-radius: 50%;
+                      width: 22px;
+                      height: 22px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: 11px;
+                      font-weight: 800;
+                      flex-shrink: 0;
+                    "
+                    >1</span
+                  ><span
+                    style="color: #e3f2fd; font-size: 12px; font-weight: 600"
+                    >Você
+                    <span style="color: rgb(100, 181, 246); font-size: 12px"
+                      >pede</span
+                    >
+                    (faz a requisição)</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: rgba(255, 255, 255, 0.08);
+                    border-radius: 8px;
+                    padding: 10px 14px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 14px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #00695c;
+                      color: white;
+                      border-radius: 50%;
+                      width: 22px;
+                      height: 22px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: 11px;
+                      font-weight: 800;
+                      flex-shrink: 0;
+                    "
+                    >2</span
+                  ><span
+                    style="color: #e3f2fd; font-size: 12px; font-weight: 600"
+                    >Garçom leva ao cozinheiro (servidor)</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: rgba(255, 255, 255, 0.08);
+                    border-radius: 8px;
+                    padding: 10px 14px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 14px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #c62828;
+                      color: white;
+                      border-radius: 50%;
+                      width: 22px;
+                      height: 22px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: 11px;
+                      font-weight: 800;
+                      flex-shrink: 0;
+                    "
+                    >3</span
+                  ><span
+                    style="color: #e3f2fd; font-size: 12px; font-weight: 600"
+                    >Ele
+                    <span style="color: rgb(165, 214, 167); font-size: 12px"
+                      >traz o dado</span
+                    >
+                    (resposta JSON)</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SEÇÃO 2 — POKEAPI -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(198, 40, 40, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(198, 40, 40),
+              rgb(229, 57, 53)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧩 A PokéAPI — o que vamos usar</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: rgb(13, 27, 75);
+              border-radius: 12px;
+              padding: 16px 20px;
+              margin-bottom: 16px;
+              box-shadow: rgba(13, 27, 75, 0.3) 0px 4px 16px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #90caf9;
+                font-size: 11px;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                margin-bottom: 8px;
+              "
+            >
+              🔗 API pública gratuita
+            </div>
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #80cbc4;
+                margin-bottom: 12px;
+              "
+            >
+              https://pokeapi.co/
+            </div>
+            <div
+              style="
+                color: #90a4ae;
+                font-size: 11px;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              Teste no navegador:
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.06);
+                border-radius: 8px;
+                padding: 10px 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #a5d6a7;
+              "
+            >
+              https://pokeapi.co/api/v2/pokemon/<span
+                style="color: rgb(255, 204, 2); font-size: 12px"
+                >pikachu</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 14px">
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                📦 Resposta JSON que você receberá:
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 10px;
+                  padding: 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 2;
+                  box-shadow: 0 4px 12px rgba(13, 27, 75, 0.3);
+                "
+              >
+                <span style="color: rgb(144, 202, 249); font-size: 12px">{</span
+                ><br style="font-size: 12px" />&nbsp;&nbsp;<span
+                  style="color: rgb(206, 147, 216); font-size: 12px"
+                  >"name"</span
+                ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                  >:</span
+                >
+                <span style="color: rgb(165, 214, 167); font-size: 12px"
+                  >"pikachu"</span
+                ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                  >,</span
+                ><br style="font-size: 12px" />&nbsp;&nbsp;<span
+                  style="color: rgb(206, 147, 216); font-size: 12px"
+                  >"height"</span
+                ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                  >:</span
+                >
+                <span style="color: rgb(255, 204, 2); font-size: 12px">4</span
+                ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                  >,</span
+                ><br style="font-size: 12px" />&nbsp;&nbsp;<span
+                  style="color: rgb(206, 147, 216); font-size: 12px"
+                  >"weight"</span
+                ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                  >:</span
+                >
+                <span style="color: rgb(255, 204, 2); font-size: 12px">60</span
+                ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                  >,</span
+                ><br style="font-size: 12px" />&nbsp;&nbsp;<span
+                  style="color: rgb(206, 147, 216); font-size: 12px"
+                  >"sprites"</span
+                ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                  >: {</span
+                >
+                <span style="color: rgb(128, 222, 234); font-size: 12px"
+                  >...</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 12px">}</span
+                ><br style="font-size: 12px" /><span
+                  style="color: rgb(144, 202, 249); font-size: 12px"
+                  >}</span
+                >
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                justify-content: center;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: rgb(252, 228, 236);
+                  border-radius: 10px;
+                  padding: 12px 14px;
+                  border-left: 3px solid rgb(229, 57, 53);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    color: #b71c1c;
+                    font-size: 11px;
+                    font-weight: 800;
+                    margin-bottom: 3px;
+                  "
+                >
+                  name
+                </div>
+                <div style="color: #546e7a; font-size: 11px">
+                  Nome do Pokémon
+                </div>
+              </div>
+              <div
+                style="
+                  background: rgb(252, 228, 236);
+                  border-radius: 10px;
+                  padding: 12px 14px;
+                  border-left: 3px solid rgb(229, 57, 53);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    color: #b71c1c;
+                    font-size: 11px;
+                    font-weight: 800;
+                    margin-bottom: 3px;
+                  "
+                >
+                  height
+                </div>
+                <div style="color: #546e7a; font-size: 11px">
+                  Altura (em décimos de metro)
+                </div>
+              </div>
+              <div
+                style="
+                  background: rgb(252, 228, 236);
+                  border-radius: 10px;
+                  padding: 12px 14px;
+                  border-left: 3px solid rgb(229, 57, 53);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    color: #b71c1c;
+                    font-size: 11px;
+                    font-weight: 800;
+                    margin-bottom: 3px;
+                  "
+                >
+                  weight
+                </div>
+                <div style="color: #546e7a; font-size: 11px">
+                  Peso (em décimos de kg)
+                </div>
+              </div>
+              <div
+                style="
+                  background: rgb(252, 228, 236);
+                  border-radius: 10px;
+                  padding: 12px 14px;
+                  border-left: 3px solid rgb(229, 57, 53);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    color: #b71c1c;
+                    font-size: 11px;
+                    font-weight: 800;
+                    margin-bottom: 3px;
+                  "
+                >
+                  sprites.front_default
+                </div>
+                <div style="color: #546e7a; font-size: 11px">
+                  URL da imagem do Pokémon
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SEÇÃO 3+4 — ESTRUTURA + FLUXO MENTAL -->
+      <div
+        style="
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+          margin-bottom: 22px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            padding: 0px;
+            box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+            overflow: hidden;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                90deg,
+                rgb(69, 39, 160),
+                rgb(106, 27, 154)
+              );
+              padding: 14px 20px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+                padding: 4px 10px;
+                color: white;
+                font-weight: 900;
+                font-size: 13px;
+              "
+              >3</span
+            >
+            <span style="color: #fff; font-size: 15px; font-weight: 800"
+              >⚛️ Estrutura React</span
+            >
+          </div>
+          <div style="padding: 20px; font-size: 14px">
+            <div style="color: #546e7a; font-size: 13px; margin-bottom: 12px">
+              Dois componentes: o principal e o de exibição.
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 10px;
+                padding: 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 12px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(100, 181, 246); font-size: 13px">App</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(144, 164, 174); font-size: 13px"
+              >
+                └── </span
+              ><span style="color: rgb(206, 147, 216); font-size: 13px"
+                >PokemonCard</span
+              >
+            </div>
+            <div
+              style="
+                margin-top: 12px;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: rgb(237, 231, 246);
+                  border-radius: 8px;
+                  padding: 9px 13px;
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    background: #6a1b9a;
+                    color: white;
+                    border-radius: 5px;
+                    padding: 1px 8px;
+                    font-family: monospace;
+                    font-size: 10px;
+                    font-weight: 800;
+                    flex-shrink: 0;
+                  "
+                  >App.jsx</span
+                ><span style="color: #4a148c; font-size: 12px; font-weight: 600"
+                  >Busca dados e gerencia estado</span
+                >
+              </div>
+              <div
+                style="
+                  background: rgb(237, 231, 246);
+                  border-radius: 8px;
+                  padding: 9px 13px;
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    background: #ab47bc;
+                    color: white;
+                    border-radius: 5px;
+                    padding: 1px 8px;
+                    font-family: monospace;
+                    font-size: 10px;
+                    font-weight: 800;
+                    flex-shrink: 0;
+                  "
+                  >PokemonCard.jsx</span
+                ><span style="color: #4a148c; font-size: 12px; font-weight: 600"
+                  >Exibe os dados via props</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            padding: 0px;
+            box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+            overflow: hidden;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                90deg,
+                rgb(0, 105, 92),
+                rgb(0, 137, 123)
+              );
+              padding: 14px 20px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+                padding: 4px 10px;
+                color: white;
+                font-weight: 900;
+                font-size: 13px;
+              "
+              >4</span
+            >
+            <span style="color: #fff; font-size: 15px; font-weight: 800"
+              >🔄 Fluxo Mental — MEMORIZE!</span
+            >
+          </div>
+          <div style="padding: 20px; font-size: 14px">
+            <div
+              style="
+                background: rgb(13, 27, 75);
+                border-radius: 10px;
+                padding: 16px;
+                box-shadow: rgba(13, 27, 75, 0.3) 0px 4px 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 2px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    background: #1565c0;
+                    border-radius: 8px;
+                    padding: 8px 20px;
+                    color: white;
+                    font-size: 12px;
+                    font-weight: bold;
+                    text-align: center;
+                  "
+                >
+                  Componente monta
+                </div>
+                <div style="color: #90a4ae; font-size: 18px; font-weight: 900">
+                  ↓
+                </div>
+                <div
+                  style="
+                    background: #4527a0;
+                    border-radius: 8px;
+                    padding: 8px 20px;
+                    color: white;
+                    font-size: 12px;
+                    font-weight: bold;
+                    text-align: center;
+                  "
+                >
+                  useEffect executa
+                </div>
+                <div style="color: #90a4ae; font-size: 18px; font-weight: 900">
+                  ↓
+                </div>
+                <div
+                  style="
+                    background: #c62828;
+                    border-radius: 8px;
+                    padding: 8px 20px;
+                    color: white;
+                    font-size: 12px;
+                    font-weight: bold;
+                    text-align: center;
+                  "
+                >
+                  fetch busca dados
+                </div>
+                <div style="color: #90a4ae; font-size: 18px; font-weight: 900">
+                  ↓
+                </div>
+                <div
+                  style="
+                    background: #00695c;
+                    border-radius: 8px;
+                    padding: 8px 20px;
+                    color: white;
+                    font-size: 12px;
+                    font-weight: bold;
+                    text-align: center;
+                  "
+                >
+                  setState salva dados
+                </div>
+                <div style="color: #90a4ae; font-size: 18px; font-weight: 900">
+                  ↓
+                </div>
+                <div
+                  style="
+                    background: #e65100;
+                    border-radius: 8px;
+                    padding: 8px 20px;
+                    color: white;
+                    font-size: 12px;
+                    font-weight: bold;
+                    text-align: center;
+                  "
+                >
+                  React renderiza novamente
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 10px 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 11px;
+                color: #80cbc4;
+                text-align: center;
+              "
+            >
+              API → fetch → useEffect → useState → renderização
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SEÇÃO 6 — CÓDIGO COMPLETO -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >5</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >💻 Primeiro Exemplo: App.jsx</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: rgb(13, 27, 75);
+              border-radius: 14px;
+              padding: 22px;
+              margin-bottom: 20px;
+              box-shadow: rgba(13, 27, 75, 0.35) 0px 6px 24px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 14px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding-bottom: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background: rgb(255, 95, 87);
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div
+                style="
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background: rgb(255, 189, 46);
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <div
+                style="
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background: rgb(40, 200, 64);
+                  font-size: 14px;
+                "
+              >
+                &nbsp;
+              </div>
+              <span
+                style="
+                  color: #90a4ae;
+                  font-size: 11px;
+                  font-weight: bold;
+                  margin-left: 8px;
+                  font-family: monospace;
+                "
+                >App.jsx</span
+              >
+            </div>
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(206, 147, 216); font-size: 12px"
+                >import</span
+              >
+              <span style="color: rgb(144, 202, 249); font-size: 12px">{</span>
+              <span style="color: rgb(100, 181, 246); font-size: 12px"
+                >useEffect</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">,</span>
+              <span style="color: rgb(100, 181, 246); font-size: 12px"
+                >useState</span
+              >
+              <span style="color: rgb(144, 202, 249); font-size: 12px">}</span>
+              <span style="color: rgb(206, 147, 216); font-size: 12px"
+                >from</span
+              >
+              <span style="color: rgb(165, 214, 167); font-size: 12px"
+                >"react"</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">;</span
+              ><br style="font-size: 12px" /><br style="font-size: 12px" /><span
+                style="color: rgb(206, 147, 216); font-size: 12px"
+                >export default function</span
+              >
+              <span style="color: rgb(100, 181, 246); font-size: 12px">App</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                >() {</span
+              ><br style="font-size: 12px" />&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2); font-size: 12px"
+                >const</span
+              >
+              <span style="color: rgb(144, 202, 249); font-size: 12px">[</span
+              ><span style="color: rgb(100, 181, 246); font-size: 12px"
+                >pokemon</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">,</span>
+              <span style="color: rgb(128, 222, 234); font-size: 12px"
+                >setPokemon</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">]</span>
+              <span style="color: rgb(144, 202, 249); font-size: 12px">=</span>
+              <span style="color: rgb(206, 147, 216); font-size: 12px"
+                >useState</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">(</span
+              ><span style="color: rgb(255, 204, 2); font-size: 12px">null</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">);</span
+              ><br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;<span
+                style="color: rgb(206, 147, 216); font-size: 12px"
+                >useEffect</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                >(() =&gt; {</span
+              ><br style="font-size: 12px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234); font-size: 12px"
+                >fetch</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">(</span
+              ><span style="color: rgb(165, 214, 167); font-size: 12px"
+                >"https://pokeapi.co/api/v2/pokemon/pikachu"</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">)</span
+              ><br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(144, 202, 249); font-size: 12px"
+                >.</span
+              ><span style="color: rgb(128, 222, 234); font-size: 12px"
+                >then</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">((</span
+              ><span style="color: rgb(206, 147, 216); font-size: 12px"
+                >res</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                >) =&gt;</span
+              >
+              <span style="color: rgb(206, 147, 216); font-size: 12px">res</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">.</span
+              ><span style="color: rgb(128, 222, 234); font-size: 12px"
+                >json</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                >())</span
+              ><br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(144, 202, 249); font-size: 12px"
+                >.</span
+              ><span style="color: rgb(128, 222, 234); font-size: 12px"
+                >then</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">((</span
+              ><span style="color: rgb(206, 147, 216); font-size: 12px"
+                >data</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                >) =&gt;</span
+              >
+              <span style="color: rgb(128, 222, 234); font-size: 12px"
+                >setPokemon</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">(</span
+              ><span style="color: rgb(206, 147, 216); font-size: 12px"
+                >data</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                >));</span
+              ><br style="font-size: 12px" />&nbsp;&nbsp;<span
+                style="color: rgb(144, 202, 249); font-size: 12px"
+                >}, []);</span
+              ><br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2); font-size: 12px"
+                >return</span
+              >
+              <span style="color: rgb(144, 202, 249); font-size: 12px">(</span
+              ><br style="font-size: 12px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234); font-size: 12px"
+                >&lt;div&gt;</span
+              ><br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234); font-size: 12px"
+                >&lt;h1&gt;</span
+              ><span style="color: rgb(165, 214, 167); font-size: 12px"
+                >Pokédex</span
+              ><span style="color: rgb(128, 222, 234); font-size: 12px"
+                >&lt;/h1&gt;</span
+              ><br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(144, 202, 249); font-size: 12px"
+                >{</span
+              ><span style="color: rgb(100, 181, 246); font-size: 12px"
+                >pokemon</span
+              >
+              <span style="color: rgb(144, 202, 249); font-size: 12px"
+                >&amp;&amp; (</span
+              ><br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234); font-size: 12px"
+                >&lt;div&gt;</span
+              ><br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234); font-size: 12px"
+                >&lt;p&gt;</span
+              ><span style="color: rgb(165, 214, 167); font-size: 12px"
+                >Nome: </span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">{</span
+              ><span style="color: rgb(100, 181, 246); font-size: 12px"
+                >pokemon</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">.</span
+              ><span style="color: rgb(128, 222, 234); font-size: 12px"
+                >name</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">}</span
+              ><span style="color: rgb(128, 222, 234); font-size: 12px"
+                >&lt;/p&gt;</span
+              ><br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234); font-size: 12px"
+                >&lt;p&gt;</span
+              ><span style="color: rgb(165, 214, 167); font-size: 12px"
+                >Peso: </span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">{</span
+              ><span style="color: rgb(100, 181, 246); font-size: 12px"
+                >pokemon</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">.</span
+              ><span style="color: rgb(128, 222, 234); font-size: 12px"
+                >weight</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">}</span
+              ><span style="color: rgb(128, 222, 234); font-size: 12px"
+                >&lt;/p&gt;</span
+              ><br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234); font-size: 12px"
+                >&lt;/div&gt;</span
+              ><br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(144, 202, 249); font-size: 12px"
+                >)}</span
+              ><br style="font-size: 12px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234); font-size: 12px"
+                >&lt;/div&gt;</span
+              ><br style="font-size: 12px" />&nbsp;&nbsp;<span
+                style="color: rgb(144, 202, 249); font-size: 12px"
+                >);</span
+              ><br style="font-size: 12px" /><span
+                style="color: rgb(144, 202, 249); font-size: 12px"
+                >}</span
+              >
+            </div>
+          </div>
+          <!-- Explicação linha por linha -->
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🧠</span
+            ><span style="color: #1565c0; font-size: 15px; font-weight: 800"
+              >Explicação linha por linha</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 12px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(21, 101, 192);
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  font-family: monospace;
+                  background: #1565c0;
+                  color: white;
+                  border-radius: 6px;
+                  padding: 3px 10px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  flex-shrink: 0;
+                "
+                >useState</span
+              >
+              <div style="color: #0d47a1; font-size: 13px; line-height: 1.7">
+                Guarda os dados do Pokémon. Começa como
+                <span
+                  style="
+                    font-family: monospace;
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                  >null</span
+                >
+                (vazio) e é preenchido após a resposta da API.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 12px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(56, 142, 60);
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  font-family: monospace;
+                  background: #388e3c;
+                  color: white;
+                  border-radius: 6px;
+                  padding: 3px 10px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  flex-shrink: 0;
+                "
+                >useEffect</span
+              >
+              <div style="color: #1b5e20; font-size: 13px; line-height: 1.7">
+                Executa quando o componente carrega. O
+                <span
+                  style="
+                    font-family: monospace;
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                  >[]</span
+                >
+                no final significa:
+                <strong style="font-size: 13px">execute apenas uma vez</strong>.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 12px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(245, 124, 0);
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  font-family: monospace;
+                  background: #f57c00;
+                  color: white;
+                  border-radius: 6px;
+                  padding: 3px 10px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  flex-shrink: 0;
+                "
+                >fetch()</span
+              >
+              <div style="color: #bf360c; font-size: 13px; line-height: 1.7">
+                Faz a requisição HTTP para a API. O
+                <span
+                  style="
+                    font-family: monospace;
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                  >.then(res =&gt; res.json())</span
+                >
+                converte a resposta para objeto JavaScript.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(252, 228, 236);
+                border-radius: 12px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(229, 57, 53);
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  font-family: monospace;
+                  background: #e53935;
+                  color: white;
+                  border-radius: 6px;
+                  padding: 3px 10px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  flex-shrink: 0;
+                "
+                >setPokemon</span
+              >
+              <div style="color: #b71c1c; font-size: 13px; line-height: 1.7">
+                Salva os dados no estado → React detecta a mudança →
+                <strong style="font-size: 13px"
+                  >atualiza a tela automaticamente</strong
+                >.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(237, 231, 246);
+                border-radius: 12px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(123, 31, 162);
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  font-family: monospace;
+                  background: #7b1fa2;
+                  color: white;
+                  border-radius: 6px;
+                  padding: 3px 10px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  flex-shrink: 0;
+                "
+                >pokemon &amp;&amp;</span
+              >
+              <div style="color: #4a148c; font-size: 13px; line-height: 1.7">
+                Renderização condicional: só exibe o card quando o
+                <span
+                  style="
+                    font-family: monospace;
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                  >pokemon</span
+                >
+                não for mais
+                <span
+                  style="
+                    font-family: monospace;
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                  >null</span
+                >
+                (dados carregados).
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SEÇÃO 7+8 — LOADING + ERRO -->
+      <div
+        style="
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+          margin-bottom: 22px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            padding: 0px;
+            box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+            overflow: hidden;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                90deg,
+                rgb(245, 127, 23),
+                rgb(249, 168, 37)
+              );
+              padding: 14px 20px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+                padding: 4px 10px;
+                color: white;
+                font-weight: 900;
+                font-size: 13px;
+              "
+              >6</span
+            >
+            <span style="color: #fff; font-size: 15px; font-weight: 800"
+              >⏳ Loading — Boas Práticas</span
+            >
+          </div>
+          <div style="padding: 20px; font-size: 14px">
+            <div style="color: #37474f; font-size: 13px; margin-bottom: 12px">
+              Enquanto os dados não chegam, exiba uma mensagem ao usuário.
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 10px;
+                padding: 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.9;
+                margin-bottom: 12px;
+                box-shadow: 0 4px 12px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(255, 204, 2); font-size: 12px">if</span>
+              <span style="color: rgb(144, 202, 249); font-size: 12px">(!</span
+              ><span style="color: rgb(100, 181, 246); font-size: 12px"
+                >pokemon</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                >) {</span
+              ><br style="font-size: 12px" />&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2); font-size: 12px"
+                >return</span
+              >
+              <span style="color: rgb(128, 222, 234); font-size: 12px"
+                >&lt;p&gt;</span
+              ><span style="color: rgb(165, 214, 167); font-size: 12px"
+                >Carregando...</span
+              ><span style="color: rgb(128, 222, 234); font-size: 12px"
+                >&lt;/p&gt;</span
+              ><span style="color: rgb(144, 202, 249); font-size: 12px">;</span
+              ><br style="font-size: 12px" /><span
+                style="color: rgb(144, 202, 249); font-size: 12px"
+                >}</span
+              >
+            </div>
+            <div
+              style="
+                background: #fff8e1;
+                border-radius: 8px;
+                padding: 10px 13px;
+                color: #f57f17;
+                font-size: 12px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              💡Isso evita erros ao tentar acessar
+              <span
+                style="
+                  font-family: monospace;
+                  font-weight: bold;
+                  font-size: 12px;
+                "
+                >pokemon.name</span
+              >
+              antes dos dados chegarem
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            padding: 0px;
+            box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+            overflow: hidden;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                90deg,
+                rgb(183, 28, 28),
+                rgb(198, 40, 40)
+              );
+              padding: 14px 20px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+                padding: 4px 10px;
+                color: white;
+                font-weight: 900;
+                font-size: 13px;
+              "
+              >7</span
+            >
+            <span style="color: #fff; font-size: 15px; font-weight: 800"
+              >🧯 Tratamento de Erro</span
+            >
+          </div>
+          <div style="padding: 20px; font-size: 14px">
+            <div style="color: #37474f; font-size: 13px; margin-bottom: 12px">
+              Use
+              <span
+                style="
+                  font-family: monospace;
+                  font-weight: bold;
+                  background: rgb(255, 235, 238);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 13px;
+                "
+                >.catch()</span
+              >
+              para tratar falhas na requisição.
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 10px;
+                padding: 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 11px;
+                line-height: 1.9;
+                margin-bottom: 12px;
+                box-shadow: 0 4px 12px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234); font-size: 11px"
+                >fetch</span
+              ><span style="color: rgb(144, 202, 249); font-size: 11px">(</span
+              ><span style="color: rgb(165, 214, 167); font-size: 11px"
+                >"...url..."</span
+              ><span style="color: rgb(144, 202, 249); font-size: 11px">)</span
+              ><br style="font-size: 11px" />&nbsp;&nbsp;<span
+                style="color: rgb(144, 202, 249); font-size: 11px"
+                >.</span
+              ><span style="color: rgb(128, 222, 234); font-size: 11px"
+                >then</span
+              ><span style="color: rgb(144, 202, 249); font-size: 11px">((</span
+              ><span style="color: rgb(206, 147, 216); font-size: 11px"
+                >res</span
+              ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                >) =&gt;</span
+              >
+              <span style="color: rgb(206, 147, 216); font-size: 11px">res</span
+              ><span style="color: rgb(144, 202, 249); font-size: 11px">.</span
+              ><span style="color: rgb(128, 222, 234); font-size: 11px"
+                >json</span
+              ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                >())</span
+              ><br style="font-size: 11px" />&nbsp;&nbsp;<span
+                style="color: rgb(144, 202, 249); font-size: 11px"
+                >.</span
+              ><span style="color: rgb(128, 222, 234); font-size: 11px"
+                >then</span
+              ><span style="color: rgb(144, 202, 249); font-size: 11px">((</span
+              ><span style="color: rgb(206, 147, 216); font-size: 11px"
+                >data</span
+              ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                >) =&gt;</span
+              >
+              <span style="color: rgb(128, 222, 234); font-size: 11px"
+                >setPokemon</span
+              ><span style="color: rgb(144, 202, 249); font-size: 11px">(</span
+              ><span style="color: rgb(206, 147, 216); font-size: 11px"
+                >data</span
+              ><span style="color: rgb(144, 202, 249); font-size: 11px">))</span
+              ><br style="font-size: 11px" />&nbsp;&nbsp;<span
+                style="color: rgb(144, 202, 249); font-size: 11px"
+                >.</span
+              ><span style="color: rgb(239, 154, 154); font-size: 11px"
+                >catch</span
+              ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                >(() =&gt;</span
+              ><br style="font-size: 11px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(100, 181, 246); font-size: 11px"
+                >console</span
+              ><span style="color: rgb(144, 202, 249); font-size: 11px">.</span
+              ><span style="color: rgb(128, 222, 234); font-size: 11px"
+                >log</span
+              ><span style="color: rgb(144, 202, 249); font-size: 11px">(</span
+              ><span style="color: rgb(165, 214, 167); font-size: 11px"
+                >"Erro ao buscar"</span
+              ><span style="color: rgb(144, 202, 249); font-size: 11px">)</span
+              ><br style="font-size: 11px" />&nbsp;&nbsp;<span
+                style="color: rgb(144, 202, 249); font-size: 11px"
+                >);</span
+              >
+            </div>
+            <div
+              style="
+                background: #ffebee;
+                border-radius: 8px;
+                padding: 10px 13px;
+                color: #b71c1c;
+                font-size: 12px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              💡Em produção: salve o erro no estado e mostre mensagem ao usuário
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SEÇÃO 9 — COMPONENTE SEPARADO -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >8</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🎨 Componente Separado — Boa Prática</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 14px 18px;
+              margin-bottom: 18px;
+              border-left: 4px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div style="color: #004d40; font-size: 13px; line-height: 1.8">
+              Separar a exibição em um componente próprio deixa o código
+              <strong style="font-size: 13px"
+                >mais organizado, reutilizável e legível</strong
+              >. O
+              <code
+                style="
+                  background: rgb(178, 223, 219);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                "
+                >App</code
+              >
+              gerencia dados; o
+              <code
+                style="
+                  background: rgb(178, 223, 219);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                "
+                >PokemonCard</code
+              >
+              apenas exibe.
+            </div>
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 14px">
+              <div
+                style="
+                  color: #00695c;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                  font-family: monospace;
+                "
+              >
+                PokemonCard.jsx
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 10px;
+                  padding: 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 11px;
+                  line-height: 2;
+                  box-shadow: 0 4px 12px rgba(13, 27, 75, 0.3);
+                "
+              >
+                <span style="color: rgb(206, 147, 216); font-size: 11px"
+                  >export default function</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 11px"
+                  >PokemonCard</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >({</span
+                >
+                <span style="color: rgb(206, 147, 216); font-size: 11px"
+                  >pokemon</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >}) {</span
+                ><br style="font-size: 11px" />&nbsp;&nbsp;<span
+                  style="color: rgb(255, 204, 2); font-size: 11px"
+                  >return</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 11px">(</span
+                ><br style="font-size: 11px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 11px"
+                  >&lt;div</span
+                >
+                <span style="color: rgb(206, 147, 216); font-size: 11px"
+                  >style</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >={{</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 11px"
+                  >border</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >:</span
+                >
+                <span style="color: rgb(165, 214, 167); font-size: 11px"
+                  >"1px solid #ccc"</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >}}</span
+                ><span style="color: rgb(128, 222, 234); font-size: 11px"
+                  >&gt;</span
+                ><br
+                  style="font-size: 11px"
+                />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 11px"
+                  >&lt;img</span
+                >
+                <span style="color: rgb(206, 147, 216); font-size: 11px"
+                  >src</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >={</span
+                ><span style="color: rgb(206, 147, 216); font-size: 11px"
+                  >pokemon</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >.</span
+                ><span style="color: rgb(128, 222, 234); font-size: 11px"
+                  >sprites</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >.</span
+                ><span style="color: rgb(128, 222, 234); font-size: 11px"
+                  >front_default</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >}</span
+                >
+                <span style="color: rgb(128, 222, 234); font-size: 11px"
+                  >/&gt;</span
+                ><br
+                  style="font-size: 11px"
+                />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 11px"
+                  >&lt;h2&gt;</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >{</span
+                ><span style="color: rgb(206, 147, 216); font-size: 11px"
+                  >pokemon</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >.</span
+                ><span style="color: rgb(100, 181, 246); font-size: 11px"
+                  >name</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >}</span
+                ><span style="color: rgb(128, 222, 234); font-size: 11px"
+                  >&lt;/h2&gt;</span
+                ><br
+                  style="font-size: 11px"
+                />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 11px"
+                  >&lt;p&gt;</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >{</span
+                ><span style="color: rgb(206, 147, 216); font-size: 11px"
+                  >pokemon</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >.</span
+                ><span style="color: rgb(100, 181, 246); font-size: 11px"
+                  >weight</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >}</span
+                ><span style="color: rgb(128, 222, 234); font-size: 11px"
+                  >&lt;/p&gt;</span
+                ><br style="font-size: 11px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 11px"
+                  >&lt;/div&gt;</span
+                ><br style="font-size: 11px" />&nbsp;&nbsp;<span
+                  style="color: rgb(144, 202, 249); font-size: 11px"
+                  >);</span
+                ><br style="font-size: 11px" /><span
+                  style="color: rgb(144, 202, 249); font-size: 11px"
+                  >}</span
+                >
+              </div>
+            </div>
+            <div style="font-size: 14px">
+              <div
+                style="
+                  color: #00695c;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                  font-family: monospace;
+                "
+              >
+                App.jsx (atualizado)
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 10px;
+                  padding: 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 11px;
+                  line-height: 2;
+                  box-shadow: 0 4px 12px rgba(13, 27, 75, 0.3);
+                "
+              >
+                <span style="color: rgb(206, 147, 216); font-size: 11px"
+                  >import</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 11px"
+                  >PokemonCard</span
+                >
+                <span style="color: rgb(206, 147, 216); font-size: 11px"
+                  >from</span
+                >
+                <span style="color: rgb(165, 214, 167); font-size: 11px"
+                  >"./PokemonCard"</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >;</span
+                ><br style="font-size: 11px" /><br
+                  style="font-size: 11px"
+                /><span style="color: rgb(144, 164, 174); font-size: 11px"
+                  >// ... useState e useEffect ...</span
+                ><br style="font-size: 11px" /><br
+                  style="font-size: 11px"
+                /><span style="color: rgb(255, 204, 2); font-size: 11px"
+                  >if</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >(!</span
+                ><span style="color: rgb(100, 181, 246); font-size: 11px"
+                  >pokemon</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >)</span
+                >
+                <span style="color: rgb(255, 204, 2); font-size: 11px"
+                  >return</span
+                >
+                <span style="color: rgb(128, 222, 234); font-size: 11px"
+                  >&lt;p&gt;</span
+                ><span style="color: rgb(165, 214, 167); font-size: 11px"
+                  >Carregando...</span
+                ><span style="color: rgb(128, 222, 234); font-size: 11px"
+                  >&lt;/p&gt;</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >;</span
+                ><br style="font-size: 11px" /><br
+                  style="font-size: 11px"
+                /><span style="color: rgb(255, 204, 2); font-size: 11px"
+                  >return</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 11px">(</span
+                ><br style="font-size: 11px" />&nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 11px"
+                  >&lt;div&gt;</span
+                ><br style="font-size: 11px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 11px"
+                  >&lt;h1&gt;</span
+                ><span style="color: rgb(165, 214, 167); font-size: 11px"
+                  >Pokédex</span
+                ><span style="color: rgb(128, 222, 234); font-size: 11px"
+                  >&lt;/h1&gt;</span
+                ><br style="font-size: 11px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 11px"
+                  >&lt;PokemonCard</span
+                >
+                <span style="color: rgb(206, 147, 216); font-size: 11px"
+                  >pokemon</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >={</span
+                ><span style="color: rgb(100, 181, 246); font-size: 11px"
+                  >pokemon</span
+                ><span style="color: rgb(144, 202, 249); font-size: 11px"
+                  >}</span
+                >
+                <span style="color: rgb(128, 222, 234); font-size: 11px"
+                  >/&gt;</span
+                ><br style="font-size: 11px" />&nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 11px"
+                  >&lt;/div&gt;</span
+                ><br style="font-size: 11px" /><span
+                  style="color: rgb(144, 202, 249); font-size: 11px"
+                  >);</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SEÇÃO 10 — DINÂMICO -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >9</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔍 Buscando Pokémon Dinâmico</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div style="color: #37474f; font-size: 14px; margin-bottom: 16px">
+            Em vez de fixar um Pokémon no código, use um
+            <strong style="font-size: 14px">estado para o nome</strong> e deixe
+            o usuário escolher qual buscar.
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 14px">
+              <div
+                style="
+                  color: #6a1b9a;
+                  font-size: 12px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                Estado para o nome:
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 10px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  box-shadow: 0 4px 12px rgba(13, 27, 75, 0.3);
+                "
+              >
+                <span style="color: rgb(255, 204, 2); font-size: 12px"
+                  >const</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 12px">[</span
+                ><span style="color: rgb(100, 181, 246); font-size: 12px"
+                  >nome</span
+                ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                  >,</span
+                >
+                <span style="color: rgb(128, 222, 234); font-size: 12px"
+                  >setNome</span
+                ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                  >]</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 12px">=</span
+                ><br style="font-size: 12px" />&nbsp;&nbsp;<span
+                  style="color: rgb(206, 147, 216); font-size: 12px"
+                  >useState</span
+                ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                  >(</span
+                ><span style="color: rgb(165, 214, 167); font-size: 12px"
+                  >"pikachu"</span
+                ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                  >);</span
+                >
+              </div>
+            </div>
+            <div style="font-size: 14px">
+              <div
+                style="
+                  color: #6a1b9a;
+                  font-size: 12px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                URL dinâmica com template string:
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 10px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  box-shadow: 0 4px 12px rgba(13, 27, 75, 0.3);
+                "
+              >
+                <span style="color: rgb(128, 222, 234); font-size: 12px"
+                  >fetch</span
+                ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                  >(</span
+                ><br style="font-size: 12px" />&nbsp;&nbsp;<span
+                  style="color: rgb(165, 214, 167); font-size: 12px"
+                  >`...pokemon/</span
+                ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                  >${</span
+                ><span style="color: rgb(100, 181, 246); font-size: 12px"
+                  >nome</span
+                ><span style="color: rgb(144, 202, 249); font-size: 12px"
+                  >}</span
+                ><span style="color: rgb(165, 214, 167); font-size: 12px"
+                  >`</span
+                ><br style="font-size: 12px" /><span
+                  style="color: rgb(144, 202, 249); font-size: 12px"
+                  >)</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 14px;
+              background: #ede7f6;
+              border-radius: 10px;
+              padding: 12px 16px;
+              color: #4a148c;
+              font-size: 12px;
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+            "
+          >
+            💡Template string
+            <span
+              style="
+                font-family: monospace;
+                background: rgb(225, 190, 231);
+                padding: 1px 6px;
+                border-radius: 3px;
+                font-size: 12px;
+              "
+              >` `</span
+            >
+            com
+            <span
+              style="
+                font-family: monospace;
+                background: rgb(225, 190, 231);
+                padding: 1px 6px;
+                border-radius: 3px;
+                font-size: 12px;
+              "
+              >${variavel}</span
+            >
+            insere o valor dinamicamente na URL
+          </div>
+        </div>
+      </div>
+      <!-- EXERCÍCIO GUIADO -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(21, 101, 192, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 14px;
+              color: white;
+              font-weight: 900;
+              font-size: 18px;
+            "
+            >🧪</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Exercício Guiado — Pokédex Interativa</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 243, 224),
+                rgb(255, 224, 178)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              margin-bottom: 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              🎯 Objetivo
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Criar uma Pokédex onde o usuário digita o nome de um Pokémon,
+              clica em buscar e vê os dados na tela.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 248, 245);
+                border-radius: 10px;
+                padding: 13px 16px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                border: 1.5px solid rgb(255, 224, 178);
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 13px;
+                  font-weight: 800;
+                  flex-shrink: 0;
+                "
+                >1</span
+              >
+              <div style="font-size: 14px">
+                <div style="color: #e65100; font-size: 13px; font-weight: bold">
+                  Input controlado
+                </div>
+                <div style="color: #546e7a; font-size: 12px">
+                  Crie um
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: rgb(255, 243, 224);
+                      padding: 1px 5px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >&lt;input&gt;</span
+                  >
+                  com
+                  <span
+                    style="
+                      font-family: monospace;
+                      font-weight: bold;
+                      font-size: 12px;
+                    "
+                    >value</span
+                  >
+                  e
+                  <span
+                    style="
+                      font-family: monospace;
+                      font-weight: bold;
+                      font-size: 12px;
+                    "
+                    >onChange</span
+                  >
+                  ligado a um estado
+                  <span
+                    style="
+                      font-family: monospace;
+                      font-weight: bold;
+                      font-size: 12px;
+                    "
+                    >nome</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 248, 245);
+                border-radius: 10px;
+                padding: 13px 16px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                border: 1.5px solid rgb(255, 224, 178);
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 13px;
+                  font-weight: 800;
+                  flex-shrink: 0;
+                "
+                >2</span
+              >
+              <div style="font-size: 14px">
+                <div style="color: #e65100; font-size: 13px; font-weight: bold">
+                  Botão buscar
+                </div>
+                <div style="color: #546e7a; font-size: 12px">
+                  Crie um
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: rgb(255, 243, 224);
+                      padding: 1px 5px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >&lt;button onClick&gt;</span
+                  >
+                  que dispara a busca pelo nome digitado
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 248, 245);
+                border-radius: 10px;
+                padding: 13px 16px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                border: 1.5px solid rgb(255, 224, 178);
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 13px;
+                  font-weight: 800;
+                  flex-shrink: 0;
+                "
+                >3</span
+              >
+              <div style="font-size: 14px">
+                <div style="color: #e65100; font-size: 13px; font-weight: bold">
+                  Exibir resultado
+                </div>
+                <div style="color: #546e7a; font-size: 12px">
+                  Mostre nome, imagem (sprite) e peso do Pokémon encontrado via
+                  <span
+                    style="
+                      font-family: monospace;
+                      font-weight: bold;
+                      font-size: 12px;
+                    "
+                    >PokemonCard</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 248, 245);
+                border-radius: 10px;
+                padding: 13px 16px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                border: 1.5px solid rgb(255, 224, 178);
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 13px;
+                  font-weight: 800;
+                  flex-shrink: 0;
+                "
+                >4</span
+              >
+              <div style="font-size: 14px">
+                <div style="color: #e65100; font-size: 13px; font-weight: bold">
+                  Tratar loading e erro
+                </div>
+                <div style="color: #546e7a; font-size: 12px">
+                  Exiba "Carregando..." enquanto busca e mensagem de erro se o
+                  Pokémon não existir
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 10px;
+              padding: 13px 16px;
+              border-left: 4px solid rgb(56, 142, 60);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1b5e20;
+                font-size: 12px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              📋 Checklist de entrega
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #2e7d32;
+                  font-size: 12px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                "
+              >
+                ☐Input + estado controlado
+              </div>
+              <div
+                style="
+                  color: #2e7d32;
+                  font-size: 12px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                "
+              >
+                ☐fetch com URL dinâmica
+              </div>
+              <div
+                style="
+                  color: #2e7d32;
+                  font-size: 12px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                "
+              >
+                ☐Loading exibido corretamente
+              </div>
+              <div
+                style="
+                  color: #2e7d32;
+                  font-size: 12px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                "
+              >
+                ☐Componente PokemonCard separado
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FECHAMENTO -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(198, 40, 40) 55%,
+            rgb(245, 127, 23) 100%
+          );
+          border-radius: 20px;
+          padding: 36px 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 26px">🏁</span
+            ><span style="color: #fff; font-size: 18px; font-weight: 800"
+              >Resumo da Aula</span
+            >
+          </div>
+          <div
+            style="
+              background: rgba(0, 0, 0, 0.25);
+              border-radius: 12px;
+              padding: 14px 20px;
+              margin-bottom: 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              text-align: center;
+              color: #80cbc4;
+              font-weight: bold;
+            "
+          >
+            API → fetch → useEffect → useState → renderização
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #e3f2fd;
+                padding: 6px 16px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >🌐 API</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #e3f2fd;
+                padding: 6px 16px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >📦 fetch()</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #e3f2fd;
+                padding: 6px 16px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >🔄 useEffect</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #e3f2fd;
+                padding: 6px 16px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >💾 useState</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #e3f2fd;
+                padding: 6px 16px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >⏳ Loading</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #e3f2fd;
+                padding: 6px 16px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >🧯 .catch()</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #e3f2fd;
+                padding: 6px 16px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >🎨 Componentes</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

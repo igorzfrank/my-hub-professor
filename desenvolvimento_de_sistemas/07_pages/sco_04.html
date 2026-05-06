@@ -1,0 +1,2834 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.JS</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(240, 244, 249);
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- Cabeçalho -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102) 0%,
+            rgb(26, 95, 168) 100%
+          );
+          border-radius: 14px;
+          padding: 36px 40px;
+          margin-bottom: 24px;
+          box-shadow: rgba(13, 59, 102, 0.28) 0px 8px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a8c8f0;
+            margin-bottom: 10px;
+          "
+        >
+          Técnico em Desenvolvimento de Sistemas — Desenvolvimento de Sistemas
+        </div>
+        <div
+          style="
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 12px;
+          "
+        >
+          Node.js — JavaScript fora do navegador
+        </div>
+        <div style="font-size: 15px; color: #c8dff5; line-height: 1.65">
+          Nesta aula você aprenderá o que é o Node.js, como ele funciona
+          internamente, por que ele mudou o desenvolvimento backend, e como
+          criar seus primeiros programas — de scripts simples a um servidor HTTP
+          completo — usando apenas JavaScript.
+        </div>
+      </div>
+      <!-- Capacidades -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          border-left: 6px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 14px;
+          "
+        >
+          Capacidades Trabalhadas
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Aplicar metodologia de desenvolvimento de acordo com o escopo do
+              projeto.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Integrar sistemas multiplataformas por meio da linguagem de
+              programação.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- O problema que o Node resolve -->
+      <div
+        style="
+          background: rgb(234, 242, 251);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.08) 0px 4px 18px;
+          border: 1px solid rgb(184, 212, 237);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 12px;
+          "
+        >
+          O problema que o Node.js resolve
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.8;
+            margin-bottom: 14px;
+          "
+        >
+          Antes do Node.js, JavaScript era uma linguagem
+          <span style="font-weight: bold; font-size: 15px"
+            >presa dentro do navegador</span
+          >. Se você quisesse construir o backend de um sistema — a parte que
+          processa dados, acessa banco de dados e serve arquivos — precisava
+          aprender outra linguagem: PHP, Java, Python, Ruby...
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.8;
+            margin-bottom: 16px;
+          "
+        >
+          Além disso, os servidores da época funcionavam com um modelo antigo:
+          para cada conexão de usuário, criavam um novo processo ou thread no
+          sistema operacional. Com milhares de usuários simultâneos, isso
+          consumia memória e CPU de forma insustentável.
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 4px solid rgb(26, 95, 168);
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 14px; color: #1a2a3a; line-height: 1.75">
+            <span style="font-weight: bold; font-size: 14px"
+              >Analogia do mundo real:</span
+            >
+            imagine um restaurante onde cada cliente que entra exige um garçom
+            exclusivo que fica parado ao lado da mesa esperando o pedido ser
+            preparado. Com 10 clientes funciona. Com 10.000, você precisa de
+            10.000 garçons. O Node.js inventou um garçom diferente: ele anota o
+            pedido, leva para a cozinha e
+            <span style="font-weight: bold; font-size: 14px"
+              >vai atender outros clientes enquanto espera</span
+            >
+            — sem ficar parado.
+          </div>
+        </div>
+      </div>
+      <!-- O que é Node.js -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          O que é o Node.js?&nbsp; &nbsp;
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"
+            alt="Node.js – Wikipédia, a enciclopédia livre"
+            width="75"
+            height="46"
+            style="font-size: 18px"
+          />
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          O <span style="font-weight: bold; font-size: 15px">Node.js</span> é um
+          <span style="font-weight: bold; font-size: 15px"
+            >ambiente de execução JavaScript fora do navegador</span
+          >. Criado em 2009 por Ryan Dahl, ele permite rodar código JavaScript
+          diretamente no sistema operacional — no terminal, em servidores, em
+          scripts de automação. Não é uma linguagem nova, não é um framework: é
+          uma plataforma que executa JavaScript.
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 24px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 12px;
+              padding: 20px;
+              border-left: 5px solid rgb(13, 59, 102);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+              "
+            >
+              JavaScript no Navegador
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 7px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 13px;
+                  color: #4a6a8a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✓</span
+                >
+                Manipula HTML e CSS
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: #4a6a8a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✓</span
+                >
+                Reage a eventos do usuário
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: #4a6a8a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(160, 0, 0);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✗</span
+                >
+                Não acessa o sistema de arquivos
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: #4a6a8a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(160, 0, 0);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✗</span
+                >
+                Não cria servidores
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: #4a6a8a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(160, 0, 0);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✗</span
+                >
+                Não acessa banco de dados diretamente
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 12px;
+              padding: 20px;
+              border-left: 5px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+              "
+            >
+              JavaScript com Node.js
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 7px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 13px;
+                  color: #4a6a8a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✓</span
+                >
+                Cria e lê arquivos no sistema
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: #4a6a8a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✓</span
+                >
+                Cria servidores HTTP
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: #4a6a8a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✓</span
+                >
+                Conecta a bancos de dados
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: #4a6a8a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✓</span
+                >
+                Executa scripts de automação
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: #4a6a8a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✓</span
+                >
+                Consome e serve APIs
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- A engine V8 -->
+        <div
+          style="
+            background: rgb(248, 251, 255);
+            border-radius: 10px;
+            padding: 18px 20px;
+            border: 1px solid rgb(212, 230, 245);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #1a5fa8;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 10px;
+            "
+          >
+            Por baixo dos panos — a Engine V8
+          </div>
+          <div style="font-size: 14px; color: #2c3e50; line-height: 1.8">
+            O Node.js é construído sobre a
+            <span style="font-weight: bold; font-size: 14px"
+              >engine V8 do Google Chrome</span
+            >
+            — o mesmo motor que executa JavaScript no navegador. Ryan Dahl
+            extraiu o V8 do Chrome e o embutiu numa plataforma independente,
+            adicionando APIs para acessar o sistema operacional (arquivos, rede,
+            processos). O resultado é uma ferramenta capaz de executar
+            JavaScript com altíssima performance diretamente no servidor.
+          </div>
+        </div>
+      </div>
+      <!-- Como o Node funciona — Event Loop -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Como o Node.js funciona — O Event Loop
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 18px;
+          "
+        >
+          O segredo do Node.js é o modelo
+          <span style="font-weight: bold; font-size: 15px"
+            >não-bloqueante (non-blocking)</span
+          >
+          baseado no
+          <span style="font-weight: bold; font-size: 15px">Event Loop</span>.
+          Enquanto servidores tradicionais bloqueiam uma thread esperando uma
+          resposta do banco de dados, o Node.js registra um callback e continua
+          atendendo outras requisições. Quando a resposta chega, o Event Loop
+          aciona o callback.
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 18px;
+          "
+        >
+          <img
+            style="
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 15px;
+            "
+            src="https://media2.dev.to/dynamic/image/width=1280,height=720,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fyp5plea5yah40gqeb3el.jpg"
+            alt="Node.js por Baixo dos Panos #3 - Um Mergulho no Event Loop - DEV Community"
+            width="579"
+            height="326"
+          />
+        </div>
+        <!-- Diagrama Event Loop -->
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            padding: 26px 24px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 11px;
+              font-weight: bold;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              color: #5db8f5;
+              margin-bottom: 18px;
+              text-align: center;
+            "
+          >
+            Fluxo do Event Loop no Node.js
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 0px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 16px;
+                background: rgb(26, 46, 68);
+                border-radius: 8px;
+                margin-bottom: 4px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  min-width: 32px;
+                  height: 32px;
+                  background: #0d3b66;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #5db8f5;
+                  flex-shrink: 0;
+                  border: 2px solid #5db8f5;
+                "
+              >
+                1
+              </div>
+              <div style="font-size: 14px">
+                <div
+                  style="
+                    font-size: 13px;
+                    font-weight: bold;
+                    color: #e0f0ff;
+                    margin-bottom: 2px;
+                  "
+                >
+                  Chamada recebida
+                </div>
+                <div style="font-size: 12px; color: #8aaccc; line-height: 1.5">
+                  Uma requisição HTTP chega. O Node.js registra a operação e a
+                  coloca na fila sem bloquear.
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                width: 2px;
+                height: 14px;
+                background: rgb(42, 74, 106);
+                margin-left: 31px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 16px;
+                background: rgb(26, 46, 68);
+                border-radius: 8px;
+                margin-bottom: 4px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  min-width: 32px;
+                  height: 32px;
+                  background: #0d3b66;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #5db8f5;
+                  flex-shrink: 0;
+                  border: 2px solid #5db8f5;
+                "
+              >
+                2
+              </div>
+              <div style="font-size: 14px">
+                <div
+                  style="
+                    font-size: 13px;
+                    font-weight: bold;
+                    color: #e0f0ff;
+                    margin-bottom: 2px;
+                  "
+                >
+                  Operação delegada (I/O)
+                </div>
+                <div style="font-size: 12px; color: #8aaccc; line-height: 1.5">
+                  Leitura de arquivo, consulta ao banco ou chamada à rede é
+                  delegada ao sistema operacional. O Node.js
+                  <span
+                    style="
+                      color: rgb(168, 240, 200);
+                      font-weight: bold;
+                      font-size: 12px;
+                    "
+                    >não espera</span
+                  >
+                  — segue para a próxima tarefa.
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                width: 2px;
+                height: 14px;
+                background: rgb(42, 74, 106);
+                margin-left: 31px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 16px;
+                background: rgb(26, 46, 68);
+                border-radius: 8px;
+                margin-bottom: 4px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  min-width: 32px;
+                  height: 32px;
+                  background: #0d3b66;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #5db8f5;
+                  flex-shrink: 0;
+                  border: 2px solid #5db8f5;
+                "
+              >
+                3
+              </div>
+              <div style="font-size: 14px">
+                <div
+                  style="
+                    font-size: 13px;
+                    font-weight: bold;
+                    color: #e0f0ff;
+                    margin-bottom: 2px;
+                  "
+                >
+                  Event Loop em ação
+                </div>
+                <div style="font-size: 12px; color: #8aaccc; line-height: 1.5">
+                  O Event Loop monitora continuamente a fila de eventos.
+                  Enquanto espera, atende outras requisições chegando.
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                width: 2px;
+                height: 14px;
+                background: rgb(42, 74, 106);
+                margin-left: 31px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 16px;
+                background: rgb(26, 58, 34);
+                border-radius: 8px;
+                border: 1px solid rgb(42, 90, 50);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  min-width: 32px;
+                  height: 32px;
+                  background: #1a7a45;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #fff;
+                  flex-shrink: 0;
+                  border: 2px solid #a8f0c8;
+                "
+              >
+                4
+              </div>
+              <div style="font-size: 14px">
+                <div
+                  style="
+                    font-size: 13px;
+                    font-weight: bold;
+                    color: #a8f0c8;
+                    margin-bottom: 2px;
+                  "
+                >
+                  Callback executado
+                </div>
+                <div style="font-size: 12px; color: #8acca0; line-height: 1.5">
+                  Quando o sistema operacional sinaliza que a operação terminou,
+                  o Event Loop aciona o callback e a resposta é enviada ao
+                  cliente.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(253, 232, 232);
+              border-radius: 10px;
+              padding: 16px 18px;
+              border-left: 4px solid rgb(160, 0, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #7a0000;
+                margin-bottom: 8px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Servidor tradicional (bloqueante)
+            </div>
+            <div style="font-size: 13px; color: #5a2020; line-height: 1.65">
+              1 usuário = 1 thread. 1000 usuários = 1000 threads. Cada thread
+              fica bloqueada esperando respostas do banco. Alto consumo de
+              memória e CPU.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(212, 245, 228);
+              border-radius: 10px;
+              padding: 16px 18px;
+              border-left: 4px solid rgb(26, 122, 69);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #1a4a28;
+                margin-bottom: 8px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Node.js (não-bloqueante)
+            </div>
+            <div style="font-size: 13px; color: #1a3a20; line-height: 1.65">
+              1 thread, Event Loop. 1000 usuários = 1000 callbacks registrados.
+              Nenhuma thread fica parada. Baixo consumo de recursos, alta
+              escalabilidade.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Instalação e primeiros passos -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Prática 01
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Instalação e primeiros passos
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 18px;
+          "
+        >
+          O Node.js é instalado pelo site oficial
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >nodejs.org</span
+          >. Sempre baixe a versão
+          <span style="font-weight: bold; font-size: 15px"
+            >LTS (Long Term Support)</span
+          >
+          — ela é a mais estável e recomendada para projetos reais. Após a
+          instalação, o comando
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >node</span
+          >
+          e o gerenciador de pacotes
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >npm</span
+          >
+          ficam disponíveis no terminal.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            terminal — verificando a instalação
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;"># Verifica a versão do Node.js instalada</span>
+node --version
+<span style="color: rgb(168, 240, 200); font-size: 13px;"># Saída esperada: v20.x.x</span>
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Verifica a versão do NPM (vem junto com o Node)</span>
+npm --version
+<span style="color: rgb(168, 240, 200); font-size: 13px;"># Saída esperada: 10.x.x</span>
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Abre o REPL interativo do Node (para testar código rapidamente)</span>
+node
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Digite qualquer expressão JavaScript e pressione Enter</span>
+<span style="color: rgb(168, 240, 200); font-size: 13px;">&gt; 2 + 2</span>
+<span style="color: rgb(168, 240, 200); font-size: 13px;">4</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;"># Para sair do REPL: Ctrl+C duas vezes ou .exit</span></pre>
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          Seu primeiro script Node.js
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #4a6a8a;
+            line-height: 1.65;
+            margin-bottom: 14px;
+          "
+        >
+          Crie um arquivo
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >ola.js</span
+          >
+          com o código abaixo e execute com
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >node ola.js</span
+          >
+          no terminal. O Node executa o arquivo de cima para baixo, linha a
+          linha.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            ola.js — primeiro script
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// process é um objeto global do Node.js com informações sobre o processo</span>
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Olá, Node.js!'</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Versão do Node: ${process.version}`</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Sistema operacional: ${process.platform}`</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Diretório atual: ${process.cwd()}`</span>);
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// JavaScript normal — funciona exatamente como no navegador</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> numeros = [<span style="color: rgb(240, 200, 122); font-size: 13px;">1</span>, <span style="color: rgb(240, 200, 122); font-size: 13px;">2</span>, <span style="color: rgb(240, 200, 122); font-size: 13px;">3</span>, <span style="color: rgb(240, 200, 122); font-size: 13px;">4</span>, <span style="color: rgb(240, 200, 122); font-size: 13px;">5</span>];
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> soma = numeros.<span style="color: rgb(93, 245, 168); font-size: 13px;">reduce</span>((acc, n) =&gt; acc + n, <span style="color: rgb(240, 200, 122); font-size: 13px;">0</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Soma de [1..5]: ${soma}`</span>); <span style="color: rgb(93, 184, 245); font-size: 13px;">// 15</span></pre>
+        </div>
+        <div
+          style="
+            background: #d4f5e4;
+            border-left: 4px solid #1a7a45;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #1a3a20;
+            line-height: 1.65;
+          "
+        >
+          Todo JavaScript válido que você escreveria no navegador funciona no
+          Node.js —
+          <span style="font-weight: bold; font-size: 14px">exceto</span> o que
+          depende do DOM (document, window, alert). O Node não tem tela — ele
+          tem terminal e sistema de arquivos.
+        </div>
+      </div>
+      <!-- Módulos nativos -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Prática 02
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Módulos nativos — o que vem com o Node.js
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          O Node.js vem com uma biblioteca padrão chamada
+          <span style="font-weight: bold; font-size: 15px">Core Modules</span> —
+          módulos nativos que você pode usar sem instalar nada. Para
+          utilizá-los, basta importá-los com
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >require()</span
+          >
+          (sistema CommonJS) ou
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >import</span
+          >
+          (ES Modules).
+        </div>
+        <!-- Módulos grid -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 16px;
+              border-top: 3px solid rgb(13, 59, 102);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 14px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 6px;
+              "
+            >
+              fs
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              File System
+            </div>
+            <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+              Ler, escrever, copiar e apagar arquivos e pastas no sistema
+              operacional.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 16px;
+              border-top: 3px solid rgb(26, 95, 168);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 14px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 6px;
+              "
+            >
+              path
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              Caminhos
+            </div>
+            <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+              Montar caminhos de arquivo de forma compatível entre Windows, Mac
+              e Linux.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 16px;
+              border-top: 3px solid rgb(52, 152, 219);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 14px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 6px;
+              "
+            >
+              http
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              Servidor HTTP
+            </div>
+            <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+              Criar servidores web sem instalar nenhuma biblioteca externa.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 16px;
+              border-top: 3px solid rgb(90, 122, 0);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 14px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 6px;
+              "
+            >
+              os
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              Sistema Operacional
+            </div>
+            <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+              Informações sobre CPU, memória, plataforma e usuário do sistema.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 16px;
+              border-top: 3px solid rgb(176, 122, 0);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 14px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 6px;
+              "
+            >
+              events
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              Eventos
+            </div>
+            <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+              Criar emissores e ouvintes de eventos — a base do padrão Observer
+              no Node.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 16px;
+              border-top: 3px solid rgb(122, 58, 154);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 14px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 6px;
+              "
+            >
+              crypto
+            </div>
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              Criptografia
+            </div>
+            <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+              Hash de senhas, geração de tokens e operações criptográficas sem
+              dependências externas.
+            </div>
+          </div>
+        </div>
+        <!-- fs — exemplo -->
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          "
+        >
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: #0d3b66;
+              color: #fff;
+              font-size: 12px;
+              padding: 3px 10px;
+              border-radius: 6px;
+            "
+            >fs</span
+          >
+          Trabalhando com arquivos
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            arquivos.js — leitura e escrita com fs/promises
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// fs/promises: versão do módulo fs que usa Promises (async/await)</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> fs = require(<span style="color: rgb(168, 240, 200); font-size: 13px;">'fs/promises'</span>);
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">async function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">gerenciarArquivos</span>() {
+
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// ── ESCREVER um arquivo ──────────────────────────────────</span>
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> conteudo = <span style="color: rgb(168, 240, 200); font-size: 13px;">'Olá! Este arquivo foi criado pelo Node.js.\nLinha 2.'</span>;
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> fs.<span style="color: rgb(93, 245, 168); font-size: 13px;">writeFile</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'meu-arquivo.txt'</span>, conteudo, <span style="color: rgb(168, 240, 200); font-size: 13px;">'utf8'</span>);
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Arquivo criado com sucesso!'</span>);
+
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// ── LER um arquivo ───────────────────────────────────────</span>
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> texto = <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> fs.<span style="color: rgb(93, 245, 168); font-size: 13px;">readFile</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'meu-arquivo.txt'</span>, <span style="color: rgb(168, 240, 200); font-size: 13px;">'utf8'</span>);
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Conteúdo lido:'</span>);
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(texto);
+
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// ── VERIFICAR se arquivo existe ──────────────────────────</span>
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">try</span> {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> fs.<span style="color: rgb(93, 245, 168); font-size: 13px;">access</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'outro-arquivo.txt'</span>);
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Arquivo existe!'</span>);
+  } <span style="color: rgb(240, 200, 122); font-size: 13px;">catch</span> {
+    console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Arquivo não encontrado.'</span>);
+  }
+
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// ── DELETAR um arquivo ───────────────────────────────────</span>
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">await</span> fs.<span style="color: rgb(93, 245, 168); font-size: 13px;">unlink</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'meu-arquivo.txt'</span>);
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Arquivo removido.'</span>);
+}
+
+<span style="color: rgb(93, 245, 168); font-size: 13px;">gerenciarArquivos</span>();</pre>
+        </div>
+        <!-- path — exemplo -->
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          "
+        >
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: #1a5fa8;
+              color: #fff;
+              font-size: 12px;
+              padding: 3px 10px;
+              border-radius: 6px;
+            "
+            >path</span
+          >
+          Montando caminhos de arquivo
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            caminhos.js — usando o módulo path
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> path = require(<span style="color: rgb(168, 240, 200); font-size: 13px;">'path'</span>);
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// path.join: monta o caminho correto independente do sistema operacional</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Windows usa \ e Linux/Mac usam / — path.join resolve isso automaticamente</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> caminhoArquivo = path.<span style="color: rgb(93, 245, 168); font-size: 13px;">join</span>(__dirname, <span style="color: rgb(168, 240, 200); font-size: 13px;">'dados'</span>, <span style="color: rgb(168, 240, 200); font-size: 13px;">'usuarios.json'</span>);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(caminhoArquivo);
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Saída Linux/Mac: /home/usuario/projeto/dados/usuarios.json</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Saída Windows:  C:\Users\usuario\projeto\dados\usuarios.json</span>
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// path.basename: retorna apenas o nome do arquivo</span>
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(path.<span style="color: rgb(93, 245, 168); font-size: 13px;">basename</span>(caminhoArquivo)); <span style="color: rgb(93, 184, 245); font-size: 13px;">// 'usuarios.json'</span>
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// path.extname: retorna a extensão do arquivo</span>
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(path.<span style="color: rgb(93, 245, 168); font-size: 13px;">extname</span>(caminhoArquivo)); <span style="color: rgb(93, 184, 245); font-size: 13px;">// '.json'</span>
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// __dirname: variável especial do Node — pasta do arquivo atual</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// __filename: caminho completo do arquivo atual</span>
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(__dirname);
+console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(__filename);</pre>
+        </div>
+        <div
+          style="
+            background: #f0f7ff;
+            border-left: 4px solid #5db8f5;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #1a3a5a;
+            line-height: 1.65;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px"
+            >Use sempre
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(221, 238, 255);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >path.join()</span
+            >
+            para montar caminhos</span
+          >
+          em vez de concatenar strings com
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(221, 238, 255);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >/</span
+          >
+          ou
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(221, 238, 255);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >\</span
+          >. Código que funciona no Linux muitas vezes quebra no Windows por
+          causa do separador de diretórios —
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(221, 238, 255);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >path.join()</span
+          >
+          resolve isso automaticamente.
+        </div>
+      </div>
+      <!-- Sistema de módulos -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Sistema de Módulos — Organizando o código em arquivos
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 18px;
+          "
+        >
+          Em projetos reais, colocar tudo num único arquivo é inviável. O
+          Node.js tem um sistema de módulos que permite
+          <span style="font-weight: bold; font-size: 15px"
+            >dividir o código em arquivos com responsabilidades
+            específicas</span
+          >
+          e importar o que for necessário. Existem dois sistemas: o
+          <span style="font-weight: bold; font-size: 15px">CommonJS</span>
+          (padrão histórico do Node) e o
+          <span style="font-weight: bold; font-size: 15px">ES Modules</span>
+          (padrão moderno do JavaScript).
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 14px">
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 8px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              CommonJS — require / module.exports
+            </div>
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                border-radius: 10px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 8px 16px;
+                  font-size: 11px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #5db8f5;
+                  border-bottom: 1px solid #2a3a4a;
+                "
+              >
+                matematica.js — exportando
+              </div>
+              <pre
+                style="
+                  margin: 0px;
+                  padding: 18px 20px;
+                  font-family: &quot;Courier New&quot;, Courier, monospace;
+                  font-size: 12px;
+                  color: rgb(224, 240, 255);
+                  line-height: 1.85;
+                  overflow-x: auto;
+                "
+              ><span style="color: rgb(240, 200, 122); font-size: 12px;">function</span> <span style="color: rgb(93, 245, 168); font-size: 12px;">somar</span>(a, b) {
+  <span style="color: rgb(240, 200, 122); font-size: 12px;">return</span> a + b;
+}
+
+<span style="color: rgb(240, 200, 122); font-size: 12px;">function</span> <span style="color: rgb(93, 245, 168); font-size: 12px;">multiplicar</span>(a, b) {
+  <span style="color: rgb(240, 200, 122); font-size: 12px;">return</span> a * b;
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 12px;">// Exporta as funções para uso externo</span>
+module.exports = { somar, multiplicar };</pre>
+            </div>
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                border-radius: 10px;
+                overflow: hidden;
+                margin-top: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 8px 16px;
+                  font-size: 11px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #5db8f5;
+                  border-bottom: 1px solid #2a3a4a;
+                "
+              >
+                app.js — importando
+              </div>
+              <pre
+                style="
+                  margin: 0px;
+                  padding: 18px 20px;
+                  font-family: &quot;Courier New&quot;, Courier, monospace;
+                  font-size: 12px;
+                  color: rgb(224, 240, 255);
+                  line-height: 1.85;
+                  overflow-x: auto;
+                "
+              ><span style="color: rgb(240, 200, 122); font-size: 12px;">const</span> { somar, multiplicar }
+  = require(<span style="color: rgb(168, 240, 200); font-size: 12px;">'./matematica'</span>);
+
+console.<span style="color: rgb(93, 245, 168); font-size: 12px;">log</span>(<span style="color: rgb(93, 245, 168); font-size: 12px;">somar</span>(<span style="color: rgb(240, 200, 122); font-size: 12px;">3</span>, <span style="color: rgb(240, 200, 122); font-size: 12px;">4</span>));       <span style="color: rgb(93, 184, 245); font-size: 12px;">// 7</span>
+console.<span style="color: rgb(93, 245, 168); font-size: 12px;">log</span>(<span style="color: rgb(93, 245, 168); font-size: 12px;">multiplicar</span>(<span style="color: rgb(240, 200, 122); font-size: 12px;">3</span>, <span style="color: rgb(240, 200, 122); font-size: 12px;">4</span>)); <span style="color: rgb(93, 184, 245); font-size: 12px;">// 12</span></pre>
+            </div>
+          </div>
+          <div style="font-size: 14px">
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 8px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              ES Modules — import / export
+            </div>
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                border-radius: 10px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 8px 16px;
+                  font-size: 11px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #5db8f5;
+                  border-bottom: 1px solid #2a3a4a;
+                "
+              >
+                matematica.mjs — exportando
+              </div>
+              <pre
+                style="
+                  margin: 0px;
+                  padding: 18px 20px;
+                  font-family: &quot;Courier New&quot;, Courier, monospace;
+                  font-size: 12px;
+                  color: rgb(224, 240, 255);
+                  line-height: 1.85;
+                  overflow-x: auto;
+                "
+              ><span style="color: rgb(240, 200, 122); font-size: 12px;">export function</span> <span style="color: rgb(93, 245, 168); font-size: 12px;">somar</span>(a, b) {
+  <span style="color: rgb(240, 200, 122); font-size: 12px;">return</span> a + b;
+}
+
+<span style="color: rgb(240, 200, 122); font-size: 12px;">export function</span> <span style="color: rgb(93, 245, 168); font-size: 12px;">multiplicar</span>(a, b) {
+  <span style="color: rgb(240, 200, 122); font-size: 12px;">return</span> a * b;
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 12px;">// Ou: export default para exportação principal</span></pre>
+            </div>
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                border-radius: 10px;
+                overflow: hidden;
+                margin-top: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 8px 16px;
+                  font-size: 11px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #5db8f5;
+                  border-bottom: 1px solid #2a3a4a;
+                "
+              >
+                app.mjs — importando
+              </div>
+              <pre
+                style="
+                  margin: 0px;
+                  padding: 18px 20px;
+                  font-family: &quot;Courier New&quot;, Courier, monospace;
+                  font-size: 12px;
+                  color: rgb(224, 240, 255);
+                  line-height: 1.85;
+                  overflow-x: auto;
+                "
+              ><span style="color: rgb(240, 200, 122); font-size: 12px;">import</span> { somar, multiplicar }
+  <span style="color: rgb(240, 200, 122); font-size: 12px;">from</span> <span style="color: rgb(168, 240, 200); font-size: 12px;">'./matematica.mjs'</span>;
+
+console.<span style="color: rgb(93, 245, 168); font-size: 12px;">log</span>(<span style="color: rgb(93, 245, 168); font-size: 12px;">somar</span>(<span style="color: rgb(240, 200, 122); font-size: 12px;">3</span>, <span style="color: rgb(240, 200, 122); font-size: 12px;">4</span>));       <span style="color: rgb(93, 184, 245); font-size: 12px;">// 7</span>
+console.<span style="color: rgb(93, 245, 168); font-size: 12px;">log</span>(<span style="color: rgb(93, 245, 168); font-size: 12px;">multiplicar</span>(<span style="color: rgb(240, 200, 122); font-size: 12px;">3</span>, <span style="color: rgb(240, 200, 122); font-size: 12px;">4</span>)); <span style="color: rgb(93, 184, 245); font-size: 12px;">// 12</span></pre>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: #fff7ee;
+            border-left: 4px solid #f0a500;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #5a3a00;
+            line-height: 1.65;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px">Qual usar?</span> Em
+          projetos novos com Express.js, o CommonJS (<span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(245, 228, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >require</span
+          >) ainda é o padrão mais encontrado na documentação e na maioria dos
+          tutoriais. Os ES Modules (<span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(245, 228, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >import</span
+          >) são o futuro e funcionam bem no Node 18+. O importante é manter o
+          projeto consistente — não misture os dois sistemas no mesmo projeto.
+        </div>
+      </div>
+      <!-- Criando um servidor HTTP -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Prática 03
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Criando um servidor HTTP com Node puro
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 18px;
+          "
+        >
+          O módulo
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >http</span
+          >
+          do Node permite criar um servidor web
+          <span style="font-weight: bold; font-size: 15px"
+            >sem instalar nenhuma dependência externa</span
+          >. Isso mostra a fundação sobre a qual frameworks como o Express.js
+          são construídos — o Express é, essencialmente, uma camada elegante em
+          cima do módulo
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >http</span
+          >.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            servidor.js — servidor HTTP com Node puro
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> http = require(<span style="color: rgb(168, 240, 200); font-size: 13px;">'http'</span>);
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// createServer recebe uma função chamada a cada requisição recebida</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// req: objeto com informações da requisição (URL, método, headers...)</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// res: objeto com métodos para montar e enviar a resposta</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> servidor = http.<span style="color: rgb(93, 245, 168); font-size: 13px;">createServer</span>((req, res) =&gt; {
+
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// Loga cada requisição que chega no console do servidor</span>
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">`${req.method} ${req.url}`</span>);
+
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// Roteamento manual — verifica URL e método da requisição</span>
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (req.url === <span style="color: rgb(168, 240, 200); font-size: 13px;">'/'</span> &amp;&amp; req.method === <span style="color: rgb(168, 240, 200); font-size: 13px;">'GET'</span>) {
+
+    res.<span style="color: rgb(93, 245, 168); font-size: 13px;">writeHead</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">200</span>, { <span style="color: rgb(168, 240, 200); font-size: 13px;">'Content-Type'</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">'application/json'</span> });
+    res.<span style="color: rgb(93, 245, 168); font-size: 13px;">end</span>(JSON.<span style="color: rgb(93, 245, 168); font-size: 13px;">stringify</span>({
+      mensagem: <span style="color: rgb(168, 240, 200); font-size: 13px;">'Bem-vindo à API Node.js!'</span>,
+      versao:   process.version,
+    }));
+
+  } <span style="color: rgb(240, 200, 122); font-size: 13px;">else if</span> (req.url === <span style="color: rgb(168, 240, 200); font-size: 13px;">'/usuarios'</span> &amp;&amp; req.method === <span style="color: rgb(168, 240, 200); font-size: 13px;">'GET'</span>) {
+
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> usuarios = [
+      { id: <span style="color: rgb(240, 200, 122); font-size: 13px;">1</span>, nome: <span style="color: rgb(168, 240, 200); font-size: 13px;">'Ana'</span> },
+      { id: <span style="color: rgb(240, 200, 122); font-size: 13px;">2</span>, nome: <span style="color: rgb(168, 240, 200); font-size: 13px;">'Bruno'</span> },
+    ];
+    res.<span style="color: rgb(93, 245, 168); font-size: 13px;">writeHead</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">200</span>, { <span style="color: rgb(168, 240, 200); font-size: 13px;">'Content-Type'</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">'application/json'</span> });
+    res.<span style="color: rgb(93, 245, 168); font-size: 13px;">end</span>(JSON.<span style="color: rgb(93, 245, 168); font-size: 13px;">stringify</span>(usuarios));
+
+  } <span style="color: rgb(240, 200, 122); font-size: 13px;">else</span> {
+
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// Rota não encontrada → 404</span>
+    res.<span style="color: rgb(93, 245, 168); font-size: 13px;">writeHead</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">404</span>, { <span style="color: rgb(168, 240, 200); font-size: 13px;">'Content-Type'</span>: <span style="color: rgb(168, 240, 200); font-size: 13px;">'application/json'</span> });
+    res.<span style="color: rgb(93, 245, 168); font-size: 13px;">end</span>(JSON.<span style="color: rgb(93, 245, 168); font-size: 13px;">stringify</span>({ erro: <span style="color: rgb(168, 240, 200); font-size: 13px;">'Rota não encontrada'</span> }));
+  }
+});
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Inicia o servidor na porta 3000</span>
+servidor.<span style="color: rgb(93, 245, 168); font-size: 13px;">listen</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">3000</span>, () =&gt; {
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Servidor rodando em http://localhost:3000'</span>);
+});</pre>
+        </div>
+        <div
+          style="
+            background: rgb(234, 242, 251);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 4px solid rgb(26, 95, 168);
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 8px;
+            "
+          >
+            Como testar:
+          </div>
+          <div
+            style="
+              background: #0d1b2a;
+              border-radius: 8px;
+              padding: 14px 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+            "
+          >
+            <div style="font-size: 13px">
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                ># Execute no terminal:</span
+              >
+            </div>
+            <div style="font-size: 13px">node servidor.js</div>
+            <div style="margin-top: 8px; font-size: 13px">
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                ># Abra no navegador ou use o Postman:</span
+              >
+            </div>
+            <div style="font-size: 13px">
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >http://localhost:3000</span
+              >
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >← rota principal</span
+              >
+            </div>
+            <div style="font-size: 13px">
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >http://localhost:3000/usuarios</span
+              >
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >← lista de usuários</span
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: #f0f7ff;
+            border-left: 4px solid #5db8f5;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #1a3a5a;
+            line-height: 1.65;
+          "
+        >
+          Perceba como o código do servidor com
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(221, 238, 255);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >http</span
+          >
+          puro fica verboso à medida que crescem as rotas. É por isso que o
+          <span style="font-weight: bold; font-size: 14px"
+            >Express.js existe</span
+          >: ele abstrai esse roteamento manual e torna o código muito mais
+          limpo — mas por baixo dos panos, é exatamente isso que acontece.
+        </div>
+      </div>
+      <!-- Variáveis de ambiente -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Variáveis de Ambiente — Configuração segura com process.env
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 18px;
+          "
+        >
+          Nunca coloque senhas, tokens de API ou configurações sensíveis
+          diretamente no código. Qualquer pessoa com acesso ao repositório verá
+          esses dados. A solução é usar
+          <span style="font-weight: bold; font-size: 15px"
+            >variáveis de ambiente</span
+          >
+          — configurações que ficam fora do código, no sistema operacional ou
+          num arquivo
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >.env</span
+          >
+          que
+          <span style="font-weight: bold; font-size: 15px"
+            >nunca é enviado ao Git</span
+          >.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #e05555;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            .env — NUNCA envie este arquivo para o Git
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          >
+PORT=3000
+DB_HOST=localhost
+DB_USUARIO=admin
+DB_SENHA=minha_senha_secreta_123
+API_KEY=sk-abc123xyz789</pre
+          >
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #5db8f5;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            config.js — lendo variáveis de ambiente com dotenv
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.9;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Instale o dotenv: npm install dotenv</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Ele carrega as variáveis do arquivo .env para process.env</span>
+require(<span style="color: rgb(168, 240, 200); font-size: 13px;">'dotenv'</span>).<span style="color: rgb(93, 245, 168); font-size: 13px;">config</span>();
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// process.env é um objeto global com todas as variáveis de ambiente</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> config = {
+  porta:    process.env.PORT     || <span style="color: rgb(240, 200, 122); font-size: 13px;">3000</span>,     <span style="color: rgb(93, 184, 245); font-size: 13px;">// padrão 3000 se não definido</span>
+  dbHost:   process.env.DB_HOST  || <span style="color: rgb(168, 240, 200); font-size: 13px;">'localhost'</span>,
+  dbSenha:  process.env.DB_SENHA,               <span style="color: rgb(93, 184, 245); font-size: 13px;">// undefined se não definido</span>
+  apiKey:   process.env.API_KEY,
+};
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Valida se as variáveis obrigatórias estão presentes</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (!config.dbSenha) {
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">error</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'ERRO: DB_SENHA não foi definida nas variáveis de ambiente!'</span>);
+  process.<span style="color: rgb(93, 245, 168); font-size: 13px;">exit</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">1</span>); <span style="color: rgb(93, 184, 245); font-size: 13px;">// encerra o processo com código de erro</span>
+}
+
+module.exports = config;</pre>
+        </div>
+        <div
+          style="
+            background: #fde8e8;
+            border-left: 4px solid #a00000;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #5a2020;
+            line-height: 1.65;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px"
+            >Segurança obrigatória:</span
+          >
+          adicione
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(245, 204, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >.env</span
+          >
+          ao arquivo
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(245, 204, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >.gitignore</span
+          >
+          antes do primeiro commit. Senhas e tokens expostos em repositórios
+          públicos são um dos vetores mais comuns de ataques a sistemas em
+          produção. Crie um arquivo
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(245, 204, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >.env.exemplo</span
+          >
+          (sem valores reais) para documentar quais variáveis o projeto precisa.
+        </div>
+      </div>
+      <!-- Boas práticas -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(232, 244, 253) 0%,
+            rgb(208, 233, 248) 100%
+          );
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          border: 1px solid rgb(157, 207, 239);
+          box-shadow: rgba(26, 90, 168, 0.1) 0px 4px 16px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #0d3b66;
+            margin-bottom: 16px;
+          "
+        >
+          Boas práticas no desenvolvimento com Node.js
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              1
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Nunca coloque credenciais no código.</span
+              >
+              Passwords, tokens de API, chaves secretas e strings de conexão
+              sempre em variáveis de ambiente (<span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 4px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >.env</span
+              >), nunca diretamente no código.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              2
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Use sempre
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(240, 244, 249);
+                    padding: 1px 4px;
+                    border-radius: 3px;
+                    font-size: 14px;
+                  "
+                  >async/await</span
+                >
+                com
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(240, 244, 249);
+                    padding: 1px 4px;
+                    border-radius: 3px;
+                    font-size: 14px;
+                  "
+                  >try/catch</span
+                >
+                em operações assíncronas.</span
+              >
+              Erros não tratados em Promises rejeitadas podem derrubar o
+              servidor inteiro.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              3
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Nunca suba a pasta
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(240, 244, 249);
+                    padding: 1px 4px;
+                    border-radius: 3px;
+                    font-size: 14px;
+                  "
+                  >node_modules</span
+                >
+                para o Git.</span
+              >
+              Use o
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 4px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >.gitignore</span
+              >
+              e o
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 4px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >package.json</span
+              >
+              para que qualquer pessoa recrie as dependências com
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 4px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >npm install</span
+              >.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              4
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Mantenha o
+                <span
+                  style="
+                    font-family: &quot;Courier New&quot;, monospace;
+                    background: rgb(240, 244, 249);
+                    padding: 1px 4px;
+                    border-radius: 3px;
+                    font-size: 14px;
+                  "
+                  >index.js</span
+                >
+                enxuto.</span
+              >
+              O arquivo de entrada do projeto deve apenas inicializar a
+              aplicação — conexão com banco, configurações e inicialização do
+              servidor. A lógica vai nos módulos separados.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              5
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Use a versão LTS do Node.js em produção.</span
+              >
+              Versões com numeração par são LTS — mantidas com correções de
+              segurança por anos. Versões ímpares são experimentais e têm
+              suporte curto.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Referências -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          box-shadow: rgba(26, 90, 168, 0.1) 0px 4px 18px;
+          border-top: 4px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 16px;
+          "
+        >
+          Referências e Fontes
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <span style="font-weight: bold; font-size: 14px"
+              >Node.js — Documentação oficial.</span
+            >
+            API Reference, Guides e Getting Started. Disponível em:
+            nodejs.org/en/docs. Acesso em: 2025.
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <span style="font-weight: bold; font-size: 14px"
+              >TILKOV, Stefan; VINOSKI, Steve.</span
+            >
+            Node.js: Using JavaScript to Build High-Performance Network
+            Programs. IEEE Internet Computing, v. 14, n. 6, p. 80–83, nov./dez.
+            2010.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

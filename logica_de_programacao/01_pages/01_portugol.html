@@ -1,0 +1,2257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../style.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 32px 20px;
+        box-sizing: border-box;
+        font-size: 14px;
+      "
+    >
+      <!-- CABEÇALHO -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >&nbsp;🧠 Lógica de Programação</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 26px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Portugol na Prática<br style="font-size: 26px" /><span
+              style="color: rgb(206, 147, 216); font-size: 26px"
+              >Pseudocódigo executável com Portugol Studio</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Escrever · Executar · Testar · Depurar — Aprendizado com mão na
+            massa
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >programa</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >se...senao</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >para...faca</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >escreva</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 1 — INTRODUÇÃO AO PORTUGOL -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📘 O que é Portugol?</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(232, 234, 246),
+                rgb(237, 231, 246)
+              );
+              border-radius: 14px;
+              padding: 18px 22px;
+              margin-bottom: 22px;
+              border-left: 5px solid rgb(92, 107, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              Pseudocódigo vs. Portugol — Qual a diferença?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(57, 73, 171);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Pseudocódigo</span
+              >
+              é um <strong style="font-size: 13px">rascunho livre</strong> —
+              você pode escrever de qualquer jeito, mas ele
+              <strong style="font-size: 13px">não executa</strong>.<br />
+              <span
+                style="
+                  background: rgb(57, 73, 171);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Portugol</span
+              >
+              (com Portugol Studio) é uma
+              <strong style="font-size: 13px">linguagem real</strong>, com
+              sintaxe rigorosa, que você pode
+              <strong style="font-size: 13px">digitar, executar e testar</strong
+              >.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⚙️</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Regras de Ouro do Portugol</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 12px;
+                padding: 16px 18px;
+                display: flex;
+                align-items: flex-start;
+                gap: 14px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #1a237e;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 12px;
+                  font-size: 13px;
+                  font-weight: 900;
+                  flex-shrink: 0;
+                "
+                >1</span
+              >
+              <div style="font-size: 14px">
+                <div
+                  style="
+                    color: #1a237e;
+                    font-size: 13px;
+                    font-weight: 800;
+                    margin-bottom: 4px;
+                  "
+                >
+                  📍 Estrutura obrigatória
+                </div>
+                <div style="color: #37474f; font-size: 13px; line-height: 1.7">
+                  Todo programa começa com
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: rgb(197, 202, 233);
+                      color: rgb(26, 35, 126);
+                      padding: 1px 7px;
+                      border-radius: 4px;
+                      font-weight: 800;
+                      font-size: 13px;
+                    "
+                    >programa { }</span
+                  >
+                  e termina com um ponto final. O código executável vai dentro
+                  das chaves.
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 12px;
+                padding: 16px 18px;
+                display: flex;
+                align-items: flex-start;
+                gap: 14px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #1a237e;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 12px;
+                  font-size: 13px;
+                  font-weight: 900;
+                  flex-shrink: 0;
+                "
+                >2</span
+              >
+              <div style="font-size: 14px">
+                <div
+                  style="
+                    color: #1a237e;
+                    font-size: 13px;
+                    font-weight: 800;
+                    margin-bottom: 4px;
+                  "
+                >
+                  💬 Comandos em minúsculo
+                </div>
+                <div style="color: #37474f; font-size: 13px; line-height: 1.7">
+                  Use
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: rgb(197, 202, 233);
+                      color: rgb(26, 35, 126);
+                      padding: 1px 7px;
+                      border-radius: 4px;
+                      font-size: 13px;
+                    "
+                    >escreva</span
+                  >,
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: rgb(197, 202, 233);
+                      color: rgb(26, 35, 126);
+                      padding: 1px 7px;
+                      border-radius: 4px;
+                      font-size: 13px;
+                    "
+                    >leia</span
+                  >,
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: rgb(197, 202, 233);
+                      color: rgb(26, 35, 126);
+                      padding: 1px 7px;
+                      border-radius: 4px;
+                      font-size: 13px;
+                    "
+                    >se</span
+                  >,
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: rgb(197, 202, 233);
+                      color: rgb(26, 35, 126);
+                      padding: 1px 7px;
+                      border-radius: 4px;
+                      font-size: 13px;
+                    "
+                    >senao</span
+                  >,
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: rgb(197, 202, 233);
+                      color: rgb(26, 35, 126);
+                      padding: 1px 7px;
+                      border-radius: 4px;
+                      font-size: 13px;
+                    "
+                    >para</span
+                  >,
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: rgb(197, 202, 233);
+                      color: rgb(26, 35, 126);
+                      padding: 1px 7px;
+                      border-radius: 4px;
+                      font-size: 13px;
+                    "
+                    >faca</span
+                  >. Todo comando termina com ponto e vírgula.
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 12px;
+                padding: 16px 18px;
+                display: flex;
+                align-items: flex-start;
+                gap: 14px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #1a237e;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 12px;
+                  font-size: 13px;
+                  font-weight: 900;
+                  flex-shrink: 0;
+                "
+                >3</span
+              >
+              <div style="font-size: 14px">
+                <div
+                  style="
+                    color: #1a237e;
+                    font-size: 13px;
+                    font-weight: 800;
+                    margin-bottom: 4px;
+                  "
+                >
+                  ↩️ Identação (mesmo princípio)
+                </div>
+                <div style="color: #37474f; font-size: 13px; line-height: 1.7">
+                  Assim como no pseudocódigo, recue o código para a direita
+                  sempre que ele estiver dentro de um bloco (se, para,
+                  enquanto).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 2 — ESTRUTURA BÁSICA E PRIMEIRO PROGRAMA -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔨 Sua Primeira Linha de Código</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 16px;
+              font-size: 14px;
+            "
+          >
+            <!-- CÓDIGO -->
+            <div style="font-size: 14px">
+              <div
+                style="
+                  color: #00695c;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                Exemplo 1 — "Olá, Mundo!"
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 12px;
+                  padding: 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 2.1;
+                  box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+                "
+              >
+                <span style="color: rgb(255, 204, 2); font-size: 13px"
+                  >programa</span
+                ><br style="font-size: 13px" />
+                <span style="color: rgb(144, 202, 249); font-size: 13px">{</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >(</span
+                ><span style="color: rgb(165, 214, 167); font-size: 13px"
+                  >"Olá, Mundo!"</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span
+                ><br style="font-size: 13px" />
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >}</span
+                >
+              </div>
+            </div>
+            <!-- EXPLICAÇÃO -->
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 12px;
+                padding: 18px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #004d40;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                🧠 O que está acontecendo?
+              </div>
+              <div style="color: #37474f; font-size: 12px; line-height: 1.8">
+                <strong style="font-size: 12px">programa { }</strong> —
+                contêiner obrigatório do código.<br /><br />
+                <strong style="font-size: 12px">escreva("texto");</strong> —
+                imprime uma mensagem na tela.<br /><br />
+                <strong style="font-size: 12px">;</strong> — ponto e vírgula
+                encerra cada comando.<br /><br />
+                <span
+                  style="
+                    background: #00695c;
+                    color: white;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    font-size: 11px;
+                    font-weight: bold;
+                  "
+                  >Dica:</span
+                >
+                Sempre feche as aspas duplas e não esqueça o ponto e vírgula!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 3 — ESTRUTURAS DE CONTROLE NO PORTUGOL -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >⚡ Condição e Repetição no Portugol</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            font-size: 14px;
+          "
+        >
+          <!-- SE...SENAO -->
+          <div style="font-size: 14px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 22px">🔀</span
+              ><span style="color: #1565c0; font-size: 16px; font-weight: 800"
+                >Condicional — se ... senao</span
+              >
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 12px;
+                  padding: 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 2.1;
+                  box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+                "
+              >
+                <span style="color: rgb(255, 204, 2); font-size: 13px"
+                  >programa</span
+                ><br style="font-size: 13px" />
+                <span style="color: rgb(144, 202, 249); font-size: 13px">{</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >real</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >nota</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >leia</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >(</span
+                ><span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >nota</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(255, 204, 2); font-size: 13px"
+                  >se</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px">(</span
+                ><span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >nota</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >&gt;=</span
+                >
+                <span style="color: rgb(255, 204, 2); font-size: 13px">6.0</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px">{</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >(</span
+                ><span style="color: rgb(165, 214, 167); font-size: 13px"
+                  >"Aprovado"</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(144, 202, 249); font-size: 13px"
+                  >}</span
+                >
+                <span style="color: rgb(255, 204, 2); font-size: 13px"
+                  >senao</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px">{</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >(</span
+                ><span style="color: rgb(165, 214, 167); font-size: 13px"
+                  >"Reprovado"</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(144, 202, 249); font-size: 13px"
+                  >}</span
+                ><br style="font-size: 13px" />
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >}</span
+                >
+              </div>
+              <div
+                style="
+                  background: rgb(227, 242, 253);
+                  border-radius: 12px;
+                  padding: 18px;
+                  border-left: 4px solid rgb(25, 118, 210);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    color: #1565c0;
+                    font-size: 13px;
+                    font-weight: 800;
+                    margin-bottom: 8px;
+                  "
+                >
+                  🧠 Diferenças para o pseudocódigo
+                </div>
+                <div style="color: #37474f; font-size: 12px; line-height: 1.8">
+                  • Em vez de
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #bbdefb;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >ENTÃO</span
+                  >, usamos
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #bbdefb;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >{ }</span
+                  >
+                  (chaves).<br />
+                  • A condição fica entre parênteses.<br />
+                  • Em vez de
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #bbdefb;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >SENÃO</span
+                  >, escreve-se
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #bbdefb;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >senao</span
+                  >
+                  (junto, minúsculo).<br />
+                  • Não existe
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #bbdefb;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >FIM_SE</span
+                  >
+                  — o bloco termina com
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #bbdefb;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >}</span
+                  >.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PARA...FACA -->
+          <div style="font-size: 14px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 22px">🔁</span
+              ><span style="color: #1565c0; font-size: 16px; font-weight: 800"
+                >Repetição — para ... faca</span
+              >
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 12px;
+                  padding: 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 2.1;
+                  box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+                "
+              >
+                <span style="color: rgb(255, 204, 2); font-size: 13px"
+                  >programa</span
+                ><br style="font-size: 13px" />
+                <span style="color: rgb(144, 202, 249); font-size: 13px">{</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >inteiro</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 13px">i</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(255, 204, 2); font-size: 13px"
+                  >para</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px">(</span
+                ><span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >i</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >=</span
+                >
+                <span style="color: rgb(255, 204, 2); font-size: 13px">1</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span>
+                <span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >i</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >&lt;=</span
+                >
+                <span style="color: rgb(255, 204, 2); font-size: 13px">5</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span>
+                <span style="color: rgb(100, 181, 246); font-size: 13px">i</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">++</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px">{</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >(</span
+                ><span style="color: rgb(165, 214, 167); font-size: 13px"
+                  >"Olá"</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(144, 202, 249); font-size: 13px"
+                  >}</span
+                ><br style="font-size: 13px" />
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >}</span
+                >
+              </div>
+              <div
+                style="
+                  background: rgb(227, 242, 253);
+                  border-radius: 12px;
+                  padding: 18px;
+                  border-left: 4px solid rgb(25, 118, 210);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    color: #1565c0;
+                    font-size: 13px;
+                    font-weight: 800;
+                    margin-bottom: 8px;
+                  "
+                >
+                  🧠 O que mudou?
+                </div>
+                <div style="color: #37474f; font-size: 12px; line-height: 1.8">
+                  • O laço usa parênteses com
+                  <strong style="font-size: 12px">três partes</strong>:<br />
+                  &nbsp;&nbsp;① inicial (<span
+                    style="
+                      font-family: monospace;
+                      background: #bbdefb;
+                      padding: 1px 4px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >i = 1</span
+                  >)<br />
+                  &nbsp;&nbsp;② condição (<span
+                    style="
+                      font-family: monospace;
+                      background: #bbdefb;
+                      padding: 1px 4px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >i <= 5</span
+                  >)<br />
+                  &nbsp;&nbsp;③ incremento (<span
+                    style="
+                      font-family: monospace;
+                      background: #bbdefb;
+                      padding: 1px 4px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >i++</span
+                  >)<br />
+                  •
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #bbdefb;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >i++</span
+                  >
+                  significa
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #bbdefb;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >i = i + 1</span
+                  >.<br />
+                  • Bloco delimitado por chaves
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #bbdefb;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >{ }</span
+                  >.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 4 — PRÁTICA GUIADA (EXEMPLOS) -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧪 Prática Guiada — Exemplos Completos</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-size: 14px;
+          "
+        >
+          <!-- EXEMPLO A — PAR OU ÍMPAR -->
+          <div
+            style="
+              background: rgb(255, 248, 245);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >A</span
+              >
+              <span style="color: #e65100; font-size: 14px; font-weight: 800"
+                >🔢 Par ou Ímpar (com módulo %)</span
+              >
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 12px;
+                  padding: 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 2.1;
+                  box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+                "
+              >
+                <span style="color: rgb(255, 204, 2); font-size: 13px"
+                  >programa</span
+                ><br style="font-size: 13px" />
+                <span style="color: rgb(144, 202, 249); font-size: 13px">{</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >inteiro</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >num</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >leia</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >(</span
+                ><span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >num</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(255, 204, 2); font-size: 13px"
+                  >se</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px">(</span
+                ><span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >num</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >%</span
+                >
+                <span style="color: rgb(255, 204, 2); font-size: 13px">2</span>
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >==</span
+                >
+                <span style="color: rgb(255, 204, 2); font-size: 13px">0</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px">{</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >(</span
+                ><span style="color: rgb(165, 214, 167); font-size: 13px"
+                  >"É PAR"</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(144, 202, 249); font-size: 13px"
+                  >}</span
+                >
+                <span style="color: rgb(255, 204, 2); font-size: 13px"
+                  >senao</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px">{</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >(</span
+                ><span style="color: rgb(165, 214, 167); font-size: 13px"
+                  >"É ÍMPAR"</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(144, 202, 249); font-size: 13px"
+                  >}</span
+                ><br style="font-size: 13px" />
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >}</span
+                >
+              </div>
+              <div
+                style="
+                  background: rgb(255, 243, 224);
+                  border-radius: 10px;
+                  padding: 16px;
+                  border-left: 4px solid rgb(245, 124, 0);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    color: #e65100;
+                    font-size: 13px;
+                    font-weight: 800;
+                    margin-bottom: 8px;
+                  "
+                >
+                  🧠 Observações
+                </div>
+                <div style="color: #37474f; font-size: 12px; line-height: 1.8">
+                  •
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #ffe0b2;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >inteiro</span
+                  >
+                  declara a variável.<br />
+                  •
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #ffe0b2;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >%</span
+                  >
+                  é o operador de resto (módulo).<br />
+                  •
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #ffe0b2;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >==</span
+                  >
+                  significa "igual a". Um
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #ffe0b2;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >=</span
+                  >
+                  só é usado para atribuir valor.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- EXEMPLO B — TABUADA -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #2e7d32;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >B</span
+              >
+              <span style="color: #2e7d32; font-size: 14px; font-weight: 800"
+                >✖️ Tabuada de um número</span
+              >
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 12px;
+                  padding: 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 2.1;
+                  box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+                "
+              >
+                <span style="color: rgb(255, 204, 2); font-size: 13px"
+                  >programa</span
+                ><br style="font-size: 13px" />
+                <span style="color: rgb(144, 202, 249); font-size: 13px">{</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >inteiro</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >num</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">,</span>
+                <span style="color: rgb(100, 181, 246); font-size: 13px">i</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >leia</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >(</span
+                ><span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >num</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(255, 204, 2); font-size: 13px"
+                  >para</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px">(</span
+                ><span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >i</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >=</span
+                >
+                <span style="color: rgb(255, 204, 2); font-size: 13px">1</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span>
+                <span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >i</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >&lt;=</span
+                >
+                <span style="color: rgb(255, 204, 2); font-size: 13px">10</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span>
+                <span style="color: rgb(100, 181, 246); font-size: 13px">i</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">++</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px">{</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >(</span
+                ><span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >num</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >,</span
+                >
+                <span style="color: rgb(165, 214, 167); font-size: 13px"
+                  >" x "</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >,</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 13px">i</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >,</span
+                >
+                <span style="color: rgb(165, 214, 167); font-size: 13px"
+                  >" = "</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >,</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >num</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >*</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 13px">i</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(144, 202, 249); font-size: 13px"
+                  >}</span
+                ><br style="font-size: 13px" />
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >}</span
+                >
+              </div>
+              <div
+                style="
+                  background: rgb(224, 242, 241);
+                  border-radius: 10px;
+                  padding: 16px;
+                  border-left: 4px solid rgb(56, 142, 60);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    color: #1b5e20;
+                    font-size: 13px;
+                    font-weight: 800;
+                    margin-bottom: 8px;
+                  "
+                >
+                  🧠 Detalhes importantes
+                </div>
+                <div style="color: #37474f; font-size: 12px; line-height: 1.8">
+                  • Duas variáveis declaradas na mesma linha:
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #c8e6c9;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >inteiro num, i</span
+                  >.<br />
+                  •
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #c8e6c9;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >escreva</span
+                  >
+                  aceita vários argumentos separados por vírgula.<br />
+                  • Expressão matemática diretamente dentro do
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #c8e6c9;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >escreva</span
+                  >.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- EXEMPLO C — SOMA ACUMULATIVA -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(197, 202, 233);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #283593;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >C</span
+              >
+              <span style="color: #283593; font-size: 14px; font-weight: 800"
+                >➕ Soma dos números de 1 a N</span
+              >
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 12px;
+                  padding: 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 2.1;
+                  box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+                "
+              >
+                <span style="color: rgb(255, 204, 2); font-size: 13px"
+                  >programa</span
+                ><br style="font-size: 13px" />
+                <span style="color: rgb(144, 202, 249); font-size: 13px">{</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >inteiro</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 13px">n</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">,</span>
+                <span style="color: rgb(100, 181, 246); font-size: 13px">i</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">,</span>
+                <span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >soma</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(100, 181, 246); font-size: 13px"
+                  >soma</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >=</span
+                >
+                <span style="color: rgb(255, 204, 2); font-size: 13px">0</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >leia</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >(</span
+                ><span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >n</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(255, 204, 2); font-size: 13px"
+                  >para</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px">(</span
+                ><span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >i</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >=</span
+                >
+                <span style="color: rgb(255, 204, 2); font-size: 13px">1</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span>
+                <span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >i</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >&lt;=</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 13px">n</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span>
+                <span style="color: rgb(100, 181, 246); font-size: 13px">i</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">++</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px">{</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(100, 181, 246); font-size: 13px"
+                  >soma</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >=</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >soma</span
+                >
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >+</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 13px">i</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(144, 202, 249); font-size: 13px"
+                  >}</span
+                ><br style="font-size: 13px" />
+                &nbsp;&nbsp;<span
+                  style="color: rgb(128, 222, 234); font-size: 13px"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >(</span
+                ><span style="color: rgb(165, 214, 167); font-size: 13px"
+                  >"Soma: "</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >,</span
+                >
+                <span style="color: rgb(100, 181, 246); font-size: 13px"
+                  >soma</span
+                ><span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >)</span
+                ><span style="color: rgb(255, 204, 2); font-size: 13px">;</span
+                ><br style="font-size: 13px" />
+                <span style="color: rgb(144, 202, 249); font-size: 13px"
+                  >}</span
+                >
+              </div>
+              <div
+                style="
+                  background: rgb(227, 242, 253);
+                  border-radius: 10px;
+                  padding: 16px;
+                  border-left: 4px solid rgb(57, 73, 171);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    color: #1a237e;
+                    font-size: 13px;
+                    font-weight: 800;
+                    margin-bottom: 8px;
+                  "
+                >
+                  🧠 Padrão acumulador
+                </div>
+                <div style="color: #37474f; font-size: 12px; line-height: 1.8">
+                  •
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #c5cae9;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >soma = 0</span
+                  >
+                  inicializa o acumulador.<br />
+                  • Dentro do laço:
+                  <span
+                    style="
+                      font-family: monospace;
+                      background: #c5cae9;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >soma = soma + i</span
+                  >
+                  acumula.<br />
+                  • Ao final, exibe o resultado fora do laço.<br />
+                  • Esse padrão é usado em
+                  <strong style="font-size: 12px"
+                    >médias, totais e contagens</strong
+                  >.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 5 — DESAFIOS DE FIXAÇÃO -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >🏆</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Desafios de Programação</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-size: 14px;
+          "
+        >
+          <!-- DESAFIO 1 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >1</span
+              >
+              <span style="color: #e65100; font-size: 14px; font-weight: 800"
+                >🔐 Maioridade</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              <strong style="font-size: 13px">Desafio:</strong> Crie um programa
+              em Portugol que leia a idade de uma pessoa e escreva
+              <strong style="font-size: 13px">"Maior de idade"</strong> se tiver
+              18 anos ou mais, e
+              <strong style="font-size: 13px">"Menor de idade"</strong> caso
+              contrário.<br /><br />
+              <span style="color: #e65100; font-weight: bold; font-size: 12px"
+                >Dica:</span
+              >
+              Use
+              <span
+                style="
+                  font-family: monospace;
+                  background: #ffe0b2;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >inteiro idade</span
+              >,
+              <span
+                style="
+                  font-family: monospace;
+                  background: #ffe0b2;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >leia(idade)</span
+              >
+              e
+              <span
+                style="
+                  font-family: monospace;
+                  background: #ffe0b2;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >se (idade >= 18)</span
+              >.
+            </div>
+          </div>
+
+          <!-- DESAFIO 2 -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #2e7d32;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >2</span
+              >
+              <span style="color: #2e7d32; font-size: 14px; font-weight: 800"
+                >🔁 Contagem Regressiva</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              <strong style="font-size: 13px">Desafio:</strong> Escreva um
+              programa que leia um número inteiro N e exiba uma
+              <strong style="font-size: 13px">contagem regressiva</strong> de N
+              até 0 (inclusive o zero). Use
+              <span
+                style="
+                  font-family: monospace;
+                  background: #c8e6c9;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >para ... faca</span
+              >.<br /><br />
+              <span style="color: #2e7d32; font-weight: bold; font-size: 12px"
+                >Exemplo:</span
+              >
+              Se N = 5 → saída: 5 4 3 2 1 0.
+            </div>
+          </div>
+
+          <!-- DESAFIO 3 -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(197, 202, 233);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #283593;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >3</span
+              >
+              <span style="color: #283593; font-size: 14px; font-weight: 800"
+                >📊 Média de Notas</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              <strong style="font-size: 13px">Desafio:</strong> Leia
+              <strong style="font-size: 13px">3 notas</strong> de um aluno (tipo
+              <span
+                style="
+                  font-family: monospace;
+                  background: #c5cae9;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >real</span
+              >), calcule a média aritmética e mostre se o aluno foi
+              <strong style="font-size: 13px">Aprovado</strong> (média ≥ 7.0) ou
+              <strong style="font-size: 13px">Reprovado</strong>.
+            </div>
+          </div>
+
+          <!-- DESAFIO 4 -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(187, 222, 251);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #1565c0;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >4</span
+              >
+              <span style="color: #1565c0; font-size: 14px; font-weight: 800"
+                >⭐ BÔNUS — Números Pares em um Intervalo</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              <strong style="font-size: 13px">Desafio:</strong> Leia dois
+              números inteiros <strong style="font-size: 13px">A</strong> e
+              <strong style="font-size: 13px">B</strong> (com A menor que B) e
+              exiba
+              <strong style="font-size: 13px">apenas os números pares</strong>
+              entre A e B (incluindo os extremos, se forem pares).<br /><br />
+              <span style="color: #1565c0; font-weight: bold; font-size: 12px"
+                >Dica:</span
+              >
+              Combine
+              <span
+                style="
+                  font-family: monospace;
+                  background: #bbdefb;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >para</span
+              >
+              com
+              <span
+                style="
+                  font-family: monospace;
+                  background: #bbdefb;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >se (numero % 2 == 0)</span
+              >
+              dentro do laço.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FECHAMENTO FINAL -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🚀</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo — Do Pseudocódigo ao Portugol</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📐</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                programa { } — contêiner obrigatório
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔀</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                se (cond) { } senao { }
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔁</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                para ( ; ; ) { } — laço contado
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >programa</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >se...senao</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >para...faca</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >inteiro / real</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >escreva()</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >leia()</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

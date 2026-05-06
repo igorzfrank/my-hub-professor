@@ -1,0 +1,2799 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arquitetura MVC</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(240, 244, 249);
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- Cabecalho -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102) 0%,
+            rgb(26, 95, 168) 100%
+          );
+          border-radius: 14px;
+          padding: 36px 40px;
+          margin-bottom: 24px;
+          box-shadow: rgba(13, 59, 102, 0.28) 0px 8px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a8c8f0;
+            margin-bottom: 10px;
+          "
+        >
+          Técnico em Desenvolvimento de Sistemas — Desenvolvimento de Sistemas
+        </div>
+        <div
+          style="
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 12px;
+          "
+        >
+          Padrão MVC com Express.js
+        </div>
+        <div style="font-size: 15px; color: #c8dff5; line-height: 1.65">
+          Nesta aula você aprenderá o que é o padrão arquitetural MVC, por que
+          ele existe e como aplicá-lo em um projeto Express.js real. Cada camada
+          será explicada com exemplos progressivos e, ao final, veremos como o
+          MVC se conecta com os Design Patterns que estudamos anteriormente.
+        </div>
+      </div>
+      <!-- Capacidades -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          border-left: 6px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 14px;
+          "
+        >
+          Capacidade Trabalhada
+        </div>
+        <div
+          style="
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              min-width: 6px;
+              min-height: 6px;
+              width: 6px;
+              height: 6px;
+              background: rgb(26, 95, 168);
+              border-radius: 50%;
+              margin-top: 7px;
+              font-size: 14px;
+            "
+          >
+            &nbsp;
+          </div>
+          <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+            Aplicar metodologia de desenvolvimento de acordo com o escopo do
+            projeto.
+          </div>
+        </div>
+      </div>
+      <!-- O problema antes do MVC -->
+      <div
+        style="
+          background: rgb(234, 242, 251);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.08) 0px 4px 18px;
+          border: 1px solid rgb(184, 212, 237);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 12px;
+          "
+        >
+          O problema que o MVC resolve
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.75;
+            margin-bottom: 12px;
+          "
+        >
+          Imagine que você está construindo uma API para gerenciar tarefas. No
+          começo, é tentador colocar tudo em um arquivo só: os dados, as regras
+          de negócio, o tratamento das requisições e a formatação das respostas.
+          Funciona — por um tempo.
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.75;
+            margin-bottom: 16px;
+          "
+        >
+          Conforme o projeto cresce, esse arquivo vira um labirinto. Qualquer
+          alteração pode quebrar algo inesperado. Novos desenvolvedores não
+          entendem onde cada coisa está. Isso tem um nome:
+          <span style="font-weight: bold; font-size: 15px"
+            >código espaguete</span
+          >.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 10px 18px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              color: #e05555;
+              border-bottom: 1px solid #2a3a4a;
+              letter-spacing: 1px;
+            "
+          >
+            sem-mvc.js — tudo no mesmo lugar (o problema)
+          </div>
+          <pre
+            style="
+              margin: 0;
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.85;
+              overflow-x: auto;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Dados, regras, requisição e resposta — misturados num único arquivo.</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Conforme o sistema cresce, isso se torna impossível de manter.</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> express = require(<span style="color: rgb(168, 240, 200); font-size: 13px;">'express'</span>);
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> app = <span style="color: rgb(93, 245, 168); font-size: 13px;">express</span>();
+app.<span style="color: rgb(93, 245, 168); font-size: 13px;">use</span>(express.<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>());
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Dados aqui...</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">let</span> tarefas = [{ id: <span style="color: rgb(240, 200, 122); font-size: 13px;">1</span>, titulo: <span style="color: rgb(168, 240, 200); font-size: 13px;">'Estudar'</span>, concluida: <span style="color: rgb(240, 200, 122); font-size: 13px;">false</span> }];
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Regras de negócio aqui...</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Tratamento de requisição aqui...</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Validação aqui...</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Resposta aqui... tudo junto, tudo misturado.</span>
+app.<span style="color: rgb(93, 245, 168); font-size: 13px;">get</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'/tarefas'</span>, (req, res) =&gt; {
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// E se eu precisar reutilizar essa lista em outra rota?</span>
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// E se outro dev precisar entender o que é "regra" e o que é "rota"?</span>
+  res.<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>(tarefas);
+});
+
+app.<span style="color: rgb(93, 245, 168); font-size: 13px;">listen</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">3000</span>);</pre>
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 4px solid rgb(26, 95, 168);
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 14px; color: #1a2a3a; line-height: 1.7">
+            <span style="font-weight: bold; font-size: 14px"
+              >Analogia do mundo real:</span
+            >
+            pense numa cozinha onde o mesmo funcionário anota o pedido, cozinha,
+            monta o prato, cobra e lava a louça. Com um cliente funciona. Com
+            cinquenta clientes, vira caos. A solução — tanto na cozinha quanto
+            no software — é
+            <span style="font-weight: bold; font-size: 14px"
+              >separar responsabilidades</span
+            >: cada pessoa tem um papel claro e delimitado.
+          </div>
+        </div>
+      </div>
+      <!-- O que é MVC -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 6px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          O que é o padrão MVC?
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #4a6a8a;
+            margin-bottom: 20px;
+            line-height: 1.6;
+          "
+        >
+          Model — View — Controller
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 24px;
+          "
+        >
+          O <span style="font-weight: bold; font-size: 15px">MVC</span> é um
+          padrão arquitetural que divide o projeto em três camadas com
+          responsabilidades bem definidas e que não se misturam. Criado nos anos
+          1970 no Xerox PARC, tornou-se o padrão mais adotado no desenvolvimento
+          web — presente em frameworks como Express.js, Laravel, Django e Ruby
+          on Rails.
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 24px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              border-radius: 12px;
+              overflow: hidden;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgb(13, 59, 102),
+                  rgb(26, 95, 168)
+                );
+                padding: 14px 24px;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 8px;
+                  width: 34px;
+                  height: 34px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 15px;
+                  font-weight: bold;
+                  color: #fff;
+                  letter-spacing: 1px;
+                  flex-shrink: 0;
+                "
+              >
+                M
+              </div>
+              <div style="font-size: 15px; font-weight: bold; color: #ffffff">
+                Model — Modelo
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(248, 251, 255);
+                padding: 20px 24px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 14px;
+                  color: #2c3e50;
+                  line-height: 1.8;
+                  margin-bottom: 12px;
+                "
+              >
+                É onde vivem os
+                <span style="font-weight: bold; font-size: 14px"
+                  >dados e todas as regras de negócio</span
+                >. O Model é responsável por buscar informações no banco de
+                dados, validar entradas, aplicar cálculos e garantir que os
+                dados estejam corretos antes de qualquer coisa. Ele
+                <span style="font-weight: bold; font-size: 14px"
+                  >não sabe que existe uma requisição HTTP</span
+                >
+                — trabalha apenas com dados.
+              </div>
+              <div
+                style="
+                  background: #eaf2fb;
+                  border-radius: 8px;
+                  padding: 12px 16px;
+                  font-size: 13px;
+                  color: #4a6a8a;
+                  line-height: 1.65;
+                "
+              >
+                Na cozinha: é o
+                <span style="font-weight: bold; font-size: 13px"
+                  >cozinheiro e a receita</span
+                >. Sabe o que pode ser preparado, como deve ser feito e garante
+                que o prato saia correto. Não atende o cliente diretamente.
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              border-radius: 12px;
+              overflow: hidden;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgb(13, 59, 102),
+                  rgb(26, 95, 168)
+                );
+                padding: 14px 24px;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 8px;
+                  width: 34px;
+                  height: 34px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 15px;
+                  font-weight: bold;
+                  color: #fff;
+                  letter-spacing: 1px;
+                  flex-shrink: 0;
+                "
+              >
+                V
+              </div>
+              <div style="font-size: 15px; font-weight: bold; color: #ffffff">
+                View — Visualização
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(248, 251, 255);
+                padding: 20px 24px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 14px;
+                  color: #2c3e50;
+                  line-height: 1.8;
+                  margin-bottom: 12px;
+                "
+              >
+                É a
+                <span style="font-weight: bold; font-size: 14px"
+                  >camada de apresentação</span
+                >
+                — o que o usuário ou o sistema consumidor recebe como resposta.
+                Em sistemas web tradicionais, a View é o HTML renderizado na
+                tela. Em APIs REST (como vamos construir com Express.js), a View
+                é o
+                <span style="font-weight: bold; font-size: 14px"
+                  >JSON retornado</span
+                >
+                pelo servidor. Ela apenas exibe dados,
+                <span style="font-weight: bold; font-size: 14px"
+                  >nunca processa nada</span
+                >.
+              </div>
+              <div
+                style="
+                  background: #eaf2fb;
+                  border-radius: 8px;
+                  padding: 12px 16px;
+                  font-size: 13px;
+                  color: #4a6a8a;
+                  line-height: 1.65;
+                "
+              >
+                Na cozinha: é o
+                <span style="font-weight: bold; font-size: 13px"
+                  >balcão de entrega</span
+                >. O cliente recebe o prato pronto — sem ver a cozinha, sem
+                saber a receita. Apenas o resultado final, apresentado de forma
+                adequada.
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              border-radius: 12px;
+              overflow: hidden;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgb(13, 59, 102),
+                  rgb(26, 95, 168)
+                );
+                padding: 14px 24px;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 8px;
+                  width: 34px;
+                  height: 34px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 15px;
+                  font-weight: bold;
+                  color: #fff;
+                  letter-spacing: 1px;
+                  flex-shrink: 0;
+                "
+              >
+                C
+              </div>
+              <div style="font-size: 15px; font-weight: bold; color: #ffffff">
+                Controller — Controlador
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(248, 251, 255);
+                padding: 20px 24px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 14px;
+                  color: #2c3e50;
+                  line-height: 1.8;
+                  margin-bottom: 12px;
+                "
+              >
+                É o
+                <span style="font-weight: bold; font-size: 14px"
+                  >intermediário que orquestra o fluxo</span
+                >. O Controller recebe a requisição HTTP da rota, decide quais
+                dados pedir ao Model, e monta a resposta que será entregue como
+                View. Ele sabe
+                <span style="font-weight: bold; font-size: 14px"
+                  >o que fazer</span
+                >, mas delega ao Model
+                <span style="font-weight: bold; font-size: 14px"
+                  >como fazer</span
+                >. Se o Controller está ficando muito grande, é sinal de que
+                lógica de negócio escapou para o lugar errado.
+              </div>
+              <div
+                style="
+                  background: #eaf2fb;
+                  border-radius: 8px;
+                  padding: 12px 16px;
+                  font-size: 13px;
+                  color: #4a6a8a;
+                  line-height: 1.65;
+                "
+              >
+                Na cozinha: é o
+                <span style="font-weight: bold; font-size: 13px">garçom</span>.
+                Recebe o pedido do cliente, leva para a cozinha (Model), busca o
+                resultado e entrega no balcão (View). Não cozinha e não é o
+                balcão — apenas coordena o fluxo.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fluxo visual -->
+        <div
+          style="
+            background: rgb(240, 247, 255);
+            border-radius: 12px;
+            padding: 22px;
+            border: 1px solid rgb(200, 223, 245);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 12px;
+              font-weight: bold;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              color: #1a5fa8;
+              margin-bottom: 16px;
+            "
+          >
+            Fluxo de uma requisição no MVC — passo a passo
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: stretch;
+              gap: 6px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(13, 59, 102);
+                color: rgb(255, 255, 255);
+                border-radius: 10px;
+                padding: 14px 12px;
+                text-align: center;
+                flex: 1 1 0%;
+                min-width: 90px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 10px;
+                  font-weight: bold;
+                  letter-spacing: 1px;
+                  text-transform: uppercase;
+                  color: #a8c8f0;
+                  margin-bottom: 6px;
+                "
+              >
+                Passo 1
+              </div>
+              <div style="font-size: 12px; font-weight: bold; line-height: 1.4">
+                Cliente faz a requisição
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #a8c8f0;
+                  margin-top: 4px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+              >
+                GET /tarefas
+              </div>
+            </div>
+            <div
+              style="
+                color: #1a5fa8;
+                font-size: 20px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+              "
+            >
+              →
+            </div>
+            <div
+              style="
+                background: rgb(26, 95, 168);
+                color: rgb(255, 255, 255);
+                border-radius: 10px;
+                padding: 14px 12px;
+                text-align: center;
+                flex: 1 1 0%;
+                min-width: 90px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 10px;
+                  font-weight: bold;
+                  letter-spacing: 1px;
+                  text-transform: uppercase;
+                  color: #c8dff5;
+                  margin-bottom: 6px;
+                "
+              >
+                Passo 2
+              </div>
+              <div style="font-size: 12px; font-weight: bold; line-height: 1.4">
+                Rota direciona para o Controller
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #c8dff5;
+                  margin-top: 4px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+              >
+                tarefasRoutes.js
+              </div>
+            </div>
+            <div
+              style="
+                color: #1a5fa8;
+                font-size: 20px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+              "
+            >
+              →
+            </div>
+            <div
+              style="
+                background: rgb(36, 114, 184);
+                color: rgb(255, 255, 255);
+                border-radius: 10px;
+                padding: 14px 12px;
+                text-align: center;
+                flex: 1 1 0%;
+                min-width: 90px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 10px;
+                  font-weight: bold;
+                  letter-spacing: 1px;
+                  text-transform: uppercase;
+                  color: #c8dff5;
+                  margin-bottom: 6px;
+                "
+              >
+                Passo 3
+              </div>
+              <div style="font-size: 12px; font-weight: bold; line-height: 1.4">
+                Controller chama o Model
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #c8dff5;
+                  margin-top: 4px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+              >
+                tarefasController.js
+              </div>
+            </div>
+            <div
+              style="
+                color: #1a5fa8;
+                font-size: 20px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+              "
+            >
+              →
+            </div>
+            <div
+              style="
+                background: rgb(58, 143, 212);
+                color: rgb(255, 255, 255);
+                border-radius: 10px;
+                padding: 14px 12px;
+                text-align: center;
+                flex: 1 1 0%;
+                min-width: 90px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 10px;
+                  font-weight: bold;
+                  letter-spacing: 1px;
+                  text-transform: uppercase;
+                  color: #ddeeff;
+                  margin-bottom: 6px;
+                "
+              >
+                Passo 4
+              </div>
+              <div style="font-size: 12px; font-weight: bold; line-height: 1.4">
+                Model retorna os dados
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #ddeeff;
+                  margin-top: 4px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+              >
+                tarefasModel.js
+              </div>
+            </div>
+            <div
+              style="
+                color: #1a5fa8;
+                font-size: 20px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+              "
+            >
+              →
+            </div>
+            <div
+              style="
+                background: rgb(26, 122, 69);
+                color: rgb(255, 255, 255);
+                border-radius: 10px;
+                padding: 14px 12px;
+                text-align: center;
+                flex: 1 1 0%;
+                min-width: 90px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 10px;
+                  font-weight: bold;
+                  letter-spacing: 1px;
+                  text-transform: uppercase;
+                  color: #a8f0c8;
+                  margin-bottom: 6px;
+                "
+              >
+                Passo 5
+              </div>
+              <div style="font-size: 12px; font-weight: bold; line-height: 1.4">
+                View é enviada ao cliente
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #a8f0c8;
+                  margin-top: 4px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+              >
+                JSON: 200 OK
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Estrutura de Pastas -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Estrutura de Pastas do Projeto
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 20px;
+          "
+        >
+          O MVC não é apenas um conceito — ele precisa se refletir na
+          organização física dos arquivos. Cada pasta representa uma camada, e
+          essa separação deve ser respeitada rigorosamente. Um arquivo que está
+          na pasta errada é um sinal de que a responsabilidade está no lugar
+          errado.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            padding: 24px 28px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <pre
+            style="
+              margin: 0;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 14px;
+              color: #e0f0ff;
+              line-height: 2.1;
+            "
+          ><span style="color: rgb(168, 200, 240); font-weight: bold; font-size: 14px;">projeto-tarefas/</span>
+<span style="color: rgb(93, 184, 245); font-size: 14px;">│</span>
+<span style="color: rgb(93, 184, 245); font-size: 14px;">├──</span> <span style="color: rgb(240, 200, 122); font-size: 14px;">index.js</span>              <span style="color: #4a6a8a; font-size: 12px;">← Ponto de entrada: inicializa o servidor e registra as rotas</span>
+<span style="color: rgb(93, 184, 245); font-size: 14px;">│</span>
+<span style="color: rgb(93, 184, 245); font-size: 14px;">├──</span> <span style="color: rgb(93, 245, 168); font-size: 14px;">routes/</span>               <span style="color: #4a6a8a; font-size: 12px;">← URLs da API — apenas mapeia caminhos para controllers</span>
+<span style="color: rgb(93, 184, 245); font-size: 14px;">│   └──</span> tarefasRoutes.js
+<span style="color: rgb(93, 184, 245); font-size: 14px;">│</span>
+<span style="color: rgb(93, 184, 245); font-size: 14px;">├──</span> <span style="color: rgb(93, 245, 168); font-size: 14px;">controllers/</span>          <span style="color: #4a6a8a; font-size: 12px;">← Camada C: recebe req, consulta Model, devolve res</span>
+<span style="color: rgb(93, 184, 245); font-size: 14px;">│   └──</span> tarefasController.js
+<span style="color: rgb(93, 184, 245); font-size: 14px;">│</span>
+<span style="color: rgb(93, 184, 245); font-size: 14px;">└──</span> <span style="color: rgb(93, 245, 168); font-size: 14px;">models/</span>               <span style="color: #4a6a8a; font-size: 12px;">← Camada M: dados, validações e regras de negócio</span>
+    <span style="color: rgb(93, 184, 245); font-size: 14px;">└──</span> tarefasModel.js</pre>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 16px;
+              background: rgb(248, 251, 255);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 38px;
+                height: 38px;
+                background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 11px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                font-family: &quot;Courier New&quot;, monospace;
+                letter-spacing: 0;
+              "
+            >
+              routes/
+            </div>
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.7">
+              Define quais URLs existem e qual método HTTP cada uma aceita (GET,
+              POST, PUT, DELETE).
+              <span style="font-weight: bold; font-size: 14px"
+                >Não contém lógica alguma</span
+              >
+              — apenas aponta para o controller correto. Se você encontrar um
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >if</span
+              >
+              dentro de uma rota, algo está no lugar errado.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 16px;
+              background: rgb(248, 251, 255);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 38px;
+                height: 38px;
+                background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 11px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                font-family: &quot;Courier New&quot;, monospace;
+              "
+            >
+              ctrls/
+            </div>
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.7">
+              Recebe o
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >req</span
+              >
+              da rota, chama as funções do Model, trata erros e monta o
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >res</span
+              >.
+              <span style="font-weight: bold; font-size: 14px"
+                >Não armazena dados</span
+              >
+              e
+              <span style="font-weight: bold; font-size: 14px"
+                >não acessa o banco diretamente</span
+              >. Se o controller está crescendo muito, é porque regras de
+              negócio escaparam para ele.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 16px;
+              background: rgb(248, 251, 255);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 38px;
+                height: 38px;
+                background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 11px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                font-family: &quot;Courier New&quot;, monospace;
+              "
+            >
+              models/
+            </div>
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.7">
+              Contém os dados e toda a lógica de negócio: validações, cálculos,
+              consultas ao banco. O Model
+              <span style="font-weight: bold; font-size: 14px"
+                >desconhece o Controller e a View</span
+              >
+              — ele só lida com dados. Isso é o que permite trocar o banco de
+              dados sem alterar nenhuma outra camada.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- EXEMPLO COMPLETO -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 6px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Exemplo Completo — API de Tarefas
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: #4a6a8a;
+            line-height: 1.6;
+            margin-bottom: 26px;
+          "
+        >
+          Vamos construir uma API de gerenciamento de tarefas do zero, seguindo
+          o MVC de forma correta. Leia os arquivos na ordem e observe como cada
+          camada tem uma responsabilidade exclusiva — e como elas se comunicam
+          sem se misturar.
+        </div>
+        <!-- Arquivo 1: index.js -->
+        <div style="margin-bottom: 30px; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+                color: #fff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 5px 14px;
+                border-radius: 20px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                white-space: nowrap;
+              "
+            >
+              Arquivo 1 de 4
+            </div>
+            <div style="font-size: 15px; font-weight: bold; color: #0d3b66">
+              index.js — Ponto de Entrada do Servidor
+            </div>
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #4a6a8a;
+              line-height: 1.65;
+              margin-bottom: 12px;
+            "
+          >
+            O arquivo principal deve ser
+            <span style="font-weight: bold; font-size: 14px"
+              >o mais enxuto possível</span
+            >. Sua única função é iniciar o servidor Express, registrar os
+            middlewares essenciais e conectar as rotas. Nenhuma lógica de
+            negócio deve aparecer aqui.
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 10px 18px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #5db8f5;
+                border-bottom: 1px solid #2a3a4a;
+                letter-spacing: 1px;
+              "
+            >
+              index.js
+            </div>
+            <pre
+              style="
+                margin: 0px;
+                padding: 22px 26px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 13px;
+                color: rgb(224, 240, 255);
+                line-height: 1.85;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(93, 184, 245); font-size: 13px;">// 1. Importa o framework</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> express = require(<span style="color: rgb(168, 240, 200); font-size: 13px;">'express'</span>);
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> app     = <span style="color: rgb(93, 245, 168); font-size: 13px;">express</span>();
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// 2. Importa o arquivo de rotas</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> tarefasRoutes = require(<span style="color: rgb(168, 240, 200); font-size: 13px;">'./routes/tarefasRoutes'</span>);
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// 3. Middleware: habilita leitura do corpo da requisição em JSON</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">//    Sem isso, req.body seria undefined no controller</span>
+app.<span style="color: rgb(93, 245, 168); font-size: 13px;">use</span>(express.<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>());
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// 4. Registra as rotas sob o prefixo /tarefas</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">//    GET /tarefas, POST /tarefas, etc. passarão por aqui</span>
+app.<span style="color: rgb(93, 245, 168); font-size: 13px;">use</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'/tarefas'</span>, tarefasRoutes);
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// 5. Inicia o servidor</span>
+app.<span style="color: rgb(93, 245, 168); font-size: 13px;">listen</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">3000</span>, () =&gt; {
+  console.<span style="color: rgb(93, 245, 168); font-size: 13px;">log</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'Servidor rodando em http://localhost:3000'</span>);
+});</pre>
+          </div>
+        </div>
+        <!-- Arquivo 2: routes -->
+        <div style="margin-bottom: 30px; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+                color: #fff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 5px 14px;
+                border-radius: 20px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                white-space: nowrap;
+              "
+            >
+              Arquivo 2 de 4
+            </div>
+            <div style="font-size: 15px; font-weight: bold; color: #0d3b66">
+              routes/tarefasRoutes.js — Mapa de URLs
+            </div>
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #4a6a8a;
+              line-height: 1.65;
+              margin-bottom: 12px;
+            "
+          >
+            As rotas funcionam como um
+            <span style="font-weight: bold; font-size: 14px">índice</span>:
+            dizem qual URL faz o quê, mas não executam nada por conta própria.
+            Cada linha associa um método HTTP e um caminho a uma função do
+            controller. Nenhuma linha de lógica aqui.
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 10px 18px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #5db8f5;
+                border-bottom: 1px solid #2a3a4a;
+                letter-spacing: 1px;
+              "
+            >
+              routes/tarefasRoutes.js
+            </div>
+            <pre
+              style="
+                margin: 0px;
+                padding: 22px 26px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 13px;
+                color: rgb(224, 240, 255);
+                line-height: 1.85;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> express           = require(<span style="color: rgb(168, 240, 200); font-size: 13px;">'express'</span>);
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> router             = express.<span style="color: rgb(93, 245, 168); font-size: 13px;">Router</span>();
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> tarefasController  = require(<span style="color: rgb(168, 240, 200); font-size: 13px;">'../controllers/tarefasController'</span>);
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Cada linha = um "endereço" da API e quem vai atendê-lo</span>
+router.<span style="color: rgb(93, 245, 168); font-size: 13px;">get</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'/'</span>,    tarefasController.listar);      <span style="color: rgb(93, 184, 245); font-size: 13px;">// GET  /tarefas</span>
+router.<span style="color: rgb(93, 245, 168); font-size: 13px;">get</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'/:id'</span>, tarefasController.buscarPorId); <span style="color: rgb(93, 184, 245); font-size: 13px;">// GET  /tarefas/1</span>
+router.<span style="color: rgb(93, 245, 168); font-size: 13px;">post</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'/'</span>,    tarefasController.criar);       <span style="color: rgb(93, 184, 245); font-size: 13px;">// POST /tarefas</span>
+router.<span style="color: rgb(93, 245, 168); font-size: 13px;">put</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'/:id'</span>, tarefasController.atualizar);   <span style="color: rgb(93, 184, 245); font-size: 13px;">// PUT  /tarefas/1</span>
+router.<span style="color: rgb(93, 245, 168); font-size: 13px;">delete</span>(<span style="color: rgb(168, 240, 200); font-size: 13px;">'/:id'</span>, tarefasController.remover); <span style="color: rgb(93, 184, 245); font-size: 13px;">// DELETE /tarefas/1</span>
+
+module.exports = router;</pre>
+          </div>
+        </div>
+        <!-- Arquivo 3: model -->
+        <div style="margin-bottom: 30px; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+                color: #fff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 5px 14px;
+                border-radius: 20px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                white-space: nowrap;
+              "
+            >
+              Arquivo 3 de 4
+            </div>
+            <div style="font-size: 15px; font-weight: bold; color: #0d3b66">
+              models/tarefasModel.js — Dados e Regras de Negócio
+            </div>
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #4a6a8a;
+              line-height: 1.65;
+              margin-bottom: 12px;
+            "
+          >
+            Este é o arquivo mais importante do ponto de vista das regras.
+            Observe que ele
+            <span style="font-weight: bold; font-size: 14px"
+              >não conhece o Express</span
+            >
+            — não há
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(26, 42, 58);
+                color: rgb(93, 245, 168);
+                padding: 1px 6px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >req</span
+            >, não há
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(26, 42, 58);
+                color: rgb(93, 245, 168);
+                padding: 1px 6px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >res</span
+            >. Ele apenas lida com os dados, aplica validações e retorna
+            resultados. Isso o torna totalmente testável de forma isolada com
+            Jest.
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 10px 18px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #5db8f5;
+                border-bottom: 1px solid #2a3a4a;
+                letter-spacing: 1px;
+              "
+            >
+              models/tarefasModel.js
+            </div>
+            <pre
+              style="
+                margin: 0px;
+                padding: 22px 26px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 13px;
+                color: rgb(224, 240, 255);
+                line-height: 1.85;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Simula um banco de dados em memória</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Em um projeto real, aqui entraria o Prisma, Sequelize ou outra ORM</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">let</span> tarefas = [
+  { id: <span style="color: rgb(240, 200, 122); font-size: 13px;">1</span>, titulo: <span style="color: rgb(168, 240, 200); font-size: 13px;">'Estudar MVC'</span>,      concluida: <span style="color: rgb(240, 200, 122); font-size: 13px;">false</span> },
+  { id: <span style="color: rgb(240, 200, 122); font-size: 13px;">2</span>, titulo: <span style="color: rgb(168, 240, 200); font-size: 13px;">'Criar projeto API'</span>, concluida: <span style="color: rgb(240, 200, 122); font-size: 13px;">true</span>  },
+];
+<span style="color: rgb(240, 200, 122); font-size: 13px;">let</span> proximoId = <span style="color: rgb(240, 200, 122); font-size: 13px;">3</span>;
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Retorna todas as tarefas cadastradas</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">listarTodas</span> = () =&gt; tarefas;
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Busca uma tarefa específica pelo ID numérico</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">buscarPorId</span> = (id) =&gt;
+  tarefas.<span style="color: rgb(93, 245, 168); font-size: 13px;">find</span>(t =&gt; t.id === <span style="color: rgb(93, 245, 168); font-size: 13px;">Number</span>(id));
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Cria uma nova tarefa — aqui fica a validação, não no controller</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">criar</span> = ({ titulo }) =&gt; {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (!titulo || titulo.<span style="color: rgb(93, 245, 168); font-size: 13px;">trim</span>() === <span style="color: rgb(168, 240, 200); font-size: 13px;">''</span>)
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">throw new</span> Error(<span style="color: rgb(168, 240, 200); font-size: 13px;">'O título da tarefa é obrigatório.'</span>);
+
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> nova = { id: proximoId++, titulo: titulo.<span style="color: rgb(93, 245, 168); font-size: 13px;">trim</span>(), concluida: <span style="color: rgb(240, 200, 122); font-size: 13px;">false</span> };
+  tarefas.<span style="color: rgb(93, 245, 168); font-size: 13px;">push</span>(nova);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> nova;
+};
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Atualiza título e/ou status de uma tarefa existente</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">atualizar</span> = (id, dados) =&gt; {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> tarefa = <span style="color: rgb(93, 245, 168); font-size: 13px;">buscarPorId</span>(id);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (!tarefa) <span style="color: rgb(240, 200, 122); font-size: 13px;">return null</span>;
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (dados.titulo    !== undefined) tarefa.titulo    = dados.titulo.<span style="color: rgb(93, 245, 168); font-size: 13px;">trim</span>();
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (dados.concluida !== undefined) tarefa.concluida = dados.concluida;
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> tarefa;
+};
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Remove uma tarefa e retorna true se bem-sucedido, false se não encontrou</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">remover</span> = (id) =&gt; {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> antes = tarefas.length;
+  tarefas = tarefas.<span style="color: rgb(93, 245, 168); font-size: 13px;">filter</span>(t =&gt; t.id !== <span style="color: rgb(93, 245, 168); font-size: 13px;">Number</span>(id));
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> tarefas.length &lt; antes;
+};
+
+module.exports = { listarTodas, buscarPorId, criar, atualizar, remover };</pre>
+          </div>
+        </div>
+        <!-- Arquivo 4: controller -->
+        <div style="margin-bottom: 16px; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+                color: #fff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 5px 14px;
+                border-radius: 20px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                white-space: nowrap;
+              "
+            >
+              Arquivo 4 de 4
+            </div>
+            <div style="font-size: 15px; font-weight: bold; color: #0d3b66">
+              controllers/tarefasController.js — O Orquestrador
+            </div>
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #4a6a8a;
+              line-height: 1.65;
+              margin-bottom: 12px;
+            "
+          >
+            O Controller é o único arquivo que lida simultaneamente com o
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(26, 42, 58);
+                color: rgb(93, 245, 168);
+                padding: 1px 6px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >req</span
+            >
+            e o
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(26, 42, 58);
+                color: rgb(93, 245, 168);
+                padding: 1px 6px;
+                border-radius: 3px;
+                font-size: 14px;
+              "
+              >res</span
+            >
+            do Express. Ele extrai o que precisa da requisição, delega ao Model,
+            trata erros e devolve a resposta com o
+            <span style="font-weight: bold; font-size: 14px"
+              >código de status HTTP correto</span
+            >.
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 10px 18px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                color: #5db8f5;
+                border-bottom: 1px solid #2a3a4a;
+                letter-spacing: 1px;
+              "
+            >
+              controllers/tarefasController.js
+            </div>
+            <pre
+              style="
+                margin: 0px;
+                padding: 22px 26px;
+                font-family: &quot;Courier New&quot;, Courier, monospace;
+                font-size: 13px;
+                color: rgb(224, 240, 255);
+                line-height: 1.85;
+                overflow-x: auto;
+              "
+            ><span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> Tarefa = require(<span style="color: rgb(168, 240, 200); font-size: 13px;">'../models/tarefasModel'</span>);
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// GET /tarefas — retorna todas as tarefas</span>
+exports.<span style="color: rgb(93, 245, 168); font-size: 13px;">listar</span> = (req, res) =&gt; {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> tarefas = Tarefa.<span style="color: rgb(93, 245, 168); font-size: 13px;">listarTodas</span>();
+  res.<span style="color: rgb(93, 245, 168); font-size: 13px;">status</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">200</span>).<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>(tarefas);
+};
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// GET /tarefas/:id — busca uma tarefa pelo ID da URL</span>
+exports.<span style="color: rgb(93, 245, 168); font-size: 13px;">buscarPorId</span> = (req, res) =&gt; {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> tarefa = Tarefa.<span style="color: rgb(93, 245, 168); font-size: 13px;">buscarPorId</span>(req.params.id);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (!tarefa)
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> res.<span style="color: rgb(93, 245, 168); font-size: 13px;">status</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">404</span>).<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>({ erro: <span style="color: rgb(168, 240, 200); font-size: 13px;">'Tarefa não encontrada.'</span> });
+  res.<span style="color: rgb(93, 245, 168); font-size: 13px;">status</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">200</span>).<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>(tarefa);
+};
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// POST /tarefas — cria nova tarefa com os dados do corpo da requisição</span>
+exports.<span style="color: rgb(93, 245, 168); font-size: 13px;">criar</span> = (req, res) =&gt; {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">try</span> {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> nova = Tarefa.<span style="color: rgb(93, 245, 168); font-size: 13px;">criar</span>(req.body);
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// 201 = Created: recurso criado com sucesso</span>
+    res.<span style="color: rgb(93, 245, 168); font-size: 13px;">status</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">201</span>).<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>({ mensagem: <span style="color: rgb(168, 240, 200); font-size: 13px;">'Tarefa criada!'</span>, tarefa: nova });
+  } <span style="color: rgb(240, 200, 122); font-size: 13px;">catch</span> (erro) {
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// O Model lançou um erro de validação — respondemos 400</span>
+    res.<span style="color: rgb(93, 245, 168); font-size: 13px;">status</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">400</span>).<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>({ erro: erro.message });
+  }
+};
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// PUT /tarefas/:id — atualiza os dados de uma tarefa existente</span>
+exports.<span style="color: rgb(93, 245, 168); font-size: 13px;">atualizar</span> = (req, res) =&gt; {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> atualizada = Tarefa.<span style="color: rgb(93, 245, 168); font-size: 13px;">atualizar</span>(req.params.id, req.body);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (!atualizada)
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> res.<span style="color: rgb(93, 245, 168); font-size: 13px;">status</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">404</span>).<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>({ erro: <span style="color: rgb(168, 240, 200); font-size: 13px;">'Tarefa não encontrada.'</span> });
+  res.<span style="color: rgb(93, 245, 168); font-size: 13px;">status</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">200</span>).<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>({ mensagem: <span style="color: rgb(168, 240, 200); font-size: 13px;">'Tarefa atualizada!'</span>, tarefa: atualizada });
+};
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// DELETE /tarefas/:id — remove a tarefa permanentemente</span>
+exports.<span style="color: rgb(93, 245, 168); font-size: 13px;">remover</span> = (req, res) =&gt; {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> removida = Tarefa.<span style="color: rgb(93, 245, 168); font-size: 13px;">remover</span>(req.params.id);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (!removida)
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> res.<span style="color: rgb(93, 245, 168); font-size: 13px;">status</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">404</span>).<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>({ erro: <span style="color: rgb(168, 240, 200); font-size: 13px;">'Tarefa não encontrada.'</span> });
+  res.<span style="color: rgb(93, 245, 168); font-size: 13px;">status</span>(<span style="color: rgb(240, 200, 122); font-size: 13px;">200</span>).<span style="color: rgb(93, 245, 168); font-size: 13px;">json</span>({ mensagem: <span style="color: rgb(168, 240, 200); font-size: 13px;">'Tarefa removida com sucesso!'</span> });
+};</pre>
+          </div>
+          <div
+            style="
+              background: #f0f7ff;
+              border-left: 4px solid #5db8f5;
+              border-radius: 6px;
+              padding: 13px 18px;
+              font-size: 14px;
+              color: #1a3a5a;
+              line-height: 1.65;
+            "
+          >
+            Note os códigos de status HTTP:
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(221, 238, 255);
+                padding: 1px 6px;
+                border-radius: 3px;
+                font-weight: bold;
+                font-size: 14px;
+              "
+              >200</span
+            >
+            sucesso,
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(221, 238, 255);
+                padding: 1px 6px;
+                border-radius: 3px;
+                font-weight: bold;
+                font-size: 14px;
+              "
+              >201</span
+            >
+            criado,
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(221, 238, 255);
+                padding: 1px 6px;
+                border-radius: 3px;
+                font-weight: bold;
+                font-size: 14px;
+              "
+              >400</span
+            >
+            dado inválido,
+            <span
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                background: rgb(221, 238, 255);
+                padding: 1px 6px;
+                border-radius: 3px;
+                font-weight: bold;
+                font-size: 14px;
+              "
+              >404</span
+            >
+            não encontrado. Isso torna a API previsível e profissional para
+            qualquer sistema que a consuma.
+          </div>
+        </div>
+      </div>
+      <!-- Testando a API -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Testando a API com Postman ou Insomnia
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 20px;
+          "
+        >
+          Com o servidor rodando (<span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 15px;
+            "
+            >node index.js</span
+          >), use o Postman ou Insomnia para disparar as requisições abaixo e
+          observe as respostas. Cada rota demonstra uma camada diferente em
+          ação.
+        </div>
+        <div style="overflow-x: auto; font-size: 14px">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 13px"
+          >
+            <thead style="font-size: 13px">
+              <tr
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgb(13, 59, 102),
+                    rgb(26, 95, 168)
+                  );
+                  font-size: 13px;
+                "
+              >
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: center;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    white-space: nowrap;
+                    font-size: 13px;
+                  "
+                >
+                  Método
+                </th>
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: left;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  URL
+                </th>
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: left;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  O que faz
+                </th>
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: center;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    white-space: nowrap;
+                    font-size: 13px;
+                  "
+                >
+                  Status
+                </th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 13px">
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #d4f5e4;
+                      color: #1a7a45;
+                      font-weight: bold;
+                      padding: 3px 10px;
+                      border-radius: 8px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      font-size: 12px;
+                    "
+                    >GET</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 13px;
+                    color: #0d3b66;
+                    border-bottom: 1px solid #d4e6f5;
+                  "
+                >
+                  /tarefas
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    line-height: 1.5;
+                    font-size: 13px;
+                  "
+                >
+                  Lista todas as tarefas cadastradas
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: #ddeeff;
+                      color: #1a5fa8;
+                      font-weight: bold;
+                      padding: 2px 8px;
+                      border-radius: 6px;
+                      font-size: 12px;
+                    "
+                    >200</span
+                  >
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #d4f5e4;
+                      color: #1a7a45;
+                      font-weight: bold;
+                      padding: 3px 10px;
+                      border-radius: 8px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      font-size: 12px;
+                    "
+                    >GET</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 13px;
+                    color: #0d3b66;
+                    border-bottom: 1px solid #d4e6f5;
+                  "
+                >
+                  /tarefas/1
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    line-height: 1.5;
+                    font-size: 13px;
+                  "
+                >
+                  Retorna a tarefa com ID 1
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: #ddeeff;
+                      color: #1a5fa8;
+                      font-weight: bold;
+                      padding: 2px 8px;
+                      border-radius: 6px;
+                      font-size: 12px;
+                    "
+                    >200</span
+                  >
+                  /
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: #fde8e8;
+                      color: #c0392b;
+                      font-weight: bold;
+                      padding: 2px 8px;
+                      border-radius: 6px;
+                      font-size: 12px;
+                    "
+                    >404</span
+                  >
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #fff3cd;
+                      color: #856404;
+                      font-weight: bold;
+                      padding: 3px 10px;
+                      border-radius: 8px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      font-size: 12px;
+                    "
+                    >POST</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 13px;
+                    color: #0d3b66;
+                    border-bottom: 1px solid #d4e6f5;
+                  "
+                >
+                  /tarefas
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    line-height: 1.5;
+                    font-size: 13px;
+                  "
+                >
+                  Cria tarefa. Body:
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: #eaf2fb;
+                      padding: 1px 5px;
+                      border-radius: 3px;
+                      font-size: 12px;
+                    "
+                    >{ "titulo": "Nova" }</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: #d4f5e4;
+                      color: #1a7a45;
+                      font-weight: bold;
+                      padding: 2px 8px;
+                      border-radius: 6px;
+                      font-size: 12px;
+                    "
+                    >201</span
+                  >
+                  /
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: #fde8e8;
+                      color: #c0392b;
+                      font-weight: bold;
+                      padding: 2px 8px;
+                      border-radius: 6px;
+                      font-size: 12px;
+                    "
+                    >400</span
+                  >
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #ddeeff;
+                      color: #1a5fa8;
+                      font-weight: bold;
+                      padding: 3px 10px;
+                      border-radius: 8px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      font-size: 12px;
+                    "
+                    >PUT</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 13px;
+                    color: #0d3b66;
+                    border-bottom: 1px solid #d4e6f5;
+                  "
+                >
+                  /tarefas/1
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    line-height: 1.5;
+                    font-size: 13px;
+                  "
+                >
+                  Atualiza título ou status da tarefa 1
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: #ddeeff;
+                      color: #1a5fa8;
+                      font-weight: bold;
+                      padding: 2px 8px;
+                      border-radius: 6px;
+                      font-size: 12px;
+                    "
+                    >200</span
+                  >
+                  /
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: #fde8e8;
+                      color: #c0392b;
+                      font-weight: bold;
+                      padding: 2px 8px;
+                      border-radius: 6px;
+                      font-size: 12px;
+                    "
+                    >404</span
+                  >
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #fde8e8;
+                      color: #c0392b;
+                      font-weight: bold;
+                      padding: 3px 10px;
+                      border-radius: 8px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      font-size: 12px;
+                    "
+                    >DELETE</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 13px;
+                    color: #0d3b66;
+                  "
+                >
+                  /tarefas/1
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    line-height: 1.5;
+                    font-size: 13px;
+                  "
+                >
+                  Remove permanentemente a tarefa de ID 1
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: #ddeeff;
+                      color: #1a5fa8;
+                      font-weight: bold;
+                      padding: 2px 8px;
+                      border-radius: 6px;
+                      font-size: 12px;
+                    "
+                    >200</span
+                  >
+                  /
+                  <span
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      background: #fde8e8;
+                      color: #c0392b;
+                      font-weight: bold;
+                      padding: 2px 8px;
+                      border-radius: 6px;
+                      font-size: 12px;
+                    "
+                    >404</span
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Relação com Design Patterns -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid rgb(224, 236, 246);
+            flex-wrap: wrap;
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 18px; font-weight: bold; color: #0d3b66">
+            MVC e Design Patterns — Qual é a relação?
+          </div>
+          <div
+            style="
+              background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+              color: #fff;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 12px;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+              white-space: nowrap;
+              flex-shrink: 0;
+            "
+          >
+            Conexão com a aula anterior
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          O MVC e os Design Patterns que estudamos não são concorrentes — eles
+          trabalham em níveis diferentes e se complementam. O MVC organiza o
+          projeto inteiro em camadas. Os Design Patterns resolvem problemas
+          específicos dentro dessas camadas. Na prática, você usará os dois ao
+          mesmo tempo, sem perceber.
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(248, 251, 255);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 80px;
+                text-align: center;
+                background: #ddeeff;
+                color: #1a5fa8;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 6px 8px;
+                border-radius: 8px;
+                line-height: 1.4;
+                flex-shrink: 0;
+              "
+            >
+              Singleton
+            </div>
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.7">
+              Garante que a conexão com o banco de dados — usada pelos Models —
+              exista em apenas uma instância no sistema inteiro. Evita múltiplas
+              conexões abertas ao mesmo tempo.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(248, 251, 255);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 80px;
+                text-align: center;
+                background: #ddeeff;
+                color: #1a5fa8;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 6px 8px;
+                border-radius: 8px;
+                line-height: 1.4;
+                flex-shrink: 0;
+              "
+            >
+              Factory Method
+            </div>
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.7">
+              Quando o Model precisa criar diferentes tipos de tarefas (urgente,
+              comum, recorrente), a Factory centraliza essa lógica. O Controller
+              não precisa saber como cada tipo é criado — só recebe o objeto
+              pronto.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(248, 251, 255);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 80px;
+                text-align: center;
+                background: #ddeeff;
+                color: #1a5fa8;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 6px 8px;
+                border-radius: 8px;
+                line-height: 1.4;
+                flex-shrink: 0;
+              "
+            >
+              Observer
+            </div>
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.7">
+              Quando uma tarefa é criada, o Model pode notificar outros módulos
+              (e-mail, log, dashboard) sem conhecê-los. No Express, isso
+              acontece via eventos do Node.js — o Controller dispara, os
+              observadores reagem.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(248, 251, 255);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 80px;
+                text-align: center;
+                background: #ddeeff;
+                color: #1a5fa8;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 6px 8px;
+                border-radius: 8px;
+                line-height: 1.4;
+                flex-shrink: 0;
+              "
+            >
+              Proxy e Decorator
+            </div>
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.7">
+              São exatamente o que o Express chama de
+              <span style="font-weight: bold; font-size: 14px">middlewares</span
+              >. Uma função
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >autenticar</span
+              >
+              antes do Controller é um Proxy. Uma função de
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >log</span
+              >
+              que envolve a rota é um Decorator. Você já usa Design Patterns sem
+              perceber.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: #eaf2fb;
+            border-left: 4px solid #1a5fa8;
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-size: 14px;
+            color: #1a2a3a;
+            line-height: 1.75;
+          "
+        >
+          O MVC diz
+          <span style="font-weight: bold; font-size: 14px">onde</span> cada
+          coisa deve estar. Os Design Patterns dizem
+          <span style="font-weight: bold; font-size: 14px">como</span> resolver
+          os problemas dentro de cada lugar. Aprender os dois é o que transforma
+          código funcional em código profissional.
+        </div>
+      </div>
+      <!-- Boas Praticas -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(232, 244, 253) 0%,
+            rgb(208, 233, 248) 100%
+          );
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          border: 1px solid rgb(157, 207, 239);
+          box-shadow: rgba(26, 90, 168, 0.1) 0px 4px 16px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #0d3b66;
+            margin-bottom: 16px;
+          "
+        >
+          Boas práticas ao usar o padrão MVC
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              1
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Model não conhece o Controller, e muito menos a View.</span
+              >
+              Se você precisar importar o
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >req</span
+              >
+              ou
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >res</span
+              >
+              dentro do Model, é um sinal de que a arquitetura está sendo
+              violada.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              2
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Validações pertencem ao Model, não ao Controller.</span
+              >
+              O Controller só verifica se o Model retornou algo ou lançou um
+              erro — ele não decide se um dado é válido.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              3
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Controllers pequenos são um bom sinal.</span
+              >
+              Se um controller tem muitas linhas, provavelmente está assumindo
+              responsabilidades do Model. Refatore.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              4
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Sempre retorne códigos de status HTTP corretos.</span
+              >
+              Eles são a "linguagem" da API.
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >200</span
+              >,
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >201</span
+              >,
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >400</span
+              >,
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >404</span
+              >
+              têm significados específicos que sistemas e desenvolvedores
+              esperam.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+                margin-top: 1px;
+              "
+            >
+              5
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Models isolados são facilmente testáveis.</span
+              >
+              Funções que só recebem dados e retornam dados — sem
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >req</span
+              >
+              ou
+              <span
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  background: rgb(240, 244, 249);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 14px;
+                "
+                >res</span
+              >
+              — são testadas com Jest de forma simples e direta, como praticamos
+              nas aulas de testes.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Referencias -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          box-shadow: rgba(26, 90, 168, 0.1) 0px 4px 18px;
+          border-top: 4px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 16px;
+          "
+        >
+          Referências e Fontes
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <span style="font-weight: bold; font-size: 14px"
+              >FOWLER, Martin.</span
+            >
+            Patterns of Enterprise Application Architecture. Boston:
+            Addison-Wesley, 2002. (Formalização do padrão MVC no desenvolvimento
+            web moderno)
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <span style="font-weight: bold; font-size: 14px"
+              >MARTIN, Robert C.</span
+            >
+            Clean Architecture: A Craftsman's Guide to Software Structure and
+            Design. Upper Saddle River: Prentice Hall, 2017.
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <span style="font-weight: bold; font-size: 14px"
+              >GAMMA, Erich et al.</span
+            >
+            Design Patterns: Elements of Reusable Object-Oriented Software.
+            Reading: Addison-Wesley, 1994. (GoF — base para a relação entre
+            Design Patterns e MVC)
+          </div>
+          <div style="font-size: 14px; color: #2c3e50; line-height: 1.6">
+            <span style="font-weight: bold; font-size: 14px"
+              >Express.js — Documentação oficial.</span
+            >
+            Routing, Middleware e Router. Disponível em:
+            expressjs.com/pt-br/guide/routing.html. Acesso em: 2025.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

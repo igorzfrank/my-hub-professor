@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      O Ciclo de Vida da Requisição Comunicação entre React e Mundo Exterior
+    </title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 32px 20px;
+        box-sizing: border-box;
+        font-size: 14px;
+      "
+    >
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(13, 71, 161) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.25) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            &nbsp;
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 26px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            O Ciclo de Vida da Requisição<br style="font-size: 26px" /><span
+              style="color: rgb(144, 202, 249); font-size: 26px"
+              >Comunicação entre React e Mundo Exterior</span
+            >
+          </div>
+          <p
+            style="
+              color: rgba(255, 255, 255, 0.8);
+              font-size: 14px;
+              margin-top: 10px;
+              max-width: 600px;
+            "
+          >
+            Entenda como o React gerencia o envio e recebimento de dados sem
+            interromper a experiência do usuário.
+          </p>
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 22px 28px;
+          margin-bottom: 22px;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 30px;
+          border-left: 5px solid rgb(26, 35, 126);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+          "
+        >
+          <span style="font-size: 20px">🍽️</span
+          ><span style="color: #1a237e; font-size: 16px; font-weight: 800"
+            >1. Fundamentos: API REST e HTTP</span
+          >
+        </div>
+        <div style="color: #37474f; font-size: 14px; line-height: 1.9">
+          Uma API REST funciona como um
+          <strong style="font-size: 14px">garçom</strong>: você (Cliente) faz um
+          pedido, ele leva à cozinha (Servidor/Banco) e traz a resposta. Toda
+          essa conversa usa o protocolo
+          <strong style="font-size: 14px">HTTP</strong>.
+        </div>
+        <table
+          style="
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            margin-top: 15px;
+            color: #37474f;
+          "
+        >
+          <thead style="font-size: 12px">
+            <tr
+              style="
+                border-bottom: 2px solid rgb(238, 238, 238);
+                text-align: left;
+                font-size: 12px;
+              "
+            >
+              <th style="padding: 10px; font-size: 12px">Verbo</th>
+              <th style="padding: 10px; font-size: 12px">Ação</th>
+              <th style="padding: 10px; font-size: 12px">Exemplo</th>
+            </tr>
+          </thead>
+          <tbody style="font-size: 12px">
+            <tr style="font-size: 12px">
+              <td
+                style="
+                  padding: 10px;
+                  font-weight: bold;
+                  color: rgb(30, 136, 229);
+                  font-size: 12px;
+                "
+              >
+                GET
+              </td>
+              <td style="padding: 10px; font-size: 12px">Leitura</td>
+              <td style="padding: 10px; font-size: 12px">Listar produtos.</td>
+            </tr>
+            <tr style="background: rgb(248, 249, 250); font-size: 12px">
+              <td
+                style="
+                  padding: 10px;
+                  font-weight: bold;
+                  color: rgb(67, 160, 71);
+                  font-size: 12px;
+                "
+              >
+                POST
+              </td>
+              <td style="padding: 10px; font-size: 12px">Criação</td>
+              <td style="padding: 10px; font-size: 12px">Cadastrar usuário.</td>
+            </tr>
+            <tr style="font-size: 12px">
+              <td
+                style="
+                  padding: 10px;
+                  font-weight: bold;
+                  color: rgb(251, 140, 0);
+                  font-size: 12px;
+                "
+              >
+                PUT
+              </td>
+              <td style="padding: 10px; font-size: 12px">Atualização</td>
+              <td style="padding: 10px; font-size: 12px">Alterar senha.</td>
+            </tr>
+            <tr style="background: rgb(248, 249, 250); font-size: 12px">
+              <td
+                style="
+                  padding: 10px;
+                  font-weight: bold;
+                  color: rgb(229, 57, 53);
+                  font-size: 12px;
+                "
+              >
+                DELETE
+              </td>
+              <td style="padding: 10px; font-size: 12px">Exclusão</td>
+              <td style="padding: 10px; font-size: 12px">
+                Remover do carrinho.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(13, 71, 161),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🚀 Fetch API vs. Axios</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <p style="color: #37474f; font-size: 14px; margin-bottom: 15px">
+            Embora o <code style="font-size: 12px">fetch()</code> seja nativo, o
+            <strong style="font-size: 14px">Axios</strong> é o padrão de mercado
+            pela sua robustez e facilidade.
+          </p>
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              line-height: 1.8;
+              color: #dfe6e9;
+              margin-bottom: 15px;
+            "
+          >
+            <span style="color: rgb(128, 222, 234); font-size: 12px"
+              >// Instalação</span
+            ><br style="font-size: 12px" />npm install axios<br
+              style="font-size: 12px"
+            /><br style="font-size: 12px" /><span
+              style="color: rgb(128, 222, 234); font-size: 12px"
+              >// services/api.js</span
+            ><br style="font-size: 12px" /><span
+              style="color: rgb(244, 114, 182); font-size: 12px"
+              >import</span
+            >
+            axios
+            <span style="color: rgb(244, 114, 182); font-size: 12px">from</span>
+            <span style="color: rgb(144, 202, 249); font-size: 12px"
+              >'axios'</span
+            >;<br style="font-size: 12px" /><span
+              style="color: rgb(244, 114, 182); font-size: 12px"
+              >const</span
+            >
+            api = axios.create({ baseURL:
+            <span style="color: rgb(144, 202, 249); font-size: 12px"
+              >'https://api.exemplo.com'</span
+            >
+            });
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 22px 28px;
+          margin-bottom: 22px;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 30px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+          "
+        >
+          <span style="font-size: 20px">⚡</span
+          ><span style="color: #1a237e; font-size: 16px; font-weight: 800"
+            >3. Hooks de Efeito: useEffect</span
+          >
+        </div>
+        <p style="color: #37474f; font-size: 14px">
+          O <code style="font-size: 12px">useEffect</code> gerencia efeitos
+          colaterais. Buscar dados é um efeito colateral, pois muda o estado
+          após o componente nascer.
+        </p>
+        <div
+          style="
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px;
+            border-left: 4px solid #1a237e;
+            font-family: monospace;
+            font-size: 12px;
+            color: #2c3e50;
+          "
+        >
+          useEffect(() =&gt; { loadData(); }, []);
+          <span style="color: rgb(120, 144, 156); font-size: 12px"
+            >// O [] garante que rode só uma vez.</span
+          >
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(44, 62, 80),
+              rgb(69, 90, 100)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >💻 Prática: Listando Usuários</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              line-height: 1.6;
+              color: #dfe6e9;
+            "
+          >
+            <p style="font-size: 12px">
+              import React, { useState, useEffect } from 'react';<br
+                style="font-size: 12px"
+              />import api from './services/api';
+            </p>
+            <p style="font-size: 12px">
+              function UserList() {<br style="font-size: 12px" />&nbsp; const
+              [users, setUsers] = useState([]);
+            </p>
+            <p style="font-size: 12px">
+              &nbsp; useEffect(() =&gt; {<br style="font-size: 12px" />&nbsp;
+              &nbsp; // Exemplo de boa prática: função assíncrona dentro do
+              useEffect<br style="font-size: 12px" />&nbsp; &nbsp; async
+              function fetchUsers() {<br style="font-size: 12px" />&nbsp; &nbsp;
+              &nbsp; try {<br style="font-size: 12px" />&nbsp; &nbsp; &nbsp;
+              &nbsp; const response = await api.get('/users');<br
+                style="font-size: 12px"
+              />&nbsp; &nbsp; &nbsp; &nbsp; setUsers(response.data); // Armazena
+              os dados no estado<br style="font-size: 12px" />&nbsp; &nbsp;
+              &nbsp; } catch (error) {<br style="font-size: 12px" />&nbsp;
+              &nbsp; &nbsp; &nbsp; console.error("Erro ao carregar usuários",
+              error);<br style="font-size: 12px" />&nbsp; &nbsp; &nbsp; }<br
+                style="font-size: 12px"
+              />&nbsp; &nbsp; }
+            </p>
+            <p style="font-size: 12px">
+              &nbsp; &nbsp; fetchUsers();<br style="font-size: 12px" />&nbsp; },
+              []);
+            </p>
+            <p style="font-size: 12px">
+              &nbsp; return (<br style="font-size: 12px" />&nbsp; &nbsp; &lt;div
+              style={{ padding: '20px' }}&gt;<br
+                style="font-size: 12px"
+              />&nbsp; &nbsp; &nbsp; &lt;h2&gt;👥 Lista de Usuários
+              (API)&lt;/h2&gt;<br style="font-size: 12px" />&nbsp; &nbsp; &nbsp;
+              &lt;ul&gt;<br style="font-size: 12px" />&nbsp; &nbsp; &nbsp;
+              &nbsp; {users.map(user =&gt; (<br style="font-size: 12px" />&nbsp;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;li key={user.id}&gt;<br
+                style="font-size: 12px"
+              />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              &lt;strong&gt;{user.name}&lt;/strong&gt; - {user.email}<br
+                style="font-size: 12px"
+              />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;<br
+                style="font-size: 12px"
+              />&nbsp; &nbsp; &nbsp; &nbsp; ))}<br
+                style="font-size: 12px"
+              />&nbsp; &nbsp; &nbsp; &lt;/ul&gt;<br
+                style="font-size: 12px"
+              />&nbsp; &nbsp; &lt;/div&gt;<br style="font-size: 12px" />&nbsp;
+              );<br style="font-size: 12px" />}
+            </p>
+            <p style="font-size: 12px">export default UserList;</p>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 30px;
+            border-top: 4px solid rgb(26, 35, 126);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              color: #1a237e;
+              font-size: 14px;
+              font-weight: 800;
+              margin-bottom: 5px;
+            "
+          >
+            🧩 UX Profissional
+          </div>
+          <div style="color: #546e7a; font-size: 12px; line-height: 1.6">
+            Em apps reais (Netflix/Spotify), usamos
+            <strong style="font-size: 12px">Skeletons</strong> enquanto o dado
+            carrega. Veremos na Aula 2!
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 30px;
+            border-top: 4px solid rgb(67, 160, 71);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              color: #43a047;
+              font-size: 14px;
+              font-weight: 800;
+              margin-bottom: 5px;
+            "
+          >
+            🤝 Colecionando Status
+          </div>
+          <div style="color: #546e7a; font-size: 12px; line-height: 1.6">
+            Decorar os status codes (200, 400, 404, 500) é falar a "língua
+            nativa" de qualquer desenvolvedor do mundo.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+body {
+  background: #0b0b0b;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #888;
+  margin-bottom: 40px;
+}
+
+.deck {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.pad {
+  aspect-ratio: 1/1;
+  background: #1a1a1a;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  text-align: center;
+
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.4;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    inset 0px 2px 5px rgba(255, 255, 255, 0.05),
+    0px 10px 20px rgba(0, 0, 0, 0.5);
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.pad span {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.pad:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0px 0px 20px rgba(255, 255, 255, 0.1),
+    0px 15px 30px rgba(0, 0, 0, 0.7);
+}
+
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+
+  box-shadow:
+    inset 0px 2px 5px rgba(255, 255, 255, 0.05),
+    0px 10px 20px rgba(0, 0, 0, 0.5);
+
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-3px);
+  border-color: #3b82f6;
+
+  box-shadow:
+    0px 0px 20px rgba(59, 130, 246, 0.3),
+    0px 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.back-btn:active {
+  transform: scale(0.95);
+}
+
+/* cores */
+
+.blue {
+  border: 2px solid #3b82f6;
+}
+.pink {
+  border: 2px solid #ec4899;
+}
+.green {
+  border: 2px solid #22c55e;
+}
+.orange {
+  border: 2px solid #f97316;
+}
+.purple {
+  border: 2px solid #8b5cf6;
+}
+.red {
+  border: 2px solid #ef4444;
+}
+.yellow {
+  border: 2px solid #eab308;
+}
+.cyan {
+  border: 2px solid #06b6d4;
+}
+.teal {
+  border: 2px solid #14b8a6;
+}
+.lime {
+  border: 2px solid #84cc16;
+}
+.indigo {
+  border: 2px solid #6366f1;
+}
+.violet {
+  border: 2px solid #7c3aed;
+}
+.magenta {
+  border: 2px solid #d946ef;
+}
+.rose {
+  border: 2px solid #f43f5e;
+}
+.amber {
+  border: 2px solid #f59e0b;
+}
+.emerald {
+  border: 2px solid #10b981;
+}
+.sky {
+  border: 2px solid #0ea5e9;
+}
+.gray {
+  border: 2px solid #6b7280;
+}
+.white {
+  border: 2px solid #f8fafc;
+}
+
+/* hover padrão do pad */
+.pad:hover {
+  transform: translateY(-5px);
+}
+
+/* hovers por cor */
+
+.blue:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.pink:hover {
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
+}
+
+.green:hover {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+.orange:hover {
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+}
+
+.purple:hover {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+.red:hover {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+}
+
+.yellow:hover {
+  box-shadow: 0 0 20px rgba(234, 179, 8, 0.5);
+}
+
+.cyan:hover {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+}
+
+.teal:hover {
+  box-shadow: 0 0 20px rgba(20, 184, 166, 0.5);
+}
+
+.lime:hover {
+  box-shadow: 0 0 20px rgba(132, 204, 22, 0.5);
+}
+
+.indigo:hover {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}
+
+.violet:hover {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+}
+
+.magenta:hover {
+  box-shadow: 0 0 20px rgba(217, 70, 239, 0.5);
+}
+
+.rose:hover {
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.5);
+}
+
+.amber:hover {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+}
+
+.emerald:hover {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+}
+
+.sky:hover {
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+}
+
+.gray:hover {
+  box-shadow: 0 0 20px rgba(107, 114, 128, 0.5);
+}
+
+.white:hover {
+  box-shadow: 0 0 20px rgba(248, 250, 252, 0.5);
+}

@@ -1,0 +1,2331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade Integração Postgres e Express</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(240, 244, 249);
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102) 0%,
+            rgb(26, 95, 168) 100%
+          );
+          border-radius: 14px;
+          padding: 36px 40px;
+          margin-bottom: 28px;
+          box-shadow: rgba(13, 59, 102, 0.3) 0px 8px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #7ab0e0;
+            margin-bottom: 10px;
+          "
+        >
+          Técnico em Desenvolvimento de Sistemas · Desenvolvimento de Sistemas
+        </div>
+        <div
+          style="
+            font-size: 30px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 14px;
+          "
+        >
+          Express.js + PostgreSQL<br style="font-size: 30px" /><span
+            style="color: rgb(168, 208, 245); font-size: 30px"
+            >Integrando banco de dados real ao MVC</span
+          >
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            color: rgb(192, 216, 245);
+            line-height: 1.75;
+            max-width: 820px;
+          "
+        >
+          Exercícios práticos de integração entre Express, PostgreSQL e a
+          arquitetura MVC com ES Modules. Cada exercício parte do zero — você
+          criará o banco, a tabela, os dados iniciais e todos os arquivos da
+          API.
+        </div>
+        <div
+          style="
+            margin-top: 22px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Node.js</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Express</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >PostgreSQL</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >node-postgres (pg)</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >MVC</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >ES Modules</span
+          >
+        </div>
+      </div>
+      <!-- ══ CONFIGURAÇÃO ══ -->
+      <div
+        style="
+          background: rgb(255, 248, 230);
+          border-width: 1px 1px 1px 5px;
+          border-style: solid;
+          border-color: rgb(240, 208, 128) rgb(240, 208, 128) rgb(240, 208, 128)
+            rgb(240, 184, 0);
+          border-image: initial;
+          border-radius: 12px;
+          padding: 22px 28px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #9a7000;
+            margin-bottom: 14px;
+          "
+        >
+          Configuração obrigatória antes de começar
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 14px;
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 14px">
+            <div
+              style="
+                font-size: 11px;
+                font-weight: bold;
+                color: #8a6000;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              Terminal — instalação
+            </div>
+            <div
+              style="
+                background: #1a2a3a;
+                border-radius: 8px;
+                padding: 14px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #a8f0c8;
+                line-height: 1.9;
+              "
+            >
+              npm init -y<br style="font-size: 13px" />npm install express pg<br
+                style="font-size: 13px"
+              /><span style="color: rgb(93, 184, 245); font-size: 13px"
+                ># adicionar "type":"module" no package.json</span
+              >
+            </div>
+          </div>
+          <div style="font-size: 14px">
+            <div
+              style="
+                font-size: 11px;
+                font-weight: bold;
+                color: #8a6000;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 6px;
+              "
+            >
+              Estrutura de pastas
+            </div>
+            <div
+              style="
+                background: #1a2a3a;
+                border-radius: 8px;
+                padding: 14px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >projeto/</span
+              ><br style="font-size: 13px" />├──
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >src/</span
+              ><br style="font-size: 13px" />│ ├──
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >database/</span
+              >
+              →
+              <span style="color: rgb(200, 216, 232); font-size: 13px"
+                >db.js</span
+              ><br style="font-size: 13px" />│ ├──
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >models/</span
+              >
+              →
+              <span style="color: rgb(200, 216, 232); font-size: 13px"
+                >*.model.js</span
+              ><br style="font-size: 13px" />│ ├──
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >controllers/</span
+              >
+              →
+              <span style="color: rgb(200, 216, 232); font-size: 13px"
+                >*.controller.js</span
+              ><br style="font-size: 13px" />│ └──
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >routes/</span
+              >
+              →
+              <span style="color: rgb(200, 216, 232); font-size: 13px"
+                >*.routes.js</span
+              ><br style="font-size: 13px" />└──
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >app.js</span
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(254, 248, 224);
+            border-radius: 8px;
+            padding: 12px 16px;
+            border: 1px solid rgb(240, 208, 128);
+            font-size: 13px;
+            color: rgb(90, 64, 16);
+            line-height: 1.7;
+          "
+        >
+          O arquivo
+          <code
+            style="
+              background: rgb(254, 243, 192);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 11px;
+            "
+            >src/database/db.js</code
+          >
+          é o mesmo para ambos os exercícios — crie-o uma vez com
+          <code
+            style="
+              background: rgb(254, 243, 192);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 11px;
+            "
+            >new Pool({...})</code
+          >
+          apontando para o banco do exercício que estiver fazendo e importe-o
+          nos Models.
+        </div>
+      </div>
+      <!-- ══════════════════════════════════ -->
+      <!-- EXERCÍCIO 1 — BIBLIOTECA -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.1) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid rgb(232, 240, 251);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+              color: #fff;
+              font-size: 13px;
+              font-weight: bold;
+              padding: 6px 18px;
+              border-radius: 20px;
+              white-space: nowrap;
+            "
+          >
+            Exercício 1
+          </div>
+          <div style="font-size: 20px; font-weight: bold; color: #0d3b66">
+            API de Livros — Biblioteca Municipal
+          </div>
+          <div
+            style="
+              margin-left: auto;
+              background: #eaf2fb;
+              color: #1a5fa8;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 4px 12px;
+              border-radius: 8px;
+              letter-spacing: 1px;
+              border: 1px solid #b8d4ed;
+              white-space: nowrap;
+            "
+          >
+            GET · POST · DELETE
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.85;
+            margin-bottom: 22px;
+          "
+        >
+          A Biblioteca Municipal de Palhoça precisa de uma API para gerenciar
+          seu acervo de livros. Você deve criar do zero toda a estrutura MVC com
+          banco de dados PostgreSQL, incluindo o banco, a tabela, os dados
+          iniciais e as rotas da API.
+        </div>
+        <!-- SQL -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              font-size: 14px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 10px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+            "
+          >
+            <span
+              style="
+                background: #0d3b66;
+                color: #fff;
+                font-size: 10px;
+                font-weight: bold;
+                padding: 2px 10px;
+                border-radius: 5px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+              "
+              >Passo 1</span
+            >
+            Banco de dados e tabela — executar no pgAdmin
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 7px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              SQL — criação
+            </div>
+            <div
+              style="
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(122, 154, 176); font-size: 13px"
+                >-- 1. Crie o banco</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >CREATE DATABASE</span
+              >
+              biblioteca;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(122, 154, 176); font-size: 13px"
+                >-- 2. Conecte ao banco e execute o restante</span
+              ><br style="font-size: 13px" /><br style="font-size: 13px" /><span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >CREATE TABLE</span
+              >
+              livros (<br style="font-size: 13px" />id
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >SERIAL PRIMARY KEY</span
+              >,<br style="font-size: 13px" />titulo
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >TEXT NOT NULL</span
+              >,<br style="font-size: 13px" />autor
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >TEXT NOT NULL</span
+              >,<br style="font-size: 13px" />ano
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >INTEGER NOT NULL</span
+              >,<br style="font-size: 13px" />disponivel
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >BOOLEAN DEFAULT TRUE</span
+              ><br style="font-size: 13px" />);
+            </div>
+          </div>
+        </div>
+        <!-- Popular -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              font-size: 14px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 10px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+            "
+          >
+            <span
+              style="
+                background: #0d3b66;
+                color: #fff;
+                font-size: 10px;
+                font-weight: bold;
+                padding: 2px 10px;
+                border-radius: 5px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+              "
+              >Passo 2</span
+            >
+            Popular a tabela com dados iniciais
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 7px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              SQL — dados de exemplo
+            </div>
+            <div
+              style="
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >INSERT INTO</span
+              >
+              livros (titulo, autor, ano, disponivel)
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >VALUES</span
+              ><br style="font-size: 13px" />(<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Dom Casmurro'</span
+              >,
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Machado de Assis'</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px">1899</span
+              >,
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >TRUE</span
+              >),<br style="font-size: 13px" />(<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >'O Cortiço'</span
+              >,
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Aluísio Azevedo'</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px">1890</span
+              >,
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >TRUE</span
+              >),<br style="font-size: 13px" />(<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Vidas Secas'</span
+              >,
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Graciliano Ramos'</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px">1938</span
+              >,
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >FALSE</span
+              >),<br style="font-size: 13px" />(<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Grande Sertão: Veredas'</span
+              >,
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'João Guimarães Rosa'</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px">1956</span
+              >,
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >TRUE</span
+              >),<br style="font-size: 13px" />(<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >'A Hora da Estrela'</span
+              >,
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Clarice Lispector'</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px">1977</span
+              >,
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >FALSE</span
+              >);
+            </div>
+          </div>
+        </div>
+        <!-- O que construir -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              font-size: 14px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 12px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+            "
+          >
+            <span
+              style="
+                background: #0d3b66;
+                color: #fff;
+                font-size: 10px;
+                font-weight: bold;
+                padding: 2px 10px;
+                border-radius: 5px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+              "
+              >Passo 3</span
+            >
+            O que você deve construir
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(244, 248, 255);
+                border-radius: 10px;
+                padding: 14px 18px;
+                border-left: 4px solid rgb(26, 95, 168);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 6px;
+                "
+              >
+                db.js — conexão
+              </div>
+              <div style="font-size: 14px; color: #2c3e50; line-height: 1.75">
+                Crie o arquivo
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >src/database/db.js</code
+                >
+                com um Pool apontando para o banco
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >biblioteca</code
+                >. Exporte o pool como
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >export default</code
+                >.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(244, 248, 255);
+                border-radius: 10px;
+                padding: 14px 18px;
+                border-left: 4px solid rgb(26, 95, 168);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 6px;
+                "
+              >
+                livro.model.js — queries
+              </div>
+              <div style="font-size: 14px; color: #2c3e50; line-height: 1.75">
+                Crie as funções
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >buscarTodos</code
+                >,
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >buscarPorId</code
+                >
+                e
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >criar</code
+                >, cada uma fazendo a query SQL correspondente com
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >await pool.query()</code
+                >. Use
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >RETURNING *</code
+                >
+                no INSERT.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(244, 248, 255);
+                border-radius: 10px;
+                padding: 14px 18px;
+                border-left: 4px solid rgb(26, 95, 168);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 6px;
+                "
+              >
+                livro.controller.js — handlers
+              </div>
+              <div style="font-size: 14px; color: #2c3e50; line-height: 1.75">
+                Crie as funções
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >listar</code
+                >,
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >buscarPorId</code
+                >
+                e
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >criar</code
+                >. Todas devem ser
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >async</code
+                >
+                com
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >try/catch</code
+                >. Retorne 404 se o livro não existir e 201 ao criar.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(244, 248, 255);
+                border-radius: 10px;
+                padding: 14px 18px;
+                border-left: 4px solid rgb(26, 95, 168);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 6px;
+                "
+              >
+                livro.routes.js + app.js
+              </div>
+              <div style="font-size: 14px; color: #2c3e50; line-height: 1.75">
+                Crie o Router com as rotas abaixo e registre-o no
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >app.js</code
+                >
+                com o prefixo
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >/livros</code
+                >. Não esqueça do
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >express.json()</code
+                >.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Rotas -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              background: rgb(240, 246, 255);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 3px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 12px;
+              "
+            >
+              Rotas esperadas
+            </div>
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #1a2a3a;
+                line-height: 2.2;
+              "
+            >
+              <span
+                style="
+                  background: rgb(232, 248, 238);
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  padding: 2px 8px;
+                  border-radius: 4px;
+                  font-size: 13px;
+                "
+                >GET</span
+              >
+              <span style="color: rgb(13, 59, 102); font-size: 13px"
+                >/livros</span
+              >
+              <span style="color: rgb(74, 106, 138); font-size: 13px"
+                >→ lista todos os livros do banco</span
+              ><br style="font-size: 13px" /><span
+                style="
+                  background: rgb(232, 248, 238);
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  padding: 2px 8px;
+                  border-radius: 4px;
+                  font-size: 13px;
+                "
+                >GET</span
+              >
+              <span style="color: rgb(13, 59, 102); font-size: 13px"
+                >/livros/:id</span
+              >
+              <span style="color: rgb(74, 106, 138); font-size: 13px"
+                >→ retorna um livro pelo id (404 se não existir)</span
+              ><br style="font-size: 13px" /><span
+                style="
+                  background: rgb(221, 238, 255);
+                  color: rgb(26, 95, 168);
+                  font-weight: bold;
+                  padding: 2px 8px;
+                  border-radius: 4px;
+                  font-size: 13px;
+                "
+                >POST</span
+              >
+              <span style="color: rgb(13, 59, 102); font-size: 13px"
+                >/livros</span
+              >
+              <span style="color: rgb(74, 106, 138); font-size: 13px"
+                >→ cadastra um novo livro (retorna 201 + livro criado)</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Body esperado -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 8px;
+            "
+          >
+            Body esperado no POST (JSON)
+          </div>
+          <div
+            style="
+              background: #0d1b2a;
+              border-radius: 8px;
+              padding: 14px 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 1.9;
+            "
+          >
+            {<br style="font-size: 13px" /><span
+              style="color: rgb(168, 240, 200); font-size: 13px"
+              >"titulo"</span
+            >:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >"Capitães da Areia"</span
+            >,<br style="font-size: 13px" /><span
+              style="color: rgb(168, 240, 200); font-size: 13px"
+              >"autor"</span
+            >:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >"Jorge Amado"</span
+            >,<br style="font-size: 13px" /><span
+              style="color: rgb(168, 240, 200); font-size: 13px"
+              >"ano"</span
+            >:
+            <span style="color: rgb(240, 160, 96); font-size: 13px">1937</span
+            >,<br style="font-size: 13px" /><span
+              style="color: rgb(168, 240, 200); font-size: 13px"
+              >"disponivel"</span
+            >:
+            <span style="color: rgb(240, 200, 122); font-size: 13px">true</span
+            ><br style="font-size: 13px" />}
+          </div>
+        </div>
+        <!-- Verificação -->
+        <div
+          style="
+            background: rgb(234, 244, 255);
+            border-radius: 10px;
+            padding: 14px 18px;
+            border-left: 3px solid rgb(26, 95, 168);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 6px;
+            "
+          >
+            Como verificar
+          </div>
+          <div
+            style="font-size: 13px; color: rgb(44, 62, 80); line-height: 1.75"
+          >
+            Use o Postman ou Insomnia. Faça um GET em
+            <code
+              style="
+                background: rgb(221, 238, 255);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 11px;
+              "
+              >localhost:3000/livros</code
+            >
+            — deve retornar os 5 livros inseridos no banco. Depois crie um novo
+            livro com POST e confirme que ele aparece com um
+            <code
+              style="
+                background: rgb(221, 238, 255);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 11px;
+              "
+              >id</code
+            >
+            gerado automaticamente pelo PostgreSQL.
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════════ -->
+      <!-- EXERCÍCIO 2 — ESTOQUE -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.1) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid rgb(232, 240, 251);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #06204a, #0e4080);
+              color: #fff;
+              font-size: 13px;
+              font-weight: bold;
+              padding: 6px 18px;
+              border-radius: 20px;
+              white-space: nowrap;
+            "
+          >
+            Exercício 2
+          </div>
+          <div style="font-size: 20px; font-weight: bold; color: #0d3b66">
+            API de Produtos — Controle de Estoque
+          </div>
+          <div
+            style="
+              margin-left: auto;
+              background: #eaf2fb;
+              color: #1a5fa8;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 4px 12px;
+              border-radius: 8px;
+              letter-spacing: 1px;
+              border: 1px solid #b8d4ed;
+              white-space: nowrap;
+            "
+          >
+            CRUD completo
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.85;
+            margin-bottom: 22px;
+          "
+        >
+          Uma loja de informática precisa de uma API para controlar seu estoque
+          de produtos. Aqui você vai implementar o CRUD completo — incluindo PUT
+          para atualizar e DELETE para remover — tudo persistido no PostgreSQL.
+        </div>
+        <!-- SQL -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              font-size: 14px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 10px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+            "
+          >
+            <span
+              style="
+                background: #06204a;
+                color: #fff;
+                font-size: 10px;
+                font-weight: bold;
+                padding: 2px 10px;
+                border-radius: 5px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+              "
+              >Passo 1</span
+            >
+            Banco de dados e tabela — executar no pgAdmin
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 7px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              SQL — criação
+            </div>
+            <div
+              style="
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(122, 154, 176); font-size: 13px"
+                >-- 1. Crie o banco</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >CREATE DATABASE</span
+              >
+              estoque;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(122, 154, 176); font-size: 13px"
+                >-- 2. Conecte ao banco e execute o restante</span
+              ><br style="font-size: 13px" /><br style="font-size: 13px" /><span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >CREATE TABLE</span
+              >
+              produtos (<br style="font-size: 13px" />id
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >SERIAL PRIMARY KEY</span
+              >,<br style="font-size: 13px" />nome
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >TEXT NOT NULL</span
+              >,<br style="font-size: 13px" />categoria
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >TEXT NOT NULL</span
+              >,<br style="font-size: 13px" />preco
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >NUMERIC(10, 2) NOT NULL</span
+              >,<br style="font-size: 13px" />quantidade
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >INTEGER NOT NULL DEFAULT 0</span
+              ><br style="font-size: 13px" />);
+            </div>
+          </div>
+        </div>
+        <!-- Popular -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              font-size: 14px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 10px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+            "
+          >
+            <span
+              style="
+                background: #06204a;
+                color: #fff;
+                font-size: 10px;
+                font-weight: bold;
+                padding: 2px 10px;
+                border-radius: 5px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+              "
+              >Passo 2</span
+            >
+            Popular a tabela com dados iniciais
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 7px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              SQL — dados de exemplo
+            </div>
+            <div
+              style="
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >INSERT INTO</span
+              >
+              produtos (nome, categoria, preco, quantidade)
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >VALUES</span
+              ><br style="font-size: 13px" />(<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Teclado Mecânico'</span
+              >,
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Periférico'</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px"
+                >350.00</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px">15</span
+              >),<br style="font-size: 13px" />(<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Mouse Gamer'</span
+              >,
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Periférico'</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px"
+                >180.00</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px">22</span
+              >),<br style="font-size: 13px" />(<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Monitor 24"'</span
+              >,
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Monitor'</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px"
+                >1200.00</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px">8</span
+              >),<br style="font-size: 13px" />(<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >'SSD 480GB'</span
+              >,
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Armazenamento'</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px"
+                >280.00</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px">30</span
+              >),<br style="font-size: 13px" />(<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Headset USB'</span
+              >,
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Periférico'</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px"
+                >220.00</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px">12</span
+              >),<br style="font-size: 13px" />(<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Placa de Vídeo RTX 3060'</span
+              >,
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Hardware'</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px"
+                >2800.00</span
+              >,
+              <span style="color: rgb(240, 160, 96); font-size: 13px">4</span>);
+            </div>
+          </div>
+        </div>
+        <!-- O que construir -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              font-size: 14px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 12px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+            "
+          >
+            <span
+              style="
+                background: #06204a;
+                color: #fff;
+                font-size: 10px;
+                font-weight: bold;
+                padding: 2px 10px;
+                border-radius: 5px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+              "
+              >Passo 3</span
+            >
+            O que você deve construir
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(244, 248, 255);
+                border-radius: 10px;
+                padding: 14px 18px;
+                border-left: 4px solid rgb(6, 32, 74);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 6px;
+                "
+              >
+                produto.model.js — CRUD completo
+              </div>
+              <div style="font-size: 14px; color: #2c3e50; line-height: 1.75">
+                Implemente as funções
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >buscarTodos</code
+                >,
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >buscarPorId</code
+                >,
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >criar</code
+                >,
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >atualizar</code
+                >
+                e
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >remover</code
+                >. Use
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >RETURNING *</code
+                >
+                no UPDATE para devolver o produto atualizado. Use
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >rowCount</code
+                >
+                no DELETE para saber se o produto existia.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(244, 248, 255);
+                border-radius: 10px;
+                padding: 14px 18px;
+                border-left: 4px solid rgb(6, 32, 74);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 6px;
+                "
+              >
+                produto.controller.js — 5 handlers
+              </div>
+              <div style="font-size: 14px; color: #2c3e50; line-height: 1.75">
+                Crie os 5 handlers correspondentes às funções do Model, todos
+                com
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >async/await</code
+                >
+                e
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >try/catch</code
+                >. O handler de
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >atualizar</code
+                >
+                deve retornar 404 se o id não existir. O de
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >remover</code
+                >
+                deve retornar 404 se
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >rowCount === 0</code
+                >
+                e 204 em caso de sucesso.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(244, 248, 255);
+                border-radius: 10px;
+                padding: 14px 18px;
+                border-left: 4px solid rgb(6, 32, 74);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 6px;
+                "
+              >
+                produto.routes.js + app.js
+              </div>
+              <div style="font-size: 14px; color: #2c3e50; line-height: 1.75">
+                Registre todas as 5 rotas no Router e configure o
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >app.js</code
+                >
+                com o prefixo
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                  "
+                  >/produtos</code
+                >.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Rotas -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              background: rgb(240, 246, 255);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 3px solid rgb(6, 32, 74);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 12px;
+              "
+            >
+              Rotas esperadas
+            </div>
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #1a2a3a;
+                line-height: 2.2;
+              "
+            >
+              <span
+                style="
+                  background: rgb(232, 248, 238);
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  padding: 2px 8px;
+                  border-radius: 4px;
+                  font-size: 13px;
+                "
+                >GET</span
+              >
+              <span style="color: rgb(13, 59, 102); font-size: 13px"
+                >/produtos</span
+              >
+              <span style="color: rgb(74, 106, 138); font-size: 13px"
+                >→ lista todos os produtos</span
+              ><br style="font-size: 13px" /><span
+                style="
+                  background: rgb(232, 248, 238);
+                  color: rgb(26, 122, 69);
+                  font-weight: bold;
+                  padding: 2px 8px;
+                  border-radius: 4px;
+                  font-size: 13px;
+                "
+                >GET</span
+              >
+              <span style="color: rgb(13, 59, 102); font-size: 13px"
+                >/produtos/:id</span
+              >
+              <span style="color: rgb(74, 106, 138); font-size: 13px"
+                >→ retorna um produto (404 se não existir)</span
+              ><br style="font-size: 13px" /><span
+                style="
+                  background: rgb(221, 238, 255);
+                  color: rgb(26, 95, 168);
+                  font-weight: bold;
+                  padding: 2px 8px;
+                  border-radius: 4px;
+                  font-size: 13px;
+                "
+                >POST</span
+              >
+              <span style="color: rgb(13, 59, 102); font-size: 13px"
+                >/produtos</span
+              >
+              <span style="color: rgb(74, 106, 138); font-size: 13px"
+                >→ cadastra um novo produto (retorna 201)</span
+              ><br style="font-size: 13px" /><span
+                style="
+                  background: rgb(255, 244, 208);
+                  color: rgb(160, 112, 0);
+                  font-weight: bold;
+                  padding: 2px 8px;
+                  border-radius: 4px;
+                  font-size: 13px;
+                "
+                >PUT</span
+              >
+              <span style="color: rgb(13, 59, 102); font-size: 13px"
+                >/produtos/:id</span
+              >
+              <span style="color: rgb(74, 106, 138); font-size: 13px"
+                >→ atualiza um produto (404 se não existir)</span
+              ><br style="font-size: 13px" /><span
+                style="
+                  background: rgb(255, 232, 232);
+                  color: rgb(192, 57, 43);
+                  font-weight: bold;
+                  padding: 2px 8px;
+                  border-radius: 4px;
+                  font-size: 13px;
+                "
+                >DELETE</span
+              >
+              <span style="color: rgb(13, 59, 102); font-size: 13px"
+                >/produtos/:id</span
+              >
+              <span style="color: rgb(74, 106, 138); font-size: 13px"
+                >→ remove um produto (204 em sucesso, 404 se não existir)</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Bodies -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 8px;
+                "
+              >
+                Body esperado no POST
+              </div>
+              <div
+                style="
+                  background: rgb(13, 27, 42);
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  color: rgb(200, 216, 232);
+                  line-height: 1.9;
+                "
+              >
+                {<br style="font-size: 12px" /><span
+                  style="color: rgb(168, 240, 200); font-size: 12px"
+                  >"nome"</span
+                >:
+                <span style="color: rgb(168, 240, 200); font-size: 12px"
+                  >"Webcam HD"</span
+                >,<br style="font-size: 12px" /><span
+                  style="color: rgb(168, 240, 200); font-size: 12px"
+                  >"categoria"</span
+                >:
+                <span style="color: rgb(168, 240, 200); font-size: 12px"
+                  >"Periférico"</span
+                >,<br style="font-size: 12px" /><span
+                  style="color: rgb(168, 240, 200); font-size: 12px"
+                  >"preco"</span
+                >:
+                <span style="color: rgb(240, 160, 96); font-size: 12px"
+                  >320.00</span
+                >,<br style="font-size: 12px" /><span
+                  style="color: rgb(168, 240, 200); font-size: 12px"
+                  >"quantidade"</span
+                >:
+                <span style="color: rgb(240, 160, 96); font-size: 12px">10</span
+                ><br style="font-size: 12px" />}
+              </div>
+            </div>
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 8px;
+                "
+              >
+                Body esperado no PUT
+              </div>
+              <div
+                style="
+                  background: rgb(13, 27, 42);
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  color: rgb(200, 216, 232);
+                  line-height: 1.9;
+                "
+              >
+                {<br style="font-size: 12px" /><span
+                  style="color: rgb(168, 240, 200); font-size: 12px"
+                  >"nome"</span
+                >:
+                <span style="color: rgb(168, 240, 200); font-size: 12px"
+                  >"Mouse Gamer Pro"</span
+                >,<br style="font-size: 12px" /><span
+                  style="color: rgb(168, 240, 200); font-size: 12px"
+                  >"categoria"</span
+                >:
+                <span style="color: rgb(168, 240, 200); font-size: 12px"
+                  >"Periférico"</span
+                >,<br style="font-size: 12px" /><span
+                  style="color: rgb(168, 240, 200); font-size: 12px"
+                  >"preco"</span
+                >:
+                <span style="color: rgb(240, 160, 96); font-size: 12px"
+                  >210.00</span
+                >,<br style="font-size: 12px" /><span
+                  style="color: rgb(168, 240, 200); font-size: 12px"
+                  >"quantidade"</span
+                >:
+                <span style="color: rgb(240, 160, 96); font-size: 12px">18</span
+                ><br style="font-size: 12px" />}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Verificação -->
+        <div
+          style="
+            background: rgb(234, 244, 255);
+            border-radius: 10px;
+            padding: 14px 18px;
+            border-left: 3px solid rgb(6, 32, 74);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 6px;
+            "
+          >
+            Como verificar
+          </div>
+          <div
+            style="font-size: 13px; color: rgb(44, 62, 80); line-height: 1.75"
+          >
+            Siga esta sequência no Postman ou Insomnia:<br
+              style="font-size: 13px"
+            /><strong style="font-size: 13px">1.</strong> GET em
+            <code
+              style="
+                background: rgb(221, 238, 255);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 11px;
+              "
+              >/produtos</code
+            >
+            — deve listar os 6 produtos.<br style="font-size: 13px" /><strong
+              style="font-size: 13px"
+              >2.</strong
+            >
+            POST com os dados da Webcam — deve retornar status 201 com o produto
+            e o id gerado.<br style="font-size: 13px" /><strong
+              style="font-size: 13px"
+              >3.</strong
+            >
+            PUT em
+            <code
+              style="
+                background: rgb(221, 238, 255);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 11px;
+              "
+              >/produtos/2</code
+            >
+            — deve atualizar o Mouse e retornar o produto atualizado.<br
+              style="font-size: 13px"
+            /><strong style="font-size: 13px">4.</strong> DELETE em
+            <code
+              style="
+                background: rgb(221, 238, 255);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 11px;
+              "
+              >/produtos/2</code
+            >
+            — deve retornar 204 sem corpo.<br style="font-size: 13px" /><strong
+              style="font-size: 13px"
+              >5.</strong
+            >
+            GET em
+            <code
+              style="
+                background: rgb(221, 238, 255);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 11px;
+              "
+              >/produtos/2</code
+            >
+            — deve retornar 404, confirmando que o produto foi removido do
+            banco.<!-- ══ CABEÇALHO ══ -->
+          </div>
+        </div>
+      </div>
+      <br style="font-size: 14px" />
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.1) 0px 6px 24px;
+          font-family: Arial, Helvetica, sans-serif;
+          color: rgb(26, 42, 58);
+          font-size: 14px;
+        "
+      >
+        <!-- HEADER -->
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid rgb(232, 240, 251);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #1a2a3a, #3a6ea5);
+              color: #fff;
+              font-size: 13px;
+              font-weight: bold;
+              padding: 6px 18px;
+              border-radius: 20px;
+            "
+          >
+            Exercício 3
+          </div>
+          <div style="font-size: 20px; font-weight: bold; color: #0d3b66">
+            API de Usuários — Cadastro, Login e Atualização
+          </div>
+          <div
+            style="
+              margin-left: auto;
+              background: #eaf2fb;
+              color: #1a5fa8;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 4px 12px;
+              border-radius: 8px;
+              letter-spacing: 1px;
+              border: 1px solid #b8d4ed;
+            "
+          >
+            AUTH · UPDATE
+          </div>
+        </div>
+        <!-- DESCRIÇÃO -->
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.85;
+            margin-bottom: 22px;
+          "
+        >
+          Neste exercício, você irá desenvolver uma API de autenticação simples
+          com cadastro, login e atualização de usuários utilizando Express +
+          PostgreSQL. <br style="font-size: 15px" /><br
+            style="font-size: 15px"
+          /><strong style="font-size: 15px">Importante:</strong> Este exercício
+          é didático —
+          <span
+            style="color: rgb(192, 57, 43); font-weight: bold; font-size: 15px"
+            >não utilize bcrypt ou qualquer tipo de criptografia</span
+          >. As senhas serão armazenadas como texto puro.
+        </div>
+        <!-- PASSO 1 -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              font-size: 14px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 10px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+            "
+          >
+            <span
+              style="
+                background: #1a2a3a;
+                color: #fff;
+                font-size: 10px;
+                padding: 2px 10px;
+                border-radius: 5px;
+              "
+            >
+              PASSO 1
+            </span>
+            Banco de dados e tabela
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                padding: 18px;
+                font-family: monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              -- Criar banco<br style="font-size: 13px" />CREATE DATABASE
+              usuarios;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />-- Criar tabela<br style="font-size: 13px" />CREATE TABLE
+              usuarios (<br style="font-size: 13px" />&nbsp;&nbsp;id SERIAL
+              PRIMARY KEY,<br style="font-size: 13px" />&nbsp;&nbsp;nome TEXT
+              NOT NULL,<br style="font-size: 13px" />&nbsp;&nbsp;email TEXT
+              UNIQUE NOT NULL,<br style="font-size: 13px" />&nbsp;&nbsp;senha
+              TEXT NOT NULL<br style="font-size: 13px" />);
+            </div>
+          </div>
+        </div>
+        <!-- PASSO 2 -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              font-size: 14px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 12px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+            "
+          >
+            <span
+              style="
+                background: #1a2a3a;
+                color: #fff;
+                font-size: 10px;
+                padding: 2px 10px;
+                border-radius: 5px;
+              "
+            >
+              PASSO 2
+            </span>
+            Estrutura MVC a ser criada
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(244, 248, 255);
+                padding: 14px 18px;
+                border-left: 4px solid rgb(58, 110, 165);
+                border-radius: 8px;
+                font-size: 14px;
+              "
+            >
+              <strong style="font-size: 14px">usuario.model.js</strong
+              ><br style="font-size: 14px" />criarUsuario · buscarPorEmail ·
+              buscarPorId · atualizarUsuario
+            </div>
+            <div
+              style="
+                background: rgb(244, 248, 255);
+                padding: 14px 18px;
+                border-left: 4px solid rgb(58, 110, 165);
+                border-radius: 8px;
+                font-size: 14px;
+              "
+            >
+              <strong style="font-size: 14px">usuario.controller.js</strong
+              ><br style="font-size: 14px" />cadastrar · login · atualizar
+            </div>
+            <div
+              style="
+                background: rgb(244, 248, 255);
+                padding: 14px 18px;
+                border-left: 4px solid rgb(58, 110, 165);
+                border-radius: 8px;
+                font-size: 14px;
+              "
+            >
+              <strong style="font-size: 14px">usuario.routes.js</strong
+              ><br style="font-size: 14px" />Definição das rotas e integração
+              com o controller
+            </div>
+          </div>
+        </div>
+        <!-- REGRAS -->
+        <div
+          style="
+            background: #fff4e6;
+            border: 1px solid #f0d080;
+            border-left: 5px solid #f0a000;
+            border-radius: 10px;
+            padding: 16px 18px;
+            margin-bottom: 22px;
+            font-size: 14px;
+            line-height: 1.7;
+          "
+        >
+          <strong style="color: rgb(154, 112, 0); font-size: 14px"
+            >Regras importantes</strong
+          ><br style="font-size: 14px" /><br style="font-size: 14px" />• Não
+          utilizar bcrypt ou criptografia<br style="font-size: 14px" />• Senha
+          deve ser comparada diretamente (texto)<br style="font-size: 14px" />•
+          Email deve ser único no banco<br style="font-size: 14px" />• Login
+          deve validar email + senha corretamente<br style="font-size: 14px" />•
+          Retornar 404 se usuário não existir
+        </div>
+        <!-- ROTAS -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              background: rgb(240, 246, 255);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 3px solid rgb(58, 110, 165);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                margin-bottom: 12px;
+              "
+            >
+              ROTAS ESPERADAS
+            </div>
+            <div
+              style="font-family: monospace; font-size: 13px; line-height: 2"
+            >
+              <span
+                style="
+                  color: rgb(26, 95, 168);
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >POST</span
+              >
+              /usuarios/register → cadastrar usuário<br
+                style="font-size: 13px"
+              /><span
+                style="
+                  color: rgb(26, 95, 168);
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >POST</span
+              >
+              /usuarios/login → autenticar usuário<br
+                style="font-size: 13px"
+              /><span
+                style="
+                  color: rgb(160, 112, 0);
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >PUT</span
+              >
+              /usuarios/:id → atualizar dados do usuário
+            </div>
+          </div>
+        </div>
+        <!-- BODIES -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 14px">
+              <div
+                style="font-size: 13px; font-weight: bold; margin-bottom: 6px"
+              >
+                Cadastro
+              </div>
+              <div
+                style="
+                  background: #0d1b2a;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: monospace;
+                  font-size: 13px;
+                  color: #c8d8e8;
+                "
+              >
+                {<br style="font-size: 13px" />&nbsp;"nome": "João",<br
+                  style="font-size: 13px"
+                />&nbsp;"email": "joao@email.com",<br
+                  style="font-size: 13px"
+                />&nbsp;"senha": "123456"<br style="font-size: 13px" />}
+              </div>
+            </div>
+            <div style="font-size: 14px">
+              <div
+                style="font-size: 13px; font-weight: bold; margin-bottom: 6px"
+              >
+                Login
+              </div>
+              <div
+                style="
+                  background: #0d1b2a;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: monospace;
+                  font-size: 13px;
+                  color: #c8d8e8;
+                "
+              >
+                {<br style="font-size: 13px" />&nbsp;"email":
+                "joao@email.com",<br style="font-size: 13px" />&nbsp;"senha":
+                "123456"<br style="font-size: 13px" />}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- UPDATE -->
+        <div style="margin-bottom: 22px; font-size: 14px">
+          <div style="font-size: 13px; font-weight: bold; margin-bottom: 6px">
+            Body para atualização (PUT)
+          </div>
+          <div
+            style="
+              background: #0d1b2a;
+              border-radius: 8px;
+              padding: 14px;
+              font-family: monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+            "
+          >
+            {<br style="font-size: 13px" />&nbsp;"nome": "João Silva",<br
+              style="font-size: 13px"
+            />&nbsp;"email": "joao.silva@email.com",<br
+              style="font-size: 13px"
+            />&nbsp;"senha": "novaSenha"<br style="font-size: 13px" />}
+          </div>
+        </div>
+        <!-- VERIFICAÇÃO -->
+        <div
+          style="
+            background: rgb(234, 244, 255);
+            border-radius: 10px;
+            padding: 14px 18px;
+            border-left: 3px solid rgb(58, 110, 165);
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 13px; font-weight: bold; margin-bottom: 6px">
+            Como verificar
+          </div>
+          <div style="font-size: 13px; line-height: 1.75">
+            1. Faça um POST em /usuarios/register<br
+              style="font-size: 13px"
+            />2. Faça login com os mesmos dados (POST /usuarios/login)<br
+              style="font-size: 13px"
+            />3. Atualize o usuário com PUT /usuarios/:id<br
+              style="font-size: 13px"
+            />4. Tente logar novamente com os dados atualizados
+          </div>
+        </div>
+      </div>
+      <!-- ══ REFERÊNCIAS ══ -->
+      <div
+        style="
+          padding-top: 4px;
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+          font-size: 14px;
+        "
+      >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://node-postgres.com/"
+          >Documentação — node-postgres (pg)</a
+        >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://www.postgresql.org/docs/current/sql-commands.html"
+          >Documentação — PostgreSQL SQL</a
+        >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://expressjs.com/pt-br/guide/routing.html"
+          >Documentação — Express Routing</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1704 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../style.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🧠 Lógica de Programação</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 26px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Operadores Lógicos<br style="font-size: 26px" /><span
+              style="color: rgb(206, 147, 216); font-size: 26px"
+              >e Estrutura CASE — Atividades</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Exercícios práticos · E, OU, NÃO · ESCOLHA...CASO · Construção de
+            algoritmos
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >E</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >OU</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >NÃO</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >ESCOLHA</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >CASO</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ LEMBRETE VISUAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(255, 248, 230),
+            rgb(255, 243, 224)
+          );
+          border-width: 1px 1px 1px 5px;
+          border-style: solid;
+          border-color: rgb(255, 213, 130) rgb(255, 213, 130) rgb(255, 213, 130)
+            rgb(245, 124, 0);
+          border-image: initial;
+          border-radius: 12px;
+          padding: 22px 28px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #e65100;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+          "
+        >
+          📌 Como estruturar seu pseudocódigo
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(57, 73, 171);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: 800;
+                color: #1a237e;
+                margin-bottom: 4px;
+              "
+            >
+              ① Operador E — Todas as condições precisam ser verdadeiras
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.6">
+              Use quando o algoritmo só segue se
+              <strong style="font-size: 12px">todas</strong> as exigências forem
+              cumpridas. Ex:
+              <code
+                style="
+                  background: rgb(232, 234, 246);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #1a237e;
+                "
+                >SE (idade >= 18) E (possuiDoc = "sim") ENTÃO</code
+              >.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: 800;
+                color: #e65100;
+                margin-bottom: 4px;
+              "
+            >
+              ② Operador OU — Pelo menos uma condição verdadeira
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.6">
+              Use quando
+              <strong style="font-size: 12px">basta uma</strong> exigência ser
+              atendida. Ex:
+              <code
+                style="
+                  background: rgb(255, 243, 224);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #e65100;
+                "
+                >SE (cat = "estudante") OU (cat = "idoso") ENTÃO</code
+              >.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(57, 73, 171);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: 800;
+                color: #1a237e;
+                margin-bottom: 4px;
+              "
+            >
+              ③ Operador NÃO — Inverte o valor lógico
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.6">
+              Use para verificar o
+              <strong style="font-size: 12px">oposto</strong>. Ex:
+              <code
+                style="
+                  background: rgb(232, 234, 246);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #1a237e;
+                "
+                >SE (NÃO bloqueado) ENTÃO</code
+              >.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: 800;
+                color: #004d40;
+                margin-bottom: 4px;
+              "
+            >
+              ④ Estrutura CASE — Múltiplas opções fixas
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.6">
+              Use quando uma variável assume
+              <strong style="font-size: 12px">valores exatos</strong>. Ex:
+              ESCOLHA dia... CASO 1: "Domingo"... FIM_ESCOLHA. O SENÃO captura
+              não listados.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- NÍVEL 1 — OPERADORES LÓGICOS     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Nível 1 — Operadores Lógicos Básicos</span
+          >
+          <span
+            style="
+              margin-left: auto;
+              background: rgba(255, 255, 255, 0.15);
+              color: #c5cae9;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 4px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Uso individual de cada operador</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <!-- Ex 01 -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(197, 202, 233);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #1a237e;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 01</span
+              >
+              <span style="color: #1a237e; font-size: 14px; font-weight: 800"
+                >Cadastro de doador de sangue</span
+              >
+              <span
+                style="
+                  margin-left: auto;
+                  background: #c5cae9;
+                  color: #1a237e;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >Operador E</span
+              >
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #37474f;
+                line-height: 1.85;
+                margin-bottom: 14px;
+              "
+            >
+              Um hemocentro lê a
+              <strong style="font-size: 13px">idade</strong> e o
+              <strong style="font-size: 13px">peso</strong> do candidato. Para
+              aprovar, ele precisa ter
+              <strong style="font-size: 13px">18 a 65 anos (inclusive)</strong>
+              <strong style="font-size: 13px">E</strong> pesar
+              <strong style="font-size: 13px">50 kg ou mais</strong>. Caso
+              contrário, informe que não pode doar. Construa o pseudocódigo.
+            </div>
+            <div
+              style="
+                background: #fff;
+                border-radius: 8px;
+                padding: 12px 16px;
+                border-left: 4px solid #3949ab;
+                font-size: 12px;
+                color: #1a237e;
+                line-height: 1.7;
+              "
+            >
+              <strong style="font-size: 12px">Pense em:</strong> qual operador
+              une as duas exigências? Como escrever o intervalo de idade (duas
+              comparações unidas por qual operador)? Use parênteses para agrupar
+              as comparações de idade.
+            </div>
+          </div>
+
+          <!-- Ex 02 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 02</span
+              >
+              <span style="color: #e65100; font-size: 14px; font-weight: 800"
+                >Desconto no cinema</span
+              >
+              <span
+                style="
+                  margin-left: auto;
+                  background: #ffe0b2;
+                  color: #e65100;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >Operador OU</span
+              >
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #37474f;
+                line-height: 1.85;
+                margin-bottom: 14px;
+              "
+            >
+              O sistema lê a
+              <strong style="font-size: 13px">categoria</strong> do cliente. Se
+              for <strong style="font-size: 13px">"estudante"</strong>
+              <strong style="font-size: 13px">OU</strong>
+              <strong style="font-size: 13px">"idoso"</strong>, exiba
+              <strong style="font-size: 13px">"Meia-entrada — R$ 15,00"</strong
+              >. Senão, exiba
+              <strong style="font-size: 13px">"Inteira — R$ 30,00"</strong>.
+            </div>
+            <div
+              style="
+                background: #fff;
+                border-radius: 8px;
+                padding: 12px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 12px;
+                color: #e65100;
+                line-height: 1.7;
+              "
+            >
+              <strong style="font-size: 12px">Pense em:</strong> quantas
+              comparações? Com OU, basta uma ser verdadeira. O que aconteceria
+              se você usasse E por engano neste caso?
+            </div>
+          </div>
+
+          <!-- Ex 03 -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #2e7d32;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 03</span
+              >
+              <span style="color: #2e7d32; font-size: 14px; font-weight: 800"
+                >Painel de acesso restrito</span
+              >
+              <span
+                style="
+                  margin-left: auto;
+                  background: #c8e6c9;
+                  color: #2e7d32;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >Operador NÃO</span
+              >
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #37474f;
+                line-height: 1.85;
+                margin-bottom: 14px;
+              "
+            >
+              O sistema lê a variável lógica
+              <strong style="font-size: 13px">administrador</strong>
+              (VERDADEIRO/FALSO). Se
+              <strong style="font-size: 13px">NÃO</strong> for administrador,
+              exiba
+              <strong style="font-size: 13px">"Painel disponível"</strong>.
+              Senão, exiba
+              <strong style="font-size: 13px"
+                >"Painel bloqueado para administradores"</strong
+              >.
+            </div>
+            <div
+              style="
+                background: #fff;
+                border-radius: 8px;
+                padding: 12px 16px;
+                border-left: 4px solid #388e3c;
+                font-size: 12px;
+                color: #1b5e20;
+                line-height: 1.7;
+              "
+            >
+              <strong style="font-size: 12px">Pense em:</strong> como escrever
+              "NÃO administrador" sem usar comparação com texto? Reescreva sem
+              usar NÃO — como ficaria a lógica invertida?
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- NÍVEL 2 — COMBINAÇÕES            -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Nível 2 — Combinações de Operadores</span
+          >
+          <span
+            style="
+              margin-left: auto;
+              background: rgba(255, 255, 255, 0.15);
+              color: #fff3e0;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 4px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >E + OU + NÃO juntos</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(255, 248, 245);
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid rgb(245, 124, 0);
+              margin-bottom: 4px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: 800;
+                color: #bf360c;
+                margin-bottom: 6px;
+              "
+            >
+              🧠 Como combinar vários operadores?
+            </div>
+            <div style="font-size: 13px; color: #37474f; line-height: 1.75">
+              Use <strong style="font-size: 13px">parênteses</strong> para
+              agrupar e definir a ordem de avaliação. Ex:
+              <code
+                style="
+                  background: rgb(255, 224, 178);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #bf360c;
+                "
+                >SE ( (a > 0) E (b > 0) ) OU (c > 0) ENTÃO</code
+              >
+              — os parênteses mais internos são avaliados primeiro.
+            </div>
+          </div>
+
+          <!-- Ex 04 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 04</span
+              >
+              <span style="color: #bf360c; font-size: 14px; font-weight: 800"
+                >Classificação de IMC</span
+              >
+              <span
+                style="
+                  margin-left: auto;
+                  background: #ffe0b2;
+                  color: #bf360c;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >E + OU aninhados</span
+              >
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #37474f;
+                line-height: 1.85;
+                margin-bottom: 14px;
+              "
+            >
+              Leia <strong style="font-size: 13px">peso</strong> e
+              <strong style="font-size: 13px">altura</strong>, calcule o IMC
+              (peso / altura²). Se o IMC for
+              <strong style="font-size: 13px">abaixo de 18,5</strong> OU
+              <strong style="font-size: 13px">acima de 30,0</strong>, exiba
+              <strong style="font-size: 13px"
+                >"Risco — encaminhar ao médico"</strong
+              >. Senão, <strong style="font-size: 13px">"Peso normal"</strong>.
+            </div>
+            <div
+              style="
+                background: #fff;
+                border-radius: 8px;
+                padding: 12px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 12px;
+                color: #bf360c;
+                line-height: 1.7;
+              "
+            >
+              <strong style="font-size: 12px">Pense em:</strong> as condições de
+              risco são "fora da faixa" — abaixo de 18,5 OU acima de 30,0. Como
+              escrever essa linha do SE? O SENÃO resolve a normalidade.
+            </div>
+          </div>
+
+          <!-- Ex 05 -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(197, 202, 233);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #283593;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 05</span
+              >
+              <span style="color: #1a237e; font-size: 14px; font-weight: 800"
+                >Validação de senha com limite</span
+              >
+              <span
+                style="
+                  margin-left: auto;
+                  background: #c5cae9;
+                  color: #1a237e;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >REPITA + SE + OU</span
+              >
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #37474f;
+                line-height: 1.85;
+                margin-bottom: 14px;
+              "
+            >
+              Caixa eletrônico: senha predefinida
+              <strong style="font-size: 13px">"1234"</strong>, no máximo
+              <strong style="font-size: 13px">3 tentativas</strong>. A cada
+              erro: <strong style="font-size: 13px">"Senha incorreta"</strong>.
+              Se acertar:
+              <strong style="font-size: 13px">"Acesso liberado"</strong> e
+              encerra. Se errar as 3:
+              <strong style="font-size: 13px">"Conta bloqueada"</strong>. Use
+              REPITA ATÉ com contador.
+            </div>
+            <div
+              style="
+                background: #fff;
+                border-radius: 8px;
+                padding: 12px 16px;
+                border-left: 4px solid #3949ab;
+                font-size: 12px;
+                color: #1a237e;
+                line-height: 1.7;
+              "
+            >
+              <strong style="font-size: 12px">Pense em:</strong> o laço termina
+              quando acertar OU estourar tentativas. Como combinar essas duas
+              saídas? O contador incrementa em qual bloco?
+            </div>
+          </div>
+
+          <!-- Ex 06 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #bf360c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 06</span
+              >
+              <span style="color: #bf360c; font-size: 14px; font-weight: 800"
+                >Evento ao ar livre</span
+              >
+              <span
+                style="
+                  margin-left: auto;
+                  background: #ffe0b2;
+                  color: #bf360c;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >E + NÃO combinados</span
+              >
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #37474f;
+                line-height: 1.85;
+                margin-bottom: 14px;
+              "
+            >
+              O sistema lê:
+              <strong style="font-size: 13px">chovendo</strong> (lógico) e
+              <strong style="font-size: 13px">temperatura</strong> (inteiro). O
+              evento só ocorre se
+              <strong style="font-size: 13px">NÃO</strong> estiver chovendo
+              <strong style="font-size: 13px">E</strong> temperatura for
+              <strong style="font-size: 13px">maior que 20 graus</strong>.
+              Senão, cancelado.
+            </div>
+            <div
+              style="
+                background: #fff;
+                border-radius: 8px;
+                padding: 12px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 12px;
+                color: #bf360c;
+                line-height: 1.7;
+              "
+            >
+              <strong style="font-size: 12px">Pense em:</strong> como escrever
+              "NÃO está chovendo" com variável lógica? Como essa condição se
+              liga à temperatura usando E? Use parênteses.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- NÍVEL 3 — ESTRUTURA CASE         -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Nível 3 — Estrutura CASE (ESCOLHA...CASO)</span
+          >
+          <span
+            style="
+              margin-left: auto;
+              background: rgba(255, 255, 255, 0.15);
+              color: #e1bee7;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 4px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Múltiplas opções fixas</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid rgb(106, 27, 154);
+              margin-bottom: 4px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: 800;
+                color: #6a1b9a;
+                margin-bottom: 6px;
+              "
+            >
+              🧠 Quando usar ESCOLHA...CASO?
+            </div>
+            <div style="font-size: 13px; color: #37474f; line-height: 1.75">
+              Sempre que uma variável assume
+              <strong style="font-size: 13px"
+                >valores exatos e conhecidos</strong
+              >. O CASE substitui longas cadeias de SE...SENÃO SE.
+              <strong style="font-size: 13px"
+                >Não use CASE para intervalos</strong
+              >
+              (ex: "notas entre 7 e 10") — nesse caso, use SE com operadores
+              lógicos.
+            </div>
+          </div>
+
+          <!-- Ex 07 -->
+          <div
+            style="
+              background: rgb(248, 240, 255);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(225, 190, 231);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #6a1b9a;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 07</span
+              >
+              <span style="color: #4a148c; font-size: 14px; font-weight: 800"
+                >Cardápio de restaurante</span
+              >
+              <span
+                style="
+                  margin-left: auto;
+                  background: #e1bee7;
+                  color: #6a1b9a;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >ESCOLHA...CASO · menu</span
+              >
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #37474f;
+                line-height: 1.85;
+                margin-bottom: 14px;
+              "
+            >
+              Totem de autoatendimento: cliente digita
+              <strong style="font-size: 13px">1 a 5</strong>. Exiba:
+              <strong style="font-size: 13px"
+                >1 — Hambúrguer (R$ 25), 2 — Pizza (R$ 35), 3 — Salada (R$ 18),
+                4 — Lasanha (R$ 28), 5 — Sopa (R$ 15)</strong
+              >. Se diferente,
+              <strong style="font-size: 13px">"Opção inválida"</strong>. Use
+              ESCOLHA...CASO.
+            </div>
+            <div
+              style="
+                background: #fff;
+                border-radius: 8px;
+                padding: 12px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 12px;
+                color: #4a148c;
+                line-height: 1.7;
+              "
+            >
+              <strong style="font-size: 12px">Pense em:</strong> quantos CASO? O
+              que colocar no SENÃO para capturar inválidos? Conte mentalmente
+              quantas linhas você economiza comparado ao SE...SENÃO SE.
+            </div>
+          </div>
+
+          <!-- Ex 08 -->
+          <div
+            style="
+              background: rgb(248, 240, 255);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(225, 190, 231);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #8e24aa;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 08</span
+              >
+              <span style="color: #4a148c; font-size: 14px; font-weight: 800"
+                >Categoria de habilitação</span
+              >
+              <span
+                style="
+                  margin-left: auto;
+                  background: #e1bee7;
+                  color: #6a1b9a;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >ESCOLHA...CASO · letras</span
+              >
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #37474f;
+                line-height: 1.85;
+                margin-bottom: 14px;
+              "
+            >
+              DETRAN lê a
+              <strong style="font-size: 13px">categoria</strong> (caractere).
+              Mapeie:
+              <strong style="font-size: 13px"
+                >A — "Moto", B — "Carro", C — "Caminhão", D — "Ônibus", E —
+                "Carreta"</strong
+              >. Para qualquer outra letra:
+              <strong style="font-size: 13px">"Categoria inexistente"</strong>.
+            </div>
+            <div
+              style="
+                background: #fff;
+                border-radius: 8px;
+                padding: 12px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 12px;
+                color: #4a148c;
+                line-height: 1.7;
+              "
+            >
+              <strong style="font-size: 12px">Pense em:</strong> CASE funciona
+              com texto — cada CASO com caractere entre aspas. O SENÃO captura
+              letras diferentes de A a E.
+            </div>
+          </div>
+
+          <!-- Ex 09 -->
+          <div
+            style="
+              background: rgb(248, 240, 255);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(225, 190, 231);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #4a148c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 09</span
+              >
+              <span style="color: #4a148c; font-size: 14px; font-weight: 800"
+                >Classificação de conceito escolar</span
+              >
+              <span
+                style="
+                  margin-left: auto;
+                  background: #e1bee7;
+                  color: #6a1b9a;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >CASE + operador lógico</span
+              >
+            </div>
+            <div
+              style="
+                font-size: 13px;
+                color: #37474f;
+                line-height: 1.85;
+                margin-bottom: 14px;
+              "
+            >
+              Professor digita o
+              <strong style="font-size: 13px">conceito</strong> (texto). Tabela:
+              <strong style="font-size: 13px"
+                >A — "Excelente", B — "Bom", C — "Regular", D —
+                "Insuficiente"</strong
+              >. Regra extra:
+              <strong style="font-size: 13px">antes do CASE</strong>, valide se
+              o conceito está entre A e D — se não estiver, exiba
+              <strong style="font-size: 13px">"Conceito inválido"</strong> e
+              encerre. Se estiver, use o CASE para exibir a descrição.
+            </div>
+            <div
+              style="
+                background: #fff;
+                border-radius: 8px;
+                padding: 12px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 12px;
+                color: #4a148c;
+                line-height: 1.7;
+              "
+            >
+              <strong style="font-size: 12px">Pense em:</strong> este exercício
+              combina
+              <strong style="font-size: 12px">SE com operadores lógicos</strong>
+              (validar) +
+              <strong style="font-size: 12px">ESCOLHA...CASO</strong> (mapear).
+              O SE vem antes do CASE? Como escrever a validação usando OU?
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ CRITÉRIOS DE AVALIAÇÃO ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 28px 32px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgb(232, 240, 251);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              width: 6px;
+              height: 28px;
+              background: linear-gradient(rgb(26, 35, 126), rgb(69, 39, 160));
+              border-radius: 4px;
+              font-size: 14px;
+            "
+          >
+            &nbsp;
+          </div>
+          <div style="font-size: 18px; font-weight: 800; color: #1a237e">
+            Critérios de avaliação do pseudocódigo
+          </div>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              background: rgb(232, 234, 246);
+              border-radius: 10px;
+              padding: 14px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 20px; flex-shrink: 0">✅</div>
+            <div style="font-size: 13px; color: #37474f; line-height: 1.7">
+              <strong style="font-size: 13px">Delimitação correta</strong> —
+              todo pseudocódigo começa com INÍCIO e termina com FIM.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              background: rgb(232, 234, 246);
+              border-radius: 10px;
+              padding: 14px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 20px; flex-shrink: 0">✅</div>
+            <div style="font-size: 13px; color: #37474f; line-height: 1.7">
+              <strong style="font-size: 13px">Identação</strong> — blocos dentro
+              de SE, REPITA e ESCOLHA estão recuados à direita.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              background: rgb(232, 234, 246);
+              border-radius: 10px;
+              padding: 14px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 20px; flex-shrink: 0">✅</div>
+            <div style="font-size: 13px; color: #37474f; line-height: 1.7">
+              <strong style="font-size: 13px"
+                >Operadores lógicos corretos</strong
+              >
+              — E, OU e NÃO usados conforme a lógica do problema.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              background: rgb(232, 234, 246);
+              border-radius: 10px;
+              padding: 14px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 20px; flex-shrink: 0">✅</div>
+            <div style="font-size: 13px; color: #37474f; line-height: 1.7">
+              <strong style="font-size: 13px">Parênteses na condição</strong> —
+              condições compostas agrupadas com parênteses para evitar
+              ambiguidade.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              background: rgb(232, 234, 246);
+              border-radius: 10px;
+              padding: 14px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 20px; flex-shrink: 0">✅</div>
+            <div style="font-size: 13px; color: #37474f; line-height: 1.7">
+              <strong style="font-size: 13px">CASE bem estruturado</strong> —
+              ESCOLHA alinhado, cada CASO com valor certo, FIM_ESCOLHA fechando
+              o bloco.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              background: rgb(232, 234, 246);
+              border-radius: 10px;
+              padding: 14px;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 20px; flex-shrink: 0">✅</div>
+            <div style="font-size: 13px; color: #37474f; line-height: 1.7">
+              <strong style="font-size: 13px">SENÃO no CASE</strong> — usado
+              corretamente (e quando necessário) para capturar valores não
+              listados.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da atividade</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📐</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                9 exercícios em 3 níveis
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔀</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Operadores E, OU, NÃO
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🧩</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Estrutura ESCOLHA...CASO
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >INÍCIO / FIM</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >SE...ENTÃO</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >E / OU / NÃO</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >ESCOLHA</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >CASO</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Identação</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

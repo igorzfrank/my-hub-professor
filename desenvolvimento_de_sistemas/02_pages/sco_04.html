@@ -1,0 +1,2493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desing Patterns</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(240, 244, 249);
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- Cabecalho -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102) 0%,
+            rgb(26, 95, 168) 100%
+          );
+          border-radius: 14px;
+          padding: 36px 40px;
+          margin-bottom: 24px;
+          box-shadow: rgba(13, 59, 102, 0.28) 0px 8px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a8c8f0;
+            margin-bottom: 10px;
+          "
+        >
+          Técnico em Desenvolvimento de Sistemas — Desenvolvimento de Sistemas
+        </div>
+        <div
+          style="
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 12px;
+          "
+        >
+          Design Patterns — Padrões de Projeto de Software
+        </div>
+        <div style="font-size: 15px; color: #c8dff5; line-height: 1.65">
+          Nesta aula você aprenderá o que são Design Patterns, por que eles
+          existem e como aplicá-los em JavaScript para escrever código mais
+          organizado, seguro, reutilizável e de fácil manutenção. Cada padrão
+          será apresentado com exemplos comparativos: primeiro o problema sem o
+          padrão, depois a solução com ele.
+        </div>
+      </div>
+      <!-- Capacidades -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          border-left: 6px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 14px;
+          "
+        >
+          Capacidades Trabalhadas
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Reconhecer requisitos de qualidade, integridade, usabilidade e
+              segurança da informação no desenvolvimento de sistemas.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- O que sao Design Patterns -->
+      <div
+        style="
+          background: rgb(234, 242, 251);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.08) 0px 4px 18px;
+          border: 1px solid rgb(184, 212, 237);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 12px;
+          "
+        >
+          O que são Design Patterns?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.75;
+            margin-bottom: 12px;
+          "
+        >
+          Um
+          <span style="font-weight: bold; font-size: 15px">Design Pattern</span>
+          (Padrão de Projeto) é uma solução reutilizável para um problema
+          recorrente no desenvolvimento de software. Não é um código pronto para
+          copiar — é um
+          <span style="font-weight: bold; font-size: 15px"
+            >modelo conceitual</span
+          >
+          que pode ser adaptado a diferentes linguagens e contextos.
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.75;
+            margin-bottom: 14px;
+          "
+        >
+          O conceito foi formalizado em 1994 pelo livro
+          <span style="font-weight: bold; font-size: 15px"
+            >Design Patterns: Elements of Reusable Object-Oriented
+            Software</span
+          >, escrito por Erich Gamma, Richard Helm, Ralph Johnson e John
+          Vlissides — conhecidos na comunidade como
+          <span style="font-weight: bold; font-size: 15px"
+            >Gang of Four (GoF)</span
+          >. Eles catalogaram 23 padrões agrupados em três categorias:
+          Criacionais, Estruturais e Comportamentais.
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 4px solid rgb(26, 95, 168);
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 14px; color: #1a2a3a; line-height: 1.7">
+            <span style="font-weight: bold; font-size: 14px"
+              >Analogia do mundo real:</span
+            >
+            imagine que um engenheiro civil está projetando a estrutura de um
+            prédio. Ele não inventa do zero como calcular vigas e pilares — ele
+            aplica padrões consagrados da engenharia que já foram testados em
+            milhares de construções. Design Patterns fazem o mesmo para o
+            software: são soluções que já provaram funcionar, evitando que cada
+            desenvolvedor "reinvente a roda" a cada novo projeto.
+          </div>
+        </div>
+      </div>
+      <!-- Por que usar -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Por que usar Design Patterns?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 20px;
+          "
+        >
+          Código sem padrões cresce de forma desorganizada. Com o tempo,
+          torna-se difícil de entender, modificar e testar — fenômeno chamado de
+          <span style="font-weight: bold; font-size: 15px"
+            >código espaguete</span
+          >. Os Design Patterns atacam esse problema diretamente, oferecendo
+          quatro benefícios fundamentais:
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 20px;
+              border-top: 3px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 8px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Qualidade
+            </div>
+            <div style="font-size: 14px; color: #4a6a8a; line-height: 1.65">
+              O código fica mais legível, previsível e alinhado com boas
+              práticas reconhecidas pela comunidade. Novos desenvolvedores
+              conseguem entender o sistema mais rapidamente.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 20px;
+              border-top: 3px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 8px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Integridade
+            </div>
+            <div style="font-size: 14px; color: #4a6a8a; line-height: 1.65">
+              Padrões como Singleton e Factory controlam a criação de objetos,
+              evitando instâncias duplicadas, estados inconsistentes e
+              comportamentos imprevisíveis que comprometem os dados.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 20px;
+              border-top: 3px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 8px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Usabilidade do Código
+            </div>
+            <div style="font-size: 14px; color: #4a6a8a; line-height: 1.65">
+              Padrões como Observer e Strategy tornam o código mais flexível e
+              extensível. Adicionar novas funcionalidades não exige alterar o
+              que já funciona — apenas estender.
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 20px;
+              border-top: 3px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 8px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Segurança da Informação
+            </div>
+            <div style="font-size: 14px; color: #4a6a8a; line-height: 1.65">
+              Padrões como Proxy e Decorator permitem adicionar camadas de
+              autenticação, autorização e validação de forma centralizada e
+              controlada, sem expor lógica sensível.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- As 3 Categorias -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          As Três Categorias do GoF
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 20px;
+          "
+        >
+          Os 23 padrões catalogados pelo Gang of Four são organizados em três
+          grupos, cada um respondendo a uma pergunta diferente sobre o design do
+          sistema:
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 16px;
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(13, 59, 102);
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 6px;
+                "
+              >
+                Criacionais —
+                <span
+                  style="font-weight: 400; font-style: italic; font-size: 14px"
+                  >Como os objetos são criados?</span
+                >
+              </div>
+              <div style="font-size: 14px; color: #4a6a8a; line-height: 1.65">
+                Controlam e abstraem o processo de criação de objetos, tornando
+                o sistema independente de como seus componentes são
+                instanciados. Exemplos:
+                <span style="font-weight: bold; font-size: 14px"
+                  >Singleton, Factory Method, Abstract Factory, Builder,
+                  Prototype.</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 16px;
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 6px;
+                "
+              >
+                Estruturais —
+                <span
+                  style="font-weight: 400; font-style: italic; font-size: 14px"
+                  >Como os objetos se organizam?</span
+                >
+              </div>
+              <div style="font-size: 14px; color: #4a6a8a; line-height: 1.65">
+                Definem como classes e objetos são compostos para formar
+                estruturas maiores, facilitando a colaboração entre partes
+                independentes do sistema. Exemplos:
+                <span style="font-weight: bold; font-size: 14px"
+                  >Adapter, Decorator, Facade, Proxy, Composite, Bridge,
+                  Flyweight.</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 16px;
+              background: rgb(240, 247, 255);
+              border-radius: 10px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(52, 152, 219);
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 6px;
+                "
+              >
+                Comportamentais —
+                <span
+                  style="font-weight: 400; font-style: italic; font-size: 14px"
+                  >Como os objetos se comunicam?</span
+                >
+              </div>
+              <div style="font-size: 14px; color: #4a6a8a; line-height: 1.65">
+                Definem como os objetos interagem e distribuem responsabilidades
+                entre si, promovendo baixo acoplamento e alta coesão. Exemplos:
+                <span style="font-weight: bold; font-size: 14px"
+                  >Observer, Strategy, Command, Iterator, Template Method,
+                  State, Chain of Responsibility.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================ -->
+      <!-- PADRÃO 01: SINGLETON -->
+      <!-- ============================================================ -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Criacional — Padrão 01
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Singleton
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 16px;
+          "
+        >
+          O padrão
+          <span style="font-weight: bold; font-size: 15px">Singleton</span>
+          garante que uma classe tenha
+          <span style="font-weight: bold; font-size: 15px"
+            >apenas uma única instância</span
+          >
+          em todo o sistema, fornecendo um ponto de acesso global a ela. É
+          amplamente utilizado para gerenciar conexões com banco de dados,
+          configurações de ambiente e sessões de usuário — situações onde ter
+          múltiplas instâncias causaria inconsistência.
+        </div>
+        <div
+          style="
+            background: #fff7ee;
+            border-left: 4px solid #f0a500;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #5a3a00;
+            line-height: 1.6;
+            margin-bottom: 20px;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px"
+            >Conexão com Integridade:</span
+          >
+          sem o Singleton, cada parte do sistema poderia criar sua própria
+          conexão com o banco de dados, causando múltiplas conexões simultâneas,
+          dados inconsistentes e desperdício de recursos. O Singleton garante
+          que todos compartilhem a mesma instância.
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          Sem o padrão — o problema:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            padding: 20px 26px;
+            overflow-x: auto;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <pre
+            style="
+              margin: 0;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.8;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Sem Singleton: cada chamada cria uma nova conexão</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">class</span> ConexaoBanco {
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">constructor</span>() {
+    console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Nova conexao criada!"</span>); <span style="color: rgb(93, 184, 245); font-size: 13px;">// executado toda vez</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.conexao = <span style="color: rgb(168, 240, 200); font-size: 13px;">"conectado"</span>;
+  }
+}
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> db1 = <span style="color: rgb(240, 200, 122); font-size: 13px;">new</span> ConexaoBanco(); <span style="color: rgb(93, 184, 245); font-size: 13px;">// "Nova conexao criada!"</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> db2 = <span style="color: rgb(240, 200, 122); font-size: 13px;">new</span> ConexaoBanco(); <span style="color: rgb(93, 184, 245); font-size: 13px;">// "Nova conexao criada!" — duplicado!</span>
+
+console.log(db1 === db2); <span style="color: rgb(93, 184, 245); font-size: 13px;">// false — sao objetos diferentes</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Problema: dois modulos do sistema operam com conexoes distintas.</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Uma transacao pode ser iniciada em db1 e desfeita em db2.</span></pre>
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          Com o padrão Singleton — a solução:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            padding: 20px 26px;
+            overflow-x: auto;
+            margin-bottom: 14px;
+            font-size: 14px;
+          "
+        >
+          <pre
+            style="
+              margin: 0;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.8;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Com Singleton: apenas uma instancia e criada e compartilhada</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">class</span> ConexaoBanco {
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">constructor</span>() {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (ConexaoBanco._instancia) {
+      <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> ConexaoBanco._instancia; <span style="color: rgb(93, 184, 245); font-size: 13px;">// retorna a ja existente</span>
+    }
+    console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Conexao criada pela primeira vez."</span>);
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.conexao = <span style="color: rgb(168, 240, 200); font-size: 13px;">"conectado"</span>;
+    ConexaoBanco._instancia = <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>; <span style="color: rgb(93, 184, 245); font-size: 13px;">// guarda a instancia unica</span>
+  }
+}
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> db1 = <span style="color: rgb(240, 200, 122); font-size: 13px;">new</span> ConexaoBanco(); <span style="color: rgb(93, 184, 245); font-size: 13px;">// "Conexao criada pela primeira vez."</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> db2 = <span style="color: rgb(240, 200, 122); font-size: 13px;">new</span> ConexaoBanco(); <span style="color: rgb(93, 184, 245); font-size: 13px;">// sem log — retorna a mesma</span>
+
+console.log(db1 === db2); <span style="color: rgb(93, 184, 245); font-size: 13px;">// true — sao o mesmo objeto</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Garantia: todo o sistema opera sobre a mesma conexao.</span></pre>
+        </div>
+        <div
+          style="
+            background: #d4f5e4;
+            border-left: 4px solid #1a7a45;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #1a3a20;
+            line-height: 1.6;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px">Resultado:</span>
+          independente de quantas partes do sistema chamem
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(184, 232, 204);
+              padding: 1px 6px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >new ConexaoBanco()</span
+          >, sempre será retornada a mesma instância. A integridade dos dados é
+          preservada.
+        </div>
+      </div>
+      <!-- ============================================================ -->
+      <!-- PADRÃO 02: FACTORY METHOD -->
+      <!-- ============================================================ -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Criacional — Padrão 02
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Factory Method
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 16px;
+          "
+        >
+          O padrão
+          <span style="font-weight: bold; font-size: 15px">Factory Method</span>
+          define uma interface para criação de objetos, mas deixa que as
+          subclasses (ou uma função centralizada) decidam qual tipo de objeto
+          instanciar. O código que usa os objetos não precisa saber como eles
+          foram criados — apenas os utiliza.
+        </div>
+        <div
+          style="
+            background: #fff7ee;
+            border-left: 4px solid #f0a500;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #5a3a00;
+            line-height: 1.6;
+            margin-bottom: 20px;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px"
+            >Conexão com Qualidade e Usabilidade:</span
+          >
+          o Factory centraliza a lógica de criação. Se as regras de como criar
+          um objeto mudarem, basta alterar a fábrica — não todos os lugares do
+          código que instanciam o objeto. Isso reduz bugs e facilita manutenção.
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          Sem o padrão — o problema:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            padding: 20px 26px;
+            overflow-x: auto;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <pre
+            style="
+              margin: 0;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.8;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Sem Factory: logica de criacao espalhada pelo codigo</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">processarPagamento</span>(tipo, valor) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (tipo === <span style="color: rgb(168, 240, 200); font-size: 13px;">"cartao"</span>) {
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// cria objeto manualmente aqui</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> p = { tipo: <span style="color: rgb(168, 240, 200); font-size: 13px;">"cartao"</span>, taxa: <span style="color: rgb(240, 200, 122); font-size: 13px;">0.03</span>, valor };
+    console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Cartao: R<span class="nolink" style="font-size: 13px;">$${valor + valor * p.taxa}`</span>);
+  } <span style="color: rgb(240, 200, 122); font-size: 13px;">else if</span> (tipo === <span style="color: rgb(168, 240, 200); font-size: 13px;">"pix"</span>) {
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// cria objeto manualmente de novo</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> p = { tipo: <span style="color: rgb(168, 240, 200); font-size: 13px;">"pix"</span>, taxa: <span style="color: rgb(240, 200, 122); font-size: 13px;">0</span>, valor };
+    console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Pix: R$$</span>{valor}`</span>);
+  }
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// Se adicionar "boleto", precisa alterar ESTA funcao e</span>
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// todas as outras que criam pagamentos no sistema.</span>
+}</pre>
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          Com o padrão Factory Method — a solução:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            padding: 20px 26px;
+            overflow-x: auto;
+            margin-bottom: 14px;
+            font-size: 14px;
+          "
+        >
+          <pre
+            style="
+              margin: 0;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.8;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Com Factory: logica de criacao centralizada</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">class</span> PagamentoCartao {
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">calcular</span>(valor) { <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> valor * <span style="color: rgb(240, 200, 122); font-size: 13px;">1.03</span>; }
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">descricao</span>()    { <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">"Cartao de Credito"</span>; }
+}
+<span style="color: rgb(240, 200, 122); font-size: 13px;">class</span> PagamentoPix {
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">calcular</span>(valor) { <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> valor; }
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">descricao</span>()    { <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">"Pix"</span>; }
+}
+<span style="color: rgb(240, 200, 122); font-size: 13px;">class</span> PagamentoBoleto {
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">calcular</span>(valor) { <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> valor + <span style="color: rgb(240, 200, 122); font-size: 13px;">2.50</span>; }
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">descricao</span>()    { <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">"Boleto"</span>; }
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// A fabrica — unico lugar que conhece a logica de criacao</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">criarPagamento</span>(tipo) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> opcoes = {
+    cartao:  () =&gt; <span style="color: rgb(240, 200, 122); font-size: 13px;">new</span> PagamentoCartao(),
+    pix:     () =&gt; <span style="color: rgb(240, 200, 122); font-size: 13px;">new</span> PagamentoPix(),
+    boleto:  () =&gt; <span style="color: rgb(240, 200, 122); font-size: 13px;">new</span> PagamentoBoleto(),
+  };
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (!opcoes[tipo]) <span style="color: rgb(240, 200, 122); font-size: 13px;">throw new</span> Error(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Tipo invalido: ${tipo}`</span>);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> opcoes[tipo]();
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// O codigo que usa nao sabe como o objeto foi criado</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> pagamento = criarPagamento(<span style="color: rgb(168, 240, 200); font-size: 13px;">"pix"</span>);
+console.log(pagamento.descricao());      <span style="color: rgb(93, 184, 245); font-size: 13px;">// "Pix"</span>
+console.log(pagamento.calcular(<span style="color: rgb(240, 200, 122); font-size: 13px;">100</span>));    <span style="color: rgb(93, 184, 245); font-size: 13px;">// 100</span>
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Para adicionar "criptomoeda", basta criar a classe</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// e registra-la na fabrica. Nada mais muda.</span></pre>
+        </div>
+        <div
+          style="
+            background: #d4f5e4;
+            border-left: 4px solid #1a7a45;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #1a3a20;
+            line-height: 1.6;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px">Resultado:</span>
+          adicionar um novo tipo de pagamento exige criar uma nova classe e uma
+          linha na fábrica. Zero alteração no código existente. Isso é o
+          <span style="font-weight: bold; font-size: 14px"
+            >Princípio Aberto/Fechado</span
+          >
+          — aberto para extensão, fechado para modificação.
+        </div>
+      </div>
+      <!-- ============================================================ -->
+      <!-- PADRÃO 03: OBSERVER -->
+      <!-- ============================================================ -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Comportamental — Padrão 03
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Observer
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 16px;
+          "
+        >
+          O padrão
+          <span style="font-weight: bold; font-size: 15px">Observer</span>
+          estabelece uma relação de
+          <span style="font-weight: bold; font-size: 15px">um-para-muitos</span>
+          entre objetos: quando um objeto (o
+          <span style="font-weight: bold; font-size: 15px">sujeito</span>) muda
+          de estado, todos os seus dependentes (os
+          <span style="font-weight: bold; font-size: 15px">observadores</span>)
+          são notificados automaticamente. É o fundamento de sistemas de
+          eventos, notificações em tempo real e arquiteturas reativas.
+        </div>
+        <div
+          style="
+            background: #fff7ee;
+            border-left: 4px solid #f0a500;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #5a3a00;
+            line-height: 1.6;
+            margin-bottom: 20px;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px"
+            >Conexão com Usabilidade:</span
+          >
+          o Observer desacopla quem gera eventos de quem reage a eles. Em
+          sistemas de interface, é o que permite que vários componentes reajam a
+          uma mesma ação do usuário sem que o componente que gerou o evento
+          precise conhecer os demais.
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          Sem o padrão — o problema:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            padding: 20px 26px;
+            overflow-x: auto;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <pre
+            style="
+              margin: 0;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.8;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Sem Observer: o Pedido conhece e chama cada modulo manualmente</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">class</span> Pedido {
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">confirmar</span>() {
+    console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Pedido confirmado!"</span>);
+
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// acoplado diretamente a cada dependente</span>
+    EmailService.enviar(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Seu pedido foi confirmado"</span>);
+    Estoque.reservar(<span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.itens);
+    Financeiro.registrar(<span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.valor);
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// Para adicionar SMS, WhatsApp, Log — alterar ESTA classe</span>
+  }
+}</pre>
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          Com o padrão Observer — a solução:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            padding: 20px 26px;
+            overflow-x: auto;
+            margin-bottom: 14px;
+            font-size: 14px;
+          "
+        >
+          <pre
+            style="
+              margin: 0;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.8;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Com Observer: o Pedido nao conhece quem reage — apenas notifica</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">class</span> Pedido {
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">constructor</span>() {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.observadores = [];
+  }
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">assinar</span>(observador)   { <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.observadores.push(observador); }
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">notificar</span>(evento)    { <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.observadores.forEach(o =&gt; o.update(evento)); }
+
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">confirmar</span>() {
+    console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Pedido confirmado!"</span>);
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.notificar({ tipo: <span style="color: rgb(168, 240, 200); font-size: 13px;">"PEDIDO_CONFIRMADO"</span>, dados: <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span> });
+  }
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Cada observador e independente</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> EmailService  = { <span style="color: rgb(93, 245, 168); font-size: 13px;">update</span>: e =&gt; console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Email enviado!"</span>) };
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> Estoque       = { <span style="color: rgb(93, 245, 168); font-size: 13px;">update</span>: e =&gt; console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Estoque reservado!"</span>) };
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> Financeiro    = { <span style="color: rgb(93, 245, 168); font-size: 13px;">update</span>: e =&gt; console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Lancamento financeiro!"</span>) };
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> LogAuditoria  = { <span style="color: rgb(93, 245, 168); font-size: 13px;">update</span>: e =&gt; console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Log registrado!"</span>) };
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> pedido = <span style="color: rgb(240, 200, 122); font-size: 13px;">new</span> Pedido();
+pedido.assinar(EmailService);
+pedido.assinar(Estoque);
+pedido.assinar(Financeiro);
+pedido.assinar(LogAuditoria);  <span style="color: rgb(93, 184, 245); font-size: 13px;">// basta assinar — sem alterar Pedido</span>
+
+pedido.confirmar();
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// "Pedido confirmado!"</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// "Email enviado!" / "Estoque reservado!" / "Lancamento financeiro!" / "Log registrado!"</span></pre>
+        </div>
+        <div
+          style="
+            background: #d4f5e4;
+            border-left: 4px solid #1a7a45;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #1a3a20;
+            line-height: 1.6;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px">Resultado:</span> a
+          classe
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(184, 232, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >Pedido</span
+          >
+          não sabe quem a observa. Para adicionar SMS ou integração com ERP,
+          basta criar um novo observador e assiná-lo — nenhuma linha da classe
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(184, 232, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >Pedido</span
+          >
+          é tocada.
+        </div>
+      </div>
+      <!-- ============================================================ -->
+      <!-- PADRÃO 04: STRATEGY -->
+      <!-- ============================================================ -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Comportamental — Padrão 04
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Strategy
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 16px;
+          "
+        >
+          O padrão
+          <span style="font-weight: bold; font-size: 15px">Strategy</span>
+          define uma família de algoritmos, encapsula cada um deles e os torna
+          intercambiáveis. O cliente pode escolher qual algoritmo usar em tempo
+          de execução, sem precisar alterar o código que o utiliza.
+        </div>
+        <div
+          style="
+            background: #fff7ee;
+            border-left: 4px solid #f0a500;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #5a3a00;
+            line-height: 1.6;
+            margin-bottom: 20px;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px"
+            >Conexão com Qualidade e Usabilidade:</span
+          >
+          evita longas cadeias de
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(245, 228, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >if/else</span
+          >
+          para selecionar comportamentos. O código fica mais legível, testável e
+          extensível — cada estratégia é uma unidade isolada e substituível.
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          Sem o padrão — o problema:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            padding: 20px 26px;
+            overflow-x: auto;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <pre
+            style="
+              margin: 0;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.8;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Sem Strategy: algoritmos misturados na mesma funcao</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">calcularFrete</span>(tipo, peso) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (tipo === <span style="color: rgb(168, 240, 200); font-size: 13px;">"correios"</span>) {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> peso * <span style="color: rgb(240, 200, 122); font-size: 13px;">5</span>;
+  } <span style="color: rgb(240, 200, 122); font-size: 13px;">else if</span> (tipo === <span style="color: rgb(168, 240, 200); font-size: 13px;">"transportadora"</span>) {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> peso * <span style="color: rgb(240, 200, 122); font-size: 13px;">3</span> + <span style="color: rgb(240, 200, 122); font-size: 13px;">10</span>;
+  } <span style="color: rgb(240, 200, 122); font-size: 13px;">else if</span> (tipo === <span style="color: rgb(168, 240, 200); font-size: 13px;">"motoboy"</span>) {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> <span style="color: rgb(240, 200, 122); font-size: 13px;">15</span>;
+  }
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// Cada nova transportadora = alterar esta funcao</span>
+}</pre>
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          Com o padrão Strategy — a solução:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            padding: 20px 26px;
+            overflow-x: auto;
+            margin-bottom: 14px;
+            font-size: 14px;
+          "
+        >
+          <pre
+            style="
+              margin: 0;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.8;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Com Strategy: cada algoritmo e uma funcao/classe independente</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> estrategias = {
+  correios:       peso =&gt; peso * <span style="color: rgb(240, 200, 122); font-size: 13px;">5</span>,
+  transportadora: peso =&gt; peso * <span style="color: rgb(240, 200, 122); font-size: 13px;">3</span> + <span style="color: rgb(240, 200, 122); font-size: 13px;">10</span>,
+  motoboy:        peso =&gt; <span style="color: rgb(240, 200, 122); font-size: 13px;">15</span>,
+  drone:          peso =&gt; <span style="color: rgb(240, 200, 122); font-size: 13px;">8</span> + peso * <span style="color: rgb(240, 200, 122); font-size: 13px;">0.5</span>,  <span style="color: rgb(93, 184, 245); font-size: 13px;">// novo: zero impacto no restante</span>
+};
+
+<span style="color: rgb(240, 200, 122); font-size: 13px;">function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">calcularFrete</span>(tipo, peso) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> estrategia = estrategias[tipo];
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (!estrategia) <span style="color: rgb(240, 200, 122); font-size: 13px;">throw new</span> Error(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Tipo desconhecido: ${tipo}`</span>);
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> estrategia(peso);
+}
+
+console.log(calcularFrete(<span style="color: rgb(168, 240, 200); font-size: 13px;">"correios"</span>, <span style="color: rgb(240, 200, 122); font-size: 13px;">2</span>));       <span style="color: rgb(93, 184, 245); font-size: 13px;">// 10</span>
+console.log(calcularFrete(<span style="color: rgb(168, 240, 200); font-size: 13px;">"transportadora"</span>, <span style="color: rgb(240, 200, 122); font-size: 13px;">2</span>));  <span style="color: rgb(93, 184, 245); font-size: 13px;">// 16</span>
+console.log(calcularFrete(<span style="color: rgb(168, 240, 200); font-size: 13px;">"drone"</span>, <span style="color: rgb(240, 200, 122); font-size: 13px;">2</span>));          <span style="color: rgb(93, 184, 245); font-size: 13px;">// 9</span></pre>
+        </div>
+        <div
+          style="
+            background: #d4f5e4;
+            border-left: 4px solid #1a7a45;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #1a3a20;
+            line-height: 1.6;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px">Resultado:</span>
+          cada algoritmo de cálculo é isolado e testável individualmente. A
+          função
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(184, 232, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >calcularFrete</span
+          >
+          não precisa ser tocada ao adicionar novas transportadoras — basta
+          adicionar uma entrada no objeto de estratégias.
+        </div>
+      </div>
+      <!-- ============================================================ -->
+      <!-- PADRÃO 05: PROXY -->
+      <!-- ============================================================ -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Estrutural — Padrão 05
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Proxy
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 16px;
+          "
+        >
+          O padrão
+          <span style="font-weight: bold; font-size: 15px">Proxy</span> fornece
+          um substituto (intermediário) para outro objeto, controlando o acesso
+          a ele. O proxy pode realizar ações antes ou depois de delegar a
+          requisição ao objeto real: verificar permissões, registrar logs,
+          implementar cache ou validar entradas.
+        </div>
+        <div
+          style="
+            background: #fff7ee;
+            border-left: 4px solid #f0a500;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #5a3a00;
+            line-height: 1.6;
+            margin-bottom: 20px;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px"
+            >Conexão direta com Segurança da Informação:</span
+          >
+          o Proxy é o padrão mais utilizado para implementar controle de acesso,
+          autenticação e autorização de forma centralizada. Em vez de verificar
+          permissões dentro de cada método, o proxy atua como portão de entrada
+          — nada passa sem ser inspecionado.
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          Sem o padrão — o problema:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            padding: 20px 26px;
+            overflow-x: auto;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <pre
+            style="
+              margin: 0;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.8;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Sem Proxy: verificacao de permissao duplicada em cada metodo</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">class</span> BancoDados {
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">buscar</span>(usuario, query) {
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// verifica permissao aqui...</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (!usuario.autenticado) <span style="color: rgb(240, 200, 122); font-size: 13px;">throw new</span> Error(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Acesso negado"</span>);
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">`Resultado de: ${query}`</span>;
+  }
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">salvar</span>(usuario, dados) {
+    <span style="color: rgb(93, 184, 245); font-size: 13px;">// verifica permissao de novo aqui...</span>
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (!usuario.autenticado) <span style="color: rgb(240, 200, 122); font-size: 13px;">throw new</span> Error(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Acesso negado"</span>);
+    console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Dados salvos"</span>);
+  }
+  <span style="color: rgb(93, 184, 245); font-size: 13px;">// E em TODOS os outros metodos... codigo duplicado, propenso a esquecimento.</span>
+}</pre>
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          Com o padrão Proxy — a solução:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            padding: 20px 26px;
+            overflow-x: auto;
+            margin-bottom: 14px;
+            font-size: 14px;
+          "
+        >
+          <pre
+            style="
+              margin: 0;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.8;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// O objeto real: faz apenas o que e seu — sem verificacoes</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">class</span> BancoDados {
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">buscar</span>(query)  { <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> <span style="color: rgb(168, 240, 200); font-size: 13px;">`Resultado de: ${query}`</span>; }
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">salvar</span>(dados)  { console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Dados salvos!"</span>); }
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">deletar</span>(id)   { console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Registro ${id} removido!`</span>); }
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// O Proxy: portao de entrada centralizado para seguranca</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">class</span> BancoDadosProxy {
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">constructor</span>(usuario) {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.usuario = usuario;
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.db      = <span style="color: rgb(240, 200, 122); font-size: 13px;">new</span> BancoDados();
+  }
+
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">#verificarAcesso</span>(acao) {
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (!<span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.usuario.autenticado)
+      <span style="color: rgb(240, 200, 122); font-size: 13px;">throw new</span> Error(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Acesso negado: usuario nao autenticado`</span>);
+    <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (acao === <span style="color: rgb(168, 240, 200); font-size: 13px;">"deletar"</span> &amp;&amp; <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.usuario.perfil !== <span style="color: rgb(168, 240, 200); font-size: 13px;">"admin"</span>)
+      <span style="color: rgb(240, 200, 122); font-size: 13px;">throw new</span> Error(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Somente admins podem deletar"</span>);
+    console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Log: ${this.usuario.nome} executou "${acao}"`</span>);
+  }
+
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">buscar</span>(query)  { <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.#verificarAcesso(<span style="color: rgb(168, 240, 200); font-size: 13px;">"buscar"</span>);  <span style="color: rgb(240, 200, 122); font-size: 13px;">return this</span>.db.buscar(query); }
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">salvar</span>(dados)  { <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.#verificarAcesso(<span style="color: rgb(168, 240, 200); font-size: 13px;">"salvar"</span>);  <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.db.salvar(dados); }
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">deletar</span>(id)   { <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.#verificarAcesso(<span style="color: rgb(168, 240, 200); font-size: 13px;">"deletar"</span>); <span style="color: rgb(240, 200, 122); font-size: 13px;">this</span>.db.deletar(id); }
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Uso: o cliente interage com o Proxy, nao com o BD diretamente</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> usuario  = { nome: <span style="color: rgb(168, 240, 200); font-size: 13px;">"Ana"</span>, autenticado: <span style="color: rgb(240, 200, 122); font-size: 13px;">true</span>, perfil: <span style="color: rgb(168, 240, 200); font-size: 13px;">"user"</span> };
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> bancoDB  = <span style="color: rgb(240, 200, 122); font-size: 13px;">new</span> BancoDadosProxy(usuario);
+
+console.log(bancoDB.buscar(<span style="color: rgb(168, 240, 200); font-size: 13px;">"SELECT * FROM usuarios"</span>));
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// "Log: Ana executou buscar"</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// "Resultado de: SELECT * FROM usuarios"</span>
+
+bancoDB.deletar(<span style="color: rgb(240, 200, 122); font-size: 13px;">42</span>);
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Lanca erro: "Somente admins podem deletar"</span></pre>
+        </div>
+        <div
+          style="
+            background: #d4f5e4;
+            border-left: 4px solid #1a7a45;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #1a3a20;
+            line-height: 1.6;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px">Resultado:</span>
+          toda a lógica de segurança está em um único lugar — o Proxy. O objeto
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(184, 232, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >BancoDados</span
+          >
+          é protegido e nunca acessado diretamente. Logs de auditoria e controle
+          de perfis de acesso são garantidos para todas as operações.
+        </div>
+      </div>
+      <!-- ============================================================ -->
+      <!-- PADRÃO 06: DECORATOR -->
+      <!-- ============================================================ -->
+      <div
+        style="
+          background: rgb(13, 59, 102);
+          border-radius: 14px 14px 0px 0px;
+          padding: 14px 32px;
+          margin-bottom: 0px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #5db8f5;
+            margin-bottom: 4px;
+          "
+        >
+          Estrutural — Padrão 06
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #ffffff">
+          Decorator
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.75;
+            margin-bottom: 16px;
+          "
+        >
+          O padrão
+          <span style="font-weight: bold; font-size: 15px">Decorator</span>
+          permite adicionar comportamentos a um objeto de forma dinâmica,
+          envolvendo-o em "camadas". Cada camada adiciona uma responsabilidade
+          sem modificar o objeto original — como embrulhar um presente: cada
+          papel adiciona algo sem destruir o que está dentro.
+        </div>
+        <div
+          style="
+            background: #fff7ee;
+            border-left: 4px solid #f0a500;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #5a3a00;
+            line-height: 1.6;
+            margin-bottom: 20px;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px"
+            >Conexão com Qualidade e Segurança:</span
+          >
+          o Decorator é amplamente usado para adicionar validação, sanitização
+          de entradas, compressão e criptografia sobre serviços existentes sem
+          alterar sua implementação original.
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          Sem o padrão — o problema:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            padding: 20px 26px;
+            overflow-x: auto;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <pre
+            style="
+              margin: 0;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.8;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Servico basico de envio de mensagem</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">class</span> Mensagem {
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">enviar</span>(texto) { console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Enviando: "${texto}"`</span>); }
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Para adicionar criptografia, log e validacao,</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// a classe original precisa ser modificada — violando</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// o principio de responsabilidade unica.</span></pre>
+        </div>
+        <div
+          style="
+            font-size: 14px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 10px;
+          "
+        >
+          Com o padrão Decorator — a solução:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            padding: 20px 26px;
+            overflow-x: auto;
+            margin-bottom: 14px;
+            font-size: 14px;
+          "
+        >
+          <pre
+            style="
+              margin: 0;
+              font-family: &quot;Courier New&quot;, Courier, monospace;
+              font-size: 13px;
+              color: #e0f0ff;
+              line-height: 1.8;
+            "
+          ><span style="color: rgb(93, 184, 245); font-size: 13px;">// Objeto base — responsabilidade unica</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">class</span> Mensagem {
+  <span style="color: rgb(93, 245, 168); font-size: 13px;">enviar</span>(texto) { console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">`Enviando: "${texto}"`</span>); }
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Decorator 1: adiciona validacao</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">comValidacao</span>(mensagem) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> {
+    <span style="color: rgb(93, 245, 168); font-size: 13px;">enviar</span>(texto) {
+      <span style="color: rgb(240, 200, 122); font-size: 13px;">if</span> (!texto || texto.trim() === <span style="color: rgb(168, 240, 200); font-size: 13px;">""</span>)
+        <span style="color: rgb(240, 200, 122); font-size: 13px;">throw new</span> Error(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Mensagem nao pode ser vazia"</span>);
+      mensagem.enviar(texto);
+    }
+  };
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Decorator 2: adiciona criptografia</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">comCriptografia</span>(mensagem) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> {
+    <span style="color: rgb(93, 245, 168); font-size: 13px;">enviar</span>(texto) {
+      <span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> textoCript = <span style="color: rgb(168, 240, 200); font-size: 13px;">`[CRIPT]${btoa(texto)}[/CRIPT]`</span>;
+      console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Texto criptografado."</span>);
+      mensagem.enviar(textoCript);
+    }
+  };
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Decorator 3: adiciona log de auditoria</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">function</span> <span style="color: rgb(93, 245, 168); font-size: 13px;">comLog</span>(mensagem) {
+  <span style="color: rgb(240, 200, 122); font-size: 13px;">return</span> {
+    <span style="color: rgb(93, 245, 168); font-size: 13px;">enviar</span>(texto) {
+      console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">`[LOG] Envio iniciado as ${new Date().toISOString()}`</span>);
+      mensagem.enviar(texto);
+      console.log(<span style="color: rgb(168, 240, 200); font-size: 13px;">"[LOG] Envio concluido."</span>);
+    }
+  };
+}
+
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Composicao: empilha as camadas na ordem desejada</span>
+<span style="color: rgb(240, 200, 122); font-size: 13px;">const</span> mensagemSegura = comLog(comCriptografia(comValidacao(<span style="color: rgb(240, 200, 122); font-size: 13px;">new</span> Mensagem())));
+
+mensagemSegura.enviar(<span style="color: rgb(168, 240, 200); font-size: 13px;">"Dados confidenciais"</span>);
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// [LOG] Envio iniciado as 2025-06-10T12:00:00.000Z</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Texto criptografado.</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// Enviando: "[CRIPT]RGFkb3MgY29uZmlkZW5jaWFpcw==[/CRIPT]"</span>
+<span style="color: rgb(93, 184, 245); font-size: 13px;">// [LOG] Envio concluido.</span></pre>
+        </div>
+        <div
+          style="
+            background: #d4f5e4;
+            border-left: 4px solid #1a7a45;
+            border-radius: 6px;
+            padding: 12px 18px;
+            font-size: 14px;
+            color: #1a3a20;
+            line-height: 1.6;
+          "
+        >
+          <span style="font-weight: bold; font-size: 14px">Resultado:</span> a
+          classe
+          <span
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              background: rgb(184, 232, 204);
+              padding: 1px 5px;
+              border-radius: 3px;
+              font-size: 14px;
+            "
+            >Mensagem</span
+          >
+          nunca foi alterada. As camadas de validação, criptografia e log foram
+          adicionadas de fora para dentro. Podem ser removidas, reordenadas ou
+          combinadas de forma diferente a qualquer momento.
+        </div>
+      </div>
+      <!-- Tabela comparativa dos padroes -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Resumo Comparativo dos Padroes
+        </div>
+        <div style="overflow-x: auto; font-size: 14px">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 13px"
+          >
+            <thead style="font-size: 13px">
+              <tr
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgb(13, 59, 102),
+                    rgb(26, 95, 168)
+                  );
+                  font-size: 13px;
+                "
+              >
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: center;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  Padrão
+                </th>
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: center;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  Categoria
+                </th>
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: left;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  Problema que resolve
+                </th>
+                <th
+                  style="
+                    padding: 13px 14px;
+                    text-align: left;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  Atributo de qualidade
+                </th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 13px">
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    font-weight: bold;
+                    color: rgb(26, 95, 168);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Singleton
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #ddeeff;
+                      color: #1a5fa8;
+                      font-size: 12px;
+                      font-weight: bold;
+                      padding: 2px 8px;
+                      border-radius: 8px;
+                    "
+                    >Criacional</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Múltiplas instâncias causando inconsistência de estado
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-weight: 600;
+                    font-size: 13px;
+                  "
+                >
+                  Integridade
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    font-weight: bold;
+                    color: rgb(26, 95, 168);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Factory Method
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #ddeeff;
+                      color: #1a5fa8;
+                      font-size: 12px;
+                      font-weight: bold;
+                      padding: 2px 8px;
+                      border-radius: 8px;
+                    "
+                    >Criacional</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Lógica de criação de objetos espalhada e acoplada
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-weight: 600;
+                    font-size: 13px;
+                  "
+                >
+                  Qualidade / Manutenibilidade
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    font-weight: bold;
+                    color: rgb(26, 95, 168);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Observer
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #e8f4e8;
+                      color: #1a7a45;
+                      font-size: 12px;
+                      font-weight: bold;
+                      padding: 2px 8px;
+                      border-radius: 8px;
+                    "
+                    >Comportamental</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Acoplamento direto entre quem emite e quem reage a eventos
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-weight: 600;
+                    font-size: 13px;
+                  "
+                >
+                  Usabilidade / Extensibilidade
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    font-weight: bold;
+                    color: rgb(26, 95, 168);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Strategy
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #e8f4e8;
+                      color: #1a7a45;
+                      font-size: 12px;
+                      font-weight: bold;
+                      padding: 2px 8px;
+                      border-radius: 8px;
+                    "
+                    >Comportamental</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Algoritmos misturados em longas cadeias de if/else
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-weight: 600;
+                    font-size: 13px;
+                  "
+                >
+                  Qualidade / Usabilidade
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    font-weight: bold;
+                    color: rgb(26, 95, 168);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Proxy
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #fff3cd;
+                      color: #856404;
+                      font-size: 12px;
+                      font-weight: bold;
+                      padding: 2px 8px;
+                      border-radius: 8px;
+                    "
+                    >Estrutural</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Verificações de segurança duplicadas em cada método
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-weight: 600;
+                    font-size: 13px;
+                  "
+                >
+                  Segurança da Informação
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    font-weight: bold;
+                    color: rgb(26, 95, 168);
+                    font-size: 13px;
+                  "
+                >
+                  Decorator
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    text-align: center;
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #fff3cd;
+                      color: #856404;
+                      font-size: 12px;
+                      font-weight: bold;
+                      padding: 2px 8px;
+                      border-radius: 8px;
+                    "
+                    >Estrutural</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  Adicionar funcionalidades exige modificar classes existentes
+                </td>
+                <td
+                  style="
+                    padding: 12px 14px;
+                    color: rgb(44, 62, 80);
+                    font-weight: 600;
+                    font-size: 13px;
+                  "
+                >
+                  Qualidade / Segurança
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Boas Praticas -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(232, 244, 253) 0%,
+            rgb(208, 233, 248) 100%
+          );
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          border: 1px solid rgb(157, 207, 239);
+          box-shadow: rgba(26, 90, 168, 0.1) 0px 4px 16px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #0d3b66;
+            margin-bottom: 16px;
+          "
+        >
+          Boas práticas ao aplicar Design Patterns
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                margin-top: 1px;
+              "
+            >
+              1
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Não aplique padrões por aplicar.</span
+              >
+              Design Patterns resolvem problemas reais. Usar um padrão onde não
+              há problema é over-engineering — adiciona complexidade sem
+              benefício. Primeiro identifique o problema, depois avalie se algum
+              padrão o resolve adequadamente.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                margin-top: 1px;
+              "
+            >
+              2
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Padrões e testes andam juntos.</span
+              >
+              Código que segue Design Patterns é naturalmente mais testável:
+              cada componente tem uma responsabilidade clara e pode ser testado
+              em isolamento. Strategies, por exemplo, são perfeitas para testes
+              unitários — cada uma é uma função pura e independente.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                margin-top: 1px;
+              "
+            >
+              3
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Use os nomes dos padrões como linguagem comum.</span
+              >
+              Quando uma equipe conhece os padrões, a comunicação melhora: em
+              vez de explicar toda a lógica, basta dizer "é um Proxy de
+              autenticação" ou "usamos Observer aqui". Isso reduz mal-entendidos
+              e acelera o desenvolvimento.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                margin-top: 1px;
+              "
+            >
+              4
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Combine padrões quando necessário.</span
+              >
+              Padrões não são exclusivos. Um sistema real pode usar Singleton
+              para a conexão com o banco, Factory para criar os modelos, Proxy
+              para controle de acesso e Observer para disparar notificações —
+              tudo junto, cada um no seu lugar.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 14px;
+              background: rgb(255, 255, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              box-shadow: rgba(26, 90, 168, 0.07) 0px 2px 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 28px;
+                height: 28px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                margin-top: 1px;
+              "
+            >
+              5
+            </div>
+            <div style="font-size: 14px; color: #1a2a3a; line-height: 1.65">
+              <span style="font-weight: bold; font-size: 14px"
+                >Frameworks modernos já usam padrões.</span
+              >
+              React usa Observer (estado e re-renderização), Express usa
+              Middleware como Decorator, Node.js usa Event Emitter como
+              Observer. Reconhecer esses padrões nas ferramentas que já usa é o
+              próximo passo natural no aprendizado.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Referencias -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          box-shadow: rgba(26, 90, 168, 0.1) 0px 4px 18px;
+          border-top: 4px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 16px;
+          "
+        >
+          Referências e Fontes
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <span style="font-weight: bold; font-size: 14px"
+              >GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES,
+              John.</span
+            >
+            Design Patterns: Elements of Reusable Object-Oriented Software.
+            Reading: Addison-Wesley, 1994. (A obra original do Gang of Four)
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <span style="font-weight: bold; font-size: 14px"
+              >MARTIN, Robert C.</span
+            >
+            Clean Code: A Handbook of Agile Software Craftsmanship. Upper Saddle
+            River: Prentice Hall, 2008. (Princípios SOLID e qualidade de código)
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <span style="font-weight: bold; font-size: 14px"
+              >FREEMAN, Eric; ROBSON, Elisabeth.</span
+            >
+            Use a Cabeça! Padrões de Projetos. 2. ed. Rio de Janeiro: Alta
+            Books, 2009. (Versão didática dos padrões GoF)
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.6;
+              padding-bottom: 10px;
+              border-bottom: 1px solid #e0ecf6;
+            "
+          >
+            <span style="font-weight: bold; font-size: 14px"
+              >OSMANI, Addy.</span
+            >
+            Learning JavaScript Design Patterns. 2. ed. Sebastopol: O'Reilly
+            Media, 2023. (Aplicação dos padrões em JavaScript moderno)
+          </div>
+          <div style="font-size: 14px; color: #2c3e50; line-height: 1.6">
+            <span style="font-weight: bold; font-size: 14px"
+              >Refactoring.Guru.</span
+            >
+            Design Patterns. Disponível em: refactoring.guru/design-patterns.
+            Acesso em: 2025. (Referência visual e interativa dos 23 padrões GoF)
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

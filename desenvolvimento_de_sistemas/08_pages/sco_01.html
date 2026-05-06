@@ -1,0 +1,3414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES Modules — Organizando código com import e export</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(240, 244, 249);
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102) 0%,
+            rgb(26, 95, 168) 100%
+          );
+          border-radius: 14px;
+          padding: 36px 40px;
+          margin-bottom: 24px;
+          box-shadow: rgba(13, 59, 102, 0.28) 0px 8px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a8c8f0;
+            margin-bottom: 10px;
+          "
+        >
+          Técnico em Desenvolvimento de Sistemas — Lógica de Programação
+        </div>
+        <div
+          style="
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 12px;
+          "
+        >
+          ES Modules — Organizando código com import e export
+        </div>
+        <div style="font-size: 15px; color: #c8dff5; line-height: 1.65">
+          Nesta aula você aprenderá o que são ES Modules, por que eles existem,
+          como dividir seu código em arquivos reutilizáveis e como dominar as
+          diferentes formas de exportar e importar — o padrão moderno usado em
+          todos os projetos JavaScript profissionais.
+        </div>
+      </div>
+      <!-- ══ CAPACIDADES ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          border-left: 6px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 14px;
+          "
+        >
+          Capacidades Trabalhadas
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Aplicar linguagem de programação por meio de bibliotecas e
+              frameworks na construção de rotinas de software.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Integrar sistemas multiplataformas por meio da linguagem de
+              programação.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Selecionar linguagem de programação de acordo com os requisitos do
+              projeto.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Reconhecer requisitos de qualidade, integridade e usabilidade na
+              organização do código-fonte.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ O PROBLEMA ══ -->
+      <div
+        style="
+          background: rgb(234, 242, 251);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.08) 0px 4px 18px;
+          border: 1px solid rgb(184, 212, 237);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 12px;
+          "
+        >
+          O problema que os módulos resolvem
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.8;
+            margin-bottom: 14px;
+          "
+        >
+          Imagine que você está desenvolvendo um sistema com centenas de
+          funções: validações, cálculos, formatações, regras de negócio... Se
+          tudo isso estiver em um único arquivo
+          <code
+            style="
+              background: #ddeeff;
+              padding: 1px 6px;
+              border-radius: 4px;
+              font-size: 14px;
+            "
+            >index.js</code
+          >, você logo terá um arquivo com
+          <strong style="font-size: 15px">milhares de linhas</strong>,
+          impossível de manter, de ler e de reutilizar.
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.8;
+            margin-bottom: 16px;
+          "
+        >
+          Além disso, sem uma forma de controlar o que cada arquivo "vê",
+          qualquer variável definida em um lugar poderia ser acidentalmente
+          sobrescrita em outro — um bug silencioso e difícil de rastrear.
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 4px solid rgb(26, 95, 168);
+            font-size: 14px;
+          "
+        >
+          <div style="font-size: 14px; color: #1a2a3a; line-height: 1.75">
+            <span style="font-weight: bold; font-size: 14px"
+              >Analogia do mundo real:</span
+            >
+            pense num projeto de construção civil. Você não tem um único
+            profissional fazendo tudo. Existe o pedreiro, o eletricista, o
+            encanador — cada um especialista na sua área, trabalhando no seu
+            "módulo" do projeto. O resultado final integra o trabalho de todos.
+            É exatamente assim que os módulos funcionam no JavaScript.
+          </div>
+        </div>
+      </div>
+      <!-- ══ O QUE SÃO ES MODULES ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          O que são ES Modules?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          <span style="font-weight: bold; font-size: 15px">ES Modules</span>
+          (abreviado: <strong style="font-size: 15px">ESM</strong>) é o sistema
+          de módulos
+          <strong style="font-size: 15px">nativo do JavaScript</strong>,
+          introduzido oficialmente na versão ES6 (2015). Com ele, cada arquivo
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >.js</code
+          >
+          se torna um módulo independente, com seu próprio escopo — variáveis e
+          funções só são visíveis para fora se forem explicitamente
+          <strong style="font-size: 15px">exportadas</strong>, e só ficam
+          disponíveis dentro de outro arquivo se forem
+          <strong style="font-size: 15px">importadas</strong>.
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 24px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(253, 232, 232);
+              border-radius: 12px;
+              padding: 20px;
+              border-left: 5px solid rgb(160, 0, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #7a0000;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+              "
+            >
+              Antes dos módulos (script comum)
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 13px;
+                  color: #5a1a1a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(160, 0, 0);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✗</span
+                >
+                Todas as variáveis são globais
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: #5a1a1a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(160, 0, 0);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✗</span
+                >
+                Risco de colisão de nomes
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: #5a1a1a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(160, 0, 0);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✗</span
+                >
+                Ordem dos arquivos importa
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: #5a1a1a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(160, 0, 0);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✗</span
+                >
+                Difícil de testar isoladamente
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(232, 248, 238);
+              border-radius: 12px;
+              padding: 20px;
+              border-left: 5px solid rgb(26, 122, 69);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #1a5a30;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+              "
+            >
+              Com ES Modules
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 13px;
+                  color: #1a4a2a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✓</span
+                >
+                Escopo isolado por arquivo
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: #1a4a2a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✓</span
+                >
+                Você controla o que é público
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: #1a4a2a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✓</span
+                >
+                Dependências explícitas e claras
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: #1a4a2a;
+                  line-height: 1.6;
+                  display: flex;
+                  gap: 8px;
+                  align-items: flex-start;
+                "
+              >
+                <span
+                  style="
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    font-size: 13px;
+                  "
+                  >✓</span
+                >
+                Código reutilizável e testável
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- CommonJS vs ESM -->
+        <div
+          style="
+            background: rgb(248, 251, 255);
+            border-radius: 10px;
+            padding: 18px 20px;
+            border: 1px solid rgb(212, 230, 245);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #1a5fa8;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 12px;
+            "
+          >
+            CommonJS vs ES Modules — qual a diferença?
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.8;
+              margin-bottom: 14px;
+            "
+          >
+            O Node.js usou por anos outro sistema chamado
+            <strong style="font-size: 14px">CommonJS</strong> (com
+            <code
+              style="
+                background: rgb(234, 242, 251);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 12px;
+              "
+              >require</code
+            >
+            e
+            <code
+              style="
+                background: rgb(234, 242, 251);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 12px;
+              "
+              >module.exports</code
+            >). Hoje o padrão moderno é ESM — usado nativamente pelo navegador e
+            pelo Node.js com configuração simples.
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                border-radius: 8px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #2a1a1a;
+                  padding: 6px 14px;
+                  font-size: 11px;
+                  font-weight: bold;
+                  color: #f08080;
+                  letter-spacing: 1px;
+                "
+              >
+                CommonJS (legado)
+              </div>
+              <div
+                style="
+                  padding: 14px 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.7;
+                  color: rgb(200, 216, 232);
+                "
+              >
+                <span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >const</span
+                >
+                soma =
+                <span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >require</span
+                >(<span style="color: rgb(168, 240, 200); font-size: 12px"
+                  >'./math'</span
+                >);<br style="font-size: 12px" />module.<span
+                  style="color: rgb(93, 245, 168); font-size: 12px"
+                  >exports</span
+                >
+                = { soma };
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                border-radius: 8px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #0a2a1a;
+                  padding: 6px 14px;
+                  font-size: 11px;
+                  font-weight: bold;
+                  color: #a8f0c8;
+                  letter-spacing: 1px;
+                "
+              >
+                ES Modules (moderno)
+              </div>
+              <div
+                style="
+                  padding: 14px 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.7;
+                  color: rgb(200, 216, 232);
+                "
+              >
+                <span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >import</span
+                >
+                { soma }
+                <span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >from</span
+                >
+                <span style="color: rgb(168, 240, 200); font-size: 12px"
+                  >'./math.js'</span
+                >;<br style="font-size: 12px" /><span
+                  style="color: rgb(240, 200, 122); font-size: 12px"
+                  >export</span
+                >
+                { soma };
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ CONFIGURAÇÃO ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Configurando o projeto para usar ESM
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          Para usar ES Modules com Node.js, você precisa informar ao runtime que
+          seus arquivos são módulos. Há duas formas:
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              border: 1px solid rgb(212, 230, 245);
+              border-radius: 12px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgb(13, 59, 102),
+                  rgb(26, 95, 168)
+                );
+                padding: 12px 20px;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 13px; font-weight: bold; color: #fff">
+                Opção 1 — package.json
+              </div>
+              <div style="font-size: 12px; color: #a8c8f0; margin-top: 2px">
+                Recomendada para projetos inteiros
+              </div>
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.8;
+                color: #c8d8e8;
+              "
+            >
+              {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >"name"</span
+              >:
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >"meu-projeto"</span
+              >,<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >"type"</span
+              >:
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >"module"</span
+              ><br style="font-size: 13px" />}
+            </div>
+            <div
+              style="
+                background: #f8fbff;
+                padding: 12px 18px;
+                font-size: 13px;
+                color: #4a6a8a;
+                line-height: 1.6;
+              "
+            >
+              Todos os
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                "
+                >.js</code
+              >
+              do projeto passam a ser tratados como módulos.
+            </div>
+          </div>
+          <div
+            style="
+              border: 1px solid rgb(212, 230, 245);
+              border-radius: 12px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgb(13, 59, 102),
+                  rgb(26, 95, 168)
+                );
+                padding: 12px 20px;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 13px; font-weight: bold; color: #fff">
+                Opção 2 — extensão .mjs
+              </div>
+              <div style="font-size: 12px; color: #a8c8f0; margin-top: 2px">
+                Para arquivos isolados
+              </div>
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.8;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                ># renomeie o arquivo</span
+              ><br style="font-size: 13px" />calculadora<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >.mjs</span
+              ><br style="font-size: 13px" /><br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                ># execute normalmente</span
+              ><br style="font-size: 13px" />node calculadora.mjs
+            </div>
+            <div
+              style="
+                background: #f8fbff;
+                padding: 12px 18px;
+                font-size: 13px;
+                color: #4a6a8a;
+                line-height: 1.6;
+              "
+            >
+              Útil quando apenas alguns arquivos precisam ser módulos.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(255, 248, 230);
+            border-width: 1px 1px 1px 4px;
+            border-style: solid;
+            border-color: rgb(240, 208, 128) rgb(240, 208, 128)
+              rgb(240, 208, 128) rgb(240, 184, 0);
+            border-image: initial;
+            border-radius: 10px;
+            padding: 16px 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #8a6000;
+              margin-bottom: 6px;
+            "
+          >
+            ⚠️ Atenção — caminho com extensão obrigatória
+          </div>
+          <div style="font-size: 14px; color: #5a4a10; line-height: 1.75">
+            Em ES Modules com Node.js, o caminho no
+            <code
+              style="
+                background: rgb(254, 243, 192);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 12px;
+              "
+              >import</code
+            >
+            deve incluir a extensão do arquivo.
+            <code
+              style="
+                background: rgb(254, 243, 192);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 12px;
+              "
+              >import { soma } from './math'</code
+            >
+            causará erro — o correto é
+            <code
+              style="
+                background: rgb(254, 243, 192);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 12px;
+              "
+              >import { soma } from './math.js'</code
+            >.
+          </div>
+        </div>
+      </div>
+      <!-- ══ EXPORT NOMEADO ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Export Nomeado —
+          <code
+            style="
+              font-size: 15px;
+              background: #eaf2fb;
+              padding: 2px 8px;
+              border-radius: 5px;
+            "
+            >export { nome }</code
+          >
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          O <strong style="font-size: 15px">export nomeado</strong> permite que
+          um arquivo exporte
+          <strong style="font-size: 15px">múltiplos elementos</strong> —
+          funções, variáveis, constantes ou classes — cada um com seu próprio
+          nome. Na importação, você usa
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >{ chaves }</code
+          >
+          para dizer exatamente o que quer trazer. Se o nome não existir no
+          módulo, o JavaScript gera um erro imediatamente.
+        </div>
+        <!-- Diagrama de fluxo nomeado -->
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 11px;
+              font-weight: bold;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              color: #5db8f5;
+              margin-bottom: 16px;
+              text-align: center;
+            "
+          >
+            Como funciona o export nomeado
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 40px 1fr;
+              gap: 0px;
+              align-items: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(26, 46, 68);
+                border-radius: 8px;
+                padding: 16px 18px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  font-weight: bold;
+                  color: #5db8f5;
+                  letter-spacing: 1px;
+                  margin-bottom: 10px;
+                "
+              >
+                calculadora.js (módulo)
+              </div>
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.8;
+                  color: rgb(200, 216, 232);
+                "
+              >
+                <span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >export function</span
+                >
+                <span style="color: rgb(93, 245, 168); font-size: 12px"
+                  >somar</span
+                >(a,b) {<br style="font-size: 12px" />&nbsp;&nbsp;<span
+                  style="color: rgb(240, 200, 122); font-size: 12px"
+                  >return</span
+                >
+                a + b;<br style="font-size: 12px" />}<br
+                  style="font-size: 12px"
+                /><span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >export function</span
+                >
+                <span style="color: rgb(93, 245, 168); font-size: 12px"
+                  >subtrair</span
+                >(a,b) {<br style="font-size: 12px" />&nbsp;&nbsp;<span
+                  style="color: rgb(240, 200, 122); font-size: 12px"
+                  >return</span
+                >
+                a - b;<br style="font-size: 12px" />}<br
+                  style="font-size: 12px"
+                /><span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >export const</span
+                >
+                PI =
+                <span style="color: rgb(240, 160, 96); font-size: 12px"
+                  >3.14159</span
+                >;
+              </div>
+            </div>
+            <div style="text-align: center; font-size: 24px; color: #5db8f5">
+              →
+            </div>
+            <div
+              style="
+                background: rgb(26, 46, 68);
+                border-radius: 8px;
+                padding: 16px 18px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  font-weight: bold;
+                  color: #a8f0c8;
+                  letter-spacing: 1px;
+                  margin-bottom: 10px;
+                "
+              >
+                main.js (usa o módulo)
+              </div>
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.8;
+                  color: rgb(200, 216, 232);
+                "
+              >
+                <span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >import</span
+                >
+                { somar, PI }<br style="font-size: 12px" />&nbsp;&nbsp;<span
+                  style="color: rgb(240, 200, 122); font-size: 12px"
+                  >from</span
+                >
+                <span style="color: rgb(168, 240, 200); font-size: 12px"
+                  >'./calculadora.js'</span
+                >;<br style="font-size: 12px" /><br
+                  style="font-size: 12px"
+                />console.log(<span
+                  style="color: rgb(93, 245, 168); font-size: 12px"
+                  >somar</span
+                >(<span style="color: rgb(240, 160, 96); font-size: 12px"
+                  >2</span
+                >,
+                <span style="color: rgb(240, 160, 96); font-size: 12px">3</span
+                >));
+                <span style="color: rgb(93, 184, 245); font-size: 12px"
+                  >// 5</span
+                ><br style="font-size: 12px" />console.log(PI);
+                <span style="color: rgb(93, 184, 245); font-size: 12px"
+                  >// 3.14159</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Três formas de escrever export nomeado -->
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+          "
+        >
+          Três formas equivalentes de escrever export nomeado
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              border: 1px solid rgb(212, 230, 245);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #eaf2fb;
+                padding: 8px 18px;
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                letter-spacing: 1px;
+              "
+            >
+              Forma 1 — export inline (na declaração)
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                padding: 14px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.7;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >export function</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >somar</span
+              >(a, b) {
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >return</span
+              >
+              a + b; }<br style="font-size: 13px" /><span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >export const</span
+              >
+              PI =
+              <span style="color: rgb(240, 160, 96); font-size: 13px"
+                >3.14159</span
+              >;
+            </div>
+          </div>
+          <div
+            style="
+              border: 1px solid rgb(212, 230, 245);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #eaf2fb;
+                padding: 8px 18px;
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                letter-spacing: 1px;
+              "
+            >
+              Forma 2 — export em bloco no final do arquivo
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                padding: 14px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.7;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >function</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >somar</span
+              >(a, b) {
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >return</span
+              >
+              a + b; }<br style="font-size: 13px" /><span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              PI =
+              <span style="color: rgb(240, 160, 96); font-size: 13px"
+                >3.14159</span
+              >;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(240, 200, 122); font-size: 13px"
+                >export</span
+              >
+              { somar, PI };
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >// lista de exports no final</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              border: 1px solid rgb(212, 230, 245);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #eaf2fb;
+                padding: 8px 18px;
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                letter-spacing: 1px;
+              "
+            >
+              Forma 3 — export com alias (renomear ao exportar)
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                padding: 14px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.7;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >function</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >somar</span
+              >(a, b) {
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >return</span
+              >
+              a + b; }<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(240, 200, 122); font-size: 13px"
+                >export</span
+              >
+              { somar
+              <span style="color: rgb(240, 200, 122); font-size: 13px">as</span>
+              add };
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >// exporta com nome "add"</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Import seletivo -->
+        <div
+          style="
+            background: rgb(240, 247, 255);
+            border-radius: 10px;
+            padding: 18px 20px;
+            border-left: 4px solid rgb(26, 95, 168);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #1a5fa8;
+              margin-bottom: 10px;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            "
+          >
+            Importação seletiva — importe apenas o que precisar
+          </div>
+          <div
+            style="
+              font-size: 14px;
+              color: #2c3e50;
+              line-height: 1.8;
+              margin-bottom: 12px;
+            "
+          >
+            Uma das grandes vantagens do export nomeado é que você pode importar
+            <strong style="font-size: 14px">somente o que vai usar</strong>,
+            deixando o resto de fora. Isso melhora a organização e facilita
+            ferramentas de otimização (como o
+            <em style="font-size: 14px">tree-shaking</em> em projetos com
+            bundlers).
+          </div>
+          <div
+            style="
+              background: #0d1b2a;
+              border-radius: 8px;
+              padding: 14px 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 1.8;
+              color: #c8d8e8;
+            "
+          >
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >// o módulo exporta: somar, subtrair, multiplicar, dividir,
+              PI</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >import</span
+            >
+            { somar, PI }
+            <span style="color: rgb(240, 200, 122); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'./calculadora.js'</span
+            >;<br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// subtrair, multiplicar e dividir NÃO foram importados</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- ══ EXPORT DEFAULT ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Export Default —
+          <code
+            style="
+              font-size: 15px;
+              background: #eaf2fb;
+              padding: 2px 8px;
+              border-radius: 5px;
+            "
+            >export default</code
+          >
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          O <strong style="font-size: 15px">export default</strong> é usado
+          quando um arquivo tem
+          <strong style="font-size: 15px">um único elemento principal</strong>
+          para oferecer — a "entrega principal" do módulo. Cada arquivo pode ter
+          <strong style="font-size: 15px">apenas um</strong>
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >export default</code
+          >. Ao importar, você pode escolher
+          <strong style="font-size: 15px">qualquer nome</strong>, sem precisar
+          de chaves.
+        </div>
+        <!-- Diagrama default -->
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 11px;
+              font-weight: bold;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              color: #5db8f5;
+              margin-bottom: 16px;
+              text-align: center;
+            "
+          >
+            Como funciona o export default
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 40px 1fr;
+              gap: 0px;
+              align-items: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(26, 46, 68);
+                border-radius: 8px;
+                padding: 16px 18px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  font-weight: bold;
+                  color: #5db8f5;
+                  letter-spacing: 1px;
+                  margin-bottom: 10px;
+                "
+              >
+                saudacao.js (módulo)
+              </div>
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.8;
+                  color: rgb(200, 216, 232);
+                "
+              >
+                <span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >export default function</span
+                >
+                <span style="color: rgb(93, 245, 168); font-size: 12px"
+                  >saudacao</span
+                >(nome) {<br style="font-size: 12px" />&nbsp;&nbsp;<span
+                  style="color: rgb(240, 200, 122); font-size: 12px"
+                  >return</span
+                >
+                <span style="color: rgb(168, 240, 200); font-size: 12px"
+                  >`Olá, ${nome}!`</span
+                >;<br style="font-size: 12px" />}
+              </div>
+            </div>
+            <div style="text-align: center; font-size: 24px; color: #5db8f5">
+              →
+            </div>
+            <div
+              style="
+                background: rgb(26, 46, 68);
+                border-radius: 8px;
+                padding: 16px 18px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  font-weight: bold;
+                  color: #a8f0c8;
+                  letter-spacing: 1px;
+                  margin-bottom: 10px;
+                "
+              >
+                main.js (usa o módulo)
+              </div>
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.8;
+                  color: rgb(200, 216, 232);
+                "
+              >
+                <span style="color: rgb(93, 184, 245); font-size: 12px"
+                  >// sem chaves, nome livre</span
+                ><br style="font-size: 12px" /><span
+                  style="color: rgb(240, 200, 122); font-size: 12px"
+                  >import</span
+                >
+                boasVindas
+                <span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >from</span
+                >
+                <span style="color: rgb(168, 240, 200); font-size: 12px"
+                  >'./saudacao.js'</span
+                >;<br style="font-size: 12px" /><br
+                  style="font-size: 12px"
+                />console.log(<span
+                  style="color: rgb(93, 245, 168); font-size: 12px"
+                  >boasVindas</span
+                >(<span style="color: rgb(168, 240, 200); font-size: 12px"
+                  >'Ana'</span
+                >));<br style="font-size: 12px" /><span
+                  style="color: rgb(93, 184, 245); font-size: 12px"
+                  >// Olá, Ana!</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Formas de escrever default -->
+        <div
+          style="
+            font-size: 15px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+          "
+        >
+          Formas de escrever export default
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              border: 1px solid rgb(212, 230, 245);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #eaf2fb;
+                padding: 8px 18px;
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                letter-spacing: 1px;
+              "
+            >
+              Default de uma função nomeada
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                padding: 14px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.7;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >export default function</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >calcularIMC</span
+              >(peso, altura) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >return</span
+              >
+              peso / (altura * altura);<br style="font-size: 13px" />}
+            </div>
+          </div>
+          <div
+            style="
+              border: 1px solid rgb(212, 230, 245);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #eaf2fb;
+                padding: 8px 18px;
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                letter-spacing: 1px;
+              "
+            >
+              Default de uma classe
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                padding: 14px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.7;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >export default class</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >Produto</span
+              >
+              {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >constructor</span
+              >(nome, preco) {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >this</span
+              >.nome = nome;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >this</span
+              >.preco = preco;<br style="font-size: 13px" />&nbsp;&nbsp;}<br
+                style="font-size: 13px"
+              />}
+            </div>
+          </div>
+          <div
+            style="
+              border: 1px solid rgb(212, 230, 245);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #eaf2fb;
+                padding: 8px 18px;
+                font-size: 12px;
+                font-weight: bold;
+                color: #1a5fa8;
+                letter-spacing: 1px;
+              "
+            >
+              Definir e exportar separadamente
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                padding: 14px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.7;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              config = { porta:
+              <span style="color: rgb(240, 160, 96); font-size: 13px">3000</span
+              >, debug:
+              <span style="color: rgb(240, 160, 96); font-size: 13px"
+                >true</span
+              >
+              };<br style="font-size: 13px" /><span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >export default</span
+              >
+              config;
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >// exporta a constante como default</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Cuidado com default -->
+        <div
+          style="
+            background: rgb(255, 248, 230);
+            border-width: 1px 1px 1px 4px;
+            border-style: solid;
+            border-color: rgb(240, 208, 128) rgb(240, 208, 128)
+              rgb(240, 208, 128) rgb(240, 184, 0);
+            border-image: initial;
+            border-radius: 10px;
+            padding: 16px 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #8a6000;
+              margin-bottom: 8px;
+            "
+          >
+            💡 Atenção — apenas um default por arquivo
+          </div>
+          <div style="font-size: 14px; color: #5a4a10; line-height: 1.75">
+            Cada arquivo pode ter
+            <strong style="font-size: 14px">no máximo um</strong>
+            <code
+              style="
+                background: rgb(254, 243, 192);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 12px;
+              "
+              >export default</code
+            >. Tentar exportar dois defaults no mesmo arquivo causará um erro de
+            sintaxe. Para exportar múltiplas coisas, use exports nomeados.
+          </div>
+        </div>
+      </div>
+      <!-- ══ COMBINANDO OS DOIS ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Combinando default e nomeado no mesmo arquivo
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          Na prática, é comum um módulo ter
+          <strong style="font-size: 15px">um elemento principal</strong>
+          (default) e algumas
+          <strong style="font-size: 15px">funções auxiliares</strong>
+          (nomeadas). Você pode combinar os dois estilos no mesmo arquivo — e
+          importar tudo de uma vez em uma única linha.
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 8px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 6px 16px;
+                font-size: 11px;
+                font-weight: bold;
+                color: #5db8f5;
+                letter-spacing: 1px;
+              "
+            >
+              usuario.js — módulo com os dois tipos
+            </div>
+            <div
+              style="
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+                color: rgb(200, 216, 232);
+              "
+            >
+              <span style="color: rgb(93, 184, 245); font-size: 12px"
+                >// export nomeados</span
+              ><br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >export const</span
+              >
+              ROLES = {<br style="font-size: 12px" />&nbsp;&nbsp;ADMIN:
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'admin'</span
+              >,<br style="font-size: 12px" />&nbsp;&nbsp;USER:
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'user'</span
+              ><br style="font-size: 12px" />};<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              /><span style="color: rgb(240, 200, 122); font-size: 12px"
+                >export function</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 12px"
+                >validarEmail</span
+              >(email) {<br style="font-size: 12px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >return</span
+              >
+              email.includes(<span
+                style="color: rgb(168, 240, 200); font-size: 12px"
+                >'@'</span
+              >);<br style="font-size: 12px" />}<br
+                style="font-size: 12px"
+              /><br style="font-size: 12px" /><span
+                style="color: rgb(93, 184, 245); font-size: 12px"
+                >// export default — elemento principal</span
+              ><br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >export default function</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 12px"
+                >criarUsuario</span
+              >(nome, email) {<br style="font-size: 12px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >return</span
+              >
+              { nome, email, role: ROLES.USER };<br style="font-size: 12px" />}
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 8px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 6px 16px;
+                font-size: 11px;
+                font-weight: bold;
+                color: #a8f0c8;
+                letter-spacing: 1px;
+              "
+            >
+              main.js — importando os dois juntos
+            </div>
+            <div
+              style="
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+                color: rgb(200, 216, 232);
+              "
+            >
+              <span style="color: rgb(93, 184, 245); font-size: 12px"
+                >// default primeiro, nomeados entre { }</span
+              ><br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >import</span
+              >
+              criarUsuario, { ROLES, validarEmail }<br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'./usuario.js'</span
+              >;<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              /><span style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              email =
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'ana@email.com'</span
+              >;<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              /><span style="color: rgb(240, 200, 122); font-size: 12px"
+                >if</span
+              >
+              (<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >validarEmail</span
+              >(email)) {<br style="font-size: 12px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              u =
+              <span style="color: rgb(93, 245, 168); font-size: 12px"
+                >criarUsuario</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'Ana'</span
+              >, email);<br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;console.log(u);<br style="font-size: 12px" />}
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(234, 242, 251);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 4px solid rgb(26, 95, 168);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #1a5fa8;
+              margin-bottom: 8px;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            "
+          >
+            Regra de sintaxe — a ordem importa
+          </div>
+          <div style="font-size: 14px; color: #2c3e50; line-height: 1.8">
+            Na linha de import, o
+            <strong style="font-size: 14px">default sempre vem primeiro</strong
+            >, sem chaves — depois, separado por vírgula, vêm os nomeados entre
+            chaves:
+            <code
+              style="
+                background: rgb(221, 238, 255);
+                padding: 1px 6px;
+                border-radius: 4px;
+                font-size: 12px;
+              "
+              >import default, { nomeado1, nomeado2 } from '...'</code
+            >
+          </div>
+        </div>
+      </div>
+      <!-- ══ IMPORT * AS (NAMESPACE) ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Import Namespace —
+          <code
+            style="
+              font-size: 15px;
+              background: #eaf2fb;
+              padding: 2px 8px;
+              border-radius: 5px;
+            "
+            >import * as</code
+          >
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          Quando um módulo exporta muitas funções e você quer importar
+          <strong style="font-size: 15px">todas de uma vez</strong>, use
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >import * as NomeDoGrupo</code
+          >. Isso cria um objeto com todos os exports do módulo como
+          propriedades. Você acessa cada função com
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >NomeDoGrupo.funcao()</code
+          >.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 18px;
+              font-size: 11px;
+              font-weight: bold;
+              color: #5db8f5;
+              letter-spacing: 1px;
+            "
+          >
+            Exemplo completo — import * as
+          </div>
+          <div
+            style="
+              padding: 16px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 1.9;
+              color: #c8d8e8;
+            "
+          >
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >import</span
+            >
+            *
+            <span style="color: rgb(240, 200, 122); font-size: 13px">as</span>
+            Geo
+            <span style="color: rgb(240, 200, 122); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'./geometria.js'</span
+            >;<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            />console.log(Geo.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >areaCirculo</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">5</span
+            >));&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// usa areaCirculo</span
+            ><br style="font-size: 13px" />console.log(Geo.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >areaRetangulo</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">4</span>,
+            <span style="color: rgb(240, 160, 96); font-size: 13px">6</span>));
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >// usa areaRetangulo</span
+            ><br style="font-size: 13px" />console.log(Geo.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >perimetro</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">3</span>,
+            <span style="color: rgb(240, 160, 96); font-size: 13px">4</span
+            >));&nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// usa perimetro</span
+            >
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(248, 251, 255);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border: 1px solid rgb(212, 230, 245);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #1a5fa8;
+              margin-bottom: 8px;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            "
+          >
+            Quando usar import * as?
+          </div>
+          <div style="font-size: 14px; color: #2c3e50; line-height: 1.8">
+            Use quando um módulo tem muitas funções relacionadas e você precisa
+            de todas elas, ou quando quiser deixar claro de
+            <em style="font-size: 14px">onde</em> cada função veio (ex:
+            <code
+              style="
+                background: rgb(234, 242, 251);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 12px;
+              "
+              >Geo.areaCirculo</code
+            >
+            é mais legível do que só
+            <code
+              style="
+                background: rgb(234, 242, 251);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 12px;
+              "
+              >areaCirculo</code
+            >
+            em arquivos com muitas importações).
+          </div>
+        </div>
+      </div>
+      <!-- ══ ALIAS ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Alias — renomeando com
+          <code
+            style="
+              font-size: 15px;
+              background: #eaf2fb;
+              padding: 2px 8px;
+              border-radius: 5px;
+            "
+            >as</code
+          >
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 16px;
+          "
+        >
+          A palavra-chave
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >as</code
+          >
+          permite <strong style="font-size: 15px">renomear</strong> um export ao
+          importá-lo. Isso é especialmente útil quando dois módulos exportam
+          funções com o mesmo nome — sem alias, haveria conflito.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 18px;
+              font-size: 11px;
+              font-weight: bold;
+              color: #5db8f5;
+              letter-spacing: 1px;
+            "
+          >
+            Resolvendo conflito de nomes com alias
+          </div>
+          <div
+            style="
+              padding: 16px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 1.9;
+              color: #c8d8e8;
+            "
+          >
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >// ambos os módulos exportam uma função chamada "calcular"</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >import</span
+            >
+            { calcular
+            <span style="color: rgb(240, 200, 122); font-size: 13px">as</span>
+            calcImposto }
+            <span style="color: rgb(240, 200, 122); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'./imposto.js'</span
+            >;<br style="font-size: 13px" /><span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >import</span
+            >
+            { calcular
+            <span style="color: rgb(240, 200, 122); font-size: 13px">as</span>
+            calcDesconto }
+            <span style="color: rgb(240, 200, 122); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'./desconto.js'</span
+            >;<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            />console.log(<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >calcImposto</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">1000</span
+            >));
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >// chama calcular de imposto.js</span
+            ><br style="font-size: 13px" />console.log(<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >calcDesconto</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">1000</span
+            >));
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >// chama calcular de desconto.js</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- ══ TABELA COMPARATIVA ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Resumo — Quando usar cada tipo de export
+        </div>
+        <div style="overflow-x: auto; font-size: 14px">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 13px"
+          >
+            <thead style="font-size: 13px">
+              <tr
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgb(13, 59, 102),
+                    rgb(26, 95, 168)
+                  );
+                  font-size: 13px;
+                "
+              >
+                <th
+                  style="
+                    padding: 12px 16px;
+                    text-align: left;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  Situação
+                </th>
+                <th
+                  style="
+                    padding: 12px 16px;
+                    text-align: center;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  Export Nomeado
+                </th>
+                <th
+                  style="
+                    padding: 12px 16px;
+                    text-align: center;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  Export Default
+                </th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 13px">
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 16px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Exportar múltiplas funções do mesmo arquivo
+                </td>
+                <td
+                  style="
+                    padding: 12px 16px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="color: #1a7a45; font-weight: bold; font-size: 16px"
+                    >✓</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 16px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      color: rgb(160, 0, 0);
+                      font-weight: bold;
+                      font-size: 13px;
+                    "
+                    >✗</span
+                  >
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 16px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Exportar a "entrega principal" de um módulo
+                </td>
+                <td
+                  style="
+                    padding: 12px 16px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="color: #1a7a45; font-weight: bold; font-size: 16px"
+                    >✓</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 16px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="color: #1a7a45; font-weight: bold; font-size: 16px"
+                    >✓</span
+                  >
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 16px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Importar com nome livre (sem chaves)
+                </td>
+                <td
+                  style="
+                    padding: 12px 16px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      color: rgb(160, 0, 0);
+                      font-weight: bold;
+                      font-size: 13px;
+                    "
+                    >✗</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 16px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="color: #1a7a45; font-weight: bold; font-size: 16px"
+                    >✓</span
+                  >
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 16px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Importar apenas parte do módulo
+                </td>
+                <td
+                  style="
+                    padding: 12px 16px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="color: #1a7a45; font-weight: bold; font-size: 16px"
+                    >✓</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 16px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="
+                      color: rgb(160, 0, 0);
+                      font-weight: bold;
+                      font-size: 13px;
+                    "
+                    >✗</span
+                  >
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 16px;
+                    color: rgb(44, 62, 80);
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  Exportar uma classe como componente principal
+                </td>
+                <td
+                  style="
+                    padding: 12px 16px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="color: #1a7a45; font-weight: bold; font-size: 16px"
+                    >✓</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 12px 16px;
+                    text-align: center;
+                    border-bottom: 1px solid rgb(212, 230, 245);
+                    font-size: 13px;
+                  "
+                >
+                  <span
+                    style="color: #1a7a45; font-weight: bold; font-size: 16px"
+                    >✓</span
+                  >
+                </td>
+              </tr>
+              <tr style="font-size: 13px">
+                <td
+                  style="
+                    padding: 12px 16px;
+                    color: rgb(44, 62, 80);
+                    font-size: 13px;
+                  "
+                >
+                  Limite por arquivo
+                </td>
+                <td
+                  style="
+                    padding: 12px 16px;
+                    text-align: center;
+                    color: rgb(26, 95, 168);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  Ilimitado
+                </td>
+                <td
+                  style="
+                    padding: 12px 16px;
+                    text-align: center;
+                    color: rgb(160, 80, 0);
+                    font-weight: bold;
+                    font-size: 13px;
+                  "
+                >
+                  Apenas 1
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- ══ EXEMPLO COMPLETO ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Exemplo completo — Sistema de Cadastro de Alunos
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          A seguir, um projeto pequeno mas completo, com a estrutura de arquivos
+          organizada por responsabilidade. Cada módulo faz uma coisa só — e o
+          arquivo principal integra tudo.
+        </div>
+        <!-- estrutura de pastas -->
+        <div
+          style="
+            background: #0d1b2a;
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+            font-family: &quot;Courier New&quot;, monospace;
+            font-size: 13px;
+            line-height: 1.9;
+            color: #c8d8e8;
+          "
+        >
+          <span style="color: rgb(240, 200, 122); font-size: 13px"
+            >projeto/</span
+          ><br style="font-size: 13px" /><span
+            style="color: rgb(93, 184, 245); font-size: 13px"
+            >├──</span
+          >
+          <span style="color: rgb(168, 240, 200); font-size: 13px"
+            >index.js</span
+          >
+          <span style="color: rgb(90, 122, 154); font-size: 13px"
+            >← arquivo principal</span
+          ><br style="font-size: 13px" /><span
+            style="color: rgb(93, 184, 245); font-size: 13px"
+            >├──</span
+          >
+          <span style="color: rgb(168, 240, 200); font-size: 13px"
+            >package.json</span
+          >
+          <span style="color: rgb(90, 122, 154); font-size: 13px"
+            >← "type": "module"</span
+          ><br style="font-size: 13px" /><span
+            style="color: rgb(93, 184, 245); font-size: 13px"
+            >├──</span
+          >
+          <span style="color: rgb(168, 240, 200); font-size: 13px"
+            >Aluno.js</span
+          >
+          <span style="color: rgb(90, 122, 154); font-size: 13px"
+            >← classe (export default)</span
+          ><br style="font-size: 13px" /><span
+            style="color: rgb(93, 184, 245); font-size: 13px"
+            >├──</span
+          >
+          <span style="color: rgb(168, 240, 200); font-size: 13px"
+            >validadores.js</span
+          >
+          <span style="color: rgb(90, 122, 154); font-size: 13px"
+            >← funções (export nomeado)</span
+          ><br style="font-size: 13px" /><span
+            style="color: rgb(93, 184, 245); font-size: 13px"
+            >└──</span
+          >
+          <span style="color: rgb(168, 240, 200); font-size: 13px"
+            >formatadores.js</span
+          >
+          <span style="color: rgb(90, 122, 154); font-size: 13px"
+            >← funções (export nomeado)</span
+          >
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              border: 1px solid rgb(212, 230, 245);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgb(13, 59, 102),
+                  rgb(26, 95, 168)
+                );
+                padding: 10px 18px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 2px 10px;
+                  border-radius: 5px;
+                "
+                >Aluno.js</span
+              >
+              <span style="font-size: 13px; color: #c8dff5"
+                >export default class</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                padding: 16px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.9;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >export default class</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >Aluno</span
+              >
+              {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >constructor</span
+              >(nome, matricula, nota) {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >this</span
+              >.nome = nome;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >this</span
+              >.matricula = matricula;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >this</span
+              >.nota = nota;<br style="font-size: 13px" />&nbsp;&nbsp;}<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >situacao</span
+              >() {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >return this</span
+              >.nota &gt;=
+              <span style="color: rgb(240, 160, 96); font-size: 13px">6</span> ?
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Aprovado'</span
+              >
+              :
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Reprovado'</span
+              >;<br style="font-size: 13px" />&nbsp;&nbsp;}<br
+                style="font-size: 13px"
+              />}
+            </div>
+          </div>
+          <div
+            style="
+              border: 1px solid rgb(212, 230, 245);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgb(13, 59, 102),
+                  rgb(26, 95, 168)
+                );
+                padding: 10px 18px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 2px 10px;
+                  border-radius: 5px;
+                "
+                >validadores.js</span
+              >
+              <span style="font-size: 13px; color: #c8dff5"
+                >export nomeado</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                padding: 16px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.9;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >export function</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >validarNome</span
+              >(nome) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >return</span
+              >
+              nome.length &gt;=
+              <span style="color: rgb(240, 160, 96); font-size: 13px">3</span
+              >;<br style="font-size: 13px" />}<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(240, 200, 122); font-size: 13px"
+                >export function</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >validarNota</span
+              >(nota) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >return</span
+              >
+              nota &gt;=
+              <span style="color: rgb(240, 160, 96); font-size: 13px">0</span>
+              &amp;&amp; nota &lt;=
+              <span style="color: rgb(240, 160, 96); font-size: 13px">10</span
+              >;<br style="font-size: 13px" />}
+            </div>
+          </div>
+          <div
+            style="
+              border: 1px solid rgb(212, 230, 245);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgb(13, 59, 102),
+                  rgb(26, 95, 168)
+                );
+                padding: 10px 18px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 2px 10px;
+                  border-radius: 5px;
+                "
+                >index.js</span
+              >
+              <span style="font-size: 13px; color: #c8dff5"
+                >arquivo principal — combina os módulos</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                padding: 16px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.9;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >import</span
+              >
+              Aluno
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'./Aluno.js'</span
+              >;<br style="font-size: 13px" /><span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >import</span
+              >
+              { validarNome, validarNota }
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'./validadores.js'</span
+              >;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              nome =
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Ana Silva'</span
+              >;<br style="font-size: 13px" /><span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              nota =
+              <span style="color: rgb(240, 160, 96); font-size: 13px">8.5</span
+              >;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(240, 200, 122); font-size: 13px"
+                >if</span
+              >
+              (<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >validarNome</span
+              >(nome) &amp;&amp;
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >validarNota</span
+              >(nota)) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              aluno =
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >new</span
+              >
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >Aluno</span
+              >(nome,
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'2024001'</span
+              >, nota);<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;console.log(<span
+                style="color: rgb(168, 240, 200); font-size: 13px"
+                >`${aluno.nome}: ${aluno.<span
+                  style="color: rgb(93, 245, 168); font-size: 13px"
+                  >situacao</span
+                >()}`</span
+              >);<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >// Ana Silva: Aprovado</span
+              ><br style="font-size: 13px" />}
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ ERROS COMUNS ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Erros comuns e como resolver
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              border-left: 4px solid rgb(192, 57, 43);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #2a1010;
+                padding: 8px 18px;
+                font-size: 12px;
+                font-weight: bold;
+                color: #f08080;
+                letter-spacing: 1px;
+              "
+            >
+              Erro 1 — esquecer a extensão .js
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 0px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  padding: 14px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.7;
+                  color: rgb(240, 128, 128);
+                  border-right: 1px solid rgb(42, 42, 42);
+                "
+              >
+                <span style="color: rgb(93, 184, 245); font-size: 12px"
+                  >// ✗ errado</span
+                ><br style="font-size: 12px" /><span
+                  style="color: rgb(240, 200, 122); font-size: 12px"
+                  >import</span
+                >
+                { soma }
+                <span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >from</span
+                >
+                <span style="color: rgb(240, 128, 128); font-size: 12px"
+                  >'./math'</span
+                >;
+              </div>
+              <div
+                style="
+                  padding: 14px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.7;
+                  color: rgb(168, 240, 200);
+                "
+              >
+                <span style="color: rgb(93, 184, 245); font-size: 12px"
+                  >// ✓ correto</span
+                ><br style="font-size: 12px" /><span
+                  style="color: rgb(240, 200, 122); font-size: 12px"
+                  >import</span
+                >
+                { soma }
+                <span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >from</span
+                >
+                <span style="color: rgb(168, 240, 200); font-size: 12px"
+                  >'./math.js'</span
+                >;
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              border-left: 4px solid rgb(192, 57, 43);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #2a1010;
+                padding: 8px 18px;
+                font-size: 12px;
+                font-weight: bold;
+                color: #f08080;
+                letter-spacing: 1px;
+              "
+            >
+              Erro 2 — usar { } para importar o default
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 0px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  padding: 14px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.7;
+                  color: rgb(240, 128, 128);
+                  border-right: 1px solid rgb(42, 42, 42);
+                "
+              >
+                <span style="color: rgb(93, 184, 245); font-size: 12px"
+                  >// ✗ errado</span
+                ><br style="font-size: 12px" /><span
+                  style="color: rgb(240, 200, 122); font-size: 12px"
+                  >import</span
+                >
+                <span style="color: rgb(240, 128, 128); font-size: 12px"
+                  >{ calcularIMC }</span
+                >
+                <span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >from</span
+                >
+                <span style="color: rgb(168, 240, 200); font-size: 12px"
+                  >'./imc.js'</span
+                >;
+              </div>
+              <div
+                style="
+                  padding: 14px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.7;
+                  color: rgb(168, 240, 200);
+                "
+              >
+                <span style="color: rgb(93, 184, 245); font-size: 12px"
+                  >// ✓ correto</span
+                ><br style="font-size: 12px" /><span
+                  style="color: rgb(240, 200, 122); font-size: 12px"
+                  >import</span
+                >
+                calcularIMC
+                <span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >from</span
+                >
+                <span style="color: rgb(168, 240, 200); font-size: 12px"
+                  >'./imc.js'</span
+                >;
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              border-left: 4px solid rgb(192, 57, 43);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #2a1010;
+                padding: 8px 18px;
+                font-size: 12px;
+                font-weight: bold;
+                color: #f08080;
+                letter-spacing: 1px;
+              "
+            >
+              Erro 3 — importar nome que não foi exportado
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 0px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  padding: 14px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.7;
+                  color: rgb(240, 128, 128);
+                  border-right: 1px solid rgb(42, 42, 42);
+                "
+              >
+                <span style="color: rgb(93, 184, 245); font-size: 12px"
+                  >// módulo só exporta "somar"</span
+                ><br style="font-size: 12px" /><span
+                  style="color: rgb(240, 200, 122); font-size: 12px"
+                  >import</span
+                >
+                <span style="color: rgb(240, 128, 128); font-size: 12px"
+                  >{ dividir }</span
+                >
+                <span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >from</span
+                >
+                <span style="color: rgb(168, 240, 200); font-size: 12px"
+                  >'./math.js'</span
+                >;<br style="font-size: 12px" /><span
+                  style="color: rgb(93, 184, 245); font-size: 12px"
+                  >// SyntaxError!</span
+                >
+              </div>
+              <div
+                style="
+                  padding: 14px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.7;
+                  color: rgb(168, 240, 200);
+                "
+              >
+                <span style="color: rgb(93, 184, 245); font-size: 12px"
+                  >// ✓ importe só o que existe</span
+                ><br style="font-size: 12px" /><span
+                  style="color: rgb(240, 200, 122); font-size: 12px"
+                  >import</span
+                >
+                { somar }
+                <span style="color: rgb(240, 200, 122); font-size: 12px"
+                  >from</span
+                >
+                <span style="color: rgb(168, 240, 200); font-size: 12px"
+                  >'./math.js'</span
+                >;
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ REFERÊNCIAS ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102) 0%,
+            rgb(26, 95, 168) 100%
+          );
+          border-radius: 14px;
+          padding: 28px 36px;
+          box-shadow: rgba(13, 59, 102, 0.28) 0px 8px 28px;
+          display: flex;
+          align-items: center;
+          gap: 22px;
+          flex-wrap: wrap;
+          font-size: 14px;
+        "
+      >
+        <div style="font-size: 36px; line-height: 1; flex-shrink: 0">📖</div>
+        <div style="flex: 1 1 0%; min-width: 200px; font-size: 14px">
+          <div
+            style="
+              font-size: 11px;
+              font-weight: bold;
+              letter-spacing: 3px;
+              text-transform: uppercase;
+              color: #a8c8f0;
+              margin-bottom: 8px;
+            "
+          >
+            Referências para aprofundamento
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 12px; font-size: 14px"
+          >
+            <a
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #ffffff;
+                text-decoration: none;
+                background: rgba(255, 255, 255, 0.15);
+                padding: 6px 14px;
+                border-radius: 6px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Modules"
+              >MDN — JavaScript Modules</a
+            >
+            <a
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #ffffff;
+                text-decoration: none;
+                background: rgba(255, 255, 255, 0.15);
+                padding: 6px 14px;
+                border-radius: 6px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              href="https://nodejs.org/api/esm.html"
+              >Node.js — ESM Docs</a
+            >
+            <a
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #ffffff;
+                text-decoration: none;
+                background: rgba(255, 255, 255, 0.15);
+                padding: 6px 14px;
+                border-radius: 6px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/import"
+              >MDN — import</a
+            >
+            <a
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #ffffff;
+                text-decoration: none;
+                background: rgba(255, 255, 255, 0.15);
+                padding: 6px 14px;
+                border-radius: 6px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/export"
+              >MDN — export</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

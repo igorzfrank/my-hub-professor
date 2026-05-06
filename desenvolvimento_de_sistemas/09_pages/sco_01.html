@@ -1,0 +1,2691 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express.js — Criando seu primeiro servidor com Node.js</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(240, 244, 249);
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102) 0%,
+            rgb(26, 95, 168) 100%
+          );
+          border-radius: 14px;
+          padding: 36px 40px;
+          margin-bottom: 24px;
+          box-shadow: rgba(13, 59, 102, 0.28) 0px 8px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a8c8f0;
+            margin-bottom: 10px;
+          "
+        >
+          Técnico em Desenvolvimento de Sistemas — Programação para Web
+        </div>
+        <div
+          style="
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 12px;
+          "
+        >
+          Express.js — Criando seu primeiro servidor com Node.js
+        </div>
+        <div style="font-size: 15px; color: #c8dff5; line-height: 1.65">
+          Nesta aula você vai entender o que é uma API, o que é o Express e por
+          que ele existe, como instalar e configurar o framework, e como criar
+          seu primeiro servidor com rotas funcionais.
+        </div>
+      </div>
+      <!-- ══ CAPACIDADES ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          border-left: 6px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 14px;
+          "
+        >
+          Capacidades Trabalhadas
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Compreender o modelo de comunicação cliente-servidor e o papel das
+              APIs no desenvolvimento web.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 7px;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Selecionar ferramentas de gerenciamento na aplicação da
+              metodologia.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ O QUE É UMA API ══ -->
+      <div
+        style="
+          background: rgb(234, 242, 251);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.08) 0px 4px 18px;
+          border: 1px solid rgb(184, 212, 237);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 14px;
+          "
+        >
+          Antes de tudo — o que é uma API?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #1a2a3a;
+            line-height: 1.8;
+            margin-bottom: 18px;
+          "
+        >
+          <strong style="font-size: 15px">API</strong> significa
+          <strong style="font-size: 15px"
+            >Application Programming Interface</strong
+          >
+          — uma interface que permite que dois sistemas diferentes se
+          comuniquem. No contexto web, uma API recebe requisições de um cliente
+          (um app mobile, um site, outro sistema) e devolve dados — geralmente
+          em formato <strong style="font-size: 15px">JSON</strong>.
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 18px 22px;
+            border-left: 4px solid rgb(26, 95, 168);
+            margin-bottom: 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="font-size: 14px; color: rgb(26, 42, 58); line-height: 1.8"
+          >
+            <strong style="font-size: 14px">Analogia:</strong> pense num
+            restaurante. O <strong style="font-size: 14px">cliente</strong> é
+            você na mesa. O <strong style="font-size: 14px">garçom</strong> é a
+            API — ele recebe o seu pedido, leva para a cozinha (o servidor) e
+            traz de volta o que você pediu. Você nunca entra na cozinha
+            diretamente.
+          </div>
+        </div>
+        <!-- Diagrama cliente-servidor -->
+        <div
+          style="
+            background: rgb(240, 246, 255);
+            border-radius: 10px;
+            padding: 20px 24px;
+            border: 1px solid rgb(184, 212, 237);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #1a5fa8;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 16px;
+            "
+          >
+            Fluxo de comunicação cliente → servidor
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 12px 0px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(13, 59, 102);
+                color: rgb(255, 255, 255);
+                border-radius: 10px;
+                padding: 14px 18px;
+                text-align: center;
+                min-width: 100px;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 22px; margin-bottom: 4px">💻</div>
+              <div style="font-size: 12px; font-weight: bold">Cliente</div>
+              <div style="font-size: 11px; color: #a8c8f0; margin-top: 2px">
+                App / Site
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0px 10px;
+                gap: 3px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 10px;
+                  font-weight: bold;
+                  color: #1a5fa8;
+                  letter-spacing: 1px;
+                  white-space: nowrap;
+                "
+              >
+                REQUISIÇÃO
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #4a6a8a;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  white-space: nowrap;
+                "
+              >
+                GET /produtos
+              </div>
+              <div style="font-size: 20px; color: #1a5fa8; line-height: 1">
+                →
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(26, 95, 168);
+                color: rgb(255, 255, 255);
+                border-radius: 10px;
+                padding: 14px 18px;
+                text-align: center;
+                min-width: 110px;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 22px; margin-bottom: 4px">⚙️</div>
+              <div style="font-size: 12px; font-weight: bold">API Express</div>
+              <div style="font-size: 11px; color: #c8dff5; margin-top: 2px">
+                Servidor Node.js
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0px 10px;
+                gap: 3px;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; color: #1a5fa8; line-height: 1">
+                ↔
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #4a6a8a;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+              >
+                consulta
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(13, 59, 102);
+                color: rgb(255, 255, 255);
+                border-radius: 10px;
+                padding: 14px 18px;
+                text-align: center;
+                min-width: 100px;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 22px; margin-bottom: 4px">🗄️</div>
+              <div style="font-size: 12px; font-weight: bold">Dados</div>
+              <div style="font-size: 11px; color: #a8c8f0; margin-top: 2px">
+                Banco / Arquivo
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0px 10px;
+                gap: 3px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 10px;
+                  font-weight: bold;
+                  color: #1a7a45;
+                  letter-spacing: 1px;
+                  white-space: nowrap;
+                "
+              >
+                RESPOSTA
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  color: #4a6a8a;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  white-space: nowrap;
+                "
+              >
+                200 OK — JSON
+              </div>
+              <div style="font-size: 20px; color: #1a7a45; line-height: 1">
+                ←
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(13, 59, 102);
+                color: rgb(255, 255, 255);
+                border-radius: 10px;
+                padding: 14px 18px;
+                text-align: center;
+                min-width: 100px;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 22px; margin-bottom: 4px">💻</div>
+              <div style="font-size: 12px; font-weight: bold">Cliente</div>
+              <div style="font-size: 11px; color: #a8c8f0; margin-top: 2px">
+                recebe dados
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ O QUE É O EXPRESS ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          O que é o Express e por que usá-lo?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          O Node.js já vem com um módulo nativo chamado
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 1px 6px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >http</code
+          >
+          que permite criar servidores. Mas usá-lo diretamente exige muito
+          código. Veja o quanto é necessário apenas para responder uma rota com
+          Node puro — e como o Express simplifica isso:
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #2a1a1a;
+                padding: 7px 16px;
+                font-size: 11px;
+                font-weight: bold;
+                color: #f08080;
+                letter-spacing: 1px;
+              "
+            >
+              ❌ Node.js puro — verboso
+            </div>
+            <div
+              style="
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.9;
+                color: rgb(200, 216, 232);
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >import</span
+              >
+              http
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'node:http'</span
+              >;<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              />http.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >createServer</span
+              >((req, res) =&gt; {<br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;<span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >if</span
+              >
+              (req.url ===
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'/ola'</span
+              >
+              &amp;&amp;<br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;req.method ===
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'GET'</span
+              >) {<br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;res.<span
+                style="color: rgb(93, 245, 168); font-size: 12px"
+                >writeHead</span
+              >(<span style="color: rgb(240, 160, 96); font-size: 12px"
+                >200</span
+              >, {<br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(168, 240, 200); font-size: 12px"
+                >'Content-Type'</span
+              >:
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'application/json'</span
+              ><br style="font-size: 12px" />&nbsp;&nbsp;&nbsp;&nbsp;});<br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;res.<span
+                style="color: rgb(93, 245, 168); font-size: 12px"
+                >end</span
+              >(JSON.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >stringify</span
+              >(<br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ mensagem:
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'Olá!'</span
+              >
+              }<br style="font-size: 12px" />&nbsp;&nbsp;&nbsp;&nbsp;));<br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;}<br style="font-size: 12px" />}).<span
+                style="color: rgb(93, 245, 168); font-size: 12px"
+                >listen</span
+              >(<span style="color: rgb(240, 160, 96); font-size: 12px"
+                >3000</span
+              >);
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #0d2a1a;
+                padding: 7px 16px;
+                font-size: 11px;
+                font-weight: bold;
+                color: #a8f0c8;
+                letter-spacing: 1px;
+              "
+            >
+              ✅ Com Express — simples e direto
+            </div>
+            <div
+              style="
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.9;
+                color: rgb(200, 216, 232);
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >import</span
+              >
+              express
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'express'</span
+              >;<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              /><span style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              app =
+              <span style="color: rgb(93, 245, 168); font-size: 12px"
+                >express</span
+              >();<br style="font-size: 12px" />app.<span
+                style="color: rgb(93, 245, 168); font-size: 12px"
+                >use</span
+              >(express.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >json</span
+              >());<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              />app.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >get</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'/ola'</span
+              >, (req, res) =&gt; {<br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;res.<span
+                style="color: rgb(93, 245, 168); font-size: 12px"
+                >json</span
+              >({ mensagem:
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'Olá!'</span
+              >
+              });<br style="font-size: 12px" />});<br
+                style="font-size: 12px"
+              /><br style="font-size: 12px" />app.<span
+                style="color: rgb(93, 245, 168); font-size: 12px"
+                >listen</span
+              >(<span style="color: rgb(240, 160, 96); font-size: 12px"
+                >3000</span
+              >);
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(240, 246, 255);
+              border-radius: 10px;
+              padding: 18px;
+              border-top: 4px solid rgb(13, 59, 102);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 24px; margin-bottom: 8px">🚀</div>
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Rápido de usar
+            </div>
+            <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+              API funcional em poucas linhas de código
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 246, 255);
+              border-radius: 10px;
+              padding: 18px;
+              border-top: 4px solid rgb(26, 95, 168);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 24px; margin-bottom: 8px">🛣️</div>
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Rotas organizadas
+            </div>
+            <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+              Cada URL e método tem sua própria função
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(240, 246, 255);
+              border-radius: 10px;
+              padding: 18px;
+              border-top: 4px solid rgb(58, 122, 191);
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 24px; margin-bottom: 8px">🌍</div>
+            <div
+              style="
+                font-size: 12px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+              "
+            >
+              Padrão da indústria
+            </div>
+            <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+              Framework mais usado do Node.js há mais de 10 anos
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ INSTALAÇÃO ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Instalação e configuração do projeto
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 22px;
+          "
+        >
+          Para usar o Express, você precisa de um projeto Node.js inicializado e
+          da dependência instalada. Siga os três passos abaixo dentro da pasta
+          do projeto:
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              gap: 16px;
+              align-items: flex-start;
+              background: rgb(240, 246, 255);
+              border-radius: 12px;
+              padding: 18px 22px;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+                color: #fff;
+                font-size: 13px;
+                font-weight: bold;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+              "
+            >
+              1
+            </div>
+            <div style="flex: 1 1 0%; font-size: 14px">
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 8px;
+                "
+              >
+                Inicializar o projeto e instalar o Express
+              </div>
+              <div
+                style="
+                  background: #1a2a3a;
+                  border-radius: 8px;
+                  padding: 12px 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  color: #a8f0c8;
+                  line-height: 1.7;
+                "
+              >
+                npm init -y<br style="font-size: 13px" />npm install express
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 16px;
+              align-items: flex-start;
+              background: rgb(240, 246, 255);
+              border-radius: 12px;
+              padding: 18px 22px;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+                color: #fff;
+                font-size: 13px;
+                font-weight: bold;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+              "
+            >
+              2
+            </div>
+            <div style="flex: 1 1 0%; font-size: 14px">
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 4px;
+                "
+              >
+                Adicionar
+                <code
+                  style="
+                    background: rgb(221, 238, 255);
+                    padding: 1px 6px;
+                    border-radius: 4px;
+                    font-size: 12px;
+                  "
+                  >"type": "module"</code
+                >
+                no package.json
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: rgb(74, 106, 138);
+                  line-height: 1.6;
+                  margin-bottom: 8px;
+                "
+              >
+                Isso permite usar
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 11px;
+                  "
+                  >import</code
+                >
+                no lugar de
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 11px;
+                  "
+                  >require</code
+                >.
+              </div>
+              <div
+                style="
+                  background: #1a2a3a;
+                  border-radius: 8px;
+                  padding: 12px 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  color: #c8d8e8;
+                  line-height: 1.7;
+                "
+              >
+                {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                  style="color: rgb(240, 200, 122); font-size: 13px"
+                  >"name"</span
+                >:
+                <span style="color: rgb(168, 240, 200); font-size: 13px"
+                  >"minha-api"</span
+                >,<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                  style="color: rgb(240, 200, 122); font-size: 13px"
+                  >"type"</span
+                >:
+                <span style="color: rgb(168, 240, 200); font-size: 13px"
+                  >"module"</span
+                >,<br style="font-size: 13px" />&nbsp;&nbsp;<span
+                  style="color: rgb(240, 200, 122); font-size: 13px"
+                  >"dependencies"</span
+                >: {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  style="color: rgb(240, 200, 122); font-size: 13px"
+                  >"express"</span
+                >:
+                <span style="color: rgb(168, 240, 200); font-size: 13px"
+                  >"^4.18.2"</span
+                ><br style="font-size: 13px" />&nbsp;&nbsp;}<br
+                  style="font-size: 13px"
+                />}
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 16px;
+              align-items: flex-start;
+              background: rgb(240, 246, 255);
+              border-radius: 12px;
+              padding: 18px 22px;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+                color: #fff;
+                font-size: 13px;
+                font-weight: bold;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+              "
+            >
+              3
+            </div>
+            <div style="flex: 1 1 0%; font-size: 14px">
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 4px;
+                "
+              >
+                Criar o arquivo principal e rodar o servidor
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: rgb(74, 106, 138);
+                  line-height: 1.6;
+                  margin-bottom: 8px;
+                "
+              >
+                Crie um arquivo
+                <code
+                  style="
+                    background: rgb(234, 242, 251);
+                    padding: 1px 5px;
+                    border-radius: 3px;
+                    font-size: 11px;
+                  "
+                  >app.js</code
+                >
+                na raiz do projeto. Para iniciar o servidor, execute:
+              </div>
+              <div
+                style="
+                  background: #1a2a3a;
+                  border-radius: 8px;
+                  padding: 12px 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  color: #a8f0c8;
+                  line-height: 1.7;
+                "
+              >
+                node app.js
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ ANATOMIA ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Anatomia do servidor Express
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          Todo servidor Express tem a mesma estrutura base. Veja cada linha
+          comentada e o que ela faz:
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 7px 18px;
+              font-size: 11px;
+              font-weight: bold;
+              color: #a8f0c8;
+              letter-spacing: 1px;
+            "
+          >
+            app.js — estrutura base do servidor
+          </div>
+          <div
+            style="
+              padding: 20px 24px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2.1;
+              color: rgb(200, 216, 232);
+            "
+          >
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >import</span
+            >
+            express
+            <span style="color: rgb(240, 200, 122); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'express'</span
+            >;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// 1. importa o Express</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            app =
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >express</span
+            >();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// 2. cria a aplicação</span
+            ><br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >use</span
+            >(express.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// 3. habilita leitura de JSON</span
+            ><br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            />app.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >get</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px">'/'</span
+            >, (req, res) =&gt;
+            {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// 4. define uma rota</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ mensagem:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Servidor funcionando!'</span
+            >
+            });&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// 5. envia resposta JSON</span
+            ><br style="font-size: 13px" />});<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            />app.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >listen</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">3000</span
+            >, () =&gt;
+            {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// 6. inicia o servidor</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;console.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >log</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Servidor rodando em http://localhost:3000'</span
+            >);<br style="font-size: 13px" />});
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              font-size: 14px;
+            "
+          >
+            <code
+              style="
+                background: rgb(13, 59, 102);
+                color: rgb(168, 240, 200);
+                font-size: 11px;
+                font-weight: bold;
+                padding: 3px 10px;
+                border-radius: 5px;
+                flex-shrink: 0;
+                font-family: &quot;Courier New&quot;, monospace;
+                white-space: nowrap;
+              "
+              >express()</code
+            >
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.65">
+              Cria a instância da aplicação. O objeto
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >app</code
+              >
+              é o ponto central do Express — tudo passa por ele.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              font-size: 14px;
+            "
+          >
+            <code
+              style="
+                background: rgb(13, 59, 102);
+                color: rgb(168, 240, 200);
+                font-size: 11px;
+                font-weight: bold;
+                padding: 3px 10px;
+                border-radius: 5px;
+                flex-shrink: 0;
+                font-family: &quot;Courier New&quot;, monospace;
+                white-space: nowrap;
+              "
+              >express.json()</code
+            >
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.65">
+              Configura o Express para ler automaticamente o corpo das
+              requisições em formato JSON. Sem isso,
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >req.body</code
+              >
+              ficaria undefined.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              font-size: 14px;
+            "
+          >
+            <code
+              style="
+                background: rgb(13, 59, 102);
+                color: rgb(168, 240, 200);
+                font-size: 11px;
+                font-weight: bold;
+                padding: 3px 10px;
+                border-radius: 5px;
+                flex-shrink: 0;
+                font-family: &quot;Courier New&quot;, monospace;
+                white-space: nowrap;
+              "
+              >app.get(rota, fn)</code
+            >
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.65">
+              Define uma rota que responde ao método HTTP
+              <strong style="font-size: 14px">GET</strong>. O primeiro argumento
+              é o caminho da URL, o segundo é a função que trata a requisição.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              font-size: 14px;
+            "
+          >
+            <code
+              style="
+                background: rgb(13, 59, 102);
+                color: rgb(168, 240, 200);
+                font-size: 11px;
+                font-weight: bold;
+                padding: 3px 10px;
+                border-radius: 5px;
+                flex-shrink: 0;
+                font-family: &quot;Courier New&quot;, monospace;
+                white-space: nowrap;
+              "
+              >req, res</code
+            >
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.65">
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >req</code
+              >
+              (request) representa a
+              <strong style="font-size: 14px">requisição que chegou</strong> —
+              contém dados enviados pelo cliente.
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >res</code
+              >
+              (response) representa a
+              <strong style="font-size: 14px">resposta que será enviada</strong>
+              de volta.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              font-size: 14px;
+            "
+          >
+            <code
+              style="
+                background: rgb(13, 59, 102);
+                color: rgb(168, 240, 200);
+                font-size: 11px;
+                font-weight: bold;
+                padding: 3px 10px;
+                border-radius: 5px;
+                flex-shrink: 0;
+                font-family: &quot;Courier New&quot;, monospace;
+                white-space: nowrap;
+              "
+              >app.listen(porta)</code
+            >
+            <div style="font-size: 14px; color: #2c3e50; line-height: 1.65">
+              Inicia o servidor na porta especificada. Qualquer requisição
+              enviada para
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >localhost:3000</code
+              >
+              será recebida.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ MÉTODOS HTTP ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Métodos HTTP — o vocabulário das APIs
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          Uma API REST se comunica usando os
+          <strong style="font-size: 15px">métodos do protocolo HTTP</strong>.
+          Cada método tem um significado diferente — eles indicam o que o
+          cliente quer fazer com os dados:
+        </div>
+        <div style="overflow-x: auto; margin-bottom: 20px; font-size: 14px">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 14px"
+          >
+            <thead style="font-size: 14px">
+              <tr
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgb(13, 59, 102),
+                    rgb(26, 95, 168)
+                  );
+                  font-size: 14px;
+                "
+              >
+                <th
+                  style="
+                    padding: 12px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: center;
+                    font-size: 14px;
+                  "
+                >
+                  Método
+                </th>
+                <th
+                  style="
+                    padding: 12px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  O que faz
+                </th>
+                <th
+                  style="
+                    padding: 12px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  Analogia
+                </th>
+                <th
+                  style="
+                    padding: 12px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: center;
+                    font-size: 14px;
+                  "
+                >
+                  No Express
+                </th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 14px">
+              <tr style="background: rgb(232, 248, 238); font-size: 14px">
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(208, 232, 208);
+                    text-align: center;
+                    font-size: 14px;
+                  "
+                >
+                  <code
+                    style="
+                      background: #1a7a45;
+                      color: #fff;
+                      font-size: 12px;
+                      font-weight: bold;
+                      padding: 3px 10px;
+                      border-radius: 5px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                    >GET</code
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(208, 232, 208);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  <strong style="font-size: 14px">Buscar</strong> dados
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(208, 232, 208);
+                    color: rgb(74, 106, 74);
+                    font-size: 14px;
+                  "
+                >
+                  Pedir o cardápio do restaurante
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid #d0e8d0;
+                    text-align: center;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #1a7a45;
+                    font-weight: bold;
+                  "
+                >
+                  app.get()
+                </td>
+              </tr>
+              <tr style="font-size: 14px">
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    text-align: center;
+                    font-size: 14px;
+                  "
+                >
+                  <code
+                    style="
+                      background: #1a5fa8;
+                      color: #fff;
+                      font-size: 12px;
+                      font-weight: bold;
+                      padding: 3px 10px;
+                      border-radius: 5px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                    >POST</code
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  <strong style="font-size: 14px">Criar</strong> novo dado
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    color: rgb(74, 106, 138);
+                    font-size: 14px;
+                  "
+                >
+                  Fazer um pedido no restaurante
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid #d4e6f5;
+                    text-align: center;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #1a5fa8;
+                    font-weight: bold;
+                  "
+                >
+                  app.post()
+                </td>
+              </tr>
+              <tr style="background: rgb(248, 251, 255); font-size: 14px">
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    text-align: center;
+                    font-size: 14px;
+                  "
+                >
+                  <code
+                    style="
+                      background: #a05000;
+                      color: #fff;
+                      font-size: 12px;
+                      font-weight: bold;
+                      padding: 3px 10px;
+                      border-radius: 5px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                    >PUT</code
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  <strong style="font-size: 14px">Atualizar</strong> dado
+                  existente
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    color: rgb(74, 106, 138);
+                    font-size: 14px;
+                  "
+                >
+                  Trocar um item do pedido
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid #d4e6f5;
+                    text-align: center;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #a05000;
+                    font-weight: bold;
+                  "
+                >
+                  app.put()
+                </td>
+              </tr>
+              <tr style="font-size: 14px">
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(250, 212, 212);
+                    text-align: center;
+                    font-size: 14px;
+                  "
+                >
+                  <code
+                    style="
+                      background: #8a1a1a;
+                      color: #fff;
+                      font-size: 12px;
+                      font-weight: bold;
+                      padding: 3px 10px;
+                      border-radius: 5px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                    >DELETE</code
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(250, 212, 212);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  <strong style="font-size: 14px">Remover</strong> um dado
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid rgb(250, 212, 212);
+                    color: rgb(74, 106, 138);
+                    font-size: 14px;
+                  "
+                >
+                  Cancelar o pedido
+                </td>
+                <td
+                  style="
+                    padding: 11px 16px;
+                    border: 1px solid #fad4d4;
+                    text-align: center;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #8a1a1a;
+                    font-weight: bold;
+                  "
+                >
+                  app.delete()
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          style="
+            background: rgb(255, 251, 235);
+            border-width: 1px 1px 1px 4px;
+            border-style: solid;
+            border-color: rgb(240, 208, 128) rgb(240, 208, 128)
+              rgb(240, 208, 128) rgb(240, 184, 0);
+            border-image: initial;
+            border-radius: 10px;
+            padding: 14px 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #8a6000;
+              margin-bottom: 6px;
+            "
+          >
+            💡 Juntos formam o CRUD
+          </div>
+          <div style="font-size: 14px; color: #5a4a10; line-height: 1.75">
+            Esses quatro métodos mapeiam diretamente para as quatro operações
+            fundamentais de qualquer sistema:
+            <strong style="font-size: 14px">C</strong>reate (POST) ·
+            <strong style="font-size: 14px">R</strong>ead (GET) ·
+            <strong style="font-size: 14px">U</strong>pdate (PUT) ·
+            <strong style="font-size: 14px">D</strong>elete (DELETE).
+          </div>
+        </div>
+      </div>
+      <!-- ══ ROTAS ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Como passar dados para as rotas
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 22px;
+          "
+        >
+          Além de definir o método, as rotas podem receber dados de três formas
+          diferentes. Cada uma tem o seu uso correto:
+        </div>
+        <!-- params -->
+        <div
+          style="
+            border: 1px solid rgb(212, 230, 245);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(13, 59, 102),
+                rgb(26, 95, 168)
+              );
+              padding: 12px 22px;
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <code
+              style="
+                background: rgba(255, 255, 255, 0.2);
+                color: #fff;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 3px 12px;
+                border-radius: 6px;
+                font-family: &quot;Courier New&quot;, monospace;
+              "
+              >req.params</code
+            >
+            <span style="font-size: 14px; font-weight: bold; color: #fff"
+              >Parâmetro de Rota</span
+            >
+            <span
+              style="
+                margin-left: auto;
+                background: rgba(255, 255, 255, 0.15);
+                color: #c8e8ff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 2px 10px;
+                border-radius: 6px;
+                font-family: &quot;Courier New&quot;, monospace;
+              "
+              >/rota/:id</span
+            >
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              padding: 20px 22px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 14px;
+                color: rgb(44, 62, 80);
+                line-height: 1.8;
+                margin-bottom: 14px;
+              "
+            >
+              Parte
+              <strong style="font-size: 14px">variável da própria URL</strong>,
+              indicada com
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 6px;
+                  border-radius: 4px;
+                  font-size: 12px;
+                "
+                >:</code
+              >. Usado para identificar um recurso específico, como o id de um
+              produto.
+            </div>
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                border-radius: 8px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 6px 16px;
+                  font-size: 11px;
+                  font-weight: bold;
+                  color: #5db8f5;
+                  letter-spacing: 1px;
+                "
+              >
+                Requisição: GET /produtos/42
+              </div>
+              <div
+                style="
+                  padding: 14px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 1.8;
+                  color: #c8d8e8;
+                "
+              >
+                app.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                  >get</span
+                >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                  >'/produtos/:id'</span
+                >, (req, res) =&gt; {<br
+                  style="font-size: 13px"
+                />&nbsp;&nbsp;<span
+                  style="color: rgb(240, 200, 122); font-size: 13px"
+                  >const</span
+                >
+                { id } = req.params; &nbsp;<span
+                  style="color: rgb(93, 184, 245); font-size: 13px"
+                  >// id = "42"</span
+                ><br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+                  style="color: rgb(93, 245, 168); font-size: 13px"
+                  >json</span
+                >({ mensagem:
+                <span style="color: rgb(168, 240, 200); font-size: 13px"
+                  >`Produto ${id}`</span
+                >
+                });<br style="font-size: 13px" />});
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- query -->
+        <div
+          style="
+            border: 1px solid rgb(212, 230, 245);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(13, 74, 138),
+                rgb(26, 112, 200)
+              );
+              padding: 12px 22px;
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <code
+              style="
+                background: rgba(255, 255, 255, 0.2);
+                color: #fff;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 3px 12px;
+                border-radius: 6px;
+                font-family: &quot;Courier New&quot;, monospace;
+              "
+              >req.query</code
+            >
+            <span style="font-size: 14px; font-weight: bold; color: #fff"
+              >Query String</span
+            >
+            <span
+              style="
+                margin-left: auto;
+                background: rgba(255, 255, 255, 0.15);
+                color: #c8e8ff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 2px 10px;
+                border-radius: 6px;
+                font-family: &quot;Courier New&quot;, monospace;
+              "
+              >/rota?chave=valor</span
+            >
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              padding: 20px 22px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 14px;
+                color: rgb(44, 62, 80);
+                line-height: 1.8;
+                margin-bottom: 14px;
+              "
+            >
+              <strong style="font-size: 14px">Parâmetros opcionais</strong>
+              passados após o
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 6px;
+                  border-radius: 4px;
+                  font-size: 12px;
+                "
+                >?</code
+              >
+              na URL. Muito usados para filtros e buscas sem alterar a estrutura
+              da rota.
+            </div>
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                border-radius: 8px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 6px 16px;
+                  font-size: 11px;
+                  font-weight: bold;
+                  color: #5db8f5;
+                  letter-spacing: 1px;
+                "
+              >
+                Requisição: GET /produtos?categoria=eletronico
+              </div>
+              <div
+                style="
+                  padding: 14px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 1.8;
+                  color: #c8d8e8;
+                "
+              >
+                app.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                  >get</span
+                >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                  >'/produtos'</span
+                >, (req, res) =&gt; {<br
+                  style="font-size: 13px"
+                />&nbsp;&nbsp;<span
+                  style="color: rgb(240, 200, 122); font-size: 13px"
+                  >const</span
+                >
+                { categoria } = req.query; &nbsp;<span
+                  style="color: rgb(93, 184, 245); font-size: 13px"
+                  >// categoria = "eletronico"</span
+                ><br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+                  style="color: rgb(93, 245, 168); font-size: 13px"
+                  >json</span
+                >({ categoria });<br style="font-size: 13px" />});
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- body -->
+        <div
+          style="
+            border: 1px solid rgb(212, 230, 245);
+            border-radius: 12px;
+            overflow: hidden;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(6, 32, 74),
+                rgb(14, 64, 128)
+              );
+              padding: 12px 22px;
+              display: flex;
+              align-items: center;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <code
+              style="
+                background: rgba(255, 255, 255, 0.2);
+                color: #fff;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 3px 12px;
+                border-radius: 6px;
+                font-family: &quot;Courier New&quot;, monospace;
+              "
+              >req.body</code
+            >
+            <span style="font-size: 14px; font-weight: bold; color: #fff"
+              >Corpo da Requisição</span
+            >
+            <span
+              style="
+                margin-left: auto;
+                background: rgba(255, 255, 255, 0.15);
+                color: #c8e8ff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 2px 10px;
+                border-radius: 6px;
+              "
+              >POST / PUT</span
+            >
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              padding: 20px 22px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 14px;
+                color: rgb(44, 62, 80);
+                line-height: 1.8;
+                margin-bottom: 14px;
+              "
+            >
+              Dados enviados no
+              <strong style="font-size: 14px">corpo</strong> da requisição em
+              formato JSON. Usado para criar ou atualizar recursos. Exige que
+              <code
+                style="
+                  background: rgb(234, 242, 251);
+                  padding: 1px 6px;
+                  border-radius: 4px;
+                  font-size: 12px;
+                "
+                >express.json()</code
+              >
+              esteja ativo no servidor.
+            </div>
+            <div
+              style="
+                background: rgb(13, 27, 42);
+                border-radius: 8px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 6px 16px;
+                  font-size: 11px;
+                  font-weight: bold;
+                  color: #5db8f5;
+                  letter-spacing: 1px;
+                "
+              >
+                Requisição: POST /produtos — body: {"nome": "Teclado", "preco":
+                250}
+              </div>
+              <div
+                style="
+                  padding: 14px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 1.8;
+                  color: #c8d8e8;
+                "
+              >
+                app.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                  >post</span
+                >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                  >'/produtos'</span
+                >, (req, res) =&gt; {<br
+                  style="font-size: 13px"
+                />&nbsp;&nbsp;<span
+                  style="color: rgb(240, 200, 122); font-size: 13px"
+                  >const</span
+                >
+                { nome, preco } = req.body;<br
+                  style="font-size: 13px"
+                />&nbsp;&nbsp;<span
+                  style="color: rgb(93, 184, 245); font-size: 13px"
+                  >// nome = "Teclado", preco = 250</span
+                ><br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+                  style="color: rgb(93, 245, 168); font-size: 13px"
+                  >status</span
+                >(<span style="color: rgb(240, 160, 96); font-size: 13px"
+                  >201</span
+                >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+                  >json</span
+                >({ nome, preco });<br style="font-size: 13px" />});
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ EXEMPLO COMPLETO ══ -->
+      <div
+        style="
+          border-radius: 14px;
+          overflow: hidden;
+          box-shadow: rgba(13, 59, 102, 0.22) 0px 8px 28px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              135deg,
+              rgb(13, 59, 102),
+              rgb(26, 95, 168)
+            );
+            padding: 26px 32px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 11px;
+              font-weight: bold;
+              letter-spacing: 3px;
+              text-transform: uppercase;
+              color: #7ab0e0;
+              margin-bottom: 10px;
+            "
+          >
+            ⭐ Exemplo Completo
+          </div>
+          <div
+            style="
+              font-size: 22px;
+              font-weight: bold;
+              color: #ffffff;
+              margin-bottom: 8px;
+            "
+          >
+            API de Produtos — CRUD básico
+          </div>
+          <div style="font-size: 14px; color: #a8c8e8; line-height: 1.7">
+            Todas as 4 operações (GET, POST, PUT, DELETE) em um único arquivo,
+            usando um array em memória como banco de dados temporário.
+          </div>
+        </div>
+        <div style="background: rgb(13, 27, 42); font-size: 14px">
+          <div
+            style="
+              background: rgb(26, 42, 58);
+              padding: 8px 20px;
+              display: flex;
+              gap: 6px;
+              align-items: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: rgb(240, 128, 128);
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div
+              style="
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: rgb(240, 192, 96);
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div
+              style="
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: rgb(96, 192, 96);
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <span
+              style="
+                font-size: 11px;
+                font-weight: bold;
+                color: #5db8f5;
+                letter-spacing: 1px;
+                margin-left: 8px;
+              "
+              >app.js</span
+            >
+          </div>
+          <div
+            style="
+              padding: 22px 26px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              color: #c8d8e8;
+            "
+          >
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >import</span
+            >
+            express
+            <span style="color: rgb(240, 200, 122); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'express'</span
+            >;<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            app =
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >express</span
+            >();<br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >use</span
+            >(express.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >());<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            /><span style="color: rgb(93, 184, 245); font-size: 13px"
+              >// array simulando um banco de dados</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >let</span
+            >
+            produtos = [<br style="font-size: 13px" />&nbsp;&nbsp;{ id:
+            <span style="color: rgb(240, 160, 96); font-size: 13px">1</span>,
+            nome:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Teclado'</span
+            >, preco:
+            <span style="color: rgb(240, 160, 96); font-size: 13px">250</span>
+            },<br style="font-size: 13px" />&nbsp;&nbsp;{ id:
+            <span style="color: rgb(240, 160, 96); font-size: 13px">2</span>,
+            nome:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Mouse'</span
+            >, preco:
+            <span style="color: rgb(240, 160, 96); font-size: 13px">89.9</span>
+            },<br style="font-size: 13px" />];<br
+              style="font-size: 13px"
+            /><span style="color: rgb(240, 200, 122); font-size: 13px"
+              >let</span
+            >
+            proximoId =
+            <span style="color: rgb(240, 160, 96); font-size: 13px">3</span>;<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// GET /produtos — retorna todos</span
+            ><br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >get</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/produtos'</span
+            >, (req, res) =&gt; {<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >(produtos);<br style="font-size: 13px" />});<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// GET /produtos/:id — retorna um produto pelo id</span
+            ><br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >get</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/produtos/:id'</span
+            >, (req, res) =&gt; {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            produto = produtos.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >find</span
+            >(p =&gt; p.id ===
+            <span style="color: rgb(93, 245, 168); font-size: 13px">Number</span
+            >(req.params.id));<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (!produto)
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">404</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Produto não encontrado'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >(produto);<br style="font-size: 13px" />});<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// POST /produtos — cria novo produto</span
+            ><br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >post</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/produtos'</span
+            >, (req, res) =&gt; {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            { nome, preco } = req.body;<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (!nome || !preco)
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">400</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'nome e preco obrigatórios'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            novo = { id: proximoId++, nome, preco };<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;produtos.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >push</span
+            >(novo);<br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">201</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >(novo);<br style="font-size: 13px" />});<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// PUT /produtos/:id — atualiza um produto</span
+            ><br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >put</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/produtos/:id'</span
+            >, (req, res) =&gt; {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            idx = produtos.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >findIndex</span
+            >(p =&gt; p.id ===
+            <span style="color: rgb(93, 245, 168); font-size: 13px">Number</span
+            >(req.params.id));<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (idx === -<span style="color: rgb(240, 160, 96); font-size: 13px"
+              >1</span
+            >)
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">404</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Produto não encontrado'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;produtos[idx] = {
+            ...produtos[idx], ...req.body };<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >(produtos[idx]);<br style="font-size: 13px" />});<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >// DELETE /produtos/:id — remove um produto</span
+            ><br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >delete</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/produtos/:id'</span
+            >, (req, res) =&gt; {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            antes = produtos.length;<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;produtos = produtos.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >filter</span
+            >(p =&gt; p.id !==
+            <span style="color: rgb(93, 245, 168); font-size: 13px">Number</span
+            >(req.params.id));<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (produtos.length === antes)
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">404</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Produto não encontrado'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">204</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >send</span
+            >();<br style="font-size: 13px" />});<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >listen</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">3000</span
+            >, () =&gt; console.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >log</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'API rodando em http://localhost:3000'</span
+            >));
+          </div>
+        </div>
+      </div>
+      <!-- ══ RESUMO ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          Resumo — O que você aprendeu nesta aula
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              background: rgb(240, 246, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 20px; flex-shrink: 0">🌐</span>
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 4px;
+                "
+              >
+                O que é uma API
+              </div>
+              <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+                Interface de comunicação entre cliente e servidor, respondendo
+                com dados em JSON.
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              background: rgb(240, 246, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 20px; flex-shrink: 0">📦</span>
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 4px;
+                "
+              >
+                O que é o Express
+              </div>
+              <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+                Framework que simplifica a criação de servidores e APIs com
+                Node.js.
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              background: rgb(240, 246, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 20px; flex-shrink: 0">🛣️</span>
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 4px;
+                "
+              >
+                Métodos HTTP e CRUD
+              </div>
+              <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+                GET, POST, PUT e DELETE — cada um com seu propósito definido.
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 12px;
+              align-items: flex-start;
+              background: rgb(240, 246, 255);
+              border-radius: 10px;
+              padding: 14px 18px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 20px; flex-shrink: 0">📨</span>
+            <div style="font-size: 14px">
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 4px;
+                "
+              >
+                params, query e body
+              </div>
+              <div style="font-size: 13px; color: #4a6a8a; line-height: 1.6">
+                As três formas de enviar dados para uma rota Express.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Referências -->
+      <div
+        style="
+          padding-top: 4px;
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+          font-size: 14px;
+        "
+      >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://expressjs.com/pt-br/"
+          >📖 Documentação oficial do Express</a
+        >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Methods"
+          >📖 MDN — Métodos HTTP</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

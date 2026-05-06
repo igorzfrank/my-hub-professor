@@ -1,0 +1,3698 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organizando Rotas com Router</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f0f4f9;
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0 auto;
+        color: #1a2a3a;
+      "
+    >
+      <!-- ══ CABEÇALHO ══ -->
+      <div
+        style="
+          background: linear-gradient(135deg, #0d3b66 0%, #1a5fa8 100%);
+          border-radius: 14px;
+          padding: 36px 40px;
+          margin-bottom: 24px;
+          box-shadow: 0 8px 32px rgba(13, 59, 102, 0.28);
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a8c8f0;
+            margin-bottom: 10px;
+          "
+        >
+          Técnico em Desenvolvimento de Sistemas — Desenvolvimento de Sistemas
+        </div>
+        <div
+          style="
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 12px;
+          "
+        >
+          Express.js — Organizando Rotas<br /><span style="color: #a8d0f5"
+            >com Router</span
+          >
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #c8dff5;
+            line-height: 1.65;
+            max-width: 800px;
+          "
+        >
+          Nesta aula você vai aprender a usar o
+          <strong style="color: #fff">Express Router</strong> para separar e
+          organizar as rotas da sua API em arquivos independentes, tornando o
+          projeto escalável, legível e fácil de manter.
+        </div>
+        <div
+          style="margin-top: 22px; display: flex; gap: 10px; flex-wrap: wrap"
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Node.js</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Express</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Router</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >MVC</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >ES Modules</span
+          >
+        </div>
+      </div>
+      <!-- ══ CAPACIDADES ══ -->
+      <div
+        style="
+          background: #ffffff;
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 24px;
+          box-shadow: 0 6px 24px rgba(26, 90, 168, 0.11);
+          border-left: 6px solid #1a5fa8;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 14px;
+          "
+        >
+          Capacidades Trabalhadas
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <div style="display: flex; align-items: flex-start; gap: 12px">
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                margin-top: 8px;
+                flex-shrink: 0;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Aplicar linguagem de programação por meio de APIs, bibliotecas e
+              frameworks na construção de rotinas de software.
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px">
+            <div
+              style="
+                min-width: 6px;
+                min-height: 6px;
+                width: 6px;
+                height: 6px;
+                background: #1a5fa8;
+                border-radius: 50%;
+                margin-top: 8px;
+                flex-shrink: 0;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Selecionar ferramentas de gerenciamento na aplicação da
+              metodologia de desenvolvimento de sistemas.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ O PROBLEMA ══ -->
+      <div
+        style="
+          background: #ffffff;
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: 0 6px 24px rgba(26, 90, 168, 0.11);
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          <div
+            style="
+              width: 6px;
+              height: 24px;
+              background: linear-gradient(180deg, #1a5fa8, #0d3b66);
+              border-radius: 3px;
+              flex-shrink: 0;
+            "
+          >
+            &nbsp;
+          </div>
+          <div style="font-size: 20px; font-weight: bold; color: #0d3b66">
+            O problema: tudo no mesmo arquivo
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          Nas aulas anteriores, criamos uma API funcional com um único arquivo
+          <code
+            style="background: #eaf2fb; padding: 2px 7px; border-radius: 4px"
+            >app.js</code
+          >. Isso funciona bem para projetos pequenos, mas conforme a aplicação
+          cresce, esse arquivo vira um caos: dezenas de rotas misturadas, lógica
+          de negócio embutida, e qualquer alteração pode quebrar tudo.
+        </div>
+        <div
+          style="
+            background: #fff4f4;
+            border: 1px solid #f0c8c8;
+            border-left: 5px solid #c0392b;
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #8a1a1a;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 10px;
+            "
+          >
+            Exemplo do problema — app.js monolítico
+          </div>
+          <div
+            style="
+              background: #1a0a0a;
+              border-radius: 8px;
+              padding: 16px 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 1.9;
+              color: #c8d8e8;
+            "
+          >
+            <span style="color: #5db8f5">import</span> express
+            <span style="color: #5db8f5">from</span>
+            <span style="color: #a8f0c8">'express'</span>;<br /><span
+              style="color: #f0c87a"
+              >const</span
+            >
+            app = express();<br />app.use(express.json());<br /><br /><span
+              style="color: #7a9ab0"
+              >// --- Rotas de Usuários ---</span
+            ><br />app.<span style="color: #5df5a8">get</span>(<span
+              style="color: #a8f0c8"
+              >'/usuarios'</span
+            >, (req, res) =&gt; {
+            <span style="color: #7a9ab0">/* ... */</span> });<br />app.<span
+              style="color: #5df5a8"
+              >get</span
+            >(<span style="color: #a8f0c8">'/usuarios/:id'</span>, (req, res)
+            =&gt; {
+            <span style="color: #7a9ab0">/* ... */</span> });<br />app.<span
+              style="color: #5df5a8"
+              >post</span
+            >(<span style="color: #a8f0c8">'/usuarios'</span>, (req, res) =&gt;
+            { <span style="color: #7a9ab0">/* ... */</span> });<br />app.<span
+              style="color: #5df5a8"
+              >put</span
+            >(<span style="color: #a8f0c8">'/usuarios/:id'</span>, (req, res)
+            =&gt; {
+            <span style="color: #7a9ab0">/* ... */</span> });<br />app.<span
+              style="color: #5df5a8"
+              >delete</span
+            >(<span style="color: #a8f0c8">'/usuarios/:id'</span>, (req, res)
+            =&gt; {
+            <span style="color: #7a9ab0">/* ... */</span> });<br /><br /><span
+              style="color: #7a9ab0"
+              >// --- Rotas de Produtos ---</span
+            ><br />app.<span style="color: #5df5a8">get</span>(<span
+              style="color: #a8f0c8"
+              >'/produtos'</span
+            >, (req, res) =&gt; {
+            <span style="color: #7a9ab0">/* ... */</span> });<br />app.<span
+              style="color: #5df5a8"
+              >get</span
+            >(<span style="color: #a8f0c8">'/produtos/:id'</span>, (req, res)
+            =&gt; {
+            <span style="color: #7a9ab0">/* ... */</span> });<br />app.<span
+              style="color: #5df5a8"
+              >post</span
+            >(<span style="color: #a8f0c8">'/produtos'</span>, (req, res) =&gt;
+            { <span style="color: #7a9ab0">/* ... */</span> });<br /><span
+              style="color: #f0a060; font-style: italic"
+              >// ... e mais 30 rotas de pedidos, categorias,
+              pagamentos...</span
+            >
+          </div>
+        </div>
+        <div
+          style="
+            background: #f0fff6;
+            border: 1px solid #80d8a8;
+            border-left: 5px solid #1a8a50;
+            border-radius: 10px;
+            padding: 16px 22px;
+          "
+        >
+          <div style="font-size: 14.5px; color: #0d3a1a; line-height: 1.8">
+            <strong>A solução é o Express Router.</strong> Ele permite criar um
+            "mini-app" de rotas para cada recurso da sua API e registrá-los no
+            app principal com um prefixo. O resultado é um projeto organizado,
+            onde cada arquivo cuida de exatamente uma responsabilidade.
+          </div>
+        </div>
+      </div>
+      <!-- ══ O QUE É O ROUTER ══ -->
+      <div
+        style="
+          background: #ffffff;
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: 0 6px 24px rgba(26, 90, 168, 0.11);
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+              color: #fff;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 5px 16px;
+              border-radius: 20px;
+              letter-spacing: 1px;
+              white-space: nowrap;
+            "
+          >
+            Conceito 1
+          </div>
+          <div style="font-size: 20px; font-weight: bold; color: #0d3b66">
+            O que é o
+            <code
+              style="
+                background: #eaf2fb;
+                font-size: 18px;
+                padding: 2px 10px;
+                border-radius: 6px;
+              "
+              >express.Router()</code
+            >?
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          O
+          <code
+            style="background: #eaf2fb; padding: 2px 7px; border-radius: 4px"
+            >express.Router()</code
+          >
+          é uma função que cria um objeto roteador isolado — pense nele como um
+          <strong>app Express em miniatura</strong>, dedicado a um conjunto de
+          rotas relacionadas. Você define as rotas nele, exporta e registra no
+          app principal com um prefixo.
+        </div>
+        <!-- Diagrama visual -->
+        <div
+          style="
+            background: #eaf2fb;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 22px;
+            border: 1px solid #b8d4ed;
+          "
+        >
+          <div
+            style="
+              font-size: 12px;
+              font-weight: bold;
+              color: #1a5fa8;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              margin-bottom: 18px;
+              text-align: center;
+            "
+          >
+            Como o Router funciona
+          </div>
+          <!-- App.js box -->
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 0;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+                border-radius: 10px;
+                padding: 14px 28px;
+                text-align: center;
+                width: 220px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #fff;
+                "
+              >
+                app.js
+              </div>
+              <div style="font-size: 11px; color: #a8c8f0; margin-top: 3px">
+                Ponto de entrada
+              </div>
+            </div>
+            <div style="width: 2px; height: 20px; background: #1a5fa8">
+              &nbsp;
+            </div>
+            <div style="display: flex; gap: 40px; align-items: flex-start">
+              <!-- seta esquerda -->
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                "
+              >
+                <div
+                  style="
+                    background: #a8c8e8;
+                    color: #0d3b66;
+                    font-size: 11px;
+                    font-weight: bold;
+                    padding: 3px 10px;
+                    border-radius: 4px;
+                    white-space: nowrap;
+                    margin-bottom: 2px;
+                  "
+                >
+                  /usuarios
+                </div>
+                <div style="width: 2px; height: 16px; background: #1a5fa8">
+                  &nbsp;
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border: 2px solid #1a5fa8;
+                    border-radius: 10px;
+                    padding: 12px 16px;
+                    width: 180px;
+                    text-align: center;
+                  "
+                >
+                  <div
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      font-size: 13px;
+                      font-weight: bold;
+                      color: #0d3b66;
+                    "
+                  >
+                    usuariosRouter
+                  </div>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: #5a7a9a;
+                      margin-top: 4px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                  >
+                    GET /
+                  </div>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: #5a7a9a;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                  >
+                    GET /:id
+                  </div>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: #5a7a9a;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                  >
+                    POST /
+                  </div>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: #5a7a9a;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                  >
+                    PUT /:id
+                  </div>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: #5a7a9a;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                  >
+                    DELETE /:id
+                  </div>
+                </div>
+              </div>
+              <!-- seta centro -->
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                "
+              >
+                <div
+                  style="
+                    background: #a8c8e8;
+                    color: #0d3b66;
+                    font-size: 11px;
+                    font-weight: bold;
+                    padding: 3px 10px;
+                    border-radius: 4px;
+                    white-space: nowrap;
+                    margin-bottom: 2px;
+                  "
+                >
+                  /produtos
+                </div>
+                <div style="width: 2px; height: 16px; background: #1a5fa8">
+                  &nbsp;
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border: 2px solid #1a5fa8;
+                    border-radius: 10px;
+                    padding: 12px 16px;
+                    width: 180px;
+                    text-align: center;
+                  "
+                >
+                  <div
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      font-size: 13px;
+                      font-weight: bold;
+                      color: #0d3b66;
+                    "
+                  >
+                    produtosRouter
+                  </div>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: #5a7a9a;
+                      margin-top: 4px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                  >
+                    GET /
+                  </div>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: #5a7a9a;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                  >
+                    GET /:id
+                  </div>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: #5a7a9a;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                  >
+                    POST /
+                  </div>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: #5a7a9a;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                  >
+                    PUT /:id
+                  </div>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: #5a7a9a;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                  >
+                    DELETE /:id
+                  </div>
+                </div>
+              </div>
+              <!-- seta direita -->
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                "
+              >
+                <div
+                  style="
+                    background: #a8c8e8;
+                    color: #0d3b66;
+                    font-size: 11px;
+                    font-weight: bold;
+                    padding: 3px 10px;
+                    border-radius: 4px;
+                    white-space: nowrap;
+                    margin-bottom: 2px;
+                  "
+                >
+                  /pedidos
+                </div>
+                <div style="width: 2px; height: 16px; background: #1a5fa8">
+                  &nbsp;
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border: 2px solid #1a5fa8;
+                    border-radius: 10px;
+                    padding: 12px 16px;
+                    width: 180px;
+                    text-align: center;
+                  "
+                >
+                  <div
+                    style="
+                      font-family: &quot;Courier New&quot;, monospace;
+                      font-size: 13px;
+                      font-weight: bold;
+                      color: #0d3b66;
+                    "
+                  >
+                    pedidosRouter
+                  </div>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: #5a7a9a;
+                      margin-top: 4px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                  >
+                    GET /
+                  </div>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: #5a7a9a;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                  >
+                    GET /:id
+                  </div>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: #5a7a9a;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                  >
+                    POST /
+                  </div>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: #5a7a9a;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                  >
+                    PUT /:id
+                  </div>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: #5a7a9a;
+                      font-family: &quot;Courier New&quot;, monospace;
+                    "
+                  >
+                    DELETE /:id
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              text-align: center;
+              margin-top: 16px;
+              font-size: 13px;
+              color: #1a5fa8;
+              font-style: italic;
+            "
+          >
+            Cada Router é um arquivo separado — o app.js só conhece o prefixo.
+          </div>
+        </div>
+        <!-- Sintaxe básica -->
+        <div style="margin-bottom: 16px">
+          <div
+            style="
+              font-size: 15px;
+              font-weight: bold;
+              color: #0d3b66;
+              margin-bottom: 10px;
+            "
+          >
+            Sintaxe básica
+          </div>
+          <div
+            style="background: #1a0d1a; border-radius: 10px; overflow: hidden"
+          >
+            <div
+              style="
+                background: #2a1a2a;
+                padding: 8px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #3a2a3a;
+              "
+            >
+              src/routes/usuarios.routes.js
+            </div>
+            <div
+              style="
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.9;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: #5db8f5">import</span> { Router }
+              <span style="color: #5db8f5">from</span>
+              <span style="color: #a8f0c8">'express'</span>;<br /><br /><span
+                style="color: #7a9ab0"
+                >// 1. Cria o roteador</span
+              ><br /><span style="color: #f0c87a">const</span> router =
+              <span style="color: #5df5a8">Router</span>();<br /><br /><span
+                style="color: #7a9ab0"
+                >// 2. Define as rotas (sem o prefixo /usuarios)</span
+              ><br />router.<span style="color: #5df5a8">get</span>(<span
+                style="color: #a8f0c8"
+                >'/'</span
+              >, (req, res) =&gt; {<br />&nbsp;&nbsp;res.<span
+                style="color: #5df5a8"
+                >json</span
+              >({ mensagem:
+              <span style="color: #a8f0c8">'lista de usuários'</span>
+              });<br />});<br /><br />router.<span style="color: #5df5a8"
+                >get</span
+              >(<span style="color: #a8f0c8">'/:id'</span>, (req, res) =&gt;
+              {<br />&nbsp;&nbsp;res.<span style="color: #5df5a8">json</span>({
+              id: req.params.<span style="color: #f0c87a">id</span>
+              });<br />});<br /><br /><span style="color: #7a9ab0"
+                >// 3. Exporta o roteador</span
+              ><br /><span style="color: #5db8f5">export default</span> router;
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            style="background: #1a0d1a; border-radius: 10px; overflow: hidden"
+          >
+            <div
+              style="
+                background: #2a1a2a;
+                padding: 8px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #3a2a3a;
+              "
+            >
+              app.js
+            </div>
+            <div
+              style="
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.9;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: #5db8f5">import</span> express
+              <span style="color: #5db8f5">from</span>
+              <span style="color: #a8f0c8">'express'</span>;<br /><span
+                style="color: #5db8f5"
+                >import</span
+              >
+              usuariosRouter <span style="color: #5db8f5">from</span>
+              <span style="color: #a8f0c8"
+                >'./src/routes/usuarios.routes.js'</span
+              >;<br /><br /><span style="color: #f0c87a">const</span> app =
+              express();<br />app.<span style="color: #5df5a8">use</span
+              >(express.<span style="color: #5df5a8">json</span
+              >());<br /><br /><span style="color: #7a9ab0"
+                >// 4. Registra o router com o prefixo</span
+              ><br />app.<span style="color: #5df5a8">use</span>(<span
+                style="color: #a8f0c8"
+                >'/usuarios'</span
+              >, usuariosRouter);<br /><br />app.<span style="color: #5df5a8"
+                >listen</span
+              >(<span style="color: #f0a060">3000</span>);
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            margin-top: 16px;
+            background: #eaf4ff;
+            border-radius: 8px;
+            padding: 14px 18px;
+            border-left: 4px solid #1a5fa8;
+          "
+        >
+          <div style="font-size: 14px; color: #0d3b66; line-height: 1.75">
+            <strong>Como funciona o prefixo?</strong> Quando você registra
+            <code
+              style="background: #ddeeff; padding: 1px 5px; border-radius: 3px"
+              >app.use('/usuarios', usuariosRouter)</code
+            >, o Express pega o prefixo
+            <code
+              style="background: #ddeeff; padding: 1px 5px; border-radius: 3px"
+              >/usuarios</code
+            >
+            e <em>concatena</em> com os caminhos definidos no router. Então
+            <code
+              style="background: #ddeeff; padding: 1px 5px; border-radius: 3px"
+              >/</code
+            >
+            vira
+            <code
+              style="background: #ddeeff; padding: 1px 5px; border-radius: 3px"
+              >GET /usuarios</code
+            >
+            e
+            <code
+              style="background: #ddeeff; padding: 1px 5px; border-radius: 3px"
+              >/:id</code
+            >
+            vira
+            <code
+              style="background: #ddeeff; padding: 1px 5px; border-radius: 3px"
+              >GET /usuarios/:id</code
+            >.
+          </div>
+        </div>
+      </div>
+      <!-- ══ ESTRUTURA DE PASTAS ══ -->
+      <div
+        style="
+          background: #ffffff;
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: 0 6px 24px rgba(26, 90, 168, 0.11);
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+              color: #fff;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 5px 16px;
+              border-radius: 20px;
+              letter-spacing: 1px;
+              white-space: nowrap;
+            "
+          >
+            Conceito 2
+          </div>
+          <div style="font-size: 20px; font-weight: bold; color: #0d3b66">
+            Estrutura de Pastas com Router + MVC
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 20px;
+          "
+        >
+          Ao usar o Router, a estrutura de pastas do projeto evolui
+          naturalmente. A convenção mais adotada separa o código em quatro
+          camadas principais, que mapeiam diretamente o padrão
+          <strong>MVC</strong>:
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+          "
+        >
+          <div
+            style="background: #1a0d1a; border-radius: 10px; overflow: hidden"
+          >
+            <div
+              style="
+                background: #2a1a2a;
+                padding: 8px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #3a2a3a;
+              "
+            >
+              Estrutura de pastas
+            </div>
+            <div
+              style="
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: #a8f0c8">projeto/</span><br />&nbsp;├──
+              <span style="color: #f0c87a">src/</span
+              ><br />&nbsp;│&nbsp;&nbsp;&nbsp;├──
+              <span style="color: #5db8f5">models/</span
+              ><br />&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──
+              <span style="color: #c8d8e8">produto.model.js</span
+              ><br />&nbsp;│&nbsp;&nbsp;&nbsp;├──
+              <span style="color: #5db8f5">controllers/</span
+              ><br />&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──
+              <span style="color: #c8d8e8">produto.controller.js</span
+              ><br />&nbsp;│&nbsp;&nbsp;&nbsp;└──
+              <span style="color: #5db8f5">routes/</span
+              ><br />&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──
+              <span style="color: #c8d8e8">produto.routes.js</span
+              ><br />&nbsp;├── <span style="color: #a8f0c8">app.js</span
+              ><br />&nbsp;└── <span style="color: #a8f0c8">package.json</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <div
+              style="
+                background: #f4f8ff;
+                border-radius: 10px;
+                padding: 14px 16px;
+                border: 1px solid #ddeeff;
+                border-left: 4px solid #0d3b66;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 5px;
+                "
+              >
+                models/
+              </div>
+              <div style="font-size: 13px; color: #2c3e50; line-height: 1.6">
+                Armazena os dados (array em memória ou conexão com banco). É o
+                <strong>M</strong> do MVC — responsável pelos dados.
+              </div>
+            </div>
+            <div
+              style="
+                background: #f4f8ff;
+                border-radius: 10px;
+                padding: 14px 16px;
+                border: 1px solid #ddeeff;
+                border-left: 4px solid #1a5fa8;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 5px;
+                "
+              >
+                controllers/
+              </div>
+              <div style="font-size: 13px; color: #2c3e50; line-height: 1.6">
+                Contém a lógica de cada operação. É o <strong>C</strong> do MVC
+                — recebe a requisição, processa e responde.
+              </div>
+            </div>
+            <div
+              style="
+                background: #f4f8ff;
+                border-radius: 10px;
+                padding: 14px 16px;
+                border: 1px solid #ddeeff;
+                border-left: 4px solid #5db8f5;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #0d3b66;
+                  margin-bottom: 5px;
+                "
+              >
+                routes/
+              </div>
+              <div style="font-size: 13px; color: #2c3e50; line-height: 1.6">
+                Define quais URLs existem e quais controllers atendem cada uma.
+                É o <strong>roteador</strong> — faz a ligação.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fluxo de uma requisição -->
+        <div
+          style="
+            background: #eaf2fb;
+            border-radius: 12px;
+            padding: 20px 24px;
+            border: 1px solid #b8d4ed;
+          "
+        >
+          <div
+            style="
+              font-size: 12px;
+              font-weight: bold;
+              color: #1a5fa8;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              margin-bottom: 16px;
+            "
+          >
+            Fluxo de uma requisição
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0;
+              flex-wrap: wrap;
+              justify-content: center;
+              row-gap: 8px;
+            "
+          >
+            <div
+              style="
+                background: #fff;
+                border: 2px solid #1a5fa8;
+                border-radius: 8px;
+                padding: 10px 16px;
+                text-align: center;
+                min-width: 100px;
+              "
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  color: #7a9ab0;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                "
+              >
+                Cliente
+              </div>
+              <div style="font-size: 13px; font-weight: bold; color: #0d3b66">
+                GET /produtos
+              </div>
+            </div>
+            <div style="font-size: 20px; color: #1a5fa8; padding: 0 8px">→</div>
+            <div
+              style="
+                background: #0d3b66;
+                border-radius: 8px;
+                padding: 10px 16px;
+                text-align: center;
+                min-width: 80px;
+              "
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  color: #7ab0e0;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                "
+              >
+                app.js
+              </div>
+              <div style="font-size: 13px; font-weight: bold; color: #fff">
+                use()
+              </div>
+            </div>
+            <div style="font-size: 20px; color: #1a5fa8; padding: 0 8px">→</div>
+            <div
+              style="
+                background: #1a5fa8;
+                border-radius: 8px;
+                padding: 10px 16px;
+                text-align: center;
+                min-width: 100px;
+              "
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  color: #a8d0f0;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                "
+              >
+                Route
+              </div>
+              <div style="font-size: 13px; font-weight: bold; color: #fff">
+                produto.routes
+              </div>
+            </div>
+            <div style="font-size: 20px; color: #1a5fa8; padding: 0 8px">→</div>
+            <div
+              style="
+                background: #5db8f5;
+                border-radius: 8px;
+                padding: 10px 16px;
+                text-align: center;
+                min-width: 120px;
+              "
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  color: #fff;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                "
+              >
+                Controller
+              </div>
+              <div style="font-size: 13px; font-weight: bold; color: #fff">
+                listarProdutos()
+              </div>
+            </div>
+            <div style="font-size: 20px; color: #1a5fa8; padding: 0 8px">→</div>
+            <div
+              style="
+                background: #1a7a45;
+                border-radius: 8px;
+                padding: 10px 16px;
+                text-align: center;
+                min-width: 100px;
+              "
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  color: #a8f0c8;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                "
+              >
+                Model
+              </div>
+              <div style="font-size: 13px; font-weight: bold; color: #fff">
+                produtos[]
+              </div>
+            </div>
+            <div style="font-size: 20px; color: #1a5fa8; padding: 0 8px">→</div>
+            <div
+              style="
+                background: #fff;
+                border: 2px solid #1a5fa8;
+                border-radius: 8px;
+                padding: 10px 16px;
+                text-align: center;
+                min-width: 100px;
+              "
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  color: #7a9ab0;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                "
+              >
+                Resposta
+              </div>
+              <div style="font-size: 13px; font-weight: bold; color: #1a7a45">
+                200 OK
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ COMO CRIAR UM ROUTER PASSO A PASSO ══ -->
+      <div
+        style="
+          background: #ffffff;
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: 0 6px 24px rgba(26, 90, 168, 0.11);
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+              color: #fff;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 5px 16px;
+              border-radius: 20px;
+              letter-spacing: 1px;
+              white-space: nowrap;
+            "
+          >
+            Conceito 3
+          </div>
+          <div style="font-size: 20px; font-weight: bold; color: #0d3b66">
+            Criando um Router — Passo a Passo
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 24px;
+          "
+        >
+          Vamos construir juntos um Router completo, passando por cada arquivo
+          da arquitetura.
+        </div>
+        <!-- Passo 1 -->
+        <div
+          style="
+            border: 1px solid #d4e6f5;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 16px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+              padding: 12px 22px;
+              display: flex;
+              align-items: center;
+              gap: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.18);
+                color: #fff;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 3px 14px;
+                border-radius: 6px;
+              "
+              >Passo 1</span
+            >
+            <span style="font-size: 14px; font-weight: bold; color: #fff"
+              >Configure o projeto</span
+            >
+          </div>
+          <div style="padding: 18px 22px; background: #fafcff">
+            <div
+              style="
+                font-size: 14.5px;
+                color: #2c3e50;
+                line-height: 1.8;
+                margin-bottom: 14px;
+              "
+            >
+              Crie a pasta do projeto, inicialize o npm e instale o Express. Não
+              esqueça de adicionar
+              <code
+                style="
+                  background: #eaf2fb;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >"type": "module"</code
+              >
+              no package.json para usar ES Modules.
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 8px;
+                padding: 14px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #a8f0c8;
+                line-height: 1.9;
+              "
+            >
+              mkdir minha-api &amp;&amp; cd minha-api<br />npm init -y<br />npm
+              install express
+            </div>
+            <div
+              style="
+                margin-top: 12px;
+                background: #0d1b2a;
+                border-radius: 8px;
+                overflow: hidden;
+              "
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 7px 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  color: #7a9ab0;
+                  border-bottom: 1px solid #2a3a4a;
+                "
+              >
+                package.json — adicionar a linha "type"
+              </div>
+              <div
+                style="
+                  padding: 14px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 1.9;
+                  color: #c8d8e8;
+                "
+              >
+                {<br />&nbsp;&nbsp;<span style="color: #a8f0c8">"name"</span>:
+                <span style="color: #a8f0c8">"minha-api"</span
+                >,<br />&nbsp;&nbsp;<span style="color: #a8f0c8">"version"</span
+                >:
+                <span style="color: #a8f0c8">"1.0.0"</span
+                >,<br />&nbsp;&nbsp;<span
+                  style="color: #f0d080; font-weight: bold"
+                  >"type"</span
+                >:
+                <span style="color: #f0d080; font-weight: bold">"module"</span
+                >,<br />&nbsp;&nbsp;<span style="color: #a8f0c8">"main"</span>:
+                <span style="color: #a8f0c8">"app.js"</span><br />}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Passo 2 -->
+        <div
+          style="
+            border: 1px solid #d4e6f5;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 16px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+              padding: 12px 22px;
+              display: flex;
+              align-items: center;
+              gap: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.18);
+                color: #fff;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 3px 14px;
+                border-radius: 6px;
+              "
+              >Passo 2</span
+            >
+            <span style="font-size: 14px; font-weight: bold; color: #fff"
+              >Crie o Model</span
+            >
+            <span
+              style="
+                margin-left: auto;
+                background: rgba(255, 255, 255, 0.13);
+                color: #c8e8ff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 2px 10px;
+                border-radius: 6px;
+              "
+              >src/models/produto.model.js</span
+            >
+          </div>
+          <div style="padding: 18px 22px; background: #fafcff">
+            <div
+              style="
+                font-size: 14.5px;
+                color: #2c3e50;
+                line-height: 1.8;
+                margin-bottom: 14px;
+              "
+            >
+              O Model é responsável pelos <strong>dados</strong>. Por enquanto
+              usamos um array em memória, mas futuramente aqui entraria a
+              conexão com o banco de dados. O Model só expõe os dados — nunca
+              toca no
+              <code
+                style="
+                  background: #eaf2fb;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >req</code
+              >
+              ou no
+              <code
+                style="
+                  background: #eaf2fb;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >res</code
+              >.
+            </div>
+            <div
+              style="background: #0d1b2a; border-radius: 8px; overflow: hidden"
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 7px 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  color: #7a9ab0;
+                  border-bottom: 1px solid #2a3a4a;
+                "
+              >
+                src/models/produto.model.js
+              </div>
+              <div
+                style="
+                  padding: 16px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 1.9;
+                  color: #c8d8e8;
+                "
+              >
+                <span style="color: #7a9ab0"
+                  >// Array que simula o banco de dados</span
+                ><br /><span style="color: #f0c87a">let</span> produtos = [<br />&nbsp;&nbsp;{
+                id: <span style="color: #f0a060">1</span>, nome:
+                <span style="color: #a8f0c8">'Teclado Mecânico'</span>, preco:
+                <span style="color: #f0a060">350</span> },<br />&nbsp;&nbsp;{
+                id: <span style="color: #f0a060">2</span>, nome:
+                <span style="color: #a8f0c8">'Mouse Gamer'</span>, preco:
+                <span style="color: #f0a060">180</span> },<br />&nbsp;&nbsp;{
+                id: <span style="color: #f0a060">3</span>, nome:
+                <span style="color: #a8f0c8">'Monitor 24"'</span>, preco:
+                <span style="color: #f0a060">1200</span>
+                },<br />];<br /><br /><span style="color: #7a9ab0"
+                  >// Exporta os dados para uso nos controllers</span
+                ><br /><span style="color: #5db8f5">export default</span>
+                produtos;
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Passo 3 -->
+        <div
+          style="
+            border: 1px solid #d4e6f5;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 16px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+              padding: 12px 22px;
+              display: flex;
+              align-items: center;
+              gap: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.18);
+                color: #fff;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 3px 14px;
+                border-radius: 6px;
+              "
+              >Passo 3</span
+            >
+            <span style="font-size: 14px; font-weight: bold; color: #fff"
+              >Crie o Controller</span
+            >
+            <span
+              style="
+                margin-left: auto;
+                background: rgba(255, 255, 255, 0.13);
+                color: #c8e8ff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 2px 10px;
+                border-radius: 6px;
+              "
+              >src/controllers/produto.controller.js</span
+            >
+          </div>
+          <div style="padding: 18px 22px; background: #fafcff">
+            <div
+              style="
+                font-size: 14.5px;
+                color: #2c3e50;
+                line-height: 1.8;
+                margin-bottom: 14px;
+              "
+            >
+              O Controller contém as
+              <strong>funções que respondem às requisições</strong>. Cada função
+              recebe
+              <code
+                style="
+                  background: #eaf2fb;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >(req, res)</code
+              >, consulta ou modifica o Model e devolve uma resposta JSON.
+            </div>
+            <div
+              style="background: #0d1b2a; border-radius: 8px; overflow: hidden"
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 7px 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  color: #7a9ab0;
+                  border-bottom: 1px solid #2a3a4a;
+                "
+              >
+                src/controllers/produto.controller.js
+              </div>
+              <div
+                style="
+                  padding: 16px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 1.9;
+                  color: #c8d8e8;
+                "
+              >
+                <span style="color: #5db8f5">import</span> produtos
+                <span style="color: #5db8f5">from</span>
+                <span style="color: #a8f0c8">'../models/produto.model.js'</span
+                >;<br /><br /><span style="color: #7a9ab0">// Listar todos</span
+                ><br /><span style="color: #5db8f5">export const</span>
+                <span style="color: #5df5a8">listar</span> = (req, res) =&gt;
+                {<br />&nbsp;&nbsp;res.<span style="color: #5df5a8">json</span
+                >(produtos);<br />};<br /><br /><span style="color: #7a9ab0"
+                  >// Buscar por ID</span
+                ><br /><span style="color: #5db8f5">export const</span>
+                <span style="color: #5df5a8">buscarPorId</span> = (req, res)
+                =&gt; {<br />&nbsp;&nbsp;<span style="color: #f0c87a"
+                  >const</span
+                >
+                produto = produtos.<span style="color: #5df5a8">find</span>(p
+                =&gt; p.id ===
+                <span style="color: #5df5a8">Number</span>(req.params.<span
+                  style="color: #f0c87a"
+                  >id</span
+                >));<br />&nbsp;&nbsp;<span style="color: #f0c87a">if</span>
+                (!produto) <span style="color: #f0c87a">return</span> res.<span
+                  style="color: #5df5a8"
+                  >status</span
+                >(<span style="color: #f0a060">404</span>).<span
+                  style="color: #5df5a8"
+                  >json</span
+                >({ erro:
+                <span style="color: #a8f0c8">'Produto não encontrado'</span>
+                });<br />&nbsp;&nbsp;res.<span style="color: #5df5a8">json</span
+                >(produto);<br />};<br /><br /><span style="color: #7a9ab0"
+                  >// Criar</span
+                ><br /><span style="color: #5db8f5">export const</span>
+                <span style="color: #5df5a8">criar</span> = (req, res) =&gt;
+                {<br />&nbsp;&nbsp;<span style="color: #f0c87a">const</span> {
+                nome, preco } = req.body;<br />&nbsp;&nbsp;<span
+                  style="color: #f0c87a"
+                  >if</span
+                >
+                (!nome || !preco)
+                <span style="color: #f0c87a">return</span> res.<span
+                  style="color: #5df5a8"
+                  >status</span
+                >(<span style="color: #f0a060">400</span>).<span
+                  style="color: #5df5a8"
+                  >json</span
+                >({ erro:
+                <span style="color: #a8f0c8"
+                  >'nome e preco são obrigatórios'</span
+                >
+                });<br />&nbsp;&nbsp;<span style="color: #f0c87a">const</span>
+                novoProduto = { id: Date.<span style="color: #5df5a8">now</span
+                >(), nome, preco };<br />&nbsp;&nbsp;produtos.<span
+                  style="color: #5df5a8"
+                  >push</span
+                >(novoProduto);<br />&nbsp;&nbsp;res.<span
+                  style="color: #5df5a8"
+                  >status</span
+                >(<span style="color: #f0a060">201</span>).<span
+                  style="color: #5df5a8"
+                  >json</span
+                >(novoProduto);<br />};<br /><br /><span style="color: #7a9ab0"
+                  >// Atualizar</span
+                ><br /><span style="color: #5db8f5">export const</span>
+                <span style="color: #5df5a8">atualizar</span> = (req, res) =&gt;
+                {<br />&nbsp;&nbsp;<span style="color: #f0c87a">const</span>
+                index = produtos.<span style="color: #5df5a8">findIndex</span>(p
+                =&gt; p.id ===
+                <span style="color: #5df5a8">Number</span>(req.params.<span
+                  style="color: #f0c87a"
+                  >id</span
+                >));<br />&nbsp;&nbsp;<span style="color: #f0c87a">if</span>
+                (index === -<span style="color: #f0a060">1</span>)
+                <span style="color: #f0c87a">return</span> res.<span
+                  style="color: #5df5a8"
+                  >status</span
+                >(<span style="color: #f0a060">404</span>).<span
+                  style="color: #5df5a8"
+                  >json</span
+                >({ erro:
+                <span style="color: #a8f0c8">'Produto não encontrado'</span>
+                });<br />&nbsp;&nbsp;produtos[index] = { ...produtos[index],
+                ...req.body };<br />&nbsp;&nbsp;res.<span style="color: #5df5a8"
+                  >json</span
+                >(produtos[index]);<br />};<br /><br /><span
+                  style="color: #7a9ab0"
+                  >// Remover</span
+                ><br /><span style="color: #5db8f5">export const</span>
+                <span style="color: #5df5a8">remover</span> = (req, res) =&gt;
+                {<br />&nbsp;&nbsp;<span style="color: #f0c87a">const</span>
+                index = produtos.<span style="color: #5df5a8">findIndex</span>(p
+                =&gt; p.id ===
+                <span style="color: #5df5a8">Number</span>(req.params.<span
+                  style="color: #f0c87a"
+                  >id</span
+                >));<br />&nbsp;&nbsp;<span style="color: #f0c87a">if</span>
+                (index === -<span style="color: #f0a060">1</span>)
+                <span style="color: #f0c87a">return</span> res.<span
+                  style="color: #5df5a8"
+                  >status</span
+                >(<span style="color: #f0a060">404</span>).<span
+                  style="color: #5df5a8"
+                  >json</span
+                >({ erro:
+                <span style="color: #a8f0c8">'Produto não encontrado'</span>
+                });<br />&nbsp;&nbsp;produtos.<span style="color: #5df5a8"
+                  >splice</span
+                >(index,
+                <span style="color: #f0a060">1</span
+                >);<br />&nbsp;&nbsp;res.<span style="color: #5df5a8"
+                  >status</span
+                >(<span style="color: #f0a060">204</span>).<span
+                  style="color: #5df5a8"
+                  >send</span
+                >();<br />};
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Passo 4 -->
+        <div
+          style="
+            border: 1px solid #d4e6f5;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 16px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+              padding: 12px 22px;
+              display: flex;
+              align-items: center;
+              gap: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.18);
+                color: #fff;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 3px 14px;
+                border-radius: 6px;
+              "
+              >Passo 4</span
+            >
+            <span style="font-size: 14px; font-weight: bold; color: #fff"
+              >Crie o Router</span
+            >
+            <span
+              style="
+                margin-left: auto;
+                background: rgba(255, 255, 255, 0.13);
+                color: #c8e8ff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 2px 10px;
+                border-radius: 6px;
+              "
+              >src/routes/produto.routes.js</span
+            >
+          </div>
+          <div style="padding: 18px 22px; background: #fafcff">
+            <div
+              style="
+                font-size: 14.5px;
+                color: #2c3e50;
+                line-height: 1.8;
+                margin-bottom: 14px;
+              "
+            >
+              O arquivo de rotas é o mais simples dos três: ele apenas
+              <strong>conecta URLs a funções do Controller</strong>. Perceba que
+              o Controller não fica aqui — apenas é importado e referenciado.
+            </div>
+            <div
+              style="background: #0d1b2a; border-radius: 8px; overflow: hidden"
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 7px 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  color: #7a9ab0;
+                  border-bottom: 1px solid #2a3a4a;
+                "
+              >
+                src/routes/produto.routes.js
+              </div>
+              <div
+                style="
+                  padding: 16px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 1.9;
+                  color: #c8d8e8;
+                "
+              >
+                <span style="color: #5db8f5">import</span> { Router }
+                <span style="color: #5db8f5">from</span>
+                <span style="color: #a8f0c8">'express'</span>;<br /><span
+                  style="color: #5db8f5"
+                  >import</span
+                >
+                * <span style="color: #5db8f5">as</span> ProdutoController
+                <span style="color: #5db8f5">from</span>
+                <span style="color: #a8f0c8"
+                  >'../controllers/produto.controller.js'</span
+                >;<br /><br /><span style="color: #f0c87a">const</span> router =
+                <span style="color: #5df5a8">Router</span>();<br /><br /><span
+                  style="color: #7a9ab0"
+                  >// GET /produtos</span
+                ><br />router.<span style="color: #5df5a8">get</span>(<span
+                  style="color: #a8f0c8"
+                  >'/'</span
+                >, ProdutoController.<span style="color: #5df5a8">listar</span
+                >);<br /><br /><span style="color: #7a9ab0"
+                  >// GET /produtos/:id</span
+                ><br />router.<span style="color: #5df5a8">get</span>(<span
+                  style="color: #a8f0c8"
+                  >'/:id'</span
+                >, ProdutoController.<span style="color: #5df5a8"
+                  >buscarPorId</span
+                >);<br /><br /><span style="color: #7a9ab0"
+                  >// POST /produtos</span
+                ><br />router.<span style="color: #5df5a8">post</span>(<span
+                  style="color: #a8f0c8"
+                  >'/'</span
+                >, ProdutoController.<span style="color: #5df5a8">criar</span
+                >);<br /><br /><span style="color: #7a9ab0"
+                  >// PUT /produtos/:id</span
+                ><br />router.<span style="color: #5df5a8">put</span>(<span
+                  style="color: #a8f0c8"
+                  >'/:id'</span
+                >, ProdutoController.<span style="color: #5df5a8"
+                  >atualizar</span
+                >);<br /><br /><span style="color: #7a9ab0"
+                  >// DELETE /produtos/:id</span
+                ><br />router.<span style="color: #5df5a8">delete</span>(<span
+                  style="color: #a8f0c8"
+                  >'/:id'</span
+                >, ProdutoController.<span style="color: #5df5a8">remover</span
+                >);<br /><br /><span style="color: #5db8f5"
+                  >export default</span
+                >
+                router;
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Passo 5 -->
+        <div
+          style="
+            border: 1px solid #d4e6f5;
+            border-radius: 12px;
+            overflow: hidden;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+              padding: 12px 22px;
+              display: flex;
+              align-items: center;
+              gap: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.18);
+                color: #fff;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 3px 14px;
+                border-radius: 6px;
+              "
+              >Passo 5</span
+            >
+            <span style="font-size: 14px; font-weight: bold; color: #fff"
+              >Registre no app.js</span
+            >
+            <span
+              style="
+                margin-left: auto;
+                background: rgba(255, 255, 255, 0.13);
+                color: #c8e8ff;
+                font-size: 11px;
+                font-weight: bold;
+                padding: 2px 10px;
+                border-radius: 6px;
+              "
+              >app.js</span
+            >
+          </div>
+          <div style="padding: 18px 22px; background: #fafcff">
+            <div
+              style="
+                font-size: 14.5px;
+                color: #2c3e50;
+                line-height: 1.8;
+                margin-bottom: 14px;
+              "
+            >
+              O
+              <code
+                style="
+                  background: #eaf2fb;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >app.js</code
+              >
+              fica extremamente enxuto: só configura o servidor e registra os
+              routers com seus respectivos prefixos. É fácil ver todas as rotas
+              da API de uma só vez.
+            </div>
+            <div
+              style="background: #0d1b2a; border-radius: 8px; overflow: hidden"
+            >
+              <div
+                style="
+                  background: #1a2a3a;
+                  padding: 7px 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  color: #7a9ab0;
+                  border-bottom: 1px solid #2a3a4a;
+                "
+              >
+                app.js
+              </div>
+              <div
+                style="
+                  padding: 16px 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                  line-height: 1.9;
+                  color: #c8d8e8;
+                "
+              >
+                <span style="color: #5db8f5">import</span> express
+                <span style="color: #5db8f5">from</span>
+                <span style="color: #a8f0c8">'express'</span>;<br /><span
+                  style="color: #5db8f5"
+                  >import</span
+                >
+                produtoRoutes <span style="color: #5db8f5">from</span>
+                <span style="color: #a8f0c8"
+                  >'./src/routes/produto.routes.js'</span
+                >;<br /><br /><span style="color: #f0c87a">const</span> app =
+                express();<br />app.<span style="color: #5df5a8">use</span
+                >(express.<span style="color: #5df5a8">json</span
+                >());<br /><br /><span style="color: #7a9ab0"
+                  >// Registro dos routers — aqui fica o mapa da API</span
+                ><br />app.<span style="color: #5df5a8">use</span>(<span
+                  style="color: #a8f0c8"
+                  >'/produtos'</span
+                >, produtoRoutes);<br /><br /><span style="color: #7a9ab0"
+                  >// Para adicionar mais recursos, basta importar e
+                  registrar:</span
+                ><br /><span style="color: #7a9ab0"
+                  >// app.use('/usuarios', usuarioRoutes);</span
+                ><br /><span style="color: #7a9ab0"
+                  >// app.use('/pedidos', pedidoRoutes);</span
+                ><br /><br />app.<span style="color: #5df5a8">listen</span
+                >(<span style="color: #f0a060">3000</span>, () =&gt; {<br />&nbsp;&nbsp;console.<span
+                  style="color: #5df5a8"
+                  >log</span
+                >(<span style="color: #a8f0c8"
+                  >'Servidor rodando em http://localhost:3000'</span
+                >);<br />});
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ TABELA DE ROTAS GERADAS ══ -->
+      <div
+        style="
+          background: #eaf2fb;
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 24px;
+          box-shadow: 0 4px 18px rgba(26, 90, 168, 0.08);
+          border: 1px solid #b8d4ed;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 16px;
+          "
+        >
+          Rotas geradas pelo código acima
+        </div>
+        <div style="overflow-x: auto">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 14px"
+          >
+            <thead>
+              <tr style="background: linear-gradient(135deg, #0d3b66, #1a5fa8)">
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: #e8f2ff;
+                    font-weight: bold;
+                    border: 1px solid #2a6ab8;
+                    text-align: left;
+                  "
+                >
+                  Método
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: #e8f2ff;
+                    font-weight: bold;
+                    border: 1px solid #2a6ab8;
+                    text-align: left;
+                  "
+                >
+                  URL completa
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: #e8f2ff;
+                    font-weight: bold;
+                    border: 1px solid #2a6ab8;
+                    text-align: left;
+                  "
+                >
+                  Controller chamado
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: #e8f2ff;
+                    font-weight: bold;
+                    border: 1px solid #2a6ab8;
+                    text-align: left;
+                  "
+                >
+                  O que faz
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background: #e8f1fc">
+                <td style="padding: 10px 16px; border: 1px solid #c8daf0">
+                  <span
+                    style="
+                      background: #1a7a45;
+                      color: #fff;
+                      font-size: 11px;
+                      font-weight: bold;
+                      padding: 2px 10px;
+                      border-radius: 4px;
+                    "
+                    >GET</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 13px;
+                  "
+                >
+                  /produtos
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #1a5fa8;
+                  "
+                >
+                  listar()
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    color: #2c3e50;
+                  "
+                >
+                  Retorna todos os produtos
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 16px; border: 1px solid #d4e6f5">
+                  <span
+                    style="
+                      background: #1a7a45;
+                      color: #fff;
+                      font-size: 11px;
+                      font-weight: bold;
+                      padding: 2px 10px;
+                      border-radius: 4px;
+                    "
+                    >GET</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 13px;
+                  "
+                >
+                  /produtos/:id
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #1a5fa8;
+                  "
+                >
+                  buscarPorId()
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    color: #2c3e50;
+                  "
+                >
+                  Retorna um produto pelo ID
+                </td>
+              </tr>
+              <tr style="background: #e8f1fc">
+                <td style="padding: 10px 16px; border: 1px solid #c8daf0">
+                  <span
+                    style="
+                      background: #1a5fa8;
+                      color: #fff;
+                      font-size: 11px;
+                      font-weight: bold;
+                      padding: 2px 10px;
+                      border-radius: 4px;
+                    "
+                    >POST</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 13px;
+                  "
+                >
+                  /produtos
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #1a5fa8;
+                  "
+                >
+                  criar()
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    color: #2c3e50;
+                  "
+                >
+                  Cria um novo produto
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 16px; border: 1px solid #d4e6f5">
+                  <span
+                    style="
+                      background: #d4a800;
+                      color: #fff;
+                      font-size: 11px;
+                      font-weight: bold;
+                      padding: 2px 10px;
+                      border-radius: 4px;
+                    "
+                    >PUT</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 13px;
+                  "
+                >
+                  /produtos/:id
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #1a5fa8;
+                  "
+                >
+                  atualizar()
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    color: #2c3e50;
+                  "
+                >
+                  Atualiza um produto pelo ID
+                </td>
+              </tr>
+              <tr style="background: #e8f1fc">
+                <td style="padding: 10px 16px; border: 1px solid #c8daf0">
+                  <span
+                    style="
+                      background: #c0392b;
+                      color: #fff;
+                      font-size: 11px;
+                      font-weight: bold;
+                      padding: 2px 10px;
+                      border-radius: 4px;
+                    "
+                    >DELETE</span
+                  >
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 13px;
+                  "
+                >
+                  /produtos/:id
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #1a5fa8;
+                  "
+                >
+                  remover()
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    color: #2c3e50;
+                  "
+                >
+                  Remove um produto pelo ID
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- ══ MÚLTIPLOS ROUTERS ══ -->
+      <div
+        style="
+          background: #ffffff;
+          border-radius: 14px;
+          padding: 32px 36px;
+          margin-bottom: 24px;
+          box-shadow: 0 6px 24px rgba(26, 90, 168, 0.11);
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+              color: #fff;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 5px 16px;
+              border-radius: 20px;
+              letter-spacing: 1px;
+              white-space: nowrap;
+            "
+          >
+            Conceito 4
+          </div>
+          <div style="font-size: 20px; font-weight: bold; color: #0d3b66">
+            Adicionando múltiplos recursos
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 18px;
+          "
+        >
+          A grande vantagem do Router se revela quando a API cresce. Para
+          adicionar um novo recurso — como
+          <code
+            style="background: #eaf2fb; padding: 1px 5px; border-radius: 3px"
+            >usuarios</code
+          >
+          — o processo é sempre o mesmo:
+          <strong>criar o trio Model + Controller + Router</strong> e registrar
+          no app.js com uma única linha.
+        </div>
+        <div
+          style="
+            background: #0d1b2a;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 16px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 7px 16px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            app.js — com dois recursos
+          </div>
+          <div
+            style="
+              padding: 16px 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 1.9;
+              color: #c8d8e8;
+            "
+          >
+            <span style="color: #5db8f5">import</span> express
+            <span style="color: #5db8f5">from</span>
+            <span style="color: #a8f0c8">'express'</span>;<br /><span
+              style="color: #5db8f5"
+              >import</span
+            >
+            produtoRoutes <span style="color: #5db8f5">from</span>
+            <span style="color: #a8f0c8">'./src/routes/produto.routes.js'</span
+            >;<br /><span style="color: #5db8f5">import</span> usuarioRoutes
+            <span style="color: #5db8f5">from</span>
+            <span style="color: #a8f0c8">'./src/routes/usuario.routes.js'</span
+            >;<br /><br /><span style="color: #f0c87a">const</span> app =
+            express();<br />app.<span style="color: #5df5a8">use</span
+            >(express.<span style="color: #5df5a8">json</span
+            >());<br /><br />app.<span style="color: #5df5a8">use</span>(<span
+              style="color: #a8f0c8"
+              >'/produtos'</span
+            >, produtoRoutes);<br />app.<span style="color: #5df5a8">use</span
+            >(<span style="color: #a8f0c8">'/usuarios'</span>,
+            usuarioRoutes);<br /><br />app.<span style="color: #5df5a8"
+              >listen</span
+            >(<span style="color: #f0a060">3000</span>);
+          </div>
+        </div>
+        <div
+          style="
+            background: #fff8e6;
+            border: 1px solid #f0d080;
+            border-left: 5px solid #d4a800;
+            border-radius: 10px;
+            padding: 14px 20px;
+          "
+        >
+          <div style="font-size: 14px; color: #5a3800; line-height: 1.8">
+            <strong>Convenção de nomenclatura:</strong> use o padrão
+            <code
+              style="background: #fef3c0; padding: 1px 5px; border-radius: 3px"
+              >recurso.routes.js</code
+            >,
+            <code
+              style="background: #fef3c0; padding: 1px 5px; border-radius: 3px"
+              >recurso.controller.js</code
+            >
+            e
+            <code
+              style="background: #fef3c0; padding: 1px 5px; border-radius: 3px"
+              >recurso.model.js</code
+            >
+            para tornar o projeto previsível e fácil de navegar por qualquer
+            desenvolvedor.
+          </div>
+        </div>
+      </div>
+      <!-- ══ RESUMO COMPARATIVO ══ -->
+      <div
+        style="
+          background: #ffffff;
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 24px;
+          box-shadow: 0 6px 24px rgba(26, 90, 168, 0.11);
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          <div
+            style="
+              width: 6px;
+              height: 24px;
+              background: linear-gradient(180deg, #1a5fa8, #0d3b66);
+              border-radius: 3px;
+              flex-shrink: 0;
+            "
+          >
+            &nbsp;
+          </div>
+          <div style="font-size: 20px; font-weight: bold; color: #0d3b66">
+            Resumo: Responsabilidade de cada arquivo
+          </div>
+        </div>
+        <div style="overflow-x: auto">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 14px"
+          >
+            <thead>
+              <tr style="background: linear-gradient(135deg, #0d3b66, #1a5fa8)">
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: #e8f2ff;
+                    font-weight: bold;
+                    border: 1px solid #2a6ab8;
+                    text-align: left;
+                  "
+                >
+                  Arquivo
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: #e8f2ff;
+                    font-weight: bold;
+                    border: 1px solid #2a6ab8;
+                    text-align: left;
+                  "
+                >
+                  Responsabilidade
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: #e8f2ff;
+                    font-weight: bold;
+                    border: 1px solid #2a6ab8;
+                    text-align: left;
+                  "
+                >
+                  Conhece
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: #e8f2ff;
+                    font-weight: bold;
+                    border: 1px solid #2a6ab8;
+                    text-align: left;
+                  "
+                >
+                  NÃO conhece
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background: #e8f1fc">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-weight: bold;
+                    color: #0d3b66;
+                    white-space: nowrap;
+                  "
+                >
+                  model.js
+                </td>
+                <td style="padding: 10px 16px; border: 1px solid #c8daf0">
+                  Guardar e expor os dados
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    color: #1a7a45;
+                  "
+                >
+                  Dados (array/banco)
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    color: #c0392b;
+                  "
+                >
+                  req, res, rotas
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-weight: bold;
+                    color: #0d3b66;
+                    white-space: nowrap;
+                  "
+                >
+                  controller.js
+                </td>
+                <td style="padding: 10px 16px; border: 1px solid #d4e6f5">
+                  Lógica de cada operação
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    color: #1a7a45;
+                  "
+                >
+                  req, res, model
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    color: #c0392b;
+                  "
+                >
+                  URLs, rotas
+                </td>
+              </tr>
+              <tr style="background: #e8f1fc">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-weight: bold;
+                    color: #0d3b66;
+                    white-space: nowrap;
+                  "
+                >
+                  routes.js
+                </td>
+                <td style="padding: 10px 16px; border: 1px solid #c8daf0">
+                  Mapear URLs a controllers
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    color: #1a7a45;
+                  "
+                >
+                  URLs, controller
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    color: #c0392b;
+                  "
+                >
+                  Dados, lógica
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-weight: bold;
+                    color: #0d3b66;
+                    white-space: nowrap;
+                  "
+                >
+                  app.js
+                </td>
+                <td style="padding: 10px 16px; border: 1px solid #d4e6f5">
+                  Configurar e iniciar o servidor
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    color: #1a7a45;
+                  "
+                >
+                  Routers, prefixos
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    color: #c0392b;
+                  "
+                >
+                  Controllers, dados
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- ══ EXEMPLO COMPLETO CRUD ══ -->
+      <div
+        style="
+          border-radius: 14px;
+          overflow: hidden;
+          box-shadow: 0 8px 28px rgba(13, 59, 102, 0.22);
+          margin-bottom: 24px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(135deg, #0d3b66, #1a5fa8);
+            padding: 26px 32px;
+          "
+        >
+          <div
+            style="
+              font-size: 10px;
+              font-weight: bold;
+              letter-spacing: 3px;
+              text-transform: uppercase;
+              color: #7ab0e0;
+              margin-bottom: 10px;
+            "
+          >
+            Exemplo Completo
+          </div>
+          <div
+            style="
+              font-size: 22px;
+              font-weight: bold;
+              color: #ffffff;
+              margin-bottom: 8px;
+            "
+          >
+            CRUD de Livros — MVC com Router e ES Modules
+          </div>
+          <div style="font-size: 14px; color: #a8c8e8; line-height: 1.7">
+            API completa para gerenciar um acervo de livros. Todos os quatro
+            arquivos são independentes e cada um cumpre exatamente sua função na
+            arquitetura MVC.
+          </div>
+        </div>
+        <div style="background: #f4f8ff; padding: 28px 32px">
+          <!-- Estrutura -->
+          <div
+            style="
+              margin-bottom: 24px;
+              background: #0d1b2a;
+              border-radius: 10px;
+              overflow: hidden;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 8px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              Estrutura do projeto
+            </div>
+            <div
+              style="
+                padding: 16px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: #a8f0c8">livraria-api/</span><br />&nbsp;├──
+              <span style="color: #f0c87a">src/</span
+              ><br />&nbsp;│&nbsp;&nbsp;&nbsp;├──
+              <span style="color: #5db8f5">models/</span
+              ><br />&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──
+              <span style="color: #c8d8e8">livro.model.js</span
+              ><br />&nbsp;│&nbsp;&nbsp;&nbsp;├──
+              <span style="color: #5db8f5">controllers/</span
+              ><br />&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──
+              <span style="color: #c8d8e8">livro.controller.js</span
+              ><br />&nbsp;│&nbsp;&nbsp;&nbsp;└──
+              <span style="color: #5db8f5">routes/</span
+              ><br />&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──
+              <span style="color: #c8d8e8">livro.routes.js</span><br />&nbsp;├──
+              <span style="color: #a8f0c8">app.js</span><br />&nbsp;└──
+              <span style="color: #a8f0c8">package.json</span> &nbsp;<span
+                style="color: #7a9ab0"
+                >← "type": "module"</span
+              >
+            </div>
+          </div>
+          <!-- Arquivo 1: model -->
+          <div style="margin-bottom: 18px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+              "
+            >
+              <span
+                style="
+                  background: #0d3b66;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >1 / 4</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >src/models/livro.model.js</span
+              >
+              <span
+                style="
+                  background: #eaf2fb;
+                  color: #1a5fa8;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 10px;
+                  border-radius: 5px;
+                  border: 1px solid #b8d4ed;
+                  margin-left: auto;
+                "
+                >Model — dados</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.9;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: #7a9ab0"
+                >// Fonte de dados — simula um banco em memória</span
+              ><br /><span style="color: #f0c87a">let</span> livros = [<br />&nbsp;&nbsp;{
+              id: <span style="color: #f0a060">1</span>, titulo:
+              <span style="color: #a8f0c8">'Clean Code'</span>, autor:
+              <span style="color: #a8f0c8">'Robert C. Martin'</span>, ano:
+              <span style="color: #f0a060">2008</span> },<br />&nbsp;&nbsp;{ id:
+              <span style="color: #f0a060">2</span>, titulo:
+              <span style="color: #a8f0c8">'The Pragmatic Programmer'</span>,
+              autor: <span style="color: #a8f0c8">'David Thomas'</span>, ano:
+              <span style="color: #f0a060">1999</span> },<br />&nbsp;&nbsp;{ id:
+              <span style="color: #f0a060">3</span>, titulo:
+              <span style="color: #a8f0c8">'You Don\'t Know JS'</span>, autor:
+              <span style="color: #a8f0c8">'Kyle Simpson'</span>, ano:
+              <span style="color: #f0a060">2015</span>
+              },<br />];<br /><br /><span style="color: #5db8f5"
+                >export default</span
+              >
+              livros;
+            </div>
+          </div>
+          <!-- Arquivo 2: controller -->
+          <div style="margin-bottom: 18px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+              "
+            >
+              <span
+                style="
+                  background: #0d3b66;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >2 / 4</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >src/controllers/livro.controller.js</span
+              >
+              <span
+                style="
+                  background: #eaf2fb;
+                  color: #1a5fa8;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 10px;
+                  border-radius: 5px;
+                  border: 1px solid #b8d4ed;
+                  margin-left: auto;
+                "
+                >Controller — lógica</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.9;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: #5db8f5">import</span> livros
+              <span style="color: #5db8f5">from</span>
+              <span style="color: #a8f0c8">'../models/livro.model.js'</span
+              >;<br /><br /><span style="color: #7a9ab0"
+                >// ── CREATE ───────────────────────────────────────────</span
+              ><br /><span style="color: #5db8f5">export const</span>
+              <span style="color: #5df5a8">criar</span> = (req, res) =&gt; {<br />&nbsp;&nbsp;<span
+                style="color: #f0c87a"
+                >const</span
+              >
+              { titulo, autor, ano } = req.body;<br /><br />&nbsp;&nbsp;<span
+                style="color: #f0c87a"
+                >if</span
+              >
+              (!titulo || !autor || !ano) {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #f0c87a"
+                >return</span
+              >
+              res.<span style="color: #5df5a8">status</span>(<span
+                style="color: #f0a060"
+                >400</span
+              >).<span style="color: #5df5a8">json</span>({ erro:
+              <span style="color: #a8f0c8"
+                >'titulo, autor e ano são obrigatórios'</span
+              >
+              });<br />&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;<span
+                style="color: #f0c87a"
+                >const</span
+              >
+              novoLivro = { id: Date.<span style="color: #5df5a8">now</span>(),
+              titulo, autor, ano:
+              <span style="color: #5df5a8">Number</span>(ano) };<br />&nbsp;&nbsp;livros.<span
+                style="color: #5df5a8"
+                >push</span
+              >(novoLivro);<br />&nbsp;&nbsp;res.<span style="color: #5df5a8"
+                >status</span
+              >(<span style="color: #f0a060">201</span>).<span
+                style="color: #5df5a8"
+                >json</span
+              >(novoLivro);<br />};<br /><br /><span style="color: #7a9ab0"
+                >// ── READ (todos) ─────────────────────────────────────</span
+              ><br /><span style="color: #5db8f5">export const</span>
+              <span style="color: #5df5a8">listar</span> = (req, res) =&gt; {<br />&nbsp;&nbsp;res.<span
+                style="color: #5df5a8"
+                >json</span
+              >(livros);<br />};<br /><br /><span style="color: #7a9ab0"
+                >// ── READ (um) ─────────────────────────────────────────</span
+              ><br /><span style="color: #5db8f5">export const</span>
+              <span style="color: #5df5a8">buscarPorId</span> = (req, res) =&gt;
+              {<br />&nbsp;&nbsp;<span style="color: #f0c87a">const</span> livro
+              = livros.<span style="color: #5df5a8">find</span>(l =&gt; l.id ===
+              <span style="color: #5df5a8">Number</span>(req.params.<span
+                style="color: #f0c87a"
+                >id</span
+              >));<br />&nbsp;&nbsp;<span style="color: #f0c87a">if</span>
+              (!livro) {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #f0c87a"
+                >return</span
+              >
+              res.<span style="color: #5df5a8">status</span>(<span
+                style="color: #f0a060"
+                >404</span
+              >).<span style="color: #5df5a8">json</span>({ erro:
+              <span style="color: #a8f0c8">'Livro não encontrado'</span>
+              });<br />&nbsp;&nbsp;}<br />&nbsp;&nbsp;res.<span
+                style="color: #5df5a8"
+                >json</span
+              >(livro);<br />};<br /><br /><span style="color: #7a9ab0"
+                >// ── UPDATE ───────────────────────────────────────────</span
+              ><br /><span style="color: #5db8f5">export const</span>
+              <span style="color: #5df5a8">atualizar</span> = (req, res) =&gt;
+              {<br />&nbsp;&nbsp;<span style="color: #f0c87a">const</span> index
+              = livros.<span style="color: #5df5a8">findIndex</span>(l =&gt;
+              l.id ===
+              <span style="color: #5df5a8">Number</span>(req.params.<span
+                style="color: #f0c87a"
+                >id</span
+              >));<br />&nbsp;&nbsp;<span style="color: #f0c87a">if</span>
+              (index === -<span style="color: #f0a060">1</span>) {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #f0c87a"
+                >return</span
+              >
+              res.<span style="color: #5df5a8">status</span>(<span
+                style="color: #f0a060"
+                >404</span
+              >).<span style="color: #5df5a8">json</span>({ erro:
+              <span style="color: #a8f0c8">'Livro não encontrado'</span>
+              });<br />&nbsp;&nbsp;}<br />&nbsp;&nbsp;livros[index] = {
+              ...livros[index], ...req.body };<br />&nbsp;&nbsp;res.<span
+                style="color: #5df5a8"
+                >json</span
+              >(livros[index]);<br />};<br /><br /><span style="color: #7a9ab0"
+                >// ── DELETE ───────────────────────────────────────────</span
+              ><br /><span style="color: #5db8f5">export const</span>
+              <span style="color: #5df5a8">remover</span> = (req, res) =&gt;
+              {<br />&nbsp;&nbsp;<span style="color: #f0c87a">const</span> index
+              = livros.<span style="color: #5df5a8">findIndex</span>(l =&gt;
+              l.id ===
+              <span style="color: #5df5a8">Number</span>(req.params.<span
+                style="color: #f0c87a"
+                >id</span
+              >));<br />&nbsp;&nbsp;<span style="color: #f0c87a">if</span>
+              (index === -<span style="color: #f0a060">1</span>) {<br />&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: #f0c87a"
+                >return</span
+              >
+              res.<span style="color: #5df5a8">status</span>(<span
+                style="color: #f0a060"
+                >404</span
+              >).<span style="color: #5df5a8">json</span>({ erro:
+              <span style="color: #a8f0c8">'Livro não encontrado'</span>
+              });<br />&nbsp;&nbsp;}<br />&nbsp;&nbsp;livros.<span
+                style="color: #5df5a8"
+                >splice</span
+              >(index,
+              <span style="color: #f0a060">1</span>);<br />&nbsp;&nbsp;res.<span
+                style="color: #5df5a8"
+                >status</span
+              >(<span style="color: #f0a060">204</span>).<span
+                style="color: #5df5a8"
+                >send</span
+              >();<br />};
+            </div>
+          </div>
+          <!-- Arquivo 3: routes -->
+          <div style="margin-bottom: 18px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+              "
+            >
+              <span
+                style="
+                  background: #0d3b66;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >3 / 4</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >src/routes/livro.routes.js</span
+              >
+              <span
+                style="
+                  background: #eaf2fb;
+                  color: #1a5fa8;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 10px;
+                  border-radius: 5px;
+                  border: 1px solid #b8d4ed;
+                  margin-left: auto;
+                "
+                >Router — mapeamento</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.9;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: #5db8f5">import</span> { Router }
+              <span style="color: #5db8f5">from</span>
+              <span style="color: #a8f0c8">'express'</span>;<br /><span
+                style="color: #5db8f5"
+                >import</span
+              >
+              * <span style="color: #5db8f5">as</span> LivroController
+              <span style="color: #5db8f5">from</span>
+              <span style="color: #a8f0c8"
+                >'../controllers/livro.controller.js'</span
+              >;<br /><br /><span style="color: #f0c87a">const</span> router =
+              <span style="color: #5df5a8">Router</span
+              >();<br /><br />router.<span style="color: #5df5a8">get</span>
+              (<span style="color: #a8f0c8">'/'</span>, LivroController.<span
+                style="color: #5df5a8"
+                >listar</span
+              >);<br />router.<span style="color: #5df5a8">get</span> (<span
+                style="color: #a8f0c8"
+                >'/:id'</span
+              >, LivroController.<span style="color: #5df5a8">buscarPorId</span
+              >);<br />router.<span style="color: #5df5a8">post</span> (<span
+                style="color: #a8f0c8"
+                >'/'</span
+              >, LivroController.<span style="color: #5df5a8">criar</span
+              >);<br />router.<span style="color: #5df5a8">put</span> (<span
+                style="color: #a8f0c8"
+                >'/:id'</span
+              >, LivroController.<span style="color: #5df5a8">atualizar</span
+              >);<br />router.<span style="color: #5df5a8">delete</span>(<span
+                style="color: #a8f0c8"
+                >'/:id'</span
+              >, LivroController.<span style="color: #5df5a8">remover</span
+              >);<br /><br /><span style="color: #5db8f5">export default</span>
+              router;
+            </div>
+          </div>
+          <!-- Arquivo 4: app.js -->
+          <div style="margin-bottom: 24px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+              "
+            >
+              <span
+                style="
+                  background: #0d3b66;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >4 / 4</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >app.js</span
+              >
+              <span
+                style="
+                  background: #eaf2fb;
+                  color: #1a5fa8;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 10px;
+                  border-radius: 5px;
+                  border: 1px solid #b8d4ed;
+                  margin-left: auto;
+                "
+                >Servidor — ponto de entrada</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 1.9;
+                color: #c8d8e8;
+              "
+            >
+              <span style="color: #5db8f5">import</span> express
+              <span style="color: #5db8f5">from</span>
+              <span style="color: #a8f0c8">'express'</span>;<br /><span
+                style="color: #5db8f5"
+                >import</span
+              >
+              livroRoutes <span style="color: #5db8f5">from</span>
+              <span style="color: #a8f0c8">'./src/routes/livro.routes.js'</span
+              >;<br /><br /><span style="color: #f0c87a">const</span> app =
+              express();<br />app.<span style="color: #5df5a8">use</span
+              >(express.<span style="color: #5df5a8">json</span
+              >());<br /><br />app.<span style="color: #5df5a8">use</span>(<span
+                style="color: #a8f0c8"
+                >'/livros'</span
+              >, livroRoutes);<br /><br />app.<span style="color: #5df5a8"
+                >listen</span
+              >(<span style="color: #f0a060">3000</span>, () =&gt; {<br />&nbsp;&nbsp;console.<span
+                style="color: #5df5a8"
+                >log</span
+              >(<span style="color: #a8f0c8"
+                >'Livraria API rodando em http://localhost:3000'</span
+              >);<br />});
+            </div>
+          </div>
+          <!-- Testando -->
+          <div
+            style="
+              background: #fff;
+              border-radius: 12px;
+              padding: 20px 24px;
+              border: 1px solid #d4e6f5;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 14px;
+              "
+            >
+              Como testar no Insomnia ou Thunder Client
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  padding: 9px 14px;
+                  background: #f8fbff;
+                  border-radius: 7px;
+                  border: 1px solid #d4e6f5;
+                "
+              >
+                <span
+                  style="
+                    background: #1a7a45;
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    flex-shrink: 0;
+                  "
+                  >GET</span
+                >
+                <code style="font-size: 13px; color: #0d3b66"
+                  >http://localhost:3000/livros</code
+                >
+                <span style="color: #7a9ab0; font-size: 12px; margin-left: auto"
+                  >Retorna todos os livros</span
+                >
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  padding: 9px 14px;
+                  background: #f8fbff;
+                  border-radius: 7px;
+                  border: 1px solid #d4e6f5;
+                "
+              >
+                <span
+                  style="
+                    background: #1a7a45;
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    flex-shrink: 0;
+                  "
+                  >GET</span
+                >
+                <code style="font-size: 13px; color: #0d3b66"
+                  >http://localhost:3000/livros/1</code
+                >
+                <span style="color: #7a9ab0; font-size: 12px; margin-left: auto"
+                  >Retorna o livro de ID 1</span
+                >
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 10px;
+                  padding: 9px 14px;
+                  background: #f8fbff;
+                  border-radius: 7px;
+                  border: 1px solid #d4e6f5;
+                "
+              >
+                <span
+                  style="
+                    background: #1a5fa8;
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    flex-shrink: 0;
+                    margin-top: 2px;
+                  "
+                  >POST</span
+                >
+                <div>
+                  <code
+                    style="
+                      font-size: 13px;
+                      color: #0d3b66;
+                      display: block;
+                      margin-bottom: 6px;
+                    "
+                    >http://localhost:3000/livros</code
+                  >
+                  <div
+                    style="
+                      background: #0d1b2a;
+                      border-radius: 5px;
+                      padding: 8px 12px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      font-size: 12px;
+                      color: #a8f0c8;
+                      line-height: 1.7;
+                    "
+                  >
+                    { "titulo": "Eloquent JavaScript", "autor": "Marijn
+                    Haverbeke", "ano": 2018 }
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 10px;
+                  padding: 9px 14px;
+                  background: #f8fbff;
+                  border-radius: 7px;
+                  border: 1px solid #d4e6f5;
+                "
+              >
+                <span
+                  style="
+                    background: #d4a800;
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    flex-shrink: 0;
+                    margin-top: 2px;
+                  "
+                  >PUT</span
+                >
+                <div>
+                  <code
+                    style="
+                      font-size: 13px;
+                      color: #0d3b66;
+                      display: block;
+                      margin-bottom: 6px;
+                    "
+                    >http://localhost:3000/livros/1</code
+                  >
+                  <div
+                    style="
+                      background: #0d1b2a;
+                      border-radius: 5px;
+                      padding: 8px 12px;
+                      font-family: &quot;Courier New&quot;, monospace;
+                      font-size: 12px;
+                      color: #a8f0c8;
+                      line-height: 1.7;
+                    "
+                  >
+                    { "ano": 2009 }
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  padding: 9px 14px;
+                  background: #f8fbff;
+                  border-radius: 7px;
+                  border: 1px solid #d4e6f5;
+                "
+              >
+                <span
+                  style="
+                    background: #c0392b;
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    flex-shrink: 0;
+                  "
+                  >DELETE</span
+                >
+                <code style="font-size: 13px; color: #0d3b66"
+                  >http://localhost:3000/livros/2</code
+                >
+                <span style="color: #7a9ab0; font-size: 12px; margin-left: auto"
+                  >Remove o livro de ID 2 — retorna 204</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ PONTOS DE ATENÇÃO ══ -->
+      <div
+        style="
+          background: #ffffff;
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 24px;
+          box-shadow: 0 6px 24px rgba(26, 90, 168, 0.11);
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          <div
+            style="
+              width: 6px;
+              height: 24px;
+              background: linear-gradient(180deg, #d4a800, #a07800);
+              border-radius: 3px;
+              flex-shrink: 0;
+            "
+          >
+            &nbsp;
+          </div>
+          <div style="font-size: 18px; font-weight: bold; color: #0d3b66">
+            Pontos de Atenção
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <div
+            style="
+              background: #fffbf0;
+              border: 1px solid #f0d080;
+              border-left: 5px solid #d4a800;
+              border-radius: 10px;
+              padding: 14px 18px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #8a5800;
+                margin-bottom: 5px;
+              "
+            >
+              Prefixo no app.js, não no Router
+            </div>
+            <div style="font-size: 13.5px; color: #5a3a00; line-height: 1.7">
+              As rotas no arquivo
+              <code
+                style="
+                  background: #fef3c0;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >routes.js</code
+              >
+              usam
+              <code
+                style="
+                  background: #fef3c0;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >'/'</code
+              >
+              e
+              <code
+                style="
+                  background: #fef3c0;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >'/:id'</code
+              >
+              — sem o nome do recurso. O prefixo
+              <code
+                style="
+                  background: #fef3c0;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >/livros</code
+              >
+              é definido apenas no
+              <code
+                style="
+                  background: #fef3c0;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >app.use()</code
+              >.
+            </div>
+          </div>
+          <div
+            style="
+              background: #fffbf0;
+              border: 1px solid #f0d080;
+              border-left: 5px solid #d4a800;
+              border-radius: 10px;
+              padding: 14px 18px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #8a5800;
+                margin-bottom: 5px;
+              "
+            >
+              Extensão .js obrigatória nos imports
+            </div>
+            <div style="font-size: 13.5px; color: #5a3a00; line-height: 1.7">
+              Com ES Modules, o Node.js exige a extensão
+              <code
+                style="
+                  background: #fef3c0;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >.js</code
+              >
+              nos imports locais. Escreva
+              <code
+                style="
+                  background: #fef3c0;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >'../models/livro.model.js'</code
+              >, não apenas
+              <code
+                style="
+                  background: #fef3c0;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >'../models/livro.model'</code
+              >.
+            </div>
+          </div>
+          <div
+            style="
+              background: #fffbf0;
+              border: 1px solid #f0d080;
+              border-left: 5px solid #d4a800;
+              border-radius: 10px;
+              padding: 14px 18px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #8a5800;
+                margin-bottom: 5px;
+              "
+            >
+              app.use(express.json()) antes dos routers
+            </div>
+            <div style="font-size: 13.5px; color: #5a3a00; line-height: 1.7">
+              O middleware
+              <code
+                style="
+                  background: #fef3c0;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >express.json()</code
+              >
+              deve ser registrado antes de qualquer router — caso contrário, o
+              <code
+                style="
+                  background: #fef3c0;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >req.body</code
+              >
+              chegará indefinido nas requisições POST e PUT.
+            </div>
+          </div>
+          <div
+            style="
+              background: #fffbf0;
+              border: 1px solid #f0d080;
+              border-left: 5px solid #d4a800;
+              border-radius: 10px;
+              padding: 14px 18px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #8a5800;
+                margin-bottom: 5px;
+              "
+            >
+              IDs são strings no req.params
+            </div>
+            <div style="font-size: 13.5px; color: #5a3a00; line-height: 1.7">
+              Tudo que vem via URL é uma string. Se o seu array usa números como
+              ID, sempre converta:
+              <code
+                style="
+                  background: #fef3c0;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >Number(req.params.id)</code
+              >. Sem isso, o
+              <code
+                style="
+                  background: #fef3c0;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >find()</code
+              >
+              com
+              <code
+                style="
+                  background: #fef3c0;
+                  padding: 1px 5px;
+                  border-radius: 3px;
+                "
+                >===</code
+              >
+              nunca vai casar.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ REFERÊNCIAS ══ -->
+      <div style="padding-top: 4px; display: flex; gap: 20px; flex-wrap: wrap">
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://expressjs.com/pt-br/guide/routing.html"
+          >Documentacao Express — Routing</a
+        >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://expressjs.com/en/4x/api.html#router"
+          >Documentacao Express — Router API</a
+        >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status"
+          >MDN — HTTP Status Codes</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

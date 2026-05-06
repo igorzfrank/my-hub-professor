@@ -1,0 +1,3784 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sequelize ORM</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgb(240, 244, 249);
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102) 0%,
+            rgb(26, 95, 168) 100%
+          );
+          border-radius: 14px;
+          padding: 36px 40px;
+          margin-bottom: 24px;
+          box-shadow: rgba(13, 59, 102, 0.28) 0px 8px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a8c8f0;
+            margin-bottom: 10px;
+          "
+        >
+          Técnico em Desenvolvimento de Sistemas — Desenvolvimento de Sistemas
+        </div>
+        <div
+          style="
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 12px;
+          "
+        >
+          Sequelize ORM<br style="font-size: 28px" /><span
+            style="color: rgb(168, 208, 245); font-size: 28px"
+            >Banco de dados sem escrever SQL</span
+          >
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #c8dff5;
+            line-height: 1.65;
+            max-width: 820px;
+          "
+        >
+          Nesta aula você vai aprender a usar o
+          <strong style="color: rgb(255, 255, 255); font-size: 15px"
+            >Sequelize</strong
+          >
+          — um ORM (Object-Relational Mapper) que permite criar tabelas,
+          inserir, buscar, atualizar e deletar dados do banco usando apenas
+          JavaScript, sem escrever SQL manualmente.
+        </div>
+        <div
+          style="
+            margin-top: 22px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Node.js</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Express</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Sequelize</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >PostgreSQL</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >ORM</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >MVC</span
+          >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              color: #e0f0ff;
+              font-size: 12px;
+              font-weight: bold;
+              padding: 5px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >dotenv</span
+          >
+        </div>
+      </div>
+      <!-- ══ CAPACIDADES ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          border-left: 6px solid rgb(26, 95, 168);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a5fa8;
+            margin-bottom: 14px;
+          "
+        >
+          Capacidades Trabalhadas
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                height: 6px;
+                width: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 8px;
+                flex-shrink: 0;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Aplicar linguagem de programação por meio de APIs, bibliotecas e
+              frameworks na construção de rotinas de software.
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                min-width: 6px;
+                height: 6px;
+                width: 6px;
+                background: rgb(26, 95, 168);
+                border-radius: 50%;
+                margin-top: 8px;
+                flex-shrink: 0;
+                font-size: 14px;
+              "
+            >
+              &nbsp;
+            </div>
+            <div style="font-size: 15px; color: #2c3e50; line-height: 1.5">
+              Selecionar linguagem de programação de acordo com os requisitos.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════ -->
+      <!-- MÓDULO 1 — O QUE É ORM        -->
+      <!-- ══════════════════════════════ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102),
+            rgb(26, 95, 168)
+          );
+          border-radius: 14px 14px 0px 0px;
+          padding: 20px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7ab0e0;
+            margin-bottom: 6px;
+          "
+        >
+          Módulo 1
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #fff">
+          O que é um ORM e por que usar o Sequelize?
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          1.1 — O problema de escrever SQL manual
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          Nas aulas anteriores, toda comunicação com o banco de dados era feita
+          escrevendo strings SQL dentro do código JavaScript. Isso funciona, mas
+          tem desvantagens importantes à medida que o projeto cresce:
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(255, 244, 244);
+              border-width: 4px 1px 1px;
+              border-style: solid;
+              border-color: rgb(192, 57, 43) rgb(240, 200, 200)
+                rgb(240, 200, 200);
+              border-image: initial;
+              border-radius: 10px;
+              padding: 18px 20px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #8a1a1a;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+              "
+            >
+              SQL manual — desvantagens
+            </div>
+            <ul
+              style="
+                font-size: 13px;
+                color: rgb(90, 26, 26);
+                line-height: 2;
+                padding-left: 18px;
+                margin: 0px;
+              "
+            >
+              <li style="font-size: 13px">Queries longas e difíceis de ler</li>
+              <li style="font-size: 13px">
+                Erros de digitação no SQL só aparecem em execução
+              </li>
+              <li style="font-size: 13px">
+                Criar tabelas exige rodar SQL no pgAdmin manualmente
+              </li>
+              <li style="font-size: 13px">
+                Trocar de banco (ex: MySQL) exige reescrever as queries
+              </li>
+            </ul>
+          </div>
+          <div
+            style="
+              background: rgb(240, 255, 246);
+              border-width: 4px 1px 1px;
+              border-style: solid;
+              border-color: rgb(26, 138, 80) rgb(128, 216, 168)
+                rgb(128, 216, 168);
+              border-image: initial;
+              border-radius: 10px;
+              padding: 18px 20px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d5a30;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+              "
+            >
+              Com ORM — vantagens
+            </div>
+            <ul
+              style="
+                font-size: 13px;
+                color: rgb(13, 58, 32);
+                line-height: 2;
+                padding-left: 18px;
+                margin: 0px;
+              "
+            >
+              <li style="font-size: 13px">
+                Tabelas criadas automaticamente a partir de modelos JS
+              </li>
+              <li style="font-size: 13px">
+                Operações em JavaScript puro — sem strings SQL
+              </li>
+              <li style="font-size: 13px">
+                Validações e tipos declarados no próprio modelo
+              </li>
+              <li style="font-size: 13px">
+                Troca de banco com mínima alteração no código
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          1.2 — O que é um ORM?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          <strong style="font-size: 15px">ORM</strong> significa
+          <em style="font-size: 15px">Object-Relational Mapper</em> — mapeador
+          objeto-relacional. Ele cria uma camada de abstração entre o código e o
+          banco de dados: você define seus dados como classes JavaScript
+          (chamadas de <strong style="font-size: 15px">modelos</strong>), e o
+          ORM converte automaticamente as operações nessas classes em comandos
+          SQL.
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          <img
+            style="
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 15px;
+            "
+            src="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Frtim9ih6u0kuxuuvpvp6.png"
+            alt="ORM - As melhores bibliotecas para JavaScript - DEV Community"
+          />
+        </div>
+        <div
+          style="
+            background: rgb(234, 242, 251);
+            border-radius: 10px;
+            padding: 16px 22px;
+            border-left: 4px solid rgb(26, 95, 168);
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="font-size: 14px; color: rgb(26, 42, 58); line-height: 1.85"
+          >
+            <strong style="font-size: 14px">Analogia:</strong> o ORM é como um
+            tradutor simultâneo. Você fala JavaScript — ele traduz para SQL e
+            devolve os resultados já convertidos em objetos JS. Você nunca
+            precisa aprender a "língua" do banco — o tradutor faz isso por você.
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          1.3 — SQL manual vs. Sequelize
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #3a0a0a;
+                padding: 8px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #f08080;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              SQL manual (pool.query)
+            </div>
+            <div
+              style="
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: rgb(200, 216, 232);
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              result =
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >await</span
+              >
+              pool.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >query</span
+              >(<br style="font-size: 12px" />&nbsp;&nbsp;<span
+                style="color: rgb(168, 240, 200); font-size: 12px"
+                >'INSERT INTO produtos (nome, preco)'</span
+              ><br style="font-size: 12px" />&nbsp;&nbsp;<span
+                style="color: rgb(168, 240, 200); font-size: 12px"
+                >' VALUES ($1, $2) RETURNING *'</span
+              >,<br style="font-size: 12px" />&nbsp;&nbsp;[nome, preco]<br
+                style="font-size: 12px"
+              />);<br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >return</span
+              >
+              result.rows[<span
+                style="color: rgb(240, 160, 96); font-size: 12px"
+                >0</span
+              >];
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #0a3a1a;
+                padding: 8px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #80f0a8;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              Com Sequelize
+            </div>
+            <div
+              style="
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: rgb(200, 216, 232);
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              produto =
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >await</span
+              >
+              Produto.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >create</span
+              >({<br style="font-size: 12px" />&nbsp;&nbsp;nome,<br
+                style="font-size: 12px"
+              />&nbsp;&nbsp;preco<br style="font-size: 12px" />});<br
+                style="font-size: 12px"
+              /><span style="color: rgb(240, 200, 122); font-size: 12px"
+                >return</span
+              >
+              produto;<br style="font-size: 12px" />&nbsp;
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════ -->
+      <!-- MÓDULO 2 — CONFIGURAÇÃO       -->
+      <!-- ══════════════════════════════ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102),
+            rgb(26, 95, 168)
+          );
+          border-radius: 14px 14px 0px 0px;
+          padding: 20px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7ab0e0;
+            margin-bottom: 6px;
+          "
+        >
+          Módulo 2
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #fff">
+          Instalação e configuração do Sequelize
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          2.1 — Instalação e estrutura de pastas
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          O Sequelize precisa de dois pacotes: o próprio ORM (<code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >sequelize</code
+          >) e o driver do banco de dados (<code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >pg</code
+          >
+          e
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >pg-hstore</code
+          >
+          para PostgreSQL). A estrutura de pastas permanece igual ao que já
+          conhecemos — apenas o conteúdo dos modelos muda.
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 8px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              Terminal — instalação
+            </div>
+            <div
+              style="
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #a8f0c8;
+                line-height: 2;
+              "
+            >
+              npm init -y<br style="font-size: 13px" />npm install express
+              sequelize pg pg-hstore dotenv<br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                ># adicionar "type":"module" no package.json</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 8px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              Estrutura de pastas
+            </div>
+            <div
+              style="
+                padding: 16px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >projeto/</span
+              ><br style="font-size: 13px" />&nbsp;├──
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >src/</span
+              ><br style="font-size: 13px" />&nbsp;│&nbsp;&nbsp;&nbsp;├──
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >database/</span
+              >
+              →
+              <span style="color: rgb(200, 216, 232); font-size: 13px"
+                >db.js</span
+              >
+              <span style="color: rgb(122, 154, 176); font-size: 13px"
+                >← instância Sequelize</span
+              ><br style="font-size: 13px" />&nbsp;│&nbsp;&nbsp;&nbsp;├──
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >models/</span
+              >
+              →
+              <span style="color: rgb(200, 216, 232); font-size: 13px"
+                >produto.model.js</span
+              ><br style="font-size: 13px" />&nbsp;│&nbsp;&nbsp;&nbsp;├──
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >controllers/</span
+              ><br style="font-size: 13px" />&nbsp;│&nbsp;&nbsp;&nbsp;└──
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >routes/</span
+              ><br style="font-size: 13px" />&nbsp;├──
+              <span style="color: rgb(240, 160, 96); font-size: 13px">.env</span
+              ><br style="font-size: 13px" />&nbsp;└──
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >app.js</span
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          2.2 — O arquivo .env
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            .env — na raiz do projeto
+          </div>
+          <div
+            style="
+              padding: 18px 22px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2.2;
+            "
+          >
+            PORT=3000<br style="font-size: 13px" />DB_HOST=localhost<br
+              style="font-size: 13px"
+            />DB_PORT=5432<br style="font-size: 13px" />DB_NAME=minha_api<br
+              style="font-size: 13px"
+            />DB_USER=postgres<br style="font-size: 13px" />DB_PASSWORD=senha123
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          2.3 — Configurando a conexão: db.js
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 16px;
+          "
+        >
+          Em vez de criar um
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >Pool</code
+          >
+          do pg, agora criamos uma instância do
+          <strong style="font-size: 15px">Sequelize</strong> passando as mesmas
+          informações de conexão. Essa instância é exportada e usada em todos os
+          modelos.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            src/database/db.js
+          </div>
+          <div
+            style="
+              padding: 20px 22px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2;
+            "
+          >
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            { Sequelize }
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'sequelize'</span
+            >;<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            sequelize =
+            <span style="color: rgb(240, 200, 122); font-size: 13px">new</span>
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >Sequelize</span
+            >(<br style="font-size: 13px" />&nbsp;&nbsp;process.env.<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >DB_NAME</span
+            >,<br style="font-size: 13px" />&nbsp;&nbsp;process.env.<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >DB_USER</span
+            >,<br style="font-size: 13px" />&nbsp;&nbsp;process.env.<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >DB_PASSWORD</span
+            >,<br style="font-size: 13px" />&nbsp;&nbsp;{<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;host: process.env.<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >DB_HOST</span
+            >,<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;port:
+            process.env.<span style="color: rgb(240, 200, 122); font-size: 13px"
+              >DB_PORT</span
+            >,<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;dialect:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'postgres'</span
+            >,
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// diz ao Sequelize qual banco estamos usando</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;logging:
+            <span style="color: rgb(240, 200, 122); font-size: 13px">false</span
+            >,
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// desativa o log de SQL no terminal</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;}<br
+              style="font-size: 13px"
+            />);<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            /><span style="color: rgb(93, 184, 245); font-size: 13px"
+              >export default</span
+            >
+            sequelize;
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          2.4 — O app.js — sincronizando o banco
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 16px;
+          "
+        >
+          Uma diferença crucial: em vez de criar tabelas no pgAdmin, o Sequelize
+          pode criá-las automaticamente com
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >sequelize.sync()</code
+          >. O
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >alter: true</code
+          >
+          atualiza a tabela se o modelo mudou, sem destruir os dados.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            app.js
+          </div>
+          <div
+            style="
+              padding: 20px 22px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2;
+            "
+          >
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'dotenv/config'</span
+            >;
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// ← sempre primeira linha</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            express
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'express'</span
+            >;<br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            sequelize
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'./src/database/db.js'</span
+            >;<br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            produtoRoutes
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'./src/routes/produto.routes.js'</span
+            >;<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            app = express();<br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >use</span
+            >(express.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >());<br style="font-size: 13px" />app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >use</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'/produtos'</span
+            >, produtoRoutes);<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            /><span style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            PORT = process.env.<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >PORT</span
+            >
+            ||
+            <span style="color: rgb(240, 160, 96); font-size: 13px">3000</span
+            >;<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Sincroniza os modelos com o banco antes de iniciar o
+              servidor</span
+            ><br style="font-size: 13px" />sequelize.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >sync</span
+            >({ alter:
+            <span style="color: rgb(240, 200, 122); font-size: 13px">true</span>
+            }).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >then</span
+            >(() =&gt; {<br style="font-size: 13px" />&nbsp;&nbsp;app.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >listen</span
+            >(PORT, () =&gt; {<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;console.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >log</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >`Servidor rodando na porta ${PORT}`</span
+            >);<br style="font-size: 13px" />&nbsp;&nbsp;});<br
+              style="font-size: 13px"
+            />});
+          </div>
+        </div>
+        <div
+          style="
+            margin-top: 18px;
+            background: rgb(255, 248, 230);
+            border-width: 1px 1px 1px 5px;
+            border-style: solid;
+            border-color: rgb(240, 208, 128) rgb(240, 208, 128)
+              rgb(240, 208, 128) rgb(212, 168, 0);
+            border-image: initial;
+            border-radius: 10px;
+            padding: 16px 20px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 13px;
+              font-weight: bold;
+              color: #8a5800;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 8px;
+            "
+          >
+            Sobre o sync()
+          </div>
+          <div style="font-size: 14px; color: #5a3800; line-height: 1.8">
+            O
+            <code
+              style="
+                background: rgb(254, 243, 192);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 12px;
+              "
+              >alter: true</code
+            >
+            é ideal para desenvolvimento — atualiza colunas sem apagar dados. Em
+            produção, usa-se
+            <strong style="font-size: 14px">migrations</strong> no lugar do
+            sync. Nunca use
+            <code
+              style="
+                background: rgb(254, 243, 192);
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 12px;
+              "
+              >force: true</code
+            >
+            em produção — ele apaga e recria todas as tabelas.
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════ -->
+      <!-- MÓDULO 3 — O MODELO           -->
+      <!-- ══════════════════════════════ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102),
+            rgb(26, 95, 168)
+          );
+          border-radius: 14px 14px 0px 0px;
+          padding: 20px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7ab0e0;
+            margin-bottom: 6px;
+          "
+        >
+          Módulo 3
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #fff">
+          Definindo Modelos — a tabela em JavaScript
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          3.1 — O que é um Modelo no Sequelize?
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          <img
+            style="
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 15px;
+            "
+            src="https://dkrn4sk0rn31v.cloudfront.net/2019/11/03082048/ORM-IMG.png"
+            alt="O que é ORM? | Blog da TreinaWeb"
+            width="766"
+            height="213"
+          />
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          Um&nbsp;<strong style="font-size: 15px">modelo</strong> é uma classe
+          JavaScript que representa uma tabela do banco. Cada propriedade da
+          classe vira uma coluna. O Sequelize cria automaticamente as colunas
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >id</code
+          >
+          (chave primária auto-incremental),
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >createdAt</code
+          >
+          e
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >updatedAt</code
+          >
+          em toda tabela.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            src/models/produto.model.js
+          </div>
+          <div
+            style="
+              padding: 20px 22px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2;
+            "
+          >
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            { DataTypes }
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'sequelize'</span
+            >;<br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            sequelize
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'../database/db.js'</span
+            >;<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            Produto = sequelize.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >define</span
+            >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Produto'</span
+            >, {<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;<span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Cada chave aqui vira uma coluna na tabela</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;nome: {<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;type: DataTypes.<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >STRING</span
+            >,
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// TEXT no banco</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;allowNull:
+            <span style="color: rgb(240, 200, 122); font-size: 13px">false</span
+            >,
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// NOT NULL</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;},<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;preco: {<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;type: DataTypes.<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >DECIMAL</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">10</span>,
+            <span style="color: rgb(240, 160, 96); font-size: 13px">2</span>),
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// NUMERIC(10,2)</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;allowNull:
+            <span style="color: rgb(240, 200, 122); font-size: 13px">false</span
+            >,<br style="font-size: 13px" />&nbsp;&nbsp;},<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;quantidade: {<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;type: DataTypes.<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >INTEGER</span
+            >,<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;defaultValue:
+            <span style="color: rgb(240, 160, 96); font-size: 13px">0</span>,
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// DEFAULT 0</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;},<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" />}, {<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;tableName:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'produtos'</span
+            >,
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// nome da tabela no banco</span
+            ><br style="font-size: 13px" />&nbsp;&nbsp;timestamps:
+            <span style="color: rgb(240, 200, 122); font-size: 13px">true</span
+            >,
+            <span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// cria createdAt e updatedAt automaticamente</span
+            ><br style="font-size: 13px" />});<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            /><span style="color: rgb(93, 184, 245); font-size: 13px"
+              >export default</span
+            >
+            Produto;
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          3.2 — Tipos de dados mais usados
+        </div>
+        <div style="overflow-x: auto; margin-bottom: 22px; font-size: 14px">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 14px"
+          >
+            <thead style="font-size: 14px">
+              <tr
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgb(13, 59, 102),
+                    rgb(26, 95, 168)
+                  );
+                  font-size: 14px;
+                "
+              >
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  Sequelize (DataTypes)
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  Equivalente SQL
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  Quando usar
+                </th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 14px">
+              <tr style="background: rgb(234, 242, 251); font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                  "
+                >
+                  DataTypes.STRING
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                  "
+                >
+                  VARCHAR(255)
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Texto curto: nome, email, título
+                </td>
+              </tr>
+              <tr style="font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                  "
+                >
+                  DataTypes.TEXT
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                  "
+                >
+                  TEXT
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Texto longo: descrição, conteúdo
+                </td>
+              </tr>
+              <tr style="background: rgb(234, 242, 251); font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                  "
+                >
+                  DataTypes.INTEGER
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                  "
+                >
+                  INTEGER
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Números inteiros: quantidade, idade
+                </td>
+              </tr>
+              <tr style="font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                  "
+                >
+                  DataTypes.DECIMAL(10,2)
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                  "
+                >
+                  NUMERIC(10,2)
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Valores monetários: preço, salário
+                </td>
+              </tr>
+              <tr style="background: rgb(234, 242, 251); font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                  "
+                >
+                  DataTypes.BOOLEAN
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                  "
+                >
+                  BOOLEAN
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Verdadeiro/falso: ativo, disponivel
+                </td>
+              </tr>
+              <tr style="font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                  "
+                >
+                  DataTypes.DATE
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                  "
+                >
+                  TIMESTAMP
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Datas: data_nascimento, vencimento
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          3.3 — Opções de coluna mais usadas
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(244, 248, 255);
+              border-radius: 10px;
+              padding: 16px 18px;
+              border-left: 4px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 8px;
+              "
+            >
+              Por coluna
+            </div>
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: rgb(44, 62, 80);
+                line-height: 2.1;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >allowNull</span
+              >: false &nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 12px"
+                >// NOT NULL</span
+              ><br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >unique</span
+              >: true &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 12px"
+                >// UNIQUE</span
+              ><br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >defaultValue</span
+              >: 0 &nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 12px"
+                >// DEFAULT 0</span
+              ><br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >validate</span
+              >: { isEmail:
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >true</span
+              >
+              }
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(244, 248, 255);
+              border-radius: 10px;
+              padding: 16px 18px;
+              border-left: 4px solid rgb(26, 95, 168);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                margin-bottom: 8px;
+              "
+            >
+              No segundo objeto (tabela)
+            </div>
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: rgb(44, 62, 80);
+                line-height: 2.1;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >tableName</span
+              >:
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'produtos'</span
+              ><br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >timestamps</span
+              >: true<br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >paranoid</span
+              >: true &nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 12px"
+                >// soft delete</span
+              ><br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >underscored</span
+              >: true
+              <span style="color: rgb(122, 154, 176); font-size: 12px"
+                >// snake_case</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════ -->
+      <!-- MÓDULO 4 — OPERAÇÕES CRUD     -->
+      <!-- ══════════════════════════════ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102),
+            rgb(26, 95, 168)
+          );
+          border-radius: 14px 14px 0px 0px;
+          padding: 20px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7ab0e0;
+            margin-bottom: 6px;
+          "
+        >
+          Módulo 4
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #fff">
+          Operações CRUD com o Sequelize
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          4.1 — Os métodos do Sequelize
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          Cada operação do CRUD vira um método chamado diretamente no modelo.
+          Compare com o que fazíamos com SQL:
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 22px;
+            font-size: 14px;
+          "
+        >
+          <!-- CREATE -->
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 8px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              CREATE — inserir
+            </div>
+            <div
+              style="
+                padding: 14px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: rgb(200, 216, 232);
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              produto =
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >await</span
+              >
+              Produto.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >create</span
+              >({<br style="font-size: 12px" />&nbsp;&nbsp;nome:
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'Teclado'</span
+              >,<br style="font-size: 12px" />&nbsp;&nbsp;preco:
+              <span style="color: rgb(240, 160, 96); font-size: 12px"
+                >350.00</span
+              >,<br style="font-size: 12px" />&nbsp;&nbsp;quantidade:
+              <span style="color: rgb(240, 160, 96); font-size: 12px">10</span
+              ><br style="font-size: 12px" />});<br
+                style="font-size: 12px"
+              /><span style="color: rgb(122, 154, 176); font-size: 12px"
+                >// retorna o objeto criado com id</span
+              >
+            </div>
+          </div>
+          <!-- READ ALL -->
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 8px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              READ — buscar todos
+            </div>
+            <div
+              style="
+                padding: 14px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: rgb(200, 216, 232);
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              produtos =
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >await</span
+              >
+              Produto.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >findAll</span
+              >();<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              /><span style="color: rgb(122, 154, 176); font-size: 12px"
+                >// com ordenação:</span
+              ><br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              produtos =
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >await</span
+              >
+              Produto.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >findAll</span
+              >({<br style="font-size: 12px" />&nbsp;&nbsp;order: [[<span
+                style="color: rgb(168, 240, 200); font-size: 12px"
+                >'nome'</span
+              >,
+              <span style="color: rgb(168, 240, 200); font-size: 12px"
+                >'ASC'</span
+              >]]<br style="font-size: 12px" />});
+            </div>
+          </div>
+          <!-- READ ONE -->
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 8px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              READ — buscar por ID
+            </div>
+            <div
+              style="
+                padding: 14px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: rgb(200, 216, 232);
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              produto =
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >await</span
+              >
+              Produto.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >findByPk</span
+              >(id);<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              /><span style="color: rgb(122, 154, 176); font-size: 12px"
+                >// findByPk = find By Primary Key</span
+              ><br style="font-size: 12px" /><span
+                style="color: rgb(122, 154, 176); font-size: 12px"
+                >// retorna null se não encontrar</span
+              ><br style="font-size: 12px" />&nbsp;
+            </div>
+          </div>
+          <!-- UPDATE -->
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 8px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              UPDATE — atualizar
+            </div>
+            <div
+              style="
+                padding: 14px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: rgb(200, 216, 232);
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              produto =
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >await</span
+              >
+              Produto.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >findByPk</span
+              >(id);<br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >if</span
+              >
+              (!produto)
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >return</span
+              >
+              <span style="color: rgb(240, 160, 96); font-size: 12px">null</span
+              >;<br style="font-size: 12px" /><br
+                style="font-size: 12px"
+              /><span style="color: rgb(240, 200, 122); font-size: 12px"
+                >await</span
+              >
+              produto.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >update</span
+              >({ nome, preco });<br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >return</span
+              >
+              produto;
+            </div>
+          </div>
+          <!-- DELETE -->
+          <div
+            style="
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              grid-column: 1 / -1;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 8px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              DELETE — remover
+            </div>
+            <div
+              style="
+                padding: 14px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: rgb(200, 216, 232);
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >const</span
+              >
+              produto =
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >await</span
+              >
+              Produto.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >findByPk</span
+              >(id);<br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >if</span
+              >
+              (!produto)
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >return</span
+              >
+              <span style="color: rgb(240, 160, 96); font-size: 12px"
+                >false</span
+              >;<br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >await</span
+              >
+              produto.<span style="color: rgb(93, 245, 168); font-size: 12px"
+                >destroy</span
+              >();<br style="font-size: 12px" /><span
+                style="color: rgb(240, 200, 122); font-size: 12px"
+                >return</span
+              >
+              <span style="color: rgb(240, 200, 122); font-size: 12px"
+                >true</span
+              >; &nbsp;<span style="color: rgb(122, 154, 176); font-size: 12px"
+                >// em vez de verificar rowCount, verificamos se o objeto
+                existia</span
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d3b66;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0ecf6;
+          "
+        >
+          4.2 — findAll com filtros (WHERE)
+        </div>
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 14px;
+          "
+        >
+          Para filtrar resultados, usamos o
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >where</code
+          >
+          dentro do
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >findAll</code
+          >. O Sequelize importa operadores especiais chamados
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >Op</code
+          >
+          para comparações como "maior que", "menor que" e "contém":
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            Exemplos de filtro com Op
+          </div>
+          <div
+            style="
+              padding: 20px 22px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2;
+            "
+          >
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            { Op }
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'sequelize'</span
+            >;<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Produtos com preço maior que 100</span
+            ><br style="font-size: 13px" />Produto.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >findAll</span
+            >({ where: { preco: { [Op.<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >gt</span
+            >]:
+            <span style="color: rgb(240, 160, 96); font-size: 13px">100</span> }
+            } });<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            /><span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Produtos cujo nome contenha "teclado" (case insensitive)</span
+            ><br style="font-size: 13px" />Produto.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >findAll</span
+            >({ where: { nome: { [Op.<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >iLike</span
+            >]:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'%teclado%'</span
+            >
+            } } });<br style="font-size: 13px" /><br
+              style="font-size: 13px"
+            /><span style="color: rgb(122, 154, 176); font-size: 13px"
+              >// Buscar por email exato (equals — padrão, sem Op)</span
+            ><br style="font-size: 13px" />Usuario.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >findOne</span
+            >({ where: { email } });
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════ -->
+      <!-- MÓDULO 5 — CONTROLLER         -->
+      <!-- ══════════════════════════════ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(13, 59, 102),
+            rgb(26, 95, 168)
+          );
+          border-radius: 14px 14px 0px 0px;
+          padding: 20px 32px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7ab0e0;
+            margin-bottom: 6px;
+          "
+        >
+          Módulo 5
+        </div>
+        <div style="font-size: 22px; font-weight: bold; color: #fff">
+          O Controller com Sequelize
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 0px 0px 14px 14px;
+          padding: 32px 36px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 15px;
+            color: #2c3e50;
+            line-height: 1.9;
+            margin-bottom: 18px;
+          "
+        >
+          O Controller muda pouco em relação ao que já conhecemos — o
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >try/catch</code
+          >
+          e o
+          <code
+            style="
+              background: rgb(234, 242, 251);
+              padding: 2px 7px;
+              border-radius: 4px;
+              font-size: 13px;
+            "
+            >async/await</code
+          >
+          permanecem. A diferença é que agora chamamos métodos do modelo
+          Sequelize em vez de funções do Model manual. Note que
+          <strong style="font-size: 15px"
+            >não há mais um arquivo model.js separado</strong
+          >
+          — o modelo Sequelize já é o Model.
+        </div>
+        <div
+          style="
+            background: rgb(13, 27, 42);
+            border-radius: 12px;
+            overflow: hidden;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: #1a2a3a;
+              padding: 8px 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              color: #7a9ab0;
+              border-bottom: 1px solid #2a3a4a;
+            "
+          >
+            src/controllers/produto.controller.js
+          </div>
+          <div
+            style="
+              padding: 20px 22px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              color: #c8d8e8;
+              line-height: 2;
+            "
+          >
+            <span style="color: rgb(93, 184, 245); font-size: 13px"
+              >import</span
+            >
+            Produto
+            <span style="color: rgb(93, 184, 245); font-size: 13px">from</span>
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'../models/produto.model.js'</span
+            >;<br style="font-size: 13px" /><br style="font-size: 13px" /><span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// ── Listar todos ──────────────────────────────────</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >export async function</span
+            >
+            <span style="color: rgb(93, 245, 168); font-size: 13px">listar</span
+            >(req, res) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >try</span
+            >
+            {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            produtos =
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >await</span
+            >
+            Produto.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >findAll</span
+            >({ order: [[<span
+              style="color: rgb(168, 240, 200); font-size: 13px"
+              >'nome'</span
+            >,
+            <span style="color: rgb(168, 240, 200); font-size: 13px">'ASC'</span
+            >]] });<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >(produtos);<br style="font-size: 13px" />&nbsp;&nbsp;}
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >catch</span
+            >
+            { res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">500</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Erro interno'</span
+            >
+            }); }<br style="font-size: 13px" />}<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" /><span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// ── Buscar por ID ──────────────────────────────────</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >export async function</span
+            >
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >buscarPorId</span
+            >(req, res) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >try</span
+            >
+            {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            produto =
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >await</span
+            >
+            Produto.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >findByPk</span
+            >(req.params.id);<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (!produto)
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">404</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Produto não encontrado'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >(produto);<br style="font-size: 13px" />&nbsp;&nbsp;}
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >catch</span
+            >
+            { res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">500</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Erro interno'</span
+            >
+            }); }<br style="font-size: 13px" />}<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" /><span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// ── Criar ───────────────────────────────────────────</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >export async function</span
+            >
+            <span style="color: rgb(93, 245, 168); font-size: 13px">criar</span
+            >(req, res) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >try</span
+            >
+            {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            { nome, preco, quantidade } = req.body;<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            produto =
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >await</span
+            >
+            Produto.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >create</span
+            >({ nome, preco, quantidade });<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">201</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >(produto);<br style="font-size: 13px" />&nbsp;&nbsp;}
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >catch</span
+            >
+            { res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">500</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Erro interno'</span
+            >
+            }); }<br style="font-size: 13px" />}<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" /><span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// ── Atualizar ───────────────────────────────────────</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >export async function</span
+            >
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >atualizar</span
+            >(req, res) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >try</span
+            >
+            {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            produto =
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >await</span
+            >
+            Produto.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >findByPk</span
+            >(req.params.id);<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (!produto)
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">404</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Produto não encontrado'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            { nome, preco, quantidade } = req.body;<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >await</span
+            >
+            produto.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >update</span
+            >({ nome, preco, quantidade });<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >(produto);<br style="font-size: 13px" />&nbsp;&nbsp;}
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >catch</span
+            >
+            { res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">500</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Erro interno'</span
+            >
+            }); }<br style="font-size: 13px" />}<br
+              style="font-size: 13px"
+            /><br style="font-size: 13px" /><span
+              style="color: rgb(122, 154, 176); font-size: 13px"
+              >// ── Remover ─────────────────────────────────────────</span
+            ><br style="font-size: 13px" /><span
+              style="color: rgb(93, 184, 245); font-size: 13px"
+              >export async function</span
+            >
+            <span style="color: rgb(93, 245, 168); font-size: 13px"
+              >remover</span
+            >(req, res) {<br style="font-size: 13px" />&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >try</span
+            >
+            {<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >const</span
+            >
+            produto =
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >await</span
+            >
+            Produto.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >findByPk</span
+            >(req.params.id);<br
+              style="font-size: 13px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >if</span
+            >
+            (!produto)
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >return</span
+            >
+            res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">404</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Produto não encontrado'</span
+            >
+            });<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(240, 200, 122); font-size: 13px"
+              >await</span
+            >
+            produto.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >destroy</span
+            >();<br style="font-size: 13px" />&nbsp;&nbsp;&nbsp;&nbsp;res.<span
+              style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">204</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >send</span
+            >();<br style="font-size: 13px" />&nbsp;&nbsp;}
+            <span style="color: rgb(240, 200, 122); font-size: 13px"
+              >catch</span
+            >
+            { res.<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >status</span
+            >(<span style="color: rgb(240, 160, 96); font-size: 13px">500</span
+            >).<span style="color: rgb(93, 245, 168); font-size: 13px"
+              >json</span
+            >({ erro:
+            <span style="color: rgb(168, 240, 200); font-size: 13px"
+              >'Erro interno'</span
+            >
+            }); }<br style="font-size: 13px" />}
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════════ -->
+      <!-- MÓDULO 6 — EXEMPLO COMPLETO       -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          border-radius: 14px;
+          overflow: hidden;
+          box-shadow: rgba(13, 59, 102, 0.22) 0px 8px 28px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              135deg,
+              rgb(13, 59, 102),
+              rgb(26, 95, 168)
+            );
+            padding: 26px 32px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              font-size: 10px;
+              font-weight: bold;
+              letter-spacing: 3px;
+              text-transform: uppercase;
+              color: #7ab0e0;
+              margin-bottom: 10px;
+            "
+          >
+            Exemplo Completo
+          </div>
+          <div
+            style="
+              font-size: 22px;
+              font-weight: bold;
+              color: #ffffff;
+              margin-bottom: 8px;
+            "
+          >
+            API de Produtos — CRUD com Sequelize + Express
+          </div>
+          <div style="font-size: 14px; color: #a8c8e8; line-height: 1.7">
+            Todos os arquivos necessários para uma API funcional usando
+            Sequelize como ORM. Routes e app.js são idênticos ao que você já
+            conhece — só o Model e o Controller mudaram em relação ao SQL
+            manual.
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(244, 248, 255);
+            padding: 28px 32px;
+            font-size: 14px;
+          "
+        >
+          <!-- Estrutura -->
+          <div
+            style="
+              margin-bottom: 20px;
+              background: rgb(13, 27, 42);
+              border-radius: 10px;
+              overflow: hidden;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a2a3a;
+                padding: 8px 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                color: #7a9ab0;
+                border-bottom: 1px solid #2a3a4a;
+              "
+            >
+              Estrutura do projeto
+            </div>
+            <div
+              style="
+                padding: 16px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >produtos-api/</span
+              ><br style="font-size: 13px" />&nbsp;├── src/ → database/db.js ·
+              models/produto.model.js<br
+                style="font-size: 13px"
+              />&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controllers/produto.controller.js
+              · routes/produto.routes.js<br style="font-size: 13px" />&nbsp;├──
+              <span style="color: rgb(240, 160, 96); font-size: 13px"
+                >.env</span
+              >
+              &nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(122, 154, 176); font-size: 13px"
+                >← credenciais do banco (não vai ao Git)</span
+              ><br style="font-size: 13px" />&nbsp;└──
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >app.js</span
+              >
+              &nbsp;<span style="color: rgb(122, 154, 176); font-size: 13px"
+                >← dotenv/config + sync + listen</span
+              >
+            </div>
+          </div>
+          <!-- Model -->
+          <div style="margin-bottom: 18px; font-size: 14px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #0d3b66;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >1 / 3</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >src/models/produto.model.js</span
+              >
+              <span
+                style="
+                  background: #eaf2fb;
+                  color: #1a5fa8;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 10px;
+                  border-radius: 5px;
+                  border: 1px solid #b8d4ed;
+                  margin-left: auto;
+                "
+                >Define a tabela em JavaScript</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              { DataTypes }
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'sequelize'</span
+              >;<br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              sequelize
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'../database/db.js'</span
+              >;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              Produto = sequelize.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >define</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'Produto'</span
+              >, {<br style="font-size: 13px" />&nbsp;&nbsp;nome: { type:
+              DataTypes.<span style="color: rgb(240, 200, 122); font-size: 13px"
+                >STRING</span
+              >, allowNull:
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >false</span
+              >
+              },<br style="font-size: 13px" />&nbsp;&nbsp;preco: { type:
+              DataTypes.<span style="color: rgb(240, 200, 122); font-size: 13px"
+                >DECIMAL</span
+              >(<span style="color: rgb(240, 160, 96); font-size: 13px">10</span
+              >,<span style="color: rgb(240, 160, 96); font-size: 13px">2</span
+              >), allowNull:
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >false</span
+              >
+              },<br style="font-size: 13px" />&nbsp;&nbsp;quantidade: { type:
+              DataTypes.<span style="color: rgb(240, 200, 122); font-size: 13px"
+                >INTEGER</span
+              >, defaultValue:
+              <span style="color: rgb(240, 160, 96); font-size: 13px">0</span>
+              },<br style="font-size: 13px" />}, { tableName:
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'produtos'</span
+              >, timestamps:
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >true</span
+              >
+              });<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(93, 184, 245); font-size: 13px"
+                >export default</span
+              >
+              Produto;
+            </div>
+          </div>
+          <!-- Routes -->
+          <div style="margin-bottom: 18px; font-size: 14px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #0d3b66;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >2 / 3</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >src/routes/produto.routes.js</span
+              >
+              <span
+                style="
+                  background: #eaf2fb;
+                  color: #1a5fa8;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 10px;
+                  border-radius: 5px;
+                  border: 1px solid #b8d4ed;
+                  margin-left: auto;
+                "
+                >Idêntico ao que já conhecemos</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              { Router }
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'express'</span
+              >;<br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              *
+              <span style="color: rgb(93, 184, 245); font-size: 13px">as</span>
+              C
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'../controllers/produto.controller.js'</span
+              >;<br style="font-size: 13px" /><span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              router =
+              <span style="color: rgb(93, 245, 168); font-size: 13px"
+                >Router</span
+              >();<br style="font-size: 13px" />router.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >get</span
+              >
+              (<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'/'</span
+              >, C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >listar</span
+              >);<br style="font-size: 13px" />router.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >get</span
+              >
+              (<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'/:id'</span
+              >, C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >buscarPorId</span
+              >);<br style="font-size: 13px" />router.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >post</span
+              >
+              (<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'/'</span
+              >, C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >criar</span
+              >);<br style="font-size: 13px" />router.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >put</span
+              >
+              (<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'/:id'</span
+              >, C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >atualizar</span
+              >);<br style="font-size: 13px" />router.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >delete</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'/:id'</span
+              >, C.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >remover</span
+              >);<br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >export default</span
+              >
+              router;
+            </div>
+          </div>
+          <!-- app.js -->
+          <div style="margin-bottom: 22px; font-size: 14px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #0d3b66;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 5px;
+                "
+                >3 / 3</span
+              >
+              <span style="font-size: 15px; font-weight: bold; color: #0d3b66"
+                >app.js</span
+              >
+              <span
+                style="
+                  background: #eaf2fb;
+                  color: #1a5fa8;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 10px;
+                  border-radius: 5px;
+                  border: 1px solid #b8d4ed;
+                  margin-left: auto;
+                "
+                >sync antes de listen</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b2a;
+                border-radius: 10px;
+                padding: 18px 20px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                color: #c8d8e8;
+                line-height: 2;
+              "
+            >
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'dotenv/config'</span
+              >;<br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              express
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'express'</span
+              >;<br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              sequelize
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'./src/database/db.js'</span
+              >;<br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              produtoRoutes
+              <span style="color: rgb(93, 184, 245); font-size: 13px"
+                >from</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'./src/routes/produto.routes.js'</span
+              >;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(122, 154, 176); font-size: 13px"
+                >// Importar o modelo garante que o Sequelize o registra antes
+                do sync</span
+              ><br style="font-size: 13px" /><span
+                style="color: rgb(93, 184, 245); font-size: 13px"
+                >import</span
+              >
+              <span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'./src/models/produto.model.js'</span
+              >;<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              /><span style="color: rgb(240, 200, 122); font-size: 13px"
+                >const</span
+              >
+              app = express();<br style="font-size: 13px" />app.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >use</span
+              >(express.<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >json</span
+              >());<br style="font-size: 13px" />app.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >use</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >'/produtos'</span
+              >, produtoRoutes);<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />sequelize.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >sync</span
+              >({ alter:
+              <span style="color: rgb(240, 200, 122); font-size: 13px"
+                >true</span
+              >
+              }).<span style="color: rgb(93, 245, 168); font-size: 13px"
+                >then</span
+              >(() =&gt; {<br style="font-size: 13px" />&nbsp;&nbsp;app.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >listen</span
+              >(process.env.<span
+                style="color: rgb(240, 200, 122); font-size: 13px"
+                >PORT</span
+              >, () =&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;console.<span
+                style="color: rgb(93, 245, 168); font-size: 13px"
+                >log</span
+              >(<span style="color: rgb(168, 240, 200); font-size: 13px"
+                >`Servidor rodando!`</span
+              >)<br style="font-size: 13px" />&nbsp;&nbsp;);<br
+                style="font-size: 13px"
+              />});
+            </div>
+          </div>
+          <!-- Testes -->
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 12px;
+              padding: 20px 24px;
+              border: 1px solid rgb(212, 230, 245);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 13px;
+                font-weight: bold;
+                color: #0d3b66;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 14px;
+              "
+            >
+              Testando no Postman ou Insomnia
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  padding: 9px 14px;
+                  background: rgb(248, 251, 255);
+                  border-radius: 7px;
+                  border: 1px solid rgb(212, 230, 245);
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    background: #1a7a45;
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    flex-shrink: 0;
+                  "
+                  >GET</span
+                >
+                <code style="font-size: 13px; color: #0d3b66"
+                  >http://localhost:3000/produtos</code
+                >
+                <span style="color: #7a9ab0; font-size: 12px; margin-left: auto"
+                  >Lista — Sequelize gera SELECT automaticamente</span
+                >
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 10px;
+                  padding: 9px 14px;
+                  background: rgb(248, 251, 255);
+                  border-radius: 7px;
+                  border: 1px solid rgb(212, 230, 245);
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    background: #1a5fa8;
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    flex-shrink: 0;
+                    margin-top: 2px;
+                  "
+                  >POST</span
+                >
+                <div style="font-size: 14px">
+                  <code
+                    style="
+                      font-size: 13px;
+                      color: #0d3b66;
+                      display: block;
+                      margin-bottom: 5px;
+                    "
+                    >http://localhost:3000/produtos</code
+                  >
+                  <code
+                    style="
+                      font-size: 12px;
+                      background: #0d1b2a;
+                      color: #a8f0c8;
+                      padding: 5px 10px;
+                      border-radius: 4px;
+                      display: block;
+                    "
+                    >{ "nome": "Teclado", "preco": 350.00, "quantidade": 10
+                    }</code
+                  >
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 10px;
+                  padding: 9px 14px;
+                  background: rgb(248, 251, 255);
+                  border-radius: 7px;
+                  border: 1px solid rgb(212, 230, 245);
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    background: #d4a800;
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    flex-shrink: 0;
+                    margin-top: 2px;
+                  "
+                  >PUT</span
+                >
+                <div style="font-size: 14px">
+                  <code
+                    style="
+                      font-size: 13px;
+                      color: #0d3b66;
+                      display: block;
+                      margin-bottom: 5px;
+                    "
+                    >http://localhost:3000/produtos/1</code
+                  >
+                  <code
+                    style="
+                      font-size: 12px;
+                      background: #0d1b2a;
+                      color: #a8f0c8;
+                      padding: 5px 10px;
+                      border-radius: 4px;
+                      display: block;
+                    "
+                    >{ "nome": "Teclado Mecânico", "preco": 420.00,
+                    "quantidade": 8 }</code
+                  >
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  padding: 9px 14px;
+                  background: rgb(248, 251, 255);
+                  border-radius: 7px;
+                  border: 1px solid rgb(212, 230, 245);
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    background: #c0392b;
+                    color: #fff;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    flex-shrink: 0;
+                  "
+                  >DELETE</span
+                >
+                <code style="font-size: 13px; color: #0d3b66"
+                  >http://localhost:3000/produtos/1</code
+                >
+                <span style="color: #7a9ab0; font-size: 12px; margin-left: auto"
+                  >Retorna 204 — produto.destroy()</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ══ RESUMO FINAL ══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 14px;
+          padding: 28px 32px;
+          margin-bottom: 24px;
+          box-shadow: rgba(26, 90, 168, 0.11) 0px 6px 24px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgb(224, 236, 246);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              width: 6px;
+              height: 24px;
+              background: linear-gradient(rgb(26, 95, 168), rgb(13, 59, 102));
+              border-radius: 3px;
+              font-size: 14px;
+            "
+          >
+            &nbsp;
+          </div>
+          <div style="font-size: 18px; font-weight: bold; color: #0d3b66">
+            O que mudou em relação ao SQL manual
+          </div>
+        </div>
+        <div style="overflow-x: auto; font-size: 14px">
+          <table
+            style="width: 100%; border-collapse: collapse; font-size: 14px"
+          >
+            <thead style="font-size: 14px">
+              <tr
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgb(13, 59, 102),
+                    rgb(26, 95, 168)
+                  );
+                  font-size: 14px;
+                "
+              >
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  Aspecto
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  SQL manual (pg)
+                </th>
+                <th
+                  style="
+                    padding: 11px 16px;
+                    color: rgb(232, 242, 255);
+                    font-weight: bold;
+                    border: 1px solid rgb(42, 106, 184);
+                    text-align: left;
+                    font-size: 14px;
+                  "
+                >
+                  Sequelize (ORM)
+                </th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 14px">
+              <tr style="background: rgb(234, 242, 251); font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    font-weight: bold;
+                    color: rgb(13, 59, 102);
+                    font-size: 14px;
+                  "
+                >
+                  Criar tabela
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                >
+                  Rodar SQL no pgAdmin
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    color: rgb(26, 122, 69);
+                    font-weight: bold;
+                    font-size: 14px;
+                  "
+                >
+                  sequelize.sync() cria automaticamente
+                </td>
+              </tr>
+              <tr style="font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    font-weight: bold;
+                    color: rgb(13, 59, 102);
+                    font-size: 14px;
+                  "
+                >
+                  Conexão
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #2c3e50;
+                  "
+                >
+                  new Pool({ host, port... })
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #2c3e50;
+                  "
+                >
+                  new Sequelize(db, user, pass, { dialect })
+                </td>
+              </tr>
+              <tr style="background: rgb(234, 242, 251); font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    font-weight: bold;
+                    color: rgb(13, 59, 102);
+                    font-size: 14px;
+                  "
+                >
+                  Inserir
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #2c3e50;
+                  "
+                >
+                  pool.query('INSERT INTO ... VALUES ($1) RETURNING *')
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #2c3e50;
+                  "
+                >
+                  Modelo.create({ ... })
+                </td>
+              </tr>
+              <tr style="font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    font-weight: bold;
+                    color: rgb(13, 59, 102);
+                    font-size: 14px;
+                  "
+                >
+                  Buscar por ID
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #2c3e50;
+                  "
+                >
+                  pool.query('SELECT * WHERE id = $1') → rows[0]
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #2c3e50;
+                  "
+                >
+                  Modelo.findByPk(id)
+                </td>
+              </tr>
+              <tr style="background: rgb(234, 242, 251); font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    font-weight: bold;
+                    color: rgb(13, 59, 102);
+                    font-size: 14px;
+                  "
+                >
+                  Atualizar
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #2c3e50;
+                  "
+                >
+                  pool.query('UPDATE ... RETURNING *')
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #c8daf0;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #2c3e50;
+                  "
+                >
+                  instancia.update({ ... })
+                </td>
+              </tr>
+              <tr style="font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(212, 230, 245);
+                    font-weight: bold;
+                    color: rgb(13, 59, 102);
+                    font-size: 14px;
+                  "
+                >
+                  Deletar
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #2c3e50;
+                  "
+                >
+                  pool.query('DELETE ...') → rowCount
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid #d4e6f5;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    font-size: 12px;
+                    color: #2c3e50;
+                  "
+                >
+                  instancia.destroy()
+                </td>
+              </tr>
+              <tr style="background: rgb(234, 242, 251); font-size: 14px">
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    font-weight: bold;
+                    color: rgb(13, 59, 102);
+                    font-size: 14px;
+                  "
+                >
+                  Routes e Controllers
+                </td>
+                <td
+                  style="
+                    padding: 10px 16px;
+                    border: 1px solid rgb(200, 218, 240);
+                    color: rgb(44, 62, 80);
+                    font-size: 14px;
+                  "
+                  colspan="2"
+                >
+                  Idênticos — a lógica de roteamento e os handlers não mudam
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Referências -->
+      <div
+        style="
+          padding-top: 4px;
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+          font-size: 14px;
+        "
+      >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://sequelize.org/docs/v6/"
+          >Documentação — Sequelize v6</a
+        >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://sequelize.org/docs/v6/core-concepts/model-basics/"
+          >Model Basics — Sequelize</a
+        >
+        <a
+          style="
+            font-size: 13px;
+            color: #1a5fa8;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          href="https://sequelize.org/docs/v6/core-concepts/model-querying-basics/"
+          >Model Querying — Sequelize</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

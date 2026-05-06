@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardápio Digital Dinâmico</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(253, 252, 251) 0%,
+          rgb(226, 209, 195) 100%
+        );
+        padding: 32px 20px;
+        box-sizing: border-box;
+        font-size: 14px;
+      "
+    >
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(211, 47, 47) 0%,
+            rgb(183, 28, 28) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(211, 47, 47, 0.3) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.2);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  color: #fff;
+                  font-size: 12px;
+                  font-weight: bold;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                "
+                >📝 Atividade Prática</span
+              >
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #fff; font-size: 12px; font-weight: 600"
+                >🍕 Sistema Pizzaolo</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 26px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Cardápio Digital Dinâmico<br style="font-size: 26px" /><span
+              style="color: rgb(255, 204, 188); font-size: 26px"
+              >Consumindo e Renderizando Dados Reais</span
+            >
+          </div>
+          <p
+            style="
+              color: rgba(255, 255, 255, 0.9);
+              font-size: 14px;
+              margin-top: 10px;
+              max-width: 600px;
+            "
+          >
+            Objetivo: Integrar o React com uma API própria para listar sabores,
+            preços e categorias de pizzas em tempo real.
+          </p>
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(44, 62, 80),
+              rgb(52, 73, 94)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔗 Configuração do Endpoint</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <p style="color: #37474f; font-size: 14px; margin-bottom: 15px">
+            No arquivo <code style="font-size: 12px">src/services/api.js</code>,
+            configure a URL base gerada pelo MockAPI:
+          </p>
+          <p style="color: #37474f; font-size: 14px; margin-bottom: 15px">
+            para utilizar o Axios, no terminal você precisa instalar a
+            dependência: npm install
+            <code style="font-size: 12px"
+              ><span style="color: rgb(19, 71, 12); font-size: 12px"
+                >npm install axios.</span
+              ></code
+            >
+          </p>
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+              line-height: 1.8;
+              color: #dfe6e9;
+            "
+          >
+            <span style="color: rgb(244, 114, 182); font-size: 12px"
+              >import</span
+            >
+            axios
+            <span style="color: rgb(244, 114, 182); font-size: 12px">from</span>
+            <span style="color: rgb(144, 202, 249); font-size: 12px"
+              >'axios'</span
+            >;<br style="font-size: 12px" /><br style="font-size: 12px" /><span
+              style="color: rgb(244, 114, 182); font-size: 12px"
+              >const</span
+            >
+            api = axios.create({<br
+              style="font-size: 12px"
+            />&nbsp;&nbsp;baseURL:
+            <span style="color: rgb(144, 202, 249); font-size: 12px"
+              >'https://69ea53d715c7e2d51269b1cd.mockapi.io/pizzaolo/'</span
+            ><br style="font-size: 12px" />});<br style="font-size: 12px" /><br
+              style="font-size: 12px"
+            /><span style="color: rgb(244, 114, 182); font-size: 12px"
+              >export default</span
+            >
+            api;
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(27, 94, 32),
+              rgb(46, 125, 50)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >💻 Componente Cardapio.jsx</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <p style="color: #37474f; font-size: 14px; margin-bottom: 15px">
+            Implemente o Hook
+            <code style="font-size: 12px">useEffect</code> para buscar os dados
+            assim que o componente for montado.
+          </p>
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 20px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 11px;
+              line-height: 1.6;
+              color: #dfe6e9;
+              overflow-x: auto;
+            "
+          >
+            <span style="color: rgb(244, 114, 182); font-size: 11px"
+              >useEffect</span
+            >(() =&gt; {<br style="font-size: 11px" />&nbsp;&nbsp;<span
+              style="color: rgb(244, 114, 182); font-size: 11px"
+              >async function</span
+            >
+            obterDados() {<br
+              style="font-size: 11px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(244, 114, 182); font-size: 11px"
+              >try</span
+            >
+            {<br
+              style="font-size: 11px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(244, 114, 182); font-size: 11px"
+              >const</span
+            >
+            res =
+            <span style="color: rgb(244, 114, 182); font-size: 11px"
+              >await</span
+            >
+            api.get(<span style="color: rgb(144, 202, 249); font-size: 11px"
+              >'/pizza'</span
+            >);
+            <span style="color: rgb(120, 144, 156); font-size: 11px"
+              >// Rota do MockAPI</span
+            ><br
+              style="font-size: 11px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setListaPizzas(res.data);<br
+              style="font-size: 11px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;}
+            <span style="color: rgb(244, 114, 182); font-size: 11px"
+              >catch</span
+            >
+            (erro) {<br
+              style="font-size: 11px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.error(<span
+              style="color: rgb(144, 202, 249); font-size: 11px"
+              >"Falha no cardápio"</span
+            >, erro);<br style="font-size: 11px" />&nbsp;&nbsp;&nbsp;&nbsp;}
+            <span style="color: rgb(244, 114, 182); font-size: 11px"
+              >finally</span
+            >
+            {<br
+              style="font-size: 11px"
+            />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setCarregando(<span
+              style="color: rgb(244, 114, 182); font-size: 11px"
+              >false</span
+            >);<br style="font-size: 11px" />&nbsp;&nbsp;&nbsp;&nbsp;}<br
+              style="font-size: 11px"
+            />&nbsp;&nbsp;}<br
+              style="font-size: 11px"
+            />&nbsp;&nbsp;obterDados();<br style="font-size: 11px" />}, []);
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background: rgb(255, 243, 224);
+          border-radius: 16px;
+          padding: 22px 28px;
+          margin-bottom: 22px;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 30px;
+          border-left: 5px solid rgb(255, 152, 0);
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+          "
+        >
+          <span style="font-size: 20px">🧐</span
+          ><span style="color: #e65100; font-size: 16px; font-weight: 800"
+            >Ponto de Atenção: Debugging</span
+          >
+        </div>
+        <div style="color: #3e2723; font-size: 14px; line-height: 1.8">
+          O nome do recurso deve ser
+          <strong style="font-size: 14px">idêntico</strong> ao criado no
+          MockAPI. <br style="font-size: 14px" />✅
+          <code style="font-size: 12px">api.get('/pizza')</code> | ❌
+          <code style="font-size: 12px">api.get('/pizzas')</code>
+          <small style="font-size: 12px">(Gera Erro 404)</small>
+          <br style="font-size: 14px" /><strong style="font-size: 14px"
+            >Dica:</strong
+          >
+          Abra o <strong style="font-size: 14px">F12 &gt; Network</strong>,
+          clique na requisição 'pizza' e veja o
+          <strong style="font-size: 14px">Preview</strong>. Se o JSON aparecer
+          lá, seu front-end está pronto para mapeá-lo!
+        </div>
+      </div>
+      <div
+        style="
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 30px;
+            border-top: 4px solid rgb(211, 47, 47);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              color: #d32f2f;
+              font-size: 14px;
+              font-weight: 800;
+              margin-bottom: 5px;
+            "
+          >
+            🚀 O Poder da API
+          </div>
+          <div style="color: #546e7a; font-size: 12px; line-height: 1.6">
+            Ao alterar um preço no MockAPI, a interface do React atualiza
+            sozinha no próximo F5. Isso é
+            <strong style="font-size: 12px">desacoplamento</strong>!
+          </div>
+        </div>
+        <div
+          style="
+            background: rgb(255, 255, 255);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 30px;
+            border-top: 4px solid rgb(46, 125, 50);
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              color: #2e7d32;
+              font-size: 14px;
+              font-weight: 800;
+              margin-bottom: 5px;
+            "
+          >
+            👨‍🍳 UX Feedback
+          </div>
+          <div style="color: #546e7a; font-size: 12px; line-height: 1.6">
+            O estado <code style="font-size: 10px">carregando</code> evita que o
+            usuário veja uma tela em branco enquanto a "massa é preparada".
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,2492 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Componentes, Props e Renderização</title>
+  </head>
+  <body>
+    <div
+      style="
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          &quot;Segoe UI&quot;,
+          Roboto,
+          Arial,
+          sans-serif;
+        background: rgb(11, 18, 32);
+        color: rgb(234, 240, 255);
+        padding: 28px;
+        border-radius: 18px;
+        max-width: 980px;
+        margin: 0px auto;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 18px 50px;
+        line-height: 1.55;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 14px;
+      "
+    >
+      <!-- Cabeçalho -->
+      <div
+        style="
+          display: flex;
+          gap: 14px;
+          align-items: flex-start;
+          justify-content: space-between;
+          padding: 18px;
+          background: linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.22),
+            rgba(245, 158, 11, 0.16)
+          );
+          border-radius: 14px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          font-size: 14px;
+        "
+      >
+        <div style="min-width: 0px; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 34px;
+                height: 34px;
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                font-size: 14px;
+              "
+              >📘</span
+            >
+            <div
+              style="font-weight: 900; letter-spacing: 0.2px; font-size: 20px"
+            >
+              AULA 2: Componentes, Props e Renderização
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 8px;
+              color: rgba(234, 240, 255, 0.82);
+              font-size: 14px;
+            "
+          >
+            Foco: <strong style="font-size: 14px">componentização</strong>,
+            <strong style="font-size: 14px">props</strong>,
+            <strong style="font-size: 14px">renderização dinâmica</strong>,
+            <strong style="font-size: 14px">condicional</strong>,
+            <strong style="font-size: 14px">listas</strong> e
+            <strong style="font-size: 14px">eventos</strong> no React ⚛️
+          </div>
+        </div>
+      </div>
+      <!-- Objetivos -->
+      <div
+        style="
+          margin-top: 14px;
+          padding: 16px 18px;
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 14px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="display: flex; align-items: center; gap: 10px; font-size: 14px"
+        >
+          <span
+            style="
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              width: 30px;
+              height: 30px;
+              border-radius: 10px;
+              background: rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.12);
+              font-size: 14px;
+            "
+            >🎯</span
+          >
+          <div style="font-weight: 800; font-size: 16px">Objetivos da Aula</div>
+        </div>
+        <div style="margin-top: 10px; display: grid; gap: 8px; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              padding: 10px 12px;
+              background: rgba(11, 18, 32, 0.55);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            <span style="margin-top: 1px; font-size: 14px">✔</span>Criar
+            <strong style="font-size: 14px">componentes reutilizáveis</strong>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              padding: 10px 12px;
+              background: rgba(11, 18, 32, 0.55);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            <span style="margin-top: 1px; font-size: 14px">✔</span>Compreender
+            comunicação entre componentes via
+            <strong style="font-size: 14px">props</strong>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              padding: 10px 12px;
+              background: rgba(11, 18, 32, 0.55);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            <span style="margin-top: 1px; font-size: 14px">✔</span>Renderizar
+            dados <strong style="font-size: 14px">dinamicamente</strong>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              padding: 10px 12px;
+              background: rgba(11, 18, 32, 0.55);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            <span style="margin-top: 1px; font-size: 14px">✔</span>Utilizar
+            <strong style="font-size: 14px">renderização condicional</strong>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              padding: 10px 12px;
+              background: rgba(11, 18, 32, 0.55);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            <span style="margin-top: 1px; font-size: 14px">✔</span>Renderizar
+            <strong style="font-size: 14px">listas de dados</strong>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              padding: 10px 12px;
+              background: rgba(11, 18, 32, 0.55);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 12px;
+              font-size: 14px;
+            "
+          >
+            <span style="margin-top: 1px; font-size: 14px">✔</span>Manipular
+            <strong style="font-size: 14px">eventos</strong> do usuário
+          </div>
+        </div>
+      </div>
+      <!-- Conteúdo -->
+      <div style="margin-top: 14px; display: grid; gap: 14px; font-size: 14px">
+        <!-- 1 Componentes -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(59, 130, 246, 0.18);
+                border: 1px solid rgba(59, 130, 246, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >1</span
+            >
+            <div style="font-weight: 800; font-size: 16px">
+              Componentes no React
+            </div>
+            <div style="font-weight: 800; font-size: 16px">&nbsp;</div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: 800; font-size: 14px">
+              Encontre os componentes principais na imagem abaixo:<br
+                style="font-size: 14px"
+              /><br style="font-size: 14px" />
+            </div>
+            <div style="font-weight: 800; font-size: 14px">
+              <strong
+                id="docs-internal-guid-d2d4adcf-7fff-aa78-7190-a306601fcbf7"
+                style="font-size: 14px"
+                ><img
+                  src="https://ava.sesisenai.org.br/pluginfile.php/1834575/mod_page/content/2/sketch.png"
+                  alt="Captura de Tela 2022-08-13 às 14.31.56.png"
+                  width="848px;"
+                  height="477px;"
+                  style="font-size: 14px"
+              /></strong>
+            </div>
+            <div style="font-weight: 800; font-size: 14px">&nbsp;</div>
+            <div style="font-weight: 800; font-size: 14px">&nbsp;</div>
+            <div style="font-weight: 800; font-size: 14px">&nbsp;</div>
+            <div style="font-weight: 800; font-size: 14px">&nbsp;</div>
+            <div style="font-weight: 800; font-size: 14px">&nbsp;</div>
+            <div style="font-weight: 800; font-size: 14px">&nbsp;</div>
+            <div style="font-weight: 800; font-size: 14px">
+              Achouuuu!<br style="font-size: 14px" /><br
+                style="font-size: 14px"
+              /><strong
+                id="docs-internal-guid-70a29986-7fff-7376-bc2f-cb5e7338c69a"
+                style="font-size: 14px"
+                ><img
+                  src="https://ava.sesisenai.org.br/pluginfile.php/1834575/mod_page/content/2/sketch%20%281%29.png"
+                  alt="Captura de Tela 2022-08-13 às 14.31.56 2.png"
+                  width="848px;"
+                  height="477px;"
+                  style="font-size: 14px"
+              /></strong>
+            </div>
+            <div style="font-weight: 800; font-size: 14px">&nbsp;</div>
+            <div style="font-weight: 800; font-size: 14px">
+              <br style="font-size: 14px" />📌 O que é um componente?
+            </div>
+            <div style="margin-top: 6px; font-size: 14px">
+              Um componente é um
+              <strong style="font-size: 14px">bloco reutilizável</strong> de
+              interface. Ele funciona como uma função JavaScript que retorna
+              JSX.
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              function Saudacao() {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;return &lt;h1&gt;Olá React&lt;/h1&gt;;<br
+                style="font-size: 13px"
+              />}
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              🧠 Por que usar componentes?
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  padding: 12px;
+                  border-radius: 12px;
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.1);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="font-weight: 800; margin-bottom: 6px; font-size: 14px"
+                >
+                  Sem componentes 😵‍💫
+                </div>
+                <div
+                  style="
+                    font-family:
+                      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                      &quot;Liberation Mono&quot;, monospace;
+                    font-size: 13px;
+                    color: rgba(234, 240, 255, 0.86);
+                    overflow: auto;
+                  "
+                >
+                  &lt;header&gt;&lt;/header&gt;<br
+                    style="font-size: 13px"
+                  />&lt;section&gt;&lt;/section&gt;<br
+                    style="font-size: 13px"
+                  />&lt;footer&gt;&lt;/footer&gt;
+                </div>
+              </div>
+              <div
+                style="
+                  padding: 12px;
+                  border-radius: 12px;
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.1);
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="font-weight: 800; margin-bottom: 6px; font-size: 14px"
+                >
+                  Com componentes ✨
+                </div>
+                <div
+                  style="
+                    font-family:
+                      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                      &quot;Liberation Mono&quot;, monospace;
+                    font-size: 13px;
+                    color: rgba(234, 240, 255, 0.86);
+                    overflow: auto;
+                  "
+                >
+                  &lt;Header /&gt;<br style="font-size: 13px" />&lt;Section
+                  /&gt;<br style="font-size: 13px" />&lt;Footer /&gt;
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                margin-top: 12px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(34, 197, 94, 0.14);
+                  border: 1px solid rgba(34, 197, 94, 0.25);
+                  font-size: 12px;
+                "
+                >✔ Código mais organizado</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(34, 197, 94, 0.14);
+                  border: 1px solid rgba(34, 197, 94, 0.25);
+                  font-size: 12px;
+                "
+                >✔ Reutilização</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(34, 197, 94, 0.14);
+                  border: 1px solid rgba(34, 197, 94, 0.25);
+                  font-size: 12px;
+                "
+                >✔ Manutenção mais fácil</span
+              >
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              📊 Estrutura de componentes (arquitetura)
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              App<br style="font-size: 13px" />├── Header<br
+                style="font-size: 13px"
+              />├── Menu<br style="font-size: 13px" />├── Conteúdo<br
+                style="font-size: 13px"
+              />│&nbsp;&nbsp;&nbsp;&nbsp;├── Card<br
+                style="font-size: 13px"
+              />│&nbsp;&nbsp;&nbsp;&nbsp;├── Card<br
+                style="font-size: 13px"
+              />│&nbsp;&nbsp;&nbsp;&nbsp;└── Card<br
+                style="font-size: 13px"
+              />└── Footer
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 10px 12px;
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                color: rgba(234, 240, 255, 0.8);
+                font-size: 13px;
+              "
+            >
+              <img
+                style="width: 100%; font-size: 13px"
+                src="https://ava.sesisenai.org.br/pluginfile.php/1834575/mod_page/content/2/sketch%20%282%29.png"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- 2 Props -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(245, 158, 11, 0.18);
+                border: 1px solid rgba(245, 158, 11, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >2</span
+            >
+            <div style="font-weight: 800; font-size: 16px">
+              Props (Properties)
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: 800; font-size: 14px">📌 Definição</div>
+            <div style="margin-top: 6px; font-size: 14px">
+              Props são dados enviados de um
+              <strong style="font-size: 14px">componente pai</strong> para um
+              <strong style="font-size: 14px">componente filho</strong>.
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="font-weight: 800; margin-bottom: 6px; font-size: 14px"
+              >
+                🔁 Fluxo das props
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 10px;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  font-size: 14px;
+                "
+              >
+                <span
+                  style="
+                    padding: 7px 10px;
+                    border-radius: 999px;
+                    background: rgba(59, 130, 246, 0.14);
+                    border: 1px solid rgba(59, 130, 246, 0.25);
+                    font-size: 12px;
+                  "
+                  >Componente Pai</span
+                >
+                <span style="opacity: 0.85; font-size: 14px"
+                  >→ envia props →</span
+                >
+                <span
+                  style="
+                    padding: 7px 10px;
+                    border-radius: 999px;
+                    background: rgba(168, 85, 247, 0.14);
+                    border: 1px solid rgba(168, 85, 247, 0.25);
+                    font-size: 12px;
+                  "
+                  >Componente Filho</span
+                >
+              </div>
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              Exemplo (props)
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              function Aluno(props) {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;return (<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;{props.nome}&lt;/h2&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;{props.curso}&lt;/p&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;);<br style="font-size: 13px" />}
+            </div>
+            <div style="margin-top: 10px; font-weight: 800; font-size: 14px">
+              Uso
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              &lt;Aluno nome="Ana" curso="Dev Sistemas" /&gt;
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="font-weight: 800; margin-bottom: 6px; font-size: 14px"
+              >
+                Resultado
+              </div>
+              <div style="color: rgba(234, 240, 255, 0.86); font-size: 14px">
+                <div style="font-weight: 900; font-size: 14px">Ana</div>
+                <div style="opacity: 0.9; font-size: 14px">Dev Sistemas</div>
+              </div>
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              Forma moderna (desestruturação)
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              function Aluno({ nome, curso }) {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;return (<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;{nome}&lt;/h2&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;{curso}&lt;/p&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;);<br style="font-size: 13px" />}
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(34, 197, 94, 0.14);
+                  border: 1px solid rgba(34, 197, 94, 0.25);
+                  font-size: 12px;
+                "
+                >✔ Mais limpo</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(34, 197, 94, 0.14);
+                  border: 1px solid rgba(34, 197, 94, 0.25);
+                  font-size: 12px;
+                "
+                >✔ Mais usado em projetos reais</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- 3 Composição -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(34, 197, 94, 0.18);
+                border: 1px solid rgba(34, 197, 94, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >3</span
+            >
+            <div style="font-weight: 800; font-size: 16px">
+              Composição de Componentes
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            Composição significa combinar vários componentes para criar
+            interfaces maiores (tipo LEGO 🧱✨).
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              function Card({ nome, curso }) {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;return (<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Avatar /&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Info nome={nome}
+              curso={curso} /&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Botao /&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;);<br style="font-size: 13px" />}
+            </div>
+            <div style="margin-top: 12px; font-weight: 800; font-size: 14px">
+              Estrutura
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              Card<br style="font-size: 13px" />├── Avatar<br
+                style="font-size: 13px"
+              />├── Info<br style="font-size: 13px" />└── Botao
+            </div>
+          </div>
+        </div>
+        <!-- 4 Condicional -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(168, 85, 247, 0.18);
+                border: 1px solid rgba(168, 85, 247, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >4</span
+            >
+            <div style="font-weight: 800; font-size: 16px">
+              Renderização Condicional
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            Renderização condicional permite mostrar elementos dependendo de uma
+            condição.
+            <div style="margin-top: 10px; font-weight: 800; font-size: 14px">
+              Exemplo simples
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              function Status({ logado }) {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;if (logado) {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;return &lt;p&gt;Usuário
+              logado&lt;/p&gt;;<br style="font-size: 13px" />&nbsp;&nbsp;}<br
+                style="font-size: 13px"
+              /><br style="font-size: 13px" />&nbsp;&nbsp;return &lt;p&gt;Faça
+              login&lt;/p&gt;;<br style="font-size: 13px" />}
+            </div>
+            <div style="margin-top: 10px; font-weight: 800; font-size: 14px">
+              Usando operador ternário
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              function Status({ logado }) {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;return (<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;{logado ? "Usuário logado" :
+              "Usuário não logado"}&lt;/p&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;);<br style="font-size: 13px" />}
+            </div>
+          </div>
+        </div>
+        <!-- 5 Listas e Key -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(59, 130, 246, 0.18);
+                border: 1px solid rgba(59, 130, 246, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >5</span
+            >
+            <div style="font-weight: 800; font-size: 16px">
+              Renderização de Listas + Key
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            React permite renderizar listas de dados usando
+            <strong style="font-size: 14px">map()</strong>.
+            <div style="margin-top: 10px; font-weight: 800; font-size: 14px">
+              Exemplo (dados)
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              const alunos = [<br style="font-size: 13px" />&nbsp;&nbsp;{ nome:
+              "Ana", idade: 17 },<br style="font-size: 13px" />&nbsp;&nbsp;{
+              nome: "Lucas", idade: 18 },<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;{ nome: "Lia", idade: 16 }<br
+                style="font-size: 13px"
+              />];
+            </div>
+            <div style="margin-top: 10px; font-weight: 800; font-size: 14px">
+              Renderizando
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              function Lista() {<br style="font-size: 13px" />&nbsp;&nbsp;return
+              (<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{alunos.map((aluno, index)
+              =&gt; (<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p
+              key={index}&gt;{aluno.nome} - {aluno.idade}&lt;/p&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;))}<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;);<br style="font-size: 13px" />}
+            </div>
+            <div
+              style="
+                margin-top: 12px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(245, 158, 11, 0.1);
+                border: 1px solid rgba(245, 158, 11, 0.2);
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 900; font-size: 14px">
+                🔑 O que é Key?
+              </div>
+              <div
+                style="
+                  margin-top: 6px;
+                  color: rgba(234, 240, 255, 0.88);
+                  font-size: 14px;
+                "
+              >
+                A <strong style="font-size: 14px">key</strong> ajuda o React a
+                identificar quais elementos mudaram. Sem key: ⚠ performance pior
+                • ⚠ possíveis erros de renderização.
+              </div>
+              <div
+                style="
+                  margin-top: 10px;
+                  padding: 12px;
+                  border-radius: 12px;
+                  background: rgba(11, 18, 32, 0.55);
+                  border: 1px solid rgba(255, 255, 255, 0.1);
+                  font-family:
+                    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                    &quot;Liberation Mono&quot;, monospace;
+                  font-size: 13px;
+                  overflow: auto;
+                "
+              >
+                {alunos.map((aluno) =&gt; (<br
+                  style="font-size: 13px"
+                />&nbsp;&nbsp;&lt;Aluno key={aluno.id} nome={aluno.nome}
+                /&gt;<br style="font-size: 13px" />))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 6 Eventos -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(34, 197, 94, 0.18);
+                border: 1px solid rgba(34, 197, 94, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >6</span
+            >
+            <div style="font-weight: 800; font-size: 16px">
+              Manipulação de Eventos
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            Eventos permitem reagir às ações do usuário (cliques, digitação
+            etc). 🎮
+            <div style="margin-top: 10px; font-weight: 800; font-size: 14px">
+              Evento de clique
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              function Botao() {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;function clicar() {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;alert("Você clicou!");<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;}<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;return &lt;button
+              onClick={clicar}&gt;Clique&lt;/button&gt;;<br
+                style="font-size: 13px"
+              />}
+            </div>
+            <div style="margin-top: 10px; font-weight: 800; font-size: 14px">
+              Evento com parâmetro
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              &lt;button onClick={() =&gt; alert("Olá")}&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;Clique<br style="font-size: 13px" />&lt;/button&gt;
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Cabeçalho -->
+      <div
+        style="
+          display: flex;
+          gap: 14px;
+          align-items: flex-start;
+          justify-content: space-between;
+          padding: 18px;
+          background: linear-gradient(
+            135deg,
+            rgba(168, 85, 247, 0.18),
+            rgba(59, 130, 246, 0.16)
+          );
+          border-radius: 14px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          font-size: 14px;
+        "
+      >
+        <div style="min-width: 0px; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 34px;
+                height: 34px;
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                font-size: 14px;
+              "
+              >⚛️</span
+            >
+            <div
+              style="font-weight: 900; letter-spacing: 0.2px; font-size: 20px"
+            >
+              Principais Tipos de Componentes no React
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 8px;
+              color: rgba(234, 240, 255, 0.82);
+              font-size: 14px;
+            "
+          >
+            No React, praticamente tudo na interface é um componente — e cada
+            tipo tem um papel diferente no projeto 🧩
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-end;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: inline-flex;
+              gap: 8px;
+              align-items: center;
+              padding: 8px 10px;
+              border-radius: 999px;
+              background: rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.12);
+              font-size: 12px;
+              white-space: nowrap;
+            "
+          >
+            🎯 <span style="opacity: 0.9; font-size: 12px">Foco:</span>
+            <strong style="font-size: 12px">organização real de projeto</strong>
+          </div>
+          <div
+            style="
+              display: inline-flex;
+              gap: 8px;
+              align-items: center;
+              padding: 8px 10px;
+              border-radius: 999px;
+              background: rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.12);
+              font-size: 12px;
+              white-space: nowrap;
+            "
+          >
+            💡 <span style="opacity: 0.9; font-size: 12px">Dica:</span>
+            <strong style="font-size: 12px">reutilizar sempre</strong>
+          </div>
+        </div>
+      </div>
+      <!-- Blocos -->
+      <div style="margin-top: 14px; display: grid; gap: 14px; font-size: 14px">
+        <!-- 1 Funcionais -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(59, 130, 246, 0.18);
+                border: 1px solid rgba(59, 130, 246, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >1</span
+            >
+            <div style="font-weight: 900; font-size: 16px">
+              Componentes Funcionais (Functional Components)
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: 800; font-size: 14px">📌 O que são</div>
+            <div style="margin-top: 6px; font-size: 14px">
+              São funções JavaScript que retornam JSX. Hoje são o padrão moderno
+              do React.
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              function Header() {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;return &lt;h1&gt;Bem-vindo ao sistema&lt;/h1&gt;;<br
+                style="font-size: 13px"
+              />}<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />&lt;Header /&gt;
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(34, 197, 94, 0.14);
+                  border: 1px solid rgba(34, 197, 94, 0.25);
+                  font-size: 12px;
+                "
+                >✔ Simples</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(34, 197, 94, 0.14);
+                  border: 1px solid rgba(34, 197, 94, 0.25);
+                  font-size: 12px;
+                "
+                >✔ Mais usados</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(34, 197, 94, 0.14);
+                  border: 1px solid rgba(34, 197, 94, 0.25);
+                  font-size: 12px;
+                "
+                >✔ Podem usar Hooks</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(34, 197, 94, 0.14);
+                  border: 1px solid rgba(34, 197, 94, 0.25);
+                  font-size: 12px;
+                "
+                >✔ Fáceis de manter</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- 2 Classe -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(245, 158, 11, 0.18);
+                border: 1px solid rgba(245, 158, 11, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >2</span
+            >
+            <div style="font-weight: 900; font-size: 16px">
+              Componentes de Classe (Class Components)
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: 800; font-size: 14px">📌 O que são</div>
+            <div style="margin-top: 6px; font-size: 14px">
+              Forma antiga de criar componentes usando classes. Hoje são pouco
+              usados em projetos novos.
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              import React, { Component } from "react";<br
+                style="font-size: 13px"
+              /><br style="font-size: 13px" />class Header extends Component
+              {<br style="font-size: 13px" />&nbsp;&nbsp;render() {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;return
+              &lt;h1&gt;Bem-vindo&lt;/h1&gt;;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;}<br style="font-size: 13px" />}
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  font-size: 12px;
+                "
+                >🕰️ Ciclo de vida tradicional</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  font-size: 12px;
+                "
+                >this.state</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(168, 85, 247, 0.14);
+                  border: 1px solid rgba(168, 85, 247, 0.22);
+                  font-size: 12px;
+                "
+                >↔ Substituídos por Hooks</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- 3 Presentational -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(34, 197, 94, 0.18);
+                border: 1px solid rgba(34, 197, 94, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >3</span
+            >
+            <div style="font-weight: 900; font-size: 16px">
+              Componentes de Apresentação (Presentational / UI)
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: 800; font-size: 14px">📌 Função</div>
+            <div style="margin-top: 6px; font-size: 14px">
+              Servem para
+              <strong style="font-size: 14px">exibir informações</strong>.
+              Normalmente recebem dados via props e têm pouca lógica.
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              function ProdutoCard({ nome, preco }) {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;return (<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;{nome}&lt;/h3&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;R$
+              {preco}&lt;/p&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;);<br style="font-size: 13px" />}
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(34, 197, 94, 0.14);
+                  border: 1px solid rgba(34, 197, 94, 0.25);
+                  font-size: 12px;
+                "
+                >✔ Recebem dados via props</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(34, 197, 94, 0.14);
+                  border: 1px solid rgba(34, 197, 94, 0.25);
+                  font-size: 12px;
+                "
+                >✔ Foco na interface</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(34, 197, 94, 0.14);
+                  border: 1px solid rgba(34, 197, 94, 0.25);
+                  font-size: 12px;
+                "
+                >✔ Sem estado complexo</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- 4 Container -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(168, 85, 247, 0.18);
+                border: 1px solid rgba(168, 85, 247, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >4</span
+            >
+            <div style="font-weight: 900; font-size: 16px">
+              Componentes Container (Smart Components)
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: 800; font-size: 14px">📌 Função</div>
+            <div style="margin-top: 6px; font-size: 14px">
+              Responsáveis por
+              <strong style="font-size: 14px">lógica e estado</strong>.
+              Normalmente passam dados para componentes de UI.
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              function Produtos() {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;const produtos = [<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;{ nome: "Mouse", preco: 50 },<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;{ nome: "Teclado", preco: 120 }<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;];<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;return (<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{produtos.map((p, i) =&gt;
+              (<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ProdutoCard
+              key={i} nome={p.nome} preco={p.preco} /&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;))}<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;);<br style="font-size: 13px" />}
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  font-size: 12px;
+                "
+                >🧠 Controlam estado</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  font-size: 12px;
+                "
+                >🌐 Buscam dados (API)</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.08);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                  font-size: 12px;
+                "
+                >🧰 Gerenciam lógica</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- 5 Layout -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(59, 130, 246, 0.18);
+                border: 1px solid rgba(59, 130, 246, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >5</span
+            >
+            <div style="font-weight: 900; font-size: 16px">
+              Componentes de Layout
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            <div style="font-weight: 800; font-size: 14px">📌 Função</div>
+            <div style="margin-top: 6px; font-size: 14px">
+              Servem para organizar a estrutura da interface: Header, Sidebar,
+              Footer, Navbar, Layout geral.
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              function Layout({ children }) {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;return (<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Header /&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;main&gt;{children}&lt;/main&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Footer /&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;);<br style="font-size: 13px" />}
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(34, 197, 94, 0.14);
+                  border: 1px solid rgba(34, 197, 94, 0.25);
+                  font-size: 12px;
+                "
+                >✔ Definem estrutura</span
+              >
+              <span
+                style="
+                  padding: 7px 10px;
+                  border-radius: 999px;
+                  background: rgba(34, 197, 94, 0.14);
+                  border: 1px solid rgba(34, 197, 94, 0.25);
+                  font-size: 12px;
+                "
+                >✔ Usam children</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- 6 Pages -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(245, 158, 11, 0.18);
+                border: 1px solid rgba(245, 158, 11, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >6</span
+            >
+            <div style="font-weight: 900; font-size: 16px">
+              Componentes de Página (Pages)
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            Representam páginas completas da aplicação. Muito usados com React
+            Router (Home, Login, Dashboard, Perfil).
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              function Home() {<br style="font-size: 13px" />&nbsp;&nbsp;return
+              (<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Página
+              Inicial&lt;/h1&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ListaProdutos /&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;);<br style="font-size: 13px" />}
+            </div>
+          </div>
+        </div>
+        <!-- 7 Controlled -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(34, 197, 94, 0.18);
+                border: 1px solid rgba(34, 197, 94, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >7</span
+            >
+            <div style="font-weight: 900; font-size: 16px">
+              Componentes Controlados (Forms)
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            Controlam inputs usando estado (value + onChange). 📝
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              import { useState } from "react";<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />function Formulario() {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;const [nome, setNome] = useState("");<br
+                style="font-size: 13px"
+              /><br style="font-size: 13px" />&nbsp;&nbsp;return (<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&lt;input<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value={nome}<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onChange={(e) =&gt;
+              setNome(e.target.value)}<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;&nbsp;&nbsp;/&gt;<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;);<br style="font-size: 13px" />}
+            </div>
+          </div>
+        </div>
+        <!-- 8 Reutilizáveis -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(168, 85, 247, 0.18);
+                border: 1px solid rgba(168, 85, 247, 0.25);
+                font-weight: 900;
+                font-size: 14px;
+              "
+              >8</span
+            >
+            <div style="font-weight: 900; font-size: 16px">
+              Componentes Reutilizáveis (Reusable Components)
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              color: rgba(234, 240, 255, 0.86);
+              font-size: 14px;
+            "
+          >
+            São criados para serem usados em vários lugares do projeto (Button,
+            Card, Modal, Input, Avatar...). ♻️
+            <div
+              style="
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-family:
+                  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                  &quot;Liberation Mono&quot;, monospace;
+                font-size: 13px;
+                overflow: auto;
+              "
+            >
+              function Button({ texto }) {<br
+                style="font-size: 13px"
+              />&nbsp;&nbsp;return &lt;button&gt;{texto}&lt;/button&gt;;<br
+                style="font-size: 13px"
+              />}<br style="font-size: 13px" /><br
+                style="font-size: 13px"
+              />&lt;Button texto="Salvar" /&gt;<br
+                style="font-size: 13px"
+              />&lt;Button texto="Cancelar" /&gt;
+            </div>
+            <div
+              style="
+                margin-top: 12px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(245, 158, 11, 0.1);
+                border: 1px solid rgba(245, 158, 11, 0.2);
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 900; font-size: 14px">
+                🎓 Pergunta comum
+              </div>
+              <div
+                style="
+                  margin-top: 6px;
+                  color: rgba(234, 240, 255, 0.88);
+                  font-size: 14px;
+                "
+              >
+                “Todo componente precisa ser diferente?”
+                <strong style="font-size: 14px">Não.</strong> O ideal é
+                reutilizar o máximo possível.
+              </div>
+              <div
+                style="
+                  margin-top: 10px;
+                  padding: 12px;
+                  border-radius: 12px;
+                  background: rgba(11, 18, 32, 0.55);
+                  border: 1px solid rgba(255, 255, 255, 0.1);
+                  font-family:
+                    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                    &quot;Liberation Mono&quot;, monospace;
+                  font-size: 13px;
+                  overflow: auto;
+                "
+              >
+                &lt;Card titulo="Produto 1" /&gt;<br
+                  style="font-size: 13px"
+                />&lt;Card titulo="Produto 2" /&gt;<br
+                  style="font-size: 13px"
+                />&lt;Card titulo="Produto 3" /&gt;
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Estrutura de pastas -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(59, 130, 246, 0.18);
+                border: 1px solid rgba(59, 130, 246, 0.25);
+                font-size: 14px;
+              "
+              >📁</span
+            >
+            <div style="font-weight: 900; font-size: 16px">
+              Estrutura comum de componentes em projetos React
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              padding: 12px;
+              border-radius: 12px;
+              background: rgba(11, 18, 32, 0.55);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              font-family:
+                ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                &quot;Liberation Mono&quot;, monospace;
+              font-size: 13px;
+              overflow: auto;
+            "
+          >
+            src<br style="font-size: 13px" />├── components<br
+              style="font-size: 13px"
+            />│&nbsp;&nbsp;&nbsp;&nbsp;├── Button.jsx<br
+              style="font-size: 13px"
+            />│&nbsp;&nbsp;&nbsp;&nbsp;├── Card.jsx<br
+              style="font-size: 13px"
+            />│&nbsp;&nbsp;&nbsp;&nbsp;└── Modal.jsx<br
+              style="font-size: 13px"
+            />│<br style="font-size: 13px" />├── pages<br
+              style="font-size: 13px"
+            />│&nbsp;&nbsp;&nbsp;&nbsp;├── Home.jsx<br
+              style="font-size: 13px"
+            />│&nbsp;&nbsp;&nbsp;&nbsp;└── Login.jsx<br
+              style="font-size: 13px"
+            />│<br style="font-size: 13px" />├── layouts<br
+              style="font-size: 13px"
+            />│&nbsp;&nbsp;&nbsp;&nbsp;└── MainLayout.jsx
+          </div>
+        </div>
+        <!-- Resumo visual -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(34, 197, 94, 0.18);
+                border: 1px solid rgba(34, 197, 94, 0.25);
+                font-size: 14px;
+              "
+              >🧠</span
+            >
+            <div style="font-weight: 900; font-size: 16px">Resumo Visual</div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              padding: 12px;
+              border-radius: 12px;
+              background: rgba(11, 18, 32, 0.55);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              font-family:
+                ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                &quot;Liberation Mono&quot;, monospace;
+              font-size: 13px;
+              overflow: auto;
+            "
+          >
+            Componentes React<br style="font-size: 13px" />│<br
+              style="font-size: 13px"
+            />├─ Funcionais<br style="font-size: 13px" />├─ Classe (antigo)<br
+              style="font-size: 13px"
+            />│<br style="font-size: 13px" />├─ UI / Presentational<br
+              style="font-size: 13px"
+            />├─ Container / Smart<br style="font-size: 13px" />│<br
+              style="font-size: 13px"
+            />├─ Layout<br style="font-size: 13px" />├─ Página<br
+              style="font-size: 13px"
+            />│<br style="font-size: 13px" />├─ Formulário (controlado)<br
+              style="font-size: 13px"
+            />└─ Reutilizáveis
+          </div>
+        </div>
+        <!-- Extra: 10 componentes -->
+        <div
+          style="
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                background: rgba(245, 158, 11, 0.18);
+                border: 1px solid rgba(245, 158, 11, 0.25);
+                font-size: 14px;
+              "
+              >🔥</span
+            >
+            <div style="font-weight: 900; font-size: 16px">
+              Os 10 componentes que quase todo projeto React tem
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 10px;
+              display: grid;
+              grid-template-columns: repeat(2, minmax(0px, 1fr));
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                padding: 10px 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+              "
+            >
+              🔘 <strong style="font-size: 14px">Button</strong>
+              <span style="opacity: 0.8; font-size: 14px">(ação)</span>
+            </div>
+            <div
+              style="
+                padding: 10px 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+              "
+            >
+              🧱 <strong style="font-size: 14px">Card</strong>
+              <span style="opacity: 0.8; font-size: 14px">(bloco)</span>
+            </div>
+            <div
+              style="
+                padding: 10px 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+              "
+            >
+              🪟 <strong style="font-size: 14px">Modal</strong>
+              <span style="opacity: 0.8; font-size: 14px">(janela)</span>
+            </div>
+            <div
+              style="
+                padding: 10px 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+              "
+            >
+              🧭 <strong style="font-size: 14px">Navbar</strong>
+              <span style="opacity: 0.8; font-size: 14px">(navegação)</span>
+            </div>
+            <div
+              style="
+                padding: 10px 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+              "
+            >
+              📝 <strong style="font-size: 14px">Form</strong>
+              <span style="opacity: 0.8; font-size: 14px">(inputs)</span>
+            </div>
+            <div
+              style="
+                padding: 10px 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+              "
+            >
+              📋 <strong style="font-size: 14px">List</strong>
+              <span style="opacity: 0.8; font-size: 14px">(map)</span>
+            </div>
+            <div
+              style="
+                padding: 10px 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+              "
+            >
+              🧑‍🦰 <strong style="font-size: 14px">Avatar</strong>
+              <span style="opacity: 0.8; font-size: 14px">(perfil)</span>
+            </div>
+            <div
+              style="
+                padding: 10px 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+              "
+            >
+              ⏳ <strong style="font-size: 14px">Loader</strong>
+              <span style="opacity: 0.8; font-size: 14px">(carregando)</span>
+            </div>
+            <div
+              style="
+                padding: 10px 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+              "
+            >
+              ⚠️ <strong style="font-size: 14px">Alert</strong>
+              <span style="opacity: 0.8; font-size: 14px">(feedback)</span>
+            </div>
+            <div
+              style="
+                padding: 10px 12px;
+                border-radius: 12px;
+                background: rgba(11, 18, 32, 0.55);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 14px;
+              "
+            >
+              📄 <strong style="font-size: 14px">Pagination</strong>
+              <span style="opacity: 0.8; font-size: 14px">(paginação)</span>
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 12px;
+              padding: 10px 12px;
+              border-radius: 12px;
+              background: rgba(255, 255, 255, 0.06);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              color: rgba(234, 240, 255, 0.8);
+              font-size: 13px;
+            "
+          >
+            💬 Frase de sala:
+            <strong style="font-size: 13px"
+              >“Se você escreveu o mesmo JSX 3 vezes… provavelmente virou
+              componente.”</strong
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Rodapé -->
+      <div
+        style="
+          margin-top: 14px;
+          padding: 12px 14px;
+          border-radius: 14px;
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px dashed rgba(255, 255, 255, 0.18);
+          color: rgba(234, 240, 255, 0.8);
+          font-size: 13px;
+        "
+      >
+        ✅ Sugestão didática rápida: peça pros alunos classificarem os
+        componentes do projeto deles (UI, Container, Layout, Page) e
+        justificarem em 1 frase cada.
+      </div>
+    </div>
+  </body>
+</html>
