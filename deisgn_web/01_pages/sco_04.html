@@ -1,0 +1,2001 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../design_web.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🎨 Design de Interfaces · UX/UI Design</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Wireframes & Hierarquia Visual<br style="font-size: 28px" /><span
+              style="color: rgb(206, 147, 216); font-size: 28px"
+              >O Esqueleto e a Orquestra do Design</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Como estruturar interfaces de baixa fidelidade e guiar o olhar do
+            usuário com intenção
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Wireframe</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Hierarquia</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Layout</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Baixa Fidelidade</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Grid</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — WIREFRAMES             -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📐 WIREFRAMES — O Esqueleto da Interface</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(232, 234, 246),
+                rgb(237, 231, 246)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(92, 107, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que são Wireframes?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(57, 73, 171);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Wireframes</span
+              >
+              (ou "estruturas de arame") são representações visuais de
+              <strong style="font-size: 13px">baixa fidelidade</strong> que
+              mostram a
+              <strong style="font-size: 13px"
+                >estrutura, o layout e a hierarquia de informação</strong
+              >
+              de uma tela ou página,
+              <strong style="font-size: 13px">sem detalhes de design</strong>
+              como cores, fontes ou imagens.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Se um site é uma casa, o wireframe é a
+              <strong style="font-size: 13px">planta baixa</strong> – mostra
+              onde ficam as paredes, portas, janelas e cômodos, mas não mostra a
+              cor da parede, o tipo do piso ou os móveis.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📊</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Comparação com outros entregáveis de UX</span
+            >
+          </div>
+          <div style="overflow-x: auto; margin-bottom: 18px; font-size: 14px">
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 1px;
+                background: #c5cae9;
+                border-radius: 10px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a237e;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                Entregável
+              </div>
+              <div
+                style="
+                  background: #1a237e;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                Fidelidade
+              </div>
+              <div
+                style="
+                  background: #1a237e;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                O que mostra
+              </div>
+              <div
+                style="
+                  background: #1a237e;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                O que NÃO mostra
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Wireframe</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Baixa
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Estrutura, blocos, hierarquia
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Cores, fontes, imagens reais
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Mockup</strong>
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Média/alta
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Design visual, cores, tipografia
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Interatividade
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Protótipo</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Variável
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Interação, cliques, navegação
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Pode ter ou sem design final
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Sitemap</strong>
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Estrutural
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Páginas e hierarquia
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Layout da tela
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — NÍVEIS DE FIDELIDADE   -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📏 Níveis de Fidelidade dos Wireframes</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- Nível 1 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 22px">✏️</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >1. Baixa fidelidade (Low-fi) — Esboço rápido</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Feito à mão ou em ferramenta simples. Apenas caixas, linhas e
+              textos genéricos ("Lorem ipsum").<br /><strong
+                style="font-size: 12px"
+                >Ideal para:</strong
+              >
+              brainstorming, primeiras ideias, rascunhos iniciais.
+            </div>
+          </div>
+          <!-- Nível 2 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 22px">📐</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >2. Média fidelidade (Mid-fi) — Mais detalhado</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Usa fontes reais (mas sem estilo). Espaçamentos, grids, hierarquia
+              definidos.<br /><strong style="font-size: 12px"
+                >Ideal para:</strong
+              >
+              testar estrutura com usuários, validação de layout.
+            </div>
+          </div>
+          <!-- Nível 3 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 22px">🖼️</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >3. Alta fidelidade (High-fi) — Quase design final</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Já se confunde com mockup. Inclui tons de cinza, ícones, imagens
+              placeholder.<br /><strong style="font-size: 12px"
+                >Usado quando:</strong
+              >
+              o design visual não é prioridade, mas a estrutura precisa ser
+              precisa.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — O QUE DEVE E NÃO DEVE  -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >✅❌ O que um Wireframe DEVE e NÃO DEVE mostrar</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 16px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 14px;
+                padding: 20px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 12px;
+                "
+              >
+                ✅ O que DEVE mostrar
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ✅ Hierarquia visual<br />
+                ✅ Estrutura de layout<br />
+                ✅ Organização de conteúdo<br />
+                ✅ Funcionalidades principais (botões, formulários)<br />
+                ✅ Espaçamento e proporções<br />
+                ✅ Fluxo de informação (ordem de leitura)<br />
+                ✅ Agrupamento lógico de elementos<br />
+                ✅ Relação entre os blocos de conteúdo
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 14px;
+                padding: 20px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 12px;
+                "
+              >
+                ❌ O que NÃO deve mostrar
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ❌ Cores (exceto preto, branco e cinza)<br />
+                ❌ Tipografia estilizada (fontes decorativas)<br />
+                ❌ Imagens reais (usar placeholders)<br />
+                ❌ Ícones complexos (formas simples)<br />
+                ❌ Animações ou interações<br />
+                ❌ Conteúdo final ("Lorem ipsum" é bem-vindo)<br />
+                ❌ Gradientes, sombras elaboradas<br />
+                ❌ Logotipos em versão final
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-top: 16px;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #bf360c;
+                font-size: 15px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              🧠 Frase para lembrar
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                font-style: italic;
+              "
+            >
+              "Se você não pode desenhar um bom wireframe em preto e branco,
+              cores não vão salvar seu design."
+            </div>
+          </div>
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #3949ab;
+              margin-top: 14px;
+              font-size: 13px;
+              color: #1a237e;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Resumo:</strong> Wireframe é o
+            <strong>esqueleto da interface</strong>. Ele responde:
+            <em
+              >"Onde cada elemento fica na tela e como eles se relacionam?"</em
+            >
+            Pense como uma planta baixa antes da decoração.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — HIERARQUIA VISUAL      -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >👁️ HIERARQUIA VISUAL — Guiando o Olhar</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(243, 229, 245),
+                rgb(248, 240, 255)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(106, 27, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é Hierarquia Visual?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(106, 27, 154);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Hierarquia Visual</span
+              >
+              é o princípio de organização e apresentação de elementos em uma
+              interface que
+              <strong style="font-size: 13px">guia o olhar do usuário</strong>
+              de forma intuitiva, indicando o que é mais importante, o que é
+              secundário e qual ordem de leitura/atenção deve ser seguida.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              É como um
+              <strong style="font-size: 13px"
+                >maestro regendo uma orquestra</strong
+              >
+              – ele decide quais instrumentos (elementos) tocam mais alto
+              (destaque) e quais tocam mais baixo (secundário), criando uma
+              harmonia que guia a atenção do ouvinte.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⭐</span
+            ><span style="color: #4a148c; font-size: 14px; font-weight: 800"
+              >Por que é essencial?</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                🧠 Reduz carga cognitiva
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Usuário não precisa pensar onde olhar.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                ⚡ Velocidade de compreensão
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Entende a tela em milissegundos.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                👆 Guia para ações
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Direciona para comprar, cadastrar, ler.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                ♿ Acessibilidade
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Organização lógica ajuda todos os perfis.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                💰 Taxas de conversão
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Impacto direto em vendas e cadastros.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                🌊 Fluidez
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Experiência contínua e sem atritos.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 5 — 8 PRINCÍPIOS           -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(191, 54, 12),
+              rgb(230, 81, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >5</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🎻 Os 8 Princípios Fundamentais da Hierarquia Visual</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <!-- Princípio 1 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #f57c00;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >1</span
+              ><span style="color: #e65100; font-size: 15px; font-weight: 800"
+                >Tamanho</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Quanto maior o elemento, mais importante ele parece. Títulos
+              grandes dominam a atenção antes dos parágrafos.
+            </div>
+          </div>
+          <!-- Princípio 2 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #f57c00;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >2</span
+              ><span style="color: #e65100; font-size: 15px; font-weight: 800"
+                >Cor e Contraste</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Cores vibrantes chamam atenção imediatamente. Alto contraste entre
+              texto e fundo cria destaque natural.
+            </div>
+          </div>
+          <!-- Princípio 3 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #f57c00;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >3</span
+              ><span style="color: #e65100; font-size: 15px; font-weight: 800"
+                >Proximidade e Agrupamento</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Elementos próximos são percebidos como relacionados. Use
+              espaçamento para criar grupos lógicos.
+            </div>
+          </div>
+          <!-- Princípio 4 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #f57c00;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >4</span
+              ><span style="color: #e65100; font-size: 15px; font-weight: 800"
+                >Espaço em Branco (Negative Space)</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Isolar elementos importantes com espaço vazio aumenta sua
+              importância percebida. Menos é mais.
+            </div>
+          </div>
+          <!-- Princípio 5 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #f57c00;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >5</span
+              ><span style="color: #e65100; font-size: 15px; font-weight: 800"
+                >Tipografia</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Peso (bold), estilo (itálico) e família da fonte criam níveis de
+              hierarquia no texto.
+            </div>
+          </div>
+          <!-- Princípio 6 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #f57c00;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >6</span
+              ><span style="color: #e65100; font-size: 15px; font-weight: 800"
+                >Alinhamento e Grid</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Organização visual consistente cria ordem de leitura previsível.
+              Use grids para alinhar elementos.
+            </div>
+          </div>
+          <!-- Princípio 7 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #f57c00;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >7</span
+              ><span style="color: #e65100; font-size: 15px; font-weight: 800"
+                >Textura e Estilo</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Sombras, bordas, gradientes criam profundidade e destacam
+              elementos da superfície plana.
+            </div>
+          </div>
+          <!-- Princípio 8 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #f57c00;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 6px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >8</span
+              ><span style="color: #e65100; font-size: 15px; font-weight: 800"
+                >Movimento e Animação</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Elementos que se movem chamam atenção imediatamente. Use com
+              moderação para não distrair.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 6 — ERROS COMUNS           -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >6</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >⚠️ Erros Comuns de Hierarquia Visual</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 10px;
+                padding: 14px 16px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border-left: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 20px; flex-shrink: 0">❌</span>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.6">
+                <strong style="color: #c62828">Tudo grande</strong> = nada é
+                destaque. Se tudo grita, nada é ouvido.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 10px;
+                padding: 14px 16px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border-left: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 20px; flex-shrink: 0">❌</span>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.6">
+                <strong style="color: #c62828">Contraste ruim</strong> = cinza
+                claro em fundo branco é ilegível.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 10px;
+                padding: 14px 16px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border-left: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 20px; flex-shrink: 0">❌</span>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.6">
+                <strong style="color: #c62828"
+                  >Botão principal = secundário</strong
+                >
+                = usuário não sabe qual clicar.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 10px;
+                padding: 14px 16px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border-left: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 20px; flex-shrink: 0">❌</span>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.6">
+                <strong style="color: #c62828">Elementos conflitantes</strong> =
+                dois competindo pela mesma atenção.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 10px;
+                padding: 14px 16px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border-left: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 20px; flex-shrink: 0">❌</span>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.6">
+                <strong style="color: #c62828">Ignorar mobile</strong> =
+                hierarquia de desktop pode falhar no celular.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 10px;
+                padding: 14px 16px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border-left: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 20px; flex-shrink: 0">❌</span>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.6">
+                <strong style="color: #c62828">Excesso de informações</strong> =
+                usuário sobrecarregado não lê nada.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 7 — WIREFRAME + HIERARQUIA -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >7</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🤝 Como Wireframe e Hierarquia Visual se Complementam</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 16px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 14px;
+                padding: 20px;
+                text-align: center;
+                border-top: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 32px; margin-bottom: 8px">📐</div>
+              <div
+                style="
+                  color: #1a237e;
+                  font-size: 15px;
+                  font-weight: 800;
+                  margin-bottom: 6px;
+                "
+              >
+                Wireframe
+              </div>
+              <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+                Responde:
+                <strong style="font-size: 12px"
+                  >"Onde cada elemento fica?"</strong
+                ><br />Define a estrutura, o grid e a posição dos blocos na
+                tela.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 14px;
+                padding: 20px;
+                text-align: center;
+                border-top: 4px solid rgb(106, 27, 154);
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 32px; margin-bottom: 8px">👁️</div>
+              <div
+                style="
+                  color: #4a148c;
+                  font-size: 15px;
+                  font-weight: 800;
+                  margin-bottom: 6px;
+                "
+              >
+                Hierarquia Visual
+              </div>
+              <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+                Responde:
+                <strong style="font-size: 12px"
+                  >"O que o usuário vê primeiro?"</strong
+                ><br />Define o peso, a ordem de leitura e o destaque de cada
+                elemento.
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(232, 234, 246),
+                rgb(237, 231, 246)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              border-left: 5px solid rgb(92, 107, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              🔄 O ciclo ideal de design
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                flex-wrap: wrap;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a237e;
+                  color: #fff;
+                  border-radius: 10px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  text-align: center;
+                "
+              >
+                Wireframe<br /><span style="font-weight: 400; font-size: 10px"
+                  >Estrutura</span
+                >
+              </div>
+              <div style="color: #1a237e; font-size: 18px; font-weight: 900">
+                →
+              </div>
+              <div
+                style="
+                  background: #6a1b9a;
+                  color: #fff;
+                  border-radius: 10px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  text-align: center;
+                "
+              >
+                Hierarquia<br /><span style="font-weight: 400; font-size: 10px"
+                  >Pesos e ordem</span
+                >
+              </div>
+              <div style="color: #1a237e; font-size: 18px; font-weight: 900">
+                →
+              </div>
+              <div
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 10px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  text-align: center;
+                "
+              >
+                Mockup<br /><span style="font-weight: 400; font-size: 10px"
+                  >Cores e fontes</span
+                >
+              </div>
+              <div style="color: #1a237e; font-size: 18px; font-weight: 900">
+                →
+              </div>
+              <div
+                style="
+                  background: #2e7d32;
+                  color: #fff;
+                  border-radius: 10px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  text-align: center;
+                "
+              >
+                Protótipo<br /><span style="font-weight: 400; font-size: 10px"
+                  >Interação</span
+                >
+              </div>
+              <div style="color: #1a237e; font-size: 18px; font-weight: 900">
+                →
+              </div>
+              <div
+                style="
+                  background: #c62828;
+                  color: #fff;
+                  border-radius: 10px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  text-align: center;
+                "
+              >
+                Teste<br /><span style="font-weight: 400; font-size: 10px"
+                  >Validação</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da Aula</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📐</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Wireframe: o esqueleto em preto e branco
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">👁️</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Hierarquia: a orquestra que guia o olhar
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Wireframe</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Hierarquia Visual</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Baixa Fidelidade</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Grid</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Contraste</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Proporção</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    ```
+  </body>
+</html>

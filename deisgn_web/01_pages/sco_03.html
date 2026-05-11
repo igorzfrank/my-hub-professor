@@ -1,0 +1,2012 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../design_web.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🎨 Design Web UI/UX</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Estrutura de Navegação<br style="font-size: 28px" /><span
+              style="color: rgb(206, 147, 216); font-size: 28px"
+              >Sitemap & Fluxo do Usuário</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Como organizar, mapear e guiar a jornada do usuário no seu produto
+            digital
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Navegação</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Sitemap</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >User Flow</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Jornada</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Hierarquia</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — ESTRUTURA DE NAVEGAÇÃO -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧭 ESTRUTURA DE NAVEGAÇÃO</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(232, 234, 246),
+                rgb(237, 231, 246)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(92, 107, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(57, 73, 171);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Estrutura de Navegação</span
+              >
+              é a organização hierárquica e lógica de telas, conteúdos e
+              funcionalidades de um produto digital. Ela define
+              <strong style="font-size: 13px">como o usuário se move</strong>
+              entre as páginas e
+              <strong style="font-size: 13px">onde encontra</strong> o que
+              precisa.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              É como a
+              <strong style="font-size: 13px"
+                >planta baixa de um shopping</strong
+              >
+              – mostra onde ficam as lojas, escadas, elevadores e banheiros. Uma
+              boa navegação evita que o usuário se "perca" no seu produto.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⭐</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Por que é fundamental?</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 10px;
+                padding: 12px 14px;
+                border-left: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 12px; color: #1b5e20"
+                >✅ Reduz <strong>frustração</strong> e abandono</span
+              >
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 12px 14px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 12px; color: #1565c0"
+                >✅ Aumenta <strong>eficiência</strong> do usuário</span
+              >
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 12px 14px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 12px; color: #e65100"
+                >✅ Melhora <strong>taxa de conversão</strong></span
+              >
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 12px 14px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 12px; color: #6a1b9a"
+                >✅ Facilita <strong>aprendizado</strong> do sistema</span
+              >
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 12px 14px;
+                border-left: 4px solid #3949ab;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 12px; color: #1a237e"
+                >✅ Impacta diretamente o <strong>SEO</strong> (para
+                sites)</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — TIPOS DE NAVEGAÇÃO     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📂 Tipos de Estrutura de Navegação</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- Tipo 1 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 22px">🌳</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >1. Hierárquica (ou em árvore)</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              A mais comum. Conteúdo organizado em níveis (pai → filho).
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 12px 16px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+                color: #a5d6a7;
+              "
+            >
+              Home<br />├── Produtos<br />│ ├── Eletrônicos<br />│ └── Roupas<br />├──
+              Sobre<br />└── Contato
+            </div>
+          </div>
+
+          <!-- Tipo 2 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 22px">🌐</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >2. Global (ou principal)</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Presente em todas as telas. Links principais do sistema.<br /><em
+                style="font-size: 12px"
+                >Exemplo: Menu fixo no topo do site.</em
+              >
+            </div>
+          </div>
+
+          <!-- Tipo 3 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 22px">📑</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >3. Local (ou secundária)</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Navegação dentro de uma seção específica.<br /><em
+                style="font-size: 12px"
+                >Exemplo: Submenu de "Eletrônicos" mostrando Celulares,
+                Notebooks, TVs.</em
+              >
+            </div>
+          </div>
+
+          <!-- Tipo 4 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 22px">🔗</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >4. Contextual</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Links dentro do conteúdo que levam a conteúdo relacionado.<br /><em
+                style="font-size: 12px"
+                >Exemplo: "Você também pode gostar" ou links no texto do
+                blog.</em
+              >
+            </div>
+          </div>
+
+          <!-- Tipo 5 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 22px">🔍</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >5. Facetada (ou filtros)</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Permite combinar múltiplos critérios para refinar busca.<br /><em
+                style="font-size: 12px"
+                >Exemplo: Amazon – filtrar por preço, marca, tamanho, cor.</em
+              >
+            </div>
+          </div>
+
+          <!-- Tipo 6 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+                font-size: 14px;
+              "
+            >
+              <span style="font-size: 22px">➡️</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >6. Sequencial (ou passo a passo)</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px; line-height: 1.7">
+              Guia o usuário por etapas lineares.<br /><em
+                style="font-size: 12px"
+                >Exemplo: Checkout de compra (Carrinho → Endereço → Pagamento →
+                Confirmação).</em
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — ELEMENTOS DE NAVEGAÇÃO -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧩 Elementos Comuns de Navegação</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1565c0; font-size: 12px; font-weight: 800">
+                📋 Menu (navbar)
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Acesso às principais seções
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1565c0; font-size: 12px; font-weight: 800">
+                🍞 Breadcrumb
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Home > Produtos > Tênis
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1565c0; font-size: 12px; font-weight: 800">
+                📑 Sidebar
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Menu lateral para navegação secundária
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1565c0; font-size: 12px; font-weight: 800">
+                📌 Footer
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Links úteis no rodapé
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1565c0; font-size: 12px; font-weight: 800">
+                🍔 Hamburger menu
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Menu oculto (comum em mobile)
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1565c0; font-size: 12px; font-weight: 800">
+                📑 Tabs
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Alternar entre conteúdos relacionados
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1565c0; font-size: 12px; font-weight: 800">
+                🔘 Botões de ação
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Próximo/voltar, salvar, cancelar
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1565c0; font-size: 12px; font-weight: 800">
+                🔗 Links internos
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Conectam conteúdos relacionados
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — APP DE BANCO + PRINCÍPIOS -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📱 Exemplo Prático e Princípios</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 16px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgb(255, 243, 224),
+                  rgb(255, 248, 245)
+                );
+                border-radius: 14px;
+                padding: 20px;
+                border-top: 4px solid rgb(245, 124, 0);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #bf360c;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 12px;
+                "
+              >
+                🏦 Exemplo — App de Banco
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.8;
+                  color: #a5d6a7;
+                "
+              >
+                🏦 Home (Global)<br />├── 📊 Saldo (Local)<br />│ ├── Extrato<br />│
+                └── Cartões<br />├── 💸 Transferências (Sequencial)<br />│ Passo
+                1: Conta<br />│ Passo 2: Valor<br />│ Passo 3: Confirmação<br />├──
+                📱 Pagamentos (Contextual)<br />│ "Contas próximas ao
+                vencimento"<br />└── ⚙️ Configurações (Global)
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 14px;
+                padding: 20px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 12px;
+                "
+              >
+                ✅ Princípios de uma boa navegação
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+                <strong>1. Previsibilidade</strong> — Links fazem o esperado<br />
+                <strong>2. Consistência</strong> — Mesmo padrão em todas as
+                telas<br />
+                <strong>3. Simplicidade</strong> — Menos opções é melhor (Lei de
+                Hick)<br />
+                <strong>4. Visibilidade</strong> — Opções importantes sempre à
+                vista<br />
+                <strong>5. Feedback</strong> — Indicar onde o usuário está<br />
+                <strong>6. Acessibilidade</strong> — Funcionar com teclado,
+                leitores de tela
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 235, 238);
+              border-radius: 12px;
+              padding: 20px;
+              border: 2px solid rgb(239, 154, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #c62828;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              ❌ Erros comuns (anti-padrões)
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                "
+              >
+                📋 Menu com 15 itens — Sobrecarrega
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                "
+              >
+                🔗 Links criativos demais — "Saiba mais" não diz o que é
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                "
+              >
+                🙈 Esconder navegação — Ícone vago para "menu"
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                "
+              >
+                ⏬ Profundidade excessiva — 5+ cliques para encontrar algo
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                "
+              >
+                📍 Sem indicação de localização — Usuário não sabe onde está
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 5 — SITEMAP                 -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >5</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🗺️ SITEMAP — O Mapa do Site</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(243, 229, 245),
+                rgb(248, 240, 255)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(106, 27, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é Sitemap?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(106, 27, 154);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Sitemap</span
+              >
+              (ou mapa do site) é uma representação visual ou documental da
+              estrutura hierárquica de um site ou aplicativo. Ele mostra
+              <strong style="font-size: 13px">todas as páginas</strong>,
+              <strong style="font-size: 13px">seções</strong> e
+              <strong style="font-size: 13px">como elas se relacionam</strong>
+              entre si, como um organograma.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Se a Estrutura de Navegação é a "planta baixa do shopping", o
+              Sitemap é o
+              <strong style="font-size: 13px"
+                >mapa que você vê no totem de informações</strong
+              >
+              – mostrando todas as lojas, escadas e saídas de uma só vez.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🏪</span
+            ><span style="color: #4a148c; font-size: 14px; font-weight: 800"
+              >Exemplo de Sitemap — Loja Virtual</span
+            >
+          </div>
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 20px 24px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              margin-bottom: 16px;
+            "
+          >
+            <span style="color: rgb(255, 204, 2)">Home</span><br />
+            <span style="color: rgb(144, 202, 249)">├──</span>
+            <span style="color: #a5d6a7">Produtos</span><br />
+            <span style="color: rgb(144, 202, 249)">│ ├──</span>
+            <span style="color: #90caf9">Masculino</span>
+            <span style="color: #78909c">(Filtros: tamanho, cor, preço)</span
+            ><br />
+            <span style="color: rgb(144, 202, 249)">│ ├──</span>
+            <span style="color: #90caf9">Feminino</span><br />
+            <span style="color: rgb(144, 202, 249)">│ └──</span>
+            <span style="color: #90caf9">Infantil</span><br />
+            <span style="color: rgb(144, 202, 249)">├──</span>
+            <span style="color: #a5d6a7">Promoções</span>
+            <span style="color: #78909c">(Local: cupons, frete grátis)</span
+            ><br />
+            <span style="color: rgb(144, 202, 249)">├──</span>
+            <span style="color: #a5d6a7">Minha Conta</span><br />
+            <span style="color: rgb(144, 202, 249)">│ ├──</span>
+            <span style="color: #90caf9">Meus Pedidos</span>
+            <span style="color: #78909c">(Sequencial: Acompanhar)</span><br />
+            <span style="color: rgb(144, 202, 249)">│ ├──</span>
+            <span style="color: #90caf9">Endereços</span><br />
+            <span style="color: rgb(144, 202, 249)">│ └──</span>
+            <span style="color: #90caf9">Formas de Pagamento</span><br />
+            <span style="color: rgb(144, 202, 249)">├──</span>
+            <span style="color: #a5d6a7">Ajuda</span><br />
+            <span style="color: rgb(144, 202, 249)">│ ├──</span>
+            <span style="color: #90caf9">Trocas e Devoluções</span><br />
+            <span style="color: rgb(144, 202, 249)">│ └──</span>
+            <span style="color: #90caf9">FAQ</span><br />
+            <span style="color: rgb(144, 202, 249)">└──</span>
+            <span style="color: #a5d6a7">Carrinho</span>
+            <span style="color: #78909c">(Sequencial: Checkout 3 etapas)</span>
+          </div>
+
+          <div
+            style="
+              background: #f3e5f5;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #8e24aa;
+              font-size: 13px;
+              color: #4a148c;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px"
+              >🧠 Relação com outros conceitos:</strong
+            >
+            A Estrutura de Navegação é <strong>PARTE</strong> da Arquitetura da
+            Informação. A UX usa a navegação como <strong>MEIO</strong> para boa
+            experiência. A UI dá <strong>suporte VISUAL</strong> à navegação.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 6 — FLUXO DO USUÁRIO       -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(191, 54, 12),
+              rgb(230, 81, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >6</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🚶 FLUXO DO USUÁRIO — User Flow</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 235, 238),
+                rgb(255, 243, 245)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(191, 54, 12);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #bf360c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é Fluxo do Usuário?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(191, 54, 12);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Fluxo do Usuário</span
+              >
+              (User Flow) é a representação visual do
+              <strong style="font-size: 13px">caminho completo</strong> que um
+              usuário percorre dentro de um produto digital para realizar uma
+              tarefa específica, incluindo
+              <strong style="font-size: 13px"
+                >cada passo, decisão, interação e emoção</strong
+              >
+              ao longo do processo.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Se o Sitemap é o mapa do metrô (todas as estações), o Fluxo do
+              Usuário é a
+              <strong style="font-size: 13px"
+                >viagem REAL que uma pessoa faz</strong
+              >
+              – ela pode pegar o trem errado, descer na estação errada, voltar,
+              pedir informação, ou até desistir.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ O que DEVE incluir
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+                • Ponto de entrada<br />
+                • Todas as ações (cliques, scroll)<br />
+                • Decisões do usuário<br />
+                • Caminhos alternativos<br />
+                • Pontos de erro<br />
+                • Pontos de sucesso<br />
+                • Pontos de abandono<br />
+                • Tempo estimado
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ❌ O que NÃO deve incluir
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+                • Detalhes de UI (cores, fontes)<br />
+                • Código de programação<br />
+                • Todas as páginas do site<br />
+                • Elementos que não afetam o usuário<br />
+                • Especificações técnicas<br />
+                • Lógica de backend
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📂</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Tipos de Fluxo de Usuário</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #e65100">Task flow</div>
+              <div style="font-size: 11px; color: #37474f">
+                Uma tarefa específica
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #1565c0">Happy path</div>
+              <div style="font-size: 11px; color: #37474f">
+                Caminho perfeito (sem erros)
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #6a1b9a">Alternate path</div>
+              <div style="font-size: 11px; color: #37474f">
+                Caminhos diferentes
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #c62828">Error path</div>
+              <div style="font-size: 11px; color: #37474f">
+                O que acontece nos erros
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #2e7d32">
+                Onboarding flow
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Primeiro uso do app
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🍕</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Exemplo Prático — Pedir Delivery</span
+            >
+          </div>
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 20px 24px;
+              box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              margin-bottom: 16px;
+            "
+          >
+            <div
+              style="
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 2.1;
+                color: #e0e0e0;
+              "
+            >
+              <span style="color: #ffcc02">[Início]</span> Usuário com fome<br />
+              <span style="color: #64b5f6">↓</span><br />
+              <span style="color: #ffcc02">[Abre app de delivery]</span><br />
+              <span style="color: #64b5f6">↓</span><br />
+              <span style="color: #ff8a65">◇</span>
+              <span style="color: #fff">Já tem cadastro?</span><br />
+              <span style="color: #a5d6a7">├── Sim → [Login]</span><br />
+              <span style="color: #ef9a9a"
+                >└── Não → [Cadastro] → [Confirma e-mail]</span
+              ><br />
+              <span style="color: #64b5f6">↓</span><br />
+              <span style="color: #ffcc02">[Busca restaurante]</span><br />
+              <span style="color: #64b5f6">↓</span><br />
+              <span style="color: #ff8a65">◇</span>
+              <span style="color: #fff">Por filtro? Por busca? Por mapa?</span
+              ><br />
+              <span style="color: #64b5f6">↓</span><br />
+              <span style="color: #ffcc02"
+                >[Escolhe restaurante] → [Adiciona itens]</span
+              ><br />
+              <span style="color: #64b5f6">↓</span><br />
+              <span style="color: #ff8a65">◇</span>
+              <span style="color: #fff">Atingiu valor mínimo?</span><br />
+              <span style="color: #a5d6a7">├── Sim → [Finaliza]</span><br />
+              <span style="color: #ef9a9a"
+                >└── Não → ⚠️ "Faltam R$10" → [Adiciona mais]</span
+              ><br />
+              <span style="color: #64b5f6">↓</span><br />
+              <span style="color: #ffcc02">[Escolhe pagamento]</span><br />
+              <span style="color: #64b5f6">↓</span><br />
+              <span style="color: #ff8a65">◇</span>
+              <span style="color: #fff">Pagamento aprovado?</span><br />
+              <span style="color: #a5d6a7"
+                >├── Sim → ✅ "Pedido confirmado"</span
+              ><br />
+              <span style="color: #ef9a9a"
+                >└── Não → ❌ "Recusado" → [Tenta outra forma]</span
+              ><br />
+              <span style="color: #64b5f6">↓</span><br />
+              <span style="color: #ffcc02"
+                >[Acompanha entrega] → [Recebe] → 🎉 Sucesso!</span
+              >
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px"
+              >✅ Por que Fluxo do Usuário é essencial?</strong
+            >
+            Ele revela onde o usuário <strong>desiste</strong>, onde
+            <strong>erra</strong> e onde <strong>tem atrito</strong>. Com esse
+            mapa, a equipe de UX pode redesenhar etapas problemáticas antes
+            mesmo de escrever uma linha de código.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 7 — COMO CRIAR              -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >7</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🛠️ Como Criar Uma Boa Estrutura (Passo a Passo UX)</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              flex-wrap: wrap;
+              margin-bottom: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #1a237e;
+                color: #fff;
+                border-radius: 10px;
+                padding: 12px 14px;
+                text-align: center;
+                font-size: 11px;
+                font-weight: 800;
+              "
+            >
+              1. Card Sorting<br /><span
+                style="font-weight: 400; font-size: 10px"
+                >Usuários organizam conteúdos</span
+              >
+            </div>
+            <div style="color: #1a237e; font-size: 18px; font-weight: 900">
+              →
+            </div>
+            <div
+              style="
+                background: #283593;
+                color: #fff;
+                border-radius: 10px;
+                padding: 12px 14px;
+                text-align: center;
+                font-size: 11px;
+                font-weight: 800;
+              "
+            >
+              2. Tree Testing<br /><span
+                style="font-weight: 400; font-size: 10px"
+                >Testam se encontram itens</span
+              >
+            </div>
+            <div style="color: #1a237e; font-size: 18px; font-weight: 900">
+              →
+            </div>
+            <div
+              style="
+                background: #3949ab;
+                color: #fff;
+                border-radius: 10px;
+                padding: 12px 14px;
+                text-align: center;
+                font-size: 11px;
+                font-weight: 800;
+              "
+            >
+              3. Criar Sitemap<br /><span
+                style="font-weight: 400; font-size: 10px"
+                >Mapa visual de páginas</span
+              >
+            </div>
+            <div style="color: #1a237e; font-size: 18px; font-weight: 900">
+              →
+            </div>
+            <div
+              style="
+                background: #5c6bc0;
+                color: #fff;
+                border-radius: 10px;
+                padding: 12px 14px;
+                text-align: center;
+                font-size: 11px;
+                font-weight: 800;
+              "
+            >
+              4. Prototipar<br /><span style="font-weight: 400; font-size: 10px"
+                >Testar clicável</span
+              >
+            </div>
+            <div style="color: #1a237e; font-size: 18px; font-weight: 900">
+              →
+            </div>
+            <div
+              style="
+                background: #7986cb;
+                color: #fff;
+                border-radius: 10px;
+                padding: 12px 14px;
+                text-align: center;
+                font-size: 11px;
+                font-weight: 800;
+              "
+            >
+              5. Testar<br /><span style="font-weight: 400; font-size: 10px"
+                >Observar dificuldades</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #3949ab;
+              font-size: 13px;
+              color: #1a237e;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">🔍 Lembre-se:</strong> O processo é
+            <strong>iterativo</strong> — você pode (e deve) voltar a qualquer
+            etapa conforme aprende nos testes com usuários reais.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da Aula</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🧭</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Navegação: o esqueleto do produto
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🗺️</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Sitemap: o mapa completo
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🚶</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                User Flow: a jornada real
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Navegação</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Sitemap</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >User Flow</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Hierarquia</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Card Sorting</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Iteração</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
