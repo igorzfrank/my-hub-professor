@@ -1,48 +1,150 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Design Web</title>
+    <title>Design Web | デザインの呼吸</title>
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
+    <!-- Partículas de fundo -->
+    <div class="particulas" id="particulas"></div>
+
+    <!-- Névoas flutuantes -->
+    <div class="nevoa nevoa-1"></div>
+    <div class="nevoa nevoa-2"></div>
+    <div class="nevoa nevoa-3"></div>
+
     <div class="container">
-      <h1>Design Web</h1>
-      <p>Bloco 01 - Planejamento e arquitetura</p>
-      <div class="deck">
-        <a href="01_pages/sco_01.html" class="pad purple">
-          Aula 01 - Fundamentos de UX/UI & Briefing de Projeto
-        </a>
-        <a href="01_pages/sco_02.html" class="pad purple"
-          >Aula 02 - Benchmark & Design Thinking</a
-        >
-        <a href="01_pages/sco_03.html" class="pad purple">
-          Aula 03 - Estrutura de Navegação Sitemap & Fluxo do Usuário
-        </a>
-        <a href="01_pages/sco_04.html" class="pad purple">
-          Aula 04 - Wireframes + Hierarquia Visual
-        </a>
-        <a href="01_pages/sco_05.html" class="pad purple">
-          Aula 05 - Figma: Conceitos Principais
-        </a>
+      <!-- Emblema -->
+      <div class="emblema-container">
+        <div class="sol-nascente">
+          <div class="raios-sol" id="raiosSol"></div>
+          <div class="circulo-sol"></div>
+        </div>
+        <span class="subtitulo-japones">デザインの呼吸 • DEZAIN NO KOKYU</span>
+        <h1>Design Web</h1>
+        <p class="lema">〜 美しさは precision に宿る 〜</p>
       </div>
-      <p>Bloco 02 - Design de Interface e Elementos Gráficos</p>
-      <div class="deck">
-        <a href="02_pages/sco_01.html" class="pad cyan">
-          Aula 06 - Princípios de Interface (UI) + Gestalt
-        </a>
-        <a href="02_pages/sco_02.html" class="pad cyan"
-          >Aula 07 - Tratamento de Imagens + Formatos + Resolução</a
-        >
-        <a href="02_pages/sco_03.html" class="pad cyan">
-          Aula 08 - Psicologia das Cores no Design Web
-        </a>
-        <a href="02_pages/sco_04.html" class="pad cyan">
-          Aula 09 - Estrutura de Páginas Web
-        </a>
+
+      <!-- Linha decorativa -->
+      <div class="divisor-espada">
+        <span class="linha"></span>
+        <span class="tsuba">⚔️</span>
+        <span class="padrao-espada">美</span>
+        <span class="tsuba" style="animation-delay: 0.5s">🦋</span>
+        <span class="padrao-espada">技</span>
+        <span class="tsuba" style="animation-delay: 1s">⚔️</span>
+        <span class="linha"></span>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- BLOCO 01 - Planejamento e Arquitetura -->
+      <!-- ============================================================ -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">📐</span> Bloco 01 — Planejamento e
+          Arquitetura
+        </h2>
+        <p class="instrucao-secao">
+          A Respiração dos Insetos: cada detalhe importa, cada pixel tem
+          propósito
+        </p>
+
+        <div class="deck">
+          <a href="01_pages/sco_01.html" class="pad purple">
+            <span class="icone-card">🎯</span>
+            <span class="titulo-card">UX/UI & Briefing</span>
+            <span class="forma-card">壱ノ型 • Fundação</span>
+          </a>
+          <a href="01_pages/sco_02.html" class="pad purple">
+            <span class="icone-card">🔍</span>
+            <span class="titulo-card">Benchmark & Design Thinking</span>
+            <span class="forma-card">弐ノ型 • Pesquisa</span>
+          </a>
+          <a href="01_pages/sco_03.html" class="pad purple">
+            <span class="icone-card">🗺️</span>
+            <span class="titulo-card">Sitemap & Fluxo do Usuário</span>
+            <span class="forma-card">参ノ型 • Navegação</span>
+          </a>
+          <a href="01_pages/sco_04.html" class="pad purple">
+            <span class="icone-card">✏️</span>
+            <span class="titulo-card">Wireframes & Hierarquia Visual</span>
+            <span class="forma-card">肆ノ型 • Estrutura</span>
+          </a>
+          <a href="01_pages/sco_05.html" class="pad purple">
+            <span class="icone-card">🖌️</span>
+            <span class="titulo-card">Figma: Conceitos Principais</span>
+            <span class="forma-card">伍ノ型 • Ferramenta</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Divisor -->
+      <div class="divisor-secao">
+        <span class="linha-secao"></span>
+        <span class="icone-secao-divisor">🦋</span>
+        <span class="linha-secao"></span>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- BLOCO 02 - Design de Interface e Elementos Gráficos -->
+      <!-- ============================================================ -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">🎨</span> Bloco 02 — Design de Interface e
+          Elementos Gráficos
+        </h2>
+        <p class="instrucao-secao">
+          A beleza está nos detalhes que o usuário sente, mas nem sempre vê
+        </p>
+
+        <div class="deck">
+          <a href="02_pages/sco_01.html" class="pad cyan">
+            <span class="icone-card">🧠</span>
+            <span class="titulo-card">Princípios de UI + Gestalt</span>
+            <span class="forma-card">陸ノ型 • Percepção</span>
+          </a>
+          <a href="02_pages/sco_02.html" class="pad cyan">
+            <span class="icone-card">🖼️</span>
+            <span class="titulo-card">Tratamento de Imagens</span>
+            <span class="forma-card">漆ノ型 • Imagens</span>
+          </a>
+          <a href="02_pages/sco_03.html" class="pad cyan">
+            <span class="icone-card">🌈</span>
+            <span class="titulo-card">Psicologia das Cores</span>
+            <span class="forma-card">捌ノ型 • Cores</span>
+          </a>
+          <a href="02_pages/sco_04.html" class="pad cyan">
+            <span class="icone-card">🏗️</span>
+            <span class="titulo-card">Estrutura de Páginas Web</span>
+            <span class="forma-card">玖ノ型 • Layout</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Frase de impacto (exclusiva do Design) -->
+      <div class="citacao-box">
+        <span class="aspas">〝</span>
+        <blockquote>
+          "Design não é apenas o que parece.<br />
+          Design é como funciona, como respira,<br />
+          como faz o usuário sentir-se em casa."
+        </blockquote>
+        <span class="autor-citacao">— Shinobu Kocho, a Hashira do Design</span>
+      </div>
+
+      <!-- Rodapé -->
+      <div class="rodape">
+        <span class="simbolo-final">滅</span>
+        <p>Crie interfaces. Encante usuários. Cada pixel é uma pétala.</p>
+        <span class="tag-final">鬼殺隊 • Divisão de Design e Experiência</span>
       </div>
     </div>
-    <a href="../index.html" class="back-btn"> ← </a>
+
+    <!-- Botão voltar -->
+    <a href="../index.html" class="back-btn">←</a>
+
+    <script src="../script.js"></script>
   </body>
 </html>
