@@ -1,0 +1,2760 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🧠 Lógica de Programação · Portugol</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            De Pseudocódigo para Portugol<br style="font-size: 28px" /><span
+              style="color: rgb(206, 147, 216); font-size: 28px"
+              >18 Exercícios de Conversão</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Traduza cada algoritmo de pseudocódigo para Portugol executável · 4
+            níveis de dificuldade
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >🟢 Fundamentos</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >🟡 Condições</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >🟠 Lógica Booleana</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >🔵 Loopings</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ LEMBRETE DE CONVERSÃO ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(255, 248, 230),
+            rgb(255, 243, 224)
+          );
+          border-width: 1px 1px 1px 5px;
+          border-style: solid;
+          border-color: rgb(255, 213, 130) rgb(255, 213, 130) rgb(255, 213, 130)
+            rgb(245, 124, 0);
+          border-image: initial;
+          border-radius: 12px;
+          padding: 22px 28px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #e65100;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+          "
+        >
+          📌 Guia Rápido de Conversão — Pseudocódigo → Portugol
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(57, 73, 171);
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 11px; color: #37474f; line-height: 1.8">
+              <strong>INÍCIO / FIM</strong> →
+              <code
+                style="
+                  background: rgb(232, 234, 246);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                "
+                >funcao inicio() { }</code
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(57, 73, 171);
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 11px; color: #37474f; line-height: 1.8">
+              <strong>LER</strong> →
+              <code
+                style="
+                  background: rgb(232, 234, 246);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                "
+                >leia()</code
+              >
+              (declare a variável antes com tipo)
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(57, 73, 171);
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 11px; color: #37474f; line-height: 1.8">
+              <strong>ESCREVER</strong> →
+              <code
+                style="
+                  background: rgb(232, 234, 246);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                "
+                >escreva()</code
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(57, 73, 171);
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 11px; color: #37474f; line-height: 1.8">
+              <strong>←</strong> (atribuição) →
+              <code
+                style="
+                  background: rgb(232, 234, 246);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                "
+                >=</code
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(57, 73, 171);
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 11px; color: #37474f; line-height: 1.8">
+              <strong>SE...ENTÃO...SENÃO...FIM_SE</strong> →
+              <code
+                style="
+                  background: rgb(232, 234, 246);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                "
+                >se ( ) { } senao { }</code
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(57, 73, 171);
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 11px; color: #37474f; line-height: 1.8">
+              <strong>PARA...FAÇA...FIM_PARA</strong> →
+              <code
+                style="
+                  background: rgb(232, 234, 246);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                "
+                >para ( ; ; ) { }</code
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(57, 73, 171);
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 11px; color: #37474f; line-height: 1.8">
+              <strong>MOD</strong> →
+              <code
+                style="
+                  background: rgb(232, 234, 246);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                "
+                >%</code
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(57, 73, 171);
+              font-size: 14px;
+            "
+          >
+            <div style="font-size: 11px; color: #37474f; line-height: 1.8">
+              <strong>=</strong> (comparação) →
+              <code
+                style="
+                  background: rgb(232, 234, 246);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                "
+                >==</code
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(245, 124, 0);
+              font-size: 14px;
+              grid-column: 1 / -1;
+            "
+          >
+            <div style="font-size: 11px; color: #e65100; line-height: 1.8">
+              <strong>⚠️ Lembrete:</strong> No Portugol,
+              <strong>declare o tipo</strong> de cada variável antes de usar
+              (inteiro, real, cadeia, logico).
+              <strong>Não use ponto e vírgula</strong> no final dos comandos.
+              <strong>Não esqueça</strong> as aspas duplas em textos e os
+              parênteses nas condições do se.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- NÍVEL 1 — FUNDAMENTOS            -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(46, 125, 50),
+              rgb(56, 142, 60)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >🟢</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Nível 1 — Fundamentos (Exercícios 1 a 5)</span
+          >
+          <span
+            style="
+              margin-left: auto;
+              background: rgba(255, 255, 255, 0.15);
+              color: #c8e6c9;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 4px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >LEIA · ESCREVA · ←</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <!-- Ex 01 -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #2e7d32;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 01</span
+              ><span style="color: #2e7d32; font-size: 14px; font-weight: 800"
+                >Saudação Personalizada</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #c8e6c9;
+                  color: #2e7d32;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >LEIA · ESCREVA</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Leia o nome do usuário e exiba uma mensagem de boas-vindas
+              personalizada.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;LER nome<br />
+                &nbsp;&nbsp;ESCREVER "Olá, ", nome, "!"<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #b2dfdb;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Ex 02 -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #2e7d32;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 02</span
+              ><span style="color: #2e7d32; font-size: 14px; font-weight: 800"
+                >Soma de Dois Números</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #c8e6c9;
+                  color: #2e7d32;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >LEIA · ESCREVA · ←</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Leia dois números inteiros e exiba o resultado da soma entre eles.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;LER num1, num2<br />
+                &nbsp;&nbsp;soma ← num1 + num2<br />
+                &nbsp;&nbsp;ESCREVER "Soma: ", soma<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #b2dfdb;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Ex 03 -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #2e7d32;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 03</span
+              ><span style="color: #2e7d32; font-size: 14px; font-weight: 800"
+                >Dobro de um Número</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #c8e6c9;
+                  color: #2e7d32;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >LEIA · ESCREVA · ←</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Leia um número e exiba o dobro do seu valor.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;LER numero<br />
+                &nbsp;&nbsp;dobro ← numero * 2<br />
+                &nbsp;&nbsp;ESCREVER "Dobro: ", dobro<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #b2dfdb;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Ex 04 -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #2e7d32;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 04</span
+              ><span style="color: #2e7d32; font-size: 14px; font-weight: 800"
+                >Média de Duas Notas</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #c8e6c9;
+                  color: #2e7d32;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >LEIA · ESCREVA · ←</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Leia duas notas e calcule a média aritmética entre elas.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;LER nota1, nota2<br />
+                &nbsp;&nbsp;media ← (nota1 + nota2) / 2<br />
+                &nbsp;&nbsp;ESCREVER "Média: ", media<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #b2dfdb;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Ex 05 -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #2e7d32;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 05</span
+              ><span style="color: #2e7d32; font-size: 14px; font-weight: 800"
+                >Metros para Centímetros</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #c8e6c9;
+                  color: #2e7d32;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >LEIA · ESCREVA · ←</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Leia um valor em metros e converta para centímetros (multiplicar
+              por 100).
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;LER metros<br />
+                &nbsp;&nbsp;centimetros ← metros * 100<br />
+                &nbsp;&nbsp;ESCREVER metros, "m = ", centimetros, "cm"<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #b2dfdb;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- NÍVEL 2 — CONDIÇÕES              -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(245, 124, 0),
+              rgb(251, 140, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >🟡</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Nível 2 — Condições (Exercícios 6 a 10)</span
+          >
+          <span
+            style="
+              margin-left: auto;
+              background: rgba(255, 255, 255, 0.15);
+              color: #ffe0b2;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 4px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >SE · SENÃO · FIM_SE</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <!-- Ex 06 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 06</span
+              ><span style="color: #e65100; font-size: 14px; font-weight: 800"
+                >Par ou Ímpar</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #ffe0b2;
+                  color: #e65100;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >SE · SENÃO · MOD → %</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Leia um número e verifique se ele é par ou ímpar usando o resto da
+              divisão por 2.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;LER num<br />
+                &nbsp;&nbsp;SE num MOD 2 = 0 ENTÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Par"<br />
+                &nbsp;&nbsp;SENÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Ímpar"<br />
+                &nbsp;&nbsp;FIM_SE<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #ffcc80;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Ex 07 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 07</span
+              ><span style="color: #e65100; font-size: 14px; font-weight: 800"
+                >Maioridade</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #ffe0b2;
+                  color: #e65100;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >SE · SENÃO</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Leia a idade e verifique se a pessoa é maior de idade (18 anos ou
+              mais).
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;LER idade<br />
+                &nbsp;&nbsp;SE idade >= 18 ENTÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Maior de idade"<br />
+                &nbsp;&nbsp;SENÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Menor de idade"<br />
+                &nbsp;&nbsp;FIM_SE<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #ffcc80;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Ex 08 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 08</span
+              ><span style="color: #e65100; font-size: 14px; font-weight: 800"
+                >Qual é o Maior?</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #ffe0b2;
+                  color: #e65100;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >SE · SENÃO</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Leia dois números e exiba qual deles é o maior (ou se são iguais).
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;LER a, b<br />
+                &nbsp;&nbsp;SE a > b ENTÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER a, " é maior"<br />
+                &nbsp;&nbsp;SENÃO SE b > a ENTÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER b, " é maior"<br />
+                &nbsp;&nbsp;SENÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "São iguais"<br />
+                &nbsp;&nbsp;FIM_SE<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #ffcc80;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Ex 09 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 09</span
+              ><span style="color: #e65100; font-size: 14px; font-weight: 800"
+                >Sistema de Aprovação</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #ffe0b2;
+                  color: #e65100;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >SE · SENÃO · ←</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Leia a média final e exiba "Aprovado" se for maior ou igual a 7,
+              ou "Reprovado" caso contrário.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;LER media<br />
+                &nbsp;&nbsp;SE media >= 7 ENTÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Aprovado"<br />
+                &nbsp;&nbsp;SENÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Reprovado"<br />
+                &nbsp;&nbsp;FIM_SE<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #ffcc80;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Ex 10 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 10</span
+              ><span style="color: #e65100; font-size: 14px; font-weight: 800"
+                >Cálculo de Desconto</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #ffe0b2;
+                  color: #e65100;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >SE · SENÃO · ←</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Leia o valor de uma compra. Se for maior que 100 reais, aplique
+              10% de desconto e exiba o valor final.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;LER valor<br />
+                &nbsp;&nbsp;SE valor > 100 ENTÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;desconto ← valor * 0.10<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;final ← valor - desconto<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Valor final: ", final<br />
+                &nbsp;&nbsp;SENÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Valor: ", valor<br />
+                &nbsp;&nbsp;FIM_SE<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #ffcc80;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- NÍVEL 3 — LÓGICA BOOLEANA       -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(244, 67, 54)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >🟠</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Nível 3 — Lógica Booleana (Exercícios 11 a 14)</span
+          >
+          <span
+            style="
+              margin-left: auto;
+              background: rgba(255, 255, 255, 0.15);
+              color: #ffccbc;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 4px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >E · OU · NÃO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <!-- Ex 11 -->
+          <div
+            style="
+              background: rgb(255, 235, 238);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(239, 154, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #bf360c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 11</span
+              ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+                >Entrada no Evento (E)</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #ffcdd2;
+                  color: #bf360c;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >E</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Para entrar no evento, é preciso ter idade >= 18
+              <strong>E</strong> possuir documento (sim). Leia as duas
+              informações e decida.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;LER idade, temDocumento<br />
+                &nbsp;&nbsp;SE (idade >= 18) E (temDocumento = "sim") ENTÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Entrada permitida"<br />
+                &nbsp;&nbsp;SENÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Entrada negada"<br />
+                &nbsp;&nbsp;FIM_SE<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #ef9a9a;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Ex 12 -->
+          <div
+            style="
+              background: rgb(255, 235, 238);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(239, 154, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #bf360c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 12</span
+              ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+                >Promoção Especial (OU)</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #ffcdd2;
+                  color: #bf360c;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >OU</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              O cliente ganha frete grátis se o valor da compra for maior que
+              100 <strong>OU</strong> se ele for membro VIP (sim).
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;LER valor, vip<br />
+                &nbsp;&nbsp;SE (valor > 100) OU (vip = "sim") ENTÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Frete grátis!"<br />
+                &nbsp;&nbsp;SENÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Frete normal"<br />
+                &nbsp;&nbsp;FIM_SE<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #ef9a9a;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Ex 13 -->
+          <div
+            style="
+              background: rgb(255, 235, 238);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(239, 154, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #bf360c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 13</span
+              ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+                >Acesso Restrito (NÃO)</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #ffcdd2;
+                  color: #bf360c;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >NÃO</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              O sistema deve exibir "Painel disponível" se o usuário
+              <strong>NÃO</strong> for administrador (logico).
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;LER administrador<br />
+                &nbsp;&nbsp;SE NÃO administrador ENTÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Painel disponível"<br />
+                &nbsp;&nbsp;SENÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Painel bloqueado"<br />
+                &nbsp;&nbsp;FIM_SE<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #ef9a9a;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Ex 14 -->
+          <div
+            style="
+              background: rgb(255, 235, 238);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(239, 154, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #bf360c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 14</span
+              ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+                >Classificação de Faixa Etária</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #ffcdd2;
+                  color: #bf360c;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >SE · SENÃO SE · E</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Leia a idade e classifique: 0-12 = Criança, 13-17 = Adolescente,
+              18-59 = Adulto, 60+ = Idoso.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;LER idade<br />
+                &nbsp;&nbsp;SE idade <= 12 ENTÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Criança"<br />
+                &nbsp;&nbsp;SENÃO SE idade <= 17 ENTÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Adolescente"<br />
+                &nbsp;&nbsp;SENÃO SE idade <= 59 ENTÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Adulto"<br />
+                &nbsp;&nbsp;SENÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Idoso"<br />
+                &nbsp;&nbsp;FIM_SE<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #ef9a9a;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- NÍVEL 4 — LOOPINGS               -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(25, 118, 210),
+              rgb(66, 165, 245)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >🔵</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Nível 4 — Loopings (Exercícios 15 a 18)</span
+          >
+          <span
+            style="
+              margin-left: auto;
+              background: rgba(255, 255, 255, 0.15);
+              color: #bbdefb;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 4px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >PARA · REPITA · ENQUANTO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <!-- Ex 15 -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(187, 222, 251);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #1565c0;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 15</span
+              ><span style="color: #1565c0; font-size: 14px; font-weight: 800"
+                >Contagem de 1 até 5</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #bbdefb;
+                  color: #1565c0;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >PARA · FAÇA</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Exiba os números de 1 até 5 usando uma estrutura de repetição.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;PARA i DE 1 ATÉ 5 FAÇA:<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER i<br />
+                &nbsp;&nbsp;FIM_PARA<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #90caf9;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Ex 16 -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(187, 222, 251);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #1565c0;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 16</span
+              ><span style="color: #1565c0; font-size: 14px; font-weight: 800"
+                >Soma Acumulada de 1 até 5</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #bbdefb;
+                  color: #1565c0;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >PARA · ACUMULADOR</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Calcule a soma dos números de 1 até 5 (1+2+3+4+5 = 15) e exiba o
+              resultado.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;soma ← 0<br />
+                &nbsp;&nbsp;PARA i DE 1 ATÉ 5 FAÇA:<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;soma ← soma + i<br />
+                &nbsp;&nbsp;FIM_PARA<br />
+                &nbsp;&nbsp;ESCREVER "Soma: ", soma<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #90caf9;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Ex 17 -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(187, 222, 251);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #1565c0;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 17</span
+              ><span style="color: #1565c0; font-size: 14px; font-weight: 800"
+                >Tabuada de Qualquer Número</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #bbdefb;
+                  color: #1565c0;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >PARA · LEIA</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Leia um número e exiba a tabuada de multiplicação dele de 1 até
+              10.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;LER num<br />
+                &nbsp;&nbsp;PARA i DE 1 ATÉ 10 FAÇA:<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;resultado ← num * i<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ESCREVER num, " x ", i, " = ",
+                resultado<br />
+                &nbsp;&nbsp;FIM_PARA<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #90caf9;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Ex 18 -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 14px;
+              padding: 22px;
+              border: 2px solid rgb(187, 222, 251);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #1565c0;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 18</span
+              ><span style="color: #1565c0; font-size: 14px; font-weight: 800"
+                >Validar Senha (REPITA ATÉ)</span
+              ><span
+                style="
+                  margin-left: auto;
+                  background: #bbdefb;
+                  color: #1565c0;
+                  font-size: 11px;
+                  font-weight: bold;
+                  padding: 3px 12px;
+                  border-radius: 6px;
+                "
+                >REPITA · ATÉ</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Peça a senha e repita até que o usuário digite a senha correta
+              "1234". Exiba "Acesso liberado" ao final.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                INÍCIO<br />
+                &nbsp;&nbsp;REPITA<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;LER senha<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;SE senha <> "1234" ENTÃO<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ESCREVER "Senha
+                incorreta"<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;FIM_SE<br />
+                &nbsp;&nbsp;ATÉ que senha = "1234"<br />
+                &nbsp;&nbsp;ESCREVER "Acesso liberado"<br />
+                FIM
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  border: 2px dashed #90caf9;
+                  font-size: 12px;
+                  color: #78909c;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  min-height: 100px;
+                "
+              >
+                <span style="font-style: italic"
+                  >Escreva seu código Portugol aqui</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da Atividade</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🟢</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                5 exercícios de fundamentos
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🟡</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                5 exercícios de condições
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🟠</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                4 exercícios de lógica booleana
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔵</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                4 exercícios de loopings
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >18 exercícios</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >4 níveis</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Pseudocódigo → Portugol</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >funcao inicio()</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Conversão de sintaxe</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

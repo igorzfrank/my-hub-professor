@@ -1,0 +1,2993 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🧠 Lógica de Programação · Portugol</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Gabarito Comentado<br style="font-size: 28px" /><span
+              style="color: rgb(206, 147, 216); font-size: 28px"
+              >18 Exercícios de Portugol</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Respostas de Igor Frank Moreno · Todos os níveis resolvidos
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >🟢 Fundamentos</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >🟡 Condições</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >🟠 Lógica Booleana</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >🔵 Loopings</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- NÍVEL 1 — FUNDAMENTOS (1 a 5)    -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(46, 125, 50),
+              rgb(56, 142, 60)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >🟢</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Nível 1 — Fundamentos (Exercícios 1 a 5)</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <!-- Ex 01 -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #2e7d32;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 01</span
+              ><span style="color: #2e7d32; font-size: 14px; font-weight: 800"
+                >Saudação Personalizada</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 1º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >cadeia</span
+              >
+              <span style="color: rgb(100, 181, 246)">nome</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Qual é o seu nome: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">nome</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Seja bem-vindo, "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">nome</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Ex 02 -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #2e7d32;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 02</span
+              ><span style="color: #2e7d32; font-size: 14px; font-weight: 800"
+                >Soma de Dois Números</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 2º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">n1</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">n2</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Escreva o primeiro número: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">n1</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Escreva o segundo número: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">n2</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">soma</span> =
+              <span style="color: rgb(100, 181, 246)">n1</span> +
+              <span style="color: rgb(100, 181, 246)">n2</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"A soma entre "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">n1</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)">" e "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">n2</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)">" é igual a "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">soma</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Ex 03 -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #2e7d32;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 03</span
+              ><span style="color: #2e7d32; font-size: 14px; font-weight: 800"
+                >Dobro de um Número</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 3º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">n1</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Escreva um número: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">n1</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">resultado</span> =
+              <span style="color: rgb(100, 181, 246)">n1</span> *
+              <span style="color: rgb(255, 204, 2)">2</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"O dobro de "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">n1</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)">" é igual a "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">resultado</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Ex 04 -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #2e7d32;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 04</span
+              ><span style="color: #2e7d32; font-size: 14px; font-weight: 800"
+                >Média de Duas Notas</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 4º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >real</span
+              >
+              <span style="color: rgb(100, 181, 246)">n1</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >real</span
+              >
+              <span style="color: rgb(100, 181, 246)">n2</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Escreva a primeira nota: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">n1</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Escreva a segunda nota: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">n2</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >real</span
+              >
+              <span style="color: rgb(100, 181, 246)">media</span> = (<span
+                style="color: rgb(100, 181, 246)"
+                >n1</span
+              >
+              + <span style="color: rgb(100, 181, 246)">n2</span>)/<span
+                style="color: rgb(255, 204, 2)"
+                >2</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"A média entre "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">n1</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)">" e "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">n2</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)">" é igual a "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">media</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Ex 05 -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #2e7d32;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 05</span
+              ><span style="color: #2e7d32; font-size: 14px; font-weight: 800"
+                >Metros para Centímetros</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 5º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >real</span
+              >
+              <span style="color: rgb(100, 181, 246)">m</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Quantos METROS você gostaria de converter para CENTÍMETROS?:
+                "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">m</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >real</span
+              >
+              <span style="color: rgb(100, 181, 246)">cm</span> =
+              <span style="color: rgb(100, 181, 246)">m</span> *
+              <span style="color: rgb(255, 204, 2)">100</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"A conversão de "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">m</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)"
+                >" METROS para CENTÍMETROS é igual a "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">cm</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)">" CENTÍMETROS!"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- NÍVEL 2 — CONDIÇÕES (6 a 10)     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(245, 124, 0),
+              rgb(251, 140, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >🟡</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Nível 2 — Condições (Exercícios 6 a 10)</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <!-- Ex 06 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 06</span
+              ><span style="color: #e65100; font-size: 14px; font-weight: 800"
+                >Par ou Ímpar</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 6º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">n</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Digite um número: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">n</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >se</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">n</span>
+              <span style="color: rgb(144, 202, 249)">%</span>
+              <span style="color: rgb(255, 204, 2)">2</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(255, 204, 2)">0</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"PAR"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"ÍMPAR"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Ex 07 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 07</span
+              ><span style="color: #e65100; font-size: 14px; font-weight: 800"
+                >Maioridade</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 7º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">idade</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Qual é a sua idade?: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">idade</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >se</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">idade</span>
+              <span style="color: rgb(144, 202, 249)">>=</span>
+              <span style="color: rgb(255, 204, 2)">18</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Parabéns você já é MAIOR de idade!"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Parabéns você é MENOR de idade!"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Ex 08 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 08</span
+              ><span style="color: #e65100; font-size: 14px; font-weight: 800"
+                >Qual é o Maior?</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 8º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">n1</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">n2</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"O primeiro número: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">n1</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"O segundo número: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">n2</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >se</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">n1</span>
+              <span style="color: rgb(144, 202, 249)">></span>
+              <span style="color: rgb(100, 181, 246)">n2</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"O "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">n1</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)">" é MAIOR que "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">n2</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao se</span>
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">n1</span>
+              <span style="color: rgb(144, 202, 249)"><</span>
+              <span style="color: rgb(100, 181, 246)">n2</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"O "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">n2</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)">" é MAIOR que "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">n1</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">n1</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)">" é igual a "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">n2</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Ex 09 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 09</span
+              ><span style="color: #e65100; font-size: 14px; font-weight: 800"
+                >Sistema de Aprovação</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 9º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >real</span
+              >
+              <span style="color: rgb(100, 181, 246)">nota1</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >real</span
+              >
+              <span style="color: rgb(100, 181, 246)">nota2</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Qual é a primeira nota?: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">nota1</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Qual é a segunda nota?: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">nota2</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >real</span
+              >
+              <span style="color: rgb(100, 181, 246)">media</span> = (<span
+                style="color: rgb(100, 181, 246)"
+                >nota1</span
+              >
+              + <span style="color: rgb(100, 181, 246)">nota2</span>)/<span
+                style="color: rgb(255, 204, 2)"
+                >2</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >se</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">media</span>
+              <span style="color: rgb(144, 202, 249)">>=</span>
+              <span style="color: rgb(255, 204, 2)">7</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Aluno Aprovado!"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Aluno em Recuperação!"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Ex 10 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 10</span
+              ><span style="color: #e65100; font-size: 14px; font-weight: 800"
+                >Cálculo de Desconto</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 10º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >real</span
+              >
+              <span style="color: rgb(100, 181, 246)">valorProduto</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Qual é o valor do produto?: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">valorProduto</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >se</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">valorProduto</span>
+              <span style="color: rgb(144, 202, 249)">>=</span>
+              <span style="color: rgb(255, 204, 2)">100</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >real</span
+              >
+              <span style="color: rgb(100, 181, 246)">valorFinal</span> =
+              <span style="color: rgb(100, 181, 246)">valorProduto</span> *
+              <span style="color: rgb(255, 204, 2)">0.9</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Seu item de R$: "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">valorProduto</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)"
+                >",00 recebeu um desconto de 10% e foi para R$: "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">valorFinal</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)">",00."</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Seu item ficou no valor de R$: "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">valorProduto</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)"
+                >",00, não houve desconto."</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- NÍVEL 3 — LÓGICA BOOLEANA (11 a 14) -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(244, 67, 54)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >🟠</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Nível 3 — Lógica Booleana (Exercícios 11 a 14)</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <!-- Ex 11 -->
+          <div
+            style="
+              background: rgb(255, 235, 238);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(239, 154, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #bf360c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 11</span
+              ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+                >Entrada no Evento (Operador E)</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 11º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">idade</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >cadeia</span
+              >
+              <span style="color: rgb(100, 181, 246)">resposta</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >logico</span
+              >
+              <span style="color: rgb(100, 181, 246)">documento</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Qual é a sua idade?: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">idade</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Você tem documento? (S/N): "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">resposta</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >se</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">resposta</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"S"</span>
+              <span style="color: rgb(144, 202, 249)">ou</span>
+              <span style="color: rgb(100, 181, 246)">resposta</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"s"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(100, 181, 246)"
+                >documento</span
+              >
+              = <span style="color: rgb(165, 214, 167)">verdadeiro</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Você declarou que TEM documento! \n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao se</span>
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">resposta</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"N"</span>
+              <span style="color: rgb(144, 202, 249)">ou</span>
+              <span style="color: rgb(100, 181, 246)">resposta</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(100, 181, 246)"
+                >documento</span
+              >
+              = <span style="color: rgb(165, 214, 167)">falso</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Você declarou que NÂO TEM documento! \n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Houve algo errado, finalizando sistema. \n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >se</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">idade</span>
+              <span style="color: rgb(144, 202, 249)">>=</span>
+              <span style="color: rgb(255, 204, 2)">18</span>
+              <span style="color: rgb(144, 202, 249)">e</span>
+              <span style="color: rgb(100, 181, 246)">documento</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">verdadeiro</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Entrada Liberada!"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Houve algum erro... Entrada bloqueada!"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Ex 12 -->
+          <div
+            style="
+              background: rgb(255, 235, 238);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(239, 154, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #bf360c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 12</span
+              ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+                >Promoção Especial (Operador OU)</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 12º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >real</span
+              >
+              <span style="color: rgb(100, 181, 246)">valorCompra</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >logico</span
+              >
+              <span style="color: rgb(100, 181, 246)">clienteVIP</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >cadeia</span
+              >
+              <span style="color: rgb(100, 181, 246)">resposta</span
+              ><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Qual é o valor da compra?: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">valorCompra</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Você é VIP? (S/N):"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">resposta</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >se</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">resposta</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"S"</span>
+              <span style="color: rgb(144, 202, 249)">ou</span>
+              <span style="color: rgb(100, 181, 246)">resposta</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"s"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(100, 181, 246)"
+                >clienteVIP</span
+              >
+              = <span style="color: rgb(165, 214, 167)">verdadeiro</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Você é um CLIENTE VIP! \n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao se</span>
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">resposta</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"N"</span>
+              <span style="color: rgb(144, 202, 249)">ou</span>
+              <span style="color: rgb(100, 181, 246)">resposta</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(100, 181, 246)"
+                >clienteVIP</span
+              >
+              = <span style="color: rgb(165, 214, 167)">falso</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Você NÂO é um CLIENTE VIP! \n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Cliente não CADASTRADO.\n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >se</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">valorCompra</span>
+              <span style="color: rgb(144, 202, 249)">>=</span>
+              <span style="color: rgb(255, 204, 2)">100</span>
+              <span style="color: rgb(144, 202, 249)">ou</span>
+              <span style="color: rgb(100, 181, 246)">clienteVIP</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">verdadeiro</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Parabéns você recebeu FRETE GRÁTIS!"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Você terá que pagar mais R$:10,00 de frete!"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Ex 13 -->
+          <div
+            style="
+              background: rgb(255, 235, 238);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(239, 154, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #bf360c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 13</span
+              ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+                >Acesso Restrito (Operador NÃO)</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 13º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >cadeia</span
+              >
+              <span style="color: rgb(100, 181, 246)">resposta</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >logico</span
+              >
+              <span style="color: rgb(100, 181, 246)">administrador</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Você é um ADMINISTRADOR? (S/N): "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">resposta</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >se</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">resposta</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"S"</span>
+              <span style="color: rgb(144, 202, 249)">ou</span>
+              <span style="color: rgb(100, 181, 246)">resposta</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"s"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(100, 181, 246)"
+                >administrador</span
+              >
+              = <span style="color: rgb(165, 214, 167)">verdadeiro</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Você declarou que É UM ADMINISTRADOR! \n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao se</span>
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">resposta</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"N"</span>
+              <span style="color: rgb(144, 202, 249)">ou</span>
+              <span style="color: rgb(100, 181, 246)">resposta</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(100, 181, 246)"
+                >administrador</span
+              >
+              = <span style="color: rgb(165, 214, 167)">falso</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Você declarou que NÃO É UM ADMINISTRADOR! \n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Houve algo de errado... \n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >se</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">administrador</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">verdadeiro</span>
+              <span style="color: rgb(144, 202, 249)">ou</span>
+              <span style="color: rgb(100, 181, 246)">administrador</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">falso</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >se</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(144, 202, 249)">nao</span>
+              <span style="color: rgb(100, 181, 246)">administrador</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Painel Disponivel!"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Painel Bloqueado"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Ex 14 -->
+          <div
+            style="
+              background: rgb(255, 235, 238);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(239, 154, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #bf360c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 14</span
+              ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+                >Classificação de Faixa Etária</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 14º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">idade</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Qual é a idade?: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">idade</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >se</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">idade</span>
+              <span style="color: rgb(144, 202, 249)"><=</span>
+              <span style="color: rgb(255, 204, 2)">12</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"É uma CRIANÇA!"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao se</span>
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">idade</span>
+              <span style="color: rgb(144, 202, 249)"><=</span>
+              <span style="color: rgb(255, 204, 2)">17</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"É um ADOLESCENTE!"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao se</span>
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">idade</span>
+              <span style="color: rgb(144, 202, 249)"><=</span>
+              <span style="color: rgb(255, 204, 2)">59</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"É um ADULTO!"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"É um IDOSO!"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- NÍVEL 4 — LOOPINGS (15 a 18)     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(25, 118, 210),
+              rgb(66, 165, 245)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >🔵</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Nível 4 — Loopings (Exercícios 15 a 18)</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <!-- Ex 15 -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(187, 222, 251);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #1565c0;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 15</span
+              ><span style="color: #1565c0; font-size: 14px; font-weight: 800"
+                >Contagem de 1 até 5</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 15º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">count</span> =
+              <span style="color: rgb(255, 204, 2)">1</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >enquanto</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">count</span>
+              <span style="color: rgb(144, 202, 249)"><=</span>
+              <span style="color: rgb(255, 204, 2)">5</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">count</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(100, 181, 246)"
+                >count</span
+              >
+              ++<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"\n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">i</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >para</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">i</span> =
+              <span style="color: rgb(255, 204, 2)">1</span
+              ><span style="color: rgb(144, 202, 249)">;</span>
+              <span style="color: rgb(100, 181, 246)">i</span>
+              <span style="color: rgb(144, 202, 249)"><=</span>
+              <span style="color: rgb(255, 204, 2)">5</span
+              ><span style="color: rgb(144, 202, 249)">;</span>
+              <span style="color: rgb(100, 181, 246)">i</span>++<span
+                style="color: rgb(144, 202, 249)"
+                >)</span
+              >
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">i</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"\n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >para</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(128, 222, 234)">inteiro</span>
+              <span style="color: rgb(100, 181, 246)">c</span> =
+              <span style="color: rgb(255, 204, 2)">1</span
+              ><span style="color: rgb(144, 202, 249)">;</span>
+              <span style="color: rgb(100, 181, 246)">c</span>
+              <span style="color: rgb(144, 202, 249)"><=</span>
+              <span style="color: rgb(255, 204, 2)">5</span
+              ><span style="color: rgb(144, 202, 249)">;</span>
+              <span style="color: rgb(100, 181, 246)">c</span>++<span
+                style="color: rgb(144, 202, 249)"
+                >)</span
+              >
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">c</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Ex 16 -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(187, 222, 251);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #1565c0;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 16</span
+              ><span style="color: #1565c0; font-size: 14px; font-weight: 800"
+                >Soma Acumulada de 1 até 5</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 16º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">count</span> =
+              <span style="color: rgb(255, 204, 2)">1</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">total</span> =
+              <span style="color: rgb(255, 204, 2)">0</span><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >enquanto</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">count</span>
+              <span style="color: rgb(144, 202, 249)"><=</span>
+              <span style="color: rgb(255, 204, 2)">5</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">count</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(100, 181, 246)"
+                >total</span
+              >
+              = <span style="color: rgb(100, 181, 246)">total</span> +
+              <span style="color: rgb(100, 181, 246)">count</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(100, 181, 246)"
+                >count</span
+              >
+              ++<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"\n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">total</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"\n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #78909c"
+                >// Versão com para</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">total1</span> =
+              <span style="color: rgb(255, 204, 2)">0</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">i</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >para</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">i</span> =
+              <span style="color: rgb(255, 204, 2)">1</span
+              ><span style="color: rgb(144, 202, 249)">;</span>
+              <span style="color: rgb(100, 181, 246)">i</span>
+              <span style="color: rgb(144, 202, 249)"><=</span>
+              <span style="color: rgb(255, 204, 2)">5</span
+              ><span style="color: rgb(144, 202, 249)">;</span>
+              <span style="color: rgb(100, 181, 246)">i</span>++<span
+                style="color: rgb(144, 202, 249)"
+                >)</span
+              >
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">i</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(100, 181, 246)"
+                >total1</span
+              >
+              = <span style="color: rgb(100, 181, 246)">total1</span> +
+              <span style="color: rgb(100, 181, 246)">i</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"\n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">total1</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"\n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #78909c"
+                >// Versão com para declarando no próprio laço</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">total2</span> =
+              <span style="color: rgb(255, 204, 2)">0</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >para</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(128, 222, 234)">inteiro</span>
+              <span style="color: rgb(100, 181, 246)">c</span> =
+              <span style="color: rgb(255, 204, 2)">1</span
+              ><span style="color: rgb(144, 202, 249)">;</span>
+              <span style="color: rgb(100, 181, 246)">c</span>
+              <span style="color: rgb(144, 202, 249)"><=</span>
+              <span style="color: rgb(255, 204, 2)">5</span
+              ><span style="color: rgb(144, 202, 249)">;</span>
+              <span style="color: rgb(100, 181, 246)">c</span>++<span
+                style="color: rgb(144, 202, 249)"
+                >)</span
+              >
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">c</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(100, 181, 246)"
+                >total2</span
+              >
+              = <span style="color: rgb(100, 181, 246)">total2</span> +
+              <span style="color: rgb(100, 181, 246)">c</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"\n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">total2</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"\n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Ex 17 -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(187, 222, 251);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #1565c0;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 17</span
+              ><span style="color: #1565c0; font-size: 14px; font-weight: 800"
+                >Tabuada de Qualquer Número</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 17º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">numero</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">resultado</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Digite um numero: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">numero</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >para</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(128, 222, 234)">inteiro</span>
+              <span style="color: rgb(100, 181, 246)">i</span> =
+              <span style="color: rgb(255, 204, 2)">0</span
+              ><span style="color: rgb(144, 202, 249)">;</span>
+              <span style="color: rgb(100, 181, 246)">i</span>
+              <span style="color: rgb(144, 202, 249)"><=</span>
+              <span style="color: rgb(255, 204, 2)">10</span
+              ><span style="color: rgb(144, 202, 249)">;</span>
+              <span style="color: rgb(100, 181, 246)">i</span>++<span
+                style="color: rgb(144, 202, 249)"
+                >)</span
+              >
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(100, 181, 246)"
+                >resultado</span
+              >
+              = <span style="color: rgb(100, 181, 246)">numero</span> *
+              <span style="color: rgb(100, 181, 246)">i</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">numero</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)">" x "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">i</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)">" = "</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(100, 181, 246)">resultado</span
+              ><span style="color: rgb(144, 202, 249)">,</span>
+              <span style="color: rgb(165, 214, 167)">"\n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Ex 18 -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(187, 222, 251);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #1565c0;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >Ex 18</span
+              ><span style="color: #1565c0; font-size: 14px; font-weight: 800"
+                >Validar Senha</span
+              >
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >// 18º Questão - Igor Frank Moreno</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >cadeia</span
+              >
+              <span style="color: rgb(100, 181, 246)">senha</span> =
+              <span style="color: rgb(165, 214, 167)">"1234"</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >cadeia</span
+              >
+              <span style="color: rgb(100, 181, 246)">senhaUsuario</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >logico</span
+              >
+              <span style="color: rgb(100, 181, 246)">senhaCorreta</span> =
+              <span style="color: rgb(165, 214, 167)">falso</span><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >enquanto</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">senhaCorreta</span> !=
+              <span style="color: rgb(165, 214, 167)">verdadeiro</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Digite a senha: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">senhaUsuario</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >se</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">senhaUsuario</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(100, 181, 246)">senha</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Acesso liberado!"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(100, 181, 246)"
+                >senhaCorreta</span
+              >
+              = <span style="color: rgb(165, 214, 167)">verdadeiro</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Senha incorreta, tente novamente! \n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Gabarito Completo</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🟢</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                5 fundamentos
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🟡</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                5 condições
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🟠</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                4 lógicas booleanas
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔵</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                4 loopings
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >18 exercícios resolvidos</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Igor Frank Moreno</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Portugol</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >funcao inicio()</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Respostas completas</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

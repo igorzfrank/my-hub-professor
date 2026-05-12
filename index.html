@@ -2,52 +2,99 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Hub Professor</title>
+    <title>Hub Professor | 教師の柱</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>My Hub - Professor</h1>
-      <p>Selecione uma matéria</p>
 
+    <!-- Partículas de fundo -->
+    <div class="particulas" id="particulas"></div>
+
+    <!-- Névoas flutuantes -->
+    <div class="nevoa nevoa-1"></div>
+    <div class="nevoa nevoa-2"></div>
+    <div class="nevoa nevoa-3"></div>
+
+    <div class="container">
+      
+      <!-- Emblema -->
+      <div class="emblema-container">
+        <div class="sol-nascente">
+          <div class="raios-sol" id="raiosSol"></div>
+          <div class="circulo-sol"></div>
+        </div>
+        <span class="subtitulo-japones">教師の柱 • KYOSHI NO HASHIRA</span>
+        <h1>Hub Professor</h1>
+        <p class="lema">〜 全集中で学べ 〜</p>
+      </div>
+
+      <!-- Linha decorativa -->
+      <div class="divisor-espada">
+        <span class="linha"></span>
+        <span class="tsuba">⚔️</span>
+        <span class="padrao-espada">教</span>
+        <span class="tsuba" style="animation-delay: 0.5s;">📚</span>
+        <span class="padrao-espada">学</span>
+        <span class="tsuba" style="animation-delay: 1s;">⚔️</span>
+        <span class="linha"></span>
+      </div>
+
+      <!-- Subtítulo -->
+      <p class="instrucao">Selecione uma matéria para iniciar o treino</p>
+
+      <!-- Grid de cards -->
       <div class="deck">
-        <a
-          href="logica_de_programacao/logica_de_programacao.html"
-          class="pad orange"
-        >
-          <span>🧠</span>
-          Lógica de Programação
+        
+        <a href="logica_de_programacao/logica_de_programacao.html" class="pad orange">
+          <span class="icone-card">🧠</span>
+          <span class="titulo-card">Lógica de Programação</span>
+          <span class="forma-card">第一の型 • Ichi no Kata</span>
         </a>
 
-        <a
-          href="desenvolvimento_de_sistemas/desenvolvimento_de_sistemas.html"
-          class="pad blue"
-        >
-          <span>💻</span>
-          Desenvolvimento de Sistemas
+        <a href="desenvolvimento_de_sistemas/desenvolvimento_de_sistemas.html" class="pad blue">
+          <span class="icone-card">💻</span>
+          <span class="titulo-card">Desenvolvimento de Sistemas</span>
+          <span class="forma-card">第二の型 • Ni no Kata</span>
         </a>
 
         <a href="deisgn_web/design_web.html" class="pad cyan">
-          <span>🎨</span>
-          Design Web
+          <span class="icone-card">🎨</span>
+          <span class="titulo-card">Design Web</span>
+          <span class="forma-card">第三の型 • San no Kata</span>
         </a>
 
-        <a href="#" class="pad orange">
-          <span>⚙️</span>
-          Back-End
+        <a href="#" class="pad green">
+          <span class="icone-card">⚙️</span>
+          <span class="titulo-card">Back-End</span>
+          <span class="forma-card">第四の型 • Shi no Kata</span>
         </a>
 
         <a href="#" class="pad purple">
-          <span>📁</span>
-          Projetos
+          <span class="icone-card">📁</span>
+          <span class="titulo-card">Projetos</span>
+          <span class="forma-card">第五の型 • Go no Kata</span>
         </a>
 
         <a href="#" class="pad red">
-          <span>📝</span>
-          Avaliações
+          <span class="icone-card">📝</span>
+          <span class="titulo-card">Avaliações</span>
+          <span class="forma-card">第六の型 • Roku no Kata</span>
         </a>
+
       </div>
+
+      <!-- Rodapé -->
+      <div class="rodape">
+        <span class="simbolo-final">滅</span>
+        <p>Destrua dúvidas. Domine o conhecimento. Code with honor.</p>
+        <span class="tag-final">鬼殺隊 • Divisão de Tecnologia Educacional</span>
+      </div>
+
     </div>
-    <!-- <a href="../index.html" class="back-btn"> ← </a> -->
+
+    <!-- Botão voltar -->
+    <!-- <a href="../index.html" class="back-btn">←</a> -->
+
+    <script src="script.js"></script>
   </body>
 </html>

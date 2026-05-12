@@ -1,0 +1,1964 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividades Declaração de Variáveis - Portugol</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🧠 Lógica de Programação · Portugol</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Atividades de Fixação<br style="font-size: 28px" /><span
+              style="color: rgb(206, 147, 216); font-size: 28px"
+              >Declaração de Variáveis no Portugol</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            25 exercícios para dominar inteiro, real, cadeia, logico e caractere
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >inteiro</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >real</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >cadeia</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >logico</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >caractere</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ LEMBRETE VISUAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(255, 248, 230),
+            rgb(255, 243, 224)
+          );
+          border-width: 1px 1px 1px 5px;
+          border-style: solid;
+          border-color: rgb(255, 213, 130) rgb(255, 213, 130) rgb(255, 213, 130)
+            rgb(245, 124, 0);
+          border-image: initial;
+          border-radius: 12px;
+          padding: 22px 28px;
+          margin-bottom: 28px;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #e65100;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+          "
+        >
+          📌 Revisão Rápida — Tipos de Dados no Portugol
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(57, 73, 171);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: 800;
+                color: #1a237e;
+                margin-bottom: 4px;
+              "
+            >
+              🔢 inteiro — Números sem vírgula
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.6">
+              Exemplos válidos:
+              <code
+                style="
+                  background: rgb(232, 234, 246);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #1a237e;
+                "
+                >42</code
+              >,
+              <code
+                style="
+                  background: rgb(232, 234, 246);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #1a237e;
+                "
+                >-7</code
+              >,
+              <code
+                style="
+                  background: rgb(232, 234, 246);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #1a237e;
+                "
+                >0</code
+              >,
+              <code
+                style="
+                  background: rgb(232, 234, 246);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #1a237e;
+                "
+                >1000</code
+              >,
+              <code
+                style="
+                  background: rgb(232, 234, 246);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #1a237e;
+                "
+                >-365</code
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: 800;
+                color: #e65100;
+                margin-bottom: 4px;
+              "
+            >
+              📐 real — Números com vírgula (decimais)
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.6">
+              Exemplos válidos:
+              <code
+                style="
+                  background: rgb(255, 243, 224);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #e65100;
+                "
+                >3.14</code
+              >,
+              <code
+                style="
+                  background: rgb(255, 243, 224);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #e65100;
+                "
+                >-0.5</code
+              >,
+              <code
+                style="
+                  background: rgb(255, 243, 224);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #e65100;
+                "
+                >7.0</code
+              >,
+              <code
+                style="
+                  background: rgb(255, 243, 224);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #e65100;
+                "
+                >100.50</code
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: 800;
+                color: #004d40;
+                margin-bottom: 4px;
+              "
+            >
+              🔤 cadeia — Texto (palavras, frases, caracteres)
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.6">
+              Exemplos válidos:
+              <code
+                style="
+                  background: rgb(224, 242, 241);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #004d40;
+                "
+                >"Maria"</code
+              >,
+              <code
+                style="
+                  background: rgb(224, 242, 241);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #004d40;
+                "
+                >"ABC"</code
+              >,
+              <code
+                style="
+                  background: rgb(224, 242, 241);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #004d40;
+                "
+                >"123"</code
+              >
+              (texto, não número)
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(106, 27, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: 800;
+                color: #6a1b9a;
+                margin-bottom: 4px;
+              "
+            >
+              ✅ logico — Verdadeiro ou falso
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.6">
+              Exemplos válidos:
+              <code
+                style="
+                  background: rgb(243, 229, 245);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #6a1b9a;
+                "
+                >verdadeiro</code
+              >,
+              <code
+                style="
+                  background: rgb(243, 229, 245);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #6a1b9a;
+                "
+                >falso</code
+              >
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 255, 255);
+              border-radius: 8px;
+              padding: 12px 14px;
+              border-left: 4px solid rgb(191, 54, 12);
+              font-size: 14px;
+              grid-column: 1 / -1;
+            "
+          >
+            <div
+              style="
+                font-size: 12px;
+                font-weight: 800;
+                color: #bf360c;
+                margin-bottom: 4px;
+              "
+            >
+              🔡 caractere — Uma única letra, dígito ou símbolo
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.6">
+              Exemplos válidos:
+              <code
+                style="
+                  background: rgb(255, 235, 238);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #bf360c;
+                "
+                >'A'</code
+              >,
+              <code
+                style="
+                  background: rgb(255, 235, 238);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #bf360c;
+                "
+                >'7'</code
+              >,
+              <code
+                style="
+                  background: rgb(255, 235, 238);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #bf360c;
+                "
+                >'@'</code
+              >,
+              <code
+                style="
+                  background: rgb(255, 235, 238);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 11px;
+                  color: #bf360c;
+                "
+                >'m'</code
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- NÍVEL 1 — IDENTIFICAÇÃO DO TIPO  -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Nível 1 — Identifique o Tipo Correto (Exercícios 1 a 8)</span
+          >
+          <span
+            style="
+              margin-left: auto;
+              background: rgba(255, 255, 255, 0.15);
+              color: #c5cae9;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 4px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Escolha o tipo adequado</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <!-- Ex 01 -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(197, 202, 233);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #1a237e;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >01</span
+              ><span style="color: #1a237e; font-size: 13px; font-weight: 800"
+                >Quantos anos você tem? (ex: 25, 42, 18)</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px">
+              Declare a variável para armazenar a idade de uma pessoa.
+            </div>
+          </div>
+
+          <!-- Ex 02 -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(197, 202, 233);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #1a237e;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >02</span
+              ><span style="color: #1a237e; font-size: 13px; font-weight: 800"
+                >Qual é o seu nome completo?</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px">
+              Declare a variável para guardar o nome de um usuário.
+            </div>
+          </div>
+
+          <!-- Ex 03 -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(197, 202, 233);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #1a237e;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >03</span
+              ><span style="color: #1a237e; font-size: 13px; font-weight: 800"
+                >Qual é a sua altura em metros? (ex: 1.75, 1.60, 1.82)</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px">
+              Declare a variável para armazenar a altura de uma pessoa.
+            </div>
+          </div>
+
+          <!-- Ex 04 -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(197, 202, 233);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #1a237e;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >04</span
+              ><span style="color: #1a237e; font-size: 13px; font-weight: 800"
+                >Você é estudante? (sim ou não)</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px">
+              Declare a variável para indicar se alguém é estudante ou não.
+            </div>
+          </div>
+
+          <!-- Ex 05 -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(197, 202, 233);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #1a237e;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >05</span
+              ><span style="color: #1a237e; font-size: 13px; font-weight: 800"
+                >Quantos produtos há no estoque? (ex: 150, 0, 2000)</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px">
+              Declare a variável para armazenar a quantidade de itens em
+              estoque.
+            </div>
+          </div>
+
+          <!-- Ex 06 -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(197, 202, 233);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #1a237e;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >06</span
+              ><span style="color: #1a237e; font-size: 13px; font-weight: 800"
+                >Qual é o preço de um produto? (ex: 59.90, 129.99, 7.50)</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px">
+              Declare a variável para guardar o valor monetário de um item.
+            </div>
+          </div>
+
+          <!-- Ex 07 -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(197, 202, 233);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #1a237e;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >07</span
+              ><span style="color: #1a237e; font-size: 13px; font-weight: 800"
+                >O cliente está com o pagamento em dia?</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px">
+              Declare a variável para indicar se o pagamento está em dia
+              (verdadeiro) ou atrasado (falso).
+            </div>
+          </div>
+
+          <!-- Ex 08 -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(197, 202, 233);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #1a237e;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >08</span
+              ><span style="color: #1a237e; font-size: 13px; font-weight: 800"
+                >Qual é a primeira letra do seu nome? (ex: 'A', 'M', 'Z')</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px">
+              Declare a variável para armazenar uma única letra.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- NÍVEL 2 — ESCOLHA MÚLTIPLA       -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Nível 2 — Múltipla Escolha (Exercícios 9 a 16)</span
+          >
+          <span
+            style="
+              margin-left: auto;
+              background: rgba(255, 255, 255, 0.15);
+              color: #b2dfdb;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 4px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Qual tipo está correto?</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <!-- Ex 09 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(178, 223, 219);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #004d40;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >09</span
+              ><span style="color: #004d40; font-size: 13px; font-weight: 800"
+                >Variável para armazenar o ano de nascimento (ex: 2005)</span
+              >
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+              a) real anoNascimento<br />b) inteiro anoNascimento<br />c) cadeia
+              anoNascimento<br />d) logico anoNascimento
+            </div>
+          </div>
+
+          <!-- Ex 10 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(178, 223, 219);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #004d40;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >10</span
+              ><span style="color: #004d40; font-size: 13px; font-weight: 800"
+                >Variável para armazenar o CPF (ex: "123.456.789-00")</span
+              >
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+              a) inteiro cpf<br />b) real cpf<br />c) cadeia cpf<br />d)
+              caractere cpf
+            </div>
+          </div>
+
+          <!-- Ex 11 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(178, 223, 219);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #004d40;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >11</span
+              ><span style="color: #004d40; font-size: 13px; font-weight: 800"
+                >Variável para armazenar a temperatura em graus (ex: 36.5)</span
+              >
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+              a) inteiro temperatura<br />b) real temperatura<br />c) cadeia
+              temperatura<br />d) logico temperatura
+            </div>
+          </div>
+
+          <!-- Ex 12 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(178, 223, 219);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #004d40;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >12</span
+              ><span style="color: #004d40; font-size: 13px; font-weight: 800"
+                >Variável para armazenar se a lâmpada está acesa</span
+              >
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+              a) inteiro acesa<br />b) real acesa<br />c) cadeia acesa<br />d)
+              logico acesa
+            </div>
+          </div>
+
+          <!-- Ex 13 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(178, 223, 219);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #004d40;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >13</span
+              ><span style="color: #004d40; font-size: 13px; font-weight: 800"
+                >Variável para armazenar o sexo de uma pessoa (ex: 'M',
+                'F')</span
+              >
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+              a) caractere sexo<br />b) cadeia sexo<br />c) logico sexo<br />d)
+              inteiro sexo
+            </div>
+          </div>
+
+          <!-- Ex 14 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(178, 223, 219);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #004d40;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >14</span
+              ><span style="color: #004d40; font-size: 13px; font-weight: 800"
+                >Variável para armazenar o endereço de e-mail</span
+              >
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+              a) inteiro email<br />b) real email<br />c) cadeia email<br />d)
+              caractere email
+            </div>
+          </div>
+
+          <!-- Ex 15 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(178, 223, 219);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #004d40;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >15</span
+              ><span style="color: #004d40; font-size: 13px; font-weight: 800"
+                >Variável para armazenar o total de uma compra (ex:
+                250.75)</span
+              >
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+              a) inteiro total<br />b) real total<br />c) cadeia total<br />d)
+              logico total
+            </div>
+          </div>
+
+          <!-- Ex 16 -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(178, 223, 219);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #004d40;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >16</span
+              ><span style="color: #004d40; font-size: 13px; font-weight: 800"
+                >Variável para armazenar a quantidade de filhos (ex: 0, 1, 2,
+                3)</span
+              >
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+              a) inteiro quantidadeFilhos<br />b) real quantidadeFilhos<br />c)
+              cadeia quantidadeFilhos<br />d) logico quantidadeFilhos
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- NÍVEL 3 — CORREÇÃO DE ERROS      -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(191, 54, 12),
+              rgb(230, 81, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Nível 3 — Corrija o Tipo Incorreto (Exercícios 17 a 22)</span
+          >
+          <span
+            style="
+              margin-left: auto;
+              background: rgba(255, 255, 255, 0.15);
+              color: #ffccbc;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 4px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Encontre e corrija o erro</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <!-- Ex 17 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #bf360c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >17</span
+              ><span style="color: #bf360c; font-size: 13px; font-weight: 800"
+                >inteiro nome = "Carlos"</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px">
+              Qual o erro? Reescreva com o tipo correto.
+            </div>
+          </div>
+
+          <!-- Ex 18 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #bf360c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >18</span
+              ><span style="color: #bf360c; font-size: 13px; font-weight: 800"
+                >cadeia notaFinal = 8.5</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px">
+              Qual o erro? Reescreva com o tipo correto.
+            </div>
+          </div>
+
+          <!-- Ex 19 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #bf360c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >19</span
+              ><span style="color: #bf360c; font-size: 13px; font-weight: 800"
+                >real numeroDeAlunos = 40</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px">
+              Qual o erro? Embora funcione, qual seria o tipo mais adequado?
+            </div>
+          </div>
+
+          <!-- Ex 20 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #bf360c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >20</span
+              ><span style="color: #bf360c; font-size: 13px; font-weight: 800"
+                >logico estadoCivil = "solteiro"</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px">
+              Qual o erro? Reescreva com o tipo correto.
+            </div>
+          </div>
+
+          <!-- Ex 21 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #bf360c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >21</span
+              ><span style="color: #bf360c; font-size: 13px; font-weight: 800"
+                >inteiro valorTotal = 199.90</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px">
+              Qual o erro? Reescreva com o tipo correto.
+            </div>
+          </div>
+
+          <!-- Ex 22 -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #bf360c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >22</span
+              ><span style="color: #bf360c; font-size: 13px; font-weight: 800"
+                >cadeia conceito = 'A'</span
+              >
+            </div>
+            <div style="color: #37474f; font-size: 12px">
+              Qual o erro? Qual seria o tipo mais adequado para uma única letra?
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- NÍVEL 4 — CÓDIGOS PRONTOS        -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Nível 4 — Escreva o Programa Completo (Exercícios 23 a 25)</span
+          >
+          <span
+            style="
+              margin-left: auto;
+              background: rgba(255, 255, 255, 0.15);
+              color: #e1bee7;
+              font-size: 11px;
+              font-weight: bold;
+              padding: 4px 14px;
+              border-radius: 20px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Código completo</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- Ex 23 -->
+          <div
+            style="
+              background: rgb(248, 240, 255);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border: 2px solid rgb(225, 190, 231);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+              "
+            >
+              <span
+                style="
+                  background: #6a1b9a;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >23</span
+              ><span style="color: #4a148c; font-size: 14px; font-weight: 800"
+                >Cadastro de Cliente</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Declare as seguintes variaveis como se você estivesse iniciando um programa:<br />
+              • Nome do cliente<br />
+              • Idade do cliente<br />
+              • Altura do cliente<br />
+              • Se é cliente VIP<br />
+              • Primeira letra do nome
+            </div>
+          </div>
+
+          <!-- Ex 24 -->
+          <div
+            style="
+              background: rgb(248, 240, 255);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border: 2px solid rgb(225, 190, 231);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+              "
+            >
+              <span
+                style="
+                  background: #8e24aa;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >24</span
+              ><span style="color: #4a148c; font-size: 14px; font-weight: 800"
+                >Ficha de Produto</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Declare as seguintes variaveis como se você estivesse iniciando um programa:<br />
+              • Código do produto<br />
+              • Nome do produto<br />
+              • Preço de custo<br />
+              • Preço de venda<br />
+              • Se está disponível em estoque<br />
+              • Categoria (ex: 'A', 'B', 'C')
+            </div>
+          </div>
+
+          <!-- Ex 25 -->
+          <div
+            style="
+              background: rgb(248, 240, 255);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border: 2px solid rgb(225, 190, 231);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 10px;
+              "
+            >
+              <span
+                style="
+                  background: #4a148c;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 4px 12px;
+                  font-size: 11px;
+                  font-weight: 900;
+                "
+                >25</span
+              ><span style="color: #4a148c; font-size: 14px; font-weight: 800"
+                >Boletim Escolar</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Declare as seguintes variaveis como se você estivesse iniciando um programa:<br />
+              • Nome do aluno<br />
+              • Número de matrícula<br />
+              • Nota do primeiro bimestre<br />
+              • Nota do segundo bimestre<br />
+              • Nota do terceiro bimestre<br />
+              • Nota do quarto bimestre<br />
+              • Média final (calculada das 4 notas)<br />
+              • Se foi aprovado (verdadeiro se média >= 7.0)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da Atividade</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔢</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                inteiro: números sem vírgula
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📐</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                real: números decimais
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔤</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                cadeia: textos e strings
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">✅</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                logico: verdadeiro ou falso
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >25 exercícios</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >4 níveis</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Declaração de variáveis</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Correção de erros</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Programas completos</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,29 +1,127 @@
 <!doctype html>
-<html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Lógica de Programação</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lógica de Programação | 論理の呼吸</title>
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
+
+    <!-- Partículas de fundo -->
+    <div class="particulas" id="particulas"></div>
+
+    <!-- Névoas flutuantes -->
+    <div class="nevoa nevoa-1"></div>
+    <div class="nevoa nevoa-2"></div>
+    <div class="nevoa nevoa-3"></div>
+
     <div class="container">
-      <h1>Lógica de Programação</h1>
-      <p>Escolha um material</p>
-
-      <div class="deck">
-        <a href="01_pages/01_pseudocodigo.html" class="pad orange">
-          Pseudocódigo
-        </a>
-
-        <a href="01_pages/01_pseudocodigo_atividades.html" class="pad orange">
-          Pseudocódigo - Atividades
-        </a>
-
-        <a href="01_pages/01_pseudocodigo_respostas.html" class="pad orange">
-          Pseudocódigo - Atividades(respostas)
-        </a>
+      
+      <!-- Emblema -->
+      <div class="emblema-container">
+        <div class="sol-nascente">
+          <div class="raios-sol" id="raiosSol"></div>
+          <div class="circulo-sol"></div>
+        </div>
+        <span class="subtitulo-japones">論理の呼吸 • RONRI NO KOKYU</span>
+        <h1>Lógica de Programação</h1>
+        <p class="lema">〜 第一の型 • Ichi no Kata 〜</p>
       </div>
+
+      <!-- Linha decorativa -->
+      <div class="divisor-espada">
+        <span class="linha"></span>
+        <span class="tsuba">⚔️</span>
+        <span class="padrao-espada">基</span>
+        <span class="tsuba" style="animation-delay: 0.5s;">🧠</span>
+        <span class="padrao-espada">礎</span>
+        <span class="tsuba" style="animation-delay: 1s;">⚔️</span>
+        <span class="linha"></span>
+      </div>
+
+      <!-- Seção: Pseudocódigo -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">📜</span> Pseudocódigo
+        </h2>
+        <p class="instrucao-secao">Os fundamentos da lógica pura</p>
+
+        <div class="deck">
+          <a href="01_pages/01_pseudocodigo.html" class="pad orange">
+            <span class="icone-card">📖</span>
+            <span class="titulo-card">Pseudocódigo</span>
+            <span class="forma-card">壱ノ型 • Teoria</span>
+          </a>
+
+          <a href="01_pages/01_pseudocodigo_atividades.html" class="pad orange">
+            <span class="icone-card">✍️</span>
+            <span class="titulo-card">Pseudocódigo<br>Atividades</span>
+            <span class="forma-card">弐ノ型 • Prática</span>
+          </a>
+
+          <a href="01_pages/01_pseudocodigo_respostas.html" class="pad orange">
+            <span class="icone-card">✅</span>
+            <span class="titulo-card">Pseudocódigo<br>Respostas</span>
+            <span class="forma-card">参ノ型 • Gabarito</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Linha separadora entre seções -->
+      <div class="divisor-secao">
+        <span class="linha-secao"></span>
+        <span class="icone-secao-divisor">🔥</span>
+        <span class="linha-secao"></span>
+      </div>
+
+      <!-- Seção: Portugol -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">⚡</span> Portugol
+        </h2>
+        <p class="instrucao-secao">A arte de traduzir lógica para código</p>
+
+        <div class="deck">
+          <a href="02_pages/sco_01.html" class="pad yellow">
+            <span class="icone-card">🏯</span>
+            <span class="titulo-card">Introdução ao Portugol</span>
+            <span class="forma-card">肆ノ型 • Origem</span>
+          </a>
+
+          <a href="02_pages/sco_02.html" class="pad yellow">
+            <span class="icone-card">📝</span>
+            <span class="titulo-card">Declaração de Variáveis</span>
+            <span class="forma-card">伍ノ型 • Variáveis</span>
+          </a>
+
+          <a href="02_pages/sco_03.html" class="pad yellow">
+            <span class="icone-card">🔄</span>
+            <span class="titulo-card">Pseudocódigo → Portugol<br><small>Com exemplos</small></span>
+            <span class="forma-card">陸ノ型 • Conversão</span>
+          </a>
+
+          <a href="02_pages/sco_04.html" class="pad yellow">
+            <span class="icone-card">✅</span>
+            <span class="titulo-card">Pseudocódigo → Portugol<br><small>Respostas</small></span>
+            <span class="forma-card">漆ノ型 • Gabarito</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Rodapé -->
+      <div class="rodape">
+        <span class="simbolo-final">滅</span>
+        <p>Domine a lógica. O código se curvará diante de você.</p>
+        <span class="tag-final">鬼殺隊 • Divisão de Lógica e Algoritmos</span>
+      </div>
+
     </div>
-    <a href="../index.html" class="back-btn"> ← </a>
+
+    <!-- Botão voltar -->
+    <a href="../index.html" class="back-btn">←</a>
+
+    <script src="../script.js"></script>
+
   </body>
 </html>

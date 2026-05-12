@@ -1,185 +1,531 @@
 <!doctype html>
-<html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <title>Desenvolvimento de Sistemas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desenvolvimento de Sistemas | 開発の呼吸</title>
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
+
+    <!-- Partículas de fundo -->
+    <div class="particulas" id="particulas"></div>
+
+    <!-- Névoas flutuantes -->
+    <div class="nevoa nevoa-1"></div>
+    <div class="nevoa nevoa-2"></div>
+    <div class="nevoa nevoa-3"></div>
+
     <div class="container">
-      <h1>Desenvolvimento de Sistemas</h1>
-      <p>Bloco 01 - Fundamentos de desenvolvimento de sistemas</p>
-      <div class="deck">
-        <a href="01_pages/sco_01.html" class="pad red">
-          Introdução à disciplina: Conceito de Sistemas
-        </a>
-        <a href="01_pages/sco_02.html" class="pad red"
-          >Front-end e Back-end em Sistemas Multiplataforma</a
-        >
-        <a href="01_pages/sco_03.html" class="pad red">
-          Tecnologias Web — Front-end, Back-end e Banco de Dados
-        </a>
-        <a href="01_pages/sco_04.html" class="pad red">
-          Papéis Profissionais em Projetos de Software
-        </a>
-        <a href="01_pages/sco_05.html" class="pad red">
-          Glossário de Jargões do Desenvolvimento de Sistemas
-        </a>
-        <a href="01_pages/sco_06.html" class="pad red">
-          Sistemas de Informação Empresariais
-        </a>
+      
+      <!-- Emblema -->
+      <div class="emblema-container">
+        <div class="sol-nascente">
+          <div class="raios-sol" id="raiosSol"></div>
+          <div class="circulo-sol"></div>
+        </div>
+        <span class="subtitulo-japones">開発の呼吸 • KAIHATSU NO KOKYU</span>
+        <h1>Desenvolvimento de Sistemas</h1>
+        <p class="lema">〜 全集中でシステムを構築せよ 〜</p>
       </div>
-      <p>Bloco 02 - Arquitetura, padrão e gestão de projetos</p>
-      <div class="deck">
-        <a href="02_pages/sco_01.html" class="pad orange">
-          Metodologias Ágeis de Desenvolvimento de Software
-        </a>
-        <a href="02_pages/sco_02.html" class="pad orange"
-          >Planejamento Estratégico e Cronograma</a
-        >
-        <a href="02_pages/sco_03.html" class="pad orange">
-          Introdução ao Scrum
-        </a>
-        <a href="02_pages/sco_04.html" class="pad orange">
-          Design Patterns — Padrões de Projeto de Software
-        </a>
+
+      <!-- Linha decorativa -->
+      <div class="divisor-espada">
+        <span class="linha"></span>
+        <span class="tsuba">⚔️</span>
+        <span class="padrao-espada">開</span>
+        <span class="tsuba" style="animation-delay: 0.5s;">💻</span>
+        <span class="padrao-espada">発</span>
+        <span class="tsuba" style="animation-delay: 1s;">⚔️</span>
+        <span class="linha"></span>
       </div>
-      <p>Bloco 03 - JavaScript</p>
-      <div class="deck">
-        <a href="03_pages/sco_01.html" class="pad green">
-          Revisão de Fundamentos JavaScript
-        </a>
-        <a href="03_pages/sco_02.html" class="pad green"
-          >Orientação a Objetos com JavaScript</a
-        >
-        <a href="03_pages/sco_03.html" class="pad green">
-          Tipos de Dados: Listas, Dicionários e JSON em JavaScript
-        </a>
-        <a href="03_pages/sco_04.html" class="pad green">
-          Manipulação de Dados: Métodos Essenciais em JavaScript
-        </a>
+
+      <!-- ============================================================ -->
+      <!-- BLOCO 01 - Fundamentos -->
+      <!-- ============================================================ -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">🏯</span> Bloco 01 — Fundamentos
+        </h2>
+        <p class="instrucao-secao">A base de tudo: entender o que são sistemas</p>
+
+        <div class="deck">
+          <a href="01_pages/sco_01.html" class="pad red">
+            <span class="icone-card">📖</span>
+            <span class="titulo-card">Conceito de Sistemas</span>
+            <span class="forma-card">壱ノ型 • Fundação</span>
+          </a>
+          <a href="01_pages/sco_02.html" class="pad red">
+            <span class="icone-card">🖥️</span>
+            <span class="titulo-card">Front-end e Back-end</span>
+            <span class="forma-card">弐ノ型 • Dualidade</span>
+          </a>
+          <a href="01_pages/sco_03.html" class="pad red">
+            <span class="icone-card">🌐</span>
+            <span class="titulo-card">Tecnologias Web</span>
+            <span class="forma-card">参ノ型 • Stack</span>
+          </a>
+          <a href="01_pages/sco_04.html" class="pad red">
+            <span class="icone-card">👥</span>
+            <span class="titulo-card">Papéis Profissionais</span>
+            <span class="forma-card">肆ノ型 • Equipe</span>
+          </a>
+          <a href="01_pages/sco_05.html" class="pad red">
+            <span class="icone-card">📚</span>
+            <span class="titulo-card">Glossário de Jargões</span>
+            <span class="forma-card">伍ノ型 • Vocabulário</span>
+          </a>
+          <a href="01_pages/sco_06.html" class="pad red">
+            <span class="icone-card">🏢</span>
+            <span class="titulo-card">Sistemas Empresariais</span>
+            <span class="forma-card">陸ノ型 • Corporativo</span>
+          </a>
+        </div>
       </div>
-      <p>Bloco 04 - Fundamentos de Front-end</p>
-      <div class="deck">
-        <a href="04_pages/sco_01.html" class="pad blue">
-          Conceitos Fundamentais e Estrutura do React
-        </a>
-        <a href="04_pages/sco_02.html" class="pad blue"
-          >Iniciando um Projeto com Vite + React</a
-        >
-        <a href="04_pages/sco_03.html" class="pad blue">
-          O que são Props no React?
-        </a>
+
+      <!-- Divisor -->
+      <div class="divisor-secao">
+        <span class="linha-secao"></span>
+        <span class="icone-secao-divisor">🔥</span>
+        <span class="linha-secao"></span>
       </div>
-      <p>Bloco 05 - Componentização com React</p>
-      <div class="deck">
-        <a href="05_pages/sco_01.html" class="pad purple">
-          Componentes, Props e Renderização
-        </a>
-        <a href="05_pages/sco_02.html" class="pad purple"
-          >Estado e Hooks no React</a
-        >
-        <a href="05_pages/sco_03.html" class="pad purple">
-          Organização e Boas Práticas
-        </a>
+
+      <!-- ============================================================ -->
+      <!-- BLOCO 02 - Arquitetura e Gestão -->
+      <!-- ============================================================ -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">🗺️</span> Bloco 02 — Arquitetura e Gestão
+        </h2>
+        <p class="instrucao-secao">Planejar antes de codificar é a marca de um verdadeiro Hashira</p>
+
+        <div class="deck">
+          <a href="02_pages/sco_01.html" class="pad orange">
+            <span class="icone-card">🔄</span>
+            <span class="titulo-card">Metodologias Ágeis</span>
+            <span class="forma-card">漆ノ型 • Agilidade</span>
+          </a>
+          <a href="02_pages/sco_02.html" class="pad orange">
+            <span class="icone-card">📅</span>
+            <span class="titulo-card">Planejamento e Cronograma</span>
+            <span class="forma-card">捌ノ型 • Estratégia</span>
+          </a>
+          <a href="02_pages/sco_03.html" class="pad orange">
+            <span class="icone-card">🏃</span>
+            <span class="titulo-card">Introdução ao Scrum</span>
+            <span class="forma-card">玖ノ型 • Scrum</span>
+          </a>
+          <a href="02_pages/sco_04.html" class="pad orange">
+            <span class="icone-card">🧩</span>
+            <span class="titulo-card">Design Patterns</span>
+            <span class="forma-card">拾ノ型 • Padrões</span>
+          </a>
+        </div>
       </div>
-      <p>Bloco 06 - Conectando com APIs</p>
-      <div class="deck">
-        <a href="06_pages/sco_01.html" class="pad pink">
-          O Ciclo de Vida da Requisição
-        </a>
-        <a href="06_pages/sco_02.html" class="pad pink">Pokédex com React</a>
-        <a href="06_pages/sco_03.html" class="pad pink">
-          Cardápio Digital Dinâmico
-        </a>
-        <a href="06_pages/sco_04.html" class="pad pink">
-          Missão: Do Zero ao Deploy - App de hamburguer
-        </a>
+
+      <!-- Divisor -->
+      <div class="divisor-secao">
+        <span class="linha-secao"></span>
+        <span class="icone-secao-divisor">⚡</span>
+        <span class="linha-secao"></span>
       </div>
-      <p>Bloco 07 - Introdução ao Node</p>
-      <div class="deck">
-        <a href="07_pages/sco_01.html" class="pad cyan">
-          Padrão MVC com Express.js
-        </a>
-        <a href="07_pages/sco_02.html" class="pad cyan"
-          >NPM — Node Package Manager</a
-        >
-        <a href="07_pages/sco_03.html" class="pad cyan">
-          Requisições HTTP — Como os sistemas se comunicam
-        </a>
-        <a href="07_pages/sco_04.html" class="pad cyan">
-          Node.js — JavaScript fora do navegador
-        </a>
+
+      <!-- ============================================================ -->
+      <!-- BLOCO 03 - JavaScript -->
+      <!-- ============================================================ -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">💛</span> Bloco 03 — JavaScript
+        </h2>
+        <p class="instrucao-secao">A Respiração do Trovão: velocidade e poder na linguagem da web</p>
+
+        <div class="deck">
+          <a href="03_pages/sco_01.html" class="pad green">
+            <span class="icone-card">🔁</span>
+            <span class="titulo-card">Revisão de Fundamentos</span>
+            <span class="forma-card">壱ノ型 • Base JS</span>
+          </a>
+          <a href="03_pages/sco_02.html" class="pad green">
+            <span class="icone-card">🧱</span>
+            <span class="titulo-card">Orientação a Objetos</span>
+            <span class="forma-card">弐ノ型 • OOP</span>
+          </a>
+          <a href="03_pages/sco_03.html" class="pad green">
+            <span class="icone-card">📋</span>
+            <span class="titulo-card">Listas, Dicionários e JSON</span>
+            <span class="forma-card">参ノ型 • Dados</span>
+          </a>
+          <a href="03_pages/sco_04.html" class="pad green">
+            <span class="icone-card">🔧</span>
+            <span class="titulo-card">Métodos Essenciais</span>
+            <span class="forma-card">肆ノ型 • Manipulação</span>
+          </a>
+        </div>
       </div>
-      <p>Bloco 08 - Modularização</p>
-      <div class="deck">
-        <a href="08_pages/sco_01.html" class="pad teal">
-          ES Modules — Organizando código com import e export
-        </a>
-        <a href="08_pages/sco_02.html" class="pad teal"
-          >Core Modules do Node.js — fs, os e path</a
-        >
-        <a href="08_pages/sco_03.html" class="pad teal">
-          Node.js — Core Modules fs · path · os com ES Modules
-        </a>
+
+      <!-- Divisor -->
+      <div class="divisor-secao">
+        <span class="linha-secao"></span>
+        <span class="icone-secao-divisor">🌊</span>
+        <span class="linha-secao"></span>
       </div>
-      <p>Bloco 09 - API - Application Programming Interface</p>
-      <div class="deck">
-        <a href="09_pages/sco_01.html" class="pad violet">
-          Express.js — Criando seu primeiro servidor com Node.js
-        </a>
-        <a href="09_pages/sco_02.html" class="pad violet"
-          >Express.js — Parâmetros de Rota, Query String e Body</a
-        >
-        <a href="09_pages/sco_03.html" class="pad violet">
-          Express.js — APIs REST com Arquitetura MVC
-        </a>
-        <a href="09_pages/sco_05.html" class="pad violet">
-          Express.js — Organizando Rotas com Router
-        </a>
+
+      <!-- ============================================================ -->
+      <!-- BLOCO 04 - Front-end -->
+      <!-- ============================================================ -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">🎨</span> Bloco 04 — Fundamentos de Front-end
+        </h2>
+        <p class="instrucao-secao">A Respiração da Água: fluidez e adaptabilidade no front</p>
+
+        <div class="deck">
+          <a href="04_pages/sco_01.html" class="pad blue">
+            <span class="icone-card">⚛️</span>
+            <span class="titulo-card">Conceitos do React</span>
+            <span class="forma-card">壱ノ型 • React</span>
+          </a>
+          <a href="04_pages/sco_02.html" class="pad blue">
+            <span class="icone-card">🚀</span>
+            <span class="titulo-card">Vite + React</span>
+            <span class="forma-card">弐ノ型 • Setup</span>
+          </a>
+          <a href="04_pages/sco_03.html" class="pad blue">
+            <span class="icone-card">📦</span>
+            <span class="titulo-card">Props no React</span>
+            <span class="forma-card">参ノ型 • Props</span>
+          </a>
+        </div>
       </div>
-      <p>Bloco 10 - Integração com Banco de Dados</p>
-      <div class="deck">
-        <a href="10_pages/sco_01.html" class="pad magenta">
-          Express.js + PostgreSQL Conectando a API a um Banco de Dados Real
-        </a>
-        <a href="10_pages/sco_02.html" class="pad magenta"
-          >Express.js + PostgreSQL Integrando banco de dados real ao MVC</a
-        >
+
+      <!-- Divisor -->
+      <div class="divisor-secao">
+        <span class="linha-secao"></span>
+        <span class="icone-secao-divisor">🦋</span>
+        <span class="linha-secao"></span>
       </div>
-      <p>Bloco 11 - Variáveis de ambiente</p>
-      <div class="deck">
-        <a href="11_pages/sco_01.html" class="pad rose">
-          Variáveis de Ambiente Protegendo dados sensíveis com .env e dotenv
-        </a>
+
+      <!-- ============================================================ -->
+      <!-- BLOCO 05 - Componentização -->
+      <!-- ============================================================ -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">🧩</span> Bloco 05 — Componentização com React
+        </h2>
+        <p class="instrucao-secao">A Respiração dos Insetos: precisão cirúrgica nos componentes</p>
+
+        <div class="deck">
+          <a href="05_pages/sco_01.html" class="pad purple">
+            <span class="icone-card">🏗️</span>
+            <span class="titulo-card">Componentes e Props</span>
+            <span class="forma-card">壱ノ型 • Estrutura</span>
+          </a>
+          <a href="05_pages/sco_02.html" class="pad purple">
+            <span class="icone-card">🪝</span>
+            <span class="titulo-card">Estado e Hooks</span>
+            <span class="forma-card">弐ノ型 • Hooks</span>
+          </a>
+          <a href="05_pages/sco_03.html" class="pad purple">
+            <span class="icone-card">📏</span>
+            <span class="titulo-card">Boas Práticas</span>
+            <span class="forma-card">参ノ型 • Qualidade</span>
+          </a>
+        </div>
       </div>
-      <p>Bloco 12 - JWT e BCRYPT - Assinatura e criptografia</p>
-      <div class="deck">
-        <a href="12_pages/sco_01.html" class="pad amber">
-          Autenticação com Bcrypt e JWT Senhas seguras e acesso controlado em
-          APIs
-        </a>
-        <a href="12_pages/sco_02.html" class="pad amber"
-          >JWT + Bcrypt Autenticação segura com tokens e hash de senhas</a
-        >
-        <a href="12_pages/sco_03.html" class="pad amber">
-          Autorização — Roles e Permissões Controlando o que cada usuário pode
-          fazer
-        </a>
+
+      <!-- Divisor -->
+      <div class="divisor-secao">
+        <span class="linha-secao"></span>
+        <span class="icone-secao-divisor">🔗</span>
+        <span class="linha-secao"></span>
       </div>
-      <p>Bloco 13 - ORM</p>
-      <div class="deck">
-        <a href="13_pages/sco_01.html" class="pad teal">
-          Sequelize ORM Banco de dados sem escrever SQL
-        </a>
-        <a href="13_pages/sco_02.html" class="pad teal"
-          >Sequelize ORM Primeiros passos com Express + PostgreSQL</a
-        >
-        <a href="13_pages/sco_03.html" class="pad teal">
-          Projeto Back-end Sistema de Login para integração com Front-end
-        </a>
+
+      <!-- ============================================================ -->
+      <!-- BLOCO 06 - APIs -->
+      <!-- ============================================================ -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">🔌</span> Bloco 06 — Conectando com APIs
+        </h2>
+        <p class="instrucao-secao">A Arte da Invocação: traga dados de outros servidores</p>
+
+        <div class="deck">
+          <a href="06_pages/sco_01.html" class="pad pink">
+            <span class="icone-card">🔄</span>
+            <span class="titulo-card">Ciclo de Vida da Requisição</span>
+            <span class="forma-card">壱ノ型 • Request</span>
+          </a>
+          <a href="06_pages/sco_02.html" class="pad pink">
+            <span class="icone-card">🐾</span>
+            <span class="titulo-card">Pokédex com React</span>
+            <span class="forma-card">弐ノ型 • Projeto</span>
+          </a>
+          <a href="06_pages/sco_03.html" class="pad pink">
+            <span class="icone-card">🍽️</span>
+            <span class="titulo-card">Cardápio Digital</span>
+            <span class="forma-card">参ノ型 • Dinâmico</span>
+          </a>
+          <a href="06_pages/sco_04.html" class="pad pink">
+            <span class="icone-card">🍔</span>
+            <span class="titulo-card">App de Hamburguer</span>
+            <span class="forma-card">肆ノ型 • Deploy</span>
+          </a>
+        </div>
       </div>
+
+      <!-- Divisor -->
+      <div class="divisor-secao">
+        <span class="linha-secao"></span>
+        <span class="icone-secao-divisor">🟢</span>
+        <span class="linha-secao"></span>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- BLOCO 07 - Node -->
+      <!-- ============================================================ -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">🟢</span> Bloco 07 — Introdução ao Node
+        </h2>
+        <p class="instrucao-secao">JavaScript transcendendo o navegador</p>
+
+        <div class="deck">
+          <a href="07_pages/sco_01.html" class="pad cyan">
+            <span class="icone-card">🏛️</span>
+            <span class="titulo-card">Padrão MVC com Express</span>
+            <span class="forma-card">壱ノ型 • MVC</span>
+          </a>
+          <a href="07_pages/sco_02.html" class="pad cyan">
+            <span class="icone-card">📦</span>
+            <span class="titulo-card">NPM — Gerenciador</span>
+            <span class="forma-card">弐ノ型 • Pacotes</span>
+          </a>
+          <a href="07_pages/sco_03.html" class="pad cyan">
+            <span class="icone-card">📡</span>
+            <span class="titulo-card">Requisições HTTP</span>
+            <span class="forma-card">参ノ型 • Comunicação</span>
+          </a>
+          <a href="07_pages/sco_04.html" class="pad cyan">
+            <span class="icone-card">🖥️</span>
+            <span class="titulo-card">JS fora do Navegador</span>
+            <span class="forma-card">肆ノ型 • Runtime</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Divisor -->
+      <div class="divisor-secao">
+        <span class="linha-secao"></span>
+        <span class="icone-secao-divisor">📁</span>
+        <span class="linha-secao"></span>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- BLOCO 08 - Modularização -->
+      <!-- ============================================================ -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">📁</span> Bloco 08 — Modularização
+        </h2>
+        <p class="instrucao-secao">Dividir para conquistar: o poder dos módulos</p>
+
+        <div class="deck">
+          <a href="08_pages/sco_01.html" class="pad teal">
+            <span class="icone-card">📤</span>
+            <span class="titulo-card">ES Modules</span>
+            <span class="forma-card">壱ノ型 • Import/Export</span>
+          </a>
+          <a href="08_pages/sco_02.html" class="pad teal">
+            <span class="icone-card">💎</span>
+            <span class="titulo-card">Core Modules do Node</span>
+            <span class="forma-card">弐ノ型 • fs/os/path</span>
+          </a>
+          <a href="08_pages/sco_03.html" class="pad teal">
+            <span class="icone-card">🔍</span>
+            <span class="titulo-card">ES Modules + Core</span>
+            <span class="forma-card">参ノ型 • Integração</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Divisor -->
+      <div class="divisor-secao">
+        <span class="linha-secao"></span>
+        <span class="icone-secao-divisor">🌐</span>
+        <span class="linha-secao"></span>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- BLOCO 09 - API -->
+      <!-- ============================================================ -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">🌐</span> Bloco 09 — API
+        </h2>
+        <p class="instrucao-secao">Application Programming Interface — o coração do back-end</p>
+
+        <div class="deck">
+          <a href="09_pages/sco_01.html" class="pad violet">
+            <span class="icone-card">🚀</span>
+            <span class="titulo-card">Primeiro Servidor</span>
+            <span class="forma-card">壱ノ型 • Express</span>
+          </a>
+          <a href="09_pages/sco_02.html" class="pad violet">
+            <span class="icone-card">🔗</span>
+            <span class="titulo-card">Parâmetros de Rota</span>
+            <span class="forma-card">弐ノ型 • Rotas</span>
+          </a>
+          <a href="09_pages/sco_03.html" class="pad violet">
+            <span class="icone-card">🏗️</span>
+            <span class="titulo-card">APIs REST com MVC</span>
+            <span class="forma-card">参ノ型 • REST</span>
+          </a>
+          <a href="09_pages/sco_05.html" class="pad violet">
+            <span class="icone-card">🗂️</span>
+            <span class="titulo-card">Rotas com Router</span>
+            <span class="forma-card">肆ノ型 • Organização</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Divisor -->
+      <div class="divisor-secao">
+        <span class="linha-secao"></span>
+        <span class="icone-secao-divisor">🗄️</span>
+        <span class="linha-secao"></span>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- BLOCO 10 - Banco de Dados -->
+      <!-- ============================================================ -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">🗄️</span> Bloco 10 — Integração com Banco de Dados
+        </h2>
+        <p class="instrucao-secao">Onde os dados descansam em segurança</p>
+
+        <div class="deck">
+          <a href="10_pages/sco_01.html" class="pad magenta">
+            <span class="icone-card">🐘</span>
+            <span class="titulo-card">Express + PostgreSQL</span>
+            <span class="forma-card">壱ノ型 • Conexão</span>
+          </a>
+          <a href="10_pages/sco_02.html" class="pad magenta">
+            <span class="icone-card">🔗</span>
+            <span class="titulo-card">BD Real ao MVC</span>
+            <span class="forma-card">弐ノ型 • Integração</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Divisor -->
+      <div class="divisor-secao">
+        <span class="linha-secao"></span>
+        <span class="icone-secao-divisor">🔐</span>
+        <span class="linha-secao"></span>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- BLOCO 11 - Variáveis de Ambiente -->
+      <!-- ============================================================ -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">🔐</span> Bloco 11 — Variáveis de Ambiente
+        </h2>
+        <p class="instrucao-secao">Proteja seus segredos como um Hashira protege sua lâmina</p>
+
+        <div class="deck">
+          <a href="11_pages/sco_01.html" class="pad rose">
+            <span class="icone-card">🛡️</span>
+            <span class="titulo-card">.env e dotenv</span>
+            <span class="forma-card">壱ノ型 • Segurança</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Divisor -->
+      <div class="divisor-secao">
+        <span class="linha-secao"></span>
+        <span class="icone-secao-divisor">🔑</span>
+        <span class="linha-secao"></span>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- BLOCO 12 - JWT e BCRYPT -->
+      <!-- ============================================================ -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">🔑</span> Bloco 12 — JWT e Bcrypt
+        </h2>
+        <p class="instrucao-secao">Autenticação: só os dignos passam pelo portão</p>
+
+        <div class="deck">
+          <a href="12_pages/sco_01.html" class="pad amber">
+            <span class="icone-card">🔒</span>
+            <span class="titulo-card">Bcrypt e JWT</span>
+            <span class="forma-card">壱ノ型 • Auth</span>
+          </a>
+          <a href="12_pages/sco_02.html" class="pad amber">
+            <span class="icone-card">🎫</span>
+            <span class="titulo-card">Tokens e Hash</span>
+            <span class="forma-card">弐ノ型 • Tokens</span>
+          </a>
+          <a href="12_pages/sco_03.html" class="pad amber">
+            <span class="icone-card">👑</span>
+            <span class="titulo-card">Roles e Permissões</span>
+            <span class="forma-card">参ノ型 • Autorização</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Divisor -->
+      <div class="divisor-secao">
+        <span class="linha-secao"></span>
+        <span class="icone-secao-divisor">🏛️</span>
+        <span class="linha-secao"></span>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- BLOCO 13 - ORM -->
+      <!-- ============================================================ -->
+      <div class="secao-materia">
+        <h2 class="titulo-secao">
+          <span class="icone-secao">🏛️</span> Bloco 13 — ORM
+        </h2>
+        <p class="instrucao-secao">A arte de dominar bancos de dados sem escrever SQL puro</p>
+
+        <div class="deck">
+          <a href="13_pages/sco_01.html" class="pad teal">
+            <span class="icone-card">✨</span>
+            <span class="titulo-card">Sequelize ORM</span>
+            <span class="forma-card">壱ノ型 • ORM</span>
+          </a>
+          <a href="13_pages/sco_02.html" class="pad teal">
+            <span class="icone-card">🚀</span>
+            <span class="titulo-card">Express + Sequelize</span>
+            <span class="forma-card">弐ノ型 • Setup</span>
+          </a>
+          <a href="13_pages/sco_03.html" class="pad teal">
+            <span class="icone-card">🔐</span>
+            <span class="titulo-card">Sistema de Login</span>
+            <span class="forma-card">参ノ型 • Projeto</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Rodapé -->
+      <div class="rodape">
+        <span class="simbolo-final">滅</span>
+        <p>Construa sistemas. Proteja dados. Evolua a cada commit.</p>
+        <span class="tag-final">鬼殺隊 • Divisão de Desenvolvimento de Sistemas</span>
+      </div>
+
     </div>
-    <a href="../index.html" class="back-btn"> ← </a>
+
+    <!-- Botão voltar -->
+    <a href="../index.html" class="back-btn">←</a>
+
+<script src="../script.js"></script>
+
   </body>
 </html>
