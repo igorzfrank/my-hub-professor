@@ -1,0 +1,1879 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🧠 Lógica de Programação · Portugol</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Estrutura CASE no Portugol<br style="font-size: 28px" /><span
+              style="color: rgb(206, 147, 216); font-size: 28px"
+              >ESCOLHA...CASO — Decisões Múltiplas</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Aprenda a substituir longas cadeias de SE...SENÃO SE por uma
+            estrutura limpa e organizada
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >escolha</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >caso</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >pare</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >caso contrario</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >múltipla escolha</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — O QUE É CASE           -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧠 O que é a Estrutura CASE?</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(243, 229, 245),
+                rgb(248, 240, 255)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(106, 27, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Definição
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              A estrutura
+              <span
+                style="
+                  background: rgb(106, 27, 154);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >ESCOLHA...CASO</span
+              >
+              (também chamada de CASE) é uma estrutura de decisão que permite
+              <strong style="font-size: 13px"
+                >testar uma variável contra múltiplos valores fixos</strong
+              >
+              e executar um bloco de código diferente para cada valor. É uma
+              alternativa muito mais limpa e organizada do que usar vários
+              <strong style="font-size: 13px">SE...SENÃO SE</strong> encadeados.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Imagine um
+              <strong style="font-size: 13px">painel de elevador</strong> com
+              botões numerados. Cada botão (caso) leva a um andar diferente
+              (ação). O elevador testa qual botão foi pressionado e executa a
+              ação correspondente. É muito mais eficiente do que perguntar: "É o
+              andar 1? Não. É o andar 2? Não. É o andar 3? Sim!"
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — SINTAXE                -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📝 Sintaxe da Estrutura ESCOLHA...CASO</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2.1;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(255, 204, 2)">escolha</span>
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">variavel</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">caso</span>
+              <span style="color: rgb(255, 204, 2)">valor1</span
+              ><span style="color: rgb(144, 202, 249)">:</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #78909c"
+                >// bloco de código</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >pare</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">caso</span>
+              <span style="color: rgb(255, 204, 2)">valor2</span
+              ><span style="color: rgb(144, 202, 249)">:</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #78909c"
+                >// outro bloco</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >pare</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >caso contrario</span
+              ><span style="color: rgb(144, 202, 249)">:</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #78909c"
+                >// valor não listado</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >pare</span
+              ><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #004d40;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                🧠 Regras importantes
+              </div>
+              <div style="color: #37474f; font-size: 12px; line-height: 1.9">
+                <strong style="font-size: 12px">escolha (variavel) { }</strong>
+                → inicia a estrutura com a variável a ser testada entre
+                parênteses.<br />
+                <strong style="font-size: 12px">caso valor:</strong> → define um
+                valor específico a ser comparado. Os dois-pontos são
+                obrigatórios.<br />
+                <strong style="font-size: 12px">pare</strong> → encerra o bloco
+                de cada caso. <strong>Obrigatório</strong> no Portugol.<br />
+                <strong style="font-size: 12px">caso contrario:</strong> →
+                captura qualquer valor não listado (equivalente ao SENÃO).
+                <strong>Opcional</strong>.
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: rgb(255, 235, 238);
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #c62828;
+              font-size: 13px;
+              color: #c62828;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">⚠️ Atenção:</strong> Diferente do
+            pseudocódigo (que usa FIM_ESCOLHA), no Portugol a estrutura é
+            delimitada por <strong style="font-size: 13px">chaves { }</strong> e
+            cada caso é encerrado com a palavra
+            <strong style="font-size: 13px">pare</strong>. Não esquecer o
+            <strong style="font-size: 13px">pare</strong> é um erro comum!
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — QUANDO USAR            -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🎯 Quando Usar CASE vs. SE...SENÃO SE?</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 16px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 14px;
+                padding: 20px;
+                border-top: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #4a148c;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 12px;
+                "
+              >
+                ✅ Use ESCOLHA...CASO quando:
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ✅ A variável tem <strong>valores exatos e conhecidos</strong
+                ><br />
+                ✅ São muitas opções (3 ou mais)<br />
+                ✅ Os valores são do tipo <strong>inteiro</strong> ou
+                <strong>cadeia</strong><br />
+                ✅ Você quer código mais limpo e legível<br />
+                ✅ Cada valor executa uma ação diferente<br />
+                ✅ Exemplos: menu de opções, dias da semana, categorias
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 14px;
+                padding: 20px;
+                border-top: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #e65100;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 12px;
+                "
+              >
+                ❌ Use SE...SENÃO SE quando:
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ❌ A condição envolve <strong>intervalos</strong> (ex: nota >
+                7)<br />
+                ❌ A condição usa <strong>operadores lógicos</strong> (E, OU)<br />
+                ❌ São apenas <strong>duas opções</strong> (melhor
+                SE...SENÃO)<br />
+                ❌ A condição envolve <strong>comparações</strong> (>, <, >=,
+                <=)<br />
+                ❌ Você precisa testar <strong>variáveis diferentes</strong
+                ><br />
+                ❌ Exemplos: faixa etária, média de notas, validações
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Regra prática:</strong> Se você
+            está comparando uma <strong>mesma variável</strong> com
+            <strong>vários valores fixos</strong>, use ESCOLHA...CASO. Se
+            precisa de <strong>intervalos ou operadores lógicos</strong>, use
+            SE...SENÃO SE.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — TRADUÇÃO LADO A LADO   -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔄 Tradução Lado a Lado — Pseudocódigo → Portugol</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <!-- Exemplo 1 — Dia da Semana -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(197, 202, 233);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              📅 Exemplo — Dia da Semana (Pseudocódigo → Portugol)
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <strong style="color: #1a237e">📝 Pseudocódigo</strong
+                ><br /><br />
+                ESCOLHA dia<br />
+                &nbsp;&nbsp;CASO 1: ESCREVER "Domingo"<br />
+                &nbsp;&nbsp;CASO 2: ESCREVER "Segunda"<br />
+                &nbsp;&nbsp;CASO 3: ESCREVER "Terça"<br />
+                &nbsp;&nbsp;CASO 4: ESCREVER "Quarta"<br />
+                &nbsp;&nbsp;CASO 5: ESCREVER "Quinta"<br />
+                &nbsp;&nbsp;CASO 6: ESCREVER "Sexta"<br />
+                &nbsp;&nbsp;CASO 7: ESCREVER "Sábado"<br />
+                &nbsp;&nbsp;SENÃO: ESCREVER "Inválido"<br />
+                FIM_ESCOLHA
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.9;
+                  border-left: 4px solid #00897b;
+                "
+              >
+                <strong style="color: #004d40">💻 Portugol</strong><br /><br />
+                escolha (dia) {<br />
+                &nbsp;&nbsp;caso 1:<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;escreva("Domingo")<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;pare<br />
+                &nbsp;&nbsp;caso 2:<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;escreva("Segunda")<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;pare<br />
+                &nbsp;&nbsp;caso 3:<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;escreva("Terça")<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;pare<br />
+                &nbsp;&nbsp;caso contrario:<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;escreva("Inválido")<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;pare<br />
+                }
+              </div>
+            </div>
+            <div
+              style="
+                background: #fff;
+                border-radius: 8px;
+                padding: 12px 16px;
+                border-left: 4px solid #3949ab;
+                margin-top: 10px;
+                font-size: 12px;
+                color: #1a237e;
+                line-height: 1.7;
+              "
+            >
+              <strong style="font-size: 12px">🔍 Principais diferenças:</strong>
+              Parênteses na variável, chaves { } delimitando o bloco,
+              dois-pontos após cada caso, <strong>pare</strong> obrigatório ao
+              final de cada bloco, e <strong>caso contrario</strong> em vez de
+              SENÃO.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 5 — COMPARATIVO VISUAL     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(191, 54, 12),
+              rgb(230, 81, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >5</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >👁️ Comparativo Visual — Mesmo Problema, Duas Abordagens</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              color: #37474f;
+              font-size: 13px;
+              line-height: 1.8;
+              margin-bottom: 16px;
+            "
+          >
+            Veja como o mesmo problema (classificar um número de 1 a 3) fica com
+            cada abordagem:
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 12px;
+                padding: 18px;
+                border: 2px solid rgb(239, 154, 154);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ❌ Com SE...SENÃO SE (confuso)
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 2;
+                  color: #e0e0e0;
+                "
+              >
+                <span style="color: rgb(255, 204, 2)">se</span>
+                <span style="color: rgb(144, 202, 249)">(</span
+                ><span style="color: rgb(100, 181, 246)">opcao</span>
+                <span style="color: rgb(144, 202, 249)">==</span>
+                <span style="color: rgb(255, 204, 2)">1</span
+                ><span style="color: rgb(144, 202, 249)">)</span>
+                <span style="color: rgb(144, 202, 249)">{</span><br />
+                &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249)">(</span
+                ><span style="color: rgb(165, 214, 167)">"Opção 1"</span
+                ><span style="color: rgb(144, 202, 249)">)</span><br />
+                <span style="color: rgb(144, 202, 249)">}</span>
+                <span style="color: rgb(255, 204, 2)">senao se</span>
+                <span style="color: rgb(144, 202, 249)">(</span
+                ><span style="color: rgb(100, 181, 246)">opcao</span>
+                <span style="color: rgb(144, 202, 249)">==</span>
+                <span style="color: rgb(255, 204, 2)">2</span
+                ><span style="color: rgb(144, 202, 249)">)</span>
+                <span style="color: rgb(144, 202, 249)">{</span><br />
+                &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249)">(</span
+                ><span style="color: rgb(165, 214, 167)">"Opção 2"</span
+                ><span style="color: rgb(144, 202, 249)">)</span><br />
+                <span style="color: rgb(144, 202, 249)">}</span>
+                <span style="color: rgb(255, 204, 2)">senao se</span>
+                <span style="color: rgb(144, 202, 249)">(</span
+                ><span style="color: rgb(100, 181, 246)">opcao</span>
+                <span style="color: rgb(144, 202, 249)">==</span>
+                <span style="color: rgb(255, 204, 2)">3</span
+                ><span style="color: rgb(144, 202, 249)">)</span>
+                <span style="color: rgb(144, 202, 249)">{</span><br />
+                &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249)">(</span
+                ><span style="color: rgb(165, 214, 167)">"Opção 3"</span
+                ><span style="color: rgb(144, 202, 249)">)</span><br />
+                <span style="color: rgb(144, 202, 249)">}</span>
+                <span style="color: rgb(255, 204, 2)">senao</span>
+                <span style="color: rgb(144, 202, 249)">{</span><br />
+                &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249)">(</span
+                ><span style="color: rgb(165, 214, 167)">"Inválido"</span
+                ><span style="color: rgb(144, 202, 249)">)</span><br />
+                <span style="color: rgb(144, 202, 249)">}</span>
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 12px;
+                padding: 18px;
+                border: 2px solid rgb(200, 230, 201);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #2e7d32;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ Com ESCOLHA...CASO (limpo)
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 2;
+                  color: #e0e0e0;
+                "
+              >
+                <span style="color: rgb(255, 204, 2)">escolha</span>
+                <span style="color: rgb(144, 202, 249)">(</span
+                ><span style="color: rgb(100, 181, 246)">opcao</span
+                ><span style="color: rgb(144, 202, 249)">)</span>
+                <span style="color: rgb(144, 202, 249)">{</span><br />
+                &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">caso</span>
+                <span style="color: rgb(255, 204, 2)">1</span
+                ><span style="color: rgb(144, 202, 249)">:</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249)">(</span
+                ><span style="color: rgb(165, 214, 167)">"Opção 1"</span
+                ><span style="color: rgb(144, 202, 249)">)</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                  >pare</span
+                ><br />
+                &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">caso</span>
+                <span style="color: rgb(255, 204, 2)">2</span
+                ><span style="color: rgb(144, 202, 249)">:</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249)">(</span
+                ><span style="color: rgb(165, 214, 167)">"Opção 2"</span
+                ><span style="color: rgb(144, 202, 249)">)</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                  >pare</span
+                ><br />
+                &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">caso</span>
+                <span style="color: rgb(255, 204, 2)">3</span
+                ><span style="color: rgb(144, 202, 249)">:</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249)">(</span
+                ><span style="color: rgb(165, 214, 167)">"Opção 3"</span
+                ><span style="color: rgb(144, 202, 249)">)</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                  >pare</span
+                ><br />
+                &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                  >caso contrario</span
+                ><span style="color: rgb(144, 202, 249)">:</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                  >escreva</span
+                ><span style="color: rgb(144, 202, 249)">(</span
+                ><span style="color: rgb(165, 214, 167)">"Inválido"</span
+                ><span style="color: rgb(144, 202, 249)">)</span><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                  >pare</span
+                ><br />
+                <span style="color: rgb(144, 202, 249)">}</span>
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              margin-top: 14px;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">✅ Vantagem do CASE:</strong> Código
+            mais organizado, não repete o nome da variável em cada condição, e
+            fica visualmente claro que todas as opções são mutuamente
+            exclusivas.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 6 — EXEMPLOS PRÁTICOS      -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >6</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧪 Exemplos Práticos Completos</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <!-- Exemplo A — Cardápio -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #e65100;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >A</span
+              ><span style="color: #e65100; font-size: 14px; font-weight: 800"
+                >Cardápio de Restaurante</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Leia um número de 1 a 5 e exiba o prato correspondente com preço.
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >inteiro</span
+              >
+              <span style="color: rgb(100, 181, 246)">opcao</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Menu: 1-Hambúrguer 2-Pizza 3-Salada 4-Lasanha 5-Sopa\n"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Escolha: "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">opcao</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >escolha</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">opcao</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso</span
+              >
+              <span style="color: rgb(255, 204, 2)">1</span
+              ><span style="color: rgb(144, 202, 249)">:</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Hambúrguer — R$ 25,00"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >pare</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso</span
+              >
+              <span style="color: rgb(255, 204, 2)">2</span
+              ><span style="color: rgb(144, 202, 249)">:</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Pizza — R$ 35,00"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >pare</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso</span
+              >
+              <span style="color: rgb(255, 204, 2)">3</span
+              ><span style="color: rgb(144, 202, 249)">:</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Salada — R$ 18,00"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >pare</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso</span
+              >
+              <span style="color: rgb(255, 204, 2)">4</span
+              ><span style="color: rgb(144, 202, 249)">:</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Lasanha — R$ 28,00"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >pare</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso</span
+              >
+              <span style="color: rgb(255, 204, 2)">5</span
+              ><span style="color: rgb(144, 202, 249)">:</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Sopa — R$ 15,00"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >pare</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso contrario</span
+              ><span style="color: rgb(144, 202, 249)">:</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Opção inválida"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >pare</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Exemplo B — Categoria de CNH -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #2e7d32;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >B</span
+              ><span style="color: #2e7d32; font-size: 14px; font-weight: 800"
+                >Categoria de Habilitação (DETRAN)</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Leia uma letra (A a E) e exiba qual veículo a pessoa pode dirigir.
+              O CASE funciona com cadeia também!
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >cadeia</span
+              >
+              <span style="color: rgb(100, 181, 246)">categoria</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Categoria (A/B/C/D/E): "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">categoria</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >escolha</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">categoria</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso</span
+              >
+              <span style="color: rgb(165, 214, 167)">"A"</span
+              ><span style="color: rgb(144, 202, 249)">:</span>
+              <span style="color: rgb(128, 222, 234)">escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Moto"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(255, 204, 2)">pare</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso</span
+              >
+              <span style="color: rgb(165, 214, 167)">"B"</span
+              ><span style="color: rgb(144, 202, 249)">:</span>
+              <span style="color: rgb(128, 222, 234)">escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Carro"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(255, 204, 2)">pare</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso</span
+              >
+              <span style="color: rgb(165, 214, 167)">"C"</span
+              ><span style="color: rgb(144, 202, 249)">:</span>
+              <span style="color: rgb(128, 222, 234)">escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Caminhão"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(255, 204, 2)">pare</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso</span
+              >
+              <span style="color: rgb(165, 214, 167)">"D"</span
+              ><span style="color: rgb(144, 202, 249)">:</span>
+              <span style="color: rgb(128, 222, 234)">escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Ônibus"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(255, 204, 2)">pare</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso</span
+              >
+              <span style="color: rgb(165, 214, 167)">"E"</span
+              ><span style="color: rgb(144, 202, 249)">:</span>
+              <span style="color: rgb(128, 222, 234)">escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Carreta"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(255, 204, 2)">pare</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso contrario</span
+              ><span style="color: rgb(144, 202, 249)">:</span>
+              <span style="color: rgb(128, 222, 234)">escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Inválida"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(255, 204, 2)">pare</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Exemplo C — Conceito Escolar -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(187, 222, 251);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 12px;
+              "
+            >
+              <span
+                style="
+                  background: #1565c0;
+                  color: white;
+                  border-radius: 8px;
+                  padding: 5px 14px;
+                  font-size: 12px;
+                  font-weight: 900;
+                "
+                >C</span
+              ><span style="color: #1565c0; font-size: 14px; font-weight: 800"
+                >Classificação de Conceito Escolar</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 13px;
+                line-height: 1.8;
+                margin-bottom: 10px;
+              "
+            >
+              Leia um conceito (A, B, C, D) e exiba a descrição correspondente.
+              Use validação antes do CASE.
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 12px;
+                padding: 18px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              "
+            >
+              <span style="color: rgb(128, 222, 234)">programa</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">funcao</span>
+              <span style="color: rgb(255, 204, 2)">inicio</span
+              ><span style="color: rgb(144, 202, 249)">()</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >cadeia</span
+              >
+              <span style="color: rgb(100, 181, 246)">conceito</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)"
+                >"Conceito (A/B/C/D): "</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >leia</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">conceito</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #78909c"
+                >// Validação antes do CASE</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                >se</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">conceito</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"A"</span>
+              <span style="color: rgb(144, 202, 249)">ou</span>
+              <span style="color: rgb(100, 181, 246)">conceito</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"B"</span>
+              <span style="color: rgb(144, 202, 249)">ou</span>
+              <span style="color: rgb(100, 181, 246)">conceito</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"C"</span>
+              <span style="color: rgb(144, 202, 249)">ou</span>
+              <span style="color: rgb(100, 181, 246)">conceito</span>
+              <span style="color: rgb(144, 202, 249)">==</span>
+              <span style="color: rgb(165, 214, 167)">"D"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >escolha</span
+              >
+              <span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(100, 181, 246)">conceito</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso</span
+              >
+              <span style="color: rgb(165, 214, 167)">"A"</span
+              ><span style="color: rgb(144, 202, 249)">:</span>
+              <span style="color: rgb(128, 222, 234)">escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Excelente"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(255, 204, 2)">pare</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso</span
+              >
+              <span style="color: rgb(165, 214, 167)">"B"</span
+              ><span style="color: rgb(144, 202, 249)">:</span>
+              <span style="color: rgb(128, 222, 234)">escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Bom"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(255, 204, 2)">pare</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso</span
+              >
+              <span style="color: rgb(165, 214, 167)">"C"</span
+              ><span style="color: rgb(144, 202, 249)">:</span>
+              <span style="color: rgb(128, 222, 234)">escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Regular"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(255, 204, 2)">pare</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(255, 204, 2)"
+                >caso</span
+              >
+              <span style="color: rgb(165, 214, 167)">"D"</span
+              ><span style="color: rgb(144, 202, 249)">:</span>
+              <span style="color: rgb(128, 222, 234)">escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Insuficiente"</span
+              ><span style="color: rgb(144, 202, 249)">)</span>
+              <span style="color: rgb(255, 204, 2)">pare</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              >
+              <span style="color: rgb(255, 204, 2)">senao</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                style="color: rgb(128, 222, 234)"
+                >escreva</span
+              ><span style="color: rgb(144, 202, 249)">(</span
+              ><span style="color: rgb(165, 214, 167)">"Conceito inválido"</span
+              ><span style="color: rgb(144, 202, 249)">)</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(144, 202, 249)"
+                >}</span
+              ><br />
+              &nbsp;&nbsp;<span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 7 — ERROS COMUNS           -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >7</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >⚠️ Erros Comuns e Checklist</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 16px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 14px;
+                padding: 20px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 12px;
+                "
+              >
+                ❌ Erros comuns
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ❌ Esquecer o <strong>pare</strong> ao final de cada caso<br />
+                ❌ Esquecer os <strong>dois-pontos</strong> após cada caso<br />
+                ❌ Usar CASE para <strong>intervalos</strong> (ex: caso > 7)<br />
+                ❌ Usar operadores lógicos dentro do caso<br />
+                ❌ Colocar variável sem <strong>parênteses</strong> no
+                escolha<br />
+                ❌ Usar CASE com apenas <strong>duas opções</strong><br />
+                ❌ Achar que CASE funciona com <strong>real</strong><br />
+                ❌ Esquecer de abrir as <strong>chaves { }</strong>
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 14px;
+                padding: 20px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 12px;
+                "
+              >
+                ✅ Checklist — Seu CASE está correto?
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ✅ A variável está entre parênteses?<br />
+                ✅ Cada caso tem <strong>dois-pontos</strong> no final?<br />
+                ✅ Cada bloco de caso termina com <strong>pare</strong>?<br />
+                ✅ As chaves { } estão corretamente fechadas?<br />
+                ✅ Os valores são <strong>fixos e exatos</strong>?<br />
+                ✅ A variável é do tipo <strong>inteiro</strong> ou
+                <strong>cadeia</strong>?<br />
+                ✅ Incluiu o <strong>caso contrario</strong> para entradas
+                inválidas?<br />
+                ✅ O código ficou mais legível que SE...SENÃO SE?
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo — Estrutura ESCOLHA...CASO</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📝</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Sintaxe: escolha ( ) { caso: pare }
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🎯</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Use com valores fixos e exatos
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔀</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Para intervalos use SE...SENÃO SE
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >escolha</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >caso</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >pare</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >caso contrario</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >múltipla escolha</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >código limpo</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

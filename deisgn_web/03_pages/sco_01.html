@@ -1,0 +1,1962 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../design_web.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🌐 Desenvolvimento Web · Fundamentos</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            VS Code, HTML & Padronização<br style="font-size: 28px" /><span
+              style="color: rgb(206, 147, 216); font-size: 28px"
+              >Ambiente de Desenvolvimento e Primeiros Passos na Web</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Instalação do editor · Conceitos fundamentais de HTML · Boas
+            práticas e padronização de código
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >VS Code</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >HTML5</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Extensões</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Tags</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Padronização</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — VS CODE               -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 120, 212),
+              rgb(0, 153, 240)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >💻 Visual Studio Code — Instalação e Apresentação</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(227, 242, 253),
+                rgb(232, 240, 254)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(0, 120, 212);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #0d47a1;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é o VS Code?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(0, 120, 212);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Visual Studio Code</span
+              >
+              (VS Code) é um
+              <strong style="font-size: 13px">editor de código-fonte</strong>
+              gratuito e de código aberto desenvolvido pela Microsoft. É
+              atualmente a ferramenta mais popular entre desenvolvedores web por
+              ser
+              <strong style="font-size: 13px"
+                >leve, rápida, multiplataforma</strong
+              >
+              (Windows, Mac, Linux) e altamente
+              <strong style="font-size: 13px">personalizável</strong> através de
+              extensões.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              O VS Code está para o programador assim como o
+              <strong style="font-size: 13px"
+                >bisturi está para o cirurgião</strong
+              >
+              — é a ferramenta principal de trabalho, precisa ser precisa,
+              confiável e estar sempre bem configurada.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📥</span
+            ><span style="color: #0d47a1; font-size: 14px; font-weight: 800"
+              >Como instalar o VS Code</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #0d47a1;
+                  font-size: 12px;
+                  font-weight: 800;
+                  margin-bottom: 4px;
+                "
+              >
+                Passo 1 — Download
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Acesse <strong>code.visualstudio.com</strong> e clique no botão
+                de download para seu sistema operacional (Windows, Mac ou
+                Linux).
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #0d47a1;
+                  font-size: 12px;
+                  font-weight: 800;
+                  margin-bottom: 4px;
+                "
+              >
+                Passo 2 — Instalação
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                <strong>Windows:</strong> Execute o instalador .exe, aceite os
+                termos e marque as opções "Adicionar ao menu de contexto" e
+                "Adicionar ao PATH".<br /><strong>Mac:</strong> Arraste o ícone
+                para a pasta Aplicativos.<br /><strong>Linux:</strong> Use o
+                gerenciador de pacotes (snap ou apt).
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #0d47a1;
+                  font-size: 12px;
+                  font-weight: 800;
+                  margin-bottom: 4px;
+                "
+              >
+                Passo 3 — Primeira execução
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Abra o VS Code. Na tela de boas-vindas, você pode escolher um
+                tema de cores (escuro ou claro) e começar a explorar a
+                interface.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🧩</span
+            ><span style="color: #0d47a1; font-size: 14px; font-weight: 800"
+              >Extensões essenciais para desenvolvimento web</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #0d47a1; font-size: 12px; font-weight: 800">
+                🌐 Live Server
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Atualiza o navegador automaticamente ao salvar arquivos
+                HTML/CSS/JS.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #0d47a1; font-size: 12px; font-weight: 800">
+                🏷️ Auto Rename Tag
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Renomeia automaticamente a tag de fechamento ao editar a de
+                abertura.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #0d47a1; font-size: 12px; font-weight: 800">
+                ✨ Prettier
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Formatador de código automático (indentação, espaçamento,
+                quebras de linha).
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #0d47a1; font-size: 12px; font-weight: 800">
+                📝 HTML CSS Support
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Autocompletar inteligente para classes e ids do CSS no HTML.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #0d47a1; font-size: 12px; font-weight: 800">
+                🎨 Material Icon Theme
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Ícones coloridos para identificar tipos de arquivos no
+                explorador.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #0d47a1; font-size: 12px; font-weight: 800">
+                🌈 Bracket Pair Colorizer
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Colore pares de colchetes e chaves para facilitar a
+                visualização.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⌨️</span
+            ><span style="color: #0d47a1; font-size: 14px; font-weight: 800"
+              >Atalhos essenciais do VS Code</span
+            >
+          </div>
+          <div style="overflow-x: auto; margin-bottom: 8px; font-size: 14px">
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 1px;
+                background: #bbdefb;
+                border-radius: 10px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                Atalho
+              </div>
+              <div
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                Ação
+              </div>
+              <div
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                Dica
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Ctrl + S</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Salvar arquivo
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Salve sempre!
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Ctrl + Z</strong>
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Desfazer
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Seu melhor amigo
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Ctrl + D</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Selecionar próxima ocorrência
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Edição múltipla
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Alt + ↑/↓</strong>
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Mover linha
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Sem copiar/colar
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Ctrl + /</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Comentar/Descomentar
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Para anotações
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Ctrl + B</strong>
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Mostrar/Esconder sidebar
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Ganhe espaço
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Ctrl + Shift + P</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Paleta de comandos
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Tudo em um lugar
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>!</strong> + Tab
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Estrutura HTML5 básica
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Emmet abbreviation
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — INTRODUÇÃO AO HTML     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🏗️ Introdução aos Conceitos de HTML</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 243, 224),
+                rgb(255, 248, 245)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #bf360c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é HTML?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(230, 81, 0);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >HTML</span
+              >
+              (HyperText Markup Language) é a
+              <strong style="font-size: 13px">linguagem de marcação</strong> que
+              estrutura todo o conteúdo da web. Não é uma linguagem de
+              programação — é uma linguagem de
+              <strong style="font-size: 13px">marcação</strong> que usa
+              <strong style="font-size: 13px">tags</strong> (etiquetas) para
+              definir o que cada parte do conteúdo representa: títulos,
+              parágrafos, imagens, links, listas e muito mais.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              HTML é o <strong style="font-size: 13px">esqueleto</strong> de uma
+              página web. Se um site fosse um corpo humano, o HTML seria os
+              <strong style="font-size: 13px">ossos</strong> (estrutura), o CSS
+              seria a
+              <strong style="font-size: 13px">pele e roupas</strong>
+              (aparência), e o JavaScript seria os
+              <strong style="font-size: 13px">músculos</strong> (movimento e
+              interação).
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🏗️</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Estrutura básica de um documento HTML5</span
+            >
+          </div>
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              margin-bottom: 16px;
+            "
+          >
+            <span style="color: #78909c"
+              >&lt;!-- Estrutura mínima de uma página HTML5 --&gt;</span
+            ><br />
+            <span style="color: rgb(255, 204, 2)">&lt;!DOCTYPE html&gt;</span
+            ><br />
+            <span style="color: rgb(255, 204, 2)">&lt;html</span>
+            <span style="color: rgb(144, 202, 249)">lang</span>=<span
+              style="color: rgb(165, 214, 167)"
+              >"pt-BR"</span
+            ><span style="color: rgb(255, 204, 2)">&gt;</span><br />
+            <span style="color: rgb(255, 204, 2)">&lt;head&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">&lt;meta</span>
+            <span style="color: rgb(144, 202, 249)">charset</span>=<span
+              style="color: rgb(165, 214, 167)"
+              >"UTF-8"</span
+            ><span style="color: rgb(255, 204, 2)">&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;title&gt;</span
+            ><span style="color: #e0e0e0">Minha Primeira Página</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/title&gt;</span><br />
+            <span style="color: rgb(255, 204, 2)">&lt;/head&gt;</span><br />
+            <span style="color: rgb(255, 204, 2)">&lt;body&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">&lt;h1&gt;</span
+            ><span style="color: #e0e0e0">Olá, Mundo!</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/h1&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">&lt;p&gt;</span
+            ><span style="color: #e0e0e0"
+              >Esta é minha primeira página web.</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/p&gt;</span><br />
+            <span style="color: rgb(255, 204, 2)">&lt;/body&gt;</span><br />
+            <span style="color: rgb(255, 204, 2)">&lt;/html&gt;</span>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🏷️</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Tags HTML fundamentais</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                📐 Tags de Estrutura
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.7">
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;html&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;head&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;body&gt;</code
+                >
+                — base de toda página.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                📝 Tags de Texto
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.7">
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;h1&gt; a &lt;h6&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;p&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;strong&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;em&gt;</code
+                >
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                🔗 Tags de Link e Mídia
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.7">
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;a&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;img&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;video&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;audio&gt;</code
+                >
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                📋 Tags de Lista
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.7">
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;ul&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;ol&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;li&gt;</code
+                >
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                📦 Tags de Agrupamento
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.7">
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;div&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;span&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;header&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;footer&gt;</code
+                >
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                📝 Tags de Formulário
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.7">
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;form&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;input&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;button&gt;</code
+                >
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;textarea&gt;</code
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🏷️</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Conceito de Tags: Abertura e Fechamento</span
+            >
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 243, 224),
+                rgb(255, 248, 245)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              A maioria das tags HTML trabalha em
+              <strong style="font-size: 13px">pares</strong>: uma tag de
+              <strong style="font-size: 13px">abertura</strong> e uma de
+              <strong style="font-size: 13px">fechamento</strong>. O conteúdo
+              fica entre elas.<br /><br />
+              <strong style="font-size: 13px">Exemplo:</strong>
+              <code
+                style="
+                  background: #ffe0b2;
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >&lt;p&gt;Este é um parágrafo.&lt;/p&gt;</code
+              ><br /><br />
+              Algumas tags são
+              <strong style="font-size: 13px">auto-fechantes</strong> (não têm
+              par):
+              <code
+                style="
+                  background: #ffe0b2;
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >&lt;img src="foto.jpg"&gt;</code
+              >
+              e
+              <code
+                style="
+                  background: #ffe0b2;
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  font-size: 12px;
+                "
+                >&lt;br&gt;</code
+              >.
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Dica Emmet:</strong> No VS Code,
+            digite
+            <code
+              style="
+                background: #c8e6c9;
+                padding: 1px 6px;
+                border-radius: 3px;
+                font-size: 11px;
+              "
+              >!</code
+            >
+            e pressione <strong>Tab</strong> para gerar automaticamente toda a
+            estrutura básica de um documento HTML5.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — PADRONIZAÇÃO DE CÓDIGO -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📏 Padronização de Código — Boas Práticas</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(243, 229, 245),
+                rgb(248, 240, 255)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(106, 27, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Por que padronizar o código?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(106, 27, 154);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Padronização de código</span
+              >
+              é o conjunto de regras e convenções que tornam o código
+              <strong style="font-size: 13px"
+                >consistente, legível e de fácil manutenção</strong
+              >. Um código padronizado é mais fácil de entender por outros
+              desenvolvedores (e por você mesmo no futuro).
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⭐</span
+            ><span style="color: #4a148c; font-size: 14px; font-weight: 800"
+              >Princípios fundamentais da padronização</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                ↩️ Indentação consistente
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Use <strong>espaços ou tabs</strong> (escolha um e mantenha). O
+                padrão web é <strong>2 ou 4 espaços</strong> por nível de
+                indentação. Elementos filhos são recuados em relação aos pais.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                🔤 Nomenclatura clara
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Use nomes descritivos para classes e IDs. Prefira
+                <strong>kebab-case</strong> (ex:
+                <code
+                  style="
+                    background: #f3e5f5;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >meu-botao-principal</code
+                >) para classes CSS. Evite nomes genéricos como "div1" ou
+                "caixa".
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                📝 Comentários úteis
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Comente o <strong>porquê</strong> das decisões, não o
+                <strong>quê</strong> o código faz. Código óbvio não precisa de
+                comentário. Use
+                <code
+                  style="
+                    background: #f3e5f5;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;!-- comentário --&gt;</code
+                >
+                no HTML.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                📐 Organização de arquivos
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Separe HTML, CSS e JavaScript em arquivos distintos. Use pastas
+                como
+                <code
+                  style="
+                    background: #f3e5f5;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >/css</code
+                >,
+                <code
+                  style="
+                    background: #f3e5f5;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >/js</code
+                >,
+                <code
+                  style="
+                    background: #f3e5f5;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >/img</code
+                >
+                para organizar o projeto.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                ✅ Fechamento de tags
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Sempre feche as tags que abriu. Tags não fechadas podem quebrar
+                o layout de formas imprevisíveis. O VS Code ajuda com destaque
+                colorido.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                🔡 Minúsculas para tags e atributos
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Embora HTML não seja case-sensitive, o padrão da indústria é
+                usar <strong>letras minúsculas</strong> para todas as tags e
+                atributos:
+                <code
+                  style="
+                    background: #f3e5f5;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >&lt;div class="container"&gt;</code
+                >.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🛠️</span
+            ><span style="color: #4a148c; font-size: 14px; font-weight: 800"
+              >Ferramentas que ajudam na padronização</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                ✨ Prettier
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Formatador automático. Instale a extensão e configure para
+                formatar ao salvar (Ctrl+S).
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                ✅ HTMLHint
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Extensão que analisa seu HTML e aponta erros de sintaxe e más
+                práticas.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                🌐 W3C Validator
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Site oficial (validator.w3.org) que verifica se seu HTML segue
+                os padrões web.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                📐 EditorConfig
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Define regras de formatação (tabs, charset) compartilhadas com
+                toda a equipe.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ Exemplo de código padronizado
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 11px;
+                  line-height: 1.9;
+                "
+              >
+                <span style="color: rgb(255, 204, 2)">&lt;header</span>
+                <span style="color: rgb(144, 202, 249)">class</span>=<span
+                  style="color: rgb(165, 214, 167)"
+                  >"cabecalho"</span
+                ><span style="color: rgb(255, 204, 2)">&gt;</span><br />
+                &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                  >&lt;h1&gt;</span
+                ><span style="color: #e0e0e0">Título Principal</span
+                ><span style="color: rgb(255, 204, 2)">&lt;/h1&gt;</span><br />
+                &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                  >&lt;nav&gt;</span
+                ><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                  >&lt;a</span
+                >
+                <span style="color: rgb(144, 202, 249)">href</span>=<span
+                  style="color: rgb(165, 214, 167)"
+                  >"/home"</span
+                ><span style="color: rgb(255, 204, 2)">&gt;</span
+                ><span style="color: #e0e0e0">Home</span
+                ><span style="color: rgb(255, 204, 2)">&lt;/a&gt;</span><br />
+                &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+                  >&lt;/nav&gt;</span
+                ><br />
+                <span style="color: rgb(255, 204, 2)">&lt;/header&gt;</span>
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ❌ Exemplo de código NÃO padronizado
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 8px;
+                  padding: 14px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 11px;
+                  line-height: 1.9;
+                "
+              >
+                <span style="color: rgb(255, 204, 2)">&lt;HEADER&gt;</span
+                ><br />
+                <span style="color: rgb(255, 204, 2)">&lt;H1&gt;</span
+                ><span style="color: #e0e0e0">Titulo</span
+                ><span style="color: rgb(255, 204, 2)">&lt;/H1&gt;</span><br />
+                <span style="color: rgb(255, 204, 2)">&lt;nav&gt;&lt;a</span>
+                <span style="color: rgb(144, 202, 249)">href</span>=<span
+                  style="color: rgb(165, 214, 167)"
+                  >"home"</span
+                ><span style="color: rgb(255, 204, 2)">&gt;</span
+                ><span style="color: #e0e0e0">Home</span
+                ><span style="color: rgb(255, 204, 2)">&lt;/a&gt;</span><br />
+                <span style="color: rgb(255, 204, 2)">&lt;/HEADER&gt;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da Aula</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">💻</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                VS Code: ambiente configurado
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🏗️</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                HTML: a estrutura da web
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📏</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Padronização: código profissional
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >VS Code</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Extensões</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >HTML5</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Tags</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Indentação</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Prettier</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,2107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../design_web.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🌐 Desenvolvimento Web · HTML & SEO</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Principais Tags do HTML<br style="font-size: 28px" /><span
+              style="color: rgb(206, 147, 216); font-size: 28px"
+              >& Estrutura de Código para SEO</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Domine as tags semânticas e entenda como o Google interpreta seu
+            código
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Tags Semânticas</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >SEO</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Google</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Hierarquia</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Acessibilidade</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — TAGS ESTRUTURAIS       -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🏗️ Tags Estruturais — O Esqueleto da Página</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(232, 234, 246),
+                rgb(237, 231, 246)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(92, 107, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que são Tags Semânticas?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(57, 73, 171);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Tags semânticas</span
+              >
+              são elementos HTML que
+              <strong style="font-size: 13px">descrevem o significado</strong>
+              do conteúdo que contêm, tanto para o navegador quanto para
+              mecanismos de busca. Em vez de usar apenas
+              <code
+                style="
+                  background: rgb(197, 202, 233);
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                "
+                >&lt;div&gt;</code
+              >
+              genéricas, usamos tags com
+              <strong style="font-size: 13px">nome e propósito claros</strong>.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Tags semânticas são como
+              <strong style="font-size: 13px"
+                >etiquetas em caixas de mudança</strong
+              >. Em vez de escrever só "caixa", você escreve "cozinha — pratos",
+              "quarto — roupas de inverno". Quem lê (navegador, Google) entende
+              exatamente o que tem dentro.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📐</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Tags estruturais semânticas (HTML5)</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 12px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                &lt;header&gt; — Cabeçalho
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Define o topo da página ou de uma seção. Geralmente contém logo,
+                título e navegação principal.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                &lt;nav&gt; — Navegação
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Agrupa links de navegação principais. O Google usa essa tag para
+                entender a estrutura do site.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                &lt;main&gt; — Conteúdo Principal
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Envolve o conteúdo único e central da página. Deve aparecer
+                apenas <strong>uma vez</strong> por página.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                &lt;section&gt; — Seção
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Agrupa conteúdo temático relacionado. Cada seção geralmente tem
+                seu próprio título.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                &lt;article&gt; — Artigo
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Conteúdo independente e autossuficiente (post de blog, notícia,
+                comentário).
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                &lt;aside&gt; — Conteúdo Lateral
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Conteúdo complementar ao principal (sidebar, widgets, anúncios
+                relacionados).
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                &lt;footer&gt; — Rodapé
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Define o rodapé da página ou seção. Contém copyright, links
+                legais, contato.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                &lt;div&gt; — Divisão Genérica
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Usada apenas quando <strong>nenhuma tag semântica</strong> se
+                aplica. Para agrupamento sem significado.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🖼️</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Visualização da estrutura semântica</span
+            >
+          </div>
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              margin-bottom: 16px;
+            "
+          >
+            <span style="color: rgb(255, 204, 2)">&lt;header&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">&lt;nav&gt;</span
+            ><span style="color: #e0e0e0">Menu de navegação</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/nav&gt;</span><br />
+            <span style="color: rgb(255, 204, 2)">&lt;/header&gt;</span><br />
+            <span style="color: rgb(255, 204, 2)">&lt;main&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;section&gt;</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;article&gt;</span
+            ><span style="color: #e0e0e0">Conteúdo 1</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/article&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;article&gt;</span
+            ><span style="color: #e0e0e0">Conteúdo 2</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/article&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;/section&gt;</span
+            ><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;aside&gt;</span
+            ><span style="color: #e0e0e0">Barra lateral</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/aside&gt;</span><br />
+            <span style="color: rgb(255, 204, 2)">&lt;/main&gt;</span><br />
+            <span style="color: rgb(255, 204, 2)">&lt;footer&gt;</span
+            ><span style="color: #e0e0e0">Rodapé</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/footer&gt;</span>
+          </div>
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #3949ab;
+              font-size: 13px;
+              color: #1a237e;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">🧠 Regra de ouro:</strong> Use a tag
+            mais específica possível. Se existe uma tag semântica para o que
+            você precisa, <strong>use-a</strong>. Só recorra ao
+            <code
+              style="background: #c5cae9; padding: 1px 6px; border-radius: 3px"
+              >&lt;div&gt;</code
+            >
+            quando não houver alternativa semântica.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — TAGS DE TEXTO E MÍDIA  -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📝 Tags de Texto, Listas e Mídia</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <!-- Tags de Texto -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #bf360c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              📝 Tags de Texto e Hierarquia
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #f57c00;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                  &lt;h1&gt; a &lt;h6&gt; — Títulos
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Hierarquia de títulos. h1 é o mais importante (use 1 por
+                  página). h6 é o menos importante.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #f57c00;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                  &lt;p&gt; — Parágrafo
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Define um bloco de texto. Navegadores adicionam espaçamento
+                  automático entre parágrafos.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #f57c00;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                  &lt;strong&gt; — Importante
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Texto com <strong>forte importância</strong> (negrito
+                  semântico). O Google dá peso extra.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #f57c00;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                  &lt;em&gt; — Ênfase
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Texto com <em>ênfase</em> (itálico semântico). Indica ênfase
+                  na leitura.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #f57c00;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                  &lt;blockquote&gt; — Citação
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Para citações longas de outras fontes. Importante para SEO de
+                  conteúdo.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #f57c00;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                  &lt;br&gt; — Quebra de Linha
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Tag auto-fechante para quebrar linha dentro de um parágrafo.
+                  Use com moderação.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Listas -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #2e7d32;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              📋 Tags de Listas
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #388e3c;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #1b5e20; font-size: 12px; font-weight: 800">
+                  &lt;ul&gt; — Lista não ordenada
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Lista com marcadores (bolinhas). Para itens sem ordem
+                  específica.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #388e3c;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #1b5e20; font-size: 12px; font-weight: 800">
+                  &lt;ol&gt; — Lista ordenada
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Lista numerada. Para sequências ou rankings. O Google valoriza
+                  para instruções.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #388e3c;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #1b5e20; font-size: 12px; font-weight: 800">
+                  &lt;li&gt; — Item de lista
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Cada item dentro de &lt;ul&gt; ou &lt;ol&gt;. Sempre filho
+                  direto destas tags.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mídia -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(187, 222, 251);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1565c0;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              🖼️ Tags de Mídia e Links
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #1565c0;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #0d47a1; font-size: 12px; font-weight: 800">
+                  &lt;a&gt; — Link (âncora)
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Cria hiperlinks. Atributo
+                  <code
+                    style="
+                      background: #bbdefb;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                    "
+                    >href</code
+                  >
+                  define o destino. Essencial para navegação e SEO.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #1565c0;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #0d47a1; font-size: 12px; font-weight: 800">
+                  &lt;img&gt; — Imagem
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Tag auto-fechante. Atributo
+                  <code
+                    style="
+                      background: #bbdefb;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                    "
+                    >alt</code
+                  >
+                  (texto alternativo) é crucial para SEO e acessibilidade.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #1565c0;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #0d47a1; font-size: 12px; font-weight: 800">
+                  &lt;video&gt; — Vídeo
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Incorpora vídeos nativamente. Pode ter controles, autoplay e
+                  múltiplas fontes.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #1565c0;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #0d47a1; font-size: 12px; font-weight: 800">
+                  &lt;figure&gt; + &lt;figcaption&gt;
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Associa imagem com legenda descritiva. O Google valoriza essa
+                  associação semântica.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulários -->
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(225, 190, 231);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #6a1b9a;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              📝 Tags de Formulário
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  &lt;form&gt; — Formulário
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Contêiner para campos de entrada. Atributos
+                  <code
+                    style="
+                      background: #e1bee7;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                    "
+                    >action</code
+                  >
+                  e
+                  <code
+                    style="
+                      background: #e1bee7;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                    "
+                    >method</code
+                  >
+                  definem envio.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  &lt;input&gt; — Campo de entrada
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Tipos: text, email, password, number, date, checkbox, radio.
+                  Tag auto-fechante.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  &lt;label&gt; — Rótulo
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Associa texto descritivo a um campo. Essencial para
+                  <strong>acessibilidade</strong>.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  &lt;button&gt; — Botão
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Tipos: submit (enviar), reset (limpar), button (ação genérica
+                  via JavaScript).
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  &lt;select&gt; + &lt;option&gt;
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Menu suspenso com opções predefinidas para o usuário escolher.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  &lt;textarea&gt; — Área de texto
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Campo para texto multilinha (comentários, descrições,
+                  mensagens).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — TABELAS E META TAGS    -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📊 Tabelas e Meta Tags do &lt;head&gt;</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 14px;
+          "
+        >
+          <!-- Tabelas -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(178, 223, 219);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              📊 Tags de Tabelas
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #00897b;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                  &lt;table&gt; — Tabela
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Contêiner principal da tabela. Use apenas para dados
+                  tabulares, não para layout.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #00897b;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                  &lt;thead&gt; — Cabeçalho
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Agrupa linhas de cabeçalho da tabela (títulos das colunas).
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #00897b;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                  &lt;tbody&gt; — Corpo
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Agrupa o conteúdo principal (dados) da tabela.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #00897b;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                  &lt;tr&gt; — Linha
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Define uma linha dentro da tabela. Contém células &lt;td&gt;
+                  ou &lt;th&gt;.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Meta Tags -->
+          <div
+            style="
+              background: rgb(248, 240, 255);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(225, 190, 231);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #6a1b9a;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              🏷️ Meta Tags Essenciais no &lt;head&gt;
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  &lt;title&gt; — Título da página
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Aparece na aba do navegador e nos resultados do Google.
+                  <strong>Essencial para SEO.</strong>
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  &lt;meta charset&gt; — Codificação
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Define a codificação de caracteres.
+                  <code
+                    style="
+                      background: #e1bee7;
+                      padding: 1px 6px;
+                      border-radius: 3px;
+                    "
+                    >UTF-8</code
+                  >
+                  é o padrão universal.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  &lt;meta description&gt; — Descrição
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Resumo que aparece nos resultados de busca. Máximo
+                  recomendado: 160 caracteres.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  &lt;meta viewport&gt; — Responsivo
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Garante que a página funcione em dispositivos móveis.
+                  Obrigatório para SEO mobile.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  &lt;meta robots&gt; — Indexação
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Instrui os robôs de busca: indexar ou não, seguir links ou
+                  não.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  &lt;link canonical&gt; — URL canônica
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Informa ao Google qual é a URL "oficial" quando há conteúdo
+                  duplicado.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — SEO E ESTRUTURA        -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(191, 54, 12),
+              rgb(230, 81, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔍 Importância da Estrutura de Código para SEO</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 235, 238),
+                rgb(255, 243, 245)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(191, 54, 12);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #bf360c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é SEO?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(191, 54, 12);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >SEO</span
+              >
+              (Search Engine Optimization) é o conjunto de técnicas que ajudam
+              seu site a ser
+              <strong style="font-size: 13px"
+                >encontrado e melhor classificado</strong
+              >
+              nos mecanismos de busca como o Google. Uma boa estrutura HTML é a
+              <strong style="font-size: 13px">base de todo SEO</strong> — sem
+              ela, outras técnicas perdem eficácia.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Como o Google "lê" seu site
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              O Google envia
+              <strong style="font-size: 13px">robôs</strong> (crawlers) que
+              percorrem seu HTML como um leitor de texto. Eles não "veem" cores
+              ou layouts — eles
+              <strong style="font-size: 13px">leem a estrutura das tags</strong>
+              para entender o que é título, parágrafo, imagem, link e como tudo
+              se relaciona.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⭐</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Como uma boa estrutura HTML melhora o SEO</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                📝 Hierarquia de títulos (h1-h6)
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                O Google usa os títulos para entender a estrutura do conteúdo.
+                Um <strong>h1</strong> claro informa o tema principal.
+                Subtítulos (h2, h3) organizam os tópicos hierarquicamente.
+                Páginas com boa hierarquia têm vantagem no ranking.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                🏗️ Tags semânticas (header, main, article, etc.)
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                As tags semânticas ajudam o Google a identificar o que é
+                conteúdo principal, o que é navegação e o que é complementar.
+                Isso evita que informações irrelevantes concorram com o conteúdo
+                importante.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                🖼️ Atributo alt em imagens
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                O Google não "enxerga" imagens — ele lê o texto alternativo.
+                Imagens com
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >alt</code
+                >
+                descritivo ranqueiam no Google Imagens e tornam o site mais
+                acessível.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                🔗 Links com texto descritivo
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Evite "clique aqui". Use textos que descrevam o destino do link.
+                Isso ajuda o Google a entender a relação entre páginas.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                📱 Meta tag viewport (mobile)
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Sites não responsivos são penalizados pelo Google. A meta tag
+                viewport é o primeiro passo para garantir que seu site funcione
+                em celulares.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                ⚡ Velocidade de carregamento
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Código limpo e bem estruturado carrega mais rápido. O Google
+                prioriza sites rápidos. Evite excesso de tags aninhadas
+                desnecessariamente.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ Checklist de SEO para HTML
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ✅ Apenas um <strong>&lt;h1&gt;</strong> por página<br />
+                ✅ Hierarquia lógica de títulos (h1 → h2 → h3)<br />
+                ✅ <strong>&lt;title&gt;</strong> único e descritivo em cada
+                página<br />
+                ✅ Meta <strong>description</strong> com até 160 caracteres<br />
+                ✅ Atributo <strong>alt</strong> em todas as imagens<br />
+                ✅ Links com texto descritivo (não "clique aqui")<br />
+                ✅ Meta tag <strong>viewport</strong> para responsividade<br />
+                ✅ Tags semânticas em vez de divs genéricas
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ❌ Erros que prejudicam o SEO
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ❌ Múltiplos <strong>&lt;h1&gt;</strong> na mesma página<br />
+                ❌ Imagens sem atributo <strong>alt</strong><br />
+                ❌ Pular níveis de título (h1 → h3 sem h2)<br />
+                ❌ Texto escondido ou com fonte muito pequena<br />
+                ❌ Links quebrados (código 404)<br />
+                ❌ Conteúdo duplicado sem canonical<br />
+                ❌ Uso excessivo de <strong>&lt;div&gt;</strong> sem semântica
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 5 — EXEMPLO COMPLETO       -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >5</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📄 Exemplo Completo — Página Bem Estruturada para SEO</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              color: #37474f;
+              font-size: 13px;
+              line-height: 1.8;
+              margin-bottom: 14px;
+            "
+          >
+            Este exemplo reúne <strong>todas as boas práticas</strong> de
+            estrutura HTML semântica e SEO em uma página real:
+          </div>
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 20px 24px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+            "
+          >
+            <span style="color: rgb(255, 204, 2)">&lt;!DOCTYPE html&gt;</span
+            ><br />
+            <span style="color: rgb(255, 204, 2)">&lt;html</span>
+            <span style="color: rgb(144, 202, 249)">lang</span>=<span
+              style="color: rgb(165, 214, 167)"
+              >"pt-BR"</span
+            ><span style="color: rgb(255, 204, 2)">&gt;</span><br />
+            <span style="color: rgb(255, 204, 2)">&lt;head&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">&lt;meta</span>
+            <span style="color: rgb(144, 202, 249)">charset</span>=<span
+              style="color: rgb(165, 214, 167)"
+              >"UTF-8"</span
+            ><span style="color: rgb(255, 204, 2)">&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">&lt;meta</span>
+            <span style="color: rgb(144, 202, 249)">name</span>=<span
+              style="color: rgb(165, 214, 167)"
+              >"viewport"</span
+            >
+            <span style="color: rgb(144, 202, 249)">content</span>=<span
+              style="color: rgb(165, 214, 167)"
+              >"width=device-width"</span
+            ><span style="color: rgb(255, 204, 2)">&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">&lt;meta</span>
+            <span style="color: rgb(144, 202, 249)">name</span>=<span
+              style="color: rgb(165, 214, 167)"
+              >"description"</span
+            >
+            <span style="color: rgb(144, 202, 249)">content</span>=<span
+              style="color: rgb(165, 214, 167)"
+              >"Página de exemplo com HTML semântico"</span
+            ><span style="color: rgb(255, 204, 2)">&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;title&gt;</span
+            ><span style="color: #e0e0e0">Minha Página Otimizada</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/title&gt;</span><br />
+            <span style="color: rgb(255, 204, 2)">&lt;/head&gt;</span><br />
+            <span style="color: rgb(255, 204, 2)">&lt;body&gt;</span
+            ><br /><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;header&gt;</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;h1&gt;</span
+            ><span style="color: #e0e0e0">Bem-vindo ao Meu Site</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/h1&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;nav&gt;</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(255, 204, 2)"
+              >&lt;a</span
+            >
+            <span style="color: rgb(144, 202, 249)">href</span>=<span
+              style="color: rgb(165, 214, 167)"
+              >"/home"</span
+            ><span style="color: rgb(255, 204, 2)">&gt;</span
+            ><span style="color: #e0e0e0">Início</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/a&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(255, 204, 2)"
+              >&lt;a</span
+            >
+            <span style="color: rgb(144, 202, 249)">href</span>=<span
+              style="color: rgb(165, 214, 167)"
+              >"/sobre"</span
+            ><span style="color: rgb(255, 204, 2)">&gt;</span
+            ><span style="color: #e0e0e0">Sobre</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/a&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(255, 204, 2)"
+              >&lt;a</span
+            >
+            <span style="color: rgb(144, 202, 249)">href</span>=<span
+              style="color: rgb(165, 214, 167)"
+              >"/contato"</span
+            ><span style="color: rgb(255, 204, 2)">&gt;</span
+            ><span style="color: #e0e0e0">Contato</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/a&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;/nav&gt;</span
+            ><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;/header&gt;</span
+            ><br /><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">&lt;main&gt;</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;article&gt;</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(255, 204, 2)"
+              >&lt;h2&gt;</span
+            ><span style="color: #e0e0e0">Artigo Principal</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/h2&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(255, 204, 2)"
+              >&lt;p&gt;</span
+            ><span style="color: #e0e0e0">Conteúdo do artigo.</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/p&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(255, 204, 2)"
+              >&lt;figure&gt;</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(255, 204, 2)"
+              >&lt;img</span
+            >
+            <span style="color: rgb(144, 202, 249)">src</span>=<span
+              style="color: rgb(165, 214, 167)"
+              >"foto.jpg"</span
+            >
+            <span style="color: rgb(144, 202, 249)">alt</span>=<span
+              style="color: rgb(165, 214, 167)"
+              >"Descrição da imagem"</span
+            ><span style="color: rgb(255, 204, 2)">&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(255, 204, 2)"
+              >&lt;figcaption&gt;</span
+            ><span style="color: #e0e0e0">Legenda da imagem</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/figcaption&gt;</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: rgb(255, 204, 2)"
+              >&lt;/figure&gt;</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;/article&gt;</span
+            ><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;/main&gt;</span
+            ><br /><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;footer&gt;</span
+            ><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;p&gt;</span
+            ><span style="color: #e0e0e0"
+              >© 2024 Meu Site. Todos os direitos reservados.</span
+            ><span style="color: rgb(255, 204, 2)">&lt;/p&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)"
+              >&lt;/footer&gt;</span
+            ><br /><br />
+            <span style="color: rgb(255, 204, 2)">&lt;/body&gt;</span><br />
+            <span style="color: rgb(255, 204, 2)">&lt;/html&gt;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da Aula</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🏗️</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Tags semânticas dão significado ao HTML
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔍</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Estrutura limpa = melhor ranking no Google
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Tags Semânticas</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >SEO</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Hierarquia h1-h6</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Meta Tags</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Alt Text</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Checklist SEO</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
