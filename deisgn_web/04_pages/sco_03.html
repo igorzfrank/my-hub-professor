@@ -1,0 +1,1927 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../design_web.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >📱 Desenvolvimento Web · CSS Responsivo</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Mobile-First, Breakpoints & Media Queries<br
+              style="font-size: 28px"
+            /><span style="color: rgb(206, 147, 216); font-size: 28px"
+              >Design Responsivo para Todos os Dispositivos</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Aprenda a criar layouts que se adaptam perfeitamente do smartphone
+            ao monitor 4K
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Mobile-First</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Breakpoints</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >@media</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >min-width</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Responsivo</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — INTRODUÇÃO E ANALOGIA  -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧠 Os Três Conceitos Fundamentais</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(232, 234, 246),
+                rgb(237, 231, 246)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(92, 107, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que são Mobile-First, Breakpoints e Media Queries?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              Estes três conceitos formam a base do
+              <strong style="font-size: 13px">design responsivo</strong> — a
+              capacidade de um site se adaptar a qualquer tamanho de tela.
+              <strong style="font-size: 13px">Mobile-first</strong> é a
+              filosofia de começar pelo menor dispositivo.
+              <strong style="font-size: 13px">Breakpoints</strong> são os pontos
+              onde o layout muda.
+              <strong style="font-size: 13px">Media Queries</strong> são o
+              código CSS que aplica essas mudanças.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples — Água no copo
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Pense na
+              <strong style="font-size: 13px"
+                >água se adaptando ao recipiente</strong
+              >:<br />
+              • <strong style="font-size: 13px">Mobile-first</strong> é como
+              encher primeiro um copo pequeno (celular) e depois despejar em
+              copos maiores (tablet, desktop).<br />
+              • <strong style="font-size: 13px">Breakpoints</strong> são as
+              marcas no copo onde você muda a forma de servir.<br />
+              • <strong style="font-size: 13px">Media Queries</strong> são as
+              regras que dizem "quando o copo for maior que X, reorganize os
+              elementos".
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — MOBILE-FIRST           -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📱 MOBILE-FIRST — Comece pelo Menor</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(224, 242, 241),
+                rgb(232, 245, 233)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é Mobile-First?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(0, 105, 92);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Mobile-first</span
+              >
+              é uma abordagem de design que
+              <strong style="font-size: 13px"
+                >prioriza a experiência em dispositivos móveis</strong
+              >
+              como ponto de partida. O layout é projetado primeiro para telas
+              pequenas e depois
+              <strong style="font-size: 13px"
+                >progressivamente aprimorado</strong
+              >
+              para telas maiores.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia específica
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              É como construir uma casa começando pelo
+              <strong style="font-size: 13px">fundamento mais simples</strong>
+              (mobile) e depois adicionando andares e cômodos (tablet, desktop),
+              em vez de construir uma mansão e tentar comprimi-la num
+              apartamento pequeno.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⭐</span
+            ><span style="color: #00695c; font-size: 14px; font-weight: 800"
+              >Por que Mobile-First?</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                ⚡ Performance
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Carrega apenas o CSS/JS necessário para mobile — mais leve e
+                rápido.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                🎯 Foco no essencial
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Força você a priorizar o conteúdo realmente importante para o
+                usuário.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                📈 Tráfego mobile
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Mais de 60% do tráfego web mundial vem de dispositivos móveis.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                🔍 SEO
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Google prioriza sites mobile-friendly no ranking de busca.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                🐛 Menos bugs
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Escalar para telas maiores é mais fácil e gera menos problemas
+                que comprimir.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🔄</span
+            ><span style="color: #00695c; font-size: 14px; font-weight: 800"
+              >Mobile-First vs. Desktop-First</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 10px;
+                padding: 16px;
+                text-align: center;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 6px;
+                "
+              >
+                📱 Mobile-First (Recomendado)
+              </div>
+              <div
+                style="font-size: 11px; color: #37474f; font-family: monospace"
+              >
+                Estilos base = Mobile<br />@media (min-width: 768px) { }<br />@media
+                (min-width: 1024px) { }
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 10px;
+                padding: 16px;
+                text-align: center;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 6px;
+                "
+              >
+                🖥️ Desktop-First (Legado)
+              </div>
+              <div
+                style="font-size: 11px; color: #37474f; font-family: monospace"
+              >
+                Estilos base = Desktop<br />@media (max-width: 1023px) { }<br />@media
+                (max-width: 767px) { }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — BREAKPOINTS            -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📏 BREAKPOINTS — Os Pontos de Quebra</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 243, 224),
+                rgb(255, 248, 245)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #bf360c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que são Breakpoints?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(230, 81, 0);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Breakpoints</span
+              >
+              (pontos de quebra) são
+              <strong style="font-size: 13px"
+                >larguras de tela específicas</strong
+              >
+              onde o layout precisa
+              <strong style="font-size: 13px">mudar</strong> para se adaptar a
+              diferentes dispositivos. Eles definem os limites entre as versões
+              mobile, tablet e desktop.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia específica
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Breakpoints são como as
+              <strong style="font-size: 13px">marcações em uma régua</strong> –
+              abaixo de 375mm você usa uma organização, entre 376mm e 768mm usa
+              outra, acima disso usa uma terceira.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📐</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Breakpoints por dispositivo (referência)</span
+            >
+          </div>
+          <div style="overflow-x: auto; margin-bottom: 18px; font-size: 14px">
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 1px;
+                background: #ffe0b2;
+                border-radius: 10px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #bf360c;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                Categoria
+              </div>
+              <div
+                style="
+                  background: #bf360c;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                Largura
+              </div>
+              <div
+                style="
+                  background: #bf360c;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                Dispositivos típicos
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Mobile pequeno</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                até 375px
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                iPhone SE, Galaxy Fold
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Mobile</strong>
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                376-480px
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                iPhone 12/13/14, Pixel
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Mobile grande</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                481-640px
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                iPhone Plus, Galaxy Note
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Tablet</strong>
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                641-768px
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                iPad Mini, Galaxy Tab
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Tablet grande</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                769-1024px
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                iPad, Surface Go
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Desktop</strong>
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                1025-1440px
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Laptops, monitores comuns
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Desktop grande</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                1441px+
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Monitores widescreen, 4K
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⭐</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Abordagens para definir Breakpoints</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #c62828; font-size: 12px; font-weight: 800">
+                ❌ Por dispositivo (evitar)
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Criar breakpoints para cada iPhone, Galaxy, iPad.
+                <strong>Problema:</strong> novos dispositivos surgem sempre —
+                você nunca cobrirá todos.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1b5e20; font-size: 12px; font-weight: 800">
+                ✅ Por conteúdo (recomendado)
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Adicione breakpoints <strong>quando o layout quebrar</strong>,
+                não quando atinge um tamanho de dispositivo. Redimensione o
+                navegador e observe.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+            "
+          >
+            <span style="color: #78909c"
+              >/* Breakpoints estratégicos mais usados em projetos reais
+              */</span
+            ><br />
+            <span style="color: #78909c"
+              >/* Mobile: estilos base (sem media query) */</span
+            ><br /><br />
+            <span style="color: #ffcc02">@media (min-width: 640px)</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: #78909c">/* Tablet retrato */</span>
+            <span style="color: rgb(144, 202, 249)">}</span><br />
+            <span style="color: #ffcc02">@media (min-width: 768px)</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: #78909c">/* Tablet paisagem */</span>
+            <span style="color: rgb(144, 202, 249)">}</span><br />
+            <span style="color: #ffcc02">@media (min-width: 1024px)</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: #78909c">/* Desktop */</span>
+            <span style="color: rgb(144, 202, 249)">}</span><br />
+            <span style="color: #ffcc02">@media (min-width: 1280px)</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: #78909c">/* Desktop grande */</span>
+            <span style="color: rgb(144, 202, 249)">}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — MEDIA QUERIES          -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📋 MEDIA QUERIES — O Código da Responsividade</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(243, 229, 245),
+                rgb(248, 240, 255)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 4px;
+              border-left: 5px solid rgb(106, 27, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que são Media Queries?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(106, 27, 154);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Media Queries</span
+              >
+              são uma funcionalidade do CSS que permite
+              <strong style="font-size: 13px"
+                >aplicar estilos condicionalmente</strong
+              >
+              com base nas características do dispositivo ou viewport — largura,
+              altura, orientação, resolução e até preferências do usuário.
+            </div>
+          </div>
+
+          <!-- min-width vs max-width -->
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #8e24aa;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              📏 min-width vs. max-width — A diferença crucial
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px;
+                  border-left: 4px solid #2e7d32;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #1b5e20; font-size: 12px; font-weight: 800">
+                  ✅ min-width (Mobile-First)
+                </div>
+                <div
+                  style="
+                    font-size: 11px;
+                    color: #37474f;
+                    font-family: monospace;
+                    margin-top: 4px;
+                  "
+                >
+                  @media (min-width: 768px) { }<br /><span
+                    style="font-size: 10px"
+                    >"Aplica quando a tela for MAIOR ou IGUAL a 768px"</span
+                  >
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px;
+                  border-left: 4px solid #c62828;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #c62828; font-size: 12px; font-weight: 800">
+                  ❌ max-width (Desktop-First)
+                </div>
+                <div
+                  style="
+                    font-size: 11px;
+                    color: #37474f;
+                    font-family: monospace;
+                    margin-top: 4px;
+                  "
+                >
+                  @media (max-width: 767px) { }<br /><span
+                    style="font-size: 10px"
+                    >"Aplica quando a tela for MENOR que 768px"</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Faixa específica -->
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #8e24aa;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Faixa específica — Apenas entre dois valores
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #ffcc02"
+                >@media (min-width: 768px) and (max-width: 1023px)</span
+              >
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: #78909c"
+                >/* Apenas entre 768px e 1023px (tablet) */</span
+              ><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Tipos de Mídia -->
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #8e24aa;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              📺 Tipos de Mídia (Media Types)
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong>all</strong><br />Todos (padrão)
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong>screen</strong><br />Telas
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong>print</strong><br />Impressão
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong>speech</strong><br />Leitores de tela
+              </div>
+            </div>
+          </div>
+
+          <!-- Condições -->
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #8e24aa;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              ⚙️ Condições disponíveis nas Media Queries
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong>width / height</strong><br />Largura/Altura
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong>min-width / max-width</strong><br />Mínimo/Máximo
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong>orientation</strong><br />Retrato/Paisagem
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong>resolution</strong><br />Resolução (DPI)
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong>prefers-color-scheme</strong><br />Tema claro/escuro
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong>prefers-reduced-motion</strong><br />Reduzir animações
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 5 — EXEMPLOS COMPLETOS     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >5</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧪 Exemplo Prático Completo — Mobile-First na Prática</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              color: #37474f;
+              font-size: 13px;
+              line-height: 1.8;
+              margin-bottom: 16px;
+            "
+          >
+            Veja um exemplo real de como seria o CSS de uma página completa
+            seguindo a abordagem <strong>Mobile-First</strong>:
+          </div>
+
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 20px 24px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+            "
+          >
+            <span style="color: #78909c">/* ===== MOBILE (BASE) ===== */</span
+            ><br />
+            <span style="color: rgb(255, 204, 2)">.container</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: rgb(128, 222, 234)">padding</span>:
+            <span style="color: rgb(255, 204, 2)">16px</span>;
+            <span style="color: rgb(144, 202, 249)">}</span><br />
+            <span style="color: rgb(255, 204, 2)">.header</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: rgb(128, 222, 234)">flex-direction</span>:
+            <span style="color: rgb(165, 214, 167)">column</span>;
+            <span style="color: rgb(144, 202, 249)">}</span><br />
+            <span style="color: rgb(255, 204, 2)">.grid</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: rgb(128, 222, 234)">grid-template-columns</span
+            >: <span style="color: rgb(255, 204, 2)">1fr</span>;
+            <span style="color: rgb(144, 202, 249)">}</span><br />
+            <span style="color: rgb(255, 204, 2)">.sidebar</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: rgb(128, 222, 234)">display</span>:
+            <span style="color: rgb(165, 214, 167)">none</span>;
+            <span style="color: rgb(144, 202, 249)">}</span><br /><br />
+            <span style="color: #78909c">/* ===== TABLET (640px+) ===== */</span
+            ><br />
+            <span style="color: #ffcc02">@media (min-width: 640px)</span>
+            <span style="color: rgb(144, 202, 249)">{</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">.container</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: rgb(128, 222, 234)">padding</span>:
+            <span style="color: rgb(255, 204, 2)">24px</span>;
+            <span style="color: rgb(144, 202, 249)">}</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">.grid</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: rgb(128, 222, 234)">grid-template-columns</span
+            >: <span style="color: rgb(165, 214, 167)">repeat(2, 1fr)</span>;
+            <span style="color: rgb(144, 202, 249)">}</span><br />
+            <span style="color: rgb(144, 202, 249)">}</span><br /><br />
+            <span style="color: #78909c"
+              >/* ===== DESKTOP (1024px+) ===== */</span
+            ><br />
+            <span style="color: #ffcc02">@media (min-width: 1024px)</span>
+            <span style="color: rgb(144, 202, 249)">{</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">.header</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: rgb(128, 222, 234)">flex-direction</span>:
+            <span style="color: rgb(165, 214, 167)">row</span>;
+            <span style="color: rgb(144, 202, 249)">}</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">.grid</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: rgb(128, 222, 234)">grid-template-columns</span
+            >: <span style="color: rgb(165, 214, 167)">repeat(3, 1fr)</span>;
+            <span style="color: rgb(144, 202, 249)">}</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">.sidebar</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: rgb(128, 222, 234)">display</span>:
+            <span style="color: rgb(165, 214, 167)">block</span>;
+            <span style="color: rgb(144, 202, 249)">}</span><br />
+            <span style="color: rgb(144, 202, 249)">}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 6 — PREFERÊNCIAS DO USUÁRIO -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >6</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🎨 Media Queries Modernas — Preferências do Usuário</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- Tema Claro/Escuro -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🌓 Tema Claro/Escuro (Dark Mode)
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #78909c"
+                >/* Respeita a preferência do sistema operacional */</span
+              ><br />
+              <span style="color: #ffcc02"
+                >@media (prefers-color-scheme: dark)</span
+              >
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">body</span>
+              <span style="color: rgb(144, 202, 249)">{</span>
+              <span style="color: rgb(128, 222, 234)">background</span>:
+              <span style="color: rgb(165, 214, 167)">#1a1a2e</span>;
+              <span style="color: rgb(128, 222, 234)">color</span>:
+              <span style="color: rgb(165, 214, 167)">#e0e0e0</span>;
+              <span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Reduzir Movimento -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              ♿ Reduzir Movimento (Acessibilidade)
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #78909c"
+                >/* Usuários que preferem menos animações */</span
+              ><br />
+              <span style="color: #ffcc02"
+                >@media (prefers-reduced-motion: reduce)</span
+              >
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">*</span>
+              <span style="color: rgb(144, 202, 249)">{</span>
+              <span style="color: rgb(128, 222, 234)">animation</span>:
+              <span style="color: rgb(165, 214, 167)">none</span>
+              <span style="color: rgb(144, 202, 249)">!important</span>;
+              <span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Orientação -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              📱 Orientação da Tela
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #78909c"
+                >/* Modo paisagem (horizontal) */</span
+              ><br />
+              <span style="color: #ffcc02"
+                >@media (orientation: landscape)</span
+              >
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">.video</span>
+              <span style="color: rgb(144, 202, 249)">{</span>
+              <span style="color: rgb(128, 222, 234)">width</span>:
+              <span style="color: rgb(165, 214, 167)">100%</span>;
+              <span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span><br /><br />
+              <span style="color: #78909c">/* Modo retrato (vertical) */</span
+              ><br />
+              <span style="color: #ffcc02">@media (orientation: portrait)</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(255, 204, 2)">.sidebar</span>
+              <span style="color: rgb(144, 202, 249)">{</span>
+              <span style="color: rgb(128, 222, 234)">display</span>:
+              <span style="color: rgb(165, 214, 167)">none</span>;
+              <span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo — Design Responsivo</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📱</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Mobile-First: comece pelo menor
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📏</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Breakpoints: onde o layout muda
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📋</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                @media: o código da adaptação
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Mobile-First</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Breakpoints</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >min-width</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >@media</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Dark Mode</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Responsivo</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

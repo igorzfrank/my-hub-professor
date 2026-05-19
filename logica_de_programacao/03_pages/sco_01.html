@@ -1,0 +1,2125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🔧 Desenvolvimento Web · Controle de Versão</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Git — Introdução e Comandos Básicos<br
+              style="font-size: 28px"
+            /><span style="color: rgb(206, 147, 216); font-size: 28px"
+              >Controle de Versão para Desenvolvedores</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Aprenda a salvar, versionar e compartilhar seu código com os
+            comandos essenciais do Git
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >git init</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >git add</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >git commit</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >git push</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >git log</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — O QUE É GIT            -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧠 O que é Git e por que usar?</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(232, 234, 246),
+                rgb(237, 231, 246)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(92, 107, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é Git?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(57, 73, 171);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Git</span
+              >
+              é um sistema de
+              <strong style="font-size: 13px"
+                >controle de versão distribuído</strong
+              >, gratuito e de código aberto. Ele registra o histórico de todas
+              as alterações feitas nos arquivos do seu projeto, permitindo
+              voltar a versões anteriores, trabalhar em equipe sem conflitos e
+              manter um backup completo do código.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Git é como um
+              <strong style="font-size: 13px">botão "Salvar" turbinado</strong>
+              de um videogame. Em vez de salvar por cima do arquivo anterior,
+              você cria
+              <strong style="font-size: 13px">pontos de restauração</strong>
+              (commits) com nome e descrição. Se algo der errado, você pode
+              voltar a qualquer ponto anterior — como carregar um save antigo.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⭐</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Por que usar Git?</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                ⏪ Histórico completo
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Cada alteração fica registrada. Você pode voltar a qualquer
+                versão anterior do projeto.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                👥 Trabalho em equipe
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Múltiplas pessoas editam o mesmo projeto simultaneamente sem
+                conflitos.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                🛡️ Segurança
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Backup distribuído — cada pessoa tem o histórico completo do
+                projeto.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                🌳 Ramificações (branches)
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Crie versões paralelas para testar novas funcionalidades sem
+                quebrar o projeto principal.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #3949ab;
+              font-size: 13px;
+              color: #1a237e;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">🔍 Git ≠ GitHub:</strong> Git é o
+            sistema de controle de versão que roda no seu computador. GitHub é
+            uma plataforma online que hospeda repositórios Git na nuvem para
+            compartilhamento e colaboração.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — CONFIGURAÇÃO INICIAL   -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >⚙️ Configuração Inicial do Git</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              color: #37474f;
+              font-size: 13px;
+              line-height: 1.8;
+              margin-bottom: 16px;
+            "
+          >
+            Antes de começar a usar o Git, você precisa configurar seu
+            <strong>nome</strong> e <strong>e-mail</strong>. Essas informações
+            aparecerão em todos os seus commits.
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📝</span
+            ><span style="color: #00695c; font-size: 14px; font-weight: 800"
+              >Comandos de configuração</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+              "
+            >
+              <span style="color: #78909c"># Configurar seu nome</span><br />
+              <span style="color: #e0e0e0">git config --global user.name</span>
+              <span style="color: rgb(165, 214, 167)">"Seu Nome Completo"</span
+              ><br /><br />
+              <span style="color: #78909c"># Configurar seu e-mail</span><br />
+              <span style="color: #e0e0e0">git config --global user.email</span>
+              <span style="color: rgb(165, 214, 167)"
+                >"seuemail@exemplo.com"</span
+              ><br /><br />
+              <span style="color: #78909c"># Verificar as configurações</span
+              ><br />
+              <span style="color: #e0e0e0">git config --list</span>
+            </div>
+          </div>
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Dica:</strong> O parâmetro
+            <code
+              style="background: #c8e6c9; padding: 1px 6px; border-radius: 3px"
+              >--global</code
+            >
+            aplica a configuração para todos os projetos no seu computador. Sem
+            ele, a configuração vale apenas para o projeto atual.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — FLUXO BÁSICO          -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔄 O Fluxo Básico do Git — Os 4 Estados</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              color: #37474f;
+              font-size: 13px;
+              line-height: 1.8;
+              margin-bottom: 16px;
+            "
+          >
+            Entender o fluxo de trabalho do Git é essencial. Seu arquivo passa
+            por <strong>4 estados</strong> diferentes até ser salvo no
+            histórico:
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #c62828;
+                color: #fff;
+                border-radius: 10px;
+                padding: 14px 16px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 800;
+                min-width: 100px;
+              "
+            >
+              📂<br />Working Directory<br /><span
+                style="font-weight: 400; font-size: 10px"
+                >Arquivos editados</span
+              >
+            </div>
+            <div style="color: #1a237e; font-size: 20px; font-weight: 900">
+              →
+            </div>
+            <div
+              style="
+                background: #f57c00;
+                color: #fff;
+                border-radius: 10px;
+                padding: 14px 16px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 800;
+                min-width: 100px;
+              "
+            >
+              📦<br />Staging Area<br /><span
+                style="font-weight: 400; font-size: 10px"
+                >git add</span
+              >
+            </div>
+            <div style="color: #1a237e; font-size: 20px; font-weight: 900">
+              →
+            </div>
+            <div
+              style="
+                background: #2e7d32;
+                color: #fff;
+                border-radius: 10px;
+                padding: 14px 16px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 800;
+                min-width: 100px;
+              "
+            >
+              💾<br />Repositório Local<br /><span
+                style="font-weight: 400; font-size: 10px"
+                >git commit</span
+              >
+            </div>
+            <div style="color: #1a237e; font-size: 20px; font-weight: 900">
+              →
+            </div>
+            <div
+              style="
+                background: #1565c0;
+                color: #fff;
+                border-radius: 10px;
+                padding: 14px 16px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 800;
+                min-width: 100px;
+              "
+            >
+              ☁️<br />Repositório Remoto<br /><span
+                style="font-weight: 400; font-size: 10px"
+                >git push</span
+              >
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 8px;
+                padding: 12px 14px;
+                border-left: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #c62828; font-size: 12px; font-weight: 800">
+                1. Working Directory (Diretório de Trabalho)
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Seus arquivos normais, onde você edita o código. O Git ainda não
+                está rastreando as mudanças.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 8px;
+                padding: 12px 14px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                2. Staging Area (Área de Preparação)
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Você seleciona quais arquivos farão parte do próximo commit. Use
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >git add</code
+                >.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 8px;
+                padding: 12px 14px;
+                border-left: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1b5e20; font-size: 12px; font-weight: 800">
+                3. Repositório Local
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                O commit salva as mudanças no histórico do Git no seu
+                computador. Use
+                <code
+                  style="
+                    background: #c8e6c9;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >git commit</code
+                >.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 8px;
+                padding: 12px 14px;
+                border-left: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #0d47a1; font-size: 12px; font-weight: 800">
+                4. Repositório Remoto
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Envia os commits para a nuvem (GitHub, GitLab). Use
+                <code
+                  style="
+                    background: #bbdefb;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >git push</code
+                >.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — COMANDOS BÁSICOS       -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📋 Comandos Básicos do Git — Guia Prático</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- git init -->
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #8e24aa;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #6a1b9a;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >1</span
+              ><span style="color: #4a148c; font-size: 15px; font-weight: 800"
+                >git init — Inicializar um repositório</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Cria um novo repositório Git na pasta atual. Uma pasta oculta
+              <code>.git</code> será criada com todo o controle de versão.
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 10px 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #e0e0e0">git init</span>
+            </div>
+          </div>
+
+          <!-- git status -->
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #8e24aa;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #6a1b9a;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >2</span
+              ><span style="color: #4a148c; font-size: 15px; font-weight: 800"
+                >git status — Verificar o estado dos arquivos</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Mostra quais arquivos foram modificados, quais estão na área de
+              preparação e quais não estão sendo rastreados.
+              <strong>Use com frequência!</strong>
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 10px 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #e0e0e0">git status</span>
+            </div>
+          </div>
+
+          <!-- git add -->
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #8e24aa;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #6a1b9a;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >3</span
+              ><span style="color: #4a148c; font-size: 15px; font-weight: 800"
+                >git add — Adicionar arquivos à área de preparação</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Move os arquivos do diretório de trabalho para a Staging Area.
+              Você escolhe o que fará parte do próximo commit.
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 10px 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #78909c"
+                ># Adicionar um arquivo específico</span
+              ><br />
+              <span style="color: #e0e0e0">git add</span>
+              <span style="color: rgb(100, 181, 246)">index.html</span
+              ><br /><br />
+              <span style="color: #78909c"
+                ># Adicionar todos os arquivos da pasta</span
+              ><br />
+              <span style="color: #e0e0e0">git add .</span>
+            </div>
+          </div>
+
+          <!-- git commit -->
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #8e24aa;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #6a1b9a;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >4</span
+              ><span style="color: #4a148c; font-size: 15px; font-weight: 800"
+                >git commit — Salvar no histórico</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Cria um ponto de restauração (commit) com uma mensagem descritiva.
+              Este é o coração do Git.
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 10px 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #78909c"># Commit com mensagem curta</span
+              ><br />
+              <span style="color: #e0e0e0">git commit -m</span>
+              <span style="color: rgb(165, 214, 167)"
+                >"Adiciona cabeçalho e rodapé"</span
+              >
+            </div>
+          </div>
+
+          <!-- git log -->
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #8e24aa;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #6a1b9a;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >5</span
+              ><span style="color: #4a148c; font-size: 15px; font-weight: 800"
+                >git log — Ver o histórico de commits</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Exibe a lista de todos os commits do repositório em ordem
+              cronológica reversa (mais recente primeiro).
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 10px 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #e0e0e0">git log</span><br />
+              <span style="color: #78909c"
+                ># Versão compacta (uma linha por commit)</span
+              ><br />
+              <span style="color: #e0e0e0">git log --oneline</span>
+            </div>
+          </div>
+
+          <!-- git remote + push -->
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #8e24aa;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #6a1b9a;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >6</span
+              ><span style="color: #4a148c; font-size: 15px; font-weight: 800"
+                >git remote add + git push — Conectar e enviar para o
+                GitHub</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Vincula seu repositório local a um repositório remoto e envia os
+              commits para a nuvem.
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 10px 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #78909c"
+                ># Conectar ao repositório remoto (execute apenas 1 vez)</span
+              ><br />
+              <span style="color: #e0e0e0">git remote add origin</span>
+              <span style="color: rgb(165, 214, 167)">"url-do-repositorio"</span
+              ><br /><br />
+              <span style="color: #78909c"># Enviar commits para o GitHub</span
+              ><br />
+              <span style="color: #e0e0e0">git push -u origin main</span>
+            </div>
+          </div>
+
+          <!-- git clone -->
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #8e24aa;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #6a1b9a;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >7</span
+              ><span style="color: #4a148c; font-size: 15px; font-weight: 800"
+                >git clone — Copiar um repositório existente</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Baixa uma cópia completa de um repositório remoto para o seu
+              computador. Útil para começar a trabalhar em projetos existentes.
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 10px 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #e0e0e0">git clone</span>
+              <span style="color: rgb(165, 214, 167)"
+                >"url-do-repositorio"</span
+              >
+            </div>
+          </div>
+
+          <!-- git pull -->
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #8e24aa;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #6a1b9a;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >8</span
+              ><span style="color: #4a148c; font-size: 15px; font-weight: 800"
+                >git pull — Atualizar seu repositório local</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Baixa e integra as alterações do repositório remoto para o seu
+              repositório local. Use sempre antes de começar a trabalhar.
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 10px 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #e0e0e0">git pull origin main</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 5 — FLUXO COMPLETO         -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >5</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔄 Fluxo de Trabalho Completo — Do Início ao Push</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              color: #37474f;
+              font-size: 13px;
+              line-height: 1.8;
+              margin-bottom: 16px;
+            "
+          >
+            Este é o ciclo que você repetirá <strong>todas as vezes</strong> que
+            for trabalhar com Git. Memorize esta sequência:
+          </div>
+
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 20px 24px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2.1;
+              box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              margin-bottom: 18px;
+            "
+          >
+            <span style="color: #78909c"
+              ># 1. Crie ou entre na pasta do projeto</span
+            ><br />
+            <span style="color: #e0e0e0">cd meu-projeto</span><br /><br />
+            <span style="color: #78909c"
+              ># 2. Inicialize o Git (apenas 1 vez)</span
+            ><br />
+            <span style="color: #e0e0e0">git init</span><br /><br />
+            <span style="color: #78909c"
+              ># 3. Verifique o status (use sempre!)</span
+            ><br />
+            <span style="color: #e0e0e0">git status</span><br /><br />
+            <span style="color: #78909c"
+              ># 4. Adicione os arquivos à área de preparação</span
+            ><br />
+            <span style="color: #e0e0e0">git add .</span><br /><br />
+            <span style="color: #78909c"
+              ># 5. Faça o commit com uma mensagem clara</span
+            ><br />
+            <span style="color: #e0e0e0">git commit -m</span>
+            <span style="color: rgb(165, 214, 167)">"Meu primeiro commit"</span
+            ><br /><br />
+            <span style="color: #78909c"
+              ># 6. Conecte ao GitHub (apenas 1 vez)</span
+            ><br />
+            <span style="color: #e0e0e0">git remote add origin</span>
+            <span style="color: rgb(165, 214, 167)">"url-do-repositorio"</span
+            ><br /><br />
+            <span style="color: #78909c"># 7. Envie para a nuvem</span><br />
+            <span style="color: #e0e0e0">git push -u origin main</span
+            ><br /><br />
+            <span style="color: #78909c"
+              ># 8. Nas próximas vezes, apenas repita os passos 3, 4, 5 e
+              7</span
+            >
+          </div>
+
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Regra de ouro:</strong> Sempre
+            faça
+            <code
+              style="background: #c8e6c9; padding: 1px 6px; border-radius: 3px"
+              >git status</code
+            >
+            antes de qualquer comando. Ele mostra exatamente o que está
+            acontecendo e evita surpresas. Também é uma boa prática fazer
+            <code
+              style="background: #c8e6c9; padding: 1px 6px; border-radius: 3px"
+              >git pull</code
+            >
+            antes de começar a trabalhar para garantir que está na versão mais
+            recente.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 6 — ERROS COMUNS           -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(191, 54, 12),
+              rgb(230, 81, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >6</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >⚠️ Erros Comuns e Boas Práticas</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 16px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 14px;
+                padding: 20px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 12px;
+                "
+              >
+                ❌ Erros comuns
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ❌ Esquecer de fazer <strong>git add</strong> antes do commit<br />
+                ❌ Mensagens de commit vagas: "correções", "ajustes"<br />
+                ❌ Fazer commit de arquivos grandes (imagens, vídeos)<br />
+                ❌ Esquecer de dar <strong>git pull</strong> antes de começar<br />
+                ❌ Fazer push de credenciais/senhas para o GitHub<br />
+                ❌ Criar repositório Git dentro de outro repositório Git
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 14px;
+                padding: 20px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 12px;
+                "
+              >
+                ✅ Boas práticas
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ✅ Commits pequenos e frequentes (cada alteração lógica)<br />
+                ✅ Mensagens descritivas no imperativo: "Adiciona formulário de
+                login"<br />
+                ✅ Use <strong>.gitignore</strong> para excluir arquivos
+                desnecessários<br />
+                ✅ Sempre faça <strong>git status</strong> antes de qualquer
+                comando<br />
+                ✅ Mantenha um <strong>README.md</strong> explicando o
+                projeto<br />
+                ✅ Faça backup remoto regularmente (push)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ SEÇÃO 7 — DICAS EXTRAS ═══ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >7</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >💡 Dicas Extras e Atalhos</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- .gitignore -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              📄 Arquivo .gitignore — O que NÃO versionar
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Nem tudo deve ir para o Git. Crie um arquivo
+              <code>.gitignore</code> para excluir pastas e arquivos
+              desnecessários:
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #78909c"># Exemplo de .gitignore</span><br />
+              <span style="color: #e0e0e0">node_modules/</span><br />
+              <span style="color: #e0e0e0">.env</span><br />
+              <span style="color: #e0e0e0">*.log</span><br />
+              <span style="color: #e0e0e0">arquivos-temporarios/</span>
+            </div>
+          </div>
+
+          <!-- Resumo visual -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(57, 73, 171);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              📋 Resumo Rápido — Cola de Comandos
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #e0e0e0;
+                  background: #0d1b4b;
+                "
+              >
+                git init
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Inicializa repositório
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #e0e0e0;
+                  background: #0d1b4b;
+                "
+              >
+                git status
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Verifica estado dos arquivos
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #e0e0e0;
+                  background: #0d1b4b;
+                "
+              >
+                git add .
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Prepara todos os arquivos
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #e0e0e0;
+                  background: #0d1b4b;
+                "
+              >
+                git commit -m "msg"
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Salva no histórico local
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #e0e0e0;
+                  background: #0d1b4b;
+                "
+              >
+                git push
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Envia para o GitHub
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #e0e0e0;
+                  background: #0d1b4b;
+                "
+              >
+                git pull
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Atualiza do GitHub
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #e0e0e0;
+                  background: #0d1b4b;
+                "
+              >
+                git log --oneline
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Vê histórico resumido
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  color: #e0e0e0;
+                  background: #0d1b4b;
+                "
+              >
+                git clone "url"
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Copia repositório remoto
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da Aula — Git Essencial</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📂</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                add → stage → commit → push
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">⏪</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Commits: pontos de restauração
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">☁️</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                GitHub: backup na nuvem
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >git init</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >git status</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >git add</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >git commit</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >git push</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >git pull</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

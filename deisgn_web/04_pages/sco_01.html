@@ -1,0 +1,2302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../design_web.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🎨 Desenvolvimento Web · CSS Fundamentos</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Seletores, Propriedades & Box Model<br
+              style="font-size: 28px"
+            /><span style="color: rgb(206, 147, 216); font-size: 28px"
+              >Os Fundamentos do CSS para Estilizar Páginas Web</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Aprenda a selecionar elementos, aplicar estilos e entender como cada
+            elemento ocupa espaço na tela
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Seletores</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Propriedades</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Box Model</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Classes</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Pseudo-classes</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — INTRODUÇÃO AOS SELETORES -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🎯 O que são Seletores CSS?</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(232, 234, 246),
+                rgb(237, 231, 246)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(92, 107, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Definição
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(57, 73, 171);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Seletores</span
+              >
+              são padrões usados para
+              <strong style="font-size: 13px"
+                >selecionar e direcionar elementos HTML</strong
+              >
+              específicos para aplicar estilos. Eles definem
+              <strong style="font-size: 13px">"quem"</strong> vai receber as
+              regras de estilo que você escreve.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Se o HTML é um fichário com muitas fichas (elementos), o seletor é
+              como um <strong style="font-size: 13px">filtro de busca</strong> –
+              você pode buscar por nome (tag), por etiqueta colorida (classe),
+              por identificador único (ID), ou pela posição na gaveta
+              (relacionamentos).
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📂</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Tipos de Seletores Básicos</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 12px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                🏷️ Seletor de Tipo (Tag)
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Seleciona todos os elementos de um tipo. Ex:
+                <code
+                  style="
+                    background: #c5cae9;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >p { }</code
+                >
+                afeta TODOS os parágrafos.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                🎨 Seletor de Classe ( . )
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                O mais versátil. Ex:
+                <code
+                  style="
+                    background: #c5cae9;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >.destaque { }</code
+                >
+                afeta todos com class="destaque".
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                🔢 Seletor de ID ( # )
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Para elemento único. Ex:
+                <code
+                  style="
+                    background: #c5cae9;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >#cabecalho { }</code
+                >. Não pode repetir na página.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                ⭐ Seletor Universal ( * )
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Seleciona TODOS os elementos. Ex:
+                <code
+                  style="
+                    background: #c5cae9;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >* { margin: 0; }</code
+                >
+                é comum para reset.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — SELETORES NA PRÁTICA   -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧪 Seletores na Prática — Exemplos Lado a Lado</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- Seletor de Tipo -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              🏷️ Seletor de Tipo (Tag)
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 8px;
+                  padding: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.8;
+                "
+              >
+                <span style="color: #78909c">/* CSS */</span><br />
+                <span style="color: rgb(255, 204, 2)">p</span>
+                <span style="color: rgb(144, 202, 249)">{</span>
+                <span style="color: rgb(128, 222, 234)">color</span>:
+                <span style="color: rgb(165, 214, 167)">blue</span>;
+                <span style="color: rgb(144, 202, 249)">}</span><br />
+                <span style="color: rgb(255, 204, 2)">h1</span>
+                <span style="color: rgb(144, 202, 249)">{</span>
+                <span style="color: rgb(128, 222, 234)">font-size</span>:
+                <span style="color: rgb(165, 214, 167)">32px</span>;
+                <span style="color: rgb(144, 202, 249)">}</span><br />
+                <span style="color: rgb(255, 204, 2)">button</span>
+                <span style="color: rgb(144, 202, 249)">{</span>
+                <span style="color: rgb(128, 222, 234)">background</span>:
+                <span style="color: rgb(165, 214, 167)">green</span>;
+                <span style="color: rgb(144, 202, 249)">}</span>
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 8px;
+                  padding: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.8;
+                  border-left: 4px solid #00897b;
+                "
+              >
+                <span style="color: #78909c">&lt;!-- HTML --&gt;</span><br />
+                <span style="color: rgb(255, 204, 2)">&lt;p&gt;</span
+                ><span style="color: #e0e0e0">Fica azul</span
+                ><span style="color: rgb(255, 204, 2)">&lt;/p&gt;</span><br />
+                <span style="color: rgb(255, 204, 2)">&lt;h1&gt;</span
+                ><span style="color: #e0e0e0">32px</span
+                ><span style="color: rgb(255, 204, 2)">&lt;/h1&gt;</span><br />
+                <span style="color: rgb(255, 204, 2)">&lt;h2&gt;</span
+                ><span style="color: #e0e0e0">Não afetado</span
+                ><span style="color: rgb(255, 204, 2)">&lt;/h2&gt;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seletor de Classe -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #f57c00;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              🎨 Seletor de Classe ( . ) — O mais usado
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 8px;
+                  padding: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.8;
+                "
+              >
+                <span style="color: #78909c">/* CSS */</span><br />
+                <span style="color: rgb(255, 204, 2)">.destaque</span>
+                <span style="color: rgb(144, 202, 249)">{</span>
+                <span style="color: rgb(128, 222, 234)">background</span>:
+                <span style="color: rgb(165, 214, 167)">yellow</span>;
+                <span style="color: rgb(144, 202, 249)">}</span><br />
+                <span style="color: rgb(255, 204, 2)">.botao-primario</span>
+                <span style="color: rgb(144, 202, 249)">{</span>
+                <span style="color: rgb(128, 222, 234)">background</span>:
+                <span style="color: rgb(165, 214, 167)">blue</span>;
+                <span style="color: rgb(144, 202, 249)">}</span>
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 8px;
+                  padding: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.8;
+                  border-left: 4px solid #f57c00;
+                "
+              >
+                <span style="color: #78909c">&lt;!-- HTML --&gt;</span><br />
+                <span style="color: rgb(255, 204, 2)">&lt;p</span>
+                <span style="color: rgb(144, 202, 249)">class</span>=<span
+                  style="color: rgb(165, 214, 167)"
+                  >"destaque"</span
+                ><span style="color: rgb(255, 204, 2)">&gt;</span
+                ><span style="color: #e0e0e0">Amarelo</span
+                ><span style="color: rgb(255, 204, 2)">&lt;/p&gt;</span><br />
+                <span style="color: rgb(255, 204, 2)">&lt;p&gt;</span
+                ><span style="color: #e0e0e0">Não afetado</span
+                ><span style="color: rgb(255, 204, 2)">&lt;/p&gt;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seletor de ID -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(57, 73, 171);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              🔢 Seletor de ID ( # ) — Elemento único
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 8px;
+                  padding: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.8;
+                "
+              >
+                <span style="color: #78909c">/* CSS */</span><br />
+                <span style="color: rgb(255, 204, 2)">#cabecalho</span>
+                <span style="color: rgb(144, 202, 249)">{</span>
+                <span style="color: rgb(128, 222, 234)">background</span>:
+                <span style="color: rgb(165, 214, 167)">#333</span>;
+                <span style="color: rgb(144, 202, 249)">}</span>
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 8px;
+                  padding: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.8;
+                  border-left: 4px solid #3949ab;
+                "
+              >
+                <span style="color: #78909c">&lt;!-- HTML --&gt;</span><br />
+                <span style="color: rgb(255, 204, 2)">&lt;div</span>
+                <span style="color: rgb(144, 202, 249)">id</span>=<span
+                  style="color: rgb(165, 214, 167)"
+                  >"cabecalho"</span
+                ><span style="color: rgb(255, 204, 2)">&gt;</span
+                ><span style="color: #e0e0e0">Único</span
+                ><span style="color: rgb(255, 204, 2)">&lt;/div&gt;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seletor Universal -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #2e7d32;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1b5e20;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              ⭐ Seletor Universal ( * ) — Reset global
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 8px;
+                  padding: 12px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 1.8;
+                "
+              >
+                <span style="color: #78909c">/* CSS */</span><br />
+                <span style="color: rgb(255, 204, 2)">*</span>
+                <span style="color: rgb(144, 202, 249)">{</span><br />
+                &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">margin</span
+                >: <span style="color: rgb(255, 204, 2)">0</span>;<br />
+                &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                  >padding</span
+                >: <span style="color: rgb(255, 204, 2)">0</span>;<br />
+                <span style="color: rgb(144, 202, 249)">}</span>
+              </div>
+              <div
+                style="
+                  background: #0d1b4b;
+                  border-radius: 8px;
+                  padding: 12px;
+                  border-left: 4px solid #388e3c;
+                  font-size: 12px;
+                  line-height: 1.8;
+                "
+              >
+                <span style="color: #78909c"
+                  >&lt;!-- Afeta TODOS os elementos --&gt;</span
+                ><br />
+                <span style="color: #e0e0e0"
+                  >Remove margens e paddings padrão de tudo.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — PSEUDO-CLASSES E PSEUDO-ELEMENTOS -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🎭 Pseudo-classes e Pseudo-elementos</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- Pseudo-classes -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #bf360c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              🎭 Pseudo-classes — Estados e Posições
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 12px;
+              "
+            >
+              Selecionam elementos em
+              <strong>estados específicos</strong> (mouse sobre, clicado,
+              focado) ou com <strong>posições especiais</strong> (primeiro,
+              último, ímpares).
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                  font-family: monospace;
+                  border-left: 3px solid #f57c00;
+                "
+              >
+                a:hover { color: red; }
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Mouse sobre o link
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                  font-family: monospace;
+                  border-left: 3px solid #f57c00;
+                "
+              >
+                button:active { scale: 0.95; }
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Botão sendo pressionado
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                  font-family: monospace;
+                  border-left: 3px solid #f57c00;
+                "
+              >
+                input:focus { outline: blue; }
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Campo selecionado
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                  font-family: monospace;
+                  border-left: 3px solid #f57c00;
+                "
+              >
+                li:first-child { bold; }
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Primeiro item da lista
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                  font-family: monospace;
+                  border-left: 3px solid #f57c00;
+                "
+              >
+                li:nth-child(odd) { bg: gray; }
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Itens ímpares (1, 3, 5...)
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                  font-family: monospace;
+                  border-left: 3px solid #f57c00;
+                "
+              >
+                input:required { border: orange; }
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Campo obrigatório
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                  font-family: monospace;
+                  border-left: 3px solid #f57c00;
+                "
+              >
+                input:checked { bg: green; }
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Checkbox/radio marcado
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                  font-family: monospace;
+                  border-left: 3px solid #f57c00;
+                "
+              >
+                button:disabled { bg: gray; }
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Botão desabilitado
+              </div>
+            </div>
+          </div>
+
+          <!-- Pseudo-elementos -->
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(225, 190, 231);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #6a1b9a;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              ✨ Pseudo-elementos — Partes específicas de um elemento
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 12px;
+              "
+            >
+              Selecionam <strong>partes específicas</strong> de um elemento que
+              não existem no HTML, como a primeira letra ou um conteúdo
+              decorativo.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                  font-family: monospace;
+                  border-left: 3px solid #8e24aa;
+                "
+              >
+                p::first-letter { font-size: 2em; }
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Primeira letra do parágrafo
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                  font-family: monospace;
+                  border-left: 3px solid #8e24aa;
+                "
+              >
+                p::first-line { bold; }
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Primeira linha do parágrafo
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                  font-family: monospace;
+                  border-left: 3px solid #8e24aa;
+                "
+              >
+                ::selection { bg: yellow; }
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Texto selecionado pelo mouse
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                  font-family: monospace;
+                  border-left: 3px solid #8e24aa;
+                "
+              >
+                .icone::before { content: "⭐"; }
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Insere conteúdo antes do elemento
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                  font-family: monospace;
+                  border-left: 3px solid #8e24aa;
+                "
+              >
+                .icone::after { content: "→"; }
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                Insere conteúdo depois do elemento
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — PROPRIEDADES CSS       -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📐 Propriedades CSS — O que você pode estilizar</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(227, 242, 253),
+                rgb(232, 240, 254)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(21, 101, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #0d47a1;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que são Propriedades CSS?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(21, 101, 192);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Propriedades CSS</span
+              >
+              são características ou estilos que você pode aplicar aos elementos
+              selecionados. Cada propriedade define
+              <strong style="font-size: 13px"
+                >um aspecto visual específico</strong
+              >
+              (cor, tamanho, posição, comportamento). Se os seletores são
+              <strong style="font-size: 13px">"quem"</strong>, as propriedades
+              são <strong style="font-size: 13px">"o quê"</strong> você vai
+              mudar.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📂</span
+            ><span style="color: #0d47a1; font-size: 14px; font-weight: 800"
+              >Categorias de Propriedades</span
+            >
+          </div>
+          <!-- Texto -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border-left: 5px solid #1565c0;
+              margin-bottom: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #0d47a1;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              📝 Propriedades de Texto
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>color</strong><br />Cor do texto
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>font-size</strong><br />Tamanho da fonte
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>font-family</strong><br />Tipo de fonte
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>font-weight</strong><br />Espessura (bold)
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>text-align</strong><br />Alinhamento
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>line-height</strong><br />Altura da linha
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>letter-spacing</strong><br />Espaço entre letras
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>text-decoration</strong><br />Sublinhado/tachado
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>text-transform</strong><br />Maiúsculo/minúsculo
+              </div>
+            </div>
+          </div>
+
+          <!-- Fundo -->
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border-left: 5px solid #8e24aa;
+              margin-bottom: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #6a1b9a;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎨 Propriedades de Fundo (Background)
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>background-color</strong><br />Cor de fundo
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>background-image</strong><br />Imagem de fundo
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>background-size</strong><br />Tamanho (cover)
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>background-position</strong><br />Posição (center)
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>background-repeat</strong><br />Repetição
+              </div>
+            </div>
+          </div>
+
+          <!-- Dimensão -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border-left: 5px solid #f57c00;
+              margin-bottom: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              📏 Propriedades de Dimensão e Espaçamento
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>width</strong><br />Largura
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>height</strong><br />Altura
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>margin</strong><br />Espaço externo
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>padding</strong><br />Espaço interno
+              </div>
+            </div>
+          </div>
+
+          <!-- Posicionamento -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 12px;
+              padding: 16px 18px;
+              border-left: 5px solid #2e7d32;
+              margin-bottom: 12px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1b5e20;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              📍 Propriedades de Borda e Posicionamento
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>border</strong><br />Borda completa
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>border-radius</strong><br />Cantos arredondados
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>position</strong><br />Tipo de posição
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>display</strong><br />Comportamento
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>z-index</strong><br />Empilhamento
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+            "
+          >
+            <span style="color: #78909c"
+              >/* Exemplo completo: várias propriedades em um elemento */</span
+            ><br />
+            <span style="color: rgb(255, 204, 2)">.card</span>
+            <span style="color: rgb(144, 202, 249)">{</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">width</span>:
+            <span style="color: rgb(255, 204, 2)">300px</span>;<br />
+            &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">padding</span>:
+            <span style="color: rgb(255, 204, 2)">20px</span>;<br />
+            &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">margin</span>:
+            <span style="color: rgb(255, 204, 2)">10px</span>;<br />
+            &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+              >background-color</span
+            >: <span style="color: rgb(165, 214, 167)">#f5f5f5</span>;<br />
+            &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">border</span>:
+            <span style="color: rgb(165, 214, 167)">1px solid #ccc</span>;<br />
+            &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+              >border-radius</span
+            >: <span style="color: rgb(255, 204, 2)">8px</span>;<br />
+            &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+              >font-family</span
+            >:
+            <span style="color: rgb(165, 214, 167)">'Arial', sans-serif</span
+            >;<br />
+            &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">text-align</span
+            >: <span style="color: rgb(165, 214, 167)">center</span>;<br />
+            <span style="color: rgb(144, 202, 249)">}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 5 — BOX MODEL              -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >5</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📦 BOX MODEL — O Conceito Fundamental do CSS</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(243, 229, 245),
+                rgb(248, 240, 255)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(106, 27, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é o Box Model?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              O
+              <span
+                style="
+                  background: rgb(106, 27, 154);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Box Model</span
+              >
+              é o conceito fundamental do CSS que define que
+              <strong style="font-size: 13px"
+                >todo elemento HTML é uma caixa retangular</strong
+              >
+              composta por
+              <strong style="font-size: 13px"
+                >quatro camadas concêntricas</strong
+              >: conteúdo (content), preenchimento (padding), borda (border) e
+              margem (margin).
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples — Uma foto emoldurada
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              <strong style="font-size: 13px">Conteúdo</strong> = a foto em
+              si<br />
+              <strong style="font-size: 13px">Padding</strong> = espaço entre a
+              foto e a moldura (espuma protetora)<br />
+              <strong style="font-size: 13px">Borda</strong> = a moldura da
+              foto<br />
+              <strong style="font-size: 13px">Margin</strong> = espaço entre a
+              moldura e a parede da sala
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📐</span
+            ><span style="color: #4a148c; font-size: 14px; font-weight: 800"
+              >As 4 camadas do Box Model</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(187, 222, 251);
+                border-radius: 10px;
+                padding: 16px;
+                text-align: center;
+                border-top: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 4px">📄</div>
+              <div style="font-weight: 800; color: #0d47a1; font-size: 12px">
+                1. Conteúdo
+              </div>
+              <div style="font-size: 10px; color: #37474f">
+                Texto, imagem ou elemento interno
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  font-family: monospace;
+                  color: #1565c0;
+                  margin-top: 4px;
+                "
+              >
+                width / height
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(200, 230, 201);
+                border-radius: 10px;
+                padding: 16px;
+                text-align: center;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 4px">🧽</div>
+              <div style="font-weight: 800; color: #1b5e20; font-size: 12px">
+                2. Padding
+              </div>
+              <div style="font-size: 10px; color: #37474f">
+                Espaço interno entre conteúdo e borda
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  font-family: monospace;
+                  color: #2e7d32;
+                  margin-top: 4px;
+                "
+              >
+                padding
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 249, 196);
+                border-radius: 10px;
+                padding: 16px;
+                text-align: center;
+                border-top: 4px solid #f9a825;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 4px">🖼️</div>
+              <div style="font-weight: 800; color: #f57f17; font-size: 12px">
+                3. Borda
+              </div>
+              <div style="font-size: 10px; color: #37474f">
+                Linha que envolve o padding
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  font-family: monospace;
+                  color: #f9a825;
+                  margin-top: 4px;
+                "
+              >
+                border
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 204, 128);
+                border-radius: 10px;
+                padding: 16px;
+                text-align: center;
+                border-top: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 4px">📏</div>
+              <div style="font-weight: 800; color: #e65100; font-size: 12px">
+                4. Margin
+              </div>
+              <div style="font-size: 10px; color: #37474f">
+                Espaço externo entre elementos
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  font-family: monospace;
+                  color: #f57c00;
+                  margin-top: 4px;
+                "
+              >
+                margin
+              </div>
+            </div>
+          </div>
+
+          <!-- Cálculo -->
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🧮 Como calcular o tamanho total de um elemento
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 13px;
+                line-height: 2;
+                text-align: center;
+              "
+            >
+              <span style="color: #ffcc02"
+                >Largura Total = width + padding-left + padding-right +
+                border-left + border-right</span
+              ><br />
+              <span style="color: #ffcc02"
+                >Altura Total = height + padding-top + padding-bottom +
+                border-top + border-bottom</span
+              ><br /><br />
+              <span style="color: #78909c"
+                >/* A margem NÃO entra no tamanho do elemento — é espaço externo
+                */</span
+              >
+            </div>
+          </div>
+
+          <!-- box-sizing -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #2e7d32;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1b5e20;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              💡 Prática recomendada: box-sizing: border-box
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Por padrão, padding e border <strong>aumentam</strong> o tamanho
+              do elemento. Com <code>box-sizing: border-box</code>, o tamanho
+              definido inclui padding e border, facilitando muito o layout.
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #78909c"
+                >/* Aplique globalmente no início do seu CSS */</span
+              ><br />
+              <span style="color: rgb(255, 204, 2)">*</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">margin</span>:
+              <span style="color: rgb(255, 204, 2)">0</span>;<br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">padding</span
+              >: <span style="color: rgb(255, 204, 2)">0</span>;<br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >box-sizing</span
+              >:
+              <span style="color: rgb(165, 214, 167)">border-box</span>;<br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ FECHAMENTO FINAL ═══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da Aula — CSS Fundamentos</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🎯</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Seletores: "quem" recebe o estilo
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📐</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Propriedades: "o quê" muda
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📦</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Box Model: toda caixa tem 4 camadas
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >.classe</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >#id</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >:hover</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >padding</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >margin</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >border-box</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
