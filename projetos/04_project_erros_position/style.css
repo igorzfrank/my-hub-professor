@@ -1,0 +1,53 @@
+.container-img {
+    position: relative;
+    width: 750px;
+}
+
+.mark {
+    position: absolute;
+}
+
+#mark-01 {
+    left: 70px;
+    top: 40px;
+}
+
+#mark-02 {
+    left: 210px;
+    top: 45px;
+}
+
+#mark-03 {
+    left: 210px;
+    top: 110px;
+}
+
+#mark-04 {
+    left: 265px;
+    bottom: 100px;
+}
+
+#mark-05 {
+    left: 51%;
+    bottom: 135px;
+}
+
+#mark-06 {
+    right: 27%;
+    top: 50px;
+}
+
+#mark-07 {
+    right: 9%;
+    top: 70px;
+}
+
+#mark-08 {
+    right: 16%;
+    top: 150px;
+}
+
+#mark-09 {
+    right: 8%;
+    bottom: 14px;
+}

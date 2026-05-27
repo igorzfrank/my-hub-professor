@@ -1,0 +1,27 @@
+.cartao {
+  background-color: #353535;
+  width: 300px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 16px;
+  color: #00ffea;
+  line-height: 1;
+}
+
+p {
+  font-size: 12px;
+  line-height: 1;
+  color: white;
+}
+
+#color {
+  color: #00ffea;
+  font-weight: bold;
+}
+
+img {
+  width: 100%;
+}

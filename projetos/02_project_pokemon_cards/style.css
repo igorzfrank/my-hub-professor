@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+* {
+  font-family: "Comic Neue", cursive;
+}
+
+.card {
+  background-color: #ffd900;
+  width: 300px;
+  box-shadow: 0px 4px 4px rgb(185, 185, 185);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.cardBottom {
+  background-color: #fae25b;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #dfbd00;
+}
+
+h2 {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1;
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  margin: 0;
+  font-size: 18px;
+}
+
+#cardFooter {
+  margin: 15px 0px 10px 0;
+  font-size: 12px;
+  text-align: center;
+  color: #6b6b6b;
+}

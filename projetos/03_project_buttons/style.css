@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+}
+
+.buttons {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn-01 {
+  color: black;
+  border: 1px solid black;
+  padding: 10px 25px;
+  font-weight: 300;
+  max-width: 121px;
+}
+
+.btn-01:hover {
+  color: white;
+  background-color: black;
+}
+
+.btn-02 {
+  background-color: #80e8ff;
+  color: black;
+  font-weight: 700;
+  padding: 15px 30px;
+  border-radius: 30px;
+  max-width: 118px;
+}
+
+.btn-02:hover {
+  background-color: #9eedff;
+}
+
+.btn-03 {
+  background-color: #41ff6a;
+  font-weight: 700;
+  color: black;
+  border-radius: 15px;
+  padding: 15px 30px;
+  max-width: 122px;
+}
+
+.btn-03:hover {
+  background-color: #8bffa4;
+}
+
+.btn-04 {
+  background-color: #ff00c8;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 45px;
+  max-width: 123px;
+  font-weight: 700;
+  border: 1px solid #ff00c8;
+}
+
+.btn-04:hover {
+  color: #ff00c8;
+  background-color: white;
+}
+
+.btn-05 {
+  color: red;
+  border: 1px solid red;
+  padding: 10px 35px;
+  max-width: 128px;
+  border-radius: 30px;
+}
+
+.btn-05:hover {
+  color: white;
+  background-color: red;
+}
+
+.btn-06 {
+  border: 1px solid black;
+  border-bottom: 2px solid black;
+  padding: 10px 45px;
+  border-radius: 5px;
+  max-width: 123px;
+  font-weight: 700;
+  color: black;
+}
+
+.btn-06:hover {
+  background-color: #525252;
+  color: white;
+}
+
+.btn-07 {
+  color: black;
+  border-bottom: 1px solid black;
+  padding: 10px 30px;
+  max-width: 124px;
+  font-weight: 700;
+}
+
+.btn-07:hover {
+  color: #626262;
+  border-bottom: 1px solid #626262;
+}
+
+.btn-08 {
+  padding: 10px 35px;
+  width: 129px;
+  background-color: #fac02c;
+  border: 1px solid black;
+  border-left: 3px solid black;
+  color: black;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.btn-08:hover {
+  border-color: #fac02c;
+  background-color: white;
+}
+
+.btn-09 {
+  padding: 10px 45px;
+  background-color: #15ff00;
+  border-radius: 20px 0px 20px 0px;
+  max-width: 123px;
+  border: 1px solid #005810;
+  color: #005810;
+  font-weight: 700;
+}
+
+.btn-09:hover {
+  background-color: #005810;
+  color: #15ff00;
+}
+
+.btn-10 {
+  padding: 10px 35px;
+  color: #640069;
+  border: 1px dashed #640069;
+  max-width: 128px;
+  border-radius: 30px;
+  font-weight: 700;
+}
+
+.btn-10:hover {
+  background-color: #640069;
+  color: white;
+}

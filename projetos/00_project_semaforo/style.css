@@ -1,0 +1,21 @@
+.luz {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 100px;
+  color: white;
+  font-weight: bold;
+}
+
+.vermelha {
+  background-color: red;
+}
+
+.amarela {
+  background-color: orange;
+}
+
+.verde {
+  background-color: green;
+}
