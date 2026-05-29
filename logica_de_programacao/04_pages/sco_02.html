@@ -1,0 +1,2245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🎨 Desenvolvimento Web · CSS Layout</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Posicionamento CSS & Flexbox<br style="font-size: 28px" /><span
+              style="color: rgb(206, 147, 216); font-size: 28px"
+              >Layout Moderno e Alinhamentos Flexíveis</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Domine position, display: flex, justify-content, align-items e
+            organize qualquer layout
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >position</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >display: flex</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >justify-content</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >align-items</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >flex-grow</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — POSITION              -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📍 Posicionamento CSS — A Propriedade position</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(232, 234, 246),
+                rgb(237, 231, 246)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(92, 107, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é Posicionamento CSS?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              O
+              <span
+                style="
+                  background: rgb(57, 73, 171);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >posicionamento CSS</span
+              >
+              define como um elemento é colocado no documento, controlando se
+              ele segue o
+              <strong style="font-size: 13px">fluxo normal</strong> da página ou
+              se é <strong style="font-size: 13px">reposicionado</strong> de
+              forma absoluta, fixa ou relativa.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              O fluxo normal do HTML é como uma
+              <strong style="font-size: 13px">fila de pessoas</strong> – cada
+              elemento fica abaixo do anterior. A propriedade
+              <code
+                style="
+                  background: #ffe0b2;
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                "
+                >position</code
+              >
+              permite que você tire alguém da fila e coloque em outro lugar: em
+              cima da parede, colado no canto, ou que não se mova quando a tela
+              rolar.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📂</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Valores da Propriedade position</span
+            >
+          </div>
+          <div style="overflow-x: auto; margin-bottom: 18px; font-size: 14px">
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 1px;
+                background: #c5cae9;
+                border-radius: 10px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a237e;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                Valor
+              </div>
+              <div
+                style="
+                  background: #1a237e;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                Comportamento
+              </div>
+              <div
+                style="
+                  background: #1a237e;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                Uso típico
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>static</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Padrão. Segue fluxo normal
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Valor padrão
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>relative</strong>
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Deslocado em relação à posição original
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Ajustes finos, âncora para absolute
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>absolute</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Sai do fluxo, posicionado pelo ancestral
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Modais, tooltips, dropdowns
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>fixed</strong>
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Fixado na viewport, não rola
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Headers fixos, botões flutuantes
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>sticky</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Híbrido: rola até um ponto, depois fixa
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Menus que grudam no topo
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⚙️</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Propriedades de Deslocamento</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
+              gap: 8px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 8px;
+                padding: 12px;
+                text-align: center;
+                font-size: 12px;
+              "
+            >
+              <strong style="color: #1a237e">top: 0</strong><br /><span
+                style="font-size: 11px"
+                >Cola no topo</span
+              >
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 8px;
+                padding: 12px;
+                text-align: center;
+                font-size: 12px;
+              "
+            >
+              <strong style="color: #1a237e">bottom: 0</strong><br /><span
+                style="font-size: 11px"
+                >Cola no fundo</span
+              >
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 8px;
+                padding: 12px;
+                text-align: center;
+                font-size: 12px;
+              "
+            >
+              <strong style="color: #1a237e">left: 0</strong><br /><span
+                style="font-size: 11px"
+                >Cola na esquerda</span
+              >
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 8px;
+                padding: 12px;
+                text-align: center;
+                font-size: 12px;
+              "
+            >
+              <strong style="color: #1a237e">right: 0</strong><br /><span
+                style="font-size: 11px"
+                >Cola na direita</span
+              >
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📐</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Exemplos práticos</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 11px;
+                line-height: 1.7;
+              "
+            >
+              <span style="color: #78909c">/* Header fixo no topo */</span
+              ><br />
+              <span style="color: rgb(255, 204, 2)">.header</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">position</span
+              >: <span style="color: rgb(165, 214, 167)">fixed</span>;<br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">top</span>:
+              <span style="color: rgb(255, 204, 2)">0</span>;<br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">width</span>:
+              <span style="color: rgb(165, 214, 167)">100%</span>;<br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 11px;
+                line-height: 1.7;
+              "
+            >
+              <span style="color: #78909c">/* Menu que gruda ao rolar */</span
+              ><br />
+              <span style="color: rgb(255, 204, 2)">.menu</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">position</span
+              >: <span style="color: rgb(165, 214, 167)">sticky</span>;<br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">top</span>:
+              <span style="color: rgb(255, 204, 2)">0</span>;<br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 11px;
+                line-height: 1.7;
+              "
+            >
+              <span style="color: #78909c">/* Modal centralizado */</span><br />
+              <span style="color: rgb(255, 204, 2)">.modal</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">position</span
+              >: <span style="color: rgb(165, 214, 167)">fixed</span>;<br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">top</span>:
+              <span style="color: rgb(165, 214, 167)">50%</span>;<br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">left</span>:
+              <span style="color: rgb(165, 214, 167)">50%</span>;<br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 11px;
+                line-height: 1.7;
+              "
+            >
+              <span style="color: #78909c">/* Tooltip sobre elemento */</span
+              ><br />
+              <span style="color: rgb(255, 204, 2)">.tooltip</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">position</span
+              >: <span style="color: rgb(165, 214, 167)">absolute</span>;<br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">top</span>:
+              <span style="color: rgb(165, 214, 167)">-40px</span>;<br />
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — FLEXBOX INTRODUÇÃO     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧩 Flexbox — Conceitos Fundamentais</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 243, 224),
+                rgb(255, 248, 245)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #bf360c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é Flexbox?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(230, 81, 0);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Flexbox</span
+              >
+              (Flexible Box Layout) é um modelo de layout CSS que permite
+              <strong style="font-size: 13px"
+                >distribuir espaço e alinhar elementos</strong
+              >
+              de forma eficiente e previsível, especialmente quando o tamanho
+              dos itens é
+              <strong style="font-size: 13px">dinâmico ou desconhecido</strong>.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Flexbox é como uma
+              <strong style="font-size: 13px">faixa elástica</strong> segurando
+              vários itens. Você pode dizer se eles ficam em linha (horizontal)
+              ou coluna (vertical), como se distribuem (espaçados, juntos), e
+              como se alinham (centro, topo, base).
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📐</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Conceitos Fundamentais</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                Flex Container (Pai)
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Elemento que recebe
+                <code
+                  style="
+                    background: #ffe0b2;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >display: flex</code
+                >. Controla como os filhos se organizam.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                Flex Items (Filhos)
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Elementos filhos diretos do container. Cada um pode ter seu
+                próprio comportamento.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                Eixo Principal
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Direção principal do layout. Pode ser
+                <strong>row</strong> (horizontal →) ou
+                <strong>column</strong> (vertical ↓).
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                Eixo Cruzado
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Direção perpendicular ao eixo principal. Se principal é row,
+                cruzado é column.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">🧠 Regra de ouro:</strong> O Flexbox
+            controla a distribuição no <strong>eixo principal</strong> com
+            <code
+              style="background: #c8e6c9; padding: 1px 6px; border-radius: 3px"
+              >justify-content</code
+            >
+            e no <strong>eixo cruzado</strong> com
+            <code
+              style="background: #c8e6c9; padding: 1px 6px; border-radius: 3px"
+              >align-items</code
+            >. Memorize esta dupla — é usada o tempo todo.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — CONTAINER (PAI)        -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📦 Propriedades do Flex Container (Pai)</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- display: flex + flex-direction -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              1. display: flex + flex-direction
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Ativa o Flexbox e define a direção do eixo principal.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>row</strong><br />→ esquerda para direita
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>row-reverse</strong><br />← direita para esquerda
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>column</strong><br />↓ cima para baixo
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>column-reverse</strong><br />↑ baixo para cima
+              </div>
+            </div>
+          </div>
+
+          <!-- justify-content -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              2. justify-content — Alinha no eixo principal
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>flex-start</strong><br />Início
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>flex-end</strong><br />Final
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>center</strong><br />Centro
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>space-between</strong><br />Espaço entre
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>space-around</strong><br />Espaço ao redor
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>space-evenly</strong><br />Espaço igual
+              </div>
+            </div>
+          </div>
+
+          <!-- align-items -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              3. align-items — Alinha no eixo cruzado
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>stretch</strong><br />Estica (padrão)
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>flex-start</strong><br />Topo/Início
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>flex-end</strong><br />Base/Final
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>center</strong><br />Centro vertical
+              </div>
+            </div>
+          </div>
+
+          <!-- flex-wrap + gap -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              4. flex-wrap + gap
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                <strong>flex-wrap:</strong><br />
+                <code>nowrap</code> — sem quebra<br />
+                <code>wrap</code> — quebra para linha seguinte<br />
+                <code>wrap-reverse</code> — quebra para cima
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  font-size: 11px;
+                "
+              >
+                <strong>gap:</strong><br />
+                Define espaçamento uniforme entre os itens.<br />
+                Ex: <code>gap: 16px</code> ou <code>gap: 10px 20px</code> (linha
+                coluna)
+              </div>
+            </div>
+          </div>
+
+          <!-- Exemplo completo -->
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+            "
+          >
+            <span style="color: #78909c"
+              >/* Exemplo completo de Flex Container */</span
+            ><br />
+            <span style="color: rgb(255, 204, 2)">.container</span>
+            <span style="color: rgb(144, 202, 249)">{</span><br />
+            &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">display</span>:
+            <span style="color: rgb(165, 214, 167)">flex</span>;<br />
+            &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+              >flex-direction</span
+            >: <span style="color: rgb(165, 214, 167)">row</span>;<br />
+            &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+              >justify-content</span
+            >:
+            <span style="color: rgb(165, 214, 167)">space-between</span>;<br />
+            &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+              >align-items</span
+            >: <span style="color: rgb(165, 214, 167)">center</span>;<br />
+            &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">flex-wrap</span
+            >: <span style="color: rgb(165, 214, 167)">wrap</span>;<br />
+            &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">gap</span>:
+            <span style="color: rgb(255, 204, 2)">16px</span>;<br />
+            <span style="color: rgb(144, 202, 249)">}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — ITENS (FILHOS)         -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧩 Propriedades dos Flex Items (Filhos)</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #8e24aa;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              Propriedades individuais dos itens
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong style="color: #4a148c">order</strong><br />Ordem de
+                exibição<br /><span style="font-size: 10px"
+                  >Padrão: 0. Menor = primeiro</span
+                >
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong style="color: #4a148c">flex-grow</strong
+                ><br />Capacidade de crescer<br /><span style="font-size: 10px"
+                  >Padrão: 0. Valor = proporção</span
+                >
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong style="color: #4a148c">flex-shrink</strong
+                ><br />Capacidade de encolher<br /><span style="font-size: 10px"
+                  >Padrão: 1. 0 = não encolhe</span
+                >
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong style="color: #4a148c">flex-basis</strong><br />Tamanho
+                base inicial<br /><span style="font-size: 10px"
+                  >Ex: 200px, 50%, auto</span
+                >
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong style="color: #4a148c">flex (shorthand)</strong
+                ><br />Combina os 3 acima<br /><span style="font-size: 10px"
+                  >Ex: flex: 1 0 200px</span
+                >
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 11px;
+                "
+              >
+                <strong style="color: #4a148c">align-self</strong
+                ><br />Sobrescreve align-items<br /><span
+                  style="font-size: 10px"
+                  >Para um item específico</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+            "
+          >
+            <span style="color: #78909c"
+              >/* Itens com tamanhos flexíveis */</span
+            ><br />
+            <span style="color: rgb(255, 204, 2)">.item-padrao</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: rgb(128, 222, 234)">flex</span>:
+            <span style="color: rgb(255, 204, 2)">1</span>;
+            <span style="color: rgb(144, 202, 249)">}</span>
+            <span style="color: #78909c">/* cresce igualmente */</span><br />
+            <span style="color: rgb(255, 204, 2)">.item-destaque</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: rgb(128, 222, 234)">flex</span>:
+            <span style="color: rgb(255, 204, 2)">2</span>;
+            <span style="color: rgb(144, 202, 249)">}</span>
+            <span style="color: #78909c">/* ocupa o dobro do espaço */</span
+            ><br />
+            <span style="color: rgb(255, 204, 2)">.item-fixo</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: rgb(128, 222, 234)">flex</span>:
+            <span style="color: rgb(255, 204, 2)">0 0 200px</span>;
+            <span style="color: rgb(144, 202, 249)">}</span>
+            <span style="color: #78909c">/* tamanho fixo */</span><br />
+            <span style="color: rgb(255, 204, 2)">.item-ultimo</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: rgb(128, 222, 234)">order</span>:
+            <span style="color: rgb(255, 204, 2)">-1</span>;
+            <span style="color: rgb(144, 202, 249)">}</span>
+            <span style="color: #78909c">/* aparece primeiro */</span><br />
+            <span style="color: rgb(255, 204, 2)">.item-centro</span>
+            <span style="color: rgb(144, 202, 249)">{</span>
+            <span style="color: rgb(128, 222, 234)">align-self</span>:
+            <span style="color: rgb(165, 214, 167)">center</span>;
+            <span style="color: rgb(144, 202, 249)">}</span>
+            <span style="color: #78909c">/* diferente dos irmãos */</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 5 — POSITION vs FLEXBOX    -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(191, 54, 12),
+              rgb(230, 81, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >5</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >⚖️ Position vs. Flexbox — Quando usar cada um?</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div style="overflow-x: auto; margin-bottom: 18px; font-size: 14px">
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 1px;
+                background: #ffccbc;
+                border-radius: 10px;
+                overflow: hidden;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #bf360c;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                Característica
+              </div>
+              <div
+                style="
+                  background: #bf360c;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                Position
+              </div>
+              <div
+                style="
+                  background: #bf360c;
+                  color: #fff;
+                  padding: 10px 12px;
+                  font-size: 11px;
+                  font-weight: 800;
+                "
+              >
+                Flexbox
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Uso principal</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Posicionamento individual
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Layout de grupo/múltiplos itens
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Sai do fluxo?</strong>
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                absolute/fixed sim
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Não (permanecem no fluxo)
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Responsividade</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Manual (media queries)
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Automática (wrap, grow)
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Alinhamento</strong>
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Com deslocamentos (top/left)
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Com propriedades específicas
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                <strong>Melhor para</strong>
+              </div>
+              <div
+                style="background: #f5f5f5; padding: 10px 12px; font-size: 11px"
+              >
+                Modais, tooltips, headers fixos
+              </div>
+              <div
+                style="background: #fff; padding: 10px 12px; font-size: 11px"
+              >
+                Menus, cards, galerias, formulários
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 16px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 14px;
+                padding: 20px;
+                border-top: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1a237e;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 12px;
+                "
+              >
+                📍 Use Position quando...
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ✅ Menu fixo no topo →
+                <code
+                  style="
+                    background: #c5cae9;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >position: fixed</code
+                ><br />
+                ✅ Modal centralizado →
+                <code
+                  style="
+                    background: #c5cae9;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >position: absolute</code
+                ><br />
+                ✅ Menu que gruda ao rolar →
+                <code
+                  style="
+                    background: #c5cae9;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >position: sticky</code
+                ><br />
+                ✅ Tooltip sobre elemento →
+                <code
+                  style="
+                    background: #c5cae9;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >position: absolute</code
+                ><br />
+                ✅ Ajuste fino de posição →
+                <code
+                  style="
+                    background: #c5cae9;
+                    padding: 1px 6px;
+                    border-radius: 3px;
+                  "
+                  >position: relative</code
+                >
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 14px;
+                padding: 20px;
+                border-top: 4px solid rgb(245, 124, 0);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #bf360c;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 12px;
+                "
+              >
+                🧩 Use Flexbox quando...
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ✅ Header com logo, menu e avatar<br />
+                ✅ Galeria de produtos responsiva<br />
+                ✅ Formulário com labels e inputs<br />
+                ✅ Menu de navegação horizontal<br />
+                ✅ Cards alinhados em grid flexível<br />
+                ✅ Centralizar conteúdo vertical e horizontalmente
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-top: 16px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🧠 Frases para lembrar
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px;
+                  text-align: center;
+                  font-size: 12px;
+                "
+              >
+                <strong style="color: #1a237e">Position:</strong>
+                <em>"Você fica aqui, exatamente neste lugar."</em>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px;
+                  text-align: center;
+                  font-size: 12px;
+                "
+              >
+                <strong style="color: #bf360c">Flexbox:</strong>
+                <em>"Vocês todos se organizem juntos, de forma harmoniosa."</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 6 — EXEMPLOS PRÁTICOS      -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >6</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧪 Exemplos Práticos Completos</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- Header com Flexbox -->
+          <div
+            style="
+              background: rgb(232, 245, 233);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(200, 230, 201);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #2e7d32;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              🏠 Header com Logo, Menu e Avatar (Flexbox)
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(255, 204, 2)">.header</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">display</span
+              >: <span style="color: rgb(165, 214, 167)">flex</span>;<br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >justify-content</span
+              >:
+              <span style="color: rgb(165, 214, 167)">space-between</span
+              >;<br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >align-items</span
+              >: <span style="color: rgb(165, 214, 167)">center</span>;<br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">padding</span
+              >: <span style="color: rgb(255, 204, 2)">0 20px</span>;<br />
+              <span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(255, 204, 2)">.menu</span>
+              <span style="color: rgb(144, 202, 249)">{</span>
+              <span style="color: rgb(128, 222, 234)">display</span>:
+              <span style="color: rgb(165, 214, 167)">flex</span>;
+              <span style="color: rgb(128, 222, 234)">gap</span>:
+              <span style="color: rgb(255, 204, 2)">20px</span>;
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+
+          <!-- Grid de produtos -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(255, 224, 178);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              🛍️ Grid de Produtos Responsivo (Flexbox + wrap)
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(255, 204, 2)">.produtos</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">display</span
+              >: <span style="color: rgb(165, 214, 167)">flex</span>;<br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >flex-wrap</span
+              >: <span style="color: rgb(165, 214, 167)">wrap</span>;<br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">gap</span>:
+              <span style="color: rgb(255, 204, 2)">20px</span>;<br />
+              <span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(255, 204, 2)">.card</span>
+              <span style="color: rgb(144, 202, 249)">{</span>
+              <span style="color: rgb(128, 222, 234)">flex</span>:
+              <span style="color: rgb(255, 204, 2)">1 1 250px</span>;
+              <span style="color: rgb(144, 202, 249)">}</span>
+              <span style="color: #78909c"
+                >/* mínimo 250px, cresce igualmente */</span
+              >
+            </div>
+          </div>
+
+          <!-- Menu que se adapta -->
+          <div
+            style="
+              background: rgb(232, 234, 246);
+              border-radius: 14px;
+              padding: 20px;
+              border: 2px solid rgb(197, 202, 233);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              📋 Menu de Navegação Adaptável
+            </div>
+            <div
+              style="
+                background: #0d1b4b;
+                border-radius: 8px;
+                padding: 14px;
+                font-family: &quot;Courier New&quot;, monospace;
+                font-size: 12px;
+                line-height: 1.9;
+              "
+            >
+              <span style="color: rgb(255, 204, 2)">.nav</span>
+              <span style="color: rgb(144, 202, 249)">{</span><br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)">display</span
+              >: <span style="color: rgb(165, 214, 167)">flex</span>;<br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >justify-content</span
+              >:
+              <span style="color: rgb(165, 214, 167)">space-around</span>;<br />
+              &nbsp;&nbsp;<span style="color: rgb(128, 222, 234)"
+                >flex-wrap</span
+              >: <span style="color: rgb(165, 214, 167)">wrap</span>;<br />
+              <span style="color: rgb(144, 202, 249)">}</span><br />
+              <span style="color: rgb(255, 204, 2)">.nav a</span>
+              <span style="color: rgb(144, 202, 249)">{</span>
+              <span style="color: rgb(128, 222, 234)">flex</span>:
+              <span style="color: rgb(255, 204, 2)">1 0 auto</span>;
+              <span style="color: rgb(128, 222, 234)">text-align</span>:
+              <span style="color: rgb(165, 214, 167)">center</span>;
+              <span style="color: rgb(144, 202, 249)">}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da Aula — Position & Flexbox</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📍</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Position: lugar específico
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🧩</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Flexbox: organização flexível
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📐</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                justify + align: eixos principal e cruzado
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >position</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >display: flex</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >justify-content</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >align-items</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >flex-wrap</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >flex-grow</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
