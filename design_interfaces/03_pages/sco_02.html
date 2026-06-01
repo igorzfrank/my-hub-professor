@@ -1,0 +1,2032 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../design_interfaces.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🎨 Design de Interfaces · Prototipagem & Interação</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Ferramentas de Prototipagem<br style="font-size: 28px" /><span
+              style="color: rgb(206, 147, 216); font-size: 28px"
+              >& Componentes Interativos</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Plugins essenciais · Recursos avançados do Figma · Criação de
+            componentes com interações reais
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Plugins</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Prototipagem</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Componentes</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Smart Animate</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Variáveis</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — PLUGINS ESSENCIAIS     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔌 Plugins Essenciais para Design e Prototipagem</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(232, 234, 246),
+                rgb(237, 231, 246)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(92, 107, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Por que usar Plugins no Figma?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(57, 73, 171);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Plugins</span
+              >
+              são extensões que
+              <strong style="font-size: 13px"
+                >expandem as funcionalidades</strong
+              >
+              do Figma muito além do que vem nativo. Eles automatizam tarefas
+              repetitivas, geram conteúdo realista, integram com outras
+              ferramentas e aceleram drasticamente o fluxo de trabalho. Saber
+              escolher e usar os plugins certos é o que separa um designer
+              <strong style="font-size: 13px">produtivo</strong> de um designer
+              <strong style="font-size: 13px">sobrecarregado</strong>.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Plugins são como
+              <strong style="font-size: 13px"
+                >acessórios de uma oficina mecânica</strong
+              >. Você pode consertar um carro com ferramentas básicas, mas com
+              uma parafusadeira elétrica, um elevador hidráulico e um scanner
+              automotivo, o trabalho fica
+              <strong style="font-size: 13px"
+                >muito mais rápido e preciso</strong
+              >.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📂</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Categorias de Plugins Essenciais</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 14px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <!-- Conteúdo -->
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 12px;
+                padding: 18px 20px;
+                border-left: 5px solid #3949ab;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1a237e;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                📝 Geração de Conteúdo Realista
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 1fr 1fr;
+                  gap: 8px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  <strong>Content Reel</strong><br /><span
+                    style="font-size: 10px"
+                    >Nomes, avatares, textos, datas</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  <strong>Lorem Ipsum</strong><br /><span
+                    style="font-size: 10px"
+                    >Texto placeholder rápido</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  <strong>Unsplash</strong><br /><span style="font-size: 10px"
+                    >Fotos de alta qualidade gratuitas</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Ícones e Ilustrações -->
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 12px;
+                padding: 18px 20px;
+                border-left: 5px solid #3949ab;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1a237e;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                🎨 Ícones, Ilustrações e Recursos Visuais
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 1fr 1fr;
+                  gap: 8px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  <strong>Iconify</strong><br /><span style="font-size: 10px"
+                    >+100 mil ícones gratuitos</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  <strong>Phosphor Icons</strong><br /><span
+                    style="font-size: 10px"
+                    >Ícones modernos e flexíveis</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  <strong>Blush</strong><br /><span style="font-size: 10px"
+                    >Ilustrações personalizáveis</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Prototipagem e Interação -->
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 12px;
+                padding: 18px 20px;
+                border-left: 5px solid #3949ab;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1a237e;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                🔗 Prototipagem e Fluxos Interativos
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 1fr 1fr;
+                  gap: 8px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  <strong>Autoflow</strong><br /><span style="font-size: 10px"
+                    >Desenha fluxos automaticamente</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  <strong>Anima</strong><br /><span style="font-size: 10px"
+                    >Animações avançadas e código</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  <strong>Figmotion</strong><br /><span style="font-size: 10px"
+                    >Curvas de animação personalizadas</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Produtividade e Organização -->
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 12px;
+                padding: 18px 20px;
+                border-left: 5px solid #3949ab;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1a237e;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                ⚡ Produtividade e Automação
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 1fr 1fr;
+                  gap: 8px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  <strong>Rename It</strong><br /><span style="font-size: 10px"
+                    >Renomear camadas em lote</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  <strong>Similayer</strong><br /><span style="font-size: 10px"
+                    >Selecionar camadas similares</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  <strong>Design Lint</strong><br /><span
+                    style="font-size: 10px"
+                    >Verificar consistência do design</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Acessibilidade e Exportação -->
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 12px;
+                padding: 18px 20px;
+                border-left: 5px solid #3949ab;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1a237e;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                ♿ Acessibilidade e Exportação
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 1fr 1fr;
+                  gap: 8px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  <strong>Stark</strong><br /><span style="font-size: 10px"
+                    >Contraste, daltonismo, WCAG</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  <strong>Remove BG</strong><br /><span style="font-size: 10px"
+                    >Remover fundo de imagens</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  <strong>TinyImage</strong><br /><span style="font-size: 10px"
+                    >Comprimir para exportação web</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #3949ab;
+              font-size: 13px;
+              color: #1a237e;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Dica:</strong> Não instale
+            dezenas de plugins de uma vez. Comece com
+            <strong>Content Reel, Iconify, Unsplash e Stark</strong>. Adicione
+            outros conforme a necessidade surgir. Muitos plugins instalados
+            deixam o Figma lento.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — PROTOTIPAGEM AVANÇADA  -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔗 Recursos Avançados de Prototipagem no Figma</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 243, 224),
+                rgb(255, 248, 245)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 4px;
+              border-left: 5px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #bf360c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Prototipagem — Muito Além de Ligar Telas
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              A prototipagem no Figma vai muito além de conectar um botão a
+              outra tela. Com recursos como
+              <strong style="font-size: 13px">Smart Animate</strong>,
+              <strong style="font-size: 13px">Variáveis</strong>,
+              <strong style="font-size: 13px">Overlays</strong> e
+              <strong style="font-size: 13px">Conditional Logic</strong>, você
+              pode criar experiências interativas que simulam
+              <strong style="font-size: 13px">quase perfeitamente</strong> o
+              produto final.
+            </div>
+          </div>
+
+          <!-- Smart Animate -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #f57c00;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              ✨ Smart Animate — Transições Fluídas
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Anima automaticamente as diferenças entre dois frames com
+              elementos de <strong>mesmo nome de camada</strong>. Ideal para
+              expandir cards, alternar abas, animar botões.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Posição</strong><br />Move elementos suavemente
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Opacidade</strong><br />Fade in / Fade out
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Escala</strong><br />Aumenta/diminui tamanho
+              </div>
+            </div>
+          </div>
+
+          <!-- Overlays -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #f57c00;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              📦 Overlays — Modais, Tooltips e Dropdowns
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Sobreponha um frame sobre a tela atual sem sair dela. Essencial
+              para simular comportamentos reais de interface.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Modal</strong><br />Centralizado com fundo escuro
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Tooltip</strong><br />Pequeno balão informativo
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Dropdown</strong><br />Menu que se expande
+              </div>
+            </div>
+          </div>
+
+          <!-- Variáveis -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #f57c00;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🔢 Variáveis — Prototipagem com Lógica Condicional
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Recurso avançado (beta) que permite criar
+              <strong>contadores, toggle states e lógica condicional</strong>
+              nos protótipos. Ex: contador de likes, toggle dark/light mode,
+              formulário com validação.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Boolean</strong><br />Verdadeiro/Falso (toggle)
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Number</strong><br />Contadores e incrementos
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>String</strong><br />Textos dinâmicos
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Conditional</strong><br />Se...então... no protótipo
+              </div>
+            </div>
+          </div>
+
+          <!-- Tipos de Gatilhos -->
+          <div
+            style="
+              background: rgb(255, 243, 224);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #f57c00;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Gatilhos de Interação Disponíveis
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>On Click</strong><br />Ao clicar
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>While Hovering</strong><br />Enquanto mouse sobre
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>While Pressing</strong><br />Enquanto pressiona
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Mouse Enter/Leave</strong><br />Ao entrar/sair
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>After Delay</strong><br />Após um tempo
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Key/Gamepad</strong><br />Teclas específicas
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Drag</strong><br />Ao arrastar
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Voice</strong><br />Comando de voz
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — COMPONENTES INTERATIVOS -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧩 Criação de Componentes Interativos</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(224, 242, 241),
+                rgb(232, 245, 233)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 4px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Componentes que Respondem à Interação
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              Um
+              <strong style="font-size: 13px">componente interativo</strong> vai
+              além do visual estático — ele
+              <strong style="font-size: 13px">responde ao usuário</strong> com
+              mudanças de estado. Combinando
+              <strong style="font-size: 13px">variantes</strong> com
+              <strong style="font-size: 13px">prototipagem</strong>, você pode
+              criar botões que mudam ao clicar, checkboxes que alternam, cards
+              que expandem e muito mais.
+            </div>
+          </div>
+
+          <!-- Exemplo 1 — Botão Interativo -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              🔘 Botão com Estados Interativos
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Crie variantes para cada estado do botão e conecte com
+              prototipagem:
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+                margin-bottom: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1565c0;
+                  color: #fff;
+                  padding: 10px 18px;
+                  border-radius: 8px;
+                  text-align: center;
+                  font-size: 11px;
+                  font-weight: 600;
+                "
+              >
+                Default
+              </div>
+              <span style="font-size: 18px; color: #004d40">→</span>
+              <div
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  padding: 10px 18px;
+                  border-radius: 8px;
+                  text-align: center;
+                  font-size: 11px;
+                  font-weight: 600;
+                "
+              >
+                Hover
+              </div>
+              <span style="font-size: 18px; color: #004d40">→</span>
+              <div
+                style="
+                  background: #0a3a7a;
+                  color: #fff;
+                  padding: 10px 18px;
+                  border-radius: 8px;
+                  text-align: center;
+                  font-size: 11px;
+                  font-weight: 600;
+                "
+              >
+                Pressed
+              </div>
+              <span style="font-size: 18px; color: #004d40">→</span>
+              <div
+                style="
+                  background: #bdbdbd;
+                  color: #fff;
+                  padding: 10px 18px;
+                  border-radius: 8px;
+                  text-align: center;
+                  font-size: 11px;
+                  font-weight: 600;
+                "
+              >
+                Disabled
+              </div>
+            </div>
+            <div
+              style="
+                background: #fff;
+                border-radius: 6px;
+                padding: 8px 12px;
+                font-size: 10px;
+                color: #004d40;
+                border-left: 3px solid #00897b;
+              "
+            >
+              <strong>Como fazer:</strong> Crie as 4 variantes → Combine como
+              variants → No protótipo, use gatilhos "While Hovering" e "While
+              Pressing" para alternar entre os estados.
+            </div>
+          </div>
+
+          <!-- Exemplo 2 — Checkbox Toggle -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              ✅ Checkbox / Toggle Interativo
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Componentes de seleção que alternam entre estados com animação:
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                margin-bottom: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border: 2px solid #bdbdbd;
+                  padding: 8px 12px;
+                  border-radius: 8px;
+                  font-size: 11px;
+                "
+              >
+                ☐ Desmarcado
+              </div>
+              <span style="font-size: 18px; color: #004d40">⇄</span>
+              <div
+                style="
+                  background: #e8f5e9;
+                  border: 2px solid #2e7d32;
+                  padding: 8px 12px;
+                  border-radius: 8px;
+                  font-size: 11px;
+                "
+              >
+                ☑ Marcado
+              </div>
+            </div>
+            <div
+              style="
+                background: #fff;
+                border-radius: 6px;
+                padding: 8px 12px;
+                font-size: 10px;
+                color: #004d40;
+                border-left: 3px solid #00897b;
+              "
+            >
+              <strong>Como fazer:</strong> Crie 2 variantes (unchecked/checked)
+              → Combine → No protótipo, use "On Click" com Smart Animate para
+              transição suave entre os estados.
+            </div>
+          </div>
+
+          <!-- Exemplo 3 — Card Expansível -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              📋 Card Expansível (Accordion)
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Cards que expandem/colapsam ao clicar, revelando conteúdo
+              adicional:
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                align-items: flex-start;
+                margin-bottom: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border: 2px solid #e0e0e0;
+                  padding: 12px;
+                  border-radius: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                  flex: 1;
+                "
+              >
+                Card Colapsado<br /><span style="font-size: 8px"
+                  >Título apenas</span
+                ><br /><span style="font-size: 18px">▶</span>
+              </div>
+              <span style="font-size: 18px; color: #004d40">→</span>
+              <div
+                style="
+                  background: #fff;
+                  border: 2px solid #00897b;
+                  padding: 12px;
+                  border-radius: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                  flex: 1;
+                "
+              >
+                Card Expandido<br /><span style="font-size: 8px"
+                  >Título + Conteúdo</span
+                ><br /><span style="font-size: 18px">🔽</span>
+              </div>
+            </div>
+            <div
+              style="
+                background: #fff;
+                border-radius: 6px;
+                padding: 8px 12px;
+                font-size: 10px;
+                color: #004d40;
+                border-left: 3px solid #00897b;
+              "
+            >
+              <strong>Como fazer:</strong> Crie 2 variantes (collapsed/expanded)
+              com Auto Layout → Combine → "On Click" alterna entre elas com
+              Smart Animate. O Auto Layout ajusta a altura automaticamente.
+            </div>
+          </div>
+
+          <!-- Exemplo 4 — Campo de Input -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              📝 Campo de Input com Estados
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Inputs que respondem visualmente ao foco, preenchimento e erro:
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+                margin-bottom: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border: 1px solid #bdbdbd;
+                  padding: 8px 12px;
+                  border-radius: 6px;
+                  font-size: 10px;
+                "
+              >
+                Default (vazio)
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border: 2px solid #1565c0;
+                  padding: 8px 12px;
+                  border-radius: 6px;
+                  font-size: 10px;
+                "
+              >
+                Foco (digitando)
+              </div>
+              <div
+                style="
+                  background: #f5f5f5;
+                  border: 1px solid #bdbdbd;
+                  padding: 8px 12px;
+                  border-radius: 6px;
+                  font-size: 10px;
+                "
+              >
+                Preenchido
+              </div>
+              <div
+                style="
+                  background: #ffebee;
+                  border: 2px solid #c62828;
+                  padding: 8px 12px;
+                  border-radius: 6px;
+                  font-size: 10px;
+                "
+              >
+                Erro
+              </div>
+            </div>
+            <div
+              style="
+                background: #fff;
+                border-radius: 6px;
+                padding: 8px 12px;
+                font-size: 10px;
+                color: #004d40;
+                border-left: 3px solid #00897b;
+              "
+            >
+              <strong>Como fazer:</strong> Crie 4 variantes → Combine → No
+              protótipo, use gatilhos "On Click" (para foco) e condicionais com
+              variáveis booleanas para alternar entre preenchido/erro.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — FLUXO DE TRABALHO      -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔄 Fluxo de Trabalho — Da Ideia ao Protótipo Interativo</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(243, 229, 245),
+                rgb(248, 240, 255)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              border-left: 5px solid rgb(106, 27, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              🔄 Passo a Passo do Fluxo Profissional
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  1. Configure o Arquivo
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Instale os plugins essenciais (Content Reel, Iconify,
+                  Unsplash, Stark). Crie as páginas: Components, Mobile,
+                  Desktop, Prototype.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  2. Crie os Componentes Base com Variantes
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Button (default, hover, pressed, disabled), Input (default,
+                  focus, filled, error), Card (collapsed, expanded), Checkbox
+                  (unchecked, checked).
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  3. Monte as Telas com os Componentes
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Arraste componentes do Assets para as telas. Use Auto Layout
+                  em containers. Preencha com conteúdo real usando plugins.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  4. Adicione Interações aos Componentes
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Conecte as variantes dos componentes com gatilhos: On Click,
+                  While Hovering, While Pressing. Use Smart Animate para
+                  transições suaves.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  5. Conecte o Fluxo entre Telas
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Ligue botões às telas de destino. Adicione overlays para
+                  modais. Configure transições (Smart Animate, Dissolve, Slide).
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  6. Teste e Compartilhe
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Pressione o botão Play (▶) para testar. Compartilhe o link do
+                  protótipo com stakeholders. Use o Figma Mirror para testar no
+                  celular.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Regra de ouro:</strong>
+            <em>"Prototipe como se fosse real."</em> Quanto mais próximo o
+            protótipo estiver do produto final — com interações, animações e
+            conteúdo realista —, melhor será o feedback que você receberá e
+            menor será a chance de retrabalho no desenvolvimento.
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ FECHAMENTO FINAL ═══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da Aula</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔌</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Plugins: expandem o Figma
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔗</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Prototipagem: simule o produto real
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🧩</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Componentes interativos com variantes
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Plugins</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Smart Animate</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Overlays</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Variáveis</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Variantes</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Fluxo</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

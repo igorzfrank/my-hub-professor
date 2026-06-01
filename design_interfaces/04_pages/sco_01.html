@@ -1,0 +1,1624 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../design_interfaces.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >📊 Gestão de Projetos · Metodologias Ágeis</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Planejamento Ágil<br style="font-size: 28px" /><span
+              style="color: rgb(206, 147, 216); font-size: 28px"
+              >& Gestão do Tempo</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Gestão da rotina · Metodologias ágeis (Kanban) · Planejamento da
+            etapa mobile
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Kanban</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Ágil</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Mobile</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Gestão</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Produtividade</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — GESTÃO DA ROTINA       -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >⏰ Gestão da Rotina — O Designer como Profissional Autônomo</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(232, 234, 246),
+                rgb(237, 231, 246)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(92, 107, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Por que gerenciar a rotina é essencial?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              O trabalho de design não é linear — ele envolve
+              <strong style="font-size: 13px"
+                >pesquisa, ideação, criação, iteração e refinamento</strong
+              >. Sem uma rotina estruturada, é fácil cair na armadilha de passar
+              horas ajustando pixels irrelevantes enquanto as entregas
+              importantes atrasam. A
+              <strong style="font-size: 13px">gestão da rotina</strong> é o que
+              separa o designer que
+              <strong style="font-size: 13px">entrega valor</strong> daquele que
+              apenas "faz telas bonitas".
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Gerenciar a rotina de design é como
+              <strong style="font-size: 13px"
+                >preparar um jantar completo</strong
+              >. Você não começa fritando o bife e depois vai descascar as
+              batatas — você planeja: primeiro prepara todos os ingredientes
+              (pesquisa), depois corta e tempera (wireframes), depois cozinha em
+              ordem (protótipo), e por fim monta o prato (refinamento). Sem
+              planejamento, o arroz queima enquanto você corta a cebola.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📋</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Os 5 Pilares da Rotina Produtiva</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                🎯 Blocos de Tempo (Time Blocking)
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Divida o dia em blocos dedicados a tarefas específicas. Ex:
+                8h-10h = Criação de componentes, 10h-12h = Montagem de telas,
+                14h-16h = Prototipagem.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                🍅 Técnica Pomodoro
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                25 minutos de foco total + 5 minutos de pausa. A cada 4 ciclos,
+                pausa maior de 15-30 min. Ideal para tarefas que exigem
+                concentração profunda.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                📋 Priorização (Matriz Eisenhower)
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Classifique tarefas em: Urgente/Importante (faça agora),
+                Importante/Não Urgente (agende), Urgente/Não Importante
+                (delegue), Nem Urgente/Nem Importante (elimine).
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                🚫 Regra dos 80/20 (Pareto)
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                80% dos resultados vêm de 20% dos esforços. Identifique as
+                tarefas de alto impacto e priorize-as. Não gaste 3 horas
+                ajustando um ícone quando o fluxo principal não está pronto.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                📝 Revisão Diária e Semanal
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Comece o dia revisando o que precisa ser feito. Termine a semana
+                avaliando o que foi entregue e planejando a próxima. Ajuste o
+                planejamento conforme necessário.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #3949ab;
+              font-size: 13px;
+              color: #1a237e;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px"
+              >💡 Regra de ouro da produtividade:</strong
+            >
+            <em>"O que não está agendado, não será feito."</em> Não confie na
+            memória ou na "vontade de fazer". Bloqueie tempo na agenda para cada
+            etapa do projeto. Trate esses blocos como compromissos inegociáveis
+            com você mesmo.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — METODOLOGIAS ÁGEIS     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📊 Metodologias Ágeis — Kanban para Designers</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 243, 224),
+                rgb(255, 248, 245)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 4px;
+              border-left: 5px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #bf360c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que são Metodologias Ágeis?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(230, 81, 0);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Metodologias ágeis</span
+              >
+              são formas de organizar o trabalho que priorizam
+              <strong style="font-size: 13px"
+                >entregas rápidas, feedback constante e adaptação
+                contínua</strong
+              >. Em vez de planejar tudo no início e entregar só no final
+              (modelo cascata), o ágil divide o projeto em
+              <strong style="font-size: 13px">ciclos curtos</strong> (semanas)
+              com entregas parciais que podem ser testadas e ajustadas.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 4px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              O método ágil é como
+              <strong style="font-size: 13px"
+                >construir uma casa por cômodos</strong
+              >, em vez de fazer toda a fundação, depois todas as paredes,
+              depois todo o telhado. Você entrega um quarto pronto, o cliente
+              dorme nele e dá feedback. Depois entrega a cozinha, testa, ajusta.
+              No final, a casa atende perfeitamente às necessidades reais — não
+              às que foram imaginadas no papel meses atrás.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📋</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Kanban — O Quadro Visual de Tarefas</span
+            >
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 243, 224),
+                rgb(255, 248, 245)
+              );
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(230, 81, 0);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Kanban</span
+              >
+              é um método visual de gestão de tarefas que usa
+              <strong style="font-size: 13px">colunas e cartões</strong> para
+              representar o fluxo de trabalho. Cada cartão é uma tarefa; cada
+              coluna é um estágio do processo. O objetivo é
+              <strong style="font-size: 13px"
+                >visualizar o trabalho, limitar o que está em andamento e
+                maximizar o fluxo</strong
+              >.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📊</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Estrutura de um Quadro Kanban para Design</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 6px;
+              margin-bottom: 18px;
+              overflow-x: auto;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #e3f2fd;
+                border-radius: 10px;
+                padding: 16px;
+                min-width: 140px;
+                flex: 1;
+                border-top: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #0d47a1;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                📥 Backlog
+              </div>
+              <div style="font-size: 11px; color: #37474f; line-height: 1.8">
+                Tarefas a fazer<br />• Criar Style Guide<br />• Definir
+                paleta<br />• Escolher fontes<br />• Criar componentes
+              </div>
+            </div>
+            <div
+              style="
+                background: #fff8e1;
+                border-radius: 10px;
+                padding: 16px;
+                min-width: 140px;
+                flex: 1;
+                border-top: 4px solid #f9a825;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #f57f17;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                🔄 Em Andamento
+              </div>
+              <div style="font-size: 11px; color: #37474f; line-height: 1.8">
+                Tarefas em execução<br />• Wireframe mobile<br />• Hero
+                section<br /><br /><strong style="color: #f57f17"
+                  >Limite: 3 tarefas</strong
+                >
+              </div>
+            </div>
+            <div
+              style="
+                background: #e8f5e9;
+                border-radius: 10px;
+                padding: 16px;
+                min-width: 140px;
+                flex: 1;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ Concluído
+              </div>
+              <div style="font-size: 11px; color: #37474f; line-height: 1.8">
+                Tarefas finalizadas<br />• Briefing<br />• Pesquisa visual<br />•
+                Moodboard
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⭐</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Princípios do Kanban</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                👁️ Visualize o Trabalho
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Tudo que precisa ser feito está no quadro. Nada fica "na cabeça"
+                ou em conversas soltas. Transparência total.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                🚧 Limite o WIP (Work in Progress)
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Estabeleça um número máximo de tarefas em andamento. Ex: no
+                máximo 3 cards na coluna "Em Andamento". Isso evita sobrecarga.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                ⚡ Otimize o Fluxo
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Observe onde os cartões "emperram". Se uma coluna acumula
+                tarefas, há um gargalo que precisa ser resolvido.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                🔄 Melhoria Contínua
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                A cada ciclo, reflita: o que funcionou? O que pode melhorar?
+                Ajuste o processo com base em dados reais, não em suposições.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Ferramentas para Kanban:</strong>
+            <strong>Trello</strong> (gratuito, simples),
+            <strong>Notion</strong> (mais completo, com docs integrados),
+            <strong>Figma</strong> (o próprio arquivo pode ter uma página
+            "Kanban" com post-its), <strong>Jira</strong> (profissional, usado
+            em empresas maiores).
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — PLANEJAMENTO MOBILE    -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📱 Planejamento da Etapa Mobile — Mobile-First na Prática</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(224, 242, 241),
+                rgb(232, 245, 233)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 4px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Por que começar pelo Mobile?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              A abordagem
+              <strong style="font-size: 13px">Mobile-First</strong> é mais que
+              uma tendência — é uma
+              <strong style="font-size: 13px"
+                >necessidade técnica e estratégica</strong
+              >. Com mais de 60% do tráfego web vindo de dispositivos móveis,
+              projetar primeiro para a tela menor força você a
+              <strong style="font-size: 13px">priorizar o essencial</strong>,
+              eliminar o supérfluo e criar uma experiência focada. Depois,
+              expandir para desktop é muito mais fácil do que o contrário.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 4px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Projetar mobile-first é como
+              <strong style="font-size: 13px"
+                >fazer as malas para uma viagem</strong
+              >. Se você começa com uma mala grande (desktop), enche de coisas
+              "só por precaução". Se começa com uma mochila pequena (mobile),
+              leva apenas o essencial. A mochila cabe na mala grande — o
+              contrário, não.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📋</span
+            ><span style="color: #00695c; font-size: 14px; font-weight: 800"
+              >Roteiro de Planejamento — Etapa Mobile (2 semanas)</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 8px;
+                padding: 14px 16px;
+                border-left: 4px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                📅 Semana 1 — Estrutura e Componentes
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.8">
+                <strong>Dia 1-2:</strong> Wireframe mobile (rabisco no papel ou
+                Figma). Definir zonas: Header, Hero, Seções, Footer.<br />
+                <strong>Dia 3-4:</strong> Criar componentes base (Button, Input,
+                Card, Navbar) com Auto Layout e variantes.<br />
+                <strong>Dia 5:</strong> Revisão do wireframe + componentes com o
+                time. Coletar feedback.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 8px;
+                padding: 14px 16px;
+                border-left: 4px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                📅 Semana 2 — Telas e Protótipo
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.8">
+                <strong>Dia 1-2:</strong> Montar telas mobile (375×812px). Usar
+                componentes do Assets. Preencher com conteúdo realista.<br />
+                <strong>Dia 3-4:</strong> Conectar fluxos (Happy Path + Error
+                Paths). Configurar transições e overlays.<br />
+                <strong>Dia 5:</strong> Refinar, testar no Figma Mirror,
+                corrigir erros e preparar para apresentação.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📱</span
+            ><span style="color: #00695c; font-size: 14px; font-weight: 800"
+              >Especificações Técnicas para Mobile</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #004d40; font-size: 12px">
+                📐 Tamanho do Frame
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                375×812px (iPhone 13/14)<br />360×800px (Android padrão)
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #004d40; font-size: 12px">
+                👆 Touch Targets
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Mínimo 44×44px<br />Ideal 48×48px<br />Espaço entre: 8px
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #004d40; font-size: 12px">
+                📏 Grid Mobile
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                4 colunas<br />Margin: 16px<br />Gutter: 16px
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #004d40; font-size: 12px">
+                🔤 Fonte Mínima
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Corpo: 14-16px<br />Caption: 11-12px<br />Input: 16px (evitar
+                zoom)
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #004d40; font-size: 12px">
+                📜 Safe Area
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Top: 44px (status bar)<br />Bottom: 34px (home indicator)
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #004d40; font-size: 12px">
+                🧩 Auto Layout
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Obrigatório em todos os componentes. Garante responsividade.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e0f2f1;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #00897b;
+              font-size: 13px;
+              color: #004d40;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px"
+              >💡 Regra de ouro do Mobile-First:</strong
+            >
+            Se um elemento não é essencial na tela de 375px de largura,
+            <strong>ele não é essencial</strong>. O mobile força você a tomar
+            decisões difíceis sobre o que realmente importa. Essas decisões
+            tornam o design mais forte em qualquer tamanho de tela.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — FLUXO COMPLETO         -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔄 Ciclo Completo — Do Planejamento à Entrega</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(243, 229, 245),
+                rgb(248, 240, 255)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              border-left: 5px solid rgb(106, 27, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              📋 Planejamento de 4 Semanas — Projeto Mobile Completo
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  📅 Semana 1 — Pesquisa e Estrutura
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Briefing, pesquisa visual, moodboard, wireframes de baixa
+                  fidelidade, definição da paleta e tipografia.
+                  <strong>Kanban:</strong> Mover cards de Backlog → Em Andamento
+                  → Concluído.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  📅 Semana 2 — Componentes e Telas
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Criação do Style Guide, componentes base com Auto Layout,
+                  montagem das telas mobile com conteúdo realista.
+                  <strong>Foco:</strong> qualidade dos componentes.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  📅 Semana 3 — Prototipagem e Fluxos
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Conexões de artboards, transições lógicas, overlays, happy
+                  path + error paths + edge cases.
+                  <strong>Foco:</strong> experiência de navegação completa.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 12px 14px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  📅 Semana 4 — Refinamento e Entrega
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  Refinamento visual e interativo, teste no Figma Mirror,
+                  documentação, checklist de entrega, apresentação final.
+                  <strong>Foco:</strong> profissionalismo e qualidade.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ Hábitos de um Designer Ágil
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ✅ Começa o dia revisando o quadro Kanban<br />
+                ✅ Trabalha com blocos de tempo (Time Blocking)<br />
+                ✅ Limita tarefas em andamento (máx. 3)<br />
+                ✅ Entrega algo a cada semana (mesmo que pequeno)<br />
+                ✅ Pede feedback cedo e com frequência<br />
+                ✅ Adapta o planejamento conforme necessário<br />
+                ✅ Reserva tempo para refinamento no final
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ❌ Armadilhas da Má Gestão
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ❌ Passar o dia "apagando incêndios" sem planejar<br />
+                ❌ Fazer 10 tarefas ao mesmo tempo (multitarefa)<br />
+                ❌ Deixar para testar o protótipo no último dia<br />
+                ❌ Não limitar o WIP — sobrecarga e burnout<br />
+                ❌ Ignorar feedback até a entrega final<br />
+                ❌ Perfeccionismo prematuro (polir antes de estruturar)<br />
+                ❌ Não reservar tempo para imprevistos
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px"
+              >💡 Compromisso do Designer Ágil:</strong
+            >
+            <em
+              >"Planejo meu trabalho visualmente, entrego valor a cada ciclo,
+              limito meu trabalho em andamento e adapto meu processo com base em
+              feedback real. Não espero a perfeição para entregar — entrego,
+              testo e melhoro continuamente."</em
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da Aula</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">⏰</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Rotina: blocos de tempo e priorização
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📊</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Kanban: visualize e limite o trabalho
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📱</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Mobile-First: comece pelo essencial
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Kanban</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Pomodoro</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Mobile-First</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >WIP</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Ágil</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Planejamento</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

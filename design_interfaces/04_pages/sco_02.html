@@ -1,0 +1,1876 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../design_interfaces.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >📱 Design de Interfaces · Figma Responsivo</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Responsividade & Estrutura<br style="font-size: 28px" /><span
+              style="color: rgb(206, 147, 216); font-size: 28px"
+              >Mobile First no Figma</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Adaptação de layouts · Breakpoints · Técnicas de responsividade ·
+            Grids adaptáveis
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Mobile First</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Breakpoints</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Auto Layout</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Constraints</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Grid</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — MOBILE FIRST           -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📱 MOBILE FIRST — Comece pelo Menor, Escale com Inteligência</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(232, 234, 246),
+                rgb(237, 231, 246)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(92, 107, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é Mobile First no Figma?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(57, 73, 171);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Mobile First</span
+              >
+              é uma filosofia de design onde você
+              <strong style="font-size: 13px"
+                >começa projetando para a tela menor</strong
+              >
+              (smartphone 375px) e, depois de finalizado,
+              <strong style="font-size: 13px">expande o layout</strong> para
+              tablets e desktops. No Figma, isso significa criar primeiro o
+              frame mobile com todo o conteúdo essencial e, em seguida, duplicar
+              e adaptar para tamanhos maiores.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Mobile First no Figma é como
+              <strong style="font-size: 13px">esculpir uma estátua</strong>.
+              Você começa com um bloco pequeno (frame mobile) contendo apenas a
+              forma essencial. Depois, duplica e adiciona detalhes (tablet). Por
+              fim, polimento e acabamento (desktop). O contrário — começar com
+              um frame gigante e tentar "cortar pedaços" para caber no mobile —
+              é muito mais trabalhoso.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⭐</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Por que Mobile First no Figma?</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                📈 Tráfego Mobile
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Mais de 60% do tráfego web vem de dispositivos móveis. O mobile
+                não é o futuro — é o presente.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                🎯 Foco no Essencial
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                A tela pequena força você a priorizar. Se não cabe no mobile,
+                talvez não seja tão importante assim.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                🧠 Escalabilidade
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Adicionar elementos é mais fácil que removê-los. Expandir para
+                desktop é natural; comprimir para mobile é doloroso.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                ⚡ Produtividade
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Com Auto Layout e Constraints, o Figma adapta automaticamente
+                muitos elementos ao redimensionar frames.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 10px;
+                padding: 16px;
+                text-align: center;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 6px;
+                "
+              >
+                📱 Fluxo Mobile First (Recomendado)
+              </div>
+              <div style="font-size: 11px; color: #37474f; line-height: 1.8">
+                1. Crie o frame Mobile (375px)<br />2. Projete tudo no mobile<br />3.
+                Duplique para Tablet (768px)<br />4. Ajuste o layout<br />5.
+                Duplique para Desktop (1440px)<br />6. Refine o layout final
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 10px;
+                padding: 16px;
+                text-align: center;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 6px;
+                "
+              >
+                🖥️ Fluxo Desktop First (Evitar)
+              </div>
+              <div style="font-size: 11px; color: #37474f; line-height: 1.8">
+                1. Crie o frame Desktop (1440px)<br />2. Projete tudo no
+                desktop<br />3. Tente comprimir para Tablet<br />4. Sofra para
+                caber no Mobile<br />5. Retrabalho e frustração
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — BREAKPOINTS NO FIGMA   -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📏 BREAKPOINTS — Os Pontos de Quebra no Figma</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 243, 224),
+                rgb(255, 248, 245)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 4px;
+              border-left: 5px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #bf360c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que são Breakpoints no Figma?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              No Figma,
+              <span
+                style="
+                  background: rgb(230, 81, 0);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Breakpoints</span
+              >
+              são os
+              <strong style="font-size: 13px"
+                >tamanhos de frame específicos</strong
+              >
+              para os quais você projeta. Em vez de criar telas para cada
+              dispositivo do mercado, você trabalha com
+              <strong style="font-size: 13px"
+                >3 a 4 tamanhos estratégicos</strong
+              >
+              que cobrem a grande maioria dos usuários. O Figma facilita isso
+              com frames pré-definidos e grids configuráveis.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📐</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Breakpoints Estratégicos no Figma</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 16px;
+                text-align: center;
+                border-top: 3px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #e65100; font-size: 13px">
+                📱 Mobile
+              </div>
+              <div style="font-size: 12px; color: #37474f">375 × 812px</div>
+              <div style="font-size: 10px; color: #78909c">
+                4 colunas · Margin 16px
+              </div>
+              <div style="font-size: 10px; color: #78909c">Gutter 16px</div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 16px;
+                text-align: center;
+                border-top: 3px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #e65100; font-size: 13px">
+                📋 Tablet
+              </div>
+              <div style="font-size: 12px; color: #37474f">768 × 1024px</div>
+              <div style="font-size: 10px; color: #78909c">
+                8 colunas · Margin 40px
+              </div>
+              <div style="font-size: 10px; color: #78909c">Gutter 24px</div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 16px;
+                text-align: center;
+                border-top: 3px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #e65100; font-size: 13px">
+                💻 Desktop
+              </div>
+              <div style="font-size: 12px; color: #37474f">1440 × 900px</div>
+              <div style="font-size: 10px; color: #78909c">
+                12 colunas · Margin 120px
+              </div>
+              <div style="font-size: 10px; color: #78909c">Gutter 24px</div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 16px;
+                text-align: center;
+                border-top: 3px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #e65100; font-size: 13px">
+                🖥️ Wide
+              </div>
+              <div style="font-size: 12px; color: #37474f">1920 × 1080px</div>
+              <div style="font-size: 10px; color: #78909c">
+                12 colunas · Margin 160px
+              </div>
+              <div style="font-size: 10px; color: #78909c">Gutter 32px</div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⚙️</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Como configurar Grids no Figma para cada Breakpoint</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 8px;
+                padding: 12px 14px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                Passo a passo no Figma
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.7">
+                1. Selecione o Frame → 2. Painel direito →
+                <strong>Layout Grid</strong> → 3. Clique no <strong>+</strong> →
+                4. Escolha <strong>Grid</strong> → 5. Defina colunas, margin e
+                gutter → 6. Ajuste a cor e opacidade da grade para visualização
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #fff3e0;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #f57c00;
+              font-size: 13px;
+              color: #e65100;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Regra de ouro:</strong> Defina
+            breakpoints <strong>por necessidade do conteúdo</strong>, não por
+            dispositivos específicos. Redimensione o frame no Figma e observe
+            onde o layout "quebra". Ajuste ali. Isso garante que seu design
+            funcione em qualquer tela, presente ou futura.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — TÉCNICAS DE ADAPTAÇÃO  -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔧 Técnicas de Adaptação de Layouts no Figma</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(224, 242, 241),
+                rgb(232, 245, 233)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 4px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Como adaptar layouts sem perder a essência?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              Adaptar um layout para diferentes telas no Figma não é apenas
+              redimensionar frames. É preciso
+              <strong style="font-size: 13px">repensar a organização</strong>
+              dos elementos, usar
+              <strong style="font-size: 13px">Auto Layout e Constraints</strong>
+              para automatizar a adaptação e, em alguns casos,
+              <strong style="font-size: 13px"
+                >criar variações específicas</strong
+              >
+              de componentes para cada breakpoint.
+            </div>
+          </div>
+
+          <!-- Técnica 1 — Auto Layout -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #004d40;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >1</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >Auto Layout — A Ferramenta Principal de Responsividade</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              O Auto Layout faz com que frames e componentes se ajustem
+              automaticamente ao conteúdo. Configure
+              <strong>direção, gap, padding e alinhamento</strong> para que os
+              elementos se reorganizem sozinhos quando o frame for
+              redimensionado.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Wrap</strong><br />Itens quebram para nova linha
+                automaticamente
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Fill Container</strong><br />Elementos preenchem o
+                espaço disponível
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Hug Contents</strong><br />Frame abraça o tamanho do
+                conteúdo
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Space Between</strong><br />Distribui espaço igualmente
+                entre itens
+              </div>
+            </div>
+          </div>
+
+          <!-- Técnica 2 — Constraints -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #004d40;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >2</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >Constraints — Fixar Elementos nas Bordas</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              As Constraints definem como um elemento se comporta quando o frame
+              pai é redimensionado. Use para fixar botões nas laterais,
+              centralizar títulos ou fazer barras acompanharem a largura da
+              tela.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 6px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Left & Right</strong><br />Estica horizontalmente
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Center</strong><br />Mantém centralizado
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Right</strong><br />Fixo na direita
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Top & Bottom</strong><br />Estica verticalmente
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Scale</strong><br />Redimensiona proporcionalmente
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 4px;
+                  padding: 8px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                <strong>Fix</strong><br />Posição fixa, não move
+              </div>
+            </div>
+          </div>
+
+          <!-- Técnica 3 — Empilhamento -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #004d40;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >3</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >Empilhamento — De Linha para Coluna</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Elementos lado a lado no desktop se tornam empilhados
+              verticalmente no mobile. No Figma, isso é feito alterando a
+              <strong>direção do Auto Layout</strong> de Horizontal para
+              Vertical no frame mobile.
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 8px 12px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                Desktop (Horizontal):<br />⬛ ⬛ ⬛
+              </div>
+              <span style="font-size: 16px">→</span>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 8px 12px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                Mobile (Vertical):<br />⬛<br />⬛<br />⬛
+              </div>
+            </div>
+          </div>
+
+          <!-- Técnica 4 — Ocultar/Mostrar -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #004d40;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >4</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >Ocultar / Mostrar — Conteúdo Adaptável</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Alguns elementos são essenciais no desktop mas supérfluos no
+              mobile (ex: sidebar, banners grandes, descrições longas). No
+              Figma, simplesmente <strong>oculte a camada</strong> (ícone de
+              olho) na versão mobile ou crie uma
+              <strong>variante simplificada</strong> do componente.
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 8px 12px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                Desktop:<br />⬛ ⬛ ⬛ ⬛ (4 elementos)
+              </div>
+              <span style="font-size: 16px">→</span>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 8px 12px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                Mobile:<br />⬛ ⬛ (apenas essenciais)
+              </div>
+            </div>
+          </div>
+
+          <!-- Técnica 5 — Simplificar -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #004d40;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >5</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >Simplificar — Componentes Adaptáveis</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              No mobile, simplifique componentes complexos. Use
+              <strong>variantes de componente</strong> no Figma: uma versão
+              completa para desktop e uma versão compacta para mobile. Ex: um
+              card de produto pode mostrar menos informações no mobile.
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 8px 12px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                Desktop:<br />🖼️ + Título + Descrição + Preço + Botão
+              </div>
+              <span style="font-size: 16px">→</span>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 8px 12px;
+                  text-align: center;
+                  font-size: 10px;
+                "
+              >
+                Mobile:<br />🖼️ + Título + Preço
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — EXEMPLO PRÁTICO        -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧪 Exemplo Prático — Adaptação de uma Landing Page</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(243, 229, 245),
+                rgb(248, 240, 255)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              border-left: 5px solid rgb(106, 27, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              📱 Mobile (375px) → 💻 Desktop (1440px)
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  🧭 Header / Navbar
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  <strong>Mobile:</strong> Logo + Hamburger menu (menu escondido
+                  em overlay). <strong>Tablet:</strong> Logo + 3 links visíveis
+                  + CTA. <strong>Desktop:</strong> Logo + 5 links + CTA +
+                  ícones.
+                  <em
+                    >Técnica: Ocultar/Mostrar + Auto Layout com Space
+                    Between.</em
+                  >
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  🦸 Hero Section
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  <strong>Mobile:</strong> Título + texto + CTA empilhados
+                  verticalmente. Imagem abaixo. <strong>Desktop:</strong> Texto
+                  à esquerda (6 colunas), imagem à direita (6 colunas).
+                  <em>Técnica: Auto Layout (direção Vertical → Horizontal).</em>
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  🛍️ Grid de Produtos
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  <strong>Mobile:</strong> 1 coluna (cards empilhados).
+                  <strong>Tablet:</strong> 2 colunas.
+                  <strong>Desktop:</strong> 3-4 colunas.
+                  <em
+                    >Técnica: Auto Layout com Wrap + definir largura
+                    mínima/máxima dos cards.</em
+                  >
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  📋 Footer
+                </div>
+                <div style="color: #37474f; font-size: 11px">
+                  <strong>Mobile:</strong> Links empilhados, 1 coluna.
+                  <strong>Tablet:</strong> 2 colunas de links.
+                  <strong>Desktop:</strong> 4 colunas lado a lado.
+                  <em>Técnica: Auto Layout com Wrap nos grupos de links.</em>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px"
+              >💡 Fluxo de trabalho no Figma:</strong
+            >
+            1. Crie o frame Mobile (375px) → 2. Projete todos os componentes com
+            Auto Layout → 3. Duplique o frame e mude para Tablet (768px) → 4.
+            Ajuste direções de Auto Layout e visibilidade de camadas → 5.
+            Duplique para Desktop (1440px) → 6. Refine alinhamentos e
+            espaçamentos → 7. Teste redimensionando os frames para verificar a
+            adaptação.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 5 — BOAS PRÁTICAS          -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >5</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >✅ Boas Práticas e Checklist de Responsividade no Figma</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              margin-bottom: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ Checklist de Responsividade
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ✅ O layout funciona no frame de 375px (mobile mínimo)<br />
+                ✅ Todos os botões têm touch target ≥ 44×44px<br />
+                ✅ Textos são legíveis (mín. 14px no mobile)<br />
+                ✅ Auto Layout está aplicado em todos os containers<br />
+                ✅ Constraints estão configuradas nos elementos internos<br />
+                ✅ Menu mobile (hamburger) tem overlay funcional<br />
+                ✅ Grid está configurado para cada breakpoint<br />
+                ✅ Testado redimensionando frames no Figma
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ❌ Erros Comuns
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ❌ Texto muito pequeno no mobile (< 14px)<br />
+                ❌ Botões muito próximos (toque acidental)<br />
+                ❌ Não usar Auto Layout (ajustes manuais dolorosos)<br />
+                ❌ Esquecer de configurar Constraints<br />
+                ❌ Usar pixels fixos em vez de Fill Container<br />
+                ❌ Não testar redimensionando o frame<br />
+                ❌ Criar um frame para cada dispositivo (muitos frames)<br />
+                ❌ Ignorar orientação landscape no mobile
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(227, 242, 253),
+                rgb(232, 240, 254)
+              );
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #0d47a1;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🧠 Regras de Ouro da Responsividade no Figma
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+              <strong>1.</strong> Comece sempre pelo mobile (frame 375px).<br />
+              <strong>2.</strong> Use Auto Layout em absolutamente todos os
+              containers e componentes.<br />
+              <strong>3.</strong> Configure Constraints para elementos que devem
+              grudar nas bordas ou centralizar.<br />
+              <strong>4.</strong> Defina poucos breakpoints estratégicos (3-4 no
+              máximo).<br />
+              <strong>5.</strong> Pense em "componentes adaptáveis" com
+              variantes para cada tamanho de tela.<br />
+              <strong>6.</strong> Teste redimensionando os frames — não confie
+              apenas no visual estático.
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #3949ab;
+              font-size: 13px;
+              color: #1a237e;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Dica final:</strong> Use o plugin
+            <strong>"Responsive"</strong> no Figma para visualizar rapidamente
+            como seu layout se comporta em diferentes tamanhos de tela sem
+            precisar criar frames manualmente. Ele simula a experiência de
+            redimensionamento do navegador diretamente no Figma.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da Aula</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📱</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Mobile First: comece pelo essencial
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📏</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Breakpoints: 3-4 tamanhos estratégicos
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔧</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Auto Layout + Constraints = adaptação
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Mobile First</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Breakpoints</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Auto Layout</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Constraints</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Grid</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Checklist</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

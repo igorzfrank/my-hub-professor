@@ -1,0 +1,1833 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../design_interfaces.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🎨 Design de Interfaces · Produtividade & Organização</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Automatização e Organização<br style="font-size: 28px" /><span
+              style="color: rgb(206, 147, 216); font-size: 28px"
+              >do Posto de Trabalho</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Auto Layout · Finalização de telas · Fluxo profissional de design no
+            Figma
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Auto Layout</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Finalização</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Organização</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Produtividade</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Figma</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — AUTO LAYOUT           -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >⚡ AUTO LAYOUT — Layouts Flexíveis e Automatizados</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(232, 234, 246),
+                rgb(237, 231, 246)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(92, 107, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é Auto Layout?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(57, 73, 171);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Auto Layout</span
+              >
+              é uma propriedade do Figma que torna frames e componentes
+              <strong style="font-size: 13px">dinamicamente responsivos</strong
+              >. Funciona como o
+              <strong style="font-size: 13px">Flexbox do CSS</strong> — os
+              elementos internos se redistribuem automaticamente quando você
+              adiciona, remove ou redimensiona itens. É o recurso que separa
+              designers
+              <strong style="font-size: 13px"
+                >iniciantes de profissionais</strong
+              >.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Auto Layout é como um
+              <strong style="font-size: 13px">elástico inteligente</strong> — se
+              você adiciona mais cartões a uma lista, o contêiner cresce
+              automaticamente. Se você remove, ele encolhe. Os espaçamentos
+              entre os itens se mantêm consistentes sem que você precise ajustar
+              manualmente.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⚙️</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Propriedades do Auto Layout</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                ↕️ Direção (Direction)
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                <strong>Vertical:</strong> empilha itens (listas, menus).
+                <strong>Horizontal:</strong> lado a lado (botões, breadcrumbs).
+                <strong>Wrap:</strong> quebra para nova linha.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                📏 Espaçamento (Gap)
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Distância entre os itens internos. Pode ser igual para todos ou
+                personalizado (horizontal e vertical diferentes).
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                📐 Padding
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Espaço interno entre a borda do contêiner e o conteúdo. Pode ser
+                igual nos 4 lados ou personalizado.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                📦 Alinhamento (Alignment)
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Como os itens se alinham no eixo principal (topo, centro, base)
+                e no eixo cruzado (esquerda, centro, direita).
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                🔄 Resizing
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                <strong>Hug Contents:</strong> abraça o conteúdo.
+                <strong>Fill Container:</strong> preenche o espaço disponível.
+                <strong>Fixed:</strong> tamanho fixo.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                🎨 Distribuição
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Como o espaço extra é distribuído entre os itens quando há Fill
+                Container (packed, space between).
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🧪</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Onde usar Auto Layout</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #3949ab;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #1a237e; font-size: 12px">
+                🔘 Botões
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Texto + padding ajustam automaticamente
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #3949ab;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #1a237e; font-size: 12px">
+                📋 Listas de Cards
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Adicionar/remover itens sem quebrar o layout
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #3949ab;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #1a237e; font-size: 12px">
+                📝 Formulários
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Campos se ajustam ao tamanho do frame
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+            "
+          >
+            <span style="color: #78909c"
+              >/* Como aplicar Auto Layout no Figma */</span
+            ><br />
+            <span style="color: #e0e0e0"
+              >1. Selecione o frame ou grupo de elementos</span
+            ><br />
+            <span style="color: #e0e0e0"
+              >2. Pressione
+              <strong style="color: #ffcc02">Shift + A</strong> (atalho) ou
+              clique em "+" no painel Auto Layout</span
+            ><br />
+            <span style="color: #e0e0e0"
+              >3. Ajuste direção, gap, padding e alinhamento no painel
+              direito</span
+            ><br /><br />
+            <span style="color: #78909c"
+              >/* Exemplo: Navbar com Auto Layout */</span
+            ><br />
+            <span style="color: rgb(255, 204, 2)">Navbar</span>
+            <span style="color: #90a4ae"
+              >→ Direction: Horizontal | Gap: 24px | Padding: 16px 120px</span
+            ><br />
+            <span style="color: rgb(255, 204, 2)">Menu Links</span>
+            <span style="color: #90a4ae"
+              >→ Direction: Horizontal | Gap: 32px | Align: Center</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — FINALIZAÇÃO DE TELAS   -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >✅ Finalização de Telas — O Checklist do Profissional</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 243, 224),
+                rgb(255, 248, 245)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #bf360c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que significa "finalizar" uma tela?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              Finalizar uma tela vai além de apenas desenhar os elementos.
+              Significa
+              <strong style="font-size: 13px"
+                >garantir que tudo está pronto para entrega</strong
+              >: componentes nomeados, camadas organizadas, cores consistentes,
+              textos reais, prototipagem funcional e documentação adequada. É o
+              <strong style="font-size: 13px">acabamento profissional</strong>
+              que separa um projeto amador de um portfolio de respeito.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">✅</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Checklist de Finalização de Telas</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                🎨 Cores e Estilos
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                ✅ Todas as cores vêm do Style Guide (não há cores "soltas")<br />✅
+                Textos usam Text Styles (não há font-size manual)<br />✅
+                Contraste de cores validado (WCAG AA)
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                🧩 Componentes
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                ✅ Elementos repetidos são componentes (não grupos soltos)<br />✅
+                Variantes configuradas (primary, secondary, disabled)<br />✅
+                Instâncias usadas (não cópias desconectadas)
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                📐 Layout e Grid
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                ✅ Todos elementos alinhados ao grid<br />✅ Auto Layout
+                aplicado em listas e containers<br />✅ Espaçamentos seguem a
+                escala do projeto (ex: 8px)
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                📝 Conteúdo
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                ✅ Textos reais (não Lorem Ipsum genérico)<br />✅ Imagens
+                finais (não placeholders cinza)<br />✅ Ícones da biblioteca
+                oficial do projeto
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                🔗 Prototipagem
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                ✅ Todos botões e links têm conexões<br />✅ Animações
+                configuradas (Smart Animate)<br />✅ Fluxos de erro e sucesso
+                contemplados
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                📂 Organização
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                ✅ Camadas nomeadas (não "Rectangle 237")<br />✅ Páginas
+                organizadas por funcionalidade<br />✅ Componentes na página
+                Assets/Components
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px"
+              >💡 Regra de ouro da finalização:</strong
+            >
+            Antes de entregar, faça a "pergunta do desenvolvedor":
+            <em
+              >"Se eu recebesse este arquivo para codar, eu saberia exatamente o
+              que fazer sem precisar perguntar nada?"</em
+            >
+            Se a resposta for não, ainda há trabalho a fazer.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — ORGANIZAÇÃO DO POSTO   -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📂 Organização do Posto de Trabalho — Fluxo Profissional</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(224, 242, 241),
+                rgb(232, 245, 233)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Por que organizar o posto de trabalho?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              Um arquivo Figma desorganizado é como uma
+              <strong style="font-size: 13px"
+                >oficina com ferramentas espalhadas</strong
+              >
+              — você perde tempo procurando, comete erros e entrega com menos
+              qualidade. A organização do posto de trabalho
+              <strong style="font-size: 13px">aumenta a produtividade</strong>,
+              facilita a colaboração em equipe e torna a manutenção do projeto
+              muito mais simples.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📂</span
+            ><span style="color: #00695c; font-size: 14px; font-weight: 800"
+              >Estrutura de Páginas Recomendada</span
+            >
+          </div>
+          <div
+            style="
+              background: #0d1b4b;
+              border-radius: 12px;
+              padding: 18px;
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 13px;
+              line-height: 2;
+              box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
+              margin-bottom: 18px;
+            "
+          >
+            <span style="color: #ffcc02">📄 Páginas do Arquivo Figma</span
+            ><br />
+            <span style="color: rgb(144, 202, 249)">├──</span>
+            <span style="color: #e0e0e0"
+              >🎨 <strong>Style Guide</strong> (cores, tipografia, ícones)</span
+            ><br />
+            <span style="color: rgb(144, 202, 249)">├──</span>
+            <span style="color: #e0e0e0"
+              >🧩 <strong>Components</strong> (botões, cards, inputs,
+              modais)</span
+            ><br />
+            <span style="color: rgb(144, 202, 249)">├──</span>
+            <span style="color: #e0e0e0"
+              >📱 <strong>Mobile</strong> (todas as telas mobile)</span
+            ><br />
+            <span style="color: rgb(144, 202, 249)">├──</span>
+            <span style="color: #e0e0e0"
+              >💻 <strong>Desktop</strong> (todas as telas desktop)</span
+            ><br />
+            <span style="color: rgb(144, 202, 249)">├──</span>
+            <span style="color: #e0e0e0"
+              >🔗 <strong>Prototype</strong> (fluxos navegáveis
+              organizados)</span
+            ><br />
+            <span style="color: rgb(144, 202, 249)">└──</span>
+            <span style="color: #e0e0e0"
+              >🗑️ <strong>Archive</strong> (versões antigas, rascunhos)</span
+            >
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📐</span
+            ><span style="color: #00695c; font-size: 14px; font-weight: 800"
+              >Convenções de Nomenclatura</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                ✅ Nomes de Frames
+              </div>
+              <div
+                style="color: #37474f; font-size: 11px; font-family: monospace"
+              >
+                Home/v1 · Checkout/Step2 · Modal/Confirm<br /><strong
+                  >Formato:</strong
+                >
+                Funcionalidade/Variação
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                ✅ Nomes de Componentes
+              </div>
+              <div
+                style="color: #37474f; font-size: 11px; font-family: monospace"
+              >
+                Button/Primary/Default · Card/Product<br /><strong
+                  >Formato:</strong
+                >
+                Tipo/Variação/Estado
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                ✅ Nomes de Camadas
+              </div>
+              <div
+                style="color: #37474f; font-size: 11px; font-family: monospace"
+              >
+                Header · Hero Image · CTA Button<br />Nomes descritivos, nunca
+                "Rectangle 237"
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                ✅ Ordenação de Camadas
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Da mais externa (container) para a mais interna (texto). Use
+                Auto Layout sempre que possível.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🛠️</span
+            ><span style="color: #00695c; font-size: 14px; font-weight: 800"
+              >Ferramentas e Atalhos para Produtividade</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                ⌨️ Atalhos Essenciais
+              </div>
+              <div
+                style="
+                  color: #37474f;
+                  font-size: 11px;
+                  font-family: monospace;
+                  line-height: 1.8;
+                "
+              >
+                Shift + A → Auto Layout<br />Ctrl + Alt + K → Criar
+                Componente<br />Ctrl + G → Agrupar em Frame<br />Ctrl + R →
+                Renomear camada<br />Ctrl + / → Buscar comandos
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                🔌 Plugins Úteis
+              </div>
+              <div
+                style="
+                  color: #37474f;
+                  font-size: 11px;
+                  font-family: monospace;
+                  line-height: 1.8;
+                "
+              >
+                • Rename It → Renomear em lote<br />• Similayer → Selecionar
+                camadas similares<br />• Clean Document → Limpar estilos não
+                usados<br />• Design Lint → Verificar consistência
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — EXEMPLO COMPLETO       -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧪 Exemplo Prático — Organização de um Projeto Real</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              color: #37474f;
+              font-size: 13px;
+              line-height: 1.8;
+              margin-bottom: 16px;
+            "
+          >
+            Veja como seria a estrutura de um projeto profissional de landing
+            page no Figma, do início ao fim:
+          </div>
+
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+              font-size: 14px;
+            "
+          >
+            <!-- Passo 1 -->
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 12px;
+                padding: 16px 18px;
+                border-left: 5px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  margin-bottom: 6px;
+                "
+              >
+                <span
+                  style="
+                    background: #6a1b9a;
+                    color: #fff;
+                    border-radius: 50%;
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 800;
+                    font-size: 12px;
+                  "
+                  >1</span
+                ><span style="color: #4a148c; font-size: 13px; font-weight: 800"
+                  >Configure o arquivo base</span
+                >
+              </div>
+              <div style="color: #37474f; font-size: 12px">
+                Crie as páginas: Style Guide, Components, Mobile, Desktop,
+                Prototype. Defina grids para cada breakpoint.
+              </div>
+            </div>
+            <!-- Passo 2 -->
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 12px;
+                padding: 16px 18px;
+                border-left: 5px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  margin-bottom: 6px;
+                "
+              >
+                <span
+                  style="
+                    background: #6a1b9a;
+                    color: #fff;
+                    border-radius: 50%;
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 800;
+                    font-size: 12px;
+                  "
+                  >2</span
+                ><span style="color: #4a148c; font-size: 13px; font-weight: 800"
+                  >Crie os componentes base</span
+                >
+              </div>
+              <div style="color: #37474f; font-size: 12px">
+                Button, Input, Card, Navbar, Footer como componentes principais.
+                Adicione variantes. Use Auto Layout em todos.
+              </div>
+            </div>
+            <!-- Passo 3 -->
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 12px;
+                padding: 16px 18px;
+                border-left: 5px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  margin-bottom: 6px;
+                "
+              >
+                <span
+                  style="
+                    background: #6a1b9a;
+                    color: #fff;
+                    border-radius: 50%;
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 800;
+                    font-size: 12px;
+                  "
+                  >3</span
+                ><span style="color: #4a148c; font-size: 13px; font-weight: 800"
+                  >Monte as telas (Mobile First)</span
+                >
+              </div>
+              <div style="color: #37474f; font-size: 12px">
+                Comece pelo mobile (375px). Use componentes arrastando do
+                Assets. Ajuste textos e imagens com conteúdo real.
+              </div>
+            </div>
+            <!-- Passo 4 -->
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 12px;
+                padding: 16px 18px;
+                border-left: 5px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  margin-bottom: 6px;
+                "
+              >
+                <span
+                  style="
+                    background: #6a1b9a;
+                    color: #fff;
+                    border-radius: 50%;
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 800;
+                    font-size: 12px;
+                  "
+                  >4</span
+                ><span style="color: #4a148c; font-size: 13px; font-weight: 800"
+                  >Adapte para Desktop</span
+                >
+              </div>
+              <div style="color: #37474f; font-size: 12px">
+                Duplique as telas mobile, mude para frame Desktop (1440px),
+                ajuste layout para 12 colunas. Componentes se adaptam com Auto
+                Layout.
+              </div>
+            </div>
+            <!-- Passo 5 -->
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 12px;
+                padding: 16px 18px;
+                border-left: 5px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  margin-bottom: 6px;
+                "
+              >
+                <span
+                  style="
+                    background: #6a1b9a;
+                    color: #fff;
+                    border-radius: 50%;
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 800;
+                    font-size: 12px;
+                  "
+                  >5</span
+                ><span style="color: #4a148c; font-size: 13px; font-weight: 800"
+                  >Prototipe e Revise</span
+                >
+              </div>
+              <div style="color: #37474f; font-size: 12px">
+                Conecte os fluxos na página Prototype. Revise cores, tipografia,
+                alinhamentos. Verifique o checklist de finalização.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              margin-top: 16px;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Dica de ouro:</strong> Reserve os
+            <strong>últimos 30 minutos</strong> de cada sessão de design apenas
+            para organizar: renomear camadas, limpar estilos não usados, revisar
+            componentes e garantir que tudo está no lugar. Isso evita o acúmulo
+            de bagunça e torna a entrega final muito mais rápida.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 5 — BOAS PRÁTICAS          -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >5</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >✅ Boas Práticas e Hábitos de um Designer Profissional</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 16px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 14px;
+                padding: 20px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 12px;
+                "
+              >
+                ✅ O que fazer
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ✅ Use Auto Layout em <strong>todos</strong> os componentes<br />
+                ✅ Nomeie camadas assim que criá-las<br />
+                ✅ Mantenha Style Guide e Components em páginas separadas<br />
+                ✅ Use a escala de 8px para todos os espaçamentos<br />
+                ✅ Faça commit semântico (versões nomeadas)<br />
+                ✅ Revise o checklist de finalização antes de entregar<br />
+                ✅ Peça feedback de um desenvolvedor sobre o arquivo<br />
+                ✅ Arquive versões antigas na página Archive
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 14px;
+                padding: 20px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 12px;
+                "
+              >
+                ❌ O que evitar
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ❌ Camadas com nomes genéricos ("Rectangle 237")<br />
+                ❌ Ajustar posições manualmente sem Auto Layout<br />
+                ❌ Cores e fontes fora do Style Guide<br />
+                ❌ Deixar "para depois" a organização<br />
+                ❌ Criar componentes sem variantes (muitos soltos)<br />
+                ❌ Ignorar o grid (elementos "flutuando")<br />
+                ❌ Entregar sem revisar o protótipo<br />
+                ❌ Misturar rascunhos com telas finais na mesma página
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-top: 16px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              🔄 Ciclo de Trabalho Profissional
+            </div>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                flex-wrap: wrap;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #1a237e;
+                  color: #fff;
+                  border-radius: 10px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  text-align: center;
+                "
+              >
+                Configurar<br /><span style="font-weight: 400; font-size: 10px"
+                  >Grid + Páginas</span
+                >
+              </div>
+              <div style="color: #1a237e; font-size: 18px; font-weight: 900">
+                →
+              </div>
+              <div
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 10px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  text-align: center;
+                "
+              >
+                Componentizar<br /><span
+                  style="font-weight: 400; font-size: 10px"
+                  >Auto Layout</span
+                >
+              </div>
+              <div style="color: #1a237e; font-size: 18px; font-weight: 900">
+                →
+              </div>
+              <div
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 10px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  text-align: center;
+                "
+              >
+                Montar Telas<br /><span
+                  style="font-weight: 400; font-size: 10px"
+                  >Mobile → Desktop</span
+                >
+              </div>
+              <div style="color: #1a237e; font-size: 18px; font-weight: 900">
+                →
+              </div>
+              <div
+                style="
+                  background: #6a1b9a;
+                  color: #fff;
+                  border-radius: 10px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  text-align: center;
+                "
+              >
+                Finalizar<br /><span style="font-weight: 400; font-size: 10px"
+                  >Checklist</span
+                >
+              </div>
+              <div style="color: #1a237e; font-size: 18px; font-weight: 900">
+                →
+              </div>
+              <div
+                style="
+                  background: #2e7d32;
+                  color: #fff;
+                  border-radius: 10px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-weight: 800;
+                  text-align: center;
+                "
+              >
+                Organizar<br /><span style="font-weight: 400; font-size: 10px"
+                  >Limpeza final</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da Aula</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">⚡</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Auto Layout: layouts automatizados
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">✅</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Finalização: checklist profissional
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📂</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Organização: produtividade e colaboração
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Auto Layout</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Finalização</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Organização</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Nomenclatura</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Componentes</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Checklist</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

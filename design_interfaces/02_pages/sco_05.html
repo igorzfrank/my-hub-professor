@@ -1,0 +1,1612 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../design_interfaces.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🎨 Design de Interfaces · Avaliação & Princípios</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Crítica de Design<br style="font-size: 28px" /><span
+              style="color: rgb(206, 147, 216); font-size: 28px"
+              >Leis de Proximidade & Alinhamento</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Como avaliar designs com olhar crítico · Princípios da Gestalt
+            aplicados · Feedback construtivo em equipe
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Crítica</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Proximidade</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Alinhamento</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Gestalt</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Feedback</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — CRÍTICA DE DESIGN     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔍 Crítica de Design — O Que É e Como Fazer</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(232, 234, 246),
+                rgb(237, 231, 246)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(92, 107, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é Crítica de Design?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(57, 73, 171);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Crítica de Design</span
+              >
+              (Design Critique) é um processo estruturado de
+              <strong style="font-size: 13px">análise e feedback</strong> sobre
+              um trabalho de design. Diferente de uma "opinião pessoal", a
+              crítica é baseada em
+              <strong style="font-size: 13px">princípios objetivos</strong> e
+              tem como meta
+              <strong style="font-size: 13px">melhorar o design</strong>, não
+              julgar o designer. É uma das habilidades mais importantes para
+              crescer profissionalmente.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              A crítica de design é como um
+              <strong style="font-size: 13px"
+                >treinador analisando a performance de um atleta</strong
+              >. Ele não diz "você é ruim" — ele aponta: "seu joelho está caindo
+              para dentro na aterrissagem, ajuste para evitar lesões". É
+              específico, acionável e focado em melhorar o resultado.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⚖️</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Crítica vs. Opinião Pessoal</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 10px;
+                padding: 16px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                ✅ Crítica Construtiva
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+                • Baseada em <strong>princípios objetivos</strong><br />
+                • Aponta <strong>problemas específicos</strong><br />
+                • Sugere <strong>caminhos de solução</strong><br />
+                • Foca no <strong>trabalho</strong>, não na pessoa<br />
+                • Pergunta <strong>"por quê?"</strong> antes de julgar<br />
+                • Exemplo: "O botão CTA está competindo com o título. Se reduzir
+                o título, o CTA ganha destaque."
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 10px;
+                padding: 16px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                ❌ Opinião Pessoal (evitar)
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+                • Baseada em <strong>gosto pessoal</strong><br />
+                • Comentários <strong>vagos e genéricos</strong><br />
+                • Não oferece <strong>solução</strong><br />
+                • Pode soar como <strong>ataque pessoal</strong><br />
+                • Não fundamenta <strong>o motivo</strong><br />
+                • Exemplo: "Não gostei das cores." / "Tá feio."
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📋</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >O Método "Eu Gosto, Eu Desejo, E Se..."</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 8px;
+                padding: 12px 14px;
+                border-left: 4px solid #3949ab;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                👍 Eu Gosto — Reforce o que está funcionando
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Comece sempre pelo positivo. Isso cria um ambiente seguro e
+                mostra que você reconhece o trabalho bem feito. Ex: "Gosto de
+                como a hierarquia de títulos guia o olhar."
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 8px;
+                padding: 12px 14px;
+                border-left: 4px solid #3949ab;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                💭 Eu Desejo — Sugira melhorias específicas
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Aponte o que pode ser melhorado de forma construtiva. Ex:
+                "Desejo que o CTA tivesse mais contraste com o fundo para se
+                destacar."
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 8px;
+                padding: 12px 14px;
+                border-left: 4px solid #3949ab;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                🤔 E Se... — Abra possibilidades criativas
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Provoque reflexão sem impor. Ex: "E se testarmos o botão na cor
+                laranja em vez de azul para criar mais urgência?"
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #3949ab;
+              font-size: 13px;
+              color: #1a237e;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px"
+              >🧠 Regra de ouro da crítica:</strong
+            >
+            Critique o <strong>design</strong>, nunca o
+            <strong>designer</strong>. Em vez de "você errou no alinhamento",
+            diga "o alinhamento deste elemento pode ser revisado para seguir o
+            grid". Isso mantém o foco no problema e preserva o relacionamento
+            profissional.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — LEI DA PROXIMIDADE     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📏 LEI DA PROXIMIDADE — Elementos Próximos são Relacionados</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 243, 224),
+                rgb(255, 248, 245)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #bf360c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é a Lei da Proximidade?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(230, 81, 0);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Lei da Proximidade</span
+              >
+              é um princípio da psicologia da Gestalt que afirma:
+              <strong style="font-size: 13px"
+                >elementos visualmente próximos são percebidos como
+                relacionados</strong
+              >
+              ou pertencentes a um mesmo grupo. É um dos princípios mais
+              poderosos para organizar informação em interfaces.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Em uma festa, as pessoas que conversam
+              <strong style="font-size: 13px">próximas</strong> umas das outras
+              são percebidas como um "grupo". Quem está
+              <strong style="font-size: 13px">longe</strong> parece estar em
+              outra conversa. No design, funciona igual: o cérebro agrupa
+              automaticamente o que está próximo.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📐</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Como aplicar a Proximidade na Crítica de Design</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 10px;
+                padding: 16px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                ✅ Checklist — Proximidade
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+                ✅ Campos relacionados estão agrupados?<br />
+                ✅ Espaçamento entre grupos é maior que dentro do grupo?<br />
+                ✅ Elementos de um mesmo card estão próximos?<br />
+                ✅ Botão de ação está próximo ao elemento que afeta?<br />
+                ✅ Labels estão visualmente conectados aos seus campos?<br />
+                ✅ Título está mais próximo do seu parágrafo do que de outros
+                títulos?
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 10px;
+                padding: 16px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                ❌ Erros comuns de Proximidade
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+                ❌ Campos de formulário com muito espaço entre eles<br />
+                ❌ Botão "Comprar" longe do preço do produto<br />
+                ❌ Menu com espaçamento irregular entre itens<br />
+                ❌ Labels distantes dos campos de formulário<br />
+                ❌ Rodapé com links muito próximos (tudo parece um bloco só)<br />
+                ❌ Imagens sem legenda ou com legenda distante
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #fff3e0;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #f57c00;
+              font-size: 13px;
+              color: #e65100;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px"
+              >💡 Pergunta-chave na crítica:</strong
+            >
+            <em
+              >"Se eu olhar rapidamente para esta tela, consigo identificar
+              quais elementos estão relacionados entre si apenas pela
+              proximidade?"</em
+            >
+            Se a resposta for não, há problemas de agrupamento.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — LEI DO ALINHAMENTO     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📐 LEI DO ALINHAMENTO — Ordem Visual e Previsibilidade</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(224, 242, 241),
+                rgb(232, 245, 233)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é a Lei do Alinhamento?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(0, 105, 92);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Lei do Alinhamento</span
+              >
+              é o princípio que estabelece que elementos devem ser organizados
+              ao longo de
+              <strong style="font-size: 13px">linhas imaginárias</strong>,
+              criando
+              <strong style="font-size: 13px"
+                >ordem, equilíbrio e legibilidade</strong
+              >. O olho humano busca naturalmente padrões de alinhamento —
+              quando não encontra, sente desconforto visual.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Pense em um
+              <strong style="font-size: 13px">exército em formação</strong>.
+              Soldados alinhados passam sensação de organização e disciplina.
+              Soldados desalinhados parecem uma multidão bagunçada. No design,
+              cada pixel fora do alinhamento é como um soldado fora de posição.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📐</span
+            ><span style="color: #00695c; font-size: 14px; font-weight: 800"
+              >Tipos de Alinhamento</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #004d40; font-size: 12px">
+                ⬅️ Esquerda
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Padrão ocidental de leitura. Ideal para textos e formulários.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #004d40; font-size: 12px">
+                ⏺️ Centro
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Para títulos, CTAs e elementos de destaque. Evite em textos
+                longos.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #004d40; font-size: 12px">
+                ➡️ Direita
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Para números em tabelas e valores. Use com moderação.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 10px;
+                padding: 16px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                ✅ Checklist — Alinhamento
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+                ✅ Elementos seguem alinhamento consistente (esquerda)?<br />
+                ✅ Usei um sistema de grid ou colunas?<br />
+                ✅ Títulos e textos estão alinhados verticalmente?<br />
+                ✅ Elementos em colunas estão perfeitamente alinhados?<br />
+                ✅ Ícones estão alinhados com seus textos?<br />
+                ✅ Botões na mesma linha têm a mesma altura?
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 10px;
+                padding: 16px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 13px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                ❌ Erros comuns de Alinhamento
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.8">
+                ❌ Textos centralizados em parágrafos longos<br />
+                ❌ Botões com tamanhos diferentes na mesma linha<br />
+                ❌ Ícones desalinhados com o texto ao lado<br />
+                ❌ Margens inconsistentes entre seções<br />
+                ❌ Elementos "flutuando" sem conexão visual<br />
+                ❌ Grid quebrado em diferentes resoluções
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e0f2f1;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #00897b;
+              font-size: 13px;
+              color: #004d40;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px"
+              >💡 Pergunta-chave na crítica:</strong
+            >
+            <em
+              >"Se eu traçar linhas guia nesta tela, todos os elementos se
+              encaixam em alguma linha ou há elementos 'soltos' sem relação com
+              o grid?"</em
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — DINÂMICA DE CRÍTICA    -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔄 Dinâmica de Crítica em Equipe — Como Conduzir</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(243, 229, 245),
+                rgb(248, 240, 255)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(106, 27, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Objetivo da dinâmica
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              A crítica em equipe não é um "tribunal" — é um
+              <strong style="font-size: 13px"
+                >espaço colaborativo de aprendizado</strong
+              >. O objetivo é que
+              <strong style="font-size: 13px">todos aprendam</strong> — tanto
+              quem recebe o feedback quanto quem o dá. Com o tempo, a equipe
+              desenvolve um
+              <strong style="font-size: 13px">olhar crítico coletivo</strong>
+              que eleva a qualidade de todos os projetos.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📋</span
+            ><span style="color: #4a148c; font-size: 14px; font-weight: 800"
+              >Regras de Ouro para a Dinâmica</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                👤 Para quem recebe o feedback
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.7">
+                • Apresente o <strong>contexto</strong> antes de mostrar a
+                tela<br />• Não se defenda —
+                <strong>escute</strong> primeiro<br />• Tome
+                <strong>notas</strong> de todos os pontos levantados<br />•
+                Pergunte <strong>"por quê?"</strong> para entender a raiz do
+                problema<br />• Agradeça o feedback, mesmo que não concorde<br />•
+                Priorize as melhorias depois, com calma
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                🗣️ Para quem dá o feedback
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.7">
+                • Comece pelo <strong>positivo</strong> (Eu Gosto...)<br />•
+                Seja <strong>específico</strong> — aponte o elemento exato<br />•
+                Fundamente em <strong>princípios</strong> (proximidade,
+                alinhamento, contraste)<br />• Ofereça
+                <strong>sugestões</strong>, não apenas críticas<br />• Use o
+                método <strong>"Eu Gosto, Eu Desejo, E Se..."</strong><br />•
+                Critique o design, nunca o designer
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⏱️</span
+            ><span style="color: #4a148c; font-size: 14px; font-weight: 800"
+              >Roteiro para uma Sessão de Crítica de 30 Minutos</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 8px;
+                padding: 12px 14px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                ⏱️ 0-5 min — Apresentação do Contexto
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                O designer apresenta: objetivo do projeto, público-alvo,
+                briefing resumido e o que espera receber de feedback.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 8px;
+                padding: 12px 14px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                ⏱️ 5-15 min — Observação Silenciosa
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Todos observam a tela em silêncio e anotam seus pontos. Isso
+                evita que a primeira opinião influencie as demais.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 8px;
+                padding: 12px 14px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                ⏱️ 15-25 min — Rodada de Feedback
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Cada pessoa compartilha seus pontos usando o método "Eu Gosto,
+                Eu Desejo, E Se...". O designer apenas escuta e anota.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 8px;
+                padding: 12px 14px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                ⏱️ 25-30 min — Fechamento e Priorização
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                O designer resume os principais pontos, agradece e indica quais
+                melhorias pretende priorizar. A equipe alinha expectativas.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Dica final:</strong> Grave ou
+            documente as críticas. O que parece "pouco" hoje pode ser valioso
+            amanhã. Além disso, revisitar críticas antigas mostra sua evolução
+            como designer ao longo do tempo.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 5 — EXEMPLO PRÁTICO        -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >5</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧪 Exemplo Prático — Aplicando Crítica, Proximidade e
+            Alinhamento</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              color: #37474f;
+              font-size: 13px;
+              line-height: 1.8;
+              margin-bottom: 16px;
+            "
+          >
+            Veja um exemplo de como seria uma crítica baseada nos princípios de
+            proximidade e alinhamento em um formulário de cadastro:
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 12px;
+                padding: 18px;
+                border: 2px solid rgb(239, 154, 154);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ❌ Antes — Com problemas
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                <strong style="color: #c62828">Proximidade:</strong> Label
+                "Nome" distante do campo. Label "Email" próximo do campo de
+                telefone. Botão "Enviar" longe do formulário.<br /><br />
+                <strong style="color: #c62828">Alinhamento:</strong> Campos com
+                larguras diferentes. Labels alinhados à esquerda mas campos
+                começando em posições diferentes. Botão centralizado enquanto
+                campos alinhados à esquerda.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 12px;
+                padding: 18px;
+                border: 2px solid rgb(200, 230, 201);
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #2e7d32;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ Depois — Corrigido
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                <strong style="color: #2e7d32">Proximidade:</strong> Cada label
+                colado ao seu campo. Espaço maior entre grupos (Nome/Email) e
+                (Senha/Confirmar). Botão próximo ao último campo.<br /><br />
+                <strong style="color: #2e7d32">Alinhamento:</strong> Todos os
+                labels alinhados à esquerda na mesma linha vertical. Todos os
+                campos com a mesma largura. Botão alinhado à esquerda com os
+                campos.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">✅ Feedback que seria dado:</strong>
+            <em
+              >"Gosto da escolha de cores e da hierarquia do título. Desejo que
+              os labels ficassem mais próximos dos seus campos — atualmente o
+              label 'Email' parece relacionado ao campo de telefone. E se
+              alinharmos todos os campos pela mesma linha vertical? Isso criaria
+              uma linha de leitura mais fluida."</em
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da Aula</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔍</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Crítica: feedback baseado em princípios
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📏</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Proximidade: agrupar o que é relacionado
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📐</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Alinhamento: ordem e previsibilidade
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Crítica</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Proximidade</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Alinhamento</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Gestalt</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Feedback</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Dinâmica</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

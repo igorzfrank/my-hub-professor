@@ -1,0 +1,2008 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../design_interfaces.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >🎨 Design de Interfaces · UI/UX Design</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Fundamentos de Design Visual<br style="font-size: 28px" /><span
+              style="color: rgb(206, 147, 216); font-size: 28px"
+              >Grids, Cores, Tipografia & Style Guides</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Diagramação industrial · Sistemas de grid · Paletas cromáticas ·
+            Hierarquia tipográfica · Documentação de design
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Grids</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Paletas</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Tipografia</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Style Guide</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Diagramação</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — DIAGRAMAÇÃO E GRIDS    -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(26, 35, 126),
+              rgb(40, 53, 147)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📐 Diagramação Industrial & Sistemas de Grid</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(232, 234, 246),
+                rgb(237, 231, 246)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(92, 107, 192);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #1a237e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é Diagramação?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              <span
+                style="
+                  background: rgb(57, 73, 171);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Diagramação</span
+              >
+              é a arte de
+              <strong style="font-size: 13px"
+                >organizar elementos visuais</strong
+              >
+              (textos, imagens, gráficos) em uma superfície de forma harmônica e
+              funcional. No design digital, utiliza
+              <strong style="font-size: 13px">sistemas de grid</strong> para
+              criar layouts consistentes, equilibrados e que guiam o olhar do
+              usuário de forma natural.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              O grid é como a
+              <strong style="font-size: 13px"
+                >estrutura de aço de um prédio</strong
+              >
+              — invisível para quem olha de fora, mas essencial para que tudo
+              fique em pé, alinhado e seguro. Sem grid, o layout desmorona
+              visualmente.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📏</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Tipos de Grid</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                📐 Grid de Colunas
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                O mais comum na web. Divide a tela em colunas verticais (ex: 12
+                colunas). Usado em Bootstrap, Material Design e na maioria dos
+                sites.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                📏 Grid Modular
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Divide em linhas e colunas formando módulos. Ideal para layouts
+                complexos como dashboards e portais de notícias.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                📰 Grid Hierárquico
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Organiza o conteúdo por importância visual. Muito usado em
+                landing pages e sites institucionais.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(57, 73, 171);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #1a237e; font-size: 12px; font-weight: 800">
+                📱 Grid Responsivo
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Adapta o número de colunas conforme o tamanho da tela. Ex: 4
+                colunas no mobile, 8 no tablet, 12 no desktop.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⚙️</span
+            ><span style="color: #283593; font-size: 14px; font-weight: 800"
+              >Elementos de um Grid</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #3949ab;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #1a237e; font-size: 12px">
+                📐 Colunas
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Faixas verticais onde o conteúdo é posicionado.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #3949ab;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #1a237e; font-size: 12px">
+                📏 Margens
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Espaço externo nas laterais da tela (respiro).
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 234, 246);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #3949ab;
+                font-size: 14px;
+              "
+            >
+              <div style="font-weight: 800; color: #1a237e; font-size: 12px">
+                ⬜ Gutters
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Espaçamento entre as colunas (separação).
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — PALETAS DE CORES       -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🎨 Paletas de Cores — Teoria e Aplicação</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 243, 224),
+                rgb(255, 248, 245)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #bf360c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Por que as cores importam?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              As cores
+              <strong style="font-size: 13px"
+                >comunicam antes mesmo das palavras</strong
+              >. Elas evocam emoções, criam hierarquia visual, guiam o olhar e
+              constroem a identidade da marca. Uma paleta bem definida é a
+              <strong style="font-size: 13px">assinatura visual</strong> de
+              qualquer produto digital.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🎯</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Estrutura de uma Paleta Profissional</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                🎯 Cor Primária
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                A cor principal da marca. Usada em botões, links e elementos de
+                destaque. Representa a identidade.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                🎨 Cor Secundária
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Complementa a primária. Usada em elementos secundários, hover
+                states e backgrounds.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                ⬜ Cores Neutras
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Branco, cinzas e preto. Para textos, fundos, bordas e
+                superfícies. A base de qualquer paleta.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                ✅ Cores Semânticas
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Verde = sucesso, Vermelho = erro, Amarelo = alerta, Azul =
+                informação. Comunicam estado.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🔢</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Sistema de Variações (Tonalidades)</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-bottom: 18px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #0d47a1;
+                color: #fff;
+                border-radius: 8px;
+                padding: 14px 16px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 800;
+                flex: 1;
+                min-width: 60px;
+              "
+            >
+              900
+            </div>
+            <div
+              style="
+                background: #1565c0;
+                color: #fff;
+                border-radius: 8px;
+                padding: 14px 16px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 800;
+                flex: 1;
+                min-width: 60px;
+              "
+            >
+              700
+            </div>
+            <div
+              style="
+                background: #1976d2;
+                color: #fff;
+                border-radius: 8px;
+                padding: 14px 16px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 800;
+                flex: 1;
+                min-width: 60px;
+              "
+            >
+              500
+            </div>
+            <div
+              style="
+                background: #42a5f5;
+                color: #fff;
+                border-radius: 8px;
+                padding: 14px 16px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 800;
+                flex: 1;
+                min-width: 60px;
+              "
+            >
+              300
+            </div>
+            <div
+              style="
+                background: #90caf9;
+                color: #0d47a1;
+                border-radius: 8px;
+                padding: 14px 16px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 800;
+                flex: 1;
+                min-width: 60px;
+              "
+            >
+              100
+            </div>
+            <div
+              style="
+                background: #e3f2fd;
+                color: #0d47a1;
+                border-radius: 8px;
+                padding: 14px 16px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 800;
+                flex: 1;
+                min-width: 60px;
+              "
+            >
+              50
+            </div>
+          </div>
+          <div
+            style="
+              color: #37474f;
+              font-size: 12px;
+              line-height: 1.7;
+              text-align: center;
+              margin-bottom: 16px;
+            "
+          >
+            Cada cor primária e secundária deve ter uma escala de
+            <strong>6 a 10 variações</strong> (do mais escuro ao mais claro)
+            para garantir flexibilidade em diferentes contextos.
+          </div>
+
+          <div
+            style="
+              background: #e8f5e9;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #2e7d32;
+              font-size: 13px;
+              color: #1b5e20;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Regra 60-30-10:</strong> Use 60%
+            de cor neutra (fundo), 30% de cor primária (elementos principais) e
+            10% de cor de destaque (CTAs). Isso cria equilíbrio visual imediato.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — TIPOGRAFIA             -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔤 Tipografia — A Voz do Design</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(224, 242, 241),
+                rgb(232, 245, 233)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Por que a tipografia é essencial?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              A tipografia é o principal
+              <strong style="font-size: 13px">veículo de informação</strong> em
+              uma interface. Ela estabelece hierarquia, transmite personalidade
+              e garante legibilidade. Uma boa escolha tipográfica passa
+              <strong style="font-size: 13px"
+                >credibilidade e profissionalismo</strong
+              >.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📂</span
+            ><span style="color: #00695c; font-size: 14px; font-weight: 800"
+              >Classificação das Fontes</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 22px;
+                  font-family: Georgia, serif;
+                  font-weight: 800;
+                  color: #004d40;
+                "
+              >
+                Serif
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Com "pés". Clássica, formal, tradicional. Boa para títulos e
+                textos longos impressos.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 22px;
+                  font-family: Arial, sans-serif;
+                  font-weight: 800;
+                  color: #004d40;
+                "
+              >
+                Sans-Serif
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Sem "pés". Moderna, limpa, neutra. Padrão para interfaces
+                digitais e corpo de texto.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-top: 3px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  font-size: 22px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-weight: 800;
+                  color: #004d40;
+                "
+              >
+                Mono
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Largura fixa. Usada para código, dados tabulares e terminais.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📏</span
+            ><span style="color: #00695c; font-size: 14px; font-weight: 800"
+              >Hierarquia Tipográfica (Type Scale)</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              align-items: flex-end;
+              gap: 12px;
+              margin-bottom: 18px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <div style="text-align: center; font-size: 14px">
+              <div
+                style="
+                  font-size: 36px;
+                  font-weight: 900;
+                  color: #004d40;
+                  line-height: 1.2;
+                "
+              >
+                H1
+              </div>
+              <div style="font-size: 10px; color: #546e7a">
+                32-48px · Título principal
+              </div>
+            </div>
+            <div style="text-align: center; font-size: 14px">
+              <div
+                style="
+                  font-size: 26px;
+                  font-weight: 800;
+                  color: #00695c;
+                  line-height: 1.2;
+                "
+              >
+                H2
+              </div>
+              <div style="font-size: 10px; color: #546e7a">
+                24-36px · Subtítulo
+              </div>
+            </div>
+            <div style="text-align: center; font-size: 14px">
+              <div
+                style="
+                  font-size: 18px;
+                  font-weight: 700;
+                  color: #00897b;
+                  line-height: 1.2;
+                "
+              >
+                H3
+              </div>
+              <div style="font-size: 10px; color: #546e7a">
+                18-24px · Subseção
+              </div>
+            </div>
+            <div style="text-align: center; font-size: 14px">
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: 400;
+                  color: #37474f;
+                  line-height: 1.2;
+                "
+              >
+                Body
+              </div>
+              <div style="font-size: 10px; color: #546e7a">
+                14-16px · Texto corrido
+              </div>
+            </div>
+            <div style="text-align: center; font-size: 14px">
+              <div
+                style="
+                  font-size: 11px;
+                  font-weight: 400;
+                  color: #78909c;
+                  line-height: 1.2;
+                "
+              >
+                Caption
+              </div>
+              <div style="font-size: 10px; color: #546e7a">
+                11-12px · Legendas
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">⭐</span
+            ><span style="color: #00695c; font-size: 14px; font-weight: 800"
+              >Boas práticas tipográficas</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                ✅ Máximo 2 famílias
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Uma para títulos, outra para corpo. Mais que isso vira poluição
+                visual.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                ✅ Entrelinha confortável
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Use line-height de 1.5 a 1.6 para corpo de texto. Evite texto
+                amontoado.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                ✅ Contraste adequado
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Texto preto sobre fundo branco ou vice-versa. Evite cinza claro
+                sobre branco.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(0, 137, 123);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                ✅ Limite de largura
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Linhas de texto com no máximo 65-75 caracteres para leitura
+                confortável.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — STYLE GUIDES           -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(69, 39, 160),
+              rgb(106, 27, 154)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📚 STYLE GUIDES — A Bíblia Visual do Projeto</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(243, 229, 245),
+                rgb(248, 240, 255)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(106, 27, 154);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 O que é um Style Guide?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              Um
+              <span
+                style="
+                  background: rgb(106, 27, 154);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Style Guide</span
+              >
+              (Guia de Estilos) é um documento que
+              <strong style="font-size: 13px"
+                >padroniza todos os elementos visuais</strong
+              >
+              de um produto digital: cores, tipografia, ícones, botões,
+              formulários, espaçamentos e componentes. Ele garante
+              <strong style="font-size: 13px">consistência visual</strong> mesmo
+              quando várias pessoas trabalham no mesmo projeto.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Analogia simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              O Style Guide é como o
+              <strong style="font-size: 13px"
+                >manual de identidade visual de uma franquia</strong
+              >. Seja em São Paulo ou em Tóquio, o McDonald's tem as mesmas
+              cores, a mesma fonte e os mesmos padrões. O Style Guide garante
+              que seu produto tenha essa mesma consistência global.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📂</span
+            ><span style="color: #4a148c; font-size: 14px; font-weight: 800"
+              >O que um Style Guide deve conter</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                🎨 Paleta de Cores
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Cores primárias, secundárias, neutras e semânticas com seus
+                códigos hexadecimais e variações.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                🔤 Tipografia
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Famílias, pesos, tamanhos, hierarquia (H1-H6), line-height e
+                exemplos de uso.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                🧱 Componentes
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Botões (primário, secundário, disabled), inputs, cards, modais
+                com todos os estados.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                📏 Espaçamentos
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Escala de margins e paddings (4px, 8px, 16px, 24px, 32px, 48px,
+                64px).
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                🖼️ Iconografia
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Estilo dos ícones (outline, filled), tamanho do grid e
+                biblioteca de referência.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                📐 Grid e Layout
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Sistema de colunas, breakpoints responsivos, margens e gutters
+                padronizados.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🔄</span
+            ><span style="color: #4a148c; font-size: 14px; font-weight: 800"
+              >Style Guide vs. Design System</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 16px;
+                text-align: center;
+                border-top: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #6a1b9a; font-size: 13px; font-weight: 800">
+                📚 Style Guide
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Documento estático com regras visuais. Define o "como deve
+                parecer".
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 10px;
+                padding: 16px;
+                text-align: center;
+                border-top: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #6a1b9a; font-size: 13px; font-weight: 800">
+                🧩 Design System
+              </div>
+              <div style="font-size: 11px; color: #37474f">
+                Evolução do Style Guide. Inclui componentes codificados,
+                documentação interativa e princípios de design.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 5 — EXEMPLO PRÁTICO        -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(26, 35, 126, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >5</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧪 Exemplo Prático — Trecho de um Style Guide</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              color: #37474f;
+              font-size: 13px;
+              line-height: 1.8;
+              margin-bottom: 16px;
+            "
+          >
+            Veja como seria a documentação de alguns elementos em um Style Guide
+            profissional:
+          </div>
+
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <!-- Cores -->
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 12px;
+                padding: 18px 20px;
+                border-left: 5px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #0d47a1;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                🎨 Cores da Marca
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 10px;
+                  flex-wrap: wrap;
+                  font-size: 14px;
+                "
+              >
+                <div style="flex: 1; min-width: 100px; font-size: 14px">
+                  <div
+                    style="
+                      background: #1565c0;
+                      height: 40px;
+                      border-radius: 6px 6px 0 0;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      background: #fff;
+                      padding: 8px;
+                      border-radius: 0 0 6px 6px;
+                      text-align: center;
+                      font-size: 10px;
+                      font-family: monospace;
+                    "
+                  >
+                    Primary #1565C0
+                  </div>
+                </div>
+                <div style="flex: 1; min-width: 100px; font-size: 14px">
+                  <div
+                    style="
+                      background: #00897b;
+                      height: 40px;
+                      border-radius: 6px 6px 0 0;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      background: #fff;
+                      padding: 8px;
+                      border-radius: 0 0 6px 6px;
+                      text-align: center;
+                      font-size: 10px;
+                      font-family: monospace;
+                    "
+                  >
+                    Secondary #00897B
+                  </div>
+                </div>
+                <div style="flex: 1; min-width: 100px; font-size: 14px">
+                  <div
+                    style="
+                      background: #2e7d32;
+                      height: 40px;
+                      border-radius: 6px 6px 0 0;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      background: #fff;
+                      padding: 8px;
+                      border-radius: 0 0 6px 6px;
+                      text-align: center;
+                      font-size: 10px;
+                      font-family: monospace;
+                    "
+                  >
+                    Success #2E7D32
+                  </div>
+                </div>
+                <div style="flex: 1; min-width: 100px; font-size: 14px">
+                  <div
+                    style="
+                      background: #c62828;
+                      height: 40px;
+                      border-radius: 6px 6px 0 0;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      background: #fff;
+                      padding: 8px;
+                      border-radius: 0 0 6px 6px;
+                      text-align: center;
+                      font-size: 10px;
+                      font-family: monospace;
+                    "
+                  >
+                    Error #C62828
+                  </div>
+                </div>
+                <div style="flex: 1; min-width: 100px; font-size: 14px">
+                  <div
+                    style="
+                      background: #f9a825;
+                      height: 40px;
+                      border-radius: 6px 6px 0 0;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      background: #fff;
+                      padding: 8px;
+                      border-radius: 0 0 6px 6px;
+                      text-align: center;
+                      font-size: 10px;
+                      font-family: monospace;
+                    "
+                  >
+                    Warning #F9A825
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botões -->
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 12px;
+                padding: 18px 20px;
+                border-left: 5px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #4a148c;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                🧱 Componentes: Botões
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 1fr 1fr;
+                  gap: 10px;
+                  font-size: 14px;
+                "
+              >
+                <div style="text-align: center; font-size: 14px">
+                  <div
+                    style="
+                      background: #1565c0;
+                      color: #fff;
+                      padding: 10px 20px;
+                      border-radius: 8px;
+                      font-weight: 600;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Primary
+                  </div>
+                  <div style="font-size: 10px; color: #546e7a">
+                    Ação principal
+                  </div>
+                </div>
+                <div style="text-align: center; font-size: 14px">
+                  <div
+                    style="
+                      background: #fff;
+                      color: #1565c0;
+                      padding: 10px 20px;
+                      border-radius: 8px;
+                      font-weight: 600;
+                      border: 2px solid #1565c0;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Secondary
+                  </div>
+                  <div style="font-size: 10px; color: #546e7a">
+                    Ação secundária
+                  </div>
+                </div>
+                <div style="text-align: center; font-size: 14px">
+                  <div
+                    style="
+                      background: #bdbdbd;
+                      color: #fff;
+                      padding: 10px 20px;
+                      border-radius: 8px;
+                      font-weight: 600;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Disabled
+                  </div>
+                  <div style="font-size: 10px; color: #546e7a">
+                    Desabilitado
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tipografia -->
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 12px;
+                padding: 18px 20px;
+                border-left: 5px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                🔤 Tipografia
+              </div>
+              <div style="font-size: 13px; line-height: 2; color: #37474f">
+                <strong>Família:</strong> Inter, sans-serif<br />
+                <strong>H1:</strong> 36px / Bold / line-height 1.2<br />
+                <strong>H2:</strong> 28px / SemiBold / line-height 1.3<br />
+                <strong>Body:</strong> 16px / Regular / line-height 1.6<br />
+                <strong>Caption:</strong> 12px / Regular / line-height 1.4
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(26, 35, 126) 0%,
+            rgb(69, 39, 160) 50%,
+            rgb(106, 27, 154) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(26, 35, 126, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">🎯</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo — Fundamentos de Design Visual</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📐</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Grids: a estrutura invisível
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🎨</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Cores: comunicação instantânea
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔤</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Tipografia: a voz do design
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📚</div>
+              <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
+                Style Guide: consistência total
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #90caf9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Grid</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Paleta</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffcc80;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Tipografia</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ce93d8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Style Guide</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #80cbc4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Componentes</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c5cae9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Consistência</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
