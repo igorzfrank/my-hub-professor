@@ -8,7 +8,7 @@ for (let i = 0; i < 20; i++) {
 
 // Partículas flutuantes
 const particulasContainer = document.getElementById("particulas");
-const simbolos = ["🌸", "🔥", "💧", "⚡", "🦋", "🍃", "✨", "💨", "📖", "🖊️"];
+const simbolos = ["⚔️", "🔥", "⚡", "🛡️", "💻", "📚", "⌨️", "⚙️"];
 for (let i = 0; i < 20; i++) {
   const particula = document.createElement("span");
   particula.className = "particula";

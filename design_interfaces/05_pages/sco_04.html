@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../design_interfaces.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%);
+        padding: 32px 20px;
+        box-sizing: border-box;
+        max-width: 980px;
+        margin: 0px auto;
+      "
+    >
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            #1a237e 0%,
+            #4527a0 50%,
+            #7b1fa2 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: 0 12px 40px rgba(26, 35, 126, 0.4);
+          position: relative;
+          overflow: hidden;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+          "
+        >
+           
+        </div>
+        <div style="position: relative; z-index: 1">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+            "
+          >
+            <div
+              style="
+                display: inline-block;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+              "
+            >
+              <span style="color: #e1bee7; font-size: 12px; font-weight: 600"
+                >📱 Design de Interfaces</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #ffffff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+              letter-spacing: -0.5px;
+            "
+          >
+            Dominando o<br /><span style="color: #ce93d8">Layout Grid</span>
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.7);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            🎯 Organização · Colunas · Responsividade · Padrões Web
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background: #ffffff;
+          border-radius: 16px;
+          padding: 0;
+          margin-bottom: 22px;
+          box-shadow: 0 6px 30px rgba(21, 101, 192, 0.12);
+          overflow: hidden;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(90deg, #1a237e, #283593);
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 14px;
+              color: white;
+              font-weight: 900;
+              font-size: 18px;
+              flex-shrink: 0;
+            "
+            >🔧</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Configuração Inicial</span
+          >
+        </div>
+        <div style="padding: 28px 32px">
+          <div
+            style="
+              background: linear-gradient(135deg, #e8eaf6, #ede7f6);
+              border-radius: 14px;
+              padding: 18px 22px;
+              margin-bottom: 22px;
+              border-left: 5px solid #4527a0;
+            "
+          >
+            <div style="color: #1a237e; font-size: 14px; line-height: 1.9">
+              <strong>Passo 1: </strong>O <strong>Layout Grid</strong> é
+              essencial para manter tudo alinhado. <br />
+              <p dir="ltr">Antes de ativar o grid, você precisa de um Frame.</p>
+              <ol>
+                <li dir="ltr" aria-level="1">
+                  <p dir="ltr" role="presentation">
+                    Aperte a tecla F ou clique no ícone de # na barra superior.
+                  </p>
+                </li>
+                <li dir="ltr" aria-level="1">
+                  <p dir="ltr" role="presentation">
+                    No painel direito, escolha um tamanho (ex: Desktop &gt;
+                    MacBook Air).<img
+                      style="
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 100%;
+                      "
+                      src="./assets/img-sco-04-01.png"
+                    />
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(135deg, #e8eaf6, #ede7f6);
+              border-radius: 14px;
+              padding: 18px 22px;
+              margin-bottom: 22px;
+              border-left: 5px solid #4527a0;
+            "
+          >
+            <div style="color: #1a237e; font-size: 14px; line-height: 1.9">
+              <p><strong>Passo 2: Ativar o Layout Grid</strong></p>
+              <p>Com o Frame selecionado:</p>
+              <ol>
+                <li>Vá até o painel lateral direito.</li>
+                <li>Procure a seção escrita Layout Guide.</li>
+                <li>Clique no ícone de<strong> "+"</strong> (mais).</li>
+              </ol>
+              <br /><img
+                style="display: block; margin-left: auto; margin-right: auto"
+                src="./assets/img-sco-04-02.png"
+              /><br /><br />
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(135deg, #e8eaf6, #ede7f6);
+              border-radius: 14px;
+              padding: 18px 22px;
+              margin-bottom: 22px;
+              border-left: 5px solid #4527a0;
+            "
+          >
+            <div style="color: #1a237e; font-size: 14px; line-height: 1.9">
+              <strong>Passo 3: </strong>Configurar para "Colunas" (O padrão de
+              Landing Pages)
+            </div>
+            <div style="color: #1a237e; font-size: 14px; line-height: 1.9">
+              Por padrão, o Figma cria uma grade de quadradinhos vermelhos.
+              Vamos mudar para colunas:
+            </div>
+            <div style="color: #1a237e; font-size: 14px; line-height: 1.9">
+              <ol>
+                <li>
+                  Clique no ícone de 9 quadradinhos (ou no nome "Grid") que
+                  apareceu dentro da seção Layout Grid.
+                </li>
+                <li>
+                  No menu suspenso que abrir, onde diz "Grid", mude para
+                  Columns.
+                </li>
+              </ol>
+              <p dir="ltr" role="presentation">
+                <img
+                  style="display: block; margin-left: auto; margin-right: auto"
+                  src="./assets/img-sco-04-03.png"
+                />
+              </p>
+              <p dir="ltr" role="presentation">
+                <img
+                  style="display: block; margin-left: auto; margin-right: auto"
+                  src="./assets/img-sco-04-04.png"
+                  width="691"
+                  height="425"
+                />
+              </p>
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(135deg, #e8eaf6, #ede7f6);
+              border-radius: 14px;
+              padding: 18px 22px;
+              margin-bottom: 22px;
+              border-left: 5px solid #4527a0;
+            "
+          >
+            <div style="color: #1a237e; font-size: 14px; line-height: 1.9">
+              O <strong>Layout Grid</strong> é essencial para manter tudo
+              alinhado.
+              <br />
+              <p dir="ltr">Antes de ativar o grid, você precisa de um Frame.</p>
+              <ol>
+                <li dir="ltr" aria-level="1">
+                  <p dir="ltr" role="presentation">
+                    Aperte a tecla F ou clique no ícone de # na barra superior.
+                  </p>
+                </li>
+                <li dir="ltr" aria-level="1">
+                  <p dir="ltr" role="presentation">
+                    No painel direito, escolha um tamanho (ex: Desktop &gt;
+                    MacBook Air).<img
+                      style="
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 100%;
+                      "
+                      src="./assets/img-sco-04-05.png"
+                    />
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px">
+            <div
+              style="
+                background: #e8eaf6;
+                border-radius: 12px;
+                padding: 14px 16px;
+                border-left: 4px solid #5c6bc0;
+              "
+            >
+              <span style="color: #283593; font-size: 13px; font-weight: bold"
+                >⌨️ Atalho Útil:</span
+              >
+              <div style="color: #5c6bc0; font-size: 12px; margin-top: 5px">
+                <strong>Ctrl + G</strong> liga/desliga a grade.
+              </div>
+            </div>
+            <div
+              style="
+                background: #e8eaf6;
+                border-radius: 12px;
+                padding: 14px 16px;
+                border-left: 4px solid #5c6bc0;
+              "
+            >
+              <span style="color: #283593; font-size: 13px; font-weight: bold"
+                >🎨 Visualização:</span
+              >
+              <div style="color: #5c6bc0; font-size: 12px; margin-top: 5px">
+                Reduza a opacidade para 5% para não cansar a vista.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background: #ffffff;
+          border-radius: 16px;
+          padding: 0;
+          margin-bottom: 22px;
+          box-shadow: 0 6px 30px rgba(21, 101, 192, 0.12);
+          overflow: hidden;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(90deg, #6a1b9a, #7b1fa2);
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 14px;
+              color: white;
+              font-weight: 900;
+              font-size: 18px;
+              flex-shrink: 0;
+            "
+            >📊</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Padrão Profissional (Colunas)</span
+          >
+        </div>
+        <div style="padding: 28px 32px">
+          <p style="color: #546e7a; font-size: 14px; margin-bottom: 15px">
+            Para Landing Pages, mudamos de "Grid" para <strong>Columns</strong>.
+            Use estes valores de referência:
+          </p>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 10px;
+              margin-bottom: 22px;
+            "
+          >
+            <div
+              style="
+                background: #f3e5f5;
+                padding: 12px;
+                border-radius: 8px;
+                text-align: center;
+              "
+            >
+              <div style="color: #7b1fa2; font-size: 18px; font-weight: 900">
+                12
+              </div>
+              <div
+                style="
+                  color: #4a148c;
+                  font-size: 10px;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                "
+              >
+                Count
+              </div>
+            </div>
+            <div
+              style="
+                background: #f3e5f5;
+                padding: 12px;
+                border-radius: 8px;
+                text-align: center;
+              "
+            >
+              <div style="color: #7b1fa2; font-size: 18px; font-weight: 900">
+                Center
+              </div>
+              <div
+                style="
+                  color: #4a148c;
+                  font-size: 10px;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                "
+              >
+                Type
+              </div>
+            </div>
+            <div
+              style="
+                background: #f3e5f5;
+                padding: 12px;
+                border-radius: 8px;
+                text-align: center;
+              "
+            >
+              <div style="color: #7b1fa2; font-size: 18px; font-weight: 900">
+                75
+              </div>
+              <div
+                style="
+                  color: #4a148c;
+                  font-size: 10px;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                "
+              >
+                MARGIN
+              </div>
+            </div>
+            <div
+              style="
+                background: #f3e5f5;
+                padding: 12px;
+                border-radius: 8px;
+                text-align: center;
+              "
+            >
+              <div style="color: #7b1fa2; font-size: 18px; font-weight: 900">
+                24
+              </div>
+              <div
+                style="
+                  color: #4a148c;
+                  font-size: 10px;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                "
+              >
+                Gutter
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              border: 2px dashed #ccc;
+              border-radius: 12px;
+              padding: 20px;
+              text-align: center;
+              color: #9e9e9e;
+              font-size: 13px;
+              background: #fafafa;
+            "
+          >
+            <img
+              src="./assets/img-sco-04-06.png"
+              width="485"
+              height="298"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        style="
+          background: #ffffff;
+          border-radius: 16px;
+          padding: 0;
+          margin-bottom: 22px;
+          box-shadow: 0 6px 30px rgba(21, 101, 192, 0.12);
+          overflow: hidden;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(90deg, #00695c, #00897b);
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 14px;
+              color: white;
+              font-weight: 900;
+              font-size: 18px;
+              flex-shrink: 0;
+            "
+            >💡</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >Dica de Ouro: Margens e Respiros</span
+          >
+        </div>
+        <div style="padding: 28px 32px">
+          <div style="display: flex; gap: 20px; align-items: center">
+            <div
+              style="flex: 1; color: #004d40; font-size: 14px; line-height: 1.6"
+            >
+              Se você optar pelo tipo <strong>Stretch</strong> (que estica),
+              defina margens laterais entre <strong>100 a 150</strong>. Isso
+              garante que o conteúdo não encoste nas bordas do monitor, criando
+              um "respiro" visual elegante e profissional.
+            </div>
+            <div
+              style="
+                width: 120px;
+                height: 80px;
+                background: #e0f2f1;
+                border: 2px solid #00897b;
+                border-radius: 4px;
+                display: flex;
+                justify-content: space-around;
+                padding: 10px;
+              "
+            >
+              <div
+                style="
+                  width: 15px;
+                  height: 100%;
+                  background: rgba(0, 137, 123, 0.2);
+                "
+              >
+                 
+              </div>
+              <div
+                style="
+                  width: 15px;
+                  height: 100%;
+                  background: rgba(0, 137, 123, 0.2);
+                "
+              >
+                 
+              </div>
+              <div
+                style="
+                  width: 15px;
+                  height: 100%;
+                  background: rgba(0, 137, 123, 0.2);
+                "
+              >
+                 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
