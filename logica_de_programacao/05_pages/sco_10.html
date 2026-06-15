@@ -1,0 +1,1381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #3e2723; font-size: 12px; font-weight: 600"
+                >📒 JavaScript · Aula 10 · Projeto Final</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #3e2723;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Projeto Integrador<br style="font-size: 28px" /><span
+              style="color: rgb(62, 39, 35, 0.8); font-size: 28px"
+              >Lista de Tarefas Completa</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(62, 39, 35, 0.7);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            DOM · Eventos · Arrays · Funções · Condicionais · CRUD completo
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >DOM</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Eventos</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Arrays</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Funções</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >CRUD</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — VISÃO GERAL           -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(247, 200, 0),
+              rgb(240, 170, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.25);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: #3e2723;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #3e2723; font-size: 17px; font-weight: 800"
+            >🎯 O QUE VAMOS CONSTRUIR</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 251, 235),
+                rgb(255, 248, 220)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(240, 170, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #3e2723;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🧠 Um CRUD completo de tarefas
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              Neste projeto, você vai construir uma
+              <span
+                style="
+                  background: rgb(240, 170, 0);
+                  color: #3e2723;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Lista de Tarefas</span
+              >
+              completa no navegador. O projeto integra
+              <strong style="font-size: 13px">todos os conceitos</strong> das
+              aulas anteriores: variáveis, arrays, objetos, funções,
+              condicionais, laços, manipulação do DOM e eventos. Você
+              implementará as quatro operações fundamentais de um sistema:
+              <strong style="font-size: 13px"
+                >Criar, Ler, Atualizar e Deletar</strong
+              >
+              — o famoso CRUD.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 10px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📐</span
+            ><span style="color: #3e2723; font-size: 14px; font-weight: 800"
+              >Funcionalidades da Lista de Tarefas</span
+            >
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: #e8f5e9;
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #2e7d32;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 24px; margin-bottom: 4px">➕</div>
+              <div style="color: #1b5e20; font-size: 12px; font-weight: 800">
+                Adicionar tarefa
+              </div>
+              <div style="color: #37474f; font-size: 10px; margin-top: 4px">
+                Digitar no campo e clicar em "Adicionar" (ou pressionar Enter).
+              </div>
+            </div>
+            <div
+              style="
+                background: #e3f2fd;
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #1565c0;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 24px; margin-bottom: 4px">📋</div>
+              <div style="color: #0d47a1; font-size: 12px; font-weight: 800">
+                Listar tarefas
+              </div>
+              <div style="color: #37474f; font-size: 10px; margin-top: 4px">
+                Exibir todas as tarefas em tela, com atualização automática.
+              </div>
+            </div>
+            <div
+              style="
+                background: #fff3e0;
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #f57c00;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 24px; margin-bottom: 4px">✅</div>
+              <div style="color: #e65100; font-size: 12px; font-weight: 800">
+                Marcar como concluída
+              </div>
+              <div style="color: #37474f; font-size: 10px; margin-top: 4px">
+                Clicar na tarefa para riscá-la (alternar concluído/não
+                concluído).
+              </div>
+            </div>
+            <div
+              style="
+                background: #ffebee;
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #c62828;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 24px; margin-bottom: 4px">🗑️</div>
+              <div style="color: #b71c1c; font-size: 12px; font-weight: 800">
+                Remover tarefa
+              </div>
+              <div style="color: #37474f; font-size: 10px; margin-top: 4px">
+                Botão para excluir uma tarefa específica da lista.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              🧠 Arquitetura do projeto
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              O coração do projeto é um
+              <strong>array de objetos</strong> armazenando as tarefas. Cada
+              tarefa tem: <strong>id</strong> (número único),
+              <strong>texto</strong> (descrição) e
+              <strong>concluida</strong> (boolean). Uma função
+              <strong>renderizar()</strong> redesenha a lista na tela sempre que
+              o array é modificado.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — ESTRUTURA HTML E CSS  -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🏗️ ESTRUTURA HTML E CSS</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(224, 242, 241),
+                rgb(232, 245, 233)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 4px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🧠 Comece com a estrutura base
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              Crie um arquivo HTML com a estrutura da lista de tarefas. O CSS
+              pode ser simples — o foco aqui é a
+              <strong style="font-size: 13px">lógica JavaScript</strong>. Use um
+              input, um botão e uma lista vazia que será preenchida
+              dinamicamente.
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #263238;
+              color: #a5d6a7;
+              border-radius: 8px;
+              padding: 16px 20px;
+              font-size: 12px;
+              font-family: &quot;Courier New&quot;, monospace;
+              line-height: 1.7;
+            "
+          >
+            <span style="color: #ffcc80">&lt;!DOCTYPE html&gt;</span><br />
+            <span style="color: #ffcc80">&lt;html lang="pt-BR"&gt;</span><br />
+            <span style="color: #ffcc80">&lt;head&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: #ffcc80"
+              >&lt;meta charset="UTF-8"&gt;</span
+            ><br />
+            &nbsp;&nbsp;<span style="color: #ffcc80">&lt;title&gt;</span>Lista
+            de Tarefas<span style="color: #ffcc80">&lt;/title&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: #ffcc80">&lt;style&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #82b1ff"
+              >.concluida</span
+            >
+            { text-decoration: line-through; color: gray; }<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #82b1ff">body</span> {
+            font-family: Arial; max-width: 500px; margin: 40px auto; }<br />
+            &nbsp;&nbsp;<span style="color: #ffcc80">&lt;/style&gt;</span><br />
+            <span style="color: #ffcc80">&lt;/head&gt;</span><br />
+            <span style="color: #ffcc80">&lt;body&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: #ffcc80">&lt;h1&gt;</span>📝 Minha
+            Lista de Tarefas<span style="color: #ffcc80">&lt;/h1&gt;</span
+            ><br />
+            &nbsp;&nbsp;<span style="color: #ffcc80">&lt;input</span>
+            <span style="color: #82b1ff">type</span>=<span
+              style="color: #ffcc80"
+              >"text"</span
+            >
+            <span style="color: #82b1ff">id</span>=<span style="color: #ffcc80"
+              >"entrada"</span
+            >
+            <span style="color: #82b1ff">placeholder</span>=<span
+              style="color: #ffcc80"
+              >"Digite uma tarefa..."</span
+            ><span style="color: #ffcc80">&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: #ffcc80">&lt;button</span>
+            <span style="color: #82b1ff">id</span>=<span style="color: #ffcc80"
+              >"btnAdicionar"</span
+            ><span style="color: #ffcc80">&gt;</span>Adicionar<span
+              style="color: #ffcc80"
+              >&lt;/button&gt;</span
+            ><br />
+            &nbsp;&nbsp;<span style="color: #ffcc80">&lt;ul</span>
+            <span style="color: #82b1ff">id</span>=<span style="color: #ffcc80"
+              >"lista"</span
+            ><span style="color: #ffcc80">&gt;&lt;/ul&gt;</span><br />
+            &nbsp;&nbsp;<span style="color: #ffcc80">&lt;script&gt;</span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #78909c"
+              >// Seu código JavaScript aqui</span
+            ><br />
+            &nbsp;&nbsp;<span style="color: #ffcc80">&lt;/script&gt;</span
+            ><br />
+            <span style="color: #ffcc80">&lt;/body&gt;</span><br />
+            <span style="color: #ffcc80">&lt;/html&gt;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — LÓGICA JAVASCRIPT     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🧠 LÓGICA JAVASCRIPT PASSO A PASSO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(227, 242, 253),
+                rgb(232, 240, 254)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 4px;
+              border-left: 5px solid rgb(25, 118, 210);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #0d47a1;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🧠 Implemente na ordem abaixo
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              Cada etapa constrói sobre a anterior.
+              <strong style="font-size: 13px">Teste após cada passo</strong>
+              para garantir que tudo funciona antes de seguir adiante.
+            </div>
+          </div>
+
+          <!-- Passo 1 -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #1565c0;
+              margin-bottom: 4px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >1</span
+              ><span style="color: #0d47a1; font-size: 15px; font-weight: 800"
+                >Array de tarefas e função renderizar</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Crie o array global e a função que redesenha a lista na tela
+              sempre que o array muda. Esta é a base de tudo.
+            </div>
+            <div
+              style="
+                background: #263238;
+                color: #a5d6a7;
+                border-radius: 6px;
+                padding: 12px 16px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #82b1ff">let</span> tarefas = [];<br />
+              <span style="color: #82b1ff">let</span> contadorId = 0;<br /><br />
+              <span style="color: #82b1ff">function</span> renderizar() {<br />
+              &nbsp;&nbsp;<span style="color: #82b1ff">let</span> lista =
+              document.<span style="color: #82b1ff">querySelector</span>(<span
+                style="color: #ffcc80"
+                >'#lista'</span
+              >);<br />
+              &nbsp;&nbsp;lista.innerHTML =
+              <span style="color: #ffcc80">''</span>;
+              <span style="color: #78909c">// Limpa a lista</span><br /><br />
+              &nbsp;&nbsp;tarefas.<span style="color: #82b1ff">forEach</span
+              >(tarefa => {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #82b1ff">let</span>
+              item = document.<span style="color: #82b1ff">createElement</span
+              >(<span style="color: #ffcc80">'li'</span>);<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;item.textContent = tarefa.texto;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;lista.<span style="color: #82b1ff"
+                >appendChild</span
+              >(item);<br />
+              &nbsp;&nbsp;});<br />
+              }
+            </div>
+          </div>
+
+          <!-- Passo 2 -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #1565c0;
+              margin-bottom: 4px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >2</span
+              ><span style="color: #0d47a1; font-size: 15px; font-weight: 800"
+                >Adicionar tarefa (CREATE)</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Capture o valor do input, valide se não está vazio, crie o objeto
+              tarefa e adicione ao array. Depois chame renderizar().
+            </div>
+            <div
+              style="
+                background: #263238;
+                color: #a5d6a7;
+                border-radius: 6px;
+                padding: 12px 16px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #82b1ff">function</span> adicionarTarefa()
+              {<br />
+              &nbsp;&nbsp;<span style="color: #82b1ff">let</span> input =
+              document.<span style="color: #82b1ff">querySelector</span>(<span
+                style="color: #ffcc80"
+                >'#entrada'</span
+              >);<br />
+              &nbsp;&nbsp;<span style="color: #82b1ff">let</span> texto =
+              input.value.trim();<br /><br />
+              &nbsp;&nbsp;<span style="color: #82b1ff">if</span> (texto !==
+              <span style="color: #ffcc80">''</span>) {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;contadorId++;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;tarefas.<span style="color: #82b1ff"
+                >push</span
+              >({ id: contadorId, texto: texto, concluida:
+              <span style="color: #82b1ff">false</span> });<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;input.value =
+              <span style="color: #ffcc80">''</span>;
+              <span style="color: #78909c">// Limpa o campo</span><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;renderizar();<br />
+              &nbsp;&nbsp;}<br />
+              }
+            </div>
+          </div>
+
+          <!-- Passo 3 -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #1565c0;
+              margin-bottom: 4px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >3</span
+              ><span style="color: #0d47a1; font-size: 15px; font-weight: 800"
+                >Conectar o evento de clique</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Vincule o botão e a tecla Enter à função de adicionar tarefa.
+            </div>
+            <div
+              style="
+                background: #263238;
+                color: #a5d6a7;
+                border-radius: 6px;
+                padding: 12px 16px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #82b1ff">let</span> btn = document.<span
+                style="color: #82b1ff"
+                >querySelector</span
+              >(<span style="color: #ffcc80">'#btnAdicionar'</span>);<br />
+              btn.<span style="color: #82b1ff">addEventListener</span>(<span
+                style="color: #ffcc80"
+                >'click'</span
+              >, adicionarTarefa);<br /><br />
+              <span style="color: #82b1ff">let</span> input = document.<span
+                style="color: #82b1ff"
+                >querySelector</span
+              >(<span style="color: #ffcc80">'#entrada'</span>);<br />
+              input.<span style="color: #82b1ff">addEventListener</span>(<span
+                style="color: #ffcc80"
+                >'keydown'</span
+              >, <span style="color: #82b1ff">function</span>(event) {<br />
+              &nbsp;&nbsp;<span style="color: #82b1ff">if</span> (event.key ===
+              <span style="color: #ffcc80">'Enter'</span>) adicionarTarefa();<br />
+              });
+            </div>
+          </div>
+
+          <!-- Passo 4 -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #1565c0;
+              margin-bottom: 4px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >4</span
+              ><span style="color: #0d47a1; font-size: 15px; font-weight: 800"
+                >Melhorar a renderização (UPDATE e DELETE)</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Adicione botão de excluir e evento de clique para marcar como
+              concluída em cada item renderizado.
+            </div>
+            <div
+              style="
+                background: #263238;
+                color: #a5d6a7;
+                border-radius: 6px;
+                padding: 12px 16px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #82b1ff">function</span> renderizar() {<br />
+              &nbsp;&nbsp;<span style="color: #82b1ff">let</span> lista =
+              document.<span style="color: #82b1ff">querySelector</span>(<span
+                style="color: #ffcc80"
+                >'#lista'</span
+              >);<br />
+              &nbsp;&nbsp;lista.innerHTML =
+              <span style="color: #ffcc80">''</span>;<br /><br />
+              &nbsp;&nbsp;tarefas.<span style="color: #82b1ff">forEach</span
+              >(tarefa => {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #82b1ff">let</span>
+              item = document.<span style="color: #82b1ff">createElement</span
+              >(<span style="color: #ffcc80">'li'</span>);<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;item.textContent = tarefa.texto;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #82b1ff">if</span>
+              (tarefa.concluida) item.<span style="color: #82b1ff"
+                >classList</span
+              >.add(<span style="color: #ffcc80">'concluida'</span
+              >);<br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #78909c"
+                >// Clique para marcar/desmarcar</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;item.<span style="color: #82b1ff"
+                >addEventListener</span
+              >(<span style="color: #ffcc80">'click'</span>, () => {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tarefa.concluida =
+              !tarefa.concluida;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderizar();<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;});<br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #78909c"
+                >// Botão de excluir</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #82b1ff">let</span>
+              btnExcluir = document.<span style="color: #82b1ff"
+                >createElement</span
+              >(<span style="color: #ffcc80">'button'</span>);<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;btnExcluir.textContent =
+              <span style="color: #ffcc80">'❌'</span>;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;btnExcluir.<span style="color: #82b1ff"
+                >addEventListener</span
+              >(<span style="color: #ffcc80">'click'</span>, (e) => {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.<span style="color: #82b1ff"
+                >stopPropagation</span
+              >(); <span style="color: #78909c">// Não marca ao excluir</span
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tarefas = tarefas.<span
+                style="color: #82b1ff"
+                >filter</span
+              >(t => t.id !== tarefa.id);<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;renderizar();<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;});<br /><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;item.<span style="color: #82b1ff"
+                >appendChild</span
+              >(btnExcluir);<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;lista.<span style="color: #82b1ff"
+                >appendChild</span
+              >(item);<br />
+              &nbsp;&nbsp;});<br />
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — DESAFIOS EXTRAS       -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(106, 27, 154),
+              rgb(123, 31, 162)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🚀 DESAFIOS EXTRAS — MELHORE SEU PROJETO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(243, 229, 245),
+                rgb(248, 240, 255)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              border-left: 5px solid rgb(123, 31, 162);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              💡 Depois que o projeto básico funcionar, tente implementar:
+            </div>
+
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  🔢 Contador de tarefas
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Exiba "X tarefas (Y concluídas)" no topo ou rodapé da lista.
+                  Use <strong>filter</strong> para contar as concluídas.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  🔍 Filtro por status
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Adicione botões "Todas", "Pendentes" e "Concluídas" que
+                  filtram a exibição. Use <strong>filter</strong> antes de
+                  renderizar.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  💾 Salvar no localStorage
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Use <strong>localStorage.setItem()</strong> e
+                  <strong>getItem()</strong> com
+                  <strong>JSON.stringify/parse</strong> para persistir as
+                  tarefas no navegador.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  ✏️ Editar tarefa
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Permita clicar duas vezes em uma tarefa para editar seu texto.
+                  Use <strong>prompt()</strong> ou um input que aparece no lugar
+                  do texto.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #ede7f6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #6a1b9a;
+              font-size: 13px;
+              color: #311b92;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px"
+              >🏆 Conceitos aplicados neste projeto:</strong
+            >
+            Variáveis (let/const) · Arrays e objetos · Funções · Condicionais
+            (if) · Laços (forEach) · Métodos de array (push, filter, forEach) ·
+            DOM (querySelector, createElement, appendChild) · Eventos
+            (addEventListener, click, keydown) · classList (add, toggle) · Arrow
+            functions · Template literals.
+            <strong>Todas as 9 aulas em um só projeto!</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">📒</span
+            ><span style="color: #3e2723; font-size: 17px; font-weight: 800"
+              >Resumo do Projeto — Lista de Tarefas</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">➕</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                CREATE: adicionar
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📋</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                READ: renderizar
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">✅</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                UPDATE: concluir
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🗑️</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                DELETE: remover
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >CRUD</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >DOM</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Eventos</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Projeto Final</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

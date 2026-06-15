@@ -1,0 +1,1270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade Prática: Painel Temático</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../design_interfaces.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(136, 14, 79) 0%,
+            rgb(173, 20, 87) 50%,
+            rgb(194, 24, 91) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(136, 14, 79, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #f8bbd0; font-size: 12px; font-weight: 600"
+                >✍️ Atividade Prática · Em Grupo</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Atividade Prática<br style="font-size: 28px" /><span
+              style="color: rgb(248, 187, 208); font-size: 28px"
+              >Painel Temático</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Análise de interface digital · Identificação de elementos visuais ·
+            Inovação · Experiência do usuário
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #f8bbd0;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Análise Crítica</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #b3e5fc;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Trabalho em Grupo</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c8e6c9;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Apresentação Oral</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffe082;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Argumentação</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #cfd8dc;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >UX/UI</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — CONTEXTO              -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(136, 14, 79, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(136, 14, 79),
+              rgb(173, 20, 87)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🌍 CONTEXTO — Interfaces Digitais no Nosso Dia a Dia</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(252, 228, 236),
+                rgb(248, 187, 208, 0.25)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(194, 24, 91);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #880e4f;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              📱 Por que estudar interfaces?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              Interfaces digitais fazem parte do nosso dia a dia:
+              <strong style="font-size: 13px"
+                >aplicativos, sites e sistemas</strong
+              >
+              estão o tempo todo mediando a relação entre pessoas e tecnologia.
+              Quando uma interface é
+              <span
+                style="
+                  background: rgb(194, 24, 91);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >mal planejada</span
+              >, o usuário se confunde, erra ou desiste. No mundo do trabalho, o
+              designer de interface precisa analisar soluções existentes,
+              identificar padrões de uso e entender como os elementos visuais
+              ajudam (ou atrapalham) a experiência do usuário.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Reflexão inicial
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Pense em um aplicativo ou site que você usa com frequência. Por
+              que ele é fácil de usar? Quais elementos visuais guiam suas ações?
+              O que aconteceria se esses elementos fossem removidos ou mal
+              posicionados?
+              <strong style="font-size: 13px"
+                >Toda interface conta uma história de uso</strong
+              >
+              — e é essa história que vocês vão investigar nesta atividade.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">🎯</span
+            ><span style="color: #880e4f; font-size: 14px; font-weight: 800"
+              >Competências trabalhadas nesta atividade</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(252, 228, 236);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(194, 24, 91);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #880e4f; font-size: 12px; font-weight: 800">
+                🔍 Observação Crítica
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Analisar uma interface real com olhar investigativo, indo além
+                da primeira impressão estética.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(252, 228, 236);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(194, 24, 91);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #880e4f; font-size: 12px; font-weight: 800">
+                🗣️ Argumentação
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Justificar escolhas e conclusões com base em exemplos concretos
+                observados na interface.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(252, 228, 236);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid rgb(194, 24, 91);
+                font-size: 14px;
+              "
+            >
+              <div style="color: #880e4f; font-size: 12px; font-weight: 800">
+                🤝 Colaboração
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Trabalhar em equipe, trocar ideias e construir uma análise
+                coletiva consistente.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — DESAFIO               -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(136, 14, 79, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🎯 DESAFIO — O Que Vocês Devem Fazer</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 243, 224),
+                rgb(255, 248, 245)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 4px;
+              border-left: 5px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #bf360c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🚀 Missão do grupo
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              Em grupo, vocês deverão analisar
+              <strong style="font-size: 13px"
+                >UMA interface digital considerada inovadora</strong
+              >. A interface pode ser um aplicativo, um site ou um sistema
+              simples. O objetivo é
+              <span
+                style="
+                  background: rgb(245, 124, 0);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >observar como essa interface funciona</span
+              >
+              para o usuário e explicar por que ela facilita o uso. Mais do que
+              descrever, vocês precisam argumentar e justificar.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📋</span
+            ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
+              >Comandos da Atividade (Passo a Passo)</span
+            >
+          </div>
+
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 18px;
+                border-left: 4px solid #f57c00;
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >1</span
+              >
+              <div>
+                <div style="color: #e65100; font-size: 13px; font-weight: 800">
+                  Escolham UMA interface digital
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 2px">
+                  App, site ou sistema. Pode ser algo conhecido do grupo ou uma
+                  descoberta nova. O importante é que seja uma interface que
+                  vocês considerem inovadora.
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 18px;
+                border-left: 4px solid #f57c00;
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >2</span
+              >
+              <div>
+                <div style="color: #e65100; font-size: 13px; font-weight: 800">
+                  Observem a interface com atenção
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 2px">
+                  Naveguem pela interface, testem funcionalidades, anotem
+                  impressões. Coloquem-se no lugar do usuário que está vendo
+                  aquela tela pela primeira vez.
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 18px;
+                border-left: 4px solid #f57c00;
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >3</span
+              >
+              <div>
+                <div style="color: #e65100; font-size: 13px; font-weight: 800">
+                  Identifiquem os principais elementos visuais
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 2px">
+                  Cores, botões, menus, textos, ícones, imagens, animações.
+                  Observem como cada elemento contribui para a experiência de
+                  uso.
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 18px;
+                border-left: 4px solid #f57c00;
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >4</span
+              >
+              <div>
+                <div style="color: #e65100; font-size: 13px; font-weight: 800">
+                  Analisem como o usuário interage com a interface
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 2px">
+                  O caminho que o usuário percorre é intuitivo? As ações
+                  principais estão destacadas? O feedback visual é claro após
+                  cada clique ou toque?
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 18px;
+                border-left: 4px solid #f57c00;
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >5</span
+              >
+              <div>
+                <div style="color: #e65100; font-size: 13px; font-weight: 800">
+                  Expliquem qual problema essa interface resolve
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 2px">
+                  Que dor ou necessidade do usuário essa interface soluciona?
+                  Como seria a vida do usuário sem essa solução digital?
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 10px;
+                padding: 14px 18px;
+                border-left: 4px solid #f57c00;
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 14px;
+              "
+            >
+              <span
+                style="
+                  background: #f57c00;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >6</span
+              >
+              <div>
+                <div style="color: #e65100; font-size: 13px; font-weight: 800">
+                  Indiquem se a interface apresenta inovação ou apenas melhorias
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 2px">
+                  Ela faz algo genuinamente novo ou apenas refina soluções já
+                  existentes? Justifiquem a classificação com argumentos
+                  baseados na observação.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #fff3e0;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #f57c00;
+              font-size: 13px;
+              color: #e65100;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Dica importante:</strong> Não se
+            preocupem em "acertar" uma resposta. O valor está no processo de
+            análise e na capacidade de justificar as conclusões do grupo com
+            base no que foi observado.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — COMO EXECUTAR         -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(136, 14, 79, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >⚙️ COMO EXECUTAR A ATIVIDADE</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              margin-bottom: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(227, 242, 253);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #1565c0;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #0d47a1;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ Orientações para o grupo
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                🤝 <strong>Trabalhem em grupo</strong> — A atividade é coletiva.
+                Todos devem contribuir com ideias e observações.<br /><br />
+                💬 <strong>Conversem e troquem ideias</strong> — O debate
+                enriquece a análise. Ouçam perspectivas diferentes dentro do
+                grupo.<br /><br />
+                📝 <strong>Usem exemplos claros</strong> — Toda afirmação
+                precisa de um exemplo concreto observado na interface.<br /><br />
+                🧠 <strong>Foquem no funcionamento</strong> — A análise deve
+                priorizar como a interface funciona, não apenas sua aparência
+                estética.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ⚠️ Cuidados importantes
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ❌ <strong>Não analisem apenas a estética</strong> — Bonito não
+                significa funcional. A beleza visual é só um dos fatores.<br /><br />
+                ❌ <strong>Evitem descrições superficiais</strong> — "É bonito e
+                fácil de usar" não basta. Expliquem o porquê.<br /><br />
+                ❌ <strong>Não deixem ninguém de fora</strong> — Todos os
+                integrantes precisam participar da discussão e da
+                apresentação.<br /><br />
+                ❌ <strong>Não escolham interfaces complexas demais</strong> —
+                Às vezes, um app simples revela mais sobre design do que um
+                sistema gigante.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e8eaf6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #3949ab;
+              font-size: 13px;
+              color: #1a237e;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px"
+              >💡 Sugestão de roteiro para o grupo:</strong
+            >
+            1. Cada integrante explora a interface individualmente por 5
+            minutos. → 2. O grupo se reúne e compartilha as primeiras
+            impressões. → 3. Juntos, preenchem cada um dos 6 comandos da
+            atividade. → 4. Organizam a apresentação definindo quem falará cada
+            parte. → 5. Ensaiam a apresentação para garantir que todos dominem o
+            conteúdo.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — ENTREGA E AVALIAÇÃO   -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(136, 14, 79, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📦 FORMA DE ENTREGA & CRITÉRIOS DE AVALIAÇÃO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              margin-bottom: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #004d40;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                🗣️ Como será a entrega
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                🎤 A atividade será <strong>apresentada oralmente</strong> pelo
+                grupo em sala.<br /><br />
+                👥 <strong>Todos os integrantes</strong> devem participar da
+                apresentação — cada um contribui com uma parte da análise.<br /><br />
+                ⏱️ O tempo de apresentação será definido pelo professor.
+                Organizem-se para cobrir todos os pontos dentro do tempo
+                disponível.<br /><br />
+                📊 Se desejarem, podem usar slides, prints da interface ou até
+                mesmo uma demonstração ao vivo para ilustrar a apresentação.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                📊 Critérios de Avaliação
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ✅ <strong>Participação de todos os integrantes</strong> — O
+                grupo se organizou para que todos falassem e contribuíssem?<br /><br />
+                ✅ <strong>Profundidade da análise</strong> — A análise foi além
+                do superficial? Identificaram elementos visuais e explicaram o
+                funcionamento?<br /><br />
+                ✅ <strong>Clareza das explicações</strong> — As ideias foram
+                apresentadas de forma organizada e compreensível?<br /><br />
+                ✅ <strong>Qualidade da argumentação</strong> — As conclusões
+                foram justificadas com exemplos concretos?
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(252, 228, 236),
+                rgb(248, 187, 208, 0.2)
+              );
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid rgb(194, 24, 91);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #880e4f;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🌟 Lembrete Importante
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+              <strong>1.</strong> Não existe resposta única ou certa. O design é
+              um campo de interpretação e contexto.<br />
+              <strong>2.</strong> O mais importante é a
+              <strong>argumentação e a justificativa</strong> do grupo. "Por que
+              vocês acham isso?" é a pergunta que guia a avaliação.<br />
+              <strong>3.</strong> A avaliação considerará
+              <strong>participação, análise e clareza</strong> das
+              explicações.<br />
+              <strong>4.</strong> Divergências de opinião dentro do grupo são
+              bem-vindas — desde que bem argumentadas, mostram pensamento
+              crítico.
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #fce4ec;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #c2185b;
+              font-size: 13px;
+              color: #880e4f;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Dica final:</strong> Pensem como
+            detetives da interface. Cada botão, cada cor, cada ícone foi
+            colocado ali por uma razão. O trabalho de vocês é descobrir essas
+            razões e explicá-las para a turma. Boa atividade! 🚀
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(136, 14, 79) 0%,
+            rgb(173, 20, 87) 50%,
+            rgb(194, 24, 91) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(136, 14, 79, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">✅</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo da Atividade — Painel Temático</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔍</div>
+              <div style="color: #f8bbd0; font-size: 11px; font-weight: bold">
+                Analisar uma interface digital real
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🗣️</div>
+              <div style="color: #f8bbd0; font-size: 11px; font-weight: bold">
+                Apresentar oralmente em grupo
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">💡</div>
+              <div style="color: #f8bbd0; font-size: 11px; font-weight: bold">
+                Argumentar e justificar conclusões
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #f8bbd0;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Análise Crítica</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #b3e5fc;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Trabalho em Grupo</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #c8e6c9;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Apresentação Oral</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ffe082;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Argumentação</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #cfd8dc;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >UX/UI</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

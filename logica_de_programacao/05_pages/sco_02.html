@@ -1,0 +1,1394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #3e2723; font-size: 12px; font-weight: 600"
+                >📒 JavaScript · Aula 2 · Fundamentos</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #3e2723;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Tipos Primitivos e Operadores<br style="font-size: 28px" /><span
+              style="color: rgb(62, 39, 35, 0.8); font-size: 28px"
+              >String, Number, Boolean e como operá-los</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(62, 39, 35, 0.7);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Tipos de dados · Operadores aritméticos · Comparação · Concatenação
+            · typeof
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >String</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Number</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Boolean</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Operadores</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >typeof</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — TIPOS PRIMITIVOS      -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(247, 200, 0),
+              rgb(240, 170, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.25);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: #3e2723;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #3e2723; font-size: 17px; font-weight: 800"
+            >🔤 TIPOS PRIMITIVOS — A Matéria-Prima do Código</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 251, 235),
+                rgb(255, 248, 220)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(240, 170, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #3e2723;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🧠 Todo valor tem um tipo
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              Em JavaScript, cada valor que você armazena em uma variável
+              pertence a um
+              <strong style="font-size: 13px">tipo de dado</strong>. Os
+              <span
+                style="
+                  background: rgb(240, 170, 0);
+                  color: #3e2723;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >tipos primitivos</span
+              >
+              são os mais fundamentais. Conhecer os tipos é essencial porque
+              <strong style="font-size: 13px"
+                >cada tipo se comporta de forma diferente</strong
+              >
+              com operadores e funções. Use o operador
+              <strong>typeof</strong> para descobrir o tipo de qualquer valor.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 12px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <!-- String -->
+            <div
+              style="
+                background: rgb(255, 251, 235);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #f9a825;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 32px; margin-bottom: 8px">🔤</div>
+              <div
+                style="
+                  color: #3e2723;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 6px;
+                "
+              >
+                String
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Texto entre aspas simples, duplas ou crases. Ex:
+                <strong>'João'</strong>, <strong>"olá"</strong>,
+                <strong>`Oi ${nome}`</strong>
+              </div>
+            </div>
+            <!-- Number -->
+            <div
+              style="
+                background: rgb(255, 251, 235);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #f9a825;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 32px; margin-bottom: 8px">🔢</div>
+              <div
+                style="
+                  color: #3e2723;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 6px;
+                "
+              >
+                Number
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Números inteiros ou decimais. Ex: <strong>42</strong>,
+                <strong>3.14</strong>, <strong>-10</strong>. Inclui
+                <strong>NaN</strong> (não é número).
+              </div>
+            </div>
+            <!-- Boolean -->
+            <div
+              style="
+                background: rgb(255, 251, 235);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #f9a825;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 32px; margin-bottom: 8px">✅</div>
+              <div
+                style="
+                  color: #3e2723;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 6px;
+                "
+              >
+                Boolean
+              </div>
+              <div style="color: #37474f; font-size: 11px; line-height: 1.6">
+                Apenas dois valores: <strong>true</strong> (verdadeiro) ou
+                <strong>false</strong> (falso). Resultado de comparações.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #263238;
+              color: #a5d6a7;
+              border-radius: 8px;
+              padding: 16px 20px;
+              font-size: 13px;
+              font-family: &quot;Courier New&quot;, monospace;
+              line-height: 1.9;
+            "
+          >
+            <span style="color: #78909c"
+              >// Três tipos primitivos principais</span
+            ><br />
+            <span style="color: #82b1ff">let</span> nome =
+            <span style="color: #ffcc80">'Maria'</span>;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #78909c"
+              >// string</span
+            ><br />
+            <span style="color: #82b1ff">let</span> idade = 30;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #78909c"
+              >// number</span
+            ><br />
+            <span style="color: #82b1ff">let</span> logado =
+            <span style="color: #82b1ff">true</span>;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #78909c"
+              >// boolean</span
+            ><br /><br />
+            <span style="color: #78909c">// Descobrindo o tipo com typeof</span
+            ><br />
+            console.log(<span style="color: #82b1ff">typeof</span> nome);
+            &nbsp;&nbsp;<span style="color: #78909c">// "string"</span><br />
+            console.log(<span style="color: #82b1ff">typeof</span> idade);
+            &nbsp;<span style="color: #78909c">// "number"</span><br />
+            console.log(<span style="color: #82b1ff">typeof</span> logado);
+            <span style="color: #78909c">// "boolean"</span>
+          </div>
+
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-top: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              ⚠️ Cuidado com o typeof
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              <strong>typeof null</strong> retorna <strong>"object"</strong> —
+              isso é um bug histórico da linguagem. E
+              <strong>typeof NaN</strong> retorna <strong>"number"</strong>,
+              mesmo significando "Not a Number". São peculiaridades que você
+              precisa conhecer.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — OPERADORES ARITMÉTICOS -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >➕ OPERADORES ARITMÉTICOS — Fazendo Contas</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(224, 242, 241),
+                rgb(232, 245, 233)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 4px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🧮 Operações matemáticas básicas
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              JavaScript funciona como uma calculadora. Você pode usar
+              <strong style="font-size: 13px">operadores aritméticos</strong>
+              para realizar contas diretamente no código. O resultado pode ser
+              armazenado em uma variável ou usado em outras operações.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-left: 4px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 20px; font-weight: 900">
+                +
+              </div>
+              <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                Adição
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-left: 4px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 20px; font-weight: 900">
+                -
+              </div>
+              <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                Subtração
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-left: 4px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 20px; font-weight: 900">
+                *
+              </div>
+              <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                Multiplicação
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-left: 4px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 20px; font-weight: 900">
+                /
+              </div>
+              <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                Divisão
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-left: 4px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 20px; font-weight: 900">
+                %
+              </div>
+              <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                Módulo (resto)
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px;
+                text-align: center;
+                border-left: 4px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 20px; font-weight: 900">
+                **
+              </div>
+              <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                Exponenciação
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #263238;
+              color: #a5d6a7;
+              border-radius: 8px;
+              padding: 16px 20px;
+              font-size: 13px;
+              font-family: &quot;Courier New&quot;, monospace;
+              line-height: 1.9;
+            "
+          >
+            <span style="color: #82b1ff">let</span> a = 10;<br />
+            <span style="color: #82b1ff">let</span> b = 3;<br /><br />
+            console.log(a + b); &nbsp;<span style="color: #78909c"
+              >// 13 (adição)</span
+            ><br />
+            console.log(a - b); &nbsp;<span style="color: #78909c"
+              >// 7 (subtração)</span
+            ><br />
+            console.log(a * b); &nbsp;<span style="color: #78909c"
+              >// 30 (multiplicação)</span
+            ><br />
+            console.log(a / b); &nbsp;<span style="color: #78909c"
+              >// 3.333... (divisão)</span
+            ><br />
+            console.log(a % b); &nbsp;<span style="color: #78909c"
+              >// 1 (resto da divisão)</span
+            ><br />
+            console.log(a ** b);
+            <span style="color: #78909c">// 1000 (10 elevado a 3)</span>
+          </div>
+
+          <div
+            style="
+              background: #e0f2f1;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #00897b;
+              font-size: 13px;
+              color: #004d40;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 O operador % (módulo):</strong>
+            Muito útil para saber se um número é par (<strong
+              >n % 2 === 0</strong
+            >) ou ímpar (<strong>n % 2 === 1</strong>). Você usará isso em laços
+            e condicionais nas próximas aulas.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — CONCATENAÇÃO E COMPARAÇÃO -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔗 CONCATENAÇÃO E OPERADORES DE COMPARAÇÃO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- Concatenação -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >+</span
+              ><span style="color: #0d47a1; font-size: 15px; font-weight: 800"
+                >Concatenando Strings</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              O operador <strong>+</strong> funciona de dois jeitos: com números
+              ele <strong>soma</strong>, com strings ele
+              <strong>concatena</strong> (junta). Template literals (crases) são
+              a forma moderna de unir texto e variáveis.
+            </div>
+            <div
+              style="
+                background: #263238;
+                color: #a5d6a7;
+                border-radius: 6px;
+                padding: 12px 16px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #82b1ff">let</span> nome =
+              <span style="color: #ffcc80">'Ana'</span>;<br />
+              <span style="color: #82b1ff">let</span> idade = 25;<br /><br />
+              <span style="color: #78909c">// Concatenação com +</span><br />
+              console.log(<span style="color: #ffcc80">'Olá, '</span> + nome +
+              <span style="color: #ffcc80">'!'</span>);<br /><br />
+              <span style="color: #78909c"
+                >// Template literal (recomendado)</span
+              ><br />
+              console.log(<span style="color: #ffcc80"
+                >`Olá, ${nome}! Você tem ${idade} anos.`</span
+              >);
+            </div>
+          </div>
+
+          <!-- Comparação -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >?</span
+              ><span style="color: #0d47a1; font-size: 15px; font-weight: 800"
+                >Operadores de Comparação</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Comparam dois valores e retornam <strong>true</strong> ou
+              <strong>false</strong>. Essenciais para tomadas de decisão no
+              código.
+            </div>
+
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 6px;
+                margin-bottom: 12px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #0d47a1; font-size: 16px; font-weight: 900">
+                  ==
+                </div>
+                <div style="color: #37474f; font-size: 10px">Igual (valor)</div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #0d47a1; font-size: 16px; font-weight: 900">
+                  ===
+                </div>
+                <div style="color: #37474f; font-size: 10px">
+                  Estritamente igual
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #0d47a1; font-size: 16px; font-weight: 900">
+                  !=
+                </div>
+                <div style="color: #37474f; font-size: 10px">Diferente</div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #0d47a1; font-size: 16px; font-weight: 900">
+                  !==
+                </div>
+                <div style="color: #37474f; font-size: 10px">
+                  Estritamente diferente
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #0d47a1; font-size: 16px; font-weight: 900">
+                  &gt;
+                </div>
+                <div style="color: #37474f; font-size: 10px">Maior que</div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #0d47a1; font-size: 16px; font-weight: 900">
+                  &lt;
+                </div>
+                <div style="color: #37474f; font-size: 10px">Menor que</div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #0d47a1; font-size: 16px; font-weight: 900">
+                  &gt;=
+                </div>
+                <div style="color: #37474f; font-size: 10px">
+                  Maior ou igual
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 6px;
+                  padding: 10px;
+                  text-align: center;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #0d47a1; font-size: 16px; font-weight: 900">
+                  &lt;=
+                </div>
+                <div style="color: #37474f; font-size: 10px">
+                  Menor ou igual
+                </div>
+              </div>
+            </div>
+
+            <div
+              style="
+                background: #263238;
+                color: #a5d6a7;
+                border-radius: 6px;
+                padding: 12px 16px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                line-height: 1.8;
+              "
+            >
+              console.log(10 > 5); &nbsp;&nbsp;<span style="color: #78909c"
+                >// true</span
+              ><br />
+              console.log(10 === <span style="color: #ffcc80">'10'</span>);
+              <span style="color: #78909c">// false (number ≠ string)</span
+              ><br />
+              console.log(10 == <span style="color: #ffcc80">'10'</span>);
+              &nbsp;<span style="color: #78909c"
+                >// true (conversão automática)</span
+              ><br />
+              console.log(5 !== 3); &nbsp;&nbsp;<span style="color: #78909c"
+                >// true</span
+              >
+            </div>
+
+            <div
+              style="
+                background: #e3f2fd;
+                border-radius: 8px;
+                padding: 12px 16px;
+                margin-top: 10px;
+                font-size: 12px;
+                color: #0d47a1;
+                line-height: 1.7;
+              "
+            >
+              <strong style="font-size: 13px">⚠️ Regra de ouro:</strong> Use
+              SEMPRE <strong>===</strong> e <strong>!==</strong> (com três
+              sinais) em vez de <strong>==</strong> e <strong>!=</strong>. Os
+              operadores triplos comparam valor E tipo, evitando bugs difíceis
+              de encontrar.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — EXERCÍCIOS            -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(106, 27, 154),
+              rgb(123, 31, 162)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >✏️ EXERCÍCIOS PRÁTICOS</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(243, 229, 245),
+                rgb(248, 240, 255)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              border-left: 5px solid rgb(123, 31, 162);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              📝 Pratique no console ou em um arquivo .js
+            </div>
+
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  Exercício 1 — Tipos e typeof
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Crie uma variável de cada tipo primitivo (string, number,
+                  boolean). Use <strong>typeof</strong> para verificar e exibir
+                  o tipo de cada uma no console.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  Exercício 2 — Calculadora simples
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Crie duas variáveis numéricas. Calcule e exiba no console:
+                  soma, subtração, multiplicação, divisão e o resto da divisão
+                  entre elas.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  Exercício 3 — Frase dinâmica
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Crie variáveis para nome, idade e cidade. Use
+                  <strong>template literals</strong> (crases) para exibir: "Meu
+                  nome é [nome], tenho [idade] anos e moro em [cidade]."
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  Exercício 4 — Comparações
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Teste comparações e exiba o resultado (true/false): 15 > 10,
+                  "10" === 10, 20 >= 20, 7 < 3, 5 !== 5. Explique cada
+                  resultado.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #ede7f6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #6a1b9a;
+              font-size: 13px;
+              color: #311b92;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Desafio extra:</strong> Crie uma
+            variável <strong>preco = 150</strong> e outra
+            <strong>desconto = 20</strong>. Calcule o preço final com desconto
+            (em reais) e exiba:
+            <strong>"O preço com desconto é R$ [valor]."</strong> Depois
+            verifique se o preço final é menor que 100 e exiba o resultado
+            (true/false).
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">📒</span
+            ><span style="color: #3e2723; font-size: 17px; font-weight: 800"
+              >Resumo da Aula 2 — Tipos Primitivos e Operadores</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔤</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                String, Number, Boolean
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">➕</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                Aritméticos e concatenação
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">===</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                Comparação retorna boolean
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Tipos Primitivos</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Operadores</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Comparação</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >typeof</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

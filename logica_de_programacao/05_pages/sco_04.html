@@ -1,0 +1,1432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #3e2723; font-size: 12px; font-weight: 600"
+                >📒 JavaScript · Aula 4 · Estruturas de Dados</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #3e2723;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Objetos<br style="font-size: 28px" /><span
+              style="color: rgb(62, 39, 35, 0.8); font-size: 28px"
+              >Propriedades, Métodos e o Mundo Real</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(62, 39, 35, 0.7);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Chave-valor · Acesso · Manipulação · for...in · Arrays de objetos
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Objeto</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Propriedades</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Métodos</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >for...in</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >JSON</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — O QUE É UM OBJETO     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(247, 200, 0),
+              rgb(240, 170, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.25);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: #3e2723;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #3e2723; font-size: 17px; font-weight: 800"
+            >🗂️ O QUE É UM OBJETO?</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 251, 235),
+                rgb(255, 248, 220)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(240, 170, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #3e2723;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🧠 Definição
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              Um
+              <span
+                style="
+                  background: rgb(240, 170, 0);
+                  color: #3e2723;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Objeto</span
+              >
+              é uma coleção de
+              <strong style="font-size: 13px">pares chave-valor</strong>.
+              Enquanto arrays usam índices numéricos (0, 1, 2...), objetos usam
+              <strong style="font-size: 13px">nomes descritivos</strong>
+              (propriedades) para acessar valores. Pense em um objeto como uma
+              <strong style="font-size: 13px">ficha cadastral</strong>: cada
+              campo tem um rótulo (nome, idade, email) e um valor associado. São
+              criados com <strong>{ }</strong>.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 10px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📐</span
+            ><span style="color: #3e2723; font-size: 14px; font-weight: 800"
+              >Representação visual de um objeto</span
+            >
+          </div>
+
+          <div
+            style="
+              background: #fff;
+              border: 2px solid #f9a825;
+              border-radius: 12px;
+              padding: 20px;
+              margin-bottom: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+              "
+            >
+              <div
+                style="
+                  background: #fff8e1;
+                  border: 2px solid #f9a825;
+                  border-radius: 10px;
+                  padding: 14px 18px;
+                  text-align: center;
+                  min-width: 100px;
+                "
+              >
+                <div
+                  style="
+                    color: #e65100;
+                    font-size: 10px;
+                    font-weight: 800;
+                    margin-bottom: 6px;
+                  "
+                >
+                  🔑 Chave
+                </div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 700">
+                  nome
+                </div>
+                <div
+                  style="border-top: 1px dashed #f9a825; margin: 8px 0"
+                ></div>
+                <div
+                  style="
+                    color: #e65100;
+                    font-size: 10px;
+                    font-weight: 800;
+                    margin-bottom: 6px;
+                  "
+                >
+                  📦 Valor
+                </div>
+                <div style="color: #1565c0; font-size: 14px; font-weight: 700">
+                  "Carlos"
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff8e1;
+                  border: 2px solid #f9a825;
+                  border-radius: 10px;
+                  padding: 14px 18px;
+                  text-align: center;
+                  min-width: 100px;
+                "
+              >
+                <div
+                  style="
+                    color: #e65100;
+                    font-size: 10px;
+                    font-weight: 800;
+                    margin-bottom: 6px;
+                  "
+                >
+                  🔑 Chave
+                </div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 700">
+                  idade
+                </div>
+                <div
+                  style="border-top: 1px dashed #f9a825; margin: 8px 0"
+                ></div>
+                <div
+                  style="
+                    color: #e65100;
+                    font-size: 10px;
+                    font-weight: 800;
+                    margin-bottom: 6px;
+                  "
+                >
+                  📦 Valor
+                </div>
+                <div style="color: #1565c0; font-size: 14px; font-weight: 700">
+                  28
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff8e1;
+                  border: 2px solid #f9a825;
+                  border-radius: 10px;
+                  padding: 14px 18px;
+                  text-align: center;
+                  min-width: 100px;
+                "
+              >
+                <div
+                  style="
+                    color: #e65100;
+                    font-size: 10px;
+                    font-weight: 800;
+                    margin-bottom: 6px;
+                  "
+                >
+                  🔑 Chave
+                </div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 700">
+                  cidade
+                </div>
+                <div
+                  style="border-top: 1px dashed #f9a825; margin: 8px 0"
+                ></div>
+                <div
+                  style="
+                    color: #e65100;
+                    font-size: 10px;
+                    font-weight: 800;
+                    margin-bottom: 6px;
+                  "
+                >
+                  📦 Valor
+                </div>
+                <div style="color: #1565c0; font-size: 14px; font-weight: 700">
+                  "Curitiba"
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff8e1;
+                  border: 2px solid #f9a825;
+                  border-radius: 10px;
+                  padding: 14px 18px;
+                  text-align: center;
+                  min-width: 100px;
+                "
+              >
+                <div
+                  style="
+                    color: #e65100;
+                    font-size: 10px;
+                    font-weight: 800;
+                    margin-bottom: 6px;
+                  "
+                >
+                  🔑 Chave
+                </div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 700">
+                  logado
+                </div>
+                <div
+                  style="border-top: 1px dashed #f9a825; margin: 8px 0"
+                ></div>
+                <div
+                  style="
+                    color: #e65100;
+                    font-size: 10px;
+                    font-weight: 800;
+                    margin-bottom: 6px;
+                  "
+                >
+                  📦 Valor
+                </div>
+                <div style="color: #1565c0; font-size: 14px; font-weight: 700">
+                  true
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                text-align: center;
+                margin-top: 14px;
+                font-size: 11px;
+                color: #546e7a;
+              "
+            >
+              Objeto <strong>pessoa</strong> com 4 propriedades. Cada
+              propriedade tem uma <strong>chave</strong> (rótulo) e um
+              <strong>valor</strong>.
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #263238;
+              color: #a5d6a7;
+              border-radius: 8px;
+              padding: 16px 20px;
+              font-size: 13px;
+              font-family: &quot;Courier New&quot;, monospace;
+              line-height: 1.9;
+            "
+          >
+            <span style="color: #78909c">// Criando um objeto</span><br />
+            <span style="color: #82b1ff">let</span> pessoa = {<br />
+            &nbsp;&nbsp;nome:
+            <span style="color: #ffcc80">'Carlos'</span>,<br />
+            &nbsp;&nbsp;idade: 28,<br />
+            &nbsp;&nbsp;cidade:
+            <span style="color: #ffcc80">'Curitiba'</span>,<br />
+            &nbsp;&nbsp;logado: <span style="color: #82b1ff">true</span><br />
+            };<br /><br />
+            <span style="color: #78909c"
+              >// Acessando propriedades (duas formas)</span
+            ><br />
+            console.log(pessoa.nome); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              style="color: #78909c"
+              >// 'Carlos' (notação de ponto)</span
+            ><br />
+            console.log(pessoa['idade']); &nbsp;<span style="color: #78909c"
+              >// 28 (notação de colchetes)</span
+            >
+          </div>
+
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-top: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Ponto vs Colchetes: quando usar cada um?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Use <strong>notação de ponto</strong> (objeto.propriedade) sempre
+              que souber o nome da propriedade. Use
+              <strong>notação de colchetes</strong> (objeto['propriedade'])
+              quando o nome da propriedade estiver em uma variável ou tiver
+              caracteres especiais.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — MANIPULANDO OBJETOS   -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔧 MANIPULANDO OBJETOS</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(224, 242, 241),
+                rgb(232, 245, 233)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 4px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🧠 Adicionar, alterar e remover propriedades
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              Diferente de muitas linguagens, objetos JavaScript são
+              <strong style="font-size: 13px">dinâmicos</strong>: você pode
+              adicionar, alterar e remover propriedades a qualquer momento,
+              mesmo depois de criados.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 8px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #00897b;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                ➕ Adicionar
+              </div>
+              <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                Basta atribuir um valor a uma nova chave.
+              </div>
+              <div
+                style="
+                  background: #263238;
+                  color: #a5d6a7;
+                  border-radius: 4px;
+                  padding: 8px 12px;
+                  font-size: 11px;
+                  margin-top: 6px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+              >
+                pessoa.email = 'c@email.com';
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #00897b;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                ✏️ Alterar
+              </div>
+              <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                Atribua um novo valor a uma chave existente.
+              </div>
+              <div
+                style="
+                  background: #263238;
+                  color: #a5d6a7;
+                  border-radius: 4px;
+                  padding: 8px 12px;
+                  font-size: 11px;
+                  margin-top: 6px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+              >
+                pessoa.idade = 29;
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #00897b;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                🗑️ Remover
+              </div>
+              <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                Use o operador <strong>delete</strong>.
+              </div>
+              <div
+                style="
+                  background: #263238;
+                  color: #a5d6a7;
+                  border-radius: 4px;
+                  padding: 8px 12px;
+                  font-size: 11px;
+                  margin-top: 6px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+              >
+                delete pessoa.cidade;
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #263238;
+              color: #a5d6a7;
+              border-radius: 8px;
+              padding: 16px 20px;
+              font-size: 13px;
+              font-family: &quot;Courier New&quot;, monospace;
+              line-height: 1.9;
+            "
+          >
+            <span style="color: #82b1ff">let</span> carro = {<br />
+            &nbsp;&nbsp;marca:
+            <span style="color: #ffcc80">'Toyota'</span>,<br />
+            &nbsp;&nbsp;modelo:
+            <span style="color: #ffcc80">'Corolla'</span>,<br />
+            &nbsp;&nbsp;ano: 2022<br />
+            };<br /><br />
+            <span style="color: #78909c">// Adicionar</span><br />
+            carro.cor = <span style="color: #ffcc80">'prata'</span>;<br /><br />
+            <span style="color: #78909c">// Alterar</span><br />
+            carro.ano = 2023;<br /><br />
+            <span style="color: #78909c">// Remover</span><br />
+            <span style="color: #82b1ff">delete</span> carro.modelo;<br /><br />
+            console.log(carro);
+            <span style="color: #78909c"
+              >// {marca: 'Toyota', ano: 2023, cor: 'prata'}</span
+            >
+          </div>
+
+          <div
+            style="
+              background: #e0f2f1;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #00897b;
+              font-size: 13px;
+              color: #004d40;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px"
+              >💡 Verificando se uma propriedade existe:</strong
+            >
+            Use <strong>'propriedade' in objeto</strong> — retorna true ou
+            false. Ex: <strong>'email' in pessoa</strong>. Isso evita erros ao
+            acessar propriedades inexistentes.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — PERCORRENDO E LISTAS  -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔄 PERCORRENDO OBJETOS E ARRAYS DE OBJETOS</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- for...in -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #1565c0;
+              margin-bottom: 6px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >1</span
+              ><span style="color: #0d47a1; font-size: 15px; font-weight: 800"
+                >for...in — Percorrendo propriedades</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              O laço <strong>for...in</strong> percorre todas as
+              <strong>chaves</strong> de um objeto, permitindo acessar cada
+              propriedade dinamicamente.
+            </div>
+            <div
+              style="
+                background: #263238;
+                color: #a5d6a7;
+                border-radius: 6px;
+                padding: 12px 16px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #82b1ff">let</span> pessoa = { nome:
+              <span style="color: #ffcc80">'Ana'</span>, idade: 25, cidade:
+              <span style="color: #ffcc80">'SP'</span> };<br /><br />
+              <span style="color: #82b1ff">for</span> (<span
+                style="color: #82b1ff"
+                >let</span
+              >
+              chave <span style="color: #82b1ff">in</span> pessoa) {<br />
+              &nbsp;&nbsp;console.log(<span style="color: #ffcc80"
+                >`${chave}: ${pessoa[chave]}`</span
+              >);<br />
+              }<br /><br />
+              <span style="color: #78909c">// Resultado:</span><br />
+              <span style="color: #78909c">// nome: Ana</span><br />
+              <span style="color: #78909c">// idade: 25</span><br />
+              <span style="color: #78909c">// cidade: SP</span>
+            </div>
+          </div>
+
+          <!-- Array de objetos -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #1565c0;
+              margin-bottom: 6px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >2</span
+              ><span style="color: #0d47a1; font-size: 15px; font-weight: 800"
+                >Array de objetos — O padrão mais comum</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              No mundo real, você raramente trabalha com um único objeto. O mais
+              comum são <strong>listas de objetos</strong> (como produtos,
+              alunos, pedidos). Aqui você combina tudo que aprendeu sobre arrays
+              e objetos.
+            </div>
+            <div
+              style="
+                background: #263238;
+                color: #a5d6a7;
+                border-radius: 6px;
+                padding: 12px 16px;
+                font-size: 12px;
+                font-family: &quot;Courier New&quot;, monospace;
+                line-height: 1.8;
+              "
+            >
+              <span style="color: #82b1ff">let</span> alunos = [<br />
+              &nbsp;&nbsp;{ nome: <span style="color: #ffcc80">'João'</span>,
+              nota: 8.5 },<br />
+              &nbsp;&nbsp;{ nome: <span style="color: #ffcc80">'Maria'</span>,
+              nota: 9.0 },<br />
+              &nbsp;&nbsp;{ nome: <span style="color: #ffcc80">'Pedro'</span>,
+              nota: 7.0 }<br />
+              ];<br /><br />
+              <span style="color: #78909c">// Percorrendo com forEach</span
+              ><br />
+              alunos.<span style="color: #82b1ff">forEach</span>(<span
+                style="color: #82b1ff"
+                >function</span
+              >(aluno) {<br />
+              &nbsp;&nbsp;console.log(<span style="color: #ffcc80"
+                >`${aluno.nome}: ${aluno.nota}`</span
+              >);<br />
+              });
+            </div>
+          </div>
+
+          <!-- Object.keys -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #1565c0;
+              margin-bottom: 6px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >3</span
+              ><span style="color: #0d47a1; font-size: 15px; font-weight: 800"
+                >Métodos úteis: Object.keys() e Object.values()</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Transformam um objeto em array, extraindo só as chaves ou só os
+              valores. Muito útil para manipulação.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #263238;
+                  color: #a5d6a7;
+                  border-radius: 4px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+              >
+                <span style="color: #82b1ff">Object</span>.keys(pessoa)<br />
+                <span style="color: #78909c">// ['nome','idade','cidade']</span>
+              </div>
+              <div
+                style="
+                  background: #263238;
+                  color: #a5d6a7;
+                  border-radius: 4px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                "
+              >
+                <span style="color: #82b1ff">Object</span>.values(pessoa)<br />
+                <span style="color: #78909c">// ['Ana', 25, 'SP']</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — EXERCÍCIOS            -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(106, 27, 154),
+              rgb(123, 31, 162)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >✏️ EXERCÍCIOS PRÁTICOS</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(243, 229, 245),
+                rgb(248, 240, 255)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              border-left: 5px solid rgb(123, 31, 162);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              📝 Pratique no console ou em um arquivo .js
+            </div>
+
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  Exercício 1 — Criando seu primeiro objeto
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Crie um objeto <strong>livro</strong> com as propriedades:
+                  titulo, autor, ano e paginas. Exiba no console uma frase: "O
+                  livro [titulo] foi escrito por [autor] em [ano]."
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  Exercício 2 — Manipulando propriedades
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Usando o objeto do exercício 1: adicione uma propriedade
+                  <strong>editora</strong>, altere o <strong>ano</strong> e
+                  remova <strong>paginas</strong>. Exiba o objeto resultante.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  Exercício 3 — Percorrendo com for...in
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Crie um objeto <strong>celular</strong> com 4 propriedades
+                  (marca, modelo, ano, cor). Use <strong>for...in</strong> para
+                  exibir todas as chaves e valores no console.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  Exercício 4 — Array de objetos
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Crie um array com 3 objetos, cada um representando um filme
+                  (titulo, ano, genero). Use <strong>forEach</strong> para
+                  exibir: "[titulo] - [ano] - [genero]".
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #ede7f6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #6a1b9a;
+              font-size: 13px;
+              color: #311b92;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Desafio extra:</strong> Crie um
+            array com 5 objetos representando produtos de uma loja (nome, preco,
+            categoria). Use <strong>forEach</strong> para: (1) exibir todos os
+            produtos com preço, (2) calcular o valor total do estoque (soma de
+            todos os preços) e (3) contar quantos produtos pertencem a uma
+            categoria específica.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">📒</span
+            ><span style="color: #3e2723; font-size: 17px; font-weight: 800"
+              >Resumo da Aula 4 — Objetos</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🗂️</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                Pares chave-valor em { }
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔧</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                Adicionar, alterar, delete
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📚</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                Arrays de objetos no mundo real
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Objeto</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Propriedades</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >for...in</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Array de objetos</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

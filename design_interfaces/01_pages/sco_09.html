@@ -1,0 +1,981 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../design_interfaces.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(78, 52, 46) 0%,
+            rgb(109, 76, 65) 50%,
+            rgb(141, 110, 99) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(78, 52, 46, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #d7ccc8; font-size: 12px; font-weight: 600"
+                >✏️ Atividade Individual · Wireframe à Mão</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #fff;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Atividade Prática<br style="font-size: 28px" /><span
+              style="color: rgb(215, 204, 200); font-size: 28px"
+              >Wireframe de Landing Page</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            Papel e lápis · Esboço · Seções · Baixa fidelidade · Estrutura
+            visual
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #d7ccc8;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Wireframe</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #bcaaa4;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Papel e Lápis</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Individual</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >PDF</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — O QUE É WIREFRAME     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(78, 52, 46, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(78, 52, 46),
+              rgb(109, 76, 65)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📌 O QUE É UM WIREFRAME?</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(239, 235, 233),
+                rgb(215, 204, 200, 0.3)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(109, 76, 65);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4e342e;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              ✏️ Definição simples
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              O
+              <span
+                style="
+                  background: rgb(109, 76, 65);
+                  color: white;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >Wireframe</span
+              >
+              é um esboço simples da estrutura de uma página, como uma
+              <strong style="font-size: 13px">planta baixa</strong> da
+              construção civil. Ele mostra onde ficam os elementos (títulos,
+              imagens, botões, textos) sem se preocupar com cores, fontes ou
+              detalhes visuais. É o primeiro rascunho de qualquer interface —
+              rápido, sujo e essencial para pensar a organização do conteúdo
+              antes de partir para o design final.
+            </div>
+          </div>
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              💡 Por que fazer à mão?
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Fazer wireframe no papel é
+              <strong style="font-size: 13px"
+                >rápido, flexível e não exige ferramenta nenhuma</strong
+              >. Você pode rabiscar, errar, rabiscar de novo e testar ideias em
+              minutos. No mercado de trabalho, muitos designers ainda começam
+              projetos com esboços no papel antes de abrir o Figma. É uma
+              habilidade fundamental.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — O QUE ENTREGAR        -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(78, 52, 46, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📝 O QUE VOCÊ DEVE ENTREGAR</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(224, 242, 241),
+                rgb(232, 245, 233)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 4px;
+              border-left: 5px solid rgb(0, 137, 123);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #004d40;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🎯 Um wireframe de landing page feito à mão
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              Você deve criar,
+              <strong style="font-size: 13px"
+                >usando papel e lápis (ou caneta)</strong
+              >, o wireframe de uma landing page com
+              <strong style="font-size: 13px">3 ou 4 seções</strong>. Uma
+              landing page é uma página única criada para um objetivo
+              específico, como vender um produto, capturar leads ou apresentar
+              um serviço. Seu wireframe deve mostrar a estrutura completa da
+              página em baixa fidelidade.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 6px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📐</span
+            ><span style="color: #004d40; font-size: 14px; font-weight: 800"
+              >Sugestão de seções para sua landing page</span
+            >
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                🧭 Hero Section (Topo)
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Título principal, subtítulo, imagem de destaque e um botão de
+                chamada para ação (CTA).
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                💡 Seção de Benefícios
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Destaque 3 vantagens ou funcionalidades do produto/serviço com
+                ícones e textos curtos.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                📸 Seção de Prova Social
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Depoimentos de clientes, logos de empresas parceiras ou números
+                que geram credibilidade.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(224, 242, 241);
+                border-radius: 10px;
+                padding: 14px 16px;
+                border-left: 4px solid #00897b;
+                font-size: 14px;
+              "
+            >
+              <div style="color: #004d40; font-size: 12px; font-weight: 800">
+                📋 Rodapé com CTA Final
+              </div>
+              <div style="color: #37474f; font-size: 11px">
+                Última chamada para ação, links úteis e informações de contato.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e0f2f1;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #00897b;
+              font-size: 13px;
+              color: #004d40;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Você escolhe o tema:</strong>
+            Pode ser uma landing page para um curso online, um aplicativo, um
+            livro digital, um evento, uma promoção — use a criatividade! O
+            importante é praticar a estrutura.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — REGRAS DO WIREFRAME   -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(78, 52, 46, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📏 REGRAS DO WIREFRAME DE BAIXA FIDELIDADE</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              margin-bottom: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ O que DEVE ter
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ✏️ Feito com <strong>papel e lápis/caneta</strong><br />
+                📐 Apenas <strong>retângulos, linhas e rabiscos</strong><br />
+                📝 <strong>Anotações simples</strong> indicando o que é cada
+                elemento<br />
+                🧱 Estrutura clara com
+                <strong>3 ou 4 seções</strong> empilhadas<br />
+                🏷️ Nomes como "Logo", "Título", "Botão CTA", "Depoimento"
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ❌ O que NÃO deve ter
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                🚫 <strong>Cores</strong> — use apenas preto e cinza<br />
+                🚫 <strong>Imagens reais</strong> — use retângulos com um "X"<br />
+                🚫 <strong>Fontes definidas</strong> — use linhas retas para
+                texto<br />
+                🚫 <strong>Acabamento refinado</strong> — não é arte final<br />
+                🚫 <strong>Ferramenta digital</strong> — é para fazer no papel
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #e3f2fd;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #1565c0;
+              font-size: 13px;
+              color: #0d47a1;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Lembre-se:</strong> Wireframe não
+            é sobre beleza, é sobre estrutura. Se alguém olhar seu desenho e
+            entender onde fica cada elemento da página, você fez certo!
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — ENTREGA               -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(78, 52, 46, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(230, 81, 0),
+              rgb(245, 124, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📦 COMO FAZER E ENTREGAR</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              margin-bottom: 10px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(255, 243, 224);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #f57c00;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #e65100;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ Como fazer
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ✏️ Use <strong>papel e lápis (ou caneta)</strong> — Não vale
+                ferramenta digital.<br /><br />
+                📐 Desenhe <strong>3 ou 4 seções</strong> empilhadas
+                verticalmente.<br /><br />
+                🔲 Use apenas
+                <strong>retângulos, linhas e anotações simples</strong> para
+                indicar cada elemento.<br /><br />
+                🚫
+                <strong
+                  >Sem cores, sem imagens reais, sem fontes definidas</strong
+                >
+                — é baixa fidelidade.
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(232, 245, 233);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #2e7d32;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #1b5e20;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                📄 Forma de Entrega
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                🧑‍💻 <strong>Atividade individual</strong> — Cada aluno faz o
+                seu.<br /><br />
+                📸 <strong>Digitalize ou fotografe</strong> — Tire uma foto
+                nítida ou escaneie seu wireframe.<br /><br />
+                📄 <strong>Formato PDF</strong> — Salve a imagem como PDF.<br /><br />
+                📤 <strong>Envio online</strong> — Envie pelo ambiente virtual
+                da disciplina.
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(243, 229, 245);
+              border-radius: 12px;
+              padding: 18px;
+              border-top: 4px solid #6a1b9a;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 10px;
+              "
+            >
+              📊 Critérios de Avaliação
+            </div>
+            <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+              ✅ <strong>Feito à mão</strong> — O wireframe foi claramente
+              desenhado no papel.<br />
+              ✅ <strong>3 ou 4 seções</strong> — A landing page tem a
+              quantidade de seções solicitada.<br />
+              ✅ <strong>Estrutura clara</strong> — Dá para entender onde fica
+              cada elemento (título, imagem, botão, texto).<br />
+              ✅ <strong>Baixa fidelidade</strong> — Não há preocupação com
+              cores, fontes ou acabamento visual refinado.
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #fff3e0;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #f57c00;
+              font-size: 13px;
+              color: #e65100;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Dica final:</strong> Não se
+            preocupe com a beleza do desenho. Wireframe não é arte final — é
+            ferramenta de pensamento. Se você olhar para o papel e entender a
+            estrutura da página, já está ótimo! Rabisque, erre, refaça. Mão na
+            massa! ✏️🚀
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(78, 52, 46) 0%,
+            rgb(109, 76, 65) 50%,
+            rgb(141, 110, 99) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(78, 52, 46, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">✏️</span
+            ><span style="color: #fff; font-size: 17px; font-weight: 800"
+              >Resumo — Wireframe de Landing Page</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">✏️</div>
+              <div style="color: #d7ccc8; font-size: 11px; font-weight: bold">
+                Desenhar à mão no papel
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📐</div>
+              <div style="color: #d7ccc8; font-size: 11px; font-weight: bold">
+                3 ou 4 seções estruturadas
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📤</div>
+              <div style="color: #d7ccc8; font-size: 11px; font-weight: bold">
+                Digitalizar e enviar em PDF
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #d7ccc8;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Wireframe</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #bcaaa4;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Papel e Lápis</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #a5d6a7;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >Landing Page</span
+            >
+            <span
+              style="
+                background: rgba(255, 255, 255, 0.15);
+                color: #ef9a9a;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+              >PDF</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

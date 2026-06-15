@@ -1,0 +1,1371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #3e2723; font-size: 12px; font-weight: 600"
+                >📒 JavaScript · Aula 9 · Interação com a Página</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #3e2723;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Manipulação do DOM<br style="font-size: 28px" /><span
+              style="color: rgb(62, 39, 35, 0.8); font-size: 28px"
+              >Conectando JavaScript ao HTML</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(62, 39, 35, 0.7);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            querySelector · Eventos · innerHTML · Criar elementos · classList
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >DOM</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >querySelector</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Eventos</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >innerHTML</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >classList</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 1 — O QUE É O DOM         -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(247, 200, 0),
+              rgb(240, 170, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.25);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: #3e2723;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1</span
+          >
+          <span style="color: #3e2723; font-size: 17px; font-weight: 800"
+            >🌳 O QUE É O DOM?</span
+          >
+        </div>
+        <div style="padding: 28px 32px; font-size: 14px">
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 251, 235),
+                rgb(255, 248, 220)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              margin-bottom: 18px;
+              border-left: 5px solid rgb(240, 170, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #3e2723;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 8px;
+              "
+            >
+              🧠 A ponte entre HTML e JavaScript
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
+              O
+              <span
+                style="
+                  background: rgb(240, 170, 0);
+                  color: #3e2723;
+                  padding: 1px 8px;
+                  border-radius: 5px;
+                  font-weight: bold;
+                  font-size: 13px;
+                "
+                >DOM</span
+              >
+              (Document Object Model) é a
+              <strong style="font-size: 13px"
+                >representação do HTML como uma árvore de objetos</strong
+              >
+              que o JavaScript pode acessar e modificar. É através do DOM que
+              seu código "conversa" com a página: lê textos, altera estilos,
+              responde a cliques, adiciona ou remove elementos. Toda interação
+              dinâmica em uma página web passa pelo DOM.
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 10px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 16px">📐</span
+            ><span style="color: #3e2723; font-size: 14px; font-weight: 800"
+              >Visualização da árvore DOM</span
+            >
+          </div>
+
+          <div
+            style="
+              background: #fff;
+              border: 2px solid #f9a825;
+              border-radius: 12px;
+              padding: 24px 20px;
+              margin-bottom: 14px;
+              text-align: center;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+              "
+            >
+              <div
+                style="
+                  background: #3e2723;
+                  color: #fff;
+                  border-radius: 8px;
+                  padding: 10px 20px;
+                  font-weight: 700;
+                  font-size: 13px;
+                "
+              >
+                📄 document
+              </div>
+              <div style="width: 3px; height: 20px; background: #f9a825"></div>
+              <div
+                style="
+                  background: #fff8e1;
+                  border: 2px solid #f9a825;
+                  border-radius: 8px;
+                  padding: 8px 16px;
+                  font-weight: 700;
+                  font-size: 13px;
+                  color: #3e2723;
+                "
+              >
+                &lt;html&gt;
+              </div>
+              <div style="display: flex; gap: 40px; margin-top: 0">
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  "
+                >
+                  <div
+                    style="width: 3px; height: 18px; background: #f9a825"
+                  ></div>
+                  <div
+                    style="
+                      background: #fff8e1;
+                      border: 2px solid #f9a825;
+                      border-radius: 6px;
+                      padding: 6px 14px;
+                      font-size: 12px;
+                      color: #3e2723;
+                    "
+                  >
+                    &lt;head&gt;
+                  </div>
+                  <div
+                    style="width: 3px; height: 12px; background: #f9a825"
+                  ></div>
+                  <div
+                    style="
+                      background: #fff8e1;
+                      border: 1px solid #f9a825;
+                      border-radius: 4px;
+                      padding: 4px 10px;
+                      font-size: 10px;
+                      color: #546e7a;
+                    "
+                  >
+                    &lt;title&gt;
+                  </div>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  "
+                >
+                  <div
+                    style="width: 3px; height: 18px; background: #f9a825"
+                  ></div>
+                  <div
+                    style="
+                      background: #fff8e1;
+                      border: 2px solid #f9a825;
+                      border-radius: 6px;
+                      padding: 6px 14px;
+                      font-size: 12px;
+                      color: #3e2723;
+                    "
+                  >
+                    &lt;body&gt;
+                  </div>
+                  <div
+                    style="width: 3px; height: 12px; background: #f9a825"
+                  ></div>
+                  <div style="display: flex; gap: 14px">
+                    <div
+                      style="
+                        background: #fff8e1;
+                        border: 1px solid #f9a825;
+                        border-radius: 4px;
+                        padding: 4px 10px;
+                        font-size: 10px;
+                        color: #546e7a;
+                      "
+                    >
+                      &lt;h1&gt;
+                    </div>
+                    <div
+                      style="
+                        background: #fff8e1;
+                        border: 1px solid #f9a825;
+                        border-radius: 4px;
+                        padding: 4px 10px;
+                        font-size: 10px;
+                        color: #546e7a;
+                      "
+                    >
+                      &lt;p&gt;
+                    </div>
+                    <div
+                      style="
+                        background: #e8f5e9;
+                        border: 2px solid #2e7d32;
+                        border-radius: 4px;
+                        padding: 4px 10px;
+                        font-size: 10px;
+                        color: #1b5e20;
+                        font-weight: 700;
+                      "
+                    >
+                      &lt;button&gt;
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="font-size: 11px; color: #546e7a; margin-top: 14px">
+              O JavaScript acessa qualquer elemento da árvore e pode
+              <strong style="color: #1b5e20">ler</strong>,
+              <strong>alterar</strong>, <strong>adicionar</strong> ou
+              <strong>remover</strong>.
+            </div>
+          </div>
+
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(255, 248, 230),
+                rgb(255, 243, 224)
+              );
+              border-radius: 12px;
+              padding: 16px 20px;
+              border-left: 5px solid rgb(245, 124, 0);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #e65100;
+                font-size: 13px;
+                font-weight: 800;
+                margin-bottom: 6px;
+              "
+            >
+              🧠 O objeto document
+            </div>
+            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
+              Toda manipulação do DOM começa pelo objeto
+              <strong>document</strong>. Ele representa a página inteira e
+              fornece métodos para encontrar elementos:
+              <strong>document.querySelector()</strong>,
+              <strong>document.getElementById()</strong> e outros. É a porta de
+              entrada do JavaScript para o HTML.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 2 — SELECIONANDO ELEMENTOS -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >2</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔍 SELECIONANDO E MODIFICANDO ELEMENTOS</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- Selecionar -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #00897b;
+              margin-bottom: 6px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >1</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >Encontrando elementos na página</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Use seletores CSS para encontrar elementos. O método mais versátil
+              é o <strong>querySelector</strong> (retorna o primeiro) e
+              <strong>querySelectorAll</strong> (retorna todos em uma NodeList).
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div>
+                <div
+                  style="
+                    background: #263238;
+                    color: #a5d6a7;
+                    border-radius: 6px;
+                    padding: 10px 14px;
+                    font-size: 11px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    line-height: 1.7;
+                  "
+                >
+                  <span style="color: #78909c">// Por tag, classe ou id</span
+                  ><br />
+                  <span style="color: #82b1ff">let</span> titulo =
+                  document.<span style="color: #82b1ff">querySelector</span
+                  >(<span style="color: #ffcc80">'h1'</span>);<br />
+                  <span style="color: #82b1ff">let</span> botao = document.<span
+                    style="color: #82b1ff"
+                    >querySelector</span
+                  >(<span style="color: #ffcc80">'.btn'</span>);<br />
+                  <span style="color: #82b1ff">let</span> header =
+                  document.<span style="color: #82b1ff">querySelector</span
+                  >(<span style="color: #ffcc80">'#cabecalho'</span>);
+                </div>
+              </div>
+              <div>
+                <div
+                  style="
+                    background: #263238;
+                    color: #a5d6a7;
+                    border-radius: 6px;
+                    padding: 10px 14px;
+                    font-size: 11px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    line-height: 1.7;
+                  "
+                >
+                  <span style="color: #78909c">// Múltiplos elementos</span
+                  ><br />
+                  <span style="color: #82b1ff">let</span> paragrafos =
+                  document.<span style="color: #82b1ff">querySelectorAll</span
+                  >(<span style="color: #ffcc80">'p'</span>);<br /><br />
+                  <span style="color: #78909c"
+                    >// querySelectorAll retorna NodeList</span
+                  ><br />
+                  paragrafos.<span style="color: #82b1ff">forEach</span>(p =>
+                  {<br />
+                  &nbsp;&nbsp;console.log(p.textContent);<br />
+                  });
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modificar -->
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #00897b;
+              margin-bottom: 6px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >2</span
+              ><span style="color: #004d40; font-size: 15px; font-weight: 800"
+                >Modificando conteúdo e estilo</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Depois de selecionar um elemento, você pode ler ou alterar seu
+              conteúdo, atributos e estilo diretamente.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 8px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #263238;
+                  color: #a5d6a7;
+                  border-radius: 6px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  line-height: 1.7;
+                "
+              >
+                <span style="color: #78909c">// Conteúdo de texto</span><br />
+                elemento.<span style="color: #82b1ff">textContent</span> =
+                <span style="color: #ffcc80">'Novo texto'</span>;
+              </div>
+              <div
+                style="
+                  background: #263238;
+                  color: #a5d6a7;
+                  border-radius: 6px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  line-height: 1.7;
+                "
+              >
+                <span style="color: #78909c">// HTML interno</span><br />
+                elemento.<span style="color: #82b1ff">innerHTML</span> =
+                <span style="color: #ffcc80"
+                  >'&lt;strong&gt;Oi&lt;/strong&gt;'</span
+                >;
+              </div>
+              <div
+                style="
+                  background: #263238;
+                  color: #a5d6a7;
+                  border-radius: 6px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  line-height: 1.7;
+                "
+              >
+                <span style="color: #78909c">// Estilo CSS</span><br />
+                elemento.<span style="color: #82b1ff">style</span>.color =
+                <span style="color: #ffcc80">'red'</span>;
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 3 — EVENTOS E CLASSES     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >3</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🖱️ EVENTOS, CLASSES E CRIAR ELEMENTOS</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- Eventos -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #1565c0;
+              margin-bottom: 6px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >1</span
+              ><span style="color: #0d47a1; font-size: 15px; font-weight: 800"
+                >Eventos — Respondendo ao usuário</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Eventos são ações que acontecem na página: <strong>click</strong>,
+              <strong>keydown</strong>, <strong>submit</strong>,
+              <strong>mouseover</strong>... Use
+              <strong>addEventListener</strong> para "escutar" essas ações e
+              executar código em resposta.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div>
+                <div
+                  style="
+                    background: #263238;
+                    color: #a5d6a7;
+                    border-radius: 6px;
+                    padding: 10px 14px;
+                    font-size: 11px;
+                    font-family: &quot;Courier New&quot;, monospace;
+                    line-height: 1.7;
+                  "
+                >
+                  <span style="color: #78909c">// HTML</span><br />
+                  <span style="color: #ffcc80"
+                    >&lt;button id="meuBotao"&gt;Clique&lt;/button&gt;</span
+                  ><br /><br />
+                  <span style="color: #78909c">// JavaScript</span><br />
+                  <span style="color: #82b1ff">let</span> botao = document.<span
+                    style="color: #82b1ff"
+                    >querySelector</span
+                  >(<span style="color: #ffcc80">'#meuBotao'</span
+                  >);<br /><br />
+                  botao.<span style="color: #82b1ff">addEventListener</span
+                  >(<span style="color: #ffcc80">'click'</span>,
+                  <span style="color: #82b1ff">function</span>() {<br />
+                  &nbsp;&nbsp;console.log(<span style="color: #ffcc80"
+                    >'Clicou!'</span
+                  >);<br />
+                  });
+                </div>
+              </div>
+              <div>
+                <div style="font-size: 11px; color: #37474f; line-height: 1.8">
+                  <strong>Eventos comuns:</strong><br />
+                  🖱️ <strong>click</strong> — clique do mouse<br />
+                  ⌨️ <strong>keydown</strong> — tecla pressionada<br />
+                  📝 <strong>submit</strong> — envio de formulário<br />
+                  🖱️ <strong>mouseover</strong> — mouse passa por cima<br />
+                  📄 <strong>DOMContentLoaded</strong> — página carregada
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- classList e criar elementos -->
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 12px;
+              padding: 18px 20px;
+              border-left: 5px solid #1565c0;
+              margin-bottom: 6px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >2</span
+              ><span style="color: #0d47a1; font-size: 15px; font-weight: 800"
+                >classList e criar elementos dinâmicos</span
+              >
+            </div>
+            <div
+              style="
+                color: #37474f;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 8px;
+              "
+            >
+              Manipule classes CSS sem sobrescrever todas de uma vez. E crie
+              elementos do zero com <strong>createElement</strong> e
+              <strong>appendChild</strong>.
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #263238;
+                  color: #a5d6a7;
+                  border-radius: 6px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  line-height: 1.7;
+                "
+              >
+                <span style="color: #78909c">// Trabalhando com classes</span
+                ><br />
+                elemento.<span style="color: #82b1ff">classList</span>.add(<span
+                  style="color: #ffcc80"
+                  >'ativo'</span
+                >);<br />
+                elemento.<span style="color: #82b1ff">classList</span
+                >.remove(<span style="color: #ffcc80">'inativo'</span>);<br />
+                elemento.<span style="color: #82b1ff">classList</span
+                >.toggle(<span style="color: #ffcc80">'dark'</span>);<br />
+                elemento.<span style="color: #82b1ff">classList</span
+                >.contains(<span style="color: #ffcc80">'ativo'</span>);
+              </div>
+              <div
+                style="
+                  background: #263238;
+                  color: #a5d6a7;
+                  border-radius: 6px;
+                  padding: 10px 14px;
+                  font-size: 11px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  line-height: 1.7;
+                "
+              >
+                <span style="color: #78909c">// Criando um elemento</span><br />
+                <span style="color: #82b1ff">let</span> novoItem =
+                document.<span style="color: #82b1ff">createElement</span>(<span
+                  style="color: #ffcc80"
+                  >'li'</span
+                >);<br />
+                novoItem.textContent =
+                <span style="color: #ffcc80">'Item novo'</span>;<br />
+                lista.<span style="color: #82b1ff">appendChild</span>(novoItem);
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- SEÇÃO 4 — EXERCÍCIOS            -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(106, 27, 154),
+              rgb(123, 31, 162)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >4</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >✏️ EXERCÍCIOS PRÁTICOS</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: linear-gradient(
+                135deg,
+                rgb(243, 229, 245),
+                rgb(248, 240, 255)
+              );
+              border-radius: 14px;
+              padding: 20px 24px;
+              border-left: 5px solid rgb(123, 31, 162);
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                color: #4a148c;
+                font-size: 14px;
+                font-weight: 800;
+                margin-bottom: 12px;
+              "
+            >
+              📝 Crie um arquivo HTML com &lt;script&gt; para cada exercício
+            </div>
+
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  Exercício 1 — Alterando texto
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Crie um HTML com um <strong>&lt;h1&gt;</strong> e um
+                  <strong>&lt;button&gt;</strong>. Use
+                  <strong>querySelector</strong> e
+                  <strong>addEventListener</strong> para que, ao clicar no
+                  botão, o texto do h1 mude para "Título alterado!".
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  Exercício 2 — Mudando cores com classList
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Crie um parágrafo e um botão. No CSS, crie uma classe
+                  <strong>.destaque</strong> com cor e fundo diferentes. Use
+                  <strong>classList.toggle</strong> para adicionar/remover essa
+                  classe ao clicar no botão.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  Exercício 3 — Criando elementos
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Crie uma <strong>&lt;ul&gt;</strong> vazia e um botão
+                  "Adicionar item". Use <strong>createElement</strong> e
+                  <strong>appendChild</strong> para adicionar um novo
+                  <strong>&lt;li&gt;</strong> com texto a cada clique.
+                </div>
+              </div>
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 8px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #8e24aa;
+                  font-size: 14px;
+                "
+              >
+                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
+                  Exercício 4 — Contador com eventos
+                </div>
+                <div style="color: #37474f; font-size: 11px; margin-top: 4px">
+                  Crie um contador com um
+                  <strong>&lt;span&gt;</strong> (começando em 0) e dois botões:
+                  "+" e "-". Use eventos de clique para aumentar ou diminuir o
+                  número exibido.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #ede7f6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #6a1b9a;
+              font-size: 13px;
+              color: #311b92;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Desafio extra:</strong> Crie uma
+            lista de tarefas simples: um <strong>&lt;input&gt;</strong>, um
+            botão "Adicionar" e uma <strong>&lt;ul&gt;</strong>. Ao clicar no
+            botão, pegue o valor do input, crie um novo
+            <strong>&lt;li&gt;</strong> e adicione à lista. Depois faça com que
+            cada item da lista, ao ser clicado, seja removido (dica: use
+            <strong>remove()</strong> no elemento clicado). Combine tudo que
+            aprendeu: selecionar, eventos, criar elementos e remover.
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">📒</span
+            ><span style="color: #3e2723; font-size: 17px; font-weight: 800"
+              >Resumo da Aula 9 — Manipulação do DOM</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔍</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                querySelector encontra elementos
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🖱️</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                Eventos respondem ao usuário
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🏗️</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                Criar e modificar elementos
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >DOM</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Eventos</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >classList</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >createElement</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

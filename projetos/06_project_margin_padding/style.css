@@ -1,0 +1,26 @@
+body {
+    background-color: #1A1A2E;
+}
+
+h1 {
+    color: #00D4FF;
+}
+
+.primeiroQuadrado {
+    background-color: #1565C0;
+    padding: 30px;
+    color: white;
+}
+
+.segundoQuadrado {
+    background-color: #2E7D32;
+    color: white;
+    margin: 30px;
+}
+
+.terceiroQuadrado {
+    background-color: #E65100;
+    color: white;
+    margin: 20px;
+    padding: 20px;
+}
