@@ -1,0 +1,1339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #3e2723; font-size: 12px; font-weight: 600"
+                >📒 JavaScript · Aula 5 · Atividades de Fixação</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #3e2723;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Atividades de Fixação<br style="font-size: 28px" /><span
+              style="color: rgb(62, 39, 35, 0.8); font-size: 28px"
+              >Condicionais — if, else, switch e Ternário</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(62, 39, 35, 0.7);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            15 exercícios · if/else · else if · Operador ternário · switch/case
+            · break/default
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >if/else</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >switch</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Ternário</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Prática</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- PARTE 1 — EXERCÍCIOS 1 A 5      -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(247, 200, 0),
+              rgb(240, 170, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.25);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: #3e2723;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1-5</span
+          >
+          <span style="color: #3e2723; font-size: 17px; font-weight: 800"
+            >🔀 if/else BÁSICO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >1</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Maior de idade
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie uma variável <strong>let idade = 17</strong>. Use
+                  <strong>if/else</strong> para verificar se a pessoa é maior de
+                  idade (>= 18). Exiba "Maior de idade" ou "Menor de idade".
+                  Teste com diferentes valores.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >2</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Número positivo ou negativo
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie uma variável <strong>let numero = -5</strong>. Use
+                  <strong>if/else</strong> para verificar se o número é positivo
+                  (> 0), negativo (< 0) ou zero (=== 0). Exiba a classificação
+                  correta.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >3</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Par ou ímpar
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie uma variável <strong>let valor = 7</strong>. Use
+                  <strong>if/else</strong> com o operador
+                  <strong>%</strong> (módulo) para verificar se o número é par
+                  ou ímpar. Exiba: "O número X é par" ou "O número X é ímpar".
+                  Teste com outros valores.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >4</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Aprovado ou reprovado
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie <strong>let nota = 6.5</strong>. Use
+                  <strong>if/else</strong> para verificar se a nota é maior ou
+                  igual a 7. Se for, exiba "Aprovado". Caso contrário, exiba
+                  "Reprovado". Teste com nota 7.0 e 4.5.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >5</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Vogal ou consoante
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie <strong>let letra = 'e'</strong>. Use
+                  <strong>if/else</strong> com o operador
+                  <strong>||</strong> (OU) para verificar se a letra é uma vogal
+                  (a, e, i, o, u). Exiba "Vogal" ou "Consoante". Dica: compare
+                  com cada vogal usando ||.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- PARTE 2 — EXERCÍCIOS 6 A 10     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >6-10</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔗 else if E TERNÁRIO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >6</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Classificação de idade
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie <strong>let idade = 15</strong>. Use
+                  <strong>if/else if/else</strong> para classificar: "Criança"
+                  (0-12), "Adolescente" (13-17), "Adulto" (18-64), "Idoso"
+                  (65+). Teste com pelo menos 4 idades diferentes.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >7</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Classificação de notas escolares
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie <strong>let nota = 8.5</strong>. Use
+                  <strong>if/else if/else</strong>: nota >= 9 → "Excelente",
+                  nota >= 7 → "Bom", nota >= 5 → "Regular", abaixo →
+                  "Insuficiente". Cuidado com a ordem das condições!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >8</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Cálculo de desconto
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie <strong>let valorCompra = 250</strong>. Use
+                  <strong>if/else if/else</strong>: compras acima de 500 → 20%
+                  de desconto, acima de 200 → 10%, acima de 100 → 5%, abaixo →
+                  sem desconto. Calcule e exiba o valor final.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >9</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Operador ternário simples
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie <strong>let logado = true</strong>. Use o
+                  <strong>operador ternário</strong> para armazenar em uma
+                  variável <strong>mensagem</strong> o texto "Bem-vindo!" (se
+                  true) ou "Faça login" (se false). Exiba a mensagem no console.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >10</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Ternário com número
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie <strong>let numero = 42</strong>. Use o
+                  <strong>operador ternário</strong> para verificar se o número
+                  é par ou ímpar (use % === 0) e armazene o resultado em uma
+                  variável. Exiba: "O número X é [par/ímpar]".
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- PARTE 3 — EXERCÍCIOS 11 A 15    -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >11-15</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔀 switch/case</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >11</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Dias da semana com switch
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie <strong>let dia = 3</strong>. Use
+                  <strong>switch</strong> para exibir o nome do dia (1 =
+                  "Domingo", 2 = "Segunda"... 7 = "Sábado"). Inclua
+                  <strong>default</strong> para valores inválidos. Teste com dia
+                  = 1, 4, 7 e 10.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >12</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Meses do ano com switch
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie <strong>let mes = 6</strong>. Use
+                  <strong>switch</strong> para exibir o nome do mês (1 =
+                  "Janeiro", 2 = "Fevereiro"... 12 = "Dezembro"). Teste com
+                  vários valores incluindo 13 para testar o default.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >13</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Status de pedido com switch
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie <strong>let status = 'entregue'</strong>. Use
+                  <strong>switch</strong> com strings: 'pendente' → "Pagamento
+                  não confirmado", 'enviado' → "A caminho", 'entregue' →
+                  "Finalizado". Inclua default. Não esqueça do break!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >14</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Cargos de funcionários
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie <strong>let cargo = 'gerente'</strong>. Use
+                  <strong>switch</strong> para exibir o salário base:
+                  'estagiario' → R$ 1500, 'analista' → R$ 4000, 'gerente' → R$
+                  8000, 'diretor' → R$ 15000. Use default para "Cargo não
+                  encontrado".
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >15</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Mini projeto: Calculadora com switch
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie <strong>let num1 = 15, num2 = 5, operador = '/'</strong>.
+                  Use <strong>switch</strong> no operador para: '+' → soma, '-'
+                  → subtração, '*' → multiplicação, '/' → divisão (verifique se
+                  num2 !== 0 antes). Exiba o resultado ou "Divisão por zero não
+                  permitida" ou "Operador inválido". Teste com todos os
+                  operadores.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- DICAS PARA RESOLUÇÃO            -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(106, 27, 154),
+              rgb(123, 31, 162)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >💡</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >DICAS PARA RESOLUÇÃO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #4a148c;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ O que você deve praticar
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                🔀 Usar <strong>if/else</strong> para dois caminhos<br />
+                🔗 Encadear <strong>else if</strong> para múltiplas condições<br />
+                ❓ Usar <strong>operador ternário</strong> (? :) em uma linha<br />
+                🔀 Usar <strong>switch/case</strong> para muitos valores<br />
+                🛑 Usar <strong>break</strong> em cada case<br />
+                📋 Incluir <strong>default</strong> para casos não previstos<br />
+                📐 Ordenar condições da mais restritiva para a mais ampla
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ⚠️ Erros comuns para evitar
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ❌ Esquecer as <strong>chaves { }</strong> no if/else<br />
+                ❌ Usar <strong>=</strong> (atribuição) em vez de
+                <strong>===</strong> (comparação)<br />
+                ❌ Colocar condições na ordem errada no else if<br />
+                ❌ Esquecer o <strong>break</strong> no switch (cai para o
+                próximo case)<br />
+                ❌ Usar ternário para lógicas muito complexas<br />
+                ❌ Esquecer o <strong>default</strong> no switch para casos
+                inesperados<br />
+                ❌ Divisão por zero sem verificação prévia
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #ede7f6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #6a1b9a;
+              font-size: 13px;
+              color: #311b92;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Dica de ouro:</strong>
+            Condicionais são o coração da lógica de programação. Praticar
+            if/else, else if, ternário e switch vai te preparar para qualquer
+            desafio de tomada de decisão em código. Varie os valores de entrada
+            para testar todos os caminhos possíveis! 🚀
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">✅</span
+            ><span style="color: #3e2723; font-size: 17px; font-weight: 800"
+              >Resumo — 15 Atividades de Fixação</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔀</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                5 exercícios de if/else
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔗</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                5 exercícios de else if/Ternário
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔀</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                5 exercícios de switch
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >if/else</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >else if</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Ternário</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >switch</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

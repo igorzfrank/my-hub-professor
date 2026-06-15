@@ -1,0 +1,1334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #3e2723; font-size: 12px; font-weight: 600"
+                >📒 JavaScript · Aula 1 · Atividades de Fixação</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #3e2723;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Atividades de Fixação<br style="font-size: 28px" /><span
+              style="color: rgb(62, 39, 35, 0.8); font-size: 28px"
+              >Introdução ao JavaScript</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(62, 39, 35, 0.7);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            15 exercícios · Console · Variáveis · let/const · Comentários ·
+            console.log
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Console</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Variáveis</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >let/const</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Prática</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- PARTE 1 — EXERCÍCIOS 1 A 5      -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(247, 200, 0),
+              rgb(240, 170, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.25);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: #3e2723;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1-5</span
+          >
+          <span style="color: #3e2723; font-size: 17px; font-weight: 800"
+            >💻 CONSOLE E PRIMEIROS COMANDOS</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >1</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Primeiro contato com o console
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Abra o console do navegador (F12) e digite:
+                  <strong>console.log("Estou aprendendo JavaScript!")</strong>.
+                  Depois, execute os comandos:
+                  <strong>console.log(100)</strong>,
+                  <strong>console.log(10 + 5)</strong> e
+                  <strong>console.log("Resultado:", 10 * 3)</strong>.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >2</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Explorando o console.log
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Use <strong>console.log</strong> para exibir: seu nome
+                  completo, sua idade, sua cidade e uma frase que junte todas
+                  essas informações em uma única linha, separadas por vírgula.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >3</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Criando seu primeiro arquivo
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um arquivo <strong>index.html</strong> com a estrutura
+                  básica (html, head, body). Dentro da tag
+                  <strong>&lt;script&gt;</strong>, coloque um
+                  <strong>console.log("Meu primeiro script!")</strong>. Abra o
+                  arquivo no navegador e verifique o console.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >4</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Arquivo externo .js
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Separe o código JavaScript do HTML: crie um arquivo
+                  <strong>script.js</strong> com o console.log e vincule ao HTML
+                  usando
+                  <strong>&lt;script src="script.js"&gt;&lt;/script&gt;</strong
+                  >. Teste para ver se funciona igual.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >5</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Calculadora no console
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Usando apenas <strong>console.log</strong>, calcule e exiba o
+                  resultado de: 25 + 15, 100 - 45, 12 * 8, 144 / 12, e o resto
+                  da divisão de 17 por 5 (use o operador %).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- PARTE 2 — EXERCÍCIOS 6 A 10     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >6-10</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📦 VARIÁVEIS COM let E const</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >6</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Declarando variáveis com let
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie 3 variáveis usando <strong>let</strong>: uma para
+                  armazenar o nome de um filme, outra para o ano de lançamento e
+                  outra para a nota (número decimal). Exiba todas no console.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >7</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Declarando constantes com const
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie 3 constantes usando <strong>const</strong>: uma para o
+                  nome do seu país, outra para o valor de PI (3.14159) e outra
+                  para o número de dias da semana (7). Exiba todas no console.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >8</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Diferença entre let e const
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie uma variável <strong>let pontuacao = 100</strong> e
+                  altere seu valor para 150. Crie uma constante
+                  <strong>const nomeJogo = "Xadrez"</strong> e tente alterá-la.
+                  O que acontece? Anote o erro que aparece.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >9</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Criando uma ficha pessoal
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie variáveis para: nome (let), idade (let), anoNascimento
+                  (const), cidade (let) e profissao (const). Atribua valores e
+                  exiba tudo no console com frases descritivas.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >10</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Variáveis com template literals
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Usando as variáveis do exercício 9, crie uma única frase
+                  usando <strong>template literals</strong> (crases e ${}): "Meu
+                  nome é [nome], tenho [idade] anos, nasci em [anoNascimento],
+                  moro em [cidade] e sou [profissao]."
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- PARTE 3 — EXERCÍCIOS 11 A 15    -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >11-15</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >📝 COMENTÁRIOS E BOAS PRÁTICAS</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >11</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Comentário de uma linha
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um script com 5 linhas de código. Acima de cada linha,
+                  escreva um comentário <strong>//</strong> explicando o que
+                  aquela linha faz. Exemplo:
+                  <strong>// Exibe uma mensagem no console</strong> seguido do
+                  console.log.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >12</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Comentário de múltiplas linhas
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  No topo do seu script, adicione um bloco de comentário
+                  <strong>/* */</strong> com: seu nome, data, e uma breve
+                  descrição do que o script faz. Depois crie as variáveis e
+                  comandos normalmente.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >13</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Organizando o código
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um script com 3 seções separadas por comentários:
+                  <strong>// === DADOS PESSOAIS ===</strong>,
+                  <strong>// === DADOS DO CURSO ===</strong> e
+                  <strong>// === EXIBIÇÃO ===</strong>. Em cada seção, crie
+                  variáveis relacionadas ao tema.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >14</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Depurando com console.log
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie 5 variáveis diferentes (nome, idade, altura, casado,
+                  temFilhos). Use <strong>console.log</strong> para exibir o
+                  valor de cada uma ANTES de atribuir os valores. Depois atribua
+                  valores e exiba novamente. Observe a diferença (undefined vs
+                  valores).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >15</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Mini projeto: Carta de apresentação
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um script completo com: (1) cabeçalho de comentário com
+                  seu nome e data, (2) variáveis let para nome, idade, hobby,
+                  (3) constantes const para cidade natal e profissão dos sonhos,
+                  (4) console.log com uma carta de apresentação completa usando
+                  template literals. Seja criativo!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- GABARITO / DICAS                 -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(106, 27, 154),
+              rgb(123, 31, 162)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >💡</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >DICAS PARA RESOLUÇÃO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #4a148c;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ O que você deve praticar
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                🖥️ Abrir o console (F12) e testar comandos<br />
+                📄 Criar arquivos HTML com tag &lt;script&gt;<br />
+                📁 Separar código em arquivos .js externos<br />
+                📦 Declarar variáveis com <strong>let</strong><br />
+                🔒 Declarar constantes com <strong>const</strong><br />
+                💬 Usar comentários // e /* */<br />
+                📝 Exibir dados com <strong>console.log()</strong><br />
+                🔤 Concatenar com template literals (`${}`)
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ⚠️ Erros comuns para evitar
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ❌ Esquecer de abrir/fechar aspas em strings<br />
+                ❌ Usar <strong>var</strong> em vez de let/const<br />
+                ❌ Tentar alterar o valor de uma const<br />
+                ❌ Esquecer o &lt;script&gt; no HTML<br />
+                ❌ Caminho errado no src do arquivo .js<br />
+                ❌ Console fechado e achar que o código não rodou<br />
+                ❌ Usar crase (`) achando que é aspas simples (')
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #ede7f6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #6a1b9a;
+              font-size: 13px;
+              color: #311b92;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Dica de ouro:</strong> Faça os
+            exercícios na ordem! Cada um prepara o terreno para o próximo. Se
+            travar em algum, volte na aula teórica e revise o conteúdo antes de
+            continuar. O console do navegador é seu laboratório — use e abuse
+            dele para testar! 🚀
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">✅</span
+            ><span style="color: #3e2723; font-size: 17px; font-weight: 800"
+              >Resumo — 15 Atividades de Fixação</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">💻</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                5 exercícios de Console
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📦</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                5 exercícios de Variáveis
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📝</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                5 exercícios de Comentários
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Console</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Variáveis</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >let/const</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Prática</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #3e2723; font-size: 12px; font-weight: 600"
+                >📒 JavaScript · Aula 3 · Atividades de Fixação</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #3e2723;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Atividades de Fixação<br style="font-size: 28px" /><span
+              style="color: rgb(62, 39, 35, 0.8); font-size: 28px"
+              >Arrays — Listas, Índices e Métodos</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(62, 39, 35, 0.7);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            15 exercícios · Criação · Índices · push/pop · length · forEach ·
+            includes · indexOf
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Array</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Métodos</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >forEach</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Prática</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- PARTE 1 — EXERCÍCIOS 1 A 5      -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(247, 200, 0),
+              rgb(240, 170, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.25);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: #3e2723;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1-5</span
+          >
+          <span style="color: #3e2723; font-size: 17px; font-weight: 800"
+            >📚 CRIAÇÃO E ACESSO A ARRAYS</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >1</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Criando seu primeiro array
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array chamado <strong>cores</strong> com 5 nomes de
+                  cores. Exiba o array completo no console e também exiba o
+                  valor de <strong>cores.length</strong> para verificar o
+                  tamanho.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >2</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Acessando por índice
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Usando o array <strong>cores</strong> do exercício 1, exiba no
+                  console: o primeiro elemento (índice 0), o terceiro elemento
+                  (índice 2) e o último elemento (use
+                  <strong>cores.length - 1</strong>).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >3</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Array de números
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array chamado <strong>idades</strong> com 6 valores
+                  numéricos diferentes. Exiba o array, seu tamanho (length) e a
+                  soma do primeiro com o último elemento (use os índices).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >4</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Array misto
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array chamado <strong>misturado</strong> contendo: uma
+                  string, um number, um boolean, outro string e outro number.
+                  Use <strong>typeof</strong> para verificar o tipo do terceiro
+                  elemento do array.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >5</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Array vazio e preenchimento
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array vazio <strong>let lista = []</strong>. Depois,
+                  usando os índices manualmente, atribua valores nas posições 0,
+                  1 e 2. Exiba o array e seu length. O que acontece se você
+                  atribuir diretamente na posição 5?
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- PARTE 2 — EXERCÍCIOS 6 A 10     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >6-10</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔧 MÉTODOS DE MANIPULAÇÃO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >6</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  push e pop na prática
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong>let animais = ['gato', 'cachorro']</strong>. Use
+                  <strong>push</strong> para adicionar 'pássaro' e 'peixe'.
+                  Depois use <strong>pop</strong> para remover o último. Exiba o
+                  array e o elemento removido em cada etapa.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >7</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  unshift e shift na prática
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Usando o mesmo array do exercício 6, use
+                  <strong>unshift</strong> para adicionar 'leão' no início.
+                  Depois use <strong>shift</strong> para remover o primeiro
+                  elemento. Compare o comportamento com push/pop.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >8</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Procurando com indexOf
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong
+                    >let frutas = ['maçã', 'banana', 'laranja', 'uva',
+                    'banana']</strong
+                  >. Use <strong>indexOf('banana')</strong> para encontrar a
+                  posição da primeira 'banana'. Depois teste indexOf com uma
+                  fruta que não existe no array.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >9</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Verificando com includes
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong>let numeros = [3, 7, 12, 9, 5, 8]</strong>. Use
+                  <strong>includes()</strong> para verificar se o número 12
+                  existe no array, se o número 15 existe e se o número 7 existe.
+                  Exiba true ou false para cada verificação.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >10</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Invertendo com reverse
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong>let letras = ['A', 'B', 'C', 'D', 'E']</strong>. Use
+                  <strong>reverse()</strong> para inverter a ordem. Exiba o
+                  array antes e depois. Atenção: reverse modifica o array
+                  original!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- PARTE 3 — EXERCÍCIOS 11 A 15    -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >11-15</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔄 PERCORRENDO COM forEach E for</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >11</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Primeiro forEach
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong
+                    >paises = ['Brasil', 'Argentina', 'Chile', 'Peru',
+                    'Uruguai']</strong
+                  >. Use <strong>forEach</strong> para exibir cada país no
+                  console com a frase: "País: [nome]".
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >12</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  forEach com índice
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Usando o array de países, use <strong>forEach</strong> com o
+                  parâmetro de índice para exibir: "1º - Brasil", "2º -
+                  Argentina", "3º - Chile"... (lembre-se de somar 1 ao índice).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >13</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Percorrendo com for clássico
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array <strong>numeros = [10, 20, 30, 40, 50]</strong>.
+                  Use um <strong>for</strong> clássico para percorrer o array e
+                  exibir cada número multiplicado por 2. O resultado deve ser:
+                  20, 40, 60, 80, 100.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >14</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Somando valores com forEach
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array <strong>valores = [15, 22, 8, 34, 11]</strong>.
+                  Use <strong>forEach</strong> para calcular a soma de todos os
+                  valores. Exiba: "A soma total é [resultado]". Dica: crie
+                  <strong>let soma = 0</strong> antes do forEach.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >15</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Mini projeto: Lista de compras
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um script completo com: (1) array vazio
+                  <strong>let compras = []</strong>, (2) use push para adicionar
+                  5 itens de supermercado, (3) use forEach para exibir todos os
+                  itens numerados, (4) verifique com includes se 'arroz' está na
+                  lista, (5) remova o último item com pop e exiba o item
+                  removido, (6) use forEach novamente para mostrar a lista
+                  atualizada com o total de itens (length).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- DICAS PARA RESOLUÇÃO            -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(106, 27, 154),
+              rgb(123, 31, 162)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >💡</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >DICAS PARA RESOLUÇÃO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #4a148c;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ O que você deve praticar
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                📚 Criar arrays com colchetes <strong>[ ]</strong><br />
+                🔢 Acessar elementos por índice (começa em 0)<br />
+                📏 Usar <strong>.length</strong> para saber o tamanho<br />
+                ➕ Adicionar com <strong>push()</strong> e
+                <strong>unshift()</strong><br />
+                ➖ Remover com <strong>pop()</strong> e <strong>shift()</strong
+                ><br />
+                🔍 Buscar com <strong>indexOf()</strong> e
+                <strong>includes()</strong><br />
+                🔀 Inverter com <strong>reverse()</strong><br />
+                🔄 Percorrer com <strong>forEach()</strong> e
+                <strong>for</strong>
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ⚠️ Erros comuns para evitar
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ❌ Esquecer que índices começam em <strong>0</strong> (não em
+                1)<br />
+                ❌ Usar <strong>length</strong> como índice (o último é length -
+                1)<br />
+                ❌ Confundir <strong>push/pop</strong> (final) com
+                <strong>unshift/shift</strong> (início)<br />
+                ❌ Achar que <strong>indexOf</strong> retorna true/false
+                (retorna índice ou -1)<br />
+                ❌ Esquecer que <strong>reverse()</strong> modifica o array
+                original<br />
+                ❌ Usar <strong>forEach</strong> esperando retornar um valor
+                (ele não retorna nada)
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #ede7f6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #6a1b9a;
+              font-size: 13px;
+              color: #311b92;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Dica de ouro:</strong> Arrays são
+            a estrutura de dados mais usada em JavaScript. Dominar a criação,
+            manipulação e iteração de arrays é essencial para tudo que virá
+            depois: objetos, funções e manipulação do DOM. Pratique bastante! 🚀
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">✅</span
+            ><span style="color: #3e2723; font-size: 17px; font-weight: 800"
+              >Resumo — 15 Atividades de Fixação</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">📚</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                5 exercícios de Criação
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔧</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                5 exercícios de Métodos
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔄</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                5 exercícios de forEach
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Array</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Métodos</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >forEach</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Prática</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

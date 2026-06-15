@@ -1,0 +1,1353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #3e2723; font-size: 12px; font-weight: 600"
+                >📒 JavaScript · Aula 8 · Atividades de Fixação</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #3e2723;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Atividades de Fixação<br style="font-size: 28px" /><span
+              style="color: rgb(62, 39, 35, 0.8); font-size: 28px"
+              >Map, Filter e Find</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(62, 39, 35, 0.7);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            15 exercícios · map · filter · find · Encadeamento · Imutabilidade
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >map</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >filter</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >find</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Prática</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- PARTE 1 — EXERCÍCIOS 1 A 5      -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(247, 200, 0),
+              rgb(240, 170, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.25);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: #3e2723;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1-5</span
+          >
+          <span style="color: #3e2723; font-size: 17px; font-weight: 800"
+            >🗺️ MAP — TRANSFORMANDO ARRAYS</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >1</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Dobrando números
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong>let numeros = [1, 2, 3, 4, 5, 6]</strong>. Use
+                  <strong>map</strong> para criar um novo array onde cada número
+                  é multiplicado por 2. Exiba o array original e o novo array.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >2</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Convertendo temperaturas
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array <strong>let celsius = [0, 15, 30, 45]</strong>.
+                  Use <strong>map</strong> para converter para Fahrenheit (F = C
+                  * 9/5 + 32). Exiba o novo array com as temperaturas
+                  convertidas.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >3</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Transformando para maiúsculas
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong>let nomes = ['ana', 'bruno', 'carla', 'diego']</strong
+                  >. Use <strong>map</strong> para criar um novo array com todos
+                  os nomes em letras maiúsculas. Dica: use o método
+                  <strong>.toUpperCase()</strong>.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >4</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Extraindo propriedades
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong
+                    >let produtos = [{nome: 'Mouse', preco: 50}, {nome:
+                    'Teclado', preco: 120}, {nome: 'Monitor', preco:
+                    800}]</strong
+                  >. Use <strong>map</strong> para criar um array apenas com os
+                  nomes dos produtos.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >5</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Adicionando prefixo
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong>let frutas = ['maçã', 'banana', 'uva']</strong>. Use
+                  <strong>map</strong> para criar um novo array onde cada fruta
+                  recebe o prefixo "Fruta: " (ex: "Fruta: maçã"). Exiba o
+                  resultado.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- PARTE 2 — EXERCÍCIOS 6 A 10     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >6-10</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🔍 FILTER — FILTRANDO DADOS</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >6</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Filtrando maiores que 10
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong>let numeros = [5, 12, 8, 21, 3, 15, 7]</strong>. Use
+                  <strong>filter</strong> para criar um novo array apenas com
+                  números maiores que 10. Exiba o resultado.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >7</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Filtrando números pares
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Use o mesmo array do exercício 6. Crie um novo array usando
+                  <strong>filter</strong> que contenha apenas os números pares
+                  (dica: use o operador <strong>%</strong>). Exiba o resultado.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >8</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Filtrando por tamanho do texto
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong
+                    >let palavras = ['sol', 'montanha', 'lua', 'estrela',
+                    'mar']</strong
+                  >. Use <strong>filter</strong> para retornar apenas palavras
+                  com mais de 3 letras. Dica: use <strong>.length</strong>.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >9</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Filtrando objetos por preço
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Use o array <strong>produtos</strong> do exercício 4. Use
+                  <strong>filter</strong> para retornar apenas os produtos com
+                  preço maior que 60. Exiba o array resultante.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >10</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Filter que retorna array vazio
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Usando o array <strong>numeros</strong> do exercício 6, use
+                  <strong>filter</strong> para encontrar números maiores que
+                  100. O que é retornado? Exiba o resultado e verifique o
+                  <strong>.length</strong> do array resultante.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- PARTE 3 — EXERCÍCIOS 11 A 15    -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >11-15</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🎯 FIND E ENCADEAMENTO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >11</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Encontrando com find
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong>let idades = [12, 18, 25, 30, 15, 42]</strong>. Use
+                  <strong>find</strong> para encontrar o primeiro número maior
+                  que 20. Exiba o resultado. Depois teste com uma condição que
+                  não existe (ex: > 100).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >12</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Buscando por ID
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong
+                    >let usuarios = [{id: 1, nome: 'João'}, {id: 2, nome:
+                    'Maria'}, {id: 3, nome: 'Pedro'}]</strong
+                  >. Use <strong>find</strong> para localizar o usuário com id
+                  igual a 2. Exiba o objeto encontrado.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >13</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Find em array de strings
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong
+                    >let frutas = ['maçã', 'banana', 'laranja', 'uva']</strong
+                  >. Use <strong>find</strong> para encontrar a primeira fruta
+                  que começa com a letra 'l'. Dica: use o método
+                  <strong>.startsWith()</strong>.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >14</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Encadeando filter e map
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong>let valores = [10, 25, 8, 42, 15, 3, 30]</strong>.
+                  Encadeie <strong>filter</strong> e <strong>map</strong> em uma
+                  única linha: primeiro filtre os números maiores que 15, depois
+                  multiplique cada um por 3. Exiba o resultado.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >15</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Mini projeto: Catálogo inteligente
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong
+                    >let filmes = [{titulo: 'Matrix', ano: 1999, genero:
+                    'Ficção'}, {titulo: 'Interestelar', ano: 2014, genero:
+                    'Ficção'}, {titulo: 'Titanic', ano: 1997, genero:
+                    'Romance'}, {titulo: 'Avatar', ano: 2009, genero: 'Ficção'},
+                    {titulo: 'Coringa', ano: 2019, genero: 'Drama'}]</strong
+                  >. Depois: (1) use <strong>map</strong> para criar um array
+                  apenas com os títulos, (2) use <strong>filter</strong> para
+                  selecionar filmes do gênero 'Ficção', (3) use
+                  <strong>find</strong> para localizar o filme do ano de 1997,
+                  (4) encadeie <strong>filter</strong> e
+                  <strong>map</strong> para exibir apenas os títulos dos filmes
+                  lançados após o ano 2000.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- DICAS PARA RESOLUÇÃO            -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(106, 27, 154),
+              rgb(123, 31, 162)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >💡</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >DICAS PARA RESOLUÇÃO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #4a148c;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ O que você deve praticar
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                🗺️ Usar <strong>map</strong> para transformar cada item<br />
+                🔍 Usar <strong>filter</strong> para selecionar por condição<br />
+                🎯 Usar <strong>find</strong> para localizar um item único<br />
+                🔗 Encadear <strong>filter().map()</strong> em uma linha<br />
+                📦 Entender que os métodos <strong>não modificam</strong> o
+                array original<br />
+                🏹 Usar <strong>arrow functions</strong> como callback
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ⚠️ Erros comuns para evitar
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ❌ Achar que <strong>map</strong> modifica o array original<br />
+                ❌ Usar <strong>filter</strong> esperando modificar os itens
+                (use map depois)<br />
+                ❌ Esquecer que <strong>find</strong> retorna undefined se não
+                encontrar<br />
+                ❌ Não armazenar o retorno em uma variável<br />
+                ❌ Usar <strong>find</strong> esperando retornar todos os itens
+                (use filter)<br />
+                ❌ Achar que <strong>forEach</strong> retorna algo (ele retorna
+                undefined)
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #ede7f6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #6a1b9a;
+              font-size: 13px;
+              color: #311b92;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Dica de ouro:</strong> map,
+            filter e find são os métodos mais usados no desenvolvimento moderno
+            com JavaScript. Dominar esses três vai facilitar muito sua vida ao
+            trabalhar com APIs, listas de produtos, catálogos e qualquer tipo de
+            dados estruturados. Pratique bastante! 🚀
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">✅</span
+            ><span style="color: #3e2723; font-size: 17px; font-weight: 800"
+              >Resumo — 15 Atividades de Fixação</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🗺️</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                5 exercícios de map
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔍</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                5 exercícios de filter
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🎯</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                5 exercícios de find/encadear
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >map</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >filter</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >find</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Encadeamento</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

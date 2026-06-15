@@ -1,0 +1,1345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../custom.css" />
+  </head>
+  <body>
+    <a href="../logica_de_programacao.html" class="back-btn"> ← </a>
+    <div
+      style="
+        font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          rgb(240, 244, 255) 0%,
+          rgb(232, 240, 254) 100%
+        );
+        padding: 40px 24px;
+        max-width: 980px;
+        margin: 0px auto;
+        color: rgb(26, 42, 58);
+        font-size: 14px;
+      "
+    >
+      <!-- ══ CABEÇALHO PRINCIPAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 40px 36px 32px;
+          margin-bottom: 28px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 220px;
+            height: 220px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div
+          style="
+            position: absolute;
+            bottom: -30px;
+            left: 40px;
+            width: 140px;
+            height: 140px;
+            background: rgba(0, 0, 0, 0.04);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              flex-wrap: wrap;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                border-radius: 30px;
+                padding: 6px 18px;
+                font-size: 14px;
+              "
+            >
+              <span style="color: #3e2723; font-size: 12px; font-weight: 600"
+                >📒 JavaScript · Aula 6 · Atividades de Fixação</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              color: #3e2723;
+              font-size: 28px;
+              font-weight: 900;
+              line-height: 1.2;
+              margin-bottom: 10px;
+            "
+          >
+            Atividades de Fixação<br style="font-size: 28px" /><span
+              style="color: rgb(62, 39, 35, 0.8); font-size: 28px"
+              >Laços de Repetição — for, while e do...while</span
+            >
+          </div>
+          <div
+            style="
+              color: rgba(62, 39, 35, 0.7);
+              font-size: 14px;
+              margin-top: 10px;
+            "
+          >
+            15 exercícios · for · while · do...while · break · continue ·
+            Percorrer arrays
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              margin-top: 16px;
+              flex-wrap: wrap;
+              font-size: 14px;
+            "
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >for</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >while</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >break/continue</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 5px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >Prática</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- PARTE 1 — EXERCÍCIOS 1 A 5      -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(247, 200, 0),
+              rgb(240, 170, 0)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.25);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: #3e2723;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >1-5</span
+          >
+          <span style="color: #3e2723; font-size: 17px; font-weight: 800"
+            >🔄 FOR BÁSICO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >1</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Contagem crescente
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Use um <strong>for</strong> para exibir no console os números
+                  de 1 a 10, um em cada linha. Depois faça o mesmo exibindo de 1
+                  a 20.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >2</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Contagem decrescente
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Use um <strong>for</strong> para exibir uma contagem
+                  regressiva de 10 até 1. Dica: comece com
+                  <strong>let i = 10</strong>, condição
+                  <strong>i >= 1</strong> e decremente com <strong>i--</strong>.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >3</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Números pares com for
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Use um <strong>for</strong> de 1 a 20. Dentro dele, use um
+                  <strong>if</strong> com o operador <strong>%</strong> para
+                  exibir apenas os números pares. Exiba também apenas os números
+                  ímpares em outro loop.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >4</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Soma de números
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Use um <strong>for</strong> para somar todos os números de 1 a
+                  100. Crie uma variável <strong>let soma = 0</strong> antes do
+                  loop e vá somando dentro dele. Exiba o resultado final.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(255, 251, 235);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #f9a825;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #f9a825;
+                  color: #3e2723;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >5</span
+              >
+              <div>
+                <div style="color: #3e2723; font-size: 13px; font-weight: 800">
+                  Tabuada com for
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie uma variável <strong>let numero = 7</strong>. Use um
+                  <strong>for</strong> de 1 a 10 para exibir a tabuada completa:
+                  "7 x 1 = 7", "7 x 2 = 14"... até "7 x 10 = 70". Depois teste
+                  com outros números.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- PARTE 2 — EXERCÍCIOS 6 A 10     -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(0, 105, 92),
+              rgb(0, 137, 123)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >6-10</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >⏳ while E do...while</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >6</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Contagem regressiva com while
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Use um <strong>while</strong> para fazer uma contagem
+                  regressiva de 10 até 1. Ao final do loop, exiba "Feliz Ano
+                  Novo!". Lembre-se de decrementar o contador dentro do loop.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >7</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Contagem crescente com while
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Use um <strong>while</strong> para exibir os números de 1 a
+                  15. Crie <strong>let i = 1</strong> antes do loop e incremente
+                  com <strong>i++</strong> dentro dele. A condição deve ser
+                  <strong>i <= 15</strong>.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >8</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  Dobrando valores com while
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie <strong>let valor = 2</strong>. Use um
+                  <strong>while</strong> para dobrar o valor (multiplicar por 2)
+                  enquanto ele for menor que 1000. Exiba cada valor no console.
+                  Quantas iterações foram necessárias?
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >9</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  do...while básico
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie <strong>let x = 20</strong>. Use um
+                  <strong>do...while</strong> para exibir o valor de x e depois
+                  decrementar. A condição deve ser <strong>x > 10</strong>.
+                  Observe que o bloco executa pelo menos uma vez.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(224, 242, 241);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #00897b;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #00695c;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >10</span
+              >
+              <div>
+                <div style="color: #004d40; font-size: 13px; font-weight: 800">
+                  do...while com condição falsa
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie <strong>let y = 10</strong>. Use um
+                  <strong>do...while</strong> com a condição
+                  <strong>y < 5</strong>. O que acontece? O bloco executa mesmo
+                  com a condição falsa? Explique a diferença para o while.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- PARTE 3 — EXERCÍCIOS 11 A 15    -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(21, 101, 192),
+              rgb(25, 118, 210)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >11-15</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >🛑 break, continue E ARRAYS</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >11</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Break no for
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um <strong>for</strong> de 1 a 20. Use
+                  <strong>break</strong> para interromper o loop quando o número
+                  chegar a 13. Exiba todos os números exibidos antes da
+                  interrupção.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >12</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Continue no for
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um <strong>for</strong> de 1 a 15. Use
+                  <strong>continue</strong> para pular os números múltiplos de 5
+                  (divisíveis por 5). Exiba apenas os números que não foram
+                  pulados.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >13</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Percorrendo array com for
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong
+                    >let frutas = ['maçã', 'banana', 'laranja', 'uva',
+                    'morango']</strong
+                  >. Use um <strong>for</strong> clássico para percorrer e
+                  exibir cada fruta com seu índice: "Índice 0: maçã", "Índice 1:
+                  banana"...
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >14</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Encontrando valores com break
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong>let numeros = [3, 8, 12, 5, 20, 7, 15]</strong>. Use
+                  um <strong>for</strong> para percorrer o array. Quando
+                  encontrar o número 20, use <strong>break</strong> para parar e
+                  exiba: "Número 20 encontrado na posição X".
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: rgb(227, 242, 253);
+              border-radius: 10px;
+              padding: 16px 20px;
+              border-left: 4px solid #1565c0;
+              font-size: 14px;
+            "
+          >
+            <div style="display: flex; align-items: flex-start; gap: 12px">
+              <span
+                style="
+                  background: #0d47a1;
+                  color: #fff;
+                  border-radius: 50%;
+                  min-width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 800;
+                "
+                >15</span
+              >
+              <div>
+                <div style="color: #0d47a1; font-size: 13px; font-weight: 800">
+                  Mini projeto: Análise de array
+                </div>
+                <div
+                  style="
+                    color: #37474f;
+                    font-size: 12px;
+                    margin-top: 4px;
+                    line-height: 1.7;
+                  "
+                >
+                  Crie um array
+                  <strong>let valores = [12, 5, 8, 21, 3, 14, 7]</strong>. Use
+                  um <strong>for</strong> para: (1) encontrar e exibir o maior
+                  número, (2) encontrar e exibir o menor número, (3) calcular e
+                  exibir a soma de todos os valores, (4) calcular e exibir a
+                  média (soma / quantidade). Dica: crie variáveis para maior,
+                  menor e soma antes do loop.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════ -->
+      <!-- DICAS PARA RESOLUÇÃO            -->
+      <!-- ══════════════════════════════════ -->
+      <div
+        style="
+          background: rgb(255, 255, 255);
+          border-radius: 16px;
+          padding: 0px;
+          margin-bottom: 22px;
+          box-shadow: rgba(247, 180, 0, 0.12) 0px 6px 30px;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              90deg,
+              rgb(106, 27, 154),
+              rgb(123, 31, 162)
+            );
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.2);
+              border-radius: 10px;
+              padding: 6px 12px;
+              color: white;
+              font-weight: 900;
+              font-size: 15px;
+            "
+            >💡</span
+          >
+          <span style="color: #fff; font-size: 17px; font-weight: 800"
+            >DICAS PARA RESOLUÇÃO</span
+          >
+        </div>
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgb(243, 229, 245);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #8e24aa;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #4a148c;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ✅ O que você deve praticar
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                🔄 Usar <strong>for</strong> com inicialização, condição e
+                incremento<br />
+                ⏳ Usar <strong>while</strong> quando não sabe quantas
+                repetições<br />
+                🔁 Usar <strong>do...while</strong> para garantir ao menos uma
+                execução<br />
+                🛑 Usar <strong>break</strong> para interromper loops<br />
+                ⏭️ Usar <strong>continue</strong> para pular iterações<br />
+                📚 Percorrer arrays com <strong>for</strong> usando
+                <strong>.length</strong><br />
+                🧮 Acumular valores com variáveis antes do loop
+              </div>
+            </div>
+            <div
+              style="
+                background: rgb(255, 235, 238);
+                border-radius: 12px;
+                padding: 18px;
+                border-top: 4px solid #c62828;
+                font-size: 14px;
+              "
+            >
+              <div
+                style="
+                  color: #c62828;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
+                "
+              >
+                ⚠️ Erros comuns para evitar
+              </div>
+              <div style="font-size: 12px; color: #37474f; line-height: 1.9">
+                ❌ Criar <strong>loop infinito</strong> esquecendo de alterar a
+                condição<br />
+                ❌ Usar <strong>while</strong> quando <strong>for</strong> seria
+                mais adequado<br />
+                ❌ Esquecer de inicializar o contador antes do
+                <strong>while</strong><br />
+                ❌ Colocar <strong>break</strong> no lugar errado e sair antes
+                da hora<br />
+                ❌ Confundir <strong>break</strong> (sai do loop) com
+                <strong>continue</strong> (pula iteração)<br />
+                ❌ Usar índice errado ao percorrer array (esquecer que começa em
+                0)<br />
+                ❌ Não declarar variáveis de acúmulo (soma, maior) antes do loop
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #ede7f6;
+              border-radius: 10px;
+              padding: 14px 18px;
+              border-left: 4px solid #6a1b9a;
+              font-size: 13px;
+              color: #311b92;
+              line-height: 1.7;
+            "
+          >
+            <strong style="font-size: 13px">💡 Dica de ouro:</strong> Se você
+            souber exatamente quantas vezes precisa repetir, use
+            <strong>for</strong>. Se a repetição depende de uma condição que
+            pode mudar, use <strong>while</strong>. Se precisar garantir pelo
+            menos uma execução, use <strong>do...while</strong>. Com a prática,
+            a escolha fica natural! 🚀
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ FECHAMENTO FINAL ══ -->
+      <div
+        style="
+          background: linear-gradient(
+            135deg,
+            rgb(247, 220, 0) 0%,
+            rgb(240, 180, 0) 50%,
+            rgb(230, 160, 0) 100%
+          );
+          border-radius: 20px;
+          padding: 32px;
+          box-shadow: rgba(247, 180, 0, 0.45) 0px 12px 40px;
+          position: relative;
+          overflow: hidden;
+          font-size: 14px;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            font-size: 14px;
+          "
+        >
+          &nbsp;
+        </div>
+        <div style="position: relative; z-index: 1; font-size: 14px">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+              font-size: 14px;
+            "
+          >
+            <span style="font-size: 22px">✅</span
+            ><span style="color: #3e2723; font-size: 17px; font-weight: 800"
+              >Resumo — 15 Atividades de Fixação</span
+            >
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 10px;
+              margin-bottom: 18px;
+              font-size: 14px;
+            "
+          >
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🔄</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                5 exercícios de for
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">⏳</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                5 exercícios de while/do...while
+              </div>
+            </div>
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                padding: 13px;
+                text-align: center;
+                font-size: 14px;
+              "
+            >
+              <div style="font-size: 20px; margin-bottom: 5px">🛑</div>
+              <div style="color: #3e2723; font-size: 11px; font-weight: bold">
+                5 exercícios de break/continue
+              </div>
+            </div>
+          </div>
+          <div
+            style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px"
+          >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >for</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >while</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >do...while</span
+            >
+            <span
+              style="
+                background: rgba(0, 0, 0, 0.08);
+                color: #3e2723;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+              "
+              >break/continue</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
