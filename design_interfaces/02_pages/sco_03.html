@@ -114,8 +114,7 @@
               margin-top: 10px;
             "
           >
-            Hierarquia visual · Grids aplicados · Construção de telas
-            profissionais de alta fidelidade
+            Hierarquia visual · Grids · Alta fidelidade · Protótipo
           </div>
           <div
             style="
@@ -148,7 +147,7 @@
                 font-weight: bold;
                 border: 1px solid rgba(255, 255, 255, 0.2);
               "
-              >Grids</span
+              >Grid</span
             >
             <span
               style="
@@ -166,18 +165,6 @@
               style="
                 background: rgba(255, 255, 255, 0.15);
                 color: #ef9a9a;
-                padding: 5px 14px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: bold;
-                border: 1px solid rgba(255, 255, 255, 0.2);
-              "
-              >Layout</span
-            >
-            <span
-              style="
-                background: rgba(255, 255, 255, 0.15);
-                color: #ce93d8;
                 padding: 5px 14px;
                 border-radius: 20px;
                 font-size: 12px;
@@ -230,248 +217,247 @@
             >1</span
           >
           <span style="color: #fff; font-size: 17px; font-weight: 800"
-            >👁️ Hierarquia Visual — Guiando o Olhar do Usuário</span
+            >👁️ HIERARQUIA VISUAL — Guiando o Olhar</span
           >
         </div>
         <div style="padding: 28px 32px; font-size: 14px">
+          <!-- Card principal -->
           <div
             style="
-              background: linear-gradient(
-                135deg,
-                rgb(232, 234, 246),
-                rgb(237, 231, 246)
-              );
-              border-radius: 14px;
-              padding: 20px 24px;
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
               margin-bottom: 18px;
-              border-left: 5px solid rgb(92, 107, 192);
               font-size: 14px;
             "
           >
             <div
               style="
-                color: #1a237e;
+                background: linear-gradient(
+                  135deg,
+                  rgb(232, 234, 246),
+                  rgb(237, 231, 246)
+                );
+                border-radius: 14px;
+                padding: 20px 24px;
+                border-left: 5px solid rgb(92, 107, 192);
                 font-size: 14px;
-                font-weight: 800;
-                margin-bottom: 8px;
               "
             >
-              🎯 O que é Hierarquia Visual?
-            </div>
-            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
-              <span
+              <div
                 style="
-                  background: rgb(57, 73, 171);
-                  color: white;
-                  padding: 1px 8px;
-                  border-radius: 5px;
-                  font-weight: bold;
-                  font-size: 13px;
+                  color: #1a237e;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
                 "
-                >Hierarquia Visual</span
               >
-              é o princípio de organização que
-              <strong style="font-size: 13px">guia o olhar do usuário</strong>
-              de forma intuitiva pela interface, indicando o que é mais
-              importante, o que é secundário e qual a ordem de leitura. É a
-              diferença entre uma tela que
-              <strong style="font-size: 13px">comunica instantaneamente</strong>
-              e uma que confunde.
+                🎯 O que é?
+              </div>
+              <div style="color: #37474f; font-size: 13px; line-height: 1.7">
+                Organização que <strong>guia o olhar</strong> do usuário pela
+                interface, mostrando o que é mais importante, secundário e a
+                ordem de leitura.
+              </div>
             </div>
-          </div>
-          <div
-            style="
-              background: linear-gradient(
-                135deg,
-                rgb(255, 248, 230),
-                rgb(255, 243, 224)
-              );
-              border-radius: 12px;
-              padding: 16px 20px;
-              border-left: 5px solid rgb(245, 124, 0);
-              margin-bottom: 18px;
-              font-size: 14px;
-            "
-          >
             <div
               style="
-                color: #e65100;
-                font-size: 13px;
-                font-weight: 800;
-                margin-bottom: 6px;
+                background: linear-gradient(
+                  135deg,
+                  rgb(255, 248, 230),
+                  rgb(255, 243, 224)
+                );
+                border-radius: 14px;
+                padding: 20px 24px;
+                border-left: 5px solid rgb(245, 124, 0);
+                font-size: 14px;
               "
             >
-              💡 Analogia simples
-            </div>
-            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
-              É como um
-              <strong style="font-size: 13px"
-                >maestro regendo uma orquestra</strong
+              <div
+                style="
+                  color: #e65100;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
               >
-              — ele decide quais instrumentos tocam mais alto (destaque) e quais
-              tocam mais baixo (secundário), criando uma harmonia que guia a
-              atenção do ouvinte. Sem hierarquia, todos os instrumentos tocariam
-              no mesmo volume — seria ruído, não música.
+                💡 Analogia
+              </div>
+              <div style="color: #37474f; font-size: 13px; line-height: 1.7">
+                Como um <strong>maestro</strong> — ele decide quais instrumentos
+                tocam mais alto e quais mais baixo. Se tudo grita,
+                <strong>nada é ouvido</strong>.
+              </div>
             </div>
           </div>
 
+          <!-- 8 Princípios em grid visual -->
           <div
             style="
               display: flex;
               align-items: center;
               gap: 8px;
-              margin-bottom: 14px;
+              margin-bottom: 10px;
               font-size: 14px;
             "
           >
             <span style="font-size: 16px">🎻</span
             ><span style="color: #283593; font-size: 14px; font-weight: 800"
-              >Os 8 Princípios da Hierarquia Visual</span
+              >8 Princípios da Hierarquia Visual</span
             >
           </div>
+
           <div
             style="
-              display: flex;
-              flex-direction: column;
+              display: grid;
+              grid-template-columns: 1fr 1fr;
               gap: 8px;
-              margin-bottom: 18px;
+              margin-bottom: 14px;
               font-size: 14px;
             "
           >
             <div
               style="
                 background: rgb(232, 234, 246);
-                border-radius: 8px;
-                padding: 12px 14px;
+                border-radius: 10px;
+                padding: 14px 16px;
                 border-left: 4px solid rgb(57, 73, 171);
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 24px; margin-bottom: 4px">📏</div>
               <div style="color: #1a237e; font-size: 12px; font-weight: 800">
-                1. Tamanho — Quanto maior, mais importante
+                1. Tamanho
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Títulos grandes dominam a atenção antes dos parágrafos. Use
-                escala proporcional (Type Scale).
+              <div style="color: #37474f; font-size: 10px">
+                Maior = mais importante. Use escala proporcional.
               </div>
             </div>
             <div
               style="
                 background: rgb(232, 234, 246);
-                border-radius: 8px;
-                padding: 12px 14px;
+                border-radius: 10px;
+                padding: 14px 16px;
                 border-left: 4px solid rgb(57, 73, 171);
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 24px; margin-bottom: 4px">🎨</div>
               <div style="color: #1a237e; font-size: 12px; font-weight: 800">
-                2. Cor e Contraste — Cores vibrantes chamam atenção
+                2. Cor e Contraste
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Use a cor primária para CTAs e elementos interativos. Alto
-                contraste entre texto e fundo.
+              <div style="color: #37474f; font-size: 10px">
+                Cores vibrantes para CTAs. Alto contraste texto-fundo.
               </div>
             </div>
             <div
               style="
                 background: rgb(232, 234, 246);
-                border-radius: 8px;
-                padding: 12px 14px;
+                border-radius: 10px;
+                padding: 14px 16px;
                 border-left: 4px solid rgb(57, 73, 171);
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 24px; margin-bottom: 4px">🧲</div>
               <div style="color: #1a237e; font-size: 12px; font-weight: 800">
-                3. Proximidade — Elementos próximos são relacionados
+                3. Proximidade
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Agrupe labels com campos, cards com seus botões. Use espaçamento
-                entre grupos.
+              <div style="color: #37474f; font-size: 10px">
+                Elementos próximos = relacionados. Agrupe labels com campos.
               </div>
             </div>
             <div
               style="
                 background: rgb(232, 234, 246);
-                border-radius: 8px;
-                padding: 12px 14px;
+                border-radius: 10px;
+                padding: 14px 16px;
                 border-left: 4px solid rgb(57, 73, 171);
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 24px; margin-bottom: 4px">⬜</div>
               <div style="color: #1a237e; font-size: 12px; font-weight: 800">
-                4. Espaço em Branco — Isolar elementos importantes
+                4. Espaço em Branco
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Quanto mais espaço ao redor de um elemento, mais atenção ele
-                recebe. Menos é mais.
+              <div style="color: #37474f; font-size: 10px">
+                Mais espaço ao redor = mais atenção. Menos é mais.
               </div>
             </div>
             <div
               style="
                 background: rgb(232, 234, 246);
-                border-radius: 8px;
-                padding: 12px 14px;
+                border-radius: 10px;
+                padding: 14px 16px;
                 border-left: 4px solid rgb(57, 73, 171);
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 24px; margin-bottom: 4px">🔤</div>
               <div style="color: #1a237e; font-size: 12px; font-weight: 800">
-                5. Tipografia — Peso, estilo e família criam níveis
+                5. Tipografia
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Bold para títulos, regular para corpo. Itálico para ênfase.
-                Serif para sofisticação.
+              <div style="color: #37474f; font-size: 10px">
+                Bold = títulos. Regular = corpo. Itálico = ênfase.
               </div>
             </div>
             <div
               style="
                 background: rgb(232, 234, 246);
-                border-radius: 8px;
-                padding: 12px 14px;
+                border-radius: 10px;
+                padding: 14px 16px;
                 border-left: 4px solid rgb(57, 73, 171);
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 24px; margin-bottom: 4px">📐</div>
               <div style="color: #1a237e; font-size: 12px; font-weight: 800">
-                6. Alinhamento — Cria ordem de leitura previsível
+                6. Alinhamento
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Use grid para alinhar elementos. Texto à esquerda é o padrão
-                ocidental de leitura.
+              <div style="color: #37474f; font-size: 10px">
+                Cria ordem de leitura previsível. Use grid.
               </div>
             </div>
             <div
               style="
                 background: rgb(232, 234, 246);
-                border-radius: 8px;
-                padding: 12px 14px;
+                border-radius: 10px;
+                padding: 14px 16px;
                 border-left: 4px solid rgb(57, 73, 171);
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 24px; margin-bottom: 4px">📦</div>
               <div style="color: #1a237e; font-size: 12px; font-weight: 800">
-                7. Textura e Estilo — Sombras e bordas criam profundidade
+                7. Textura e Estilo
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Use elevações (shadows) para destacar cards e botões. Cria
-                sensação de camadas.
+              <div style="color: #37474f; font-size: 10px">
+                Sombras criam profundidade. Destaque cards e botões.
               </div>
             </div>
             <div
               style="
                 background: rgb(232, 234, 246);
-                border-radius: 8px;
-                padding: 12px 14px;
+                border-radius: 10px;
+                padding: 14px 16px;
                 border-left: 4px solid rgb(57, 73, 171);
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 24px; margin-bottom: 4px">✨</div>
               <div style="color: #1a237e; font-size: 12px; font-weight: 800">
-                8. Movimento — Elementos que se movem chamam atenção
+                8. Movimento
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Use animações com moderação em CTAs e feedbacks. Nunca distraia
-                do conteúdo principal.
+              <div style="color: #37474f; font-size: 10px">
+                Animações com moderação. Nunca distraia do conteúdo.
               </div>
             </div>
           </div>
@@ -488,9 +474,9 @@
             "
           >
             <strong style="font-size: 13px">🧠 Regra de ouro:</strong> Se tudo
-            grita, nada é ouvido. A hierarquia visual funciona por
+            grita, nada é ouvido. A hierarquia funciona por
             <strong>contraste</strong> — o importante se destaca porque o
-            secundário é discreto. Não tente fazer tudo chamar atenção.
+            secundário é discreto.
           </div>
         </div>
       </div>
@@ -535,100 +521,110 @@
             >2</span
           >
           <span style="color: #fff; font-size: 17px; font-weight: 800"
-            >📐 Grids Aplicados — A Estrutura Invisível do Layout</span
+            >📐 GRIDS APLICADOS — A Estrutura Invisível</span
           >
         </div>
-        <div style="padding: 28px 32px; font-size: 14px">
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- Definição + Analogia -->
           <div
             style="
-              background: linear-gradient(
-                135deg,
-                rgb(224, 242, 241),
-                rgb(232, 245, 233)
-              );
-              border-radius: 14px;
-              padding: 20px 24px;
-              margin-bottom: 18px;
-              border-left: 5px solid rgb(0, 137, 123);
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              margin-bottom: 4px;
               font-size: 14px;
             "
           >
             <div
               style="
-                color: #004d40;
+                background: linear-gradient(
+                  135deg,
+                  rgb(224, 242, 241),
+                  rgb(232, 245, 233)
+                );
+                border-radius: 14px;
+                padding: 20px 24px;
+                border-left: 5px solid rgb(0, 137, 123);
                 font-size: 14px;
-                font-weight: 800;
-                margin-bottom: 8px;
               "
             >
-              🎯 Por que usar Grids?
-            </div>
-            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
-              Grids são a
-              <strong style="font-size: 13px">espinha dorsal</strong> de
-              qualquer layout profissional. Eles garantem
-              <strong style="font-size: 13px"
-                >consistência, alinhamento e ritmo visual</strong
+              <div
+                style="
+                  color: #004d40;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
               >
-              em todas as telas. Sem grid, os elementos "flutuam" e a interface
-              parece amadora. Com grid, tudo se encaixa com precisão matemática.
+                🎯 Por que usar?
+              </div>
+              <div style="color: #37474f; font-size: 13px; line-height: 1.7">
+                Espinha dorsal do layout profissional. Garante
+                <strong>consistência, alinhamento e ritmo visual</strong>. Sem
+                grid, os elementos "flutuam".
+              </div>
             </div>
-          </div>
-          <div
-            style="
-              background: linear-gradient(
-                135deg,
-                rgb(255, 248, 230),
-                rgb(255, 243, 224)
-              );
-              border-radius: 12px;
-              padding: 16px 20px;
-              border-left: 5px solid rgb(245, 124, 0);
-              margin-bottom: 18px;
-              font-size: 14px;
-            "
-          >
             <div
               style="
-                color: #e65100;
-                font-size: 13px;
-                font-weight: 800;
-                margin-bottom: 6px;
+                background: linear-gradient(
+                  135deg,
+                  rgb(255, 248, 230),
+                  rgb(255, 243, 224)
+                );
+                border-radius: 14px;
+                padding: 20px 24px;
+                border-left: 5px solid rgb(245, 124, 0);
+                font-size: 14px;
               "
             >
-              💡 Analogia simples
-            </div>
-            <div style="color: #37474f; font-size: 13px; line-height: 1.8">
-              O grid é como o
-              <strong style="font-size: 13px">esqueleto de um prédio</strong>.
-              Você não vê o esqueleto quando o prédio está pronto, mas sem ele
-              nada ficaria de pé. No design, o grid é invisível para o usuário
-              final, mas
-              <strong style="font-size: 13px">essencial para o designer</strong
-              >.
+              <div
+                style="
+                  color: #e65100;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
+                "
+              >
+                💡 Analogia
+              </div>
+              <div style="color: #37474f; font-size: 13px; line-height: 1.7">
+                Como o <strong>esqueleto de um prédio</strong> — invisível para
+                o usuário final, mas <strong>essencial</strong> para o designer
+                construir.
+              </div>
             </div>
           </div>
 
+          <!-- Anatomia do Grid -->
           <div
             style="
               display: flex;
               align-items: center;
               gap: 8px;
-              margin-bottom: 14px;
+              margin-bottom: 6px;
               font-size: 14px;
             "
           >
             <span style="font-size: 16px">📏</span
             ><span style="color: #00695c; font-size: 14px; font-weight: 800"
-              >Anatomia de um Grid Profissional</span
+              >Anatomia do Grid</span
             >
           </div>
+
           <div
             style="
               display: grid;
               grid-template-columns: 1fr 1fr;
               gap: 10px;
-              margin-bottom: 18px;
+              margin-bottom: 10px;
               font-size: 14px;
             "
           >
@@ -638,15 +634,16 @@
                 border-radius: 10px;
                 padding: 14px 16px;
                 border-left: 4px solid rgb(0, 137, 123);
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 28px; margin-bottom: 4px">📐</div>
               <div style="color: #004d40; font-size: 12px; font-weight: 800">
-                📐 Colunas
+                Colunas
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Faixas verticais onde o conteúdo é posicionado. Desktop: 12
-                colunas. Tablet: 8 colunas. Mobile: 4 colunas.
+              <div style="color: #37474f; font-size: 10px">
+                Desktop: 12 | Tablet: 8 | Mobile: 4
               </div>
             </div>
             <div
@@ -655,15 +652,16 @@
                 border-radius: 10px;
                 padding: 14px 16px;
                 border-left: 4px solid rgb(0, 137, 123);
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 28px; margin-bottom: 4px">⬜</div>
               <div style="color: #004d40; font-size: 12px; font-weight: 800">
-                ⬜ Gutters
+                Gutters
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Espaçamento entre colunas. Padrão: 16px a 32px. Cria respiro
-                visual entre blocos de conteúdo.
+              <div style="color: #37474f; font-size: 10px">
+                Espaço entre colunas: 16px a 32px
               </div>
             </div>
             <div
@@ -672,15 +670,16 @@
                 border-radius: 10px;
                 padding: 14px 16px;
                 border-left: 4px solid rgb(0, 137, 123);
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 28px; margin-bottom: 4px">📏</div>
               <div style="color: #004d40; font-size: 12px; font-weight: 800">
-                📏 Margens
+                Margens
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Espaço nas laterais da tela. Desktop: 80-120px. Tablet: 40-60px.
-                Mobile: 16-24px.
+              <div style="color: #37474f; font-size: 10px">
+                Desktop: 80-120px | Mobile: 16-24px
               </div>
             </div>
             <div
@@ -689,33 +688,21 @@
                 border-radius: 10px;
                 padding: 14px 16px;
                 border-left: 4px solid rgb(0, 137, 123);
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 28px; margin-bottom: 4px">📱</div>
               <div style="color: #004d40; font-size: 12px; font-weight: 800">
-                📱 Breakpoints
+                Breakpoints
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Pontos onde o grid se adapta. Ex: Mobile < 768px, Tablet
-                768-1024px, Desktop > 1024px.
+              <div style="color: #37474f; font-size: 10px">
+                Mobile < 768px | Desktop > 1024px
               </div>
             </div>
           </div>
 
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              gap: 8px;
-              margin-bottom: 14px;
-              font-size: 14px;
-            "
-          >
-            <span style="font-size: 16px">📐</span
-            ><span style="color: #00695c; font-size: 14px; font-weight: 800"
-              >Grid no Figma — Configuração Prática</span
-            >
-          </div>
+          <!-- Configuração no Figma -->
           <div
             style="
               background: #0d1b4b;
@@ -725,12 +712,10 @@
               font-size: 13px;
               line-height: 2;
               box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
-              margin-bottom: 16px;
+              font-size: 14px;
             "
           >
-            <span style="color: #78909c"
-              >/* Configuração de Grid no Figma */</span
-            ><br />
+            <span style="color: #78909c">/* Grid no Figma */</span><br />
             <span style="color: #ffcc02">Desktop (1440px):</span>
             <span style="color: #e0e0e0"
               >12 colunas | Margin: 120px | Gutter: 24px</span
@@ -743,14 +728,8 @@
             <span style="color: #e0e0e0"
               >4 colunas | Margin: 16px | Gutter: 16px</span
             ><br /><br />
-            <span style="color: #78909c">/* Como aplicar no Figma */</span
-            ><br />
-            <span style="color: #e0e0e0">1. Selecione o Frame</span><br />
-            <span style="color: #e0e0e0"
-              >2. Painel direito → Layout Grid → +</span
-            ><br />
-            <span style="color: #e0e0e0"
-              >3. Escolha "Grid" → Columns → defina contagem e valores</span
+            <span style="color: #78909c"
+              >/* Como aplicar: Frame → Layout Grid → + → Grid */</span
             >
           </div>
 
@@ -765,10 +744,9 @@
               line-height: 1.7;
             "
           >
-            <strong style="font-size: 13px">💡 Dica prática:</strong> Sempre
-            comece o design pelo <strong>mobile (375px)</strong> e depois
-            expanda para tablet e desktop. É mais fácil adicionar elementos do
-            que removê-los. Isso é a essência do <strong>Mobile-First</strong>.
+            <strong style="font-size: 13px">💡 Mobile-First:</strong> Comece
+            pelo mobile (375px) e expanda para desktop. É mais fácil adicionar
+            do que remover elementos.
           </div>
         </div>
       </div>
@@ -813,167 +791,165 @@
             >3</span
           >
           <span style="color: #fff; font-size: 17px; font-weight: 800"
-            >🖼️ Layout de Alta Fidelidade — Do Wireframe ao Protótipo
-            Final</span
+            >🖼️ ALTA FIDELIDADE — Do Rabisco ao Protótipo</span
           >
         </div>
-        <div style="padding: 28px 32px; font-size: 14px">
+        <div
+          style="
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 14px;
+          "
+        >
+          <!-- Definição + Evolução -->
           <div
             style="
-              background: linear-gradient(
-                135deg,
-                rgb(255, 243, 224),
-                rgb(255, 248, 245)
-              );
-              border-radius: 14px;
-              padding: 20px 24px;
-              margin-bottom: 18px;
-              border-left: 5px solid rgb(245, 124, 0);
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              margin-bottom: 4px;
               font-size: 14px;
             "
           >
             <div
               style="
-                color: #bf360c;
-                font-size: 14px;
-                font-weight: 800;
-                margin-bottom: 8px;
-              "
-            >
-              🎯 O que é Alta Fidelidade?
-            </div>
-            <div style="color: #37474f; font-size: 13px; line-height: 1.9">
-              Um layout de
-              <span
-                style="
-                  background: rgb(230, 81, 0);
-                  color: white;
-                  padding: 1px 8px;
-                  border-radius: 5px;
-                  font-weight: bold;
-                  font-size: 13px;
-                "
-                >alta fidelidade</span
-              >
-              (high-fi) é a representação visual
-              <strong style="font-size: 13px"
-                >mais próxima possível do produto final</strong
-              >. Inclui cores reais, tipografia definitiva, imagens finais,
-              ícones, espaçamentos precisos e componentes interativos. É o
-              estágio onde o design está pronto para ser entregue ao
-              desenvolvimento.
-            </div>
-          </div>
-          <div
-            style="
-              background: linear-gradient(
-                135deg,
-                rgb(255, 248, 230),
-                rgb(255, 243, 224)
-              );
-              border-radius: 12px;
-              padding: 16px 20px;
-              border-left: 5px solid rgb(245, 124, 0);
-              margin-bottom: 18px;
-              font-size: 14px;
-            "
-          >
-            <div
-              style="
-                color: #e65100;
-                font-size: 13px;
-                font-weight: 800;
-                margin-bottom: 6px;
-              "
-            >
-              💡 Evolução do Design
-            </div>
-            <div
-              style="
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                flex-wrap: wrap;
+                background: linear-gradient(
+                  135deg,
+                  rgb(255, 243, 224),
+                  rgb(255, 248, 245)
+                );
+                border-radius: 14px;
+                padding: 20px 24px;
+                border-left: 5px solid rgb(245, 124, 0);
                 font-size: 14px;
               "
             >
               <div
                 style="
-                  background: #e0e0e0;
-                  border-radius: 8px;
-                  padding: 10px 14px;
-                  text-align: center;
-                  font-size: 11px;
+                  color: #bf360c;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 8px;
                 "
               >
-                📝 Rabisco<br /><span style="font-size: 9px">Papel</span>
+                🎯 O que é?
               </div>
-              <span style="font-size: 18px">→</span>
+              <div style="color: #37474f; font-size: 13px; line-height: 1.7">
+                Representação visual
+                <strong>mais próxima do produto final</strong>. Cores reais,
+                tipografia definitiva, imagens finais e componentes interativos.
+                Pronto para desenvolvimento.
+              </div>
+            </div>
+            <div
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgb(255, 248, 230),
+                  rgb(255, 243, 224)
+                );
+                border-radius: 14px;
+                padding: 20px 24px;
+                border-left: 5px solid rgb(245, 124, 0);
+                font-size: 14px;
+              "
+            >
               <div
                 style="
-                  background: #bdbdbd;
-                  border-radius: 8px;
-                  padding: 10px 14px;
-                  text-align: center;
-                  font-size: 11px;
+                  color: #e65100;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 10px;
                 "
               >
-                📐 Wireframe<br /><span style="font-size: 9px"
-                  >Baixa fidelidade</span
-                >
+                📈 Evolução do Design
               </div>
-              <span style="font-size: 18px">→</span>
               <div
                 style="
-                  background: #9e9e9e;
-                  border-radius: 8px;
-                  padding: 10px 14px;
-                  text-align: center;
-                  font-size: 11px;
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  font-size: 14px;
                 "
               >
-                🎨 Mockup<br /><span style="font-size: 9px"
-                  >Média fidelidade</span
+                <div
+                  style="
+                    background: #e0e0e0;
+                    border-radius: 8px;
+                    padding: 10px 12px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
                 >
-              </div>
-              <span style="font-size: 18px">→</span>
-              <div
-                style="
-                  background: #f57c00;
-                  color: #fff;
-                  border-radius: 8px;
-                  padding: 10px 14px;
-                  text-align: center;
-                  font-size: 11px;
-                "
-              >
-                🖼️ Protótipo<br /><span style="font-size: 9px"
-                  >Alta fidelidade</span
+                  📝<br />Rabisco
+                </div>
+                <span>→</span>
+                <div
+                  style="
+                    background: #bdbdbd;
+                    border-radius: 8px;
+                    padding: 10px 12px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
                 >
+                  📐<br />Wireframe
+                </div>
+                <span>→</span>
+                <div
+                  style="
+                    background: #9e9e9e;
+                    border-radius: 8px;
+                    padding: 10px 12px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  🎨<br />Mockup
+                </div>
+                <span>→</span>
+                <div
+                  style="
+                    background: #f57c00;
+                    color: #fff;
+                    border-radius: 8px;
+                    padding: 10px 12px;
+                    text-align: center;
+                    font-size: 11px;
+                  "
+                >
+                  🖼️<br />Protótipo
+                </div>
               </div>
             </div>
           </div>
 
+          <!-- 6 requisitos -->
           <div
             style="
               display: flex;
               align-items: center;
               gap: 8px;
-              margin-bottom: 14px;
+              margin-bottom: 6px;
               font-size: 14px;
             "
           >
             <span style="font-size: 16px">⭐</span
             ><span style="color: #bf360c; font-size: 14px; font-weight: 800"
-              >O que um Layout de Alta Fidelidade deve ter</span
+              >6 Requisitos de Alta Fidelidade</span
             >
           </div>
+
           <div
             style="
               display: grid;
-              grid-template-columns: 1fr 1fr;
+              grid-template-columns: 1fr 1fr 1fr;
               gap: 10px;
-              margin-bottom: 18px;
+              margin-bottom: 10px;
               font-size: 14px;
             "
           >
@@ -983,15 +959,16 @@
                 border-radius: 10px;
                 padding: 14px 16px;
                 border-left: 4px solid #f57c00;
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 24px; margin-bottom: 4px">🎨</div>
               <div style="color: #e65100; font-size: 12px; font-weight: 800">
-                🎨 Cores reais da paleta
+                Cores Reais
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Não use placeholders cinza. Aplique as cores exatas do Style
-                Guide: primária, secundária, neutras e semânticas.
+              <div style="color: #37474f; font-size: 10px">
+                Paleta do Style Guide aplicada
               </div>
             </div>
             <div
@@ -1000,15 +977,16 @@
                 border-radius: 10px;
                 padding: 14px 16px;
                 border-left: 4px solid #f57c00;
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 24px; margin-bottom: 4px">🔤</div>
               <div style="color: #e65100; font-size: 12px; font-weight: 800">
-                🔤 Tipografia definitiva
+                Tipografia Final
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Fontes finais com pesos, tamanhos e estilos corretos. Nada de
-                "Lorem Ipsum" genérico sem contexto.
+              <div style="color: #37474f; font-size: 10px">
+                Fontes, pesos e tamanhos corretos
               </div>
             </div>
             <div
@@ -1017,15 +995,16 @@
                 border-radius: 10px;
                 padding: 14px 16px;
                 border-left: 4px solid #f57c00;
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 24px; margin-bottom: 4px">🖼️</div>
               <div style="color: #e65100; font-size: 12px; font-weight: 800">
-                🖼️ Imagens e ícones finais
+                Imagens Finais
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Fotos tratadas, ícones da biblioteca escolhida. Sem retângulos
-                cinza com "X" no lugar de imagens.
+              <div style="color: #37474f; font-size: 10px">
+                Sem retângulos cinza com "X"
               </div>
             </div>
             <div
@@ -1034,15 +1013,16 @@
                 border-radius: 10px;
                 padding: 14px 16px;
                 border-left: 4px solid #f57c00;
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 24px; margin-bottom: 4px">📏</div>
               <div style="color: #e65100; font-size: 12px; font-weight: 800">
-                📏 Espaçamentos precisos
+                Espaçamento Preciso
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Margens, paddings e gutters seguindo a escala definida (ex:
-                múltiplos de 8px). Nada de "mais ou menos".
+              <div style="color: #37474f; font-size: 10px">
+                Margens seguindo escala (ex: 8px)
               </div>
             </div>
             <div
@@ -1051,15 +1031,16 @@
                 border-radius: 10px;
                 padding: 14px 16px;
                 border-left: 4px solid #f57c00;
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 24px; margin-bottom: 4px">🧩</div>
               <div style="color: #e65100; font-size: 12px; font-weight: 800">
-                🧩 Componentes reutilizáveis
+                Componentes
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Botões, cards, inputs e navegação como componentes do Figma.
-                Prontos para exportação e desenvolvimento.
+              <div style="color: #37474f; font-size: 10px">
+                Botões, cards e inputs reutilizáveis
               </div>
             </div>
             <div
@@ -1068,25 +1049,27 @@
                 border-radius: 10px;
                 padding: 14px 16px;
                 border-left: 4px solid #f57c00;
+                text-align: center;
                 font-size: 14px;
               "
             >
+              <div style="font-size: 24px; margin-bottom: 4px">📐</div>
               <div style="color: #e65100; font-size: 12px; font-weight: 800">
-                📐 Grid aplicado
+                Grid Aplicado
               </div>
-              <div style="color: #37474f; font-size: 11px">
-                Todos os elementos alinhados ao sistema de grid. Nada
-                "flutuando" fora das colunas.
+              <div style="color: #37474f; font-size: 10px">
+                Tudo alinhado às colunas
               </div>
             </div>
           </div>
 
+          <!-- Erros comuns -->
           <div
             style="
-              background: rgb(255, 235, 238);
+              background: #ffebee;
               border-radius: 12px;
               padding: 16px 20px;
-              border: 2px solid rgb(239, 154, 154);
+              border-left: 5px solid #c62828;
               font-size: 14px;
             "
           >
@@ -1098,75 +1081,75 @@
                 margin-bottom: 8px;
               "
             >
-              ⚠️ Erros comuns em layouts de alta fidelidade
+              ⚠️ Erros Comuns
             </div>
             <div
               style="
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                gap: 8px;
+                gap: 6px;
                 font-size: 14px;
               "
             >
               <div
                 style="
                   background: #fff;
-                  border-radius: 6px;
-                  padding: 10px;
-                  font-size: 11px;
+                  border-radius: 4px;
+                  padding: 8px 10px;
+                  font-size: 10px;
                 "
               >
-                ❌ Cores inconsistentes com o Style Guide
+                ❌ Cores inconsistentes
               </div>
               <div
                 style="
                   background: #fff;
-                  border-radius: 6px;
-                  padding: 10px;
-                  font-size: 11px;
+                  border-radius: 4px;
+                  padding: 8px 10px;
+                  font-size: 10px;
                 "
               >
-                ❌ Espaçamentos "no olho" em vez de escala fixa
+                ❌ Espaçamentos "no olho"
               </div>
               <div
                 style="
                   background: #fff;
-                  border-radius: 6px;
-                  padding: 10px;
-                  font-size: 11px;
+                  border-radius: 4px;
+                  padding: 8px 10px;
+                  font-size: 10px;
                 "
               >
-                ❌ Textos placeholder sem conteúdo real
+                ❌ Textos placeholder
               </div>
               <div
                 style="
                   background: #fff;
-                  border-radius: 6px;
-                  padding: 10px;
-                  font-size: 11px;
+                  border-radius: 4px;
+                  padding: 8px 10px;
+                  font-size: 10px;
                 "
               >
-                ❌ Imagens de baixa resolução
+                ❌ Imagens baixa resolução
               </div>
               <div
                 style="
                   background: #fff;
-                  border-radius: 6px;
-                  padding: 10px;
-                  font-size: 11px;
+                  border-radius: 4px;
+                  padding: 8px 10px;
+                  font-size: 10px;
                 "
               >
-                ❌ Ignorar estados (hover, active, disabled, error)
+                ❌ Ignorar estados (hover, active)
               </div>
               <div
                 style="
                   background: #fff;
-                  border-radius: 6px;
-                  padding: 10px;
-                  font-size: 11px;
+                  border-radius: 4px;
+                  padding: 8px 10px;
+                  font-size: 10px;
                 "
               >
-                ❌ Não testar responsividade em diferentes tamanhos
+                ❌ Não testar responsividade
               </div>
             </div>
           </div>
@@ -1213,7 +1196,7 @@
             >4</span
           >
           <span style="color: #fff; font-size: 17px; font-weight: 800"
-            >🏗️ Construção de Telas — Da Estrutura ao Acabamento</span
+            >🏗️ CONSTRUÇÃO DE TELAS — Passo a Passo</span
           >
         </div>
         <div
@@ -1225,259 +1208,257 @@
             font-size: 14px;
           "
         >
-          <!-- Passo a passo -->
           <div
             style="
-              background: rgb(243, 229, 245);
-              border-radius: 14px;
-              padding: 20px;
-              border: 2px solid rgb(225, 190, 231);
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 14px;
+              margin-bottom: 10px;
               font-size: 14px;
             "
           >
+            <!-- Passos -->
             <div
               style="
-                color: #6a1b9a;
+                background: rgb(243, 229, 245);
+                border-radius: 14px;
+                padding: 20px;
+                border-left: 5px solid #8e24aa;
                 font-size: 14px;
-                font-weight: 800;
-                margin-bottom: 12px;
               "
             >
-              📋 Passo a Passo — Construindo uma Landing Page de Alta Fidelidade
+              <div
+                style="
+                  color: #6a1b9a;
+                  font-size: 14px;
+                  font-weight: 800;
+                  margin-bottom: 12px;
+                "
+              >
+                📋 5 Passos para uma Landing Page
+              </div>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 8px;
+                  font-size: 14px;
+                "
+              >
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px 12px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 14px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #6a1b9a;
+                      color: #fff;
+                      border-radius: 50%;
+                      min-width: 24px;
+                      height: 24px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: 12px;
+                      font-weight: 800;
+                    "
+                    >1</span
+                  >
+                  <span style="font-size: 11px; color: #37474f"
+                    >Configure Frame + Grid (12 col, margin 120px)</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px 12px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 14px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #6a1b9a;
+                      color: #fff;
+                      border-radius: 50%;
+                      min-width: 24px;
+                      height: 24px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: 12px;
+                      font-weight: 800;
+                    "
+                    >2</span
+                  >
+                  <span style="font-size: 11px; color: #37474f"
+                    >Estruture Zonas: Header, Hero, Body, Footer</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px 12px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 14px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #6a1b9a;
+                      color: #fff;
+                      border-radius: 50%;
+                      min-width: 24px;
+                      height: 24px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: 12px;
+                      font-weight: 800;
+                    "
+                    >3</span
+                  >
+                  <span style="font-size: 11px; color: #37474f"
+                    >Preencha com Componentes (Navbar, Cards, CTAs)</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px 12px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 14px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #6a1b9a;
+                      color: #fff;
+                      border-radius: 50%;
+                      min-width: 24px;
+                      height: 24px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: 12px;
+                      font-weight: 800;
+                    "
+                    >4</span
+                  >
+                  <span style="font-size: 11px; color: #37474f"
+                    >Aplique Hierarquia Visual (tamanhos, cores)</span
+                  >
+                </div>
+                <div
+                  style="
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 10px 12px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 14px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #6a1b9a;
+                      color: #fff;
+                      border-radius: 50%;
+                      min-width: 24px;
+                      height: 24px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: 12px;
+                      font-weight: 800;
+                    "
+                    >5</span
+                  >
+                  <span style="font-size: 11px; color: #37474f"
+                    >Revise e Prototipe (conecte botões, teste fluxo)</span
+                  >
+                </div>
+              </div>
             </div>
+
+            <!-- Zonas + Dicas -->
             <div
               style="
                 display: flex;
                 flex-direction: column;
-                gap: 8px;
+                gap: 14px;
                 font-size: 14px;
               "
             >
               <div
                 style="
-                  background: #fff;
-                  border-radius: 8px;
-                  padding: 12px 14px;
-                  border-left: 4px solid #8e24aa;
+                  background: #0d1b4b;
+                  border-radius: 12px;
+                  padding: 18px;
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 12px;
+                  line-height: 2.2;
+                  box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
                   font-size: 14px;
                 "
               >
-                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
-                  Passo 1 — Configure o Frame e o Grid
-                </div>
-                <div style="color: #37474f; font-size: 11px">
-                  Crie um Frame Desktop (1440×900). Adicione Layout Grid: 12
-                  colunas, margin 120px, gutter 24px.
-                </div>
+                <span style="color: #ffcc02">HEADER</span>
+                <span style="color: #78909c">→ Logo + Menu + CTA</span><br />
+                <span style="color: #ffcc02">HERO</span>
+                <span style="color: #78909c"
+                  >→ Título + Subtítulo + CTA + Imagem</span
+                ><br />
+                <span style="color: #ffcc02">SEÇÕES</span>
+                <span style="color: #78909c"
+                  >→ Diferenciais, Produtos, Depoimentos</span
+                ><br />
+                <span style="color: #ffcc02">FOOTER</span>
+                <span style="color: #78909c"
+                  >→ Links, Contato, Redes Sociais</span
+                >
               </div>
               <div
                 style="
-                  background: #fff;
-                  border-radius: 8px;
-                  padding: 12px 14px;
-                  border-left: 4px solid #8e24aa;
+                  background: rgb(227, 242, 253);
+                  border-radius: 10px;
+                  padding: 14px 16px;
+                  border-left: 4px solid #1565c0;
                   font-size: 14px;
                 "
               >
-                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
-                  Passo 2 — Estruture as Zonas (Header, Hero, Body, Footer)
+                <div
+                  style="
+                    color: #1565c0;
+                    font-size: 12px;
+                    font-weight: 800;
+                    margin-bottom: 6px;
+                  "
+                >
+                  ✨ Acabamento Profissional
                 </div>
-                <div style="color: #37474f; font-size: 11px">
-                  Desenhe retângulos marcando as grandes áreas. Alinhe tudo ao
-                  grid. Defina alturas aproximadas.
+                <div style="font-size: 10px; color: #37474f; line-height: 1.8">
+                  ✅ 8px grid para espaçamentos<br />
+                  ✅ Alinhamento pixel-perfect<br />
+                  ✅ Contraste WCAG AA<br />
+                  ✅ Estados de interação documentados
                 </div>
-              </div>
-              <div
-                style="
-                  background: #fff;
-                  border-radius: 8px;
-                  padding: 12px 14px;
-                  border-left: 4px solid #8e24aa;
-                  font-size: 14px;
-                "
-              >
-                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
-                  Passo 3 — Preencha com Componentes
-                </div>
-                <div style="color: #37474f; font-size: 11px">
-                  Arraste Navbar, Hero Section, Cards, Footer da sua biblioteca
-                  de componentes. Ajuste textos e imagens.
-                </div>
-              </div>
-              <div
-                style="
-                  background: #fff;
-                  border-radius: 8px;
-                  padding: 12px 14px;
-                  border-left: 4px solid #8e24aa;
-                  font-size: 14px;
-                "
-              >
-                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
-                  Passo 4 — Aplique Hierarquia Visual
-                </div>
-                <div style="color: #37474f; font-size: 11px">
-                  Ajuste tamanhos de títulos, cores de CTAs, espaçamentos entre
-                  seções. O olho deve fluir naturalmente.
-                </div>
-              </div>
-              <div
-                style="
-                  background: #fff;
-                  border-radius: 8px;
-                  padding: 12px 14px;
-                  border-left: 4px solid #8e24aa;
-                  font-size: 14px;
-                "
-              >
-                <div style="color: #4a148c; font-size: 12px; font-weight: 800">
-                  Passo 5 — Revise e Prototipe
-                </div>
-                <div style="color: #37474f; font-size: 11px">
-                  Conecte os botões às telas de destino. Teste o fluxo. Revise
-                  cores, tipografia e alinhamentos.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Zonas da Landing Page -->
-          <div
-            style="
-              background: rgb(232, 245, 233);
-              border-radius: 14px;
-              padding: 20px;
-              border: 2px solid rgb(200, 230, 201);
-              font-size: 14px;
-            "
-          >
-            <div
-              style="
-                color: #2e7d32;
-                font-size: 14px;
-                font-weight: 800;
-                margin-bottom: 12px;
-              "
-            >
-              🧩 Zonas de uma Landing Page Típica
-            </div>
-            <div
-              style="
-                background: #0d1b4b;
-                border-radius: 12px;
-                padding: 18px;
-                font-family: &quot;Courier New&quot;, monospace;
-                font-size: 13px;
-                line-height: 2;
-                box-shadow: 0 4px 16px rgba(13, 27, 75, 0.3);
-              "
-            >
-              <span style="color: #ffcc02">HEADER</span>
-              <span style="color: #78909c">(Navbar: Logo + Menu + CTA)</span
-              ><br />
-              <span style="color: #ffcc02">HERO</span>
-              <span style="color: #78909c"
-                >(Título principal + Subtítulo + CTA principal + Imagem)</span
-              ><br />
-              <span style="color: #ffcc02">SEÇÕES</span>
-              <span style="color: #78909c"
-                >(Diferenciais, Produtos, Depoimentos, Preços)</span
-              ><br />
-              <span style="color: #ffcc02">FOOTER</span>
-              <span style="color: #78909c"
-                >(Links, Contato, Redes Sociais, Copyright)</span
-              >
-            </div>
-          </div>
-
-          <!-- Dicas de acabamento -->
-          <div
-            style="
-              background: rgb(227, 242, 253);
-              border-radius: 14px;
-              padding: 20px;
-              border: 2px solid rgb(187, 222, 251);
-              font-size: 14px;
-            "
-          >
-            <div
-              style="
-                color: #1565c0;
-                font-size: 14px;
-                font-weight: 800;
-                margin-bottom: 12px;
-              "
-            >
-              ✨ Dicas de Acabamento Profissional
-            </div>
-            <div
-              style="
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 8px;
-                font-size: 14px;
-              "
-            >
-              <div
-                style="
-                  background: #fff;
-                  border-radius: 6px;
-                  padding: 10px;
-                  font-size: 11px;
-                "
-              >
-                ✅ Use <strong>8px grid</strong> para todos os espaçamentos
-              </div>
-              <div
-                style="
-                  background: #fff;
-                  border-radius: 6px;
-                  padding: 10px;
-                  font-size: 11px;
-                "
-              >
-                ✅ Alinhamento <strong>pixel-perfect</strong> em todos os
-                elementos
-              </div>
-              <div
-                style="
-                  background: #fff;
-                  border-radius: 6px;
-                  padding: 10px;
-                  font-size: 11px;
-                "
-              >
-                ✅ Contraste de cores verificado (WCAG AA)
-              </div>
-              <div
-                style="
-                  background: #fff;
-                  border-radius: 6px;
-                  padding: 10px;
-                  font-size: 11px;
-                "
-              >
-                ✅ Textos reais (sem Lorem Ipsum vazio)
-              </div>
-              <div
-                style="
-                  background: #fff;
-                  border-radius: 6px;
-                  padding: 10px;
-                  font-size: 11px;
-                "
-              >
-                ✅ Estados de interação documentados
-              </div>
-              <div
-                style="
-                  background: #fff;
-                  border-radius: 6px;
-                  padding: 10px;
-                  font-size: 11px;
-                "
-              >
-                ✅ Versão mobile e desktop consistentes
               </div>
             </div>
           </div>
@@ -1485,7 +1466,7 @@
       </div>
 
       <!-- ══════════════════════════════════ -->
-      <!-- SEÇÃO 5 — EXEMPLO COMPLETO       -->
+      <!-- SEÇÃO 5 — EXEMPLO PRÁTICO        -->
       <!-- ══════════════════════════════════ -->
       <div
         style="
@@ -1524,7 +1505,7 @@
             >5</span
           >
           <span style="color: #fff; font-size: 17px; font-weight: 800"
-            >🧪 Exemplo Prático — Hierarquia Visual Aplicada</span
+            >🧪 EXEMPLO — Hierarquia Visual em Ação</span
           >
         </div>
         <div style="padding: 28px 32px; font-size: 14px">
@@ -1533,12 +1514,11 @@
               color: #37474f;
               font-size: 13px;
               line-height: 1.8;
-              margin-bottom: 16px;
+              margin-bottom: 14px;
             "
           >
-            Veja como a hierarquia visual funciona em uma
-            <strong>Hero Section</strong> típica. O olhar do usuário percorre a
-            tela na ordem numerada:
+            Veja como o olhar do usuário percorre uma
+            <strong>Hero Section</strong> seguindo a hierarquia:
           </div>
 
           <div
@@ -1558,7 +1538,6 @@
                 font-size: 14px;
               "
             >
-              <!-- 1. Título Principal -->
               <div
                 style="
                   display: flex;
@@ -1585,7 +1564,7 @@
                 >
                 <div
                   style="
-                    font-size: 28px;
+                    font-size: 26px;
                     font-weight: 900;
                     color: #fff;
                     line-height: 1.2;
@@ -1594,13 +1573,13 @@
                   Crie Produtos Digitais<br />que seus usuários vão amar
                 </div>
               </div>
-              <!-- 2. Subtítulo -->
+
               <div
                 style="
                   display: flex;
                   align-items: center;
                   gap: 10px;
-                  margin-left: 40px;
+                  margin-left: 38px;
                   font-size: 14px;
                 "
               >
@@ -1609,36 +1588,35 @@
                     background: #f9a825;
                     color: #fff;
                     border-radius: 50%;
-                    width: 28px;
-                    height: 28px;
+                    width: 24px;
+                    height: 24px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     font-weight: 800;
-                    font-size: 14px;
+                    font-size: 12px;
                     flex-shrink: 0;
                   "
                   >2</span
                 >
                 <div
                   style="
-                    font-size: 16px;
+                    font-size: 14px;
                     color: #b0bec5;
                     line-height: 1.5;
-                    max-width: 500px;
+                    max-width: 480px;
                   "
                 >
                   Design, prototipagem e desenvolvimento em um só lugar.
-                  Transforme ideias em produtos reais com nossa plataforma.
                 </div>
               </div>
-              <!-- 3. CTA -->
+
               <div
                 style="
                   display: flex;
                   align-items: center;
                   gap: 10px;
-                  margin-left: 40px;
+                  margin-left: 38px;
                   font-size: 14px;
                 "
               >
@@ -1647,13 +1625,13 @@
                     background: #2e7d32;
                     color: #fff;
                     border-radius: 50%;
-                    width: 28px;
-                    height: 28px;
+                    width: 24px;
+                    height: 24px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     font-weight: 800;
-                    font-size: 14px;
+                    font-size: 12px;
                     flex-shrink: 0;
                   "
                   >3</span
@@ -1663,10 +1641,10 @@
                     style="
                       background: #1565c0;
                       color: #fff;
-                      padding: 12px 24px;
+                      padding: 10px 20px;
                       border-radius: 8px;
                       font-weight: 700;
-                      font-size: 14px;
+                      font-size: 13px;
                     "
                   >
                     Começar Agora
@@ -1675,14 +1653,14 @@
                     style="
                       background: transparent;
                       color: #fff;
-                      padding: 12px 24px;
+                      padding: 10px 20px;
                       border-radius: 8px;
                       font-weight: 700;
-                      font-size: 14px;
+                      font-size: 13px;
                       border: 2px solid #fff;
                     "
                   >
-                    Ver Demonstração
+                    Ver Demo
                   </div>
                 </div>
               </div>
@@ -1695,17 +1673,16 @@
               border-radius: 10px;
               padding: 14px 18px;
               border-left: 4px solid #2e7d32;
-              margin-top: 16px;
+              margin-top: 14px;
               font-size: 13px;
               color: #1b5e20;
               line-height: 1.7;
             "
           >
-            <strong style="font-size: 13px">✅ Análise da hierarquia:</strong> O
-            título (1) é o maior e mais contrastante — é visto primeiro. O
-            subtítulo (2) é menor e mais claro — complementa. O CTA (3) usa cor
-            primária para se destacar. O olhar flui: 1 → 2 → 3, exatamente como
-            planejado.
+            <strong style="font-size: 13px">✅ Análise:</strong> Título (1)
+            maior e contrastante → visto primeiro. Subtítulo (2) menor e mais
+            claro → complementa. CTA (3) cor primária → ação. O olhar flui:
+            <strong>1 → 2 → 3</strong>.
           </div>
         </div>
       </div>
@@ -1777,7 +1754,7 @@
             >
               <div style="font-size: 20px; margin-bottom: 5px">👁️</div>
               <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
-                Hierarquia: guie o olhar com intenção
+                Hierarquia guia o olhar
               </div>
             </div>
             <div
@@ -1792,7 +1769,7 @@
             >
               <div style="font-size: 20px; margin-bottom: 5px">📐</div>
               <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
-                Grids: a estrutura invisível do layout
+                Grid é a estrutura invisível
               </div>
             </div>
             <div
@@ -1807,7 +1784,7 @@
             >
               <div style="font-size: 20px; margin-bottom: 5px">🖼️</div>
               <div style="color: #e3f2fd; font-size: 11px; font-weight: bold">
-                Alta Fidelidade: pronto para desenvolver
+                Alta fidelidade = produto final
               </div>
             </div>
           </div>
@@ -1854,30 +1831,6 @@
               style="
                 background: rgba(255, 255, 255, 0.15);
                 color: #ce93d8;
-                padding: 6px 14px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: bold;
-                border: 1px solid rgba(255, 255, 255, 0.2);
-              "
-              >Wireframe</span
-            >
-            <span
-              style="
-                background: rgba(255, 255, 255, 0.15);
-                color: #80cbc4;
-                padding: 6px 14px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: bold;
-                border: 1px solid rgba(255, 255, 255, 0.2);
-              "
-              >Mockup</span
-            >
-            <span
-              style="
-                background: rgba(255, 255, 255, 0.15);
-                color: #c5cae9;
                 padding: 6px 14px;
                 border-radius: 20px;
                 font-size: 12px;
